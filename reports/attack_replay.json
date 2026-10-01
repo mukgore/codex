@@ -1,0 +1,41 @@
+{
+  "run_id": "2026-10-01T14:20:01.936463+00:00",
+  "code_commit": "26c792b2b777f856c345ed7aba3a0e06f7678cf2",
+  "wrapper_sha256": "fe0f1f94ef62d58d27f4c91ad28d3a13f4b58a1eb52ab8c2a287b610115a191e",
+  "input_sha256": {
+    "common.py": "43ea88a3e01a0df53cea3b326dcb0b0803296aac7ec3a444f3d95c80c4e1a4e1",
+    "phase2_attack.py": "9cd31bfb2de96a589bc5e05c86d6f7b8edbdd01f665df5bb01eaf238e30115ab",
+    "scoring.py": "c0daf680a793572507a04b7d42c49edc65fc883aa6b40806563b02a23a36f51b",
+    "phase3_evaluate.py": "24eace7710a93447eb552e2f05f48493e61d76fd6d22c1f36f7131453c27fc59",
+    "reference_library.json": "24ca6df614245a1c4c773fea6a9c1d07ec1399a97efc1fd97af5e0b1131c2631",
+    "attack_results.json": "4ba8d9ba11346f807f3313b5f85500645394029a040c7920cbacc28436b3fa29"
+  },
+  "config": {
+    "stage": "saved observations -> matching -> coordinate scoring",
+    "threshold": 0.25,
+    "seed": null
+  },
+  "result": {
+    "n_correct_hamming_top1": 14,
+    "n_correct_majority_top1": 14,
+    "stage4_n_passed_of_16": 16,
+    "stage4_avg_score": 0.9736812309258789,
+    "stage2_overall_bit_accuracy": 0.9749318653647545
+  },
+  "delta": {
+    "n_correct_hamming_top1": 0,
+    "n_correct_majority_top1": 0,
+    "stage4_n_passed_of_16": 0,
+    "stage4_avg_score": 0.0,
+    "stage2_overall_bit_accuracy": 0.0
+  },
+  "current_replay_seconds": 9.867609100008849,
+  "historical_pixel_ms_per_frame": 31.37245467749674,
+  "limitations": [
+    "Pixel extraction not rerun: original level3 videos absent from supplied folder.",
+    "Reverse sequences reuse reversed forward bits, not independent videos.",
+    "Coordinate score is not server or camera end-to-end authentication.",
+    "Provided method uses fingertip visibility bits, not circle-center/radius-only matching."
+  ],
+  "top1_tie_cases": 0
+}

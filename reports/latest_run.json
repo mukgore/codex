@@ -1,0 +1,38 @@
+{
+  "run_id": "20261001T142025Z",
+  "code_commit": "26c792b2b777f856c345ed7aba3a0e06f7678cf2",
+  "code_hashes": {
+    "analysis/audit.py": "a077d51d1bc0b958728de20e76852e880afb8cd1add1f065efc807a7c43ebbb2",
+    "analysis/replay_existing.py": "fe0f1f94ef62d58d27f4c91ad28d3a13f4b58a1eb52ab8c2a287b610115a191e"
+  },
+  "config": {
+    "seed": 20261001,
+    "max_norm": {
+      "angle": 46.9413,
+      "dtw_angle": 44.0014,
+      "accel": 0.1926
+    },
+    "weights": {
+      "angle": 0.25,
+      "dtw_angle": 0.38,
+      "accel": 0.37
+    },
+    "threshold": 0.25,
+    "exclusions": "No person or trial excluded; incomplete SUS rows excluded with counts; no interpolation"
+  },
+  "config_sha256": "284f84793e9f1e2374973f18e0fe45b0c43f92e934c88a27d1ef27202db9e50a",
+  "input_inventory_sha256": "d494aeb9b23b6e722aeabf0a0979bb3ba739777f01a9477cab974c6860924363",
+  "environment": {
+    "python": "3.10.3",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "openpyxl": "3.1.5",
+      "pypdf": "6.19.0"
+    }
+  },
+  "elapsed_s": 2.221810299961362,
+  "original_and_snapshot_verified": true,
+  "output": "reports/phase1_aggregates.json"
+}
