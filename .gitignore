@@ -1,0 +1,9 @@
+data/
+artifacts/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.local.json
+check_remote.py
+inspect_local.py
