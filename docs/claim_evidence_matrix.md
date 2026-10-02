@@ -1,0 +1,36 @@
+# 주장별 근거표
+
+상태: **지지됨**은 현재 제공 자료가 해당 범위의 기술적 주장을 직접 뒷받침함, **제한된 조건에서 지지**는 특정 데이터/운영 점수 조건에 한정, **자료 부족**은 핵심 원자료·설계가 없어 판정 불가, **반박됨**은 제공 결과가 주장 반대 방향, **아직 미검증**은 적절한 공격/측정이 실행되지 않음을 뜻한다. 표의 위치는 추출 PDF 페이지이고 원보고서를 편집하지 않았다.
+
+| ID / 위치 | 주장 | 근거 파일·코드 | 상태 | 다른 설명·제약 | 필요한 보완 |
+|---|---|---|---|---|---|
+| C01 / PDF p.16-18 | 가림 수준이 높은 조건에서 사람과 MediaPipe 사이 성능 격차가 있고 parameter tuning 뒤에도 사람 평균이 더 높음 | 보고서 서술; 실행출력·개인 원자료는 미제공 | 자료 부족 | n=4, 여러 MediaPipe 파라미터 조합은 재현 불가. 검출 실패·자세오차·운동수행을 분리하지 못함 | 원본 로그/설정/참여자 단위 결과 회수. 없으면 새 동일조건 확인 실험을 별도 승인 후 설계 |
+| C02 / PDF p.17 | 초기 사람 레벨3 .493과 표 10 사람 점수 .557은 같은 결과 | PDF p.17 .493(레벨3); PDF p.18 표10 .557; 표10 구성지표로 계산한 가중합 .55677 | 자료 부족 | .493은 본문상 초기 n=4 레벨3 평균, .557은 표10 표본/버전/요약 범위 설명이 불충분. 다른 표본/코드 버전 가능성은 추론이지 사실 확정 아님 | 표10 원계산 workbook, 평가 단위와 점수 원자료, 당시 코드 버전 확인 |
+| C03 / PDF p.16-18 | 가중치·지표는 사전 고정된 독립 평가에서 타당성이 검증됨 | PDF 설명은 사람-MediaPipe 평균 격차로 후보 지표/가중치 선정, 후속 표; JS 상수 | 반박됨(독립 검증이라는 해석) | 결과를 본 자료로 지표와 가중치를 고르면 낙관적 선택 편향 가능. E_max .1926/.0440014/.0469413 선정 범위·선정 시점과 독립성 근거 없음 | 분할 단위는 원본 동작/세션. 개발자료에서 점수식·E_max·threshold 고정 후 held-out 원본에서 한 번 검증 |
+| C04 / PDF p.17-19 | HaMeR 첫 비교에서 사람 평균점수보다 낮으므로 방어 성공 | 표10/11, 후속 표 12; notebooks | 반박됨(최종 결과 기준) | 이후 결과는 사람 .6631, HaMeR .7218, HaMeR 점수 28/28 threshold 통과. 이전과 데이터·페이드·버전이 다를 수 있음 | 초기 HaMeR raw 데이터 회수 후 버전 차이 분해; 최종 주장은 최종 조건과 함께 제시 |
+| C05 / PDF p.20-22 | A/B 중 포인트 프레임 방식이 사람에게 어렵고 봇 격차를 키움; 사람 p≈.012 | PDF와 `2026...10명.xlsx`; A/B 참가자 점수 기록 미발견 | 자료 부족 | 10명 원점수·condition sequence가 없어 짝 차이·검정·효과 크기·순서 효과를 재계산할 수 없음. SUS의 n=10은 A/B 점수가 아님 | 개인×A/B 점수·무작위 순서·제외/결측 규칙 회수. 회수 불가면 결과는 보고된 값으로만 표기 |
+| C06 / PDF p.21 | A/B는 시간적 맥락만 조작한 깨끗한 비교 | A/B 코드와 보고서 설명 | 제한된 조건에서 지지 | A는 동영상 진행, B는 기록 포인트만 송출하여 가용 프레임 수·시각 노출량·전환 간 시간도 함께 바뀔 가능성. 자세 입력·대기시간도 달라질 수 있음 | 동일 원본·포인트·노출 시간/시도 수를 고정하고 맥락 연속성만 바꾸는 대조 설계 |
+| C07 / PDF p.23-27 | 최종 기준에서 사람보다 HaMeR가 평균 점수도 높고 통과율도 높음 | 18 human JSON, XLSX; `hammer_exp3_results.json`; audit.py | 제한된 조건에서 지지 | 점수 평균 .6631 vs .7218; 17/18 vs 28/28. 28 pair는 8개 원본 동작을 반복 사용하므로 독립 28표본 아님. HaMeR의 페이드 입력은 사용자가 본 동일 자극이 아님 | 원본 동작 군집을 고려한 기술통계, 같은 보이는 입력 공격, score·전체 포인트 관문·end-to-end 결과 분리 |
+| C08 / PDF p.26-27 | HaMeR가 전체 실제 챌린지를 28/28 해결 | 조합 score와 38° gate 저장 값, notebook `stop_on_fail=false` | 반박됨(운영 전체 흐름 의미) | score는 28/28 threshold 통과하지만 gate는 224 중 189 성공, 모든 gate 성공 조합은 10/28. stop_on_fail=false로 실패해도 계속 측정. 실제 시스템은 실패 포인트에서 진행이 멈출 수 있음 | fail-fast를 포함한 재분석 또는 모의운영 흐름; 가능한 저장 로그가 부족하면 새 평가 |
+| C09 / PDF p.24-25 | 표준 SUS가 58.75에서 73.3으로 개선, 최종 α=.823 | 10명/21명 XLSX, 명시 SUS 채점 | 제한된 조건에서 지지 | 값 58.75, 73.3333 및 α=.8187/.8231 재현. 표본이 다른 두 단면 비교라 개인 내 향상/인과효과 아님. SUS 10명·21명과 수행 18명 매칭 자료 없음. 낮은 응답은 부정 문항 방향을 고려해야 함 | 동일 참여자 전후 설계 또는 조건 간 비인과적 기술 비교로 표현, confidence interval·분포·접근성 조사 병행 |
+| C10 / PDF p.24 | n=21 SUS의 응답 일관성이 높으므로 구성개념·보안효과가 검증됨 | α 계산 | 아직 미검증(그 해석) | α=.823은 문항 내 상관 요약일 뿐 타당도, 보안성, 다른 인구 일반화, CAPTCHA와 점수의 상관을 입증하지 않음 | 사용성 구성타당도와 보안 평가는 별도 질문·별도 설계 |
+| C11 / PDF p.8-17, p.26 | 사람은 시간 맥락/예측 부호화로 AI보다 가려진 손을 잘 복원 | 이론 배경과 A/B 서술; 원문헌은 부분 서지 확인 | 자료 부족 | 화면 점수에는 추론, 운동 재현, 카메라/MediaPipe 감지가 모두 포함. 예측 부호화의 신경 인지 기제를 조작·측정한 실험 아님. 최종 점수에서 HaMeR 우위 | 동일 입력 지각과 운동/카메라 계층 분해; cognitive mechanism 주장은 직접 측정 전까지 가설/설계동기로 한정 |
+| C12 / PDF p.26-28 | 평균 12.70초는 사용자가 인증을 완료하는 총 시간 | JSON segment duration, `sessionLog`, HTML phase | 제한된 조건에서 지지 | 12.699초는 segment duration 합. sessionLog 첫~마지막은 평균 21.571초, 대기·matching 차이와 2153/7332 장시간 세션 포함. 양 값은 다른 시간 정의 | start/first challenge/camera permission/submit event timestamp를 포함한 UI 이벤트로 지연을 분리 |
+| C13 / PDF p.26-28 | 21개 SUS 응답자는 수행 18명과 같거나 그 중 일부임 | 별도 SUS xlsx와 session JSON | 자료 부족 | 공통 가명/교차참조 키 불발견. 21/18 차이의 이유 불명 | 비식별 연결키/제외 기록 확인. 연결 불가면 독립 표본으로 보도 |
+| C14 / PDF p.4, 27 | 기존 연구와 구분되는 최초의 손동작·가림 CAPTCHA 방식 | 보고서 선행표, CHGR, Lenovo patent, Usuzaki et al., CAPTURE | 자료 부족 | CHGR도 영상/사진 속 손 제스처를 모방시켜 카메라로 비교하는 손 CAPTCHA. Lenovo 특허는 일련 동작 수행+사용자 이미지 비교. 가린 부분의 시간 추론/신체 모방 조합은 차별 가능성이 있으나 철저한 선행기술 검색 없음 | 유사 개념·목표·입력·가림·시간 단위·보안평가를 대조하는 관련연구표. '최초' 대신 검토된 범위에서의 구별점 제시 |
+| C15 / PDF p.3-4 | Google/Meta 모두 손/얼굴 CAPTCHA를 상용 적용했다 | 참고문헌 Google Cloud·Meta 공식 글 | 반박됨(인용된 Meta 출처가 CAPTCHA라는 해석) | Google Cloud 문서는 손 동작 확인 컬렉션, 동영상/랜드마크 처리로 기술. Meta 2024 원글은 영상 셀카 기반 얼굴 인식, 계정 복구/사기 방지 테스트이며 CAPTCHA라 설명하지 않음 | 제품명/기능을 공식 출처 문구에 맞게 구분. Google 사례도 무조건 reCAPTCHA 제품으로 부르지 말고 Cloud Fraud Defense 문서 명칭 확인 |
+| C16 / 원 보고서 공격 한계 | 원 궤적 추적 공격이 성공해도 사람 평균보다 높은 점수면 서비스 통과를 입증 | 사용자 설명, attack specs/results | 사용자 보고·재현 자료 부족 | 시도수, 점수산식, 첫/재시도, 원 기준 단위, 전체 인증 단계가 없고 제공 visibility-bit 공격과 다를 수 있음 | 원궤적 관측만의 raw prediction, baseline/threshold 및 시도 단위 confusion matrix, gate/score/end-to-end 단계 결과 확보 |
+| C17 / PDF p.26-27 | HaMeR 공격 21분 또는 10시간은 공격 효율의 동등 비교값 | 보고서 두 위치, 코드 실행설명 | 자료 부족 | 보고서 내부에서 10시간과 21분이 모두 등장. 현재 실행 로그·GPU 종류·추론만/설치/재실행 범위·28개 시간 합산 정의 미발견. circle 공격 31.37 ms/frame은 저장 결과의 기존 runtime 값이지 현 세션 재측정이 아님 | 타이머 경계, 장비, 준비/추론/전처리 포함, batch/캐시, 반복 실행을 표준화해 비교 |
+| C18 / PDF p.27 | 제안 시스템은 기존보다 보안이 향상됨 | HaMeR 저장 score·attack evidence | 반박됨(현재 표본에서 실측된 성능 주장) | 28/28 model score 통과, 잘못 맞춘 visibility 공격도 좌표점수 16/16. 비용 비대칭 21분/10시간 논쟁만으로 보안 향상 증거가 되지 않음. 상용 대조나 보호 서비스 없음 | 현재 위협모델에서 공격 성공률과 비용을 동일 입력으로 재측정하고, 미검증 경로는 미검증으로 제한 |
+
+## 참고문헌 확인 상태
+
+- Usuzaki 외, 가려진 한자 텍스트 CAPTCHA 논문은 J-STAGE가 2025-12-01, IEICE Communications Express 14(12), 441–444, DOI `10.23919/comex.2025COL0018`로 표시한다. PDF 참고문헌의 2026 표기 및 `Usazaki` 철자와 차이가 있다. 유사한 visual-completion 동기는 근거가 되지만 손동작 CAPTCHA의 방어 근거는 아니다. [J-STAGE 서지/초록](https://www.jstage.jst.go.jp/article/comex/14/12/14_2025COL0018/_article/-char/en)
+- Pothiraj 외 CAPTURE는 가림 뒤 패턴 객체 개수 추론의 ICCV 2025 benchmark다. 손 관절 동작과 과제·공격 공간이 다르다. [ICCV 원문](https://openaccess.thecvf.com/content/ICCV2025/papers/Pothiraj_CAPTURE_Evaluating_Spatial_Reasoning_in_Vision_Language_Models_via_Occluded_ICCV_2025_paper.pdf)
+- Searles 외 reCAPTCHA v2 USEC 2025 논문은 보고서의 SUS 비교 수치 78.51 checkbox / 58.90 image를 담지만, 독립 표본의 SUS 점수 차이는 무작위화된 직접비교가 아니므로 이 CAPTCHA의 우월성 검정이 아니다. [논문 PDF](https://dev.ndss-symposium.org/wp-content/uploads/usec25-21.pdf)
+- Panwar 등 CHGR 서지: CICT 2018, pp.1–6, DOI `10.1109/INFOCOMTECH.2018.8722409`; 검색으로 출판 메타데이터와 초록은 확인했으나 본문을 직접 열람하지 못했다. 따라서 보고서의 “5개 중 1개 오분류”와 “프로토타입”은 원문 검증 미완료. [J-GLOBAL 서지](https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=201902213920035249)
+- Lenovo US11409855B2(“Gesture based CAPTCHA test”)의 claims는 predetermined gesture 시리즈, user image data, 비교 후 접근 제공을 포함한다. 손동작 CAPTCHA 일반 선행기술이므로 단순한 손 동작 모방 전체의 신규성을 주장하기 어렵다. [Google Patents claims](https://patents.google.com/patent/US11409855B2/en)
+- Google Cloud 공식 페이지는 손동작 확인을 위한 영상 처리, 21개 랜드마크, 권한·접근성 및 삭제를 설명하고 2026-09-25 업데이트를 표시한다. [공식 문서](https://docs.cloud.google.com/recaptcha/docs/hand-gesture-verification?hl=ko)
+- Meta 공식 2024 글은 계정 복구용 영상 셀카/얼굴 인식과 사기 방지 테스트를 설명하며 CAPTCHA라고 부르지 않는다. [Meta Newsroom](https://about.fb.com/news/2024/10/testing-combat-scams-restore-compromised-accounts/)
+- Adams 외 2025-12-23 preprint는 가려진 도형의 시각 단서 통합과 생성형 AI를 비교한다. PDF 본문/DOI 서지 대조는 추가 확인 대상; 분야 맥락을 보탤 뿐 손 CAPTCHA 평가 직접 증거가 아니다. [SSRN record](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5954020)
+- 나머지 논문 전체 목록(원격 측정·HAGRID·MediaPipe·HaMeR·Predictive coding 포함)의 존재·정확한 메타데이터·보고서 내 특정 인용과 주장의 일치는 아직 전수 검증되지 않았다. 신규성 검색은 광범위하지 않으며 '최초' 판단을 뒷받침하지 않는다.

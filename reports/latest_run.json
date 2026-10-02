@@ -1,6 +1,6 @@
 {
-  "run_id": "20261001T142025Z",
-  "code_commit": "26c792b2b777f856c345ed7aba3a0e06f7678cf2",
+  "run_id": "20261002T145118Z",
+  "code_commit": "25307974b8c3038c633a4e8122c6d94fb2d5cb71",
   "code_hashes": {
     "analysis/audit.py": "a077d51d1bc0b958728de20e76852e880afb8cd1add1f065efc807a7c43ebbb2",
     "analysis/replay_existing.py": "fe0f1f94ef62d58d27f4c91ad28d3a13f4b58a1eb52ab8c2a287b610115a191e"
@@ -32,7 +32,7 @@
       "pypdf": "6.19.0"
     }
   },
-  "elapsed_s": 2.221810299961362,
+  "elapsed_s": 4.360694600036368,
   "original_and_snapshot_verified": true,
   "output": "reports/phase1_aggregates.json"
 }

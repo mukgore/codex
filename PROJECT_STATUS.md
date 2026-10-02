@@ -1,11 +1,46 @@
-# 진행 상태
+# 프로젝트 진행 상태 — 2026-10-02
 
-- 범위: 1차 결과 재현·검증·보완 실험 계획. 후속 구현 승인 없음.
-- 원본: ../CAPTCHA. 직접 수정하지 않음. data/raw 스냅샷과 data/inventory.json 생성 완료. 안전 종료 직전 원본과 스냅샷 전체 해시 재검증 통과.
-- 지정 원격: https://github.com/mukgore/codex.git. 기존 main 이력 보존. 공개 저장소임을 확인했고 사용자가 공개 사용으로 변경 승인함. 선별한 코드·문서·집계만 푸시한다.
-- 조사: 원자료 164개(숨김 desktop.ini 포함), 157382505바이트. 상위 및 자료 하위 AGENTS.md 없음. Python 3.10 설치 확인, 기본 PATH에는 없음. gh 없음. 로컬 스냅샷 전체 해시 검증 완료.
-- 완료: 보고서 로컬 텍스트 추출, 사람 18명·HaMeR 28조합 저장 오차→점수 재계산, SUS 10명/21명 및 α 재현, 결측·시간 기초 감사, 기존 공격 저장 관측→매칭→좌표 채점 재실행.
-- 검증: 계산 회귀 검사 4개 통과. reports/phase1_aggregates.json과 analysis/audit.py 일치. 공격 재실행 기존 결과와 일치.
-- 상태: 사용자 요청에 따라 안전 종료. 1차 검토 문서·주장 근거표·보완 실험 카드는 미완료. HANDOFF.md 참고.
-- Git: 초기 설정 커밋 26c792b는 푸시 완료. 이번 안전 종료 WIP는 로컬 커밋만 하며 푸시하지 않는다.
-- 다음 명령(저장소 루트 PowerShell): `.\.venv\Scripts\python.exe -m unittest discover -s tests -v`
+## 목표와 단계
+
+- 현재 목표: 1차 연구 현황·재현·데이터/결측/채점/통계 검증, 주장 근거 상태 및 보완 실험 계획 작성.
+- 사용자 재개 지시 후 아래 검토 문서를 작성 중이며 **초안 완료, 사용자 검토 대기** 상태다.
+- 1차 검토·명시 승인 전에는 새 CAPTCHA 후보·입력 방식·서비스·참여자 실험을 시작하지 않는다. 보고서 원본은 직접 편집하지 않았다.
+
+## 완료
+
+- 원자료 164개, 157382505 bytes를 `data/raw/`에 스냅샷하고 `data/inventory.json`의 SHA-256으로 원본과 전부 대조했다. `data/` 전부 Git 제외.
+- PDF 원문을 텍스트로 추출하고 파일/실험 계보를 조사했다. 노트북 3개는 모두 output cell이 없음.
+- 사람 n=18, HaMeR 28조합의 저장 raw score와 detection rate에서 최종 score 재계산; 저장점수와 부동소수점 수준 일치.
+- 두 SUS 응답표 n=10/21 score 및 Cronbach alpha 재현. 점수 58.75/73.333, alpha .819/.823. 누락 응답 없음.
+- 사람 명시 null 141/8782 segment frame, phase·timestamp·좌표 shape·결측 민감도 기초 분석.
+- HaMeR score 28/28 통과와 별개로 38도 gate 189/224 통과, 모든 gate 통과 조합 10/28 및 `stop_on_fail=false` 확인.
+- 원 visibility-bit 공격은 저장 관측 이후 매칭/좌표 scoring 재실행 결과 일치. top-1 14/16, 좌표점수 16/16. 원영상 픽셀 단계는 입력 영상 부재로 재실행하지 않음.
+- 저장된 citation 일부를 J-STAGE/ICCV/Google Patents/Google Cloud/Meta 공식 자료에서 대조. 신규성/전체 문헌 전수검증은 완료 아님.
+- `docs/inventory.md`, `data_dictionary.md`, `reproduction.md`, `claim_evidence_matrix.md`, `threat_model.md`, `followup_experiments.md`, `phase1_review.md` 초안 작성. README/요구 패키지/결정기록 갱신.
+
+## 잠정 결과 및 제한
+
+- 사람 score mean .6631, 17/18 ≥.25. HaMeR score mean .7218, 28/28 ≥.25. 28조합은 8개 동작을 공유하므로 독립 모집단 표본 28개가 아님.
+- 표 10 지표 가중합은 .55677→.557. 본문 초기 레벨3 n=4 .493과 표본/코드 관계 불명. 동일값으로 합치지 않음.
+- p≈.012 n=10 A/B는 원점수·조건순서 자료가 없어 재현 불가. 10명 SUS는 A/B 점수가 아님.
+- n=21 SUS 응답과 n=18 인증 세션의 개인 연결은 불가.
+- 공개된 visibility-bit attack과 사용자가 별도로 보고한 원 위치/크기-only 공격은 구분. latter는 원자료·산식·시도 기록이 특정되지 않아 미재현.
+- 12.70초는 keyframe 일치 이후 recording segment duration 합이며 전체 인증 경과시간이 아님. HaMeR 실행시간은 보고서 내부 10시간/21분 불일치, timed log 미제공.
+- 사람 원영상, 원 level-3 영상 및 HaMeR 실행환경이 없어서 좌표 검출에서 전체 재추론·일반화·end-to-end 인증은 검증하지 않음.
+
+## 산출물
+
+- 핵심 검토: `docs/phase1_review.md`
+- 재현·공격 경계: `docs/reproduction.md`, `docs/threat_model.md`
+- 데이터/실험 계보: `docs/inventory.md`, `docs/data_dictionary.md`
+- 주장표/후속 카드: `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`
+- 공개 집계: `reports/phase1_aggregates.json`, `reports/attack_replay.json`
+- 원본/중단 기록: `HANDOFF.md` (안전 종료 시점의 역사적 기록), `docs/decisions.md`
+
+## 저장소 상태와 다음 단계
+
+- 원격 `https://github.com/mukgore/codex.git`는 공개 저장소이며 사용자 동의로 사용 중. 개인정보, 개별 응답·좌표, 비밀값, 로컬 절대 경로, 대형 원자료는 공개하지 않는다.
+- 안전 종료 커밋 `2530797`은 로컬에 있고 원격보다 한 커밋 앞선 채 재개함. 재개 후 작성한 검토 문서는 아직 커밋 전이다.
+- 이번 재개 범위에서 자동화 검사/테스트를 추가하거나 실행하지 않았다. 분석 출력 재현은 이전 세션의 `reports/phase1_aggregates.json` 및 `attack_replay.json`에 기록되어 있다.
+- 다음 명령(PowerShell, 저장소 루트): `$env:PYTHONIOENCODING='utf-8'; .\.venv\Scripts\python.exe analysis\audit.py`
+- 분석 문서를 reviewable한 단위로 커밋하고 공개 저장 대상만 푸시한 다음 1차 결과·미해결 한계를 사용자에게 검토 요청한다. 사용자의 단계전환 승인 전 후속 아이디어·구현은 하지 않는다.
