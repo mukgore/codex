@@ -65,7 +65,7 @@
 
 - 원격은 `https://github.com/mukgore/codex.git`; 공개 저장소 사용은 사용자 동의가 있었다. 공개 가능한 비식별 문서와 집계만 선별한다.
 - `data/`, `.venv/`, 환경·로컬 보조 파일은 `.gitignore` 대상이다. `git add .`를 사용하지 않는다.
-- 이번 편집 전 HEAD는 `e553d22` (`docs: record phase-one review delivery and pending approval`)이며 원격 `main`과 동기화 상태였다. 새 문서를 선택적으로 커밋한 뒤 push 여부·결과를 기록한다.
+- 이번 편집 전 HEAD `e553d22`에서 문서 8개를 선택적으로 추가·갱신해 `b5ce279` (`research: finalize phase1 status and prepare recovery scan`)로 커밋하고, `2026-10-06` 원격 `main`에 푸시했다.
 - 과거 저장 점수 감사 재현 명령은 저장소 루트 PowerShell에서 `$env:PYTHONIOENCODING='utf-8'; .\.venv\Scripts\python.exe analysis\audit.py`이다. 이는 승인 전 새 단계의 실행 명령이 아니라 기존 분석 재실행 명령이다.
 
 ## 다음 세션 권장 읽기 순서
