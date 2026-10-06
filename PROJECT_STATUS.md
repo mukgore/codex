@@ -1,46 +1,78 @@
-# 프로젝트 진행 상태 — 2026-10-03
+# 프로젝트 진행 상태 — 2026-10-06
 
-## 목표와 단계
+## 현재 단계와 승인 상태
 
-- 현재 목표: 1차 연구 현황·재현·데이터/결측/채점/통계 검증, 주장 근거 상태 및 보완 실험 계획 작성.
-- 사용자 재개 지시 후 검토 문서를 작성했고 **1차 결과·실험 계획 제출, 사용자 검토 대기** 상태다.
-- 1차 검토·명시 승인 전에는 새 CAPTCHA 후보·입력 방식·서비스·참여자 실험을 시작하지 않는다. 보고서 원본은 직접 편집하지 않았다.
+- **현재 단계:** 1차 연구 검토 마무리 및 기존 원자료 회수 준비.
+- 현재 적용한 실행 명세는 원본 자료 폴더의 `hand_captcha_project_spec.md`다. 요청 메시지에 적힌 별도 이름 `조영준요구사항명세서.md`는 현재 프로젝트 파일목록에서 확인하지 못했다.
+- 사용자가 현재 폴더에서 가능한 검증·문서 정리와 이후 전체 PC read-only 자료 회수 준비를 지시했다. 이 범위의 문서 작업을 수행 중이다. 이번 작업에서는 현재 폴더 밖을 검색하지 않는다.
+- 1차 검토의 결과와 제한은 제출되어 있다. 사용자의 이번 지시는 자료 회수 준비까지이며, 새 CAPTCHA/입력 방식/서비스/보안 설계 또는 새로운 참여자 실험에 대한 승인은 아니다. 해당 단계는 별도의 명시적 승인 전 시작하지 않는다.
+- 원보고서와 원자료는 수정하지 않았다. 기존 분석은 별도 코드와 출력으로 보존했다. 공개 GitHub에는 집계·비식별 연구 문서만 커밋한다.
 
-## 완료
+## 이번 폴더에서 확인한 현재 상태
 
-- 원자료 164개, 157382505 bytes를 `data/raw/`에 스냅샷하고 `data/inventory.json`의 SHA-256으로 원본과 전부 대조했다. `data/` 전부 Git 제외.
-- PDF 원문을 텍스트로 추출하고 파일/실험 계보를 조사했다. 노트북 3개는 모두 output cell이 없음.
-- 사람 n=18, HaMeR 28조합의 저장 raw score와 detection rate에서 최종 score 재계산; 저장점수와 부동소수점 수준 일치.
-- 두 SUS 응답표 n=10/21 score 및 Cronbach alpha 재현. 점수 58.75/73.333, alpha .819/.823. 누락 응답 없음.
-- 사람 명시 null 141/8782 segment frame, phase·timestamp·좌표 shape·결측 민감도 기초 분석.
-- HaMeR score 28/28 통과와 별개로 38도 gate 189/224 통과, 모든 gate 통과 조합 10/28 및 `stop_on_fail=false` 확인.
-- 원 visibility-bit 공격은 저장 관측 이후 매칭/좌표 scoring 재실행 결과 일치. top-1 14/16, 좌표점수 16/16. 원영상 픽셀 단계는 입력 영상 부재로 재실행하지 않음.
-- 저장된 citation 일부를 J-STAGE/ICCV/Google Patents/Google Cloud/Meta 공식 자료에서 대조. 신규성/전체 문헌 전수검증은 완료 아님.
-- `docs/inventory.md`, `data_dictionary.md`, `reproduction.md`, `claim_evidence_matrix.md`, `threat_model.md`, `followup_experiments.md`, `phase1_review.md` 초안 작성. README/요구 패키지/결정기록 갱신.
+- 원본 스냅샷은 164개 파일, 157,382,505 bytes이고 `data/raw/` 및 `data/inventory.json`은 Git 추적에서 제외되어 있다. 원본과 스냅샷 해시는 앞선 조사에서 일치했다. 이번 작업은 원본을 수정하지 않았다.
+- 초기 n=4 MediaPipe 원자료, 10명 A/B 개인별 점수·순서·p값 원자료, 표 10 생성 원본, HaMeR의 원 타이머 로그, 사람 촬영 원영상은 제공된 프로젝트 스냅샷에서 확인되지 않았다. 이것은 전부가 컴퓨터에 없다는 뜻은 아니다. 사람 촬영 원영상만은 프로젝트 명세 작성 때 사용자가 없다고 진술한 상태다.
+- 저장된 HaMeR 최종 출력과 조합별 체크포인트는 존재한다. HaMeR 실행 노트북도 있으나 저장 output cell은 없고 원영상, 모델/실행환경의 완전한 고정 및 원 타이머 로그는 확인되지 않았다.
+- `circle_edge_attack` 코드를 포함해 저장 참조 library, 추출 관측·결과 및 요약은 있다. 따라서 저장 관측 뒤 매칭/채점은 재현됐다. 원 level-3 픽셀 입력 영상 및 픽셀 추출 실행 로그는 현재 스냅샷에서 찾지 못했다.
+- `captcha_attack`의 IK 코드, 보정값, 결과 JSON, 고정 원 영상 및 관련 landmark 산출물은 일부 있다. 저장 집계 확인은 했지만 IK/MediaPipe 전체 재추론을 재실행하지 않았다.
+- 사용자가 확인한 HaMeR 시간 설명: **약 10시간은 28조합 전체 사이클 1회, 약 21분은 그 작업의 조합당 대략적인 평균**이다. 10시간을 28로 나눈 값은 약 21.4분이므로 서로 충돌하지 않는다. 두 시간 모두 사용자 기억에 근거한 근사치이며 원 타이머 로그가 없어 정확한 측정값으로 검증할 수 없다. 이전 문서의 “서로 모순” 해석은 철회한다.
 
-## 잠정 결과 및 제한
+## 완료된 1차 검증과 재현 결과
 
-- 사람 score mean .6631, 17/18 ≥.25. HaMeR score mean .7218, 28/28 ≥.25. 28조합은 8개 동작을 공유하므로 독립 모집단 표본 28개가 아님.
-- 표 10 지표 가중합은 .55677→.557. 본문 초기 레벨3 n=4 .493과 표본/코드 관계 불명. 동일값으로 합치지 않음.
-- p≈.012 n=10 A/B는 원점수·조건순서 자료가 없어 재현 불가. 10명 SUS는 A/B 점수가 아님.
-- n=21 SUS 응답과 n=18 인증 세션의 개인 연결은 불가.
-- 공개된 visibility-bit attack과 사용자가 별도로 보고한 원 위치/크기-only 공격은 구분. latter는 원자료·산식·시도 기록이 특정되지 않아 미재현.
-- 12.70초는 keyframe 일치 이후 recording segment duration 합이며 전체 인증 경과시간이 아님. HaMeR 실행시간은 보고서 내부 10시간/21분 불일치, timed log 미제공.
-- 사람 원영상, 원 level-3 영상 및 HaMeR 실행환경이 없어서 좌표 검출에서 전체 재추론·일반화·end-to-end 인증은 검증하지 않음.
+- 원자료 164개를 로컬 스냅샷하고 파일목록·해시를 원본과 대조했다. 공개 Git에서 `data/` 전체를 제외했다.
+- 저장된 18명 및 28개 HaMeR 조합의 raw score와 detection rate로 채점식을 재적용했다. 저장 최종 점수와 최대 차이는 부동소수점 오차 약 `1.11e-16`이다. 이는 좌표부터 raw error까지 완전 재구현했다는 뜻은 아니다.
+- 사람 점수 평균 `.6631`, 17/18이 `.25` 이상. HaMeR 조합 평균 `.7218`, 28/28 점수 `.25` 이상이다. 28조합은 8개 원동작을 공유한다.
+- HaMeR의 224개 38° 포인트 관문 중 189개 통과, 전체 관문 통과 조합 10/28. `stop_on_fail=false`이므로 점수 기준 통과를 전체 fail-fast 흐름 인증 성공으로 읽지 않는다.
+- 사람 segment frame 8,782개 중 명시적 null 141개(1.61%). 중복/역전 timestamp, landmark shape 오류, 비유한 좌표는 관측되지 않았다. 이미지 경계 밖 좌표가 있는 검출 프레임 369개를 자동 제외하지 않았다.
+- SUS 두 응답표를 별도로 재계산: n=10 평균 58.75, α=.819; n=21 평균 73.333, α=.823. 이 두 표본과 수행 18명의 개인 연결 근거는 없다.
+- 표 10 구성값 `.747/.464/.337`에 `.44/.31/.25`를 곱한 합은 `.55677`, 반올림 `.557`이다. 원 workbook과 모집단 연결이 없어 본문 n=4 `.493`과의 차이는 미해결이다.
+- 기존 circle-edge visibility-bit 저장 관측의 매칭/좌표점수를 재실행: top-1 14/16, 동점 0, replay 점수 16/16, 평균 `.9737`. 원 픽셀 추출은 재현하지 않았으며 원 중심/반지름-only 공격을 재현한 결과가 아니다.
+- 사람 `segments[].duration` 합 평균은 12.70초, session log 첫~마지막 시각 평균은 21.57초다. 서로 다른 시간 구간이며 전체 UI 인증 경과시간은 아직 검증되지 않았다.
 
-## 산출물
+## 재현 불가 또는 자료 부족으로 보류
 
-- 핵심 검토: `docs/phase1_review.md`
-- 재현·공격 경계: `docs/reproduction.md`, `docs/threat_model.md`
-- 데이터/실험 계보: `docs/inventory.md`, `docs/data_dictionary.md`
-- 주장표/후속 카드: `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`
-- 공개 집계: `reports/phase1_aggregates.json`, `reports/attack_replay.json`
-- 원본/중단 기록: `HANDOFF.md` (안전 종료 시점의 역사적 기록), `docs/decisions.md`
+- **초기 n=4 / MediaPipe 25개 파라미터 비교:** 대응 원점수·좌표·실행 출력·설정이 현재 스냅샷에 없다. 보고서의 `.493`, `.522`, `.156`은 문서 기재값으로만 유지한다.
+- **10명 A/B와 p≈.012:** 10명 SUS 응답표는 있으나 A/B 개인별 score, A/B 순서/배정, 검정 입력 및 분석 코드가 확인되지 않는다. p값·짝별 차이를 새로 계산하지 않았다.
+- **표 10의 출처 및 `.493` 연결:** 합계는 재계산되지만 표 10 원 workbook/대응 원자료가 현재 확인되지 않는다.
+- **HaMeR 영상→모델 전체 재실행 및 정밀 runtime:** 좌표·점수 결과와 체크포인트는 존재하지만 입력 영상, 완전한 실행 환경/모델 자원, timer log는 확인되지 않는다. 사용자의 10시간/21분 설명은 서로 일관된 기억 기반 추정이나 정확도는 확인 불가다.
+- **사람 수행 중 오류와 landmark tracker 실패 분해:** 사용자의 기존 진술상 참여자 촬영 원영상은 없다. 이 분석에는 해당 영상과 동의/출처 정보가 필요하다.
+- **원 궤적/크기-only 식별 공격:** 현재 저장 공격은 노출 원 주변의 fingertip visibility bit와 reference library를 사용하는 별도 채널이다. 원 중심/반지름-only 결과의 원자료·산식·시도 기록을 현재 폴더에서 확인하지 못했다.
+- **IK/MediaPipe 원 추론 및 전체 온라인 제출:** 저장 IK 자료는 일부 있지만 전체 원 실행 환경/로그를 검증하지 않았고, 실제 서비스·가상 카메라·보호 action까지의 공격은 시험하지 않았다.
 
-## 저장소 상태와 다음 단계
+미확인 항목은 전체 PC 부재로 판정하지 않는다. 세부 검색 기준과 현재 파일 상태는 [`RECOVERY_TARGETS.md`](RECOVERY_TARGETS.md)에 적었다.
 
-- 원격 `https://github.com/mukgore/codex.git`는 공개 저장소이며 사용자 동의로 사용 중. 개인정보, 개별 응답·좌표, 비밀값, 로컬 절대 경로, 대형 원자료는 공개하지 않는다.
-- 검토 산출물 커밋 `aa82fdc`를 원격 `main`에 푸시 완료. 원격과 로컬 `main`은 동기화되어 있다.
-- 이번 재개 범위에서 자동화 검사/테스트를 추가하거나 실행하지 않았다. 분석 출력 재현은 이전 세션의 `reports/phase1_aggregates.json` 및 `attack_replay.json`에 기록되어 있다.
-- 다음 명령(PowerShell, 저장소 루트): `$env:PYTHONIOENCODING='utf-8'; .\.venv\Scripts\python.exe analysis\audit.py`
-- 사용자가 `docs/phase1_review.md`와 `docs/followup_experiments.md`를 검토하고 다음 작업을 승인하면, 승인 범위를 `docs/decisions.md`에 기록하고 해당 단계만 시작한다. 승인 전 후속 구현은 하지 않는다.
+## 현재 가장 중요한 연구상 발견
+
+현재 제공된 고정 데이터와 브라우저 score 정의에서는 HaMeR의 저장 점수 28/28이 `.25` 기준을 넘고 평균도 사람보다 높다. 그러나 38° gate를 모든 조합이 통과한 것은 아니며 전체 gate 통과는 10/28이다. 저장 visibility-bit 공격도 공개된 작은 고정 library에서 높은 replay score를 냈다. 따라서 기존 자료는 “사람이 AI보다 우위” 또는 “보안 향상”의 일반 주장을 지지하지 않고, 선정 자료와 구현에서의 취약 신호를 보인다. 이는 새 동작/사용자/서비스에 대한 일반화 결론은 아니다.
+
+## 다음 세션에서 자료 회수 후 할 일
+
+1. 먼저 [`RECOVERY_INSTRUCTIONS.md`](RECOVERY_INSTRUCTIONS.md)의 안전 경계와 검색 상태 분류를 읽고, 사용자 승인 범위 안에서만 검색한다.
+2. [`RECOVERY_TARGETS.md`](RECOVERY_TARGETS.md)의 우선순위대로 n=4/MediaPipe, 10명 A/B와 순서 및 통계, 표 10 출처, HaMeR 실행시간/환경, 공격 실행 로그를 찾는다.
+3. 각 후보를 **확실한 복구 / 추가 확인 필요 / 관련 가능성 낮음 / 찾지 못함**으로 분류하고, 못 찾았다는 결론의 검색 범위를 기록한다. participant 원영상은 이미 사용자 보고상 없는 것으로 표기하되 새 위치 검색 결과와 섞지 않는다.
+4. 자료가 회수되어 재분석 승인이 있으면, 먼저 실험 버전·출처·데이터 단위·생성 코드·채점식 계보를 확인한다. 이후 초기 점수/MediaPipe parameter grid, A/B paired effect 및 p값, 표 10 계산, HaMeR 28조합 점수와 gate/time, IK/MediaPipe 저장결과와 재실행 차이를 기존 분석과 비교한다. 새 값은 원 결과와 구분해 기록한다.
+5. 원영상이 없으면 사람 tracker 실패와 실제 수행 오류 분해는 보류/불가로 유지한다. 원 로그가 없으면 HaMeR 시간은 기억 기반 설명 이상으로 주장하지 않는다.
+
+## 승인 전 시작하면 안 되는 작업
+
+- 새 CAPTCHA 후보/입력 방식 또는 새 보안 설계의 구현·비교.
+- 서비스, API, backend, 외부 hosting, 보호 action 연동.
+- 새 참여자 모집·촬영·실험 또는 현재 단계 밖의 사람 대상 분석.
+- 이번 자료회수 승인만으로 전체 PC 검색을 자동 확대하거나, 새 실험·새 보안 ablation으로 전환하는 일.
+- 공개 저장소에 원자료, 응답, 좌표, 참여자 식별정보, 비밀값 또는 개인 경로 추가.
+
+## 저장소·Git·재현
+
+- 원격은 `https://github.com/mukgore/codex.git`; 공개 저장소 사용은 사용자 동의가 있었다. 공개 가능한 비식별 문서와 집계만 선별한다.
+- `data/`, `.venv/`, 환경·로컬 보조 파일은 `.gitignore` 대상이다. `git add .`를 사용하지 않는다.
+- 이번 편집 전 HEAD는 `e553d22` (`docs: record phase-one review delivery and pending approval`)이며 원격 `main`과 동기화 상태였다. 새 문서를 선택적으로 커밋한 뒤 push 여부·결과를 기록한다.
+- 과거 저장 점수 감사 재현 명령은 저장소 루트 PowerShell에서 `$env:PYTHONIOENCODING='utf-8'; .\.venv\Scripts\python.exe analysis\audit.py`이다. 이는 승인 전 새 단계의 실행 명령이 아니라 기존 분석 재실행 명령이다.
+
+## 다음 세션 권장 읽기 순서
+
+1. `PROJECT_STATUS.md`
+2. `RECOVERY_INSTRUCTIONS.md`
+3. `RECOVERY_TARGETS.md`
+4. `docs/phase1_review.md`
+5. `docs/reproduction.md`
+6. 필요할 때 `docs/inventory.md`, `docs/data_dictionary.md`, `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`, `docs/decisions.md`, `docs/threat_model.md`
