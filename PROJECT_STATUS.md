@@ -1,10 +1,19 @@
-# 프로젝트 진행 상태 — 2026-10-06
+# 프로젝트 진행 상태 — 2026-10-17
+
+## 후속 구현 사실 조사 — 2026-10-17
+
+- 사용자가 요청한 특허명세서용 코드 일치 확인을 읽기 전용으로 수행했다. 원본 HTML/Python/노트북을 수정하지 않았고 연구 코드를 실행하지 않았다.
+- 주요 구현 사실과 근거 구분(코드 확인 / 저장 실행기록 확인 / 추론 / 미확인)은 [`docs/implementation_audit_2026-10-17.md`](docs/implementation_audit_2026-10-17.md)에 기록했다.
+- 가림 원의 중심·크기 공식, 검출 누락 시 직전 위치 재사용, 정규화 순서, 1.2배 사용자 좌표열 sliding-window, 실제 점수식, 38°/200ms 관문과 전환 기록의 관계를 확인했다.
+- A/B JSON에는 A/B score 및 순서 구조와 `prod_v2_pool` 버전 표식이 있다. 동일 표식을 쓰는 두 후보 HTML을 JSON만으로 구분할 수 없고, A/B 조건별 화면 소스도 허용 범위에서 찾지 못했다. 개별 값은 공개 문서에 포함하지 않았다.
+- 저장 노트북 output은 세 가림 단계의 출력 이름과 성공 흔적을 포함하지만, `FOR_CAPTCHA` 결과 전체의 직접 생성 출처를 입증하지 않는다.
+- 이 구현 감사는 1차 성능·통계 검증을 새로 수행한 것이 아니며, 특허 등록 가능성도 판단하지 않는다. A/B 원 소스, 최종 배포본/build 식별자, n=4/25개 파라미터 실험 계보가 미확인으로 남아 있다.
 
 ## 현재 단계와 승인 상태
 
-- **현재 단계:** 1차 연구 검토 마무리 및 기존 원자료 회수 준비.
+- **현재 단계:** 1차 연구 검토 마무리. 별도 요청에 따른 특허명세서용 기존 구현 사실 조사도 문서화 완료.
 - 현재 적용한 실행 명세는 원본 자료 폴더의 `hand_captcha_project_spec.md`다. 요청 메시지에 적힌 별도 이름 `조영준요구사항명세서.md`는 현재 프로젝트 파일목록에서 확인하지 못했다.
-- 사용자가 현재 폴더에서 가능한 검증·문서 정리와 이후 전체 PC read-only 자료 회수 준비를 지시했다. 이 범위의 문서 작업을 수행 중이다. 이번 작업에서는 현재 폴더 밖을 검색하지 않는다.
+- 기존 자료회수 지시의 범위는 당시 프로젝트 폴더 안의 확인과 추후 read-only 회수 준비였다. 이후 사용자가 허용한 특정 연구 폴더와 노트북을 대상으로 특허명세서용 구현 사실을 읽기 전용 조사했다. 전체 PC 검색이나 그 밖의 폴더 탐색은 하지 않았다.
 - 1차 검토의 결과와 제한은 제출되어 있다. 사용자의 이번 지시는 자료 회수 준비까지이며, 새 CAPTCHA/입력 방식/서비스/보안 설계 또는 새로운 참여자 실험에 대한 승인은 아니다. 해당 단계는 별도의 명시적 승인 전 시작하지 않는다.
 - 원보고서와 원자료는 수정하지 않았다. 기존 분석은 별도 코드와 출력으로 보존했다. 공개 GitHub에는 집계·비식별 연구 문서만 커밋한다.
 
@@ -73,6 +82,7 @@
 1. `PROJECT_STATUS.md`
 2. `RECOVERY_INSTRUCTIONS.md`
 3. `RECOVERY_TARGETS.md`
-4. `docs/phase1_review.md`
-5. `docs/reproduction.md`
-6. 필요할 때 `docs/inventory.md`, `docs/data_dictionary.md`, `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`, `docs/decisions.md`, `docs/threat_model.md`
+4. `docs/implementation_audit_2026-10-17.md` (특허명세서용 코드 사실 확인)
+5. `docs/phase1_review.md`
+6. `docs/reproduction.md`
+7. 필요할 때 `docs/inventory.md`, `docs/data_dictionary.md`, `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`, `docs/decisions.md`, `docs/threat_model.md`
