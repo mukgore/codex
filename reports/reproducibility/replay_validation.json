@@ -1,0 +1,16 @@
+{
+  "status": "CONDITIONAL_REPLAY",
+  "tolerance_abs": 1e-10,
+  "AB_records": 10,
+  "AB_trials": 20,
+  "prod_v2_pool_sessions": 18,
+  "comparison_rows": 38,
+  "failures": 0,
+  "keyframe_mismatches": 0,
+  "all_numeric_checks_pass": true,
+  "caveats": [
+    "No session-specific executed HTML/build hash.",
+    "No session-specific baseline or pool manifest digest.",
+    "Current candidate references make this a conditional replay."
+  ]
+}

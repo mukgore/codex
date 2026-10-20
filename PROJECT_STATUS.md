@@ -92,3 +92,11 @@
 5. `docs/phase1_review.md`
 6. `docs/reproduction.md`
 7. 필요할 때 `docs/inventory.md`, `docs/data_dictionary.md`, `docs/claim_evidence_matrix.md`, `docs/followup_experiments.md`, `docs/decisions.md`, `docs/threat_model.md`
+
+
+## Reproducibility audit follow-up — 2026-10-20
+
+- Archived A/B (10 paired participants / 20 trials) and prod_v2_pool (18 sessions) were replayed from local JSON against candidate reference data. All 38 records matched within numeric tolerance; actual executed builds remain unconfirmed.
+- A/B paired summary and visualization are under reports/reproducibility; methods and independent cross-check are under docs/reproducibility. Analysis scripts are under analysis/reproducibility.
+- Only aggregate, de-identified results were added to Git. Raw JSON, participant rows, session-level errors, and input fingerprints remain local.
+- No new experiment, attack, CAPTCHA implementation, or deployment was performed.
