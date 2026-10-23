@@ -21,7 +21,6 @@
     "exclusions": "No person or trial excluded; incomplete SUS rows excluded with counts; no interpolation"
   },
   "config_sha256": "284f84793e9f1e2374973f18e0fe45b0c43f92e934c88a27d1ef27202db9e50a",
-  "input_inventory_sha256": "d494aeb9b23b6e722aeabf0a0979bb3ba739777f01a9477cab974c6860924363",
   "environment": {
     "python": "3.10.3",
     "platform": "Windows-10-10.0.26200-SP0",
