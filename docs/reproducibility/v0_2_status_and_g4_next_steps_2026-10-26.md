@@ -31,7 +31,7 @@ GitHub main은 728525c4d3e81142f1d916a8a58205c7fb36d977까지 갱신되어 있�
 | FR6 (현재 설계 수용 기준) | ACCEPTED — 설계만 | 위협 지식, 자원, 동일 challenge 원칙, gate/score/end-to-end 분리, source-level split, 평가 전 잠금, 성공·실패·불확정 초안이 기존 위협 모델·후속 실험 설계에 있다. 실행용 수치와 preregistration은 별도 연구자 결정 전까지 미정이다. |
 | G4 실험 증거 | PARTIAL | 기존 오프라인 결과는 독립 재계산됐다. held-out 일반화와 실제 웹 인증 흐름을 측정하지 않아 공격 성공률이나 운영 보안성을 결론낼 수 없다. |
 | NFR1–NFR3 | ACCEPTED | 원자료와 공개 집계를 분리했고, 계산·해석·자료 한계를 구분했다. |
-| NFR4 | PARTIAL | 공개 추적 파일은 집계·문서·분석 코드 중심이며 raw 데이터 폴더는 gitignore 대상이다. 이 확인은 전체 Git history의 비밀값 감사를 대신하지 않는다. |
+| NFR4 | PARTIAL | data/는 gitignore 대상이고 현재 GitHub main의 알려진 개인 절대경로·원자료 세션 파일명 검색은 일치 항목이 없었다. 다만 code search는 전체 Git history 비밀값 감사를 대신하지 않는다. |
 | NFR5–NFR6 | ACCEPTED | 기존 검증은 로컬 CPU/기존 자료 범위였고, 새 데이터 생성·서비스 배포·가중치 변경은 하지 않았다. |
 | LR1–LR2 | ACCEPTED | 데이터 품질·통계·일반화의 한계를 설명하고 독립 검증 반론을 연결했다. |
 | LR3 | REQUIRES_RESEARCHER_DECISION | 취약 신호를 연구 결론으로 어떻게 표현할지, G3 해석을 최종 승인할지는 연구자 판단이다. |
