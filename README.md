@@ -40,3 +40,7 @@ Independent, conditional replay of the archived A/B and prod_v2_pool records and
 ```bash
 python -m unittest discover -s tests -p test_standard_metrics.py -v
 ```
+
+## 영상 풀·가림 생성·송출 설계 v0.4
+
+[동작 영상 풀 확보·가림 생성·보안 송출 요구사항](docs/video_pool_occlusion_delivery_requirements_v0.4.md)은 기존 handcaptcha 구현의 정적 감사, 영상 확보·사용권·중복 관리, 전 프레임 가림 및 재디코딩 검사, 정답 비공개·세션 기반 송출, 반복노출 공격과 운영 인수 시험을 정의합니다. 설계 문서이며 신규 영상 생성·보안 실험·배포를 수행했다는 의미가 아닙니다.
