@@ -30,3 +30,13 @@ $env:PYTHONIOENCODING = 'utf-8'
 ## Reproducibility follow-up (2026-10)
 
 Independent, conditional replay of the archived A/B and prod_v2_pool records and the paired A/B summary are organized under [analysis/reproducibility](analysis/reproducibility), [docs/reproducibility](docs/reproducibility), and [reports/reproducibility](reports/reproducibility). See the [artifact map](docs/reproducibility/README.md). Raw records, participant-level rows, per-session errors, and input hashes remain local and are excluded from Git. Historical executed-build provenance remains unresolved.
+
+## 실용성 검증 및 표준 채점 전환 v0.3
+
+- [실용성·사업성 검증 요구사항](docs/practical_validation_requirements_v0.3.md): 오답 거부, 미관찰 문제, 입력 보호와 가림의 추가 효과, 사용자 부담, 비용, 구매 증거를 분리합니다.
+- [prod 분석 및 표준 수학 기반 채점 전환](docs/scoring_standardization_v0.3.md): handcaptcha prod의 고정 버전을 분석하고 DTW·시간 미분·오류율 곡선·임계값 선택의 이행 요구사항을 정의합니다.
+- [실험용 수학 모듈](validation_v03/standard_metrics.py)과 [합성 테스트](tests/test_standard_metrics.py)를 추가했습니다. 실제 사람/공격 성능 개선이나 prod 교체·배포를 의미하지 않습니다.
+
+```bash
+python -m unittest discover -s tests -p test_standard_metrics.py -v
+```
