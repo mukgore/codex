@@ -111,6 +111,17 @@ seed를 숨기는 것이 생성 규칙을 숨긴다는 뜻은 아니다. 공격�
 
 ## 8. 외부 연구와 사용권
 
+### 8.1 신규성·선행기술 경계 (2026-10-26 추가)
+
+- [Shumilov & Philippovich, 2014, *Using 3D Animated Hand Gestures to Create a New Type of CAPTCHA*](https://ceur-ws.org/Vol-1197/paper22.pdf)는 **3D 손 모델을 프로그램으로 애니메이션하고 손가락 충돌을 다루는 CAPTCHA**를 이미 제안했다. 논문상의 과제는 손 제스처를 문자/숫자처럼 읽는 방식이며, 카메라로 사용자가 물체를 잡는 자세를 재현해 채점하는 구현은 본문에서 확인되지 않는다. 3D 손 생성·충돌·CAPTCHA 결합 자체를 새로운 기여라고 주장하지 않는다.
+- [Shumilov & Philippovich, 2016, *Gesture-based animated CAPTCHA*](https://doi.org/10.1108/ICS-12-2014-0082)는 애니메이션 손동작을 문자/숫자로 읽는 CAPTCHA를 다룬다. 공개 초록만 확인했으므로 전체 구현 대비는 본문 입수 후 보완.
+- [Shim et al., 2026, *Designing cognitive 3D immersive CAPTCHA for human verification in virtual reality systems*](https://doi.org/10.1007/s10055-026-01487-z)는 3D 물체와 공간 상호작용을 CAPTCHA 과제에 사용한다. 확인한 3D Gathering은 유사 물체 선택 과제이고 손·물체 접촉을 가린 뒤 모사하는 과제와 같다고 단정할 수 없다.
+- [AffHandGen, ECCV 2026](https://narusuzuki.github.io/projects/26-affhandgen/)은 물체의 형태·용도를 단서로 심하게 가려진 3D 손 자세를 보정한다. 이는 '물체 정보를 사용해야 한다'가 AI에게 어려운 일이라는 전제를 직접 약화시킨다.
+- 잠정 차별화 가설: **접촉 제약으로 생성한 다양한 물체-손 장면에서 일부 손을 가리고, 사람에게 물체 단서를 활용한 동작 재현을 요구하며, 서버가 위조 입력과 정답 누출을 구분해 평가**한다. 이 조합의 완전한 선행 부재는 이번 문헌 탐색으로 증명되지 않는다. 특허 청구범위나 논문 신규성을 확정하려면 각 문헌의 청구항/본문, 유사 특허와 공개 이력에 대한 별도 조사가 필요하다.
+- 성능 가설도 별개다. 보이는 손끝만 잇는 A1이 실패하더라도 물체 단서를 넣은 A2/A3의 추론이 쉬워질 수 있다. 사람 성공률과 강한 공격 성공률을 동등 조건에서 비교한다.
+
+### 8.2 자산과 연구용 자료
+
 - [D-Grasp, CVPR 2022](https://openaccess.thecvf.com/content/CVPR2022/html/Christen_D-Grasp_Physically_Plausible_Dynamic_Grasp_Synthesis_for_Hand-Object_Interactions_CVPR_2022_paper.html): 물리적으로 그럴듯한 동적 grasp 합성의 연구 예. 즉시 사용 가능한 서비스 코드·권리의 증거는 아님.
 - [DeepSimHO, NeurIPS 2023](https://papers.nips.cc/paper/2023/hash/fbdaea4878318e214c0577dae4b8bc43-Abstract-Conference.html): 손·물체 자세 추정에 grasp 안정성의 물리 조건을 사용하는 연구. 공격자 역시 유사한 조건을 쓸 수 있음을 고려.
 - [OakInk 공식 프로젝트](https://oakink.net/): 손·물체 영상/자세와 3D grasp 후보. 영상/mesh/모델/인물 권리 각각 확인 전에는 운영 자산으로 전용 금지.
