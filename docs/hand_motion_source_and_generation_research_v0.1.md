@@ -27,6 +27,19 @@
 
 **잠정 선택:** 연구 초기에는 직접 촬영이 자연성·권리·CPU 비용의 기준선으로 더 유리하다. 같은 동작군에서 촬영을 계속 추가할 때의 고유 family 확보 비용과 생성 후보의 검사 통과율을 측정한 후, 생성이 반복 보충에 이익이 있는지 결정한다. 이 비교는 비용/다양성의 판단이며 보안 우위를 뜻하지 않는다.
 
+### 1.1.1 실제 공개 제스처 자료의 개수와 과제 차이
+
+| 공식 원천 | 파일/사례와 정의된 종류 | 분류용 자료를 CAPTCHA 풀로 쓸 때의 함정 |
+|---|---|---|
+| Qualcomm Jester | 148,092 짧은 클립, 27개 분류 class(그중 2개는 no-gesture), 100px·12fps JPG 프레임 | 사람/배경/촬영 take가 다양해도 손짓 의미와 전환 family는 좁다. 저해상도에서 가리면 손 자세 정보가 부족해질 수 있다. 공식 페이지는 연구용으로 안내한다. |
+| IPN Hand | 200개 연속 원본 MP4, 4,000건 이상의 gesture instance, 13개 사전 정의된 static/dynamic gesture; 50명 | 파일 200개와 분할 instance 수를 혼동하지 않는다. 포인터 이동·클릭·zoom 중심이라 가린 손가락 자세/물체 접촉 목표와 다르다. 원본을 송출하면 영상 검색 위험. |
+| EgoGesture | 24,000건 이상 gesture sample, 83개 class, 50명; wearable용 **1인칭 RGB-D** | 종류는 상대적으로 많지만 사용자 화면의 고정 웹캠/한 손 모사 과제와 시점·기기가 다르다. 계약과 외부 송출 허용은 별도 확인. |
+| GRAB / H2O | GRAB: 10명·51개 일상 물체의 손/물체 3D 동작. H2O: 두 손·물체 3D 자세와 interaction label | 분류 제스처보다 접촉/시간 자료가 풍부해 **설계/자연성 연구**에 적합하지만, 실제 소품 없는 G0와 다른 과제이고 가공·학습·송출 권리를 각각 확인해야 한다. |
+
+27/13/83은 각 데이터셋의 **분류 label 수**이지 공격자가 구별하는 정답의 정확한 수는 아니다. 같은 class 안의 손가락·시간 자세가 채점에서 다르면 여러 답이 될 수 있지만, 임계값이 넓거나 보이는 단서로 family가 식별되면 소수 답으로 합쳐질 수 있다. 반대로 구분을 지나치게 좁히면 정상 사람을 거부한다. 따라서 데이터셋 다운로드 건수만으로 보안성을 계산하지 않는다.
+
+**자료 사용 결정:** Jester/IPN/EgoGesture는 동작 후보 목록과 공격자 학습 자료로 먼저 사용 여부를 검토한다. 자료 권리가 허용하더라도 널리 공개된 원본 클립을 그대로 과제로 송출하는 경우 공개 유사도 검색/재사용 공격을 기본 가정으로 둔다. GRAB/H2O는 동작·접촉 family 설계와 자연성 비교에 초점을 둔다. 외부 자료를 CAPTCHA 답안이 비밀인 pool로 간주하지 않는다.
+
 ### 1.2 계수·중단 기준
 
 - 원본 수, 고유 사람/물체/촬영 session 수, 동작/접촉 family 수, 마스크 후 시각적으로 구별 가능한 문제 수, 사람 재현 가능 수, 강한 공격 평가까지 통과한 수를 각각 센다.
@@ -98,6 +111,14 @@ R1 재현용 레코드와 P1 자체 레코드를 분리한다. 모델/객체 fam
 - 사전 등록한 일차 결과는 서버가 실제 보호 동작을 허용한 인간/공격 성공률과 걸린 시간. 보조 결과는 고유 family 수율, 품질 탈락 사유, 촬영/생성/검수 비용, 생성·송출 지연 및 접근성.
 - V2/V3가 V0보다 수율이 높아도 사람 실패나 공격 성공이 늘면 운영 이점과 보안 효과를 따로 결론 낸다. 신뢰구간과 표본 단위를 명시하고 작은 차이를 확정하지 않는다.
 
+### 3.4 유한 풀·문법 학습 공격을 별도 관문으로
+
+1. 문제 단위의 지문을 원본 영상 해시만이 아니라 **최종 가림 화면, 원 궤적, 보이는 손·물체 이동, 채점상 서로 바꿔 제출 가능한 답**에 대해 만든다. 가까운 동작의 군집을 사람이 확인해 실질 family 수를 센다.
+2. 공격자가 `m`개 문제를 획득하고 정답을 얻는 비용을 정한다. 정확히 동일한 고유 문제 `N`개가 균등 발급된다면 `m`개를 **서로 다른 문제로 수집**했을 때 단순 lookup의 새 문제 적중률은 최대 `min(m/N,1)`이다. 실제 비균등 발급, 유사 문제 치환과 답 획득 비용 때문에 이 값은 보안 보장이 아니다. 실제 발급 분포와 검색/치환 공격으로 적중률을 측정한다.
+3. 같은 기초 gesture, 같은 접촉 plan, 같은 카메라/가림 궤적에서 **train에 없는 seed**를 공격자가 풀 수 있는지 시험한다. 그런 다음 기초 gesture/contact/object family 전체를 holdout하여 일반화 공격을 본다. 정답을 몰라도 generator나 공개 자료로 합성 학습이 가능하다고 가정한다.
+4. 예산 범위의 대응책은 (a) 소수 분류 제스처 반복 촬영 대신 사람이 수행 가능한 **접촉/전환 사건 family를 직접 설계·촬영**, (b) 그 범위에서 물체·자세·시점의 제약된 생성, (c) 실질 중복/과다노출·동일 세션 재발급 제한, (d) 비공개 정답·서버 일회성 판정이다. 동작 조각의 임의 연결은 자연성과 숨겨진 답을 깨뜨리므로 접촉 계획과 실제 사람 검사 뒤에만 채택한다.
+5. 풀을 키워도 AI가 **규칙 자체를 학습**해 처음 보는 family를 풀면 실패다. 고유 문제 수, retrieval/lookup 적중률, 공개 생성기 공격, 유효한 사용자 통과율을 함께 보고한다. 기존 공개 참조/클라이언트 판정이 유지되는 한 풀 확대만으로 우회가 해결되었다고 하지 않는다.
+
 ## 4. 실행 순서 및 완료 정의
 
 1. **준비:** G0에서 가능한 동작 family를 촬영 대상별로 확정. 직접 촬영과 synthetic의 물체·그립·시점을 맞추고 권리 대장 작성. 원 영상과 대응하는 기준 자세/시간/가림 정보가 없으면 그 셀을 BLOCKED로 둔다.
@@ -116,3 +137,5 @@ R1 재현용 레코드와 P1 자체 레코드를 분리한다. 모델/객체 fam
 - [Taheri et al., GOAL, CVPR 2022](https://goal.is.tue.mpg.de/); [SMPL-X 모델 라이선스](https://smpl-x.is.tue.mpg.de/modellicense.html).
 - [Christen et al., D-Grasp, CVPR 2022](https://arxiv.org/abs/2112.03028); [공식 코드/실행 지침](https://github.com/sammychristen/dgrasp).
 - [Brahmbhatt et al., ContactPose, ECCV 2020](https://ai.meta.com/research/publications/contactpose-a-dataset-of-grasps-with-object-contact-and-hand-pose/): 물체/접촉 다양성 참고. 다운로드/송출 권리 별도 확인.
+- [Qualcomm Jester 공식 설명](https://www.qualcomm.com/developer/software/jester-dataset); [IPN Hand 저자 데이터셋](https://gibranbenitez.github.io/IPN_Hand/); [EgoGesture 저자 데이터셋](https://nlpr.ia.ac.cn/iva/yfzhang/datasets/egogesture.html); [H2O 저자 프로젝트](https://taeinkwon.com/projects/h2o/).
+- [Strengthening CAPTCHA-based Web Security](https://firstmonday.org/ojs/index.php/fm/article/download/3630/3145): 유한 challenge library 재생, 유한 답안 추측, 고객 측 정답 노출을 별도 공격으로 다룸.
