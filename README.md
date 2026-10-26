@@ -2,7 +2,9 @@
 
 이 저장소는 기존 연구의 결과를 재현하고 한계를 검토하는 공개 분석 저장소입니다. 원본 보고서·참여자 응답·개인별 좌표·영상·모델 산출물은 공개 저장소에 포함하지 않습니다. 공개 가능한 집계 결과와 분석 코드만 제공합니다.
 
-현재 범위는 1차 연구 검증입니다. 후보 CAPTCHA 설계, 입력 UI, 웹서비스 및 신규 참여자 실험은 아직 사용자 승인 단계 전입니다. 진행 상황은 [PROJECT_STATUS.md](PROJECT_STATUS.md), 상세 1차 결과는 [phase1_review.md](docs/phase1_review.md)에서 확인할 수 있습니다.
+1차 연구 검증 결과는 [PROJECT_STATUS.md](PROJECT_STATUS.md)와 [phase1_review.md](docs/phase1_review.md)에 보존되어 있습니다. 이후 추가 지시에 따라 영상 풀·3D 손/물체 CAPTCHA 및 실용성 검증 **명세**를 작성했습니다. [2026-10-26 저장소 감사 및 CAPTCHA 아키텍처 비교](docs/captcha_architecture_and_repo_audit_2026-10-26.md)에 현재 확인된 구현 결함과 미검증 항목을 모았습니다. 이 저장소의 명세를 신규 서비스 구현·보안성 검증·참여자 실험 완료로 읽지 마세요.
+
+`handcaptcha` 확장 렌더러의 누락 가림·시간축 검사 수정안은 [별도 적용 패치](patches/handcaptcha_fail_closed_mask_2026-10-26.patch)에 보존했습니다. GitHub 연결이 그 저장소의 브랜치 쓰기를 거부하여 아직 원 저장소에 반영되지 않았습니다.
 
 ## 재현 가능한 분석
 
@@ -44,3 +46,5 @@ python -m unittest discover -s tests -p test_standard_metrics.py -v
 ## 영상 풀·가림 생성·송출 설계 v0.4
 
 [동작 영상 풀 확보·가림 생성·보안 송출 요구사항](docs/video_pool_occlusion_delivery_requirements_v0.4.md)은 기존 handcaptcha 구현의 정적 감사, 영상 확보·사용권·중복 관리, 전 프레임 가림 및 재디코딩 검사, 정답 비공개·세션 기반 송출, 반복노출 공격과 운영 인수 시험을 정의합니다. 설계 문서이며 신규 영상 생성·보안 실험·배포를 수행했다는 의미가 아닙니다.
+
+[3D 손·물체 상호작용 후보](docs/3d_hand_object_challenge_requirements_v0.1.md)는 물체의 접촉 단서를 포함하는 생성형 과제와 사람/강한 공격 비교를 정의합니다. 현재는 제안·미검증이며 기존 촬영 영상 풀을 대체하거나 실시간 렌더링이 가능하다고 확정하지 않습니다.

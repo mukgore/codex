@@ -1,0 +1,384 @@
+From 0c4e8992ee76c03131cd13f02f28f729df712e25 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Mon, 26 Oct 2026 02:39:44 +0100
+Subject: [PATCH] Guard research mask renderer against missing and misaligned
+ frames
+
+---
+ .gitignore                                   |   5 +
+ README.md                                    |  15 +++
+ dataset_pipeline/stage6_occlusion.py         | 128 ++++++++++++++-----
+ dataset_pipeline/stage7_gate.py              |  22 +++-
+ dataset_pipeline/tests/test_mask_delivery.py |  93 ++++++++++++++
+ dataset_pipeline/tests/test_stage7_gate.py   |   6 +-
+ 6 files changed, 227 insertions(+), 42 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 dataset_pipeline/tests/test_mask_delivery.py
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..0afe95b
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,5 @@
++__pycache__/
++.pytest_cache/
++*.py[cod]
++pipeline_output/
++*.partial.mp4
+diff --git a/README.md b/README.md
+index 32aa6af..5e38d50 100644
+--- a/README.md
++++ b/README.md
+@@ -36,3 +36,18 @@ AI(claude 웹 서비스, claude code)는 해당 프로젝트 명세사항을 실
+    제72회 경기도과학전람회 우수상 수상 및 경기도 대표 선정
+    
+    제72회 전국과학전람회 특상 수상(과학기술정보통신부 장관상)
++
++
++5. 영상 풀 확장 코드의 상태
++
++`dataset_pipeline/`은 연구용 후보 검사 코드입니다. `run_batch()`의 `accepted`는
++기하 조건의 후보 판정이며, 가려진 최종 MP4의 생성·전 프레임 픽셀 검사·권리 확인·
++서버 인증 완료를 뜻하지 않습니다. Stage 6 렌더러는 원본 프레임과 가림 좌표가
++일대일로 맞는 경우만 받습니다. 프레임 삭제·역재생 등의 변형은 시간축 대응표가
++구현되기 전까지 이 렌더러에 넣지 마세요. 누락 마스크는 전체 출력을 거부합니다.
++
++공개 `pool_manifest.json`과 `custom*_landmarks.json`은 시연 자료입니다.
++브라우저에서 기준 좌표와 점수를 다루므로, 화면의 '통과'는 외부 서비스를
++인증한 결과가 아닙니다. 현재 8개 clip이나 `l*/r*` 실험 파일을 운영 보안
++승인 풀로 간주하지 마세요. 신규 자료의 권리·가림·노출·공격 검증 조건은
++[codex 영상 풀 명세](https://github.com/mukgore/codex/blob/main/docs/video_pool_occlusion_delivery_requirements_v0.4.md)에 있습니다.
+diff --git a/dataset_pipeline/stage6_occlusion.py b/dataset_pipeline/stage6_occlusion.py
+index b2c3e5d..72cd3da 100644
+--- a/dataset_pipeline/stage6_occlusion.py
++++ b/dataset_pipeline/stage6_occlusion.py
+@@ -11,10 +11,13 @@ calibrated in Stage 5 specifically against dist(P0,P9), plugging it into the
+ distance. We follow the explicit Stage 6 formula here and only reuse
+ generate_occluded_video()'s cv2 I/O loop from handtest1.py, not its math.
+ """
++import math
++import os
++import tempfile
++
+ import cv2
+ 
+ from dataset_pipeline.common import P0, P9
+-from dataset_pipeline.geometry import dist, midpoint
+ from dataset_pipeline.stage1_extract import frame_points
+ 
+ 
+@@ -24,37 +27,98 @@ def project_occlusion_circle(image_lm_px, w3_new):
+     Always projects using this same frame's 2D image landmarks -- never a 3D
+     world -> 2D pixel reprojection via a camera model -- since MediaPipe
+     returns both landmark sets from the same detection call."""
+-    w, mcp9 = image_lm_px[P0], image_lm_px[P9]
+-    diameter = dist(w, mcp9) * w3_new
+-    center = midpoint(w, mcp9)
+-    # Keep center in the same (x,y,z) shape as the landmark points so
+-    # downstream dist() calls (Stage 7) don't hit a shape mismatch; only
+-    # x/y are used when actually drawing the mask (cv2.circle is 2D).
+-    return tuple(float(c) for c in center), diameter / 2.0
++    if not math.isfinite(w3_new) or w3_new <= 0:
++        raise ValueError("w3_new must be finite and positive")
++    w, mcp9 = image_lm_px[P0][:2], image_lm_px[P9][:2]
++    if not all(math.isfinite(v) for v in (*w, *mcp9)):
++        raise ValueError("Mask landmarks must be finite")
++    diameter = math.dist(w, mcp9) * w3_new
++    if not math.isfinite(diameter) or diameter <= 0:
++        raise ValueError("Occlusion circle is degenerate")
++    center = tuple((float(a) + float(b)) / 2 for a, b in zip(w, mcp9))
++    return center, diameter / 2.0
+ 
+ 
+ def generate_occluded_video(video_path, frames, info, w3_new, output_path):
+-    """cv2 read/draw/write loop ported from handtest1.py's
+-    generate_occluded_video(); circle math replaced per
+-    project_occlusion_circle() above."""
+-    cap = cv2.VideoCapture(video_path)
+-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+-    out = cv2.VideoWriter(output_path, fourcc, info["fps"], (info["width"], info["height"]))
+-
+-    last_center, last_radius = None, None
+-    idx = 0
+-    while True:
+-        ret, frame = cap.read()
+-        if not ret:
+-            break
+-        if idx < len(frames):
+-            pts = frame_points(frames[idx], "px")
+-            if pts is not None:
+-                last_center, last_radius = project_occlusion_circle(pts, w3_new)
+-        if last_center and last_radius:
+-            cv2.circle(frame, (int(last_center[0]), int(last_center[1])), int(last_radius), (0, 0, 0), -1)
+-        out.write(frame)
+-        idx += 1
+-
+-    cap.release()
+-    out.release()
++    """Diagnostic renderer for unfiltered, un-reversed one-to-one source frames.
++
++    Fail closed for missing masks or frame index/count mismatches. A successful
++    return only checks decoding frame count, not per-pixel post-encode mask
++    integrity or human/security suitability; this is not a release gate.
++    """
++    # This renderer has no source/output timeline remapping. Refuse filtered or
++    # reversed arrays rather than applying a mask to a different source frame.
++    if os.path.abspath(video_path) == os.path.abspath(output_path):
++        raise ValueError("Output must differ from the original video")
++    if os.path.exists(output_path):
++        raise FileExistsError("Refusing to overwrite an existing masked artifact")
++    if not frames or not math.isfinite(info["fps"]) or info["fps"] <= 0:
++        raise ValueError("Frames and a positive finite FPS are required")
++    if info["width"] <= 0 or info["height"] <= 0:
++        raise ValueError("Invalid video dimensions")
++    masks = []
++    for idx, record in enumerate(frames):
++        if record.get("frame_idx") != idx:
++            raise ValueError("Frames must match consecutive source frame indices")
++        pts = frame_points(record, "px")
++        if pts is None:
++            raise ValueError(f"No mask landmarks at frame {idx}")
++        center, radius = project_occlusion_circle(pts, w3_new)
++        if not (0 <= center[0] < info["width"] and 0 <= center[1] < info["height"]):
++            raise ValueError(f"Mask center outside video at frame {idx}")
++        if int(radius) < 1:
++            raise ValueError(f"Mask radius too small at frame {idx}")
++        masks.append((center, radius))
++
++    output_dir = os.path.dirname(os.path.abspath(output_path))
++    fd, tmp_path = tempfile.mkstemp(prefix=".masked-", suffix=".mp4", dir=output_dir)
++    os.close(fd)
++    cap = out = None
++    try:
++        cap = cv2.VideoCapture(video_path)
++        if not cap.isOpened():
++            raise ValueError("Could not open source video")
++        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
++        out = cv2.VideoWriter(tmp_path, fourcc, info["fps"], (info["width"], info["height"]))
++        if not out.isOpened():
++            raise ValueError("Could not open masked video writer")
++        count = 0
++        while True:
++            ret, frame = cap.read()
++            if not ret:
++                break
++            if count >= len(masks):
++                raise ValueError("Source has more frames than masks")
++            if frame.shape[:2] != (info["height"], info["width"]):
++                raise ValueError(f"Source dimensions changed at frame {count}")
++            center, radius = masks[count]
++            cv2.circle(frame, (int(center[0]), int(center[1])), int(radius), (0, 0, 0), -1)
++            out.write(frame)
++            count += 1
++        if count != len(masks):
++            raise ValueError("Source has fewer frames than masks")
++        out.release()
++        out = None
++        # Container/encoder failures can produce a missing or undecodable file.
++        check = cv2.VideoCapture(tmp_path)
++        try:
++            if not check.isOpened():
++                raise ValueError("Masked video cannot be decoded")
++            decoded = 0
++            while True:
++                ok, _frame = check.read()
++                if not ok:
++                    break
++                decoded += 1
++            if decoded != count:
++                raise ValueError("Masked video frame count changed during encoding")
++        finally:
++            check.release()
++        os.replace(tmp_path, output_path)
++    finally:
++        if cap is not None:
++            cap.release()
++        if out is not None:
++            out.release()
++        if os.path.exists(tmp_path):
++            os.unlink(tmp_path)
+diff --git a/dataset_pipeline/stage7_gate.py b/dataset_pipeline/stage7_gate.py
+index 04d327a..4cf57ad 100644
+--- a/dataset_pipeline/stage7_gate.py
++++ b/dataset_pipeline/stage7_gate.py
+@@ -8,8 +8,9 @@ designed fresh from the plain-English spec definitions:
+ Per-frame AND of both conditions; per-clip gate requires 100% of frames to
+ pass (spec §5).
+ """
++import math
++
+ from dataset_pipeline.common import P9, P10, P11, PALM_CUE_INDICES
+-from dataset_pipeline.geometry import dist, midpoint
+ from dataset_pipeline.stage1_extract import frame_points
+ from dataset_pipeline.stage6_occlusion import project_occlusion_circle
+ 
+@@ -21,12 +22,16 @@ def check_frame_conditions(image_lm_px, center, radius, config):
+     condition2: a fixed palm-cue landmark set spanning the palm's outer
+     boundary must all lie outside radius grown by condition2_margin_frac."""
+     p9, p10, p11 = image_lm_px[P9], image_lm_px[P10], image_lm_px[P11]
+-    condition1_points = [p10, midpoint(p9, p10), midpoint(p10, p11)]
++    # Image z is relative depth, whereas center/radius describe a 2D raster.
++    # A geometry gate must use the same x/y coordinates as the rendered mask.
++    middle = lambda a, b: ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
++    distance = lambda p: math.dist(p[:2], center[:2])
++    condition1_points = [p10, middle(p9, p10), middle(p10, p11)]
+     inner_radius = radius * (1 - config.condition1_margin_frac)
+-    condition1 = all(dist(pt, center) <= inner_radius for pt in condition1_points)
++    condition1 = all(distance(pt) <= inner_radius for pt in condition1_points)
+ 
+     outer_radius = radius * (1 + config.condition2_margin_frac)
+-    condition2 = all(dist(image_lm_px[i], center) >= outer_radius for i in PALM_CUE_INDICES)
++    condition2 = all(distance(image_lm_px[i]) >= outer_radius for i in PALM_CUE_INDICES)
+ 
+     return condition1 and condition2, {"condition1": condition1, "condition2": condition2}
+ 
+@@ -36,12 +41,15 @@ def gate_clip(frames, w3_new, config):
+     failing_frame_idxs = []
+     for f in frames:
+         pts = frame_points(f, "px")
++        total += 1
+         if pts is None:
+             failing_frame_idxs.append(f.get("frame_idx"))
+             continue
+-        center, radius = project_occlusion_circle(pts, w3_new)
+-        ok, _detail = check_frame_conditions(pts, center, radius, config)
+-        total += 1
++        try:
++            center, radius = project_occlusion_circle(pts, w3_new)
++            ok, _detail = check_frame_conditions(pts, center, radius, config)
++        except (ValueError, IndexError, TypeError):
++            ok = False
+         if ok:
+             passed += 1
+         else:
+diff --git a/dataset_pipeline/tests/test_mask_delivery.py b/dataset_pipeline/tests/test_mask_delivery.py
+new file mode 100644
+index 0000000..876c490
+--- /dev/null
++++ b/dataset_pipeline/tests/test_mask_delivery.py
+@@ -0,0 +1,93 @@
++"""Regression tests for source/frame alignment and fail-closed masking."""
++import os
++import tempfile
++import unittest
++
++import cv2
++import numpy as np
++
++from dataset_pipeline.common import LANDMARK_NAMES
++from dataset_pipeline.config import PipelineConfig
++from dataset_pipeline.stage6_occlusion import generate_occluded_video, project_occlusion_circle
++from dataset_pipeline.stage7_gate import gate_clip
++
++
++def record(idx, detected=True):
++    landmarks = {name: {"x": 8.0, "y": 8.0, "z": 0.0} for name in LANDMARK_NAMES}
++    landmarks["MIDDLE_MCP"] = {"x": 24.0, "y": 24.0, "z": 1e6}
++    return {"frame_idx": idx, "detected": detected, "landmarks_px": landmarks}
++
++
++class MaskDeliveryTests(unittest.TestCase):
++    def setUp(self):
++        self.tempdir = tempfile.TemporaryDirectory()
++        self.addCleanup(self.tempdir.cleanup)
++        self.source = os.path.join(self.tempdir.name, "source.mp4")
++        self.target = os.path.join(self.tempdir.name, "masked.mp4")
++        self.info = {"width": 32, "height": 32, "fps": 10.0}
++        writer = cv2.VideoWriter(self.source, cv2.VideoWriter_fourcc(*"mp4v"), 10, (32, 32))
++        self.assertTrue(writer.isOpened())
++        for _ in range(3):
++            writer.write(np.full((32, 32, 3), 255, dtype=np.uint8))
++        writer.release()
++
++    def test_masked_output_is_decodable_and_covers_every_frame(self):
++        generate_occluded_video(self.source, [record(i) for i in range(3)],
++                                self.info, 1.0, self.target)
++        cap = cv2.VideoCapture(self.target)
++        try:
++            count = 0
++            while True:
++                ok, frame = cap.read()
++                if not ok:
++                    break
++                self.assertLess(int(frame[16, 16].max()), 30)
++                count += 1
++            self.assertEqual(count, 3)
++        finally:
++            cap.release()
++
++    def test_missing_middle_mask_never_publishes_video(self):
++        frames = [record(0), record(1, detected=False), record(2)]
++        with self.assertRaisesRegex(ValueError, "No mask landmarks"):
++            generate_occluded_video(self.source, frames, self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_short_mask_array_never_publishes_partial_video(self):
++        with self.assertRaisesRegex(ValueError, "more frames"):
++            generate_occluded_video(self.source, [record(0), record(1)],
++                                    self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_existing_artifact_is_not_replaced(self):
++        with open(self.target, "wb") as fh:
++            fh.write(b"existing-release")
++        with self.assertRaises(FileExistsError):
++            generate_occluded_video(self.source, [record(i) for i in range(3)],
++                                    self.info, 1.0, self.target)
++        with open(self.target, "rb") as fh:
++            self.assertEqual(fh.read(), b"existing-release")
++
++    def test_filtered_timeline_is_rejected(self):
++        with self.assertRaisesRegex(ValueError, "consecutive"):
++            generate_occluded_video(self.source, [record(0), record(2), record(3)],
++                                    self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_image_depth_is_not_used_to_place_raster_mask(self):
++        pts = [(8.0, 8.0, 0.0)] * 21
++        pts[9] = (24.0, 24.0, 1e6)
++        center, radius = project_occlusion_circle(pts, 1.0)
++        self.assertEqual(center, (16.0, 16.0))
++        self.assertAlmostEqual(radius, 2**0.5 * 8)
++
++    def test_unknown_frame_counts_against_full_gate_denominator(self):
++        frames = [record(0), record(1, detected=False)]
++        result = gate_clip(frames, 1.0, PipelineConfig())
++        self.assertEqual(result["total_checked"], 2)
++        self.assertIn(1, result["failing_frame_idxs"])
++        self.assertFalse(result["accepted"])
++
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/dataset_pipeline/tests/test_stage7_gate.py b/dataset_pipeline/tests/test_stage7_gate.py
+index f52e83d..f823c87 100644
+--- a/dataset_pipeline/tests/test_stage7_gate.py
++++ b/dataset_pipeline/tests/test_stage7_gate.py
+@@ -1,7 +1,7 @@
+ # -*- coding: utf-8 -*-
+ from dataset_pipeline.common import P0, THUMB_CMC, P5, RING_MCP, P17, P9, P10, P11
+ from dataset_pipeline.config import PipelineConfig
+-from dataset_pipeline.geometry import dist
++import math
+ from dataset_pipeline.stage6_occlusion import project_occlusion_circle
+ from dataset_pipeline.stage7_gate import check_frame_conditions
+ 
+@@ -63,7 +63,7 @@ def test_project_occlusion_circle_matches_spec_formula():
+     lm[P9] = (0.0, 100.0, 0.0)
+ 
+     center, radius = project_occlusion_circle(lm, w3_new=1.5)
+-    assert center == (0.0, 50.0, 0.0)
++    assert center == (0.0, 50.0)
+     assert radius == 75.0  # dist(P0,P9)*w3_new/2 = 100*1.5/2
+ 
+ 
+@@ -82,4 +82,4 @@ def test_project_occlusion_circle_wrist_coverage_tension():
+     lm[P9] = (0.0, 100.0, 0.0)
+ 
+     center, radius = project_occlusion_circle(lm, w3_new=1.95)
+-    assert dist(lm[P0], center) < radius
++    assert math.dist(lm[P0][:2], center) < radius
+-- 
+2.51.1
+
