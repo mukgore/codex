@@ -44,3 +44,7 @@ python -m unittest discover -s tests -p test_standard_metrics.py -v
 ## 영상 풀·가림 생성·송출 설계 v0.4
 
 [동작 영상 풀 확보·가림 생성·보안 송출 요구사항](docs/video_pool_occlusion_delivery_requirements_v0.4.md)은 기존 handcaptcha 구현의 정적 감사, 영상 확보·사용권·중복 관리, 전 프레임 가림 및 재디코딩 검사, 정답 비공개·세션 기반 송출, 반복노출 공격과 운영 인수 시험을 정의합니다. 설계 문서이며 신규 영상 생성·보안 실험·배포를 수행했다는 의미가 아닙니다.
+
+## 촬영 영상 대 3D 손동작 생성 연구 v0.1
+
+[촬영·생성 비교 및 연구 재현 명세](docs/hand_motion_source_and_generation_research_v0.1.md)는 동작군별 실질적 다양성과 비용을 비교하고, GRAB/MANO/Text2HOI/GOAL/D-Grasp의 원형 재현과 CAPTCHA 전용 후처리를 분리합니다. 구현·학습·데이터 확보·성능 입증은 아직 수행되지 않았습니다.
