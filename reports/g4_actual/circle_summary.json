@@ -1,0 +1,33 @@
+{
+  "scope": "exploratory circle-only metadata lookup; eight-source closed set",
+  "created_at_utc": "2026-10-28T13:49:24.803734+00:00",
+  "source_revision": "b4d96d1",
+  "reference_knowledge": "all eight public baseline landmark sequences were used to build the candidate library; evaluation source families are not held out",
+  "query_knowledge": "only normalized cx, cy, rx, ry from up to 30 actual-MP4 contour candidates per target; candidate missingness retained",
+  "circle_reference_formula": "handtest1.py occlusion_params, q=1.95 for MIDDLE_DIP; verified indices/formula read-only",
+  "distance": "fixed mean squared L2 over common finite rows on a fixed 32-point phase grid with linear interpolation; no tuning",
+  "lookup": {
+    "targets": 8,
+    "top1_correct_count": 8,
+    "top1_tie_count_gt1": 0,
+    "correct_in_nearest_tie_count": 8,
+    "nearest_tie_size_frequency": {
+      "1": 8
+    },
+    "targets_with_scored_lookup": 8,
+    "interpretation": "closed-set descriptive lookup only; contour center/radius accuracy has no independent per-frame ground truth"
+  },
+  "actual_evaluator_replay": {
+    "attempts": 8,
+    "actual_score_pass_count": 8,
+    "actual_onres_gate_pass_count": 8,
+    "l3_counted_as_tested": 0,
+    "scope": "full matched public-library landmark trajectory replayed offline against target keyframes through ActualEvaluator; not a two-clip browser session or trusted camera proof"
+  },
+  "data_limitations": [
+    "All eight evaluation sources are also present in the public reference library; no independent holdout.",
+    "Contour candidates are derived from at most 30 frames per clip and may be missing or inaccurate.",
+    "No independent per-frame circle center/radius ground truth was available, so extraction accuracy and circle-only attack efficacy are unverified.",
+    "ActualEvaluator score/gate are offline computations; no server protected-action endpoint was tested and L3 remains NOT_TESTED."
+  ]
+}

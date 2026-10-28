@@ -1,0 +1,42 @@
+{
+  "scope": "local authorized A2 metadata probe; exploratory closed set",
+  "created_at_utc": "2026-10-28T13:46:07.774263+00:00",
+  "source_revision": "b4d96d1",
+  "clip_count": 8,
+  "all_manifest_video_files_resolved_by_exact_filename": true,
+  "filename_channel": {
+    "manifest_exact_filename_lookup_possible_count": 8,
+    "interpretation": "If filenames are observable, manifest names directly identify clip IDs; this is exposed metadata, not evidence of a robust visual inference attack."
+  },
+  "frame_count_channel": {
+    "basis": "full sequential OpenCV decode count",
+    "all_decoded_counts_match_manifest_n_frames": true,
+    "all_opencv_reported_counts_match_manifest_n_frames": true,
+    "all_opencv_fps_match_manifest": true,
+    "all_opencv_dimensions_match_decoded_frames": true,
+    "frame_count_value_frequency": {
+      "106": 1,
+      "108": 1,
+      "110": 1,
+      "111": 1,
+      "113": 1,
+      "116": 1,
+      "119": 2
+    },
+    "candidate_set_size_frequency": {
+      "1": 6,
+      "2": 2
+    },
+    "unique_identifiable_clip_count_from_frame_count_alone": 6,
+    "closed_set_unique_identification_rate": 0.75,
+    "interpretation": "Candidate set is the clips sharing the observed decoded frame count; this is descriptive for the eight known clips only."
+  },
+  "circle_contour_probe": {
+    "sample_cap_per_clip": 30,
+    "sampled_frames_total": 240,
+    "contour_candidate_frames_total": 240,
+    "ground_truth_available": false,
+    "status": "exploratory candidate extraction only; no circle-only success claim"
+  },
+  "nonidentifying_note": "Per-clip names and raw measurements are only in the local raw output."
+}

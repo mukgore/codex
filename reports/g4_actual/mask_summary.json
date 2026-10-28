@@ -1,0 +1,27 @@
+{
+  "protocol": "bounded local Stage 6 fault-injection; first three source frames only",
+  "source_fixture": "custom01 existing local source",
+  "decoded_frame_count": 3,
+  "w3_test_scalar": 1.95,
+  "w3_is_calibration": false,
+  "actual_source_function_ast_extracted": true,
+  "cv2_capture_writer_replaced_with_memory_spies": true,
+  "actual_video_decode_and_circle_rasterizer_used": true,
+  "legacy_stage6_observations": {
+    "complete_fixture_circle_calls": 3,
+    "missing_first_wrote_unmasked_source_frame": true,
+    "missing_middle_reused_previous_mask": true,
+    "short_landmark_map_reused_stale_mask_on_video_tail": true,
+    "z_only_change_altered_actual_stage6_radius": true
+  },
+  "strict_wrapper_observations": {
+    "complete_three_frame_fixture_accepted": true,
+    "missing_first_rejected_before_any_output": true,
+    "missing_middle_rejected_before_any_output": true,
+    "frame_count_mismatch_rejected_before_any_output": true,
+    "z_only_changes_leave_2d_masks_and_output_identical": true,
+    "decoded_source_images_unchanged": true,
+    "masked_pixel_count_total": 1078452
+  },
+  "interpretation_limit": "mechanical fault-injection evidence only; not a claim about deployed assets, challenge success, security efficacy, people, or holdout generalization"
+}

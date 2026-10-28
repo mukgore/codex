@@ -1,0 +1,10 @@
+{
+  "run_id": "G4-BLIND-001",
+  "n": 8,
+  "seed": 20261028,
+  "knowledge": "media length/fps only; coordinates iid uniform [0,1]; no anatomical validity assumption",
+  "score_pass": 0,
+  "offline_gate_pass": 0,
+  "guarded_local_l3": 0,
+  "scope": "exploratory eight known-source inputs, no holdout/browser/camera/human claim"
+}

@@ -1,0 +1,96 @@
+{
+  "run_id": "G4-MEDIA-CACHE-002",
+  "assignment": "balanced_secret_random_order_not_supplied_to_predictor",
+  "knowledge": "prior published eight media and reference files; challenge exposes only opaque URL and video bytes",
+  "source_families": 8,
+  "n": 8,
+  "identified": 8,
+  "score_pass": 8,
+  "offline_gate_pass": 8,
+  "local_l3_allowed": 8,
+  "setup_s": 0.04236840014345944,
+  "median_attempt_wall_ms": 207.21990009769797,
+  "scope": "new loopback server, offline landmark replay, closed-set development; no browser camera or historical L3 claim",
+  "rows": [
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 928376,
+      "attempt_wall_ms": 220.98430013284087
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 888274,
+      "attempt_wall_ms": 220.24119994603097
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 832690,
+      "attempt_wall_ms": 190.85030001588166
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 803237,
+      "attempt_wall_ms": 207.21990009769797
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 756011,
+      "attempt_wall_ms": 204.83379997313023
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 827051,
+      "attempt_wall_ms": 223.14419993199408
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 841589,
+      "attempt_wall_ms": 187.34499998390675
+    },
+    {
+      "identified": true,
+      "candidate_count": 1,
+      "http_status": 200,
+      "score_pass": true,
+      "offline_gate_pass": true,
+      "local_l3_allowed": true,
+      "media_bytes": 908372,
+      "attempt_wall_ms": 196.62319985218346
+    }
+  ]
+}
