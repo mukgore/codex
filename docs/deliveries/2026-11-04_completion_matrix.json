@@ -1,0 +1,2115 @@
+{
+  "scope": "current public trees and deliverables; no new research execution",
+  "commits": {
+    "codex": "916cc6fd0febe7f94115c94ff16b8abc10c46e4a",
+    "handcaptcha": "6d9201296b3c4341b555845868ae15fd5f5ada8b"
+  },
+  "counts": {
+    "BACKLOG": 62,
+    "AUD": 20,
+    "ACCEPTANCE": 24,
+    "WORKPACKAGE": 6,
+    "VALIDATION": 26,
+    "SCORING": 13,
+    "UI": 10,
+    "UI_CASE": 7,
+    "UI_OPTION": 6,
+    "GENERATION": 16
+  },
+  "total_tracking_rows": 190,
+  "groups": {
+    "BACKLOG": [
+      {
+        "id": "NOW-01",
+        "status": "���� �Ϸ�",
+        "observed": "���� ��ϡ����� ������ ���޵ǰ� Ŀ�Ե�",
+        "remaining": "��Ͽ� �ִ� ��� �۾��� ���� �ϷḦ ������ ����",
+        "evidence": [
+          "BACKLOG",
+          "INDEX"
+        ]
+      },
+      {
+        "id": "NOW-02",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "Stage6/7 ��ġ ���� �� ���� 9�������� �Լ� 17�� �˻�",
+        "remaining": "PTS��release���ٸ� ���� ��Ρ����� �浹�� ����",
+        "evidence": [
+          "H6",
+          "H7",
+          "HTEST",
+          "REVIEW",
+          "HINTEGRITY"
+        ]
+      },
+      {
+        "id": "NOW-03",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "���� �ÿ��� ���� ���, Node 13�� �˻�",
+        "remaining": "prod ���ᡤ���� ī�޶󡤻�뼺 ����",
+        "evidence": [
+          "SEL",
+          "DEMO",
+          "NTEST",
+          "DEMOTEST"
+        ]
+      },
+      {
+        "id": "NOW-04",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "���� �� CSV �� CLI�� 7�� �˻�",
+        "remaining": "���ڷ� Ư¡/���� ����� ���� �� �ڷ�",
+        "evidence": [
+          "COMPARE",
+          "CTEST"
+        ]
+      },
+      {
+        "id": "NOW-05",
+        "status": "���� �Ϸ�",
+        "observed": "ī�� A/B/C�� ���ǡ��и𡤱�� ��� �ۼ�",
+        "remaining": "���� ���á���ġ ��ݡ����������ࡤ����",
+        "evidence": [
+          "CARDS"
+        ]
+      },
+      {
+        "id": "NOW-06",
+        "status": "���� �Ϸ�",
+        "observed": "���� ���� ��������ǥ ���� �ʾ� �ۼ�",
+        "remaining": "��ǥ �ð������� ���� ���ð� ���� ��ǥ",
+        "evidence": [
+          "EXPLAIN"
+        ]
+      },
+      {
+        "id": "R01",
+        "status": "�κ�",
+        "observed": "���� �ʾ��� �ۼ���",
+        "remaining": "���� ��ǥ �������з��������� ����",
+        "evidence": [
+          "EXPLAIN",
+          "ROADMAP"
+        ]
+      },
+      {
+        "id": "R02",
+        "status": "���� �Ϸ� ����",
+        "observed": "G3��A/B��FR1~4��DR3 ���� ���¸� ����",
+        "remaining": "���� �м��� ������� �� �̿Ϸ�� ������� ����",
+        "evidence": [
+          "G3"
+        ]
+      },
+      {
+        "id": "R03",
+        "status": "���� �Ϸ� ����",
+        "observed": "���Ǻ� ���� ����� ���� build �躸 �Ѱ踦 ����",
+        "remaining": "�̷� ���࿡�� build/pool manifest ���; ���� �߰� ������ �� ���� �ҿ�",
+        "evidence": [
+          "G3",
+          "LINEAGE"
+        ]
+      },
+      {
+        "id": "R04",
+        "status": "���� �Ϸ� ����",
+        "observed": "���� �ΰ� �ܰ� ��ü�� ���� ����, ���� 13�ó����� ���� ���� ����",
+        "remaining": "�� ���� �򰡸� ���� ������ �ұ����� ����",
+        "evidence": [
+          "G3"
+        ]
+      },
+      {
+        "id": "R05",
+        "status": "�Է� �ʿ�",
+        "observed": "�ʱ� n=4��ǥ10��grid25���ð����� p�� �躸�� ���ȭ",
+        "remaining": "Ư�� ���ڷ�/���� �̷� Ȯ�� �� ���� ����; �Ϸ�� A/B�� �ٽ� ���� ����",
+        "evidence": [
+          "RECOVERY",
+          "G3"
+        ]
+      },
+      {
+        "id": "R06",
+        "status": "�κ�",
+        "observed": "���� null�� �ؼ� �Ѱ�� �� �α� ��� �ۼ�",
+        "remaining": "�� ������ ���� ����/���� ���� �� ��ü UI �ð� ����",
+        "evidence": [
+          "CARDS",
+          "DICT"
+        ]
+      },
+      {
+        "id": "R07",
+        "status": "���� �Ϸ� ����",
+        "observed": "���� G4 ���� Ž�������� ���˻� ����� ����",
+        "remaining": "���� source/���/�ŷ� �Է��� ���� �ļ� ����",
+        "evidence": [
+          "G4STATE",
+          "G4REPORT"
+        ]
+      },
+      {
+        "id": "R08",
+        "status": "���� �Ϸ�",
+        "observed": "��ȣ������� �� ���� ī�� A �ۼ�",
+        "remaining": "���� �� �ּ���ä�� ��Ģ ���� �� ����",
+        "evidence": [
+          "CARDS"
+        ]
+      },
+      {
+        "id": "R09",
+        "status": "���� �Ϸ�",
+        "observed": "����/�/���� ���� ���ؿ� ���� ���ɼ� ��ȹ",
+        "remaining": "���� ���������ǡ��ڷ� �� ���� ��",
+        "evidence": [
+          "CARDS",
+          "FOLLOWUP"
+        ]
+      },
+      {
+        "id": "U01",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "��ȿ 21����bbox������������ȭ ���� ����",
+        "remaining": "���� ���� ��ȯ �����߸�/�ڼ�/FPS ���� Ȯ��",
+        "evidence": [
+          "SEL",
+          "NTEST"
+        ]
+      },
+      {
+        "id": "U02",
+        "status": "�κ�",
+        "observed": "��ġ��ũ�⡤���� ���� ����, �ҽ�/��ȣ�� �� ��ü �����",
+        "remaining": "ª�� �翬�ᡤhandedness/����/gate/�α� ����; ������ �Ǳ� ����",
+        "evidence": [
+          "SEL",
+          "DEMO",
+          "UI"
+        ]
+      },
+      {
+        "id": "U03",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "�и�/��ø�������������� ���������� ī�޶� ����",
+        "remaining": "���� �¿�ա����̾ƿ���ī�޶󡤻�뼺",
+        "evidence": [
+          "DEMO",
+          "HTML",
+          "NTEST",
+          "DEMOTEST"
+        ]
+      },
+      {
+        "id": "U04",
+        "status": "�̽���",
+        "observed": "prod�� ������ �ÿ������� ����",
+        "remaining": "���� �ա��¿�ա�������Ÿ�̸ӡ���� ���� �� shadow ��",
+        "evidence": [
+          "PROD",
+          "DEMO"
+        ]
+      },
+      {
+        "id": "U05",
+        "status": "�κ�",
+        "observed": "�ĺ� ��ϰ� �� ���� ���� �ȳ����� �׵θ� �Ϻ� ����",
+        "remaining": "����/�ù�/���� ����ȭ��/���� ���á���������",
+        "evidence": [
+          "UI",
+          "DEMO",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "U06",
+        "status": "���� �Ϸ�",
+        "observed": "�� ���ð� UI ȿ���� ������ ī�� B �ۼ�",
+        "remaining": "�ൿ ���� ���ǡ��̺�Ʈ �����⡤������ �񱳡�ä�� ����",
+        "evidence": [
+          "CARDS",
+          "UI"
+        ]
+      },
+      {
+        "id": "S01",
+        "status": "�̽���",
+        "observed": "��ǥ���ð������� ǥ�� adapter�� ������ ����",
+        "remaining": "��Ⱦ�񡤹̷������� �ð���null/gap������ �躸 adapter ����",
+        "evidence": [
+          "SCORE",
+          "COMPARE"
+        ]
+      },
+      {
+        "id": "S02",
+        "status": "�κ�",
+        "observed": "���� constrained_dtw�� �ռ� �˻� ����",
+        "remaining": "���� 15���� Ư¡��band/grid ���á����� �񱳡�JS �̽�",
+        "evidence": [
+          "METRICS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S03",
+        "status": "�κ�",
+        "observed": "���� ����� timestamp �̺� �Լ� ����",
+        "remaining": "������gap����Ȱȭ��FPS/������ ������ ���� trial ����",
+        "evidence": [
+          "METRICS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S04",
+        "status": "�κ�",
+        "observed": "�̹� ����� legacy/candidate ���� �� ���� �߰�",
+        "remaining": "B0/B1 Ư¡/���� ����, B2 �н���B3 ablation��calibration",
+        "evidence": [
+          "COMPARE",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S05",
+        "status": "�κ�",
+        "observed": "���� threshold �Լ��� �� validation/test ����",
+        "remaining": "ROC/DET �׸������ݱ��� �־Ƿ������� CI������ ��",
+        "evidence": [
+          "COMPARE",
+          "METRICS"
+        ]
+      },
+      {
+        "id": "S06",
+        "status": "�̽���",
+        "observed": "legacy gate�� �����ϰ� �� �α� �׸� ����",
+        "remaining": "gap/hold/coverage ��Ģ, ���� ����, ���� �αס����� ��ε�",
+        "evidence": [
+          "SCORE",
+          "PROD",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "S07",
+        "status": "�κ�",
+        "observed": "�ռ� ����/CSV �˻�� ����",
+        "remaining": "adapter �˻����� ���� trial�浶�� �򰡡�JS parity��shadow",
+        "evidence": [
+          "SCORE",
+          "REVIEW"
+        ]
+      },
+      {
+        "id": "V00",
+        "status": "�κ�",
+        "observed": "���� lab�� L1/L2/L3 ���а� �� score-only �и� ó��",
+        "remaining": "�� ���� metadata validator����ü attempts �αס����� ���",
+        "evidence": [
+          "SERVER",
+          "COMPARE",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V01",
+        "status": "���� �Ϸ� ����",
+        "observed": "known-pool�� ����/����/����/���� Ž���� ���� G4���� ����",
+        "remaining": "�� ���ء��� �ڷ��� Ȯ�� �򰡰� �ʿ��ϸ� ���� ����",
+        "evidence": [
+          "G4REPORT",
+          "G4STATE"
+        ]
+      },
+      {
+        "id": "V02",
+        "status": "�κ�",
+        "observed": "CSV�� source/participant/capture ID ������ �˻�",
+        "remaining": "���� �躸������ �ߺ���attack-family holdout�� �̻�� �ڷ�",
+        "evidence": [
+          "COMPARE",
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V03",
+        "status": "�̽���",
+        "observed": "�Է� ��ȣ �߰� ȿ���� ���踸 ����",
+        "remaining": "���� 2��3 ����(������ ���), ��ȣ ���� ���ռ� �� ���� ����",
+        "evidence": [
+          "VALIDATION",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "V04",
+        "status": "���� �Ϸ� ����",
+        "observed": "���� loopback ����/����/��ȸ �Һ�ȸ�� �Ϸ�",
+        "remaining": "���� capture trust������ � ������������ ���� ����",
+        "evidence": [
+          "SERVER",
+          "G4STATE"
+        ]
+      },
+      {
+        "id": "V05",
+        "status": "�̽���",
+        "observed": "lab�� in-process RLock�� ���� ���´� ����",
+        "remaining": "rate/query������ ������evaluator ���� ��ݡ����� worker/���� ���ڼ�",
+        "evidence": [
+          "SERVER",
+          "G4REVIEW"
+        ]
+      },
+      {
+        "id": "V06",
+        "status": "�Է� �ʿ�",
+        "observed": "���� human18/���� pool/legacy�� ���̸� ����",
+        "remaining": "���� challenge�� �� ���� �ڷᡤ���� ī�޶�source �躸",
+        "evidence": [
+          "OVERLAP",
+          "G4STATE"
+        ]
+      },
+      {
+        "id": "N01",
+        "status": "�κ�",
+        "observed": "�̹� ���� ������ ���� ������Ű ������ �˻�",
+        "remaining": "����� ��ü Git �̷¡������ �ڷ��� ���� ����",
+        "evidence": [
+          "REVIEW",
+          "BACKLOG"
+        ]
+      },
+      {
+        "id": "N02",
+        "status": "�κ�",
+        "observed": "���� ���ɡ����� ȯ��� ���޺� �ؽ� ���",
+        "remaining": "������ ������ ��ݡ��� run manifest; ���� �躸�� ���� ���� ����",
+        "evidence": [
+          "REVIEW",
+          "REPRO"
+        ]
+      },
+      {
+        "id": "N03",
+        "status": "�κ�",
+        "observed": "���� ���� �ٰš����� ���塤�űԼ� �Ѱ� ����",
+        "remaining": "ä���� ������ ���� ������ �ʿ�� �ֽ� 1�� ���� ����",
+        "evidence": [
+          "CLAIM",
+          "THREED"
+        ]
+      },
+      {
+        "id": "P01",
+        "status": "�Է� �ʿ�",
+        "observed": "�Ǹ� ���� ��Ű���� ���� ������ �����",
+        "remaining": "source�� �㰡�����ǡ��Ļ�/���� �Ǹ� ���� �� validator",
+        "evidence": [
+          "POOL"
+        ]
+      },
+      {
+        "id": "P02",
+        "status": "�Է� �ʿ�",
+        "observed": "�Կ���source/capture/performer���ߺ� ��ȹ ����",
+        "remaining": "�� �Կ�/���� �ڷᡤ���� family ���������ҡ��ּ�",
+        "evidence": [
+          "POOL",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "P03",
+        "status": "�̽���",
+        "observed": "private source/artifact�� public ���䡤���� ���� ����",
+        "remaining": "��� ���� schema�� �°�/�ݸ�/��� ���� �ӽ�",
+        "evidence": [
+          "POOL",
+          "PIPE"
+        ]
+      },
+      {
+        "id": "M01",
+        "status": "�κ�",
+        "observed": "Stage6/7�� x/y ����, �񿬼� �ε��� �ź�",
+        "remaining": "��������� frame/PTS mapping���ð�������VFR ó��",
+        "evidence": [
+          "H6",
+          "H7",
+          "STAGE4"
+        ]
+      },
+      {
+        "id": "M02",
+        "status": "���� �ĺ�",
+        "observed": "M0~M4������/����/�ð���ȭ �ĺ��� ����",
+        "remaining": "����-�ո� �浹 �ذ�� ���/�ܼ�/�ռ� ���� ���� ��",
+        "evidence": [
+          "POOL",
+          "HGATETEST",
+          "G4REPORT"
+        ]
+      },
+      {
+        "id": "M03",
+        "status": "�κ�",
+        "observed": "Stage6�� ���� �źΡ����� decode��ũ��/����/���� �ȼ� �˻�",
+        "remaining": "�غ��� ROI��PTS����� rendition/track���Ǹ���release gate",
+        "evidence": [
+          "H6",
+          "HTEST",
+          "POOL"
+        ]
+      },
+      {
+        "id": "P04",
+        "status": "�κ�",
+        "observed": "���� closed-set lookup����/�Ǻ�/�̵�� �ܼ� �ݷʴ� ����",
+        "remaining": "���� source���ݺ� ���ꡤ���� ���š����� ����ũ �ռ� ����",
+        "evidence": [
+          "G4REPORT",
+          "POOL"
+        ]
+      },
+      {
+        "id": "D01",
+        "status": "���� �ĺ�",
+        "observed": "��������/��û����/ĳ��/�ǽð� �� ���",
+        "remaining": "���� source���� ������CPU��p95������/���ۡ�����/��� ��",
+        "evidence": [
+          "POOL"
+        ]
+      },
+      {
+        "id": "D02",
+        "status": "�κ�",
+        "observed": "���� loopback�� media session/expiry �˻�",
+        "remaining": "� private origin��tenant��warm cache��Range/seek����� ��å",
+        "evidence": [
+          "SERVER",
+          "POOL"
+        ]
+      },
+      {
+        "id": "D03",
+        "status": "�κ�",
+        "observed": "�� lab ���� ����� ���� ����, prod�� ���� ���� fetch ����",
+        "remaining": "����� ���� ��� �ǽð� UX���Է� ��衤oracle/query ��å",
+        "evidence": [
+          "PROD",
+          "SERVER",
+          "POOL"
+        ]
+      },
+      {
+        "id": "T01",
+        "status": "�κ�",
+        "observed": "�μ� 24���� �Ϻ� ��� �˻�� ���� lab ȸ�͸� ����",
+        "remaining": "�Ʒ� T01~24 ������ �/���ڷ� ������ Ȯ��",
+        "evidence": [
+          "POOL",
+          "HTEST"
+        ]
+      },
+      {
+        "id": "W01",
+        "status": "�κ�",
+        "observed": "WP0 ���� ��ϰ� WP2 ���� ���� �Ϻ�",
+        "remaining": "WP1 Ȯ��/schema��WP2 ����/PTS��WP3~5 ��/� ���� �۾�",
+        "evidence": [
+          "POOL"
+        ]
+      },
+      {
+        "id": "G01",
+        "status": "���� �Ϸ�",
+        "observed": "�Կ� �� ���� �� PR #2�� G01~08 ����",
+        "remaining": "R1/P1 ���� �ڵ塤�ڷᡤ���� ���",
+        "evidence": [
+          "GEN",
+          "THREED"
+        ]
+      },
+      {
+        "id": "G02",
+        "status": "�̽���",
+        "observed": "seed/��/��ü/ī�޶�/���� manifest ����",
+        "remaining": "3D generator���⺻ ��/��ü������ ��ȹ������ manifest",
+        "evidence": [
+          "GEN",
+          "THREED"
+        ]
+      },
+      {
+        "id": "G03",
+        "status": "�̽���",
+        "observed": "���������ˡ�����롤���� ������������ ���",
+        "remaining": "����/���� validator�� ���� ���� ���ɼ� �˻�",
+        "evidence": [
+          "THREED",
+          "GEN"
+        ]
+      },
+      {
+        "id": "G04",
+        "status": "�̽���",
+        "observed": "����� �� �����ӿ� ��ü �ܼ��� ���� �ٸ� ������ ����",
+        "remaining": "���� scene ���������� ���ա����/���� ���� ��",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "G05",
+        "status": "�̽���",
+        "observed": "���� pass/mesh/seed ����������� ���� ���� ���",
+        "remaining": "���������׸���/�ݻ�/�Ƿ翧��buffer/codec ���� �˻�",
+        "evidence": [
+          "THREED",
+          "GEN"
+        ]
+      },
+      {
+        "id": "G06",
+        "status": "���� �ĺ�",
+        "observed": "G0/G1/G2 ���� �ǹ̿� SCORE3D ����",
+        "remaining": "G0 ���á����� Ư¡������ �䡤��ķ ��Ȯ�Ǽ� ��",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "G07",
+        "status": "�̽���",
+        "observed": "B0~B3��A1~A4 ���� �� ����",
+        "remaining": "source/object/contact family ���ҡ����� ������ ���� ����",
+        "evidence": [
+          "THREED",
+          "GEN"
+        ]
+      },
+      {
+        "id": "G08",
+        "status": "�Է� �ʿ�",
+        "observed": "�ܺ� �ڵ�/��/������ �Ǹ����ڿ� ���� ���",
+        "remaining": "��� �ڻꡤcheckpoint��ȯ��/�ڿ� Ȯ�� �� ���� ����",
+        "evidence": [
+          "GEN",
+          "THREED"
+        ]
+      },
+      {
+        "id": "B01",
+        "status": "���� �Ϸ�",
+        "observed": "��� �������ð����ߴܡ����ټ� ��ȹ�� ī�� A/B",
+        "remaining": "�� ��� �ڷᡤ���ǡ��������ൿ/��ġ ���ء�����",
+        "evidence": [
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "B02",
+        "status": "�̽���",
+        "observed": "����/�������� ��� ������ ����",
+        "remaining": "���� setup/attempt/CPU/���ۡ�p50/p95�������� �Է�",
+        "evidence": [
+          "VALIDATION",
+          "POOL"
+        ]
+      },
+      {
+        "id": "B03",
+        "status": "���� �ĺ�",
+        "observed": "���������������ŷ� ���� ������ ���� ����",
+        "remaining": "���ε� ���� ���硤���������/���� �ٰ�",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "B04",
+        "status": "�̽���",
+        "observed": "CONTINUE/MODIFY/STOP/INCONCLUSIVE ���� ����",
+        "remaining": "��������� ���ݡ���롤�Ǹ� ���Ÿ� ���� �� �ǻ����",
+        "evidence": [
+          "VALIDATION",
+          "ROADMAP"
+        ]
+      }
+    ],
+    "AUD": [
+      {
+        "id": "AUD-01",
+        "status": "���ذ�",
+        "observed": "���� 8 clip manifest ���� ����",
+        "remaining": "���� ����� ����� ���� manifest �и�",
+        "evidence": [
+          "MANIFEST",
+          "PROD"
+        ]
+      },
+      {
+        "id": "AUD-02",
+        "status": "���ذ�",
+        "observed": "prod�� landmark fetch �״��",
+        "remaining": "���� reference�� ���� ���� UX",
+        "evidence": [
+          "PROD",
+          "SERVER"
+        ]
+      },
+      {
+        "id": "AUD-03",
+        "status": "�κ�",
+        "observed": "prod Math.random sort ����; lab�� secrets.choice",
+        "remaining": "���� �߱޿� ������ ������pool ���� ���� ����",
+        "evidence": [
+          "PROD",
+          "SERVER"
+        ]
+      },
+      {
+        "id": "AUD-04",
+        "status": "����",
+        "observed": "���� 5-MCP ��� baseline ���� ����",
+        "remaining": "M0 ����/�躸�� ������ ��",
+        "evidence": [
+          "LEGACYMASK",
+          "POOL"
+        ]
+      },
+      {
+        "id": "AUD-05",
+        "status": "�κ�",
+        "observed": "Stage6 ���� �� ���ġ�2D ���",
+        "remaining": "M0/M1 manifest �������� �Ķ���� ����",
+        "evidence": [
+          "H6",
+          "POOL"
+        ]
+      },
+      {
+        "id": "AUD-06",
+        "status": "���ذ�",
+        "observed": "w3>1 �ո� �浹 ȸ�͸� ����",
+        "remaining": "��ǥ ROI/����/�ܺ� �ܼ� ���� ����",
+        "evidence": [
+          "H7",
+          "HGATETEST"
+        ]
+      },
+      {
+        "id": "AUD-07",
+        "status": "������",
+        "observed": "Stage6/7 ���� ������ x/y�� ���",
+        "remaining": "��ü adapter����� ��η� �Ϲ�ȭ���� ����",
+        "evidence": [
+          "H6",
+          "H7"
+        ]
+      },
+      {
+        "id": "AUD-08",
+        "status": "������",
+        "observed": "�̰����� Stage7 ��ü �и� ����",
+        "remaining": "� ���� gate �� �ٸ� ��� ����",
+        "evidence": [
+          "H7",
+          "HTEST"
+        ]
+      },
+      {
+        "id": "AUD-09",
+        "status": "������",
+        "observed": "Stage6 ��� mask ���� Ȯ�Ρ����н� ��� �̰Խ�",
+        "remaining": "���� bake/legacy ��ε� ���� ��å ����",
+        "evidence": [
+          "H6",
+          "HTEST",
+          "BAKE"
+        ]
+      },
+      {
+        "id": "AUD-10",
+        "status": "�κ�",
+        "observed": "Stage6�� �񿬼�/����� �ε����� �ź�",
+        "remaining": "���� filter/reverse ����mask�����䡤PTS �����",
+        "evidence": [
+          "H6",
+          "STAGE4",
+          "QUALITY"
+        ]
+      },
+      {
+        "id": "AUD-11",
+        "status": "���ذ�",
+        "observed": "run_batch�� Stage6 ȣ�� ����",
+        "remaining": "���� renderer��������immutable manifest ����",
+        "evidence": [
+          "PIPE"
+        ]
+      },
+      {
+        "id": "AUD-12",
+        "status": "���ذ�",
+        "observed": "forward+reverse �� len/fps ���",
+        "remaining": "���� PTS ���� gate����ǥ ���� ����",
+        "evidence": [
+          "STAGE4",
+          "CONFIG"
+        ]
+      },
+      {
+        "id": "AUD-13",
+        "status": "���ذ�",
+        "observed": "��ü ��ġ�� open-hand median ���� ����",
+        "remaining": "train-only ����������/�Կ��� �������ߺ� ����",
+        "evidence": [
+          "WEIGHTS",
+          "PIPE"
+        ]
+      },
+      {
+        "id": "AUD-14",
+        "status": "���ذ�",
+        "observed": "handedness �з� score�� confidence�� ���",
+        "remaining": "���� �з� Ȯ�Ű� landmark ǰ�� �и�",
+        "evidence": [
+          "EXTRACT",
+          "QUALITY"
+        ]
+      },
+      {
+        "id": "AUD-15",
+        "status": "���ذ�",
+        "observed": "legacy ���� ���� ���� ����",
+        "remaining": "Stage2/3/7������ byte���Ǹ� ���� ���� ����",
+        "evidence": [
+          "INGEST"
+        ]
+      },
+      {
+        "id": "AUD-16",
+        "status": "���ذ�",
+        "observed": "���� export_pool�� import ����",
+        "remaining": "���/��� ���������� �� ������ Ȯ��",
+        "evidence": [
+          "INGEST"
+        ]
+      },
+      {
+        "id": "AUD-17",
+        "status": "���ذ�",
+        "observed": "���� bake�� !pip Colab �� ����",
+        "remaining": "CLI ��Ű¡��adopted_clips/filter ���",
+        "evidence": [
+          "BAKE"
+        ]
+      },
+      {
+        "id": "AUD-18",
+        "status": "���ذ�",
+        "observed": "���� bake�� last mask ���� ��� ����",
+        "remaining": "��� frame mask���ӽ�/���� �Խá����� �ݸ�",
+        "evidence": [
+          "BAKE"
+        ]
+      },
+      {
+        "id": "AUD-19",
+        "status": "���ذ�",
+        "observed": "���� H264 �� 1:1 ������ ���� ����",
+        "remaining": "���� H264 ��decode��PTS/����/���� �˻�",
+        "evidence": [
+          "BAKE"
+        ]
+      },
+      {
+        "id": "AUD-20",
+        "status": "���ذ�",
+        "observed": "config�� �̰��� placeholder ǥ�� ����",
+        "remaining": "���� dev �ڷ��� ���ప/�ٰ�/��� ���",
+        "evidence": [
+          "CONFIG"
+        ]
+      }
+    ],
+    "ACCEPTANCE": [
+      {
+        "id": "T01",
+        "status": "�̽���",
+        "observed": "�Ǹ� UNKNOWN �źδ� ����",
+        "remaining": "�Ǹ� ���塤release validator������ fixture",
+        "evidence": [
+          "POOL"
+        ]
+      },
+      {
+        "id": "T02",
+        "status": "�̽���",
+        "observed": "prod�� ��ü manifest�� ������ fetch",
+        "remaining": "���� ���� client bundle������ allowlist �˻�",
+        "evidence": [
+          "PROD",
+          "POOL"
+        ]
+      },
+      {
+        "id": "T03",
+        "status": "�κ�",
+        "observed": "Stage6 ���� ���� �ź� �� �߰� ���� ������ �˻�",
+        "remaining": "ù/�� ���� ���� ���ࡤ��� ����� �ݸ�/���� �˻�",
+        "evidence": [
+          "H6",
+          "HTEST",
+          "BAKE"
+        ]
+      },
+      {
+        "id": "T04",
+        "status": "�κ�",
+        "observed": "�̰����� �и� �����ϰ� renderer�� �ź�",
+        "remaining": "���� ���� �°� ������ ����",
+        "evidence": [
+          "H7",
+          "HTEST",
+          "PIPE"
+        ]
+      },
+      {
+        "id": "T05",
+        "status": "�κ�",
+        "observed": "2D ���� �ڵ�� ū z circle ȸ�� ����",
+        "remaining": "x/y ���� z������ raster��gate ���� ������ ��� �˻�",
+        "evidence": [
+          "H6",
+          "H7",
+          "HTEST"
+        ]
+      },
+      {
+        "id": "T06",
+        "status": "�κ�",
+        "observed": "�񿬼� ���� �ε��� �ź� �˻�",
+        "remaining": "����/�����/�ð������� ���� ����ȭ�ϴ� mapping",
+        "evidence": [
+          "H6",
+          "STAGE4"
+        ]
+      },
+      {
+        "id": "T07",
+        "status": "�κ�",
+        "observed": "�ӽ� ��¡���decode�����н� �̰Խ� �� �������� ����",
+        "remaining": "encoder ���� ���� �� ������ RELEASED �°� ���� ����",
+        "evidence": [
+          "H6",
+          "HTEST",
+          "PIPE"
+        ]
+      },
+      {
+        "id": "T08",
+        "status": "�κ�",
+        "observed": "�ռ� MP4 ��ü count/dimension/���� �ȼ� �˻�",
+        "remaining": "PTS ��������duration����� ���� rendition/���ڷ� ��밪",
+        "evidence": [
+          "H6",
+          "HTEST"
+        ]
+      },
+      {
+        "id": "T09",
+        "status": "�̽���",
+        "observed": "Stage6 �ϳ��� MP4�� ����",
+        "remaining": "poster/thumbnail/���� track/�����/metadata ���� �˻�",
+        "evidence": [
+          "POOL",
+          "H6"
+        ]
+      },
+      {
+        "id": "T10",
+        "status": "�̽���",
+        "observed": "legacy ������ �ڵ� ��ȸ ���� ����",
+        "remaining": "���� ���� ���ࡤ���� ����",
+        "evidence": [
+          "INGEST"
+        ]
+      },
+      {
+        "id": "T11",
+        "status": "�κ�",
+        "observed": "lab�� ������ ��Ρ�media session �˻�",
+        "remaining": "� private origin/��ϡ����� ���� �� ȸ�� �Ұ� ����",
+        "evidence": [
+          "SERVER",
+          "PROD"
+        ]
+      },
+      {
+        "id": "T12",
+        "status": "�κ�",
+        "observed": "���� lab�� ����/�ٸ� session �˻�",
+        "remaining": "tenant��REVOKED/release ��å ���� ���� ���� ����",
+        "evidence": [
+          "SERVER",
+          "G4REVIEW"
+        ]
+      },
+      {
+        "id": "T13",
+        "status": "�̽���",
+        "observed": "� CDN/warm cache ��� ����",
+        "remaining": "ĳ�� ���� ���¿����� ������ ��ȯ ���� ����",
+        "evidence": [
+          "POOL",
+          "SERVER"
+        ]
+      },
+      {
+        "id": "T14",
+        "status": "�̽���",
+        "observed": "lab media ������ ������ � Range �μ� �ƴ�",
+        "remaining": "���� ���� Range/seek/retry�� ���� ��ȸ ����",
+        "evidence": [
+          "SERVER",
+          "POOL"
+        ]
+      },
+      {
+        "id": "T15",
+        "status": "���� ���� �Ϸ�",
+        "observed": "in-process ���ǡ���ȸ �Һ�/���� ȸ�� �ٰ� ����",
+        "remaining": "���� worker��DB������ �Һ���� Ȯ���Ϸ��� ���� ����",
+        "evidence": [
+          "SERVER",
+          "G4STATE",
+          "G4TEST"
+        ]
+      },
+      {
+        "id": "T16",
+        "status": "���� ���� �Ϸ�",
+        "observed": "lab�� client passed�� �ŷ����� �ʰ� ���� �Լ� ����",
+        "remaining": "prod ������capture trust�� ȥ������ ����",
+        "evidence": [
+          "SERVER",
+          "G4TEST",
+          "PROD"
+        ]
+      },
+      {
+        "id": "T17",
+        "status": "���� �ݷ� Ȯ��",
+        "observed": "���� lookup�� ����/��� ��ȣ ���",
+        "remaining": "�� source/���� ���ѿ� ���� �� �ĺ� ����; ��� ����� ǥ�� �Ұ�",
+        "evidence": [
+          "G4REPORT",
+          "G4REVIEW"
+        ]
+      },
+      {
+        "id": "T18",
+        "status": "�̽���",
+        "observed": "���� ����ũ�� ���� ������ ����",
+        "remaining": "���� source mask ���ġ��ռ� ���ݰ� �Ѱ� ���",
+        "evidence": [
+          "POOL"
+        ]
+      },
+      {
+        "id": "T19",
+        "status": "�̽���",
+        "observed": "ī�常 �ۼ�",
+        "remaining": "���� ���� ���/���� ���������� �߰�ȿ����UX ����",
+        "evidence": [
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "T20",
+        "status": "�κ�",
+        "observed": "������ source/participant/capture ID �ߺ� �˻�",
+        "remaining": "���� �躸��perceptual/trajectory �ߺ����Կ��� �Ļ��� ����",
+        "evidence": [
+          "COMPARE",
+          "POOL"
+        ]
+      },
+      {
+        "id": "T21",
+        "status": "�̽���",
+        "observed": "���� �ÿ��� ä���� ���� ��ü ���� �ƴ�",
+        "remaining": "���� fetch ���� �� generic guide������ gate�� �Ϸ�",
+        "evidence": [
+          "PROD",
+          "DEMO",
+          "POOL"
+        ]
+      },
+      {
+        "id": "T22",
+        "status": "�̽���",
+        "observed": "retired/revoked artifact ���� ����",
+        "remaining": "�ű� �߱� ������Ȱ�� challenge/ĳ�� ��ȿȭ",
+        "evidence": [
+          "POOL",
+          "SERVER"
+        ]
+      },
+      {
+        "id": "T23",
+        "status": "�̽���",
+        "observed": "�߱� ����/����� � ��ü �帧 �̿�",
+        "remaining": "���� �ڻ� ���������� ���� �� ���� ���� fallback ����",
+        "evidence": [
+          "POOL",
+          "SERVER"
+        ]
+      },
+      {
+        "id": "T24",
+        "status": "�κ�",
+        "observed": "�ڵ� Ŀ�ԡ����� manifest���˻� ��� ����",
+        "remaining": "�� release�� �Է�/�Ǹ�/�˻硤�ڻ� ���� ���� �ϼ�",
+        "evidence": [
+          "REVIEW",
+          "PIPE",
+          "POOL"
+        ]
+      }
+    ],
+    "WORKPACKAGE": [
+      {
+        "id": "WP0",
+        "status": "���� �Ϸ�",
+        "observed": "���� ���� ���硤����/���� ����/���� ���� ���",
+        "remaining": "�ļ� ������ ���¸� �� ����� ����",
+        "evidence": [
+          "POOL",
+          "ARCH"
+        ]
+      },
+      {
+        "id": "WP1",
+        "status": "��ȹ���Է� �ʿ�",
+        "observed": "�Ǹ�/�Կ�/schema �䱸�� ī�� ����",
+        "remaining": "���� �Ǹ� ���塤capture_protocol��split_manifest��schema ����",
+        "evidence": [
+          "POOL",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "WP2",
+        "status": "�κ�",
+        "observed": "Stage6/7 ���� �ߴܡ�2D������ ���� �˻�� ����",
+        "remaining": "frame/PTS mapping��recipe��run_batch ���ᡤimmutable manifest��T03~10",
+        "evidence": [
+          "H6",
+          "H7",
+          "PIPE",
+          "POOL"
+        ]
+      },
+      {
+        "id": "WP3",
+        "status": "���� Ž��+�ļ� �̽���",
+        "observed": "known-pool G4 ����� ����",
+        "remaining": "�Ǹ�/���� ��� �� �ڷ��� ��������ݡ���� �񱳿� release �ĺ�",
+        "evidence": [
+          "G4REPORT",
+          "POOL"
+        ]
+      },
+      {
+        "id": "WP4",
+        "status": "���� ����+�ļ� �̽���",
+        "observed": "loopback ���������ǡ���ȣ counter ����",
+        "remaining": "� private store��API������ client UX��T11~16/T21~24",
+        "evidence": [
+          "SERVER",
+          "POOL"
+        ]
+      },
+      {
+        "id": "WP5",
+        "status": "�̽���",
+        "observed": "� ���� ��Ģ�� ����",
+        "remaining": "���� ���衤�ݺ� ���⡤��������ü UX���/��� ����",
+        "evidence": [
+          "POOL",
+          "VALIDATION"
+        ]
+      }
+    ],
+    "VALIDATION": [
+      {
+        "id": "V0-01",
+        "status": "�κ�",
+        "observed": "�ڵ�/���� manifest �� ���� lab run ��� ����",
+        "remaining": "�� �ʼ� metadata validator������ code/config/split ���",
+        "evidence": [
+          "REVIEW",
+          "G4STATE",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V0-02",
+        "status": "���� �Ϸ� ����",
+        "observed": "���� lab�� L1/L2/���� L3 �и�; CLI�� score_only ǥ��",
+        "remaining": "���� �Է� ��ȣ ������ L3�� ���� Ȯ��",
+        "evidence": [
+          "SERVER",
+          "G4REPORT",
+          "COMPARE"
+        ]
+      },
+      {
+        "id": "V0-03",
+        "status": "�κ�",
+        "observed": "ī�� B �̺�Ʈ ��ࡤlab events ����",
+        "remaining": "������ attempts/global_frame/�ð�/����/��� ������",
+        "evidence": [
+          "CARDS",
+          "SERVER",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V0-04",
+        "status": "�κ�",
+        "observed": "CLI ����/�ߴ��� attempted �и� ����",
+        "remaining": "��ü ���ǡ���õ���timeout��missing ��� ��谪 ����",
+        "evidence": [
+          "COMPARE",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V1-01",
+        "status": "���� �Ϸ� ����",
+        "observed": "���� G4���� ���� �Ǻ� ��� ������ Ž��",
+        "remaining": "�� ���� ������ ������ �� �ڷ�� ���� ����",
+        "evidence": [
+          "G4REPORT"
+        ]
+      },
+      {
+        "id": "V1-02",
+        "status": "���� �Ϸ� ����",
+        "observed": "oracle/����/����/�ٸ� ����/invalid ȸ�� �ٰ�",
+        "remaining": "���� ��ǥ�� �� ���� ��� �ڷ�",
+        "evidence": [
+          "G4STATE",
+          "G4TEST"
+        ]
+      },
+      {
+        "id": "V1-03",
+        "status": "�κ�",
+        "observed": "���� ��� ����, �� CLI validation threshold ����",
+        "remaining": "���� trial �ĺ� Ư¡����� test��source�� confusion",
+        "evidence": [
+          "COMPARE",
+          "G4REPORT"
+        ]
+      },
+      {
+        "id": "V1-04",
+        "status": "���� Ž�� �Ϸ�",
+        "observed": "���� ���� ����������/�������ݷ� ����",
+        "remaining": "�� ����/���� ���� ���ѡ������� Ȯ�� ����",
+        "evidence": [
+          "G4REPORT",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V2-01",
+        "status": "�κ�",
+        "observed": "source ������ҡ������ڡ�capture ID �˻� ����",
+        "remaining": "�̻�� ���� ���� manifest�� ���� ������ ����",
+        "evidence": [
+          "COMPARE",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "V2-02",
+        "status": "���� Ž��+�ļ� �̽���",
+        "observed": "����/known-pool ���ݱ� ��� ����",
+        "remaining": "K0/K1 �� source�� ���ݱ�/���꺰 ����",
+        "evidence": [
+          "G4REPORT",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V2-03",
+        "status": "���� �Ϸ�",
+        "observed": "���� source�����ꡤ���� ���� ����",
+        "remaining": "�ػ�/ũ��/�ڵ� �� ���� ���� ���� ���ۡ�����",
+        "evidence": [
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V2-04",
+        "status": "���� Ž�� �Ϸ�",
+        "observed": "known-pool �ݷʡ��Ѱ� ���� ����",
+        "remaining": "held-out��adaptive �� �򰡸� ���� ����",
+        "evidence": [
+          "G4REPORT",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V3-01",
+        "status": "���� �Ϸ�",
+        "observed": "������ ��ȣ��������������/������/���� 2��3",
+        "remaining": "P���� ���ɼ� Ȯ��; ��� 2��2�� �����ϸ� ��� ���� ����",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V3-02",
+        "status": "�̽���",
+        "observed": "�Է� ��ȣ ���ռ��� ���� �׸� ����",
+        "remaining": "�� �Է¡����� ���ᡤ����ȯ�桤����/�����ȣ������ ��",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V3-03",
+        "status": "�κ�",
+        "observed": "���� ��ǥ ���⡤client ����������/���� �˻�",
+        "remaining": "���� ���� ī�޶�/���� ī�޶�/��ȣ ���� ���� ����",
+        "evidence": [
+          "SERVER",
+          "G4STATE",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V3-04",
+        "status": "�̽���",
+        "observed": "���� protected counter�� �̹� �˻��",
+        "remaining": "O1-U1/P1 �߰�ȿ�������� �񿭵�� �� ����",
+        "evidence": [
+          "G4REPORT",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V4-01",
+        "status": "���� �Ϸ�",
+        "observed": "����/����/�н������� ��ȹ ī��",
+        "remaining": "�� �����ڡ�source ���������ټ� ������ ����",
+        "evidence": [
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V4-02",
+        "status": "���� �Ϸ�",
+        "observed": "ù �õ����Ϸᡤ�ߴܡ���ü �ð������� ��ǥ ����",
+        "remaining": "���� �̺�Ʈ ���������� ���� �ð�/��� ����",
+        "evidence": [
+          "CARDS",
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V4-03",
+        "status": "�̽���",
+        "observed": "�Ϸ������δ� ���� ��Ģ ����",
+        "remaining": "���� ��ġ ������ �� ��� ��� ����",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V5-01",
+        "status": "�̽���",
+        "observed": "setup/attempt �󰢡�p=0 ���� ���� ����",
+        "remaining": "cold/warm��CPU/�޸�/���ۡ��ݺ� ��� ����",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V5-02",
+        "status": "�̽���",
+        "observed": "����/����/ä��/����/SDK �и� ���� ����",
+        "remaining": "��ġ�� ��롤���������� ��õ� ����",
+        "evidence": [
+          "VALIDATION",
+          "POOL"
+        ]
+      },
+      {
+        "id": "V5-03",
+        "status": "�̽���",
+        "observed": "���� ����ġ ���� ����",
+        "remaining": "����/���� ���� �Է¡��ΰ��� �м�",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V6-01",
+        "status": "���� �Ϸ�",
+        "observed": "������������ �ʵ塤���� �ܰ� ���� ����",
+        "remaining": "���ε� ����� ��ȿ ���� ��ȭ ���",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V6-02",
+        "status": "���� �Ϸ�",
+        "observed": "���� ���ͺ� ������ ����",
+        "remaining": "���� ���ͺ� ���ࡤ�߾�/�ؼ� ����",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V6-03",
+        "status": "�̽���",
+        "observed": "���/����/���� ���� ����",
+        "remaining": "�� ���������ꡤ��ࡤ������ ���� �ٰ�",
+        "evidence": [
+          "VALIDATION"
+        ]
+      },
+      {
+        "id": "V6-04",
+        "status": "�̽���",
+        "observed": "����/�ǻ�/���ޡ����/�ߴ� ���� ����",
+        "remaining": "���� ���� ��� �ǻ����",
+        "evidence": [
+          "VALIDATION"
+        ]
+      }
+    ],
+    "SCORING": [
+      {
+        "id": "S1",
+        "status": "�̱���",
+        "observed": "ǥ�� ��ǥ/time/missing adapter ����",
+        "remaining": "S1-01/02�� ���� �Է� �ļ���fixture",
+        "evidence": [
+          "SCORE",
+          "COMPARE"
+        ]
+      },
+      {
+        "id": "S1-01",
+        "status": "�̱���",
+        "observed": "��/���̡��ѹ��� mirror����ȭ scale ���",
+        "remaining": "��Ⱦ�� ����������/�̷� ���� adapter�� �˻�",
+        "evidence": [
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S1-02",
+        "status": "�κ�",
+        "observed": "�̺� primitive�� ������/�ߺ�/gap �ź�",
+        "remaining": "segment �ð����ʡ����� frame/PTS��null ������resample adapter",
+        "evidence": [
+          "METRICS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S2",
+        "status": "���� primitive",
+        "observed": "���� DP DTW��band�����/cell budget ����",
+        "remaining": "���� ������������ grid/radius������/�ð����� ��",
+        "evidence": [
+          "METRICS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S3",
+        "status": "���� primitive",
+        "observed": "����� �ð� gradient������ ��� ����",
+        "remaining": "���ڷ� noise/FPS����Ȱȭ��gap ���� �� ablation",
+        "evidence": [
+          "METRICS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S4",
+        "status": "�κ�",
+        "observed": "�̹� ����� �� ������ ��",
+        "remaining": "Ư¡ ���⡤B0/B1/B2/B3 �н�/�� �� ����",
+        "evidence": [
+          "COMPARE",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S4-01",
+        "status": "�κ�",
+        "observed": "CSV human/attack label �䱸",
+        "remaining": "wrong-human/attack-family/knowledge budget�� ���� �躸",
+        "evidence": [
+          "COMPARE",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S4-02",
+        "status": "�̱���",
+        "observed": "B0/B1/B2/B3 �ĺ� ����",
+        "remaining": "B1 Ư¡ ���⡤StandardScaler/LogisticRegression��ablation",
+        "evidence": [
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S4-03",
+        "status": "�̱���",
+        "observed": "ID ������ �˻�� validation-only ������ ����",
+        "remaining": "�׷� �н���fit ���� ������calibration������ test",
+        "evidence": [
+          "COMPARE",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S5",
+        "status": "�κ�",
+        "observed": "threshold_table�������validation ����/����",
+        "remaining": "������� CI�����ݱ��� �־ǰ������ڷ� ��",
+        "evidence": [
+          "METRICS",
+          "COMPARE"
+        ]
+      },
+      {
+        "id": "S6",
+        "status": "�̱���",
+        "observed": "prod legacy gate�� ī�� �α� ��� ����",
+        "remaining": "�ð� gap/coverage������ ���衤���� round-trip",
+        "evidence": [
+          "PROD",
+          "CARDS",
+          "SCORE"
+        ]
+      },
+      {
+        "id": "S7",
+        "status": "�κ�",
+        "observed": "���� legacy�� �� �ռ� ���� �˻� ����",
+        "remaining": "adapter����� trial�浶�� �򰡡�JS parity��shadow",
+        "evidence": [
+          "SCORE",
+          "REVIEW"
+        ]
+      },
+      {
+        "id": "S8",
+        "status": "�κ�",
+        "observed": "����12��CSV7 �˻�� ���� ���� ����",
+        "remaining": "���ڷ� �μ���JS/� ��ü ��� ����",
+        "evidence": [
+          "REVIEW",
+          "SCORE"
+        ]
+      }
+    ],
+    "UI": [
+      {
+        "id": "A-01",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "���� ���� ��ȿ bbox������ ū �ĺ������� ó��",
+        "remaining": "���� detector/�κ� �߸����� ũ�� ���� ����",
+        "evidence": [
+          "SEL",
+          "NTEST"
+        ]
+      },
+      {
+        "id": "A-02",
+        "status": "�κ�",
+        "observed": "����ȭ�������������ҽ� latch�������� ��ü �����",
+        "remaining": "ª�� �翬�ᡤhandedness/����/gate/timer/log ����",
+        "evidence": [
+          "SEL",
+          "DEMO",
+          "UI"
+        ]
+      },
+      {
+        "id": "A-03",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "����/����ȭ/����/�ҽ� �ȳ��� �ٽü��� ��ư",
+        "remaining": "���� ����� ���ص������� ����",
+        "evidence": [
+          "DEMO",
+          "HTML"
+        ]
+      },
+      {
+        "id": "A-04",
+        "status": "�κ�",
+        "observed": "������ũ�⡤�������ҽǡ��迭���� �ռ� �˻�",
+        "remaining": "���� ���6�� �¿�ա�������gate����� �ʱ�ȭ �� �Ǳ�7��",
+        "evidence": [
+          "NTEST",
+          "PROD"
+        ]
+      },
+      {
+        "id": "B-01",
+        "status": "�ڵ塤�ռ� �˻�",
+        "observed": "ī�޶� �� ���� ������ ��ġ�� �ÿ�",
+        "remaining": "�ü�/���� �δ� ������ ���� ����",
+        "evidence": [
+          "DEMO",
+          "HTML",
+          "UI"
+        ]
+      },
+      {
+        "id": "B-02",
+        "status": "�κ�",
+        "observed": "�и�/��ø������������������Ⱦ�񡤿��� ����",
+        "remaining": "���� �¿��/��ġ������ ä��/time ���� ����",
+        "evidence": [
+          "DEMO",
+          "HTML",
+          "PROD"
+        ]
+      },
+      {
+        "id": "B-03",
+        "status": "�������κ� ����",
+        "observed": "�� �׵θ������������ȳ��� �Ϻ� ȥ�� ����",
+        "remaining": "��桤���������� ȥ���� ���� ���� ����",
+        "evidence": [
+          "UI",
+          "DEMO"
+        ]
+      },
+      {
+        "id": "B2",
+        "status": "��ȹ���κ� ����",
+        "observed": "AI �ȳ� �ĺ�6���� ���¾ȳ� �Ϻ�",
+        "remaining": "������ �Ҽ� �ĺ� ���� ��ϡ��߰� UI����",
+        "evidence": [
+          "UI",
+          "CARDS"
+        ]
+      },
+      {
+        "id": "E1",
+        "status": "���� �Ϸ�",
+        "observed": "����/�ൿ/�̺�Ʈ ���� ��� ī�� B",
+        "remaining": "�ǵ��� �� ���䡤first-correct ���� ��ݡ����� logger",
+        "evidence": [
+          "CARDS"
+        ]
+      },
+      {
+        "id": "E2",
+        "status": "�̽���",
+        "observed": "ä��/����/���� ���� ����",
+        "remaining": "��ĺ� �� ��������� ����",
+        "evidence": [
+          "CARDS",
+          "UI"
+        ]
+      }
+    ],
+    "UI_CASE": [
+      {
+        "id": "CASE-1",
+        "status": "�ռ� �˻�",
+        "observed": "���� �� ������� �����ϰ� ū ��ȿ �� ����",
+        "remaining": "���� ī�޶��� ���� �� ��ȯ ����",
+        "evidence": [
+          "NTEST"
+        ]
+      },
+      {
+        "id": "CASE-2",
+        "status": "�ռ� �˻�",
+        "observed": "���� �迭 �����Ŀ��� ���� ����",
+        "remaining": "���� �� ������/���� ǰ��",
+        "evidence": [
+          "NTEST"
+        ]
+      },
+      {
+        "id": "CASE-3",
+        "status": "�ռ� �˻�",
+        "observed": "�� ū �� distractor ���忡�� ����",
+        "remaining": "����� ���� ���� ������ ��",
+        "evidence": [
+          "NTEST",
+          "SEL"
+        ]
+      },
+      {
+        "id": "CASE-4",
+        "status": "�ռ� �˻�",
+        "observed": "����� ũ��/���� ��ȣ������ ���� ���� �ź�",
+        "remaining": "���� ���������� �ڷ��� �ΰ���",
+        "evidence": [
+          "NTEST"
+        ]
+      },
+      {
+        "id": "CASE-5",
+        "status": "�ռ� �˻�",
+        "observed": "���� �� �ҽǽ� ���� ������ ���� �� ��",
+        "remaining": "���� timeout��gate������ ó�� ����",
+        "evidence": [
+          "NTEST",
+          "PROD"
+        ]
+      },
+      {
+        "id": "CASE-6",
+        "status": "�κ�",
+        "observed": "������ reload�� �ÿ� ��ü �ʱ�ȭ",
+        "remaining": "���� �� handedness������ ���⡤��������� �ϰ���",
+        "evidence": [
+          "DEMO",
+          "PROD"
+        ]
+      },
+      {
+        "id": "CASE-7",
+        "status": "�κ�",
+        "observed": "���� ���� ���� �̵� ���� ���� �ռ� �˻�",
+        "remaining": "���� prod ���� �帧�� ���� �� ȸ��",
+        "evidence": [
+          "NTEST",
+          "PROD"
+        ]
+      }
+    ],
+    "UI_OPTION": [
+      {
+        "id": "OPT-1",
+        "status": "�ĺ�",
+        "observed": "ª�� ���� �ù� ���",
+        "remaining": "������ �ٸ� ������ �ù� �������н�ȿ�� ����",
+        "evidence": [
+          "UI"
+        ]
+      },
+      {
+        "id": "OPT-2",
+        "status": "�κ� ����",
+        "observed": "���º� �� ���� �ȳ� ����",
+        "remaining": "����/���� �ܰ� �ȳ� ���հ� ��",
+        "evidence": [
+          "DEMO",
+          "UI"
+        ]
+      },
+      {
+        "id": "OPT-3",
+        "status": "�ĺ�",
+        "observed": "ū ��ȭ��+���� ����ȭ�� ����",
+        "remaining": "���� ����â UI����ø�� ���� ��",
+        "evidence": [
+          "UI"
+        ]
+      },
+      {
+        "id": "OPT-4",
+        "status": "�κ� ����",
+        "observed": "���� �� �׵θ� ����",
+        "remaining": "���� ���/���� ���� ������ ���� ���� ����",
+        "evidence": [
+          "DEMO",
+          "UI"
+        ]
+      },
+      {
+        "id": "OPT-5",
+        "status": "�ĺ�",
+        "observed": "���� ���� ��� ���",
+        "remaining": "ä�� ���� ���� ��������ü �δ� ����",
+        "evidence": [
+          "UI"
+        ]
+      },
+      {
+        "id": "OPT-6",
+        "status": "�ĺ�",
+        "observed": "������ ���� ���",
+        "remaining": "��û�� ����/�ù� ���������� ���� ����",
+        "evidence": [
+          "UI"
+        ]
+      }
+    ],
+    "GENERATION": [
+      {
+        "id": "GEN3D-01",
+        "status": "���踸",
+        "observed": "��� ������seed��generator_version������ ����� ����",
+        "remaining": "��/��ü/ī�޶�/trajectory/contact ������ manifest",
+        "evidence": [
+          "THREED",
+          "GEN"
+        ]
+      },
+      {
+        "id": "GEN3D-02",
+        "status": "���踸",
+        "observed": "����/�ӵ������ˡ�����롤��� ������ ���",
+        "remaining": "����/���� �ڵ� �˻�� ��� ���� �˻�",
+        "evidence": [
+          "THREED",
+          "GEN"
+        ]
+      },
+      {
+        "id": "GEN3D-03",
+        "status": "���踸",
+        "observed": "��ü �ܼ��� ���� �ٲٴ� ������ ����",
+        "remaining": "scene ��������� �䡤���/���� �ΰ� ��",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "GEN3D-04",
+        "status": "���踸",
+        "observed": "���� ������ ���⡤buffer/seed ���� ����",
+        "remaining": "renderer���������׸���/�ݻ�/�ڵ� �˻硤����",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "SCORE3D",
+        "status": "���踸",
+        "observed": "G0�� 2D ���, ���� ������ �������� ä������ ����",
+        "remaining": "���� ��������ķ ��Ȯ�Ǽ������� �� ���ա����� ��",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "EVAL3D",
+        "status": "���踸",
+        "observed": "B0~B3�� A1~A4��family holdout ��",
+        "remaining": "���� scene/���/���� ���ݡ���� ����",
+        "evidence": [
+          "THREED"
+        ]
+      },
+      {
+        "id": "R1-1",
+        "status": "�̽���",
+        "observed": "Text2HOI ���� ���� ���� ���",
+        "remaining": "���� code/checkpoint/data/model �Ǹ���ȯ�� manifest",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "R1-2",
+        "status": "�̽���",
+        "observed": "���� ��ó�� ���� ����",
+        "remaining": "��� GRAB/H2O/ARCTIC �� ���� �غ���ó�� �α�",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "R1-3",
+        "status": "�̽���",
+        "observed": "VAE contact��diffusion��refiner ���� ����",
+        "remaining": "���� demo/checkpoint ���ࡤ�� ��� ����",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "R1-4",
+        "status": "�̽���",
+        "observed": "�� ���� ����/���� �� ���",
+        "remaining": "�پ缺���ڿ��������ˡ����� ���� ��",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "R1-5",
+        "status": "�̽���",
+        "observed": "���� ���� �� CAPTCHA ���� �ܰ� ����",
+        "remaining": "G0 ���͡�����/������byte�˻硤�߱� adaptation",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "P1-1",
+        "status": "�̽���",
+        "observed": "�Կ� 2~3 family ��� ��ü ���Ϸ� ����",
+        "remaining": "���� ���� �ڼ����ð������� ���� �ڷ�",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "P1-2",
+        "status": "�̽���",
+        "observed": "��ü skeleton+primitive������ ���� ����",
+        "remaining": "�⺻ �ա���ü��grasp/contact ��ȹ��trajectory ����",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "P1-3",
+        "status": "�̽���",
+        "observed": "����/����/���� ��ȿ�� ���� ��ǥ",
+        "remaining": "�ĺ� ��������ϰ˻�添��/������Ż������/CPU ����",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "P1-4",
+        "status": "�̽���",
+        "observed": "�Կ� V0�����Ѻ��� V1����ü V2������ V3 ��",
+        "remaining": "���� source/family�����/���ݡ������ ���� ��",
+        "evidence": [
+          "GEN"
+        ]
+      },
+      {
+        "id": "GEN-RELEASE",
+        "status": "�̽���",
+        "observed": "ǰ�����Ǹ������������ ���ݡ���� ���� ����",
+        "remaining": "������ ���� �ڻ�� ��ü ����/����� ���� ���",
+        "evidence": [
+          "GEN",
+          "THREED",
+          "POOL"
+        ]
+      }
+    ]
+  },
+  "evidence_urls": {
+    "BACKLOG": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/backlog_2026-11-03.md",
+    "INDEX": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/backlog_source_index_2026-11-03.md",
+    "REVIEW": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/deliveries/2026-11-03_review.md",
+    "CARDS": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/experiment_cards_2026-11-03.md",
+    "EXPLAIN": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/research_explanation_2026-11-03.md",
+    "G3": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/reproducibility/g3_dr3_fr5_researcher_update_2026-10-28.md",
+    "LINEAGE": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/reproducibility/prod_v2_source_lineage_correction_2026-10-26.md",
+    "RECOVERY": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/RECOVERY_TARGETS.md",
+    "DICT": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/data_dictionary.md",
+    "G4STATE": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/g4_actual/g4_progress_state.md",
+    "G4REPORT": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/g4_actual/g4_final_report.md",
+    "G4REVIEW": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/g4_actual/g4_independent_review.md",
+    "G4TEST": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/g4_actual/g4_test_results.md",
+    "ROADMAP": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/research_roadmap_2026-11-02.md",
+    "UI": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/hand_selection_and_overlay_ui_proposal_v0.1_2026-11-02.md",
+    "FOLLOWUP": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/followup_experiments.md",
+    "SCORE": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/scoring_standardization_v0.3.md",
+    "VALIDATION": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/practical_validation_requirements_v0.3.md",
+    "POOL": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/video_pool_occlusion_delivery_requirements_v0.4.md",
+    "THREED": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/3d_hand_object_challenge_requirements_v0.1.md",
+    "CLAIM": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/claim_evidence_matrix.md",
+    "REPRO": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/reproduction.md",
+    "OVERLAP": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/docs/reproducibility/g4_human_attack_pool_overlap_2026-10-26.md",
+    "COMPARE": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/validation_v03/compare_scores.py",
+    "METRICS": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/validation_v03/standard_metrics.py",
+    "CTEST": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/tests/test_compare_scores.py",
+    "SERVER": "https://github.com/mukgore/codex/blob/916cc6fd0febe7f94115c94ff16b8abc10c46e4a/g4_lab/server.py",
+    "SEL": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/experiments/hand_selection/selection.js",
+    "DEMO": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/experiments/hand_selection/demo.js",
+    "HTML": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/experiments/hand_selection/index.html",
+    "NTEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/experiments/hand_selection/selection.test.cjs",
+    "DEMOTEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/experiments/hand_selection/demo.test.cjs",
+    "H6": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage6_occlusion.py",
+    "H7": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage7_gate.py",
+    "HTEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/tests/test_mask_delivery.py",
+    "HINTEGRITY": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/tests/test_mask_integrity.py",
+    "HGATETEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/tests/test_stage7_gate.py",
+    "PIPE": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/pipeline.py",
+    "PROD": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/hand_captcha_prod.html",
+    "MANIFEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/pool_manifest.json",
+    "LEGACYMASK": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/handtest1.py",
+    "CONFIG": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/config.py",
+    "WEIGHTS": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage5_weights.py",
+    "EXTRACT": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage1_extract.py",
+    "QUALITY": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage2_quality.py",
+    "STAGE4": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/stage4_length_norm.py",
+    "INGEST": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_pipeline/ingest_experiment_folders.py",
+    "BAKE": "https://github.com/mukgore/handcaptcha/blob/6d9201296b3c4341b555845868ae15fd5f5ada8b/dataset_expansion_bake_v1.py",
+    "GEN": "https://github.com/mukgore/codex/blob/b8c39d5b4453865e1eca1106976406447b588a3a/docs/hand_motion_source_and_generation_research_v0.1.md",
+    "ARCH": "https://github.com/mukgore/codex/blob/e4e918b606f3b0626a54cae96c78743924062ab7/docs/captcha_architecture_and_repo_audit_2026-10-26.md"
+  },
+  "tree_scan": {
+    "backlog_count": 62,
+    "backlog_ids": [
+      "NOW-01",
+      "NOW-02",
+      "NOW-03",
+      "NOW-04",
+      "NOW-05",
+      "NOW-06",
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U06",
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "V00",
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05",
+      "V06",
+      "N01",
+      "N02",
+      "N03",
+      "P01",
+      "P02",
+      "P03",
+      "M01",
+      "M02",
+      "M03",
+      "P04",
+      "D01",
+      "D02",
+      "D03",
+      "T01",
+      "W01",
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "source_index_headings": 41,
+    "source_index_missing_files": [],
+    "current_tree_scan": [
+      {
+        "repo": "codex",
+        "ref": "origin/main",
+        "sha": "6cfe1b14683b908d7ad47ae864ca20545e279404",
+        "code_files": 27,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "codex",
+        "ref": "origin/audit/captcha-architecture-20261026",
+        "sha": "e4e918b606f3b0626a54cae96c78743924062ab7",
+        "code_files": 8,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "codex",
+        "ref": "origin/captcha-reproducibility-audit",
+        "sha": "028fc03834f6c9288a1f1d6530cd80be90e60be3",
+        "code_files": 4,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "codex",
+        "ref": "origin/research/hand-motion-generation-20261026",
+        "sha": "b8c39d5b4453865e1eca1106976406447b588a3a",
+        "code_files": 8,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "codex",
+        "ref": "HEAD",
+        "sha": "362c9a5f117ab71768a4b37631cd34ceac108740",
+        "code_files": 29,
+        "generation_keyword_files": [],
+        "model_asset_files": [],
+        "equivalent_remote_commit": "916cc6fd0febe7f94115c94ff16b8abc10c46e4a",
+        "equivalent_tree_sha": "ed0ff91584f6e3c222be982cb99f0554c63f1e84",
+        "note": "local commit and remote commit differ in metadata; identical tree verified"
+      },
+      {
+        "repo": "handcaptcha",
+        "ref": "origin/main",
+        "sha": "b4d96d1e84324edd5376f9258f9863a0b6282a5a",
+        "code_files": 37,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "handcaptcha",
+        "ref": "origin/claude/kind-bardeen-vnotu9",
+        "sha": "91837bd4163317a04b467dbcff7a04e568f6f3d2",
+        "code_files": 37,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      },
+      {
+        "repo": "handcaptcha",
+        "ref": "HEAD",
+        "sha": "6d9201296b3c4341b555845868ae15fd5f5ada8b",
+        "code_files": 44,
+        "generation_keyword_files": [],
+        "model_asset_files": []
+      }
+    ]
+  }
+}
