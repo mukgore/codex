@@ -21,9 +21,9 @@
     "BACKLOG": [
       {
         "id": "NOW-01",
-        "status": "���� �Ϸ�",
-        "observed": "���� ��ϡ����� ������ ���޵ǰ� Ŀ�Ե�",
-        "remaining": "��Ͽ� �ִ� ��� �۾��� ���� �ϷḦ ������ ����",
+        "status": "문서 완료",
+        "observed": "통합 목록·원문 색인이 전달되고 커밋됨",
+        "remaining": "목록에 있는 모든 작업의 실행 완료를 뜻하지 않음",
         "evidence": [
           "BACKLOG",
           "INDEX"
@@ -31,9 +31,9 @@
       },
       {
         "id": "NOW-02",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "Stage6/7 ��ġ ���� �� ���� 9�������� �Լ� 17�� �˻�",
-        "remaining": "PTS��release���ٸ� ���� ��Ρ����� �浹�� ����",
+        "status": "코드·합성 검사",
+        "observed": "Stage6/7 패치 적용 및 가림 9개·기존 함수 17개 검사",
+        "remaining": "PTS·release·다른 굽기 경로·수식 충돌은 별도",
         "evidence": [
           "H6",
           "H7",
@@ -44,9 +44,9 @@
       },
       {
         "id": "NOW-03",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "���� �ÿ��� ���� ���, Node 13�� �˻�",
-        "remaining": "prod ���ᡤ���� ī�޶󡤻�뼺 ����",
+        "status": "코드·합성 검사",
+        "observed": "독립 시연과 선택 모듈, Node 13개 검사",
+        "remaining": "prod 연결·실제 카메라·사용성 측정",
         "evidence": [
           "SEL",
           "DEMO",
@@ -56,9 +56,9 @@
       },
       {
         "id": "NOW-04",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "���� �� CSV �� CLI�� 7�� �˻�",
-        "remaining": "���ڷ� Ư¡/���� ����� ���� �� �ڷ�",
+        "status": "코드·합성 검사",
+        "observed": "점수 쌍 CSV 비교 CLI와 7개 검사",
+        "remaining": "원자료 특징/점수 추출과 실제 평가 자료",
         "evidence": [
           "COMPARE",
           "CTEST"
@@ -66,27 +66,27 @@
       },
       {
         "id": "NOW-05",
-        "status": "���� �Ϸ�",
-        "observed": "ī�� A/B/C�� ���ǡ��и𡤱�� ��� �ۼ�",
-        "remaining": "���� ���á���ġ ��ݡ����������ࡤ����",
+        "status": "문서 완료",
+        "observed": "카드 A/B/C의 조건·분모·기록 계약 작성",
+        "remaining": "실험 선택·수치 잠금·수집·실행·판정",
         "evidence": [
           "CARDS"
         ]
       },
       {
         "id": "NOW-06",
-        "status": "���� �Ϸ�",
-        "observed": "���� ���� ��������ǥ ���� �ʾ� �ۼ�",
-        "remaining": "��ǥ �ð������� ���� ���ð� ���� ��ǥ",
+        "status": "문서 완료",
+        "observed": "기존 연구 설명·발표 검토 초안 작성",
+        "remaining": "발표 시간·최종 주장 선택과 실제 발표",
         "evidence": [
           "EXPLAIN"
         ]
       },
       {
         "id": "R01",
-        "status": "�κ�",
-        "observed": "���� �ʾ��� �ۼ���",
-        "remaining": "���� ��ǥ �������з��������� ����",
+        "status": "부분",
+        "observed": "설명 초안을 작성함",
+        "remaining": "최종 발표 원고·분량·연구자 검토",
         "evidence": [
           "EXPLAIN",
           "ROADMAP"
@@ -94,18 +94,18 @@
       },
       {
         "id": "R02",
-        "status": "���� �Ϸ� ����",
-        "observed": "G3��A/B��FR1~4��DR3 ���� ���¸� ����",
-        "remaining": "���� �м��� ������� �� �̿Ϸ�� ������� ����",
+        "status": "기존 완료 유지",
+        "observed": "G3·A/B·FR1~4·DR3 수용 상태를 연결",
+        "remaining": "기존 분석을 재실행할 새 미완료로 취급하지 않음",
         "evidence": [
           "G3"
         ]
       },
       {
         "id": "R03",
-        "status": "���� �Ϸ� ����",
-        "observed": "���Ǻ� ���� ����� ���� build �躸 �Ѱ踦 ����",
-        "remaining": "�̷� ���࿡�� build/pool manifest ���; ���� �߰� ������ �� ���� �ҿ�",
+        "status": "기존 완료 유지",
+        "observed": "조건부 재현 수용과 과거 build 계보 한계를 보존",
+        "remaining": "미래 실행에서 build/pool manifest 기록; 과거 추가 복구는 현 범위 불요",
         "evidence": [
           "G3",
           "LINEAGE"
@@ -113,18 +113,18 @@
       },
       {
         "id": "R04",
-        "status": "���� �Ϸ� ����",
-        "observed": "���� �ΰ� �ܰ� ��ü�� ���� ����, ���� 13�ó����� ���� ���� ����",
-        "remaining": "�� ���� �򰡸� ���� ������ �ұ����� ����",
+        "status": "기존 완료 유지",
+        "observed": "이전 인간 단계 전체로 기준 선정, 사후 13시나리오 제외 설명 보존",
+        "remaining": "새 독립 평가를 기존 연구로 소급하지 않음",
         "evidence": [
           "G3"
         ]
       },
       {
         "id": "R05",
-        "status": "�Է� �ʿ�",
-        "observed": "�ʱ� n=4��ǥ10��grid25���ð����� p�� �躸�� ���ȭ",
-        "remaining": "Ư�� ���ڷ�/���� �̷� Ȯ�� �� ���� ����; �Ϸ�� A/B�� �ٽ� ���� ����",
+        "status": "입력 필요",
+        "observed": "초기 n=4·표10·grid25·시간·옛 p값 계보를 목록화",
+        "remaining": "특정 원자료/실행 이력 확보 시 한정 대조; 완료된 A/B를 다시 열지 않음",
         "evidence": [
           "RECOVERY",
           "G3"
@@ -132,9 +132,9 @@
       },
       {
         "id": "R06",
-        "status": "�κ�",
-        "observed": "���� null�� �ؼ� �Ѱ�� �� �α� ��� �ۼ�",
-        "remaining": "�� ������ ���� ����/���� ���� �� ��ü UI �ð� ����",
+        "status": "부분",
+        "observed": "과거 null의 해석 한계와 새 로그 계약 작성",
+        "remaining": "새 관찰로 실제 수행/추적 오류 및 전체 UI 시간 구분",
         "evidence": [
           "CARDS",
           "DICT"
@@ -142,9 +142,9 @@
       },
       {
         "id": "R07",
-        "status": "���� �Ϸ� ����",
-        "observed": "���� G4 ���� Ž�������� ���˻� ����� ����",
-        "remaining": "���� source/���/�ŷ� �Է��� ���� �ļ� ����",
+        "status": "기존 완료 유지",
+        "observed": "기존 G4 로컬 탐색·국소 방어·검산 기록을 연결",
+        "remaining": "독립 source/사람/신뢰 입력은 별도 후속 질문",
         "evidence": [
           "G4STATE",
           "G4REPORT"
@@ -152,18 +152,18 @@
       },
       {
         "id": "R08",
-        "status": "���� �Ϸ�",
-        "observed": "��ȣ������� �� ���� ī�� A �ۼ�",
-        "remaining": "���� �� �ּ���ä�� ��Ģ ���� �� ����",
+        "status": "문서 완료",
+        "observed": "모호성·허용 답 집합 카드 A 작성",
+        "remaining": "복수 답 주석·채점 규칙 결정 및 관찰",
         "evidence": [
           "CARDS"
         ]
       },
       {
         "id": "R09",
-        "status": "���� �Ϸ�",
-        "observed": "����/�/���� ���� ���ؿ� ���� ���ɼ� ��ȹ",
-        "remaining": "���� ���������ǡ��ڷ� �� ���� ��",
+        "status": "문서 완료",
+        "observed": "지각/운동/추적 오류 분해와 수행 가능성 계획",
+        "remaining": "관찰 절차·동의·자료 및 실제 평가",
         "evidence": [
           "CARDS",
           "FOLLOWUP"
@@ -171,9 +171,9 @@
       },
       {
         "id": "U01",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "��ȿ 21����bbox������������ȭ ���� ����",
-        "remaining": "���� ���� ��ȯ �����߸�/�ڼ�/FPS ���� Ȯ��",
+        "status": "코드·합성 검사",
+        "observed": "유효 21점·bbox·동률·안정화 선택 구현",
+        "remaining": "실제 검출 반환 수·잘림/자세/FPS 영향 확인",
         "evidence": [
           "SEL",
           "NTEST"
@@ -181,9 +181,9 @@
       },
       {
         "id": "U02",
-        "status": "�κ�",
-        "observed": "��ġ��ũ�⡤���� ���� ����, �ҽ�/��ȣ�� �� ��ü �����",
-        "remaining": "ª�� �翬�ᡤhandedness/����/gate/�α� ����; ������ �Ǳ� ����",
+        "status": "부분",
+        "observed": "위치·크기·형태 연속 추적, 소실/모호성 후 전체 재시작",
+        "remaining": "짧은 재연결·handedness/문제/gate/로그 통합; 오연결 실기 검증",
         "evidence": [
           "SEL",
           "DEMO",
@@ -192,9 +192,9 @@
       },
       {
         "id": "U03",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "�и�/��ø�������������� ���������� ī�޶� ����",
-        "remaining": "���� �¿�ա����̾ƿ���ī�޶󡤻�뼺",
+        "status": "코드·합성 검사",
+        "observed": "분리/중첩·투명도·독립 반전·원본 카메라 검출",
+        "remaining": "실제 좌우손·레이아웃·카메라·사용성",
         "evidence": [
           "DEMO",
           "HTML",
@@ -204,9 +204,9 @@
       },
       {
         "id": "U04",
-        "status": "�̽���",
-        "observed": "prod�� ������ �ÿ������� ����",
-        "remaining": "���� �ա��¿�ա�������Ÿ�̸ӡ���� ���� �� shadow ��",
+        "status": "미실행",
+        "observed": "prod와 독립된 시연까지만 존재",
+        "remaining": "선택 손·좌우손·관문·타이머·기록 연결 및 shadow 비교",
         "evidence": [
           "PROD",
           "DEMO"
@@ -214,9 +214,9 @@
       },
       {
         "id": "U05",
-        "status": "�κ�",
-        "observed": "�ĺ� ��ϰ� �� ���� ���� �ȳ����� �׵θ� �Ϻ� ����",
-        "remaining": "����/�ù�/���� ����ȭ��/���� ���á���������",
+        "status": "부분",
+        "observed": "후보 목록과 한 문장 상태 안내·손 테두리 일부 구현",
+        "remaining": "연습/시범/작은 보조화면/도움말 선택·구현·비교",
         "evidence": [
           "UI",
           "DEMO",
@@ -225,9 +225,9 @@
       },
       {
         "id": "U06",
-        "status": "���� �Ϸ�",
-        "observed": "�� ���ð� UI ȿ���� ������ ī�� B �ۼ�",
-        "remaining": "�ൿ ���� ���ǡ��̺�Ʈ �����⡤������ �񱳡�ä�� ����",
+        "status": "문서 완료",
+        "observed": "손 선택과 UI 효과를 나누는 카드 B 작성",
+        "remaining": "행동 정답 정의·이벤트 수집기·참가자 비교·채택 결정",
         "evidence": [
           "CARDS",
           "UI"
@@ -235,9 +235,9 @@
       },
       {
         "id": "S01",
-        "status": "�̽���",
-        "observed": "��ǥ���ð������� ǥ�� adapter�� ������ ����",
-        "remaining": "��Ⱦ�񡤹̷������� �ð���null/gap������ �躸 adapter ����",
+        "status": "미실행",
+        "observed": "좌표·시간·누락 표준 adapter는 명세로 남음",
+        "remaining": "종횡비·미러·구간 시간·null/gap·참조 계보 adapter 구현",
         "evidence": [
           "SCORE",
           "COMPARE"
@@ -245,9 +245,9 @@
       },
       {
         "id": "S02",
-        "status": "�κ�",
-        "observed": "���� constrained_dtw�� �ռ� �˻� ����",
-        "remaining": "���� 15���� Ư¡��band/grid ���á����� �񱳡�JS �̽�",
+        "status": "부분",
+        "observed": "기존 constrained_dtw와 합성 검사 재사용",
+        "remaining": "실제 15각도 특징·band/grid 선택·오답 비교·JS 이식",
         "evidence": [
           "METRICS",
           "SCORE"
@@ -255,9 +255,9 @@
       },
       {
         "id": "S03",
-        "status": "�κ�",
-        "observed": "���� ����� timestamp �̺� �Լ� ����",
-        "remaining": "������gap����Ȱȭ��FPS/������ ������ ���� trial ����",
+        "status": "부분",
+        "observed": "기존 비균일 timestamp 미분 함수 재사용",
+        "remaining": "단위·gap·평활화·FPS/노이즈 검증과 실제 trial 적용",
         "evidence": [
           "METRICS",
           "SCORE"
@@ -265,9 +265,9 @@
       },
       {
         "id": "S04",
-        "status": "�κ�",
-        "observed": "�̹� ����� legacy/candidate ���� �� ���� �߰�",
-        "remaining": "B0/B1 Ư¡/���� ����, B2 �н���B3 ablation��calibration",
+        "status": "부분",
+        "observed": "이미 계산한 legacy/candidate 점수 비교 도구 추가",
+        "remaining": "B0/B1 특징/점수 추출, B2 학습·B3 ablation·calibration",
         "evidence": [
           "COMPARE",
           "SCORE"
@@ -275,9 +275,9 @@
       },
       {
         "id": "S05",
-        "status": "�κ�",
-        "observed": "���� threshold �Լ��� �� validation/test ����",
-        "remaining": "ROC/DET �׸������ݱ��� �־Ƿ������� CI������ ��",
+        "status": "부분",
+        "observed": "기존 threshold 함수와 새 validation/test 집계",
+        "remaining": "ROC/DET 그림·공격군별 최악률·군집 CI·독립 평가",
         "evidence": [
           "COMPARE",
           "METRICS"
@@ -285,9 +285,9 @@
       },
       {
         "id": "S06",
-        "status": "�̽���",
-        "observed": "legacy gate�� �����ϰ� �� �α� �׸� ����",
-        "remaining": "gap/hold/coverage ��Ģ, ���� ����, ���� �αס����� ��ε�",
+        "status": "미실행",
+        "observed": "legacy gate를 유지하고 새 로그 항목만 설계",
+        "remaining": "gap/hold/coverage 규칙, 구간 집계, 버전 로그·저장 재로드",
         "evidence": [
           "SCORE",
           "PROD",
@@ -296,9 +296,9 @@
       },
       {
         "id": "S07",
-        "status": "�κ�",
-        "observed": "�ռ� ����/CSV �˻�� ����",
-        "remaining": "adapter �˻����� ���� trial�浶�� �򰡡�JS parity��shadow",
+        "status": "부분",
+        "observed": "합성 수학/CSV 검사는 있음",
+        "remaining": "adapter 검산→실제 대응 trial→독립 평가→JS parity→shadow",
         "evidence": [
           "SCORE",
           "REVIEW"
@@ -306,9 +306,9 @@
       },
       {
         "id": "V00",
-        "status": "�κ�",
-        "observed": "���� lab�� L1/L2/L3 ���а� �� score-only �и� ó��",
-        "remaining": "�� ���� metadata validator����ü attempts �αס����� ���",
+        "status": "부분",
+        "observed": "기존 lab의 L1/L2/L3 구분과 새 score-only 분모 처리",
+        "remaining": "새 실행 metadata validator·전체 attempts 로그·사전 잠금",
         "evidence": [
           "SERVER",
           "COMPARE",
@@ -317,9 +317,9 @@
       },
       {
         "id": "V01",
-        "status": "���� �Ϸ� ����",
-        "observed": "known-pool�� ����/����/����/���� Ž���� ���� G4���� ����",
-        "remaining": "�� ���ء��� �ڷ��� Ȯ�� �򰡰� �ʿ��ϸ� ���� ����",
+        "status": "기존 완료 유지",
+        "observed": "known-pool의 정상/오답/정지/보간 탐색은 기존 G4에서 수행",
+        "remaining": "새 기준·새 자료의 확증 평가가 필요하면 별도 실행",
         "evidence": [
           "G4REPORT",
           "G4STATE"
@@ -327,9 +327,9 @@
       },
       {
         "id": "V02",
-        "status": "�κ�",
-        "observed": "CSV�� source/participant/capture ID ������ �˻�",
-        "remaining": "���� �躸������ �ߺ���attack-family holdout�� �̻�� �ڷ�",
+        "status": "부분",
+        "observed": "CSV의 source/participant/capture ID 교집합 검사",
+        "remaining": "실제 계보·근접 중복·attack-family holdout과 미사용 자료",
         "evidence": [
           "COMPARE",
           "CARDS",
@@ -338,9 +338,9 @@
       },
       {
         "id": "V03",
-        "status": "�̽���",
-        "observed": "�Է� ��ȣ �߰� ȿ���� ���踸 ����",
-        "remaining": "���� 2��3 ����(������ ���), ��ȣ ���� ���ռ� �� ���� ����",
+        "status": "미실행",
+        "observed": "입력 보호 추가 효과의 설계만 존재",
+        "remaining": "원문 2×3 조건(가능한 경우), 보호 도구 적합성 및 대응 시험",
         "evidence": [
           "VALIDATION",
           "CARDS"
@@ -348,9 +348,9 @@
       },
       {
         "id": "V04",
-        "status": "���� �Ϸ� ����",
-        "observed": "���� loopback ����/����/��ȸ �Һ�ȸ�� �Ϸ�",
-        "remaining": "���� capture trust������ � ������������ ���� ����",
+        "status": "기존 완료 유지",
+        "observed": "기존 loopback 세션/만료/일회 소비·회귀 완료",
+        "remaining": "실제 capture trust·과거 운영 인증·배포는 별도 범위",
         "evidence": [
           "SERVER",
           "G4STATE"
@@ -358,9 +358,9 @@
       },
       {
         "id": "V05",
-        "status": "�̽���",
-        "observed": "lab�� in-process RLock�� ���� ���´� ����",
-        "remaining": "rate/query������ ������evaluator ���� ��ݡ����� worker/���� ���ڼ�",
+        "status": "미실행",
+        "observed": "lab에 in-process RLock과 세션 상태는 존재",
+        "remaining": "rate/query·만료 정리·evaluator 공유 잠금·다중 worker/영속 원자성",
         "evidence": [
           "SERVER",
           "G4REVIEW"
@@ -368,9 +368,9 @@
       },
       {
         "id": "V06",
-        "status": "�Է� �ʿ�",
-        "observed": "���� human18/���� pool/legacy�� ���̸� ����",
-        "remaining": "���� challenge�� �� ���� �ڷᡤ���� ī�޶�source �躸",
+        "status": "입력 필요",
+        "observed": "과거 human18/공개 pool/legacy의 차이를 유지",
+        "remaining": "공통 challenge의 새 정상 자료·실제 카메라·source 계보",
         "evidence": [
           "OVERLAP",
           "G4STATE"
@@ -378,9 +378,9 @@
       },
       {
         "id": "N01",
-        "status": "�κ�",
-        "observed": "�̹� ���� ������ ���� ������Ű ������ �˻�",
-        "remaining": "����� ��ü Git �̷¡������ �ڷ��� ���� ����",
+        "status": "부분",
+        "observed": "이번 전달 파일의 공개 범위·키 패턴을 검사",
+        "remaining": "저장소 전체 Git 이력·비공개 자료의 별도 감사",
         "evidence": [
           "REVIEW",
           "BACKLOG"
@@ -388,9 +388,9 @@
       },
       {
         "id": "N02",
-        "status": "�κ�",
-        "observed": "���� ���ɡ����� ȯ��� ���޺� �ؽ� ���",
-        "remaining": "������ ������ ��ݡ��� run manifest; ���� �躸�� ���� ���� ����",
+        "status": "부분",
+        "observed": "실행 명령·관측 환경과 전달본 해시 기록",
+        "remaining": "완전한 의존성 잠금·새 run manifest; 과거 계보는 범위 결정 유지",
         "evidence": [
           "REVIEW",
           "REPRO"
@@ -398,9 +398,9 @@
       },
       {
         "id": "N03",
-        "status": "�κ�",
-        "observed": "���� ���� �ٰš����� ���塤�űԼ� �Ѱ� ����",
-        "remaining": "ä���� ������ ���� ������ �ʿ�� �ֽ� 1�� ���� ����",
+        "status": "부분",
+        "observed": "기존 주장 근거·선행 문헌·신규성 한계 보존",
+        "remaining": "채택할 주장의 정밀 대조와 필요시 최신 1차 문헌 조사",
         "evidence": [
           "CLAIM",
           "THREED"
@@ -408,18 +408,18 @@
       },
       {
         "id": "P01",
-        "status": "�Է� �ʿ�",
-        "observed": "�Ǹ� ���� ��Ű���� ���� ������ �����",
-        "remaining": "source�� �㰡�����ǡ��Ļ�/���� �Ǹ� ���� �� validator",
+        "status": "입력 필요",
+        "observed": "권리 대장 스키마와 금지 조건은 설계됨",
+        "remaining": "source별 허가·동의·파생/송출 권리 대장 및 validator",
         "evidence": [
           "POOL"
         ]
       },
       {
         "id": "P02",
-        "status": "�Է� �ʿ�",
-        "observed": "�Կ���source/capture/performer���ߺ� ��ȹ ����",
-        "remaining": "�� �Կ�/���� �ڷᡤ���� family ���������ҡ��ּ�",
+        "status": "입력 필요",
+        "observed": "촬영·source/capture/performer·중복 계획 존재",
+        "remaining": "새 촬영/사용권 자료·실질 family 수량·분할·주석",
         "evidence": [
           "POOL",
           "CARDS"
@@ -427,9 +427,9 @@
       },
       {
         "id": "P03",
-        "status": "�̽���",
-        "observed": "private source/artifact�� public ���䡤���� ���� ����",
-        "remaining": "��� ���� schema�� �°�/�ݸ�/��� ���� �ӽ�",
+        "status": "미실행",
+        "observed": "private source/artifact와 public 응답·상태 전이 명세",
+        "remaining": "기계 검증 schema와 승격/격리/폐기 상태 머신",
         "evidence": [
           "POOL",
           "PIPE"
@@ -437,9 +437,9 @@
       },
       {
         "id": "M01",
-        "status": "�κ�",
-        "observed": "Stage6/7�� x/y ����, �񿬼� �ε��� �ź�",
-        "remaining": "��������� frame/PTS mapping���ð�������VFR ó��",
+        "status": "부분",
+        "observed": "Stage6/7은 x/y 기준, 비연속 인덱스 거부",
+        "remaining": "원본↔출력 frame/PTS mapping·시간변형·VFR 처리",
         "evidence": [
           "H6",
           "H7",
@@ -448,9 +448,9 @@
       },
       {
         "id": "M02",
-        "status": "���� �ĺ�",
-        "observed": "M0~M4������/����/�ð���ȭ �ĺ��� ����",
-        "remaining": "����-�ո� �浹 �ذ�� ���/�ܼ�/�ռ� ���� ���� ��",
+        "status": "설계 후보",
+        "observed": "M0~M4·다중/순간/시간변화 후보를 보존",
+        "remaining": "수식-손목 충돌 해결과 사람/단서/합성 공격 대응 비교",
         "evidence": [
           "POOL",
           "HGATETEST",
@@ -459,9 +459,9 @@
       },
       {
         "id": "M03",
-        "status": "�κ�",
-        "observed": "Stage6�� ���� �źΡ����� decode��ũ��/����/���� �ȼ� �˻�",
-        "remaining": "�غ��� ROI��PTS����� rendition/track���Ǹ���release gate",
+        "status": "부분",
+        "observed": "Stage6의 누락 거부·최종 decode·크기/개수/내부 픽셀 검사",
+        "remaining": "해부학 ROI·PTS·모든 rendition/track·권리·release gate",
         "evidence": [
           "H6",
           "HTEST",
@@ -470,9 +470,9 @@
       },
       {
         "id": "P04",
-        "status": "�κ�",
-        "observed": "���� closed-set lookup����/�Ǻ�/�̵�� �ܼ� �ݷʴ� ����",
-        "remaining": "���� source���ݺ� ���ꡤ���� ���š����� ����ũ �ռ� ����",
+        "status": "부분",
+        "observed": "기존 closed-set lookup·원/피부/미디어 단서 반례는 있음",
+        "remaining": "독립 source·반복 예산·변형 제거·다중 마스크 합성 공격",
         "evidence": [
           "G4REPORT",
           "POOL"
@@ -480,18 +480,18 @@
       },
       {
         "id": "D01",
-        "status": "���� �ĺ�",
-        "observed": "��������/��û����/ĳ��/�ǽð� �� ���",
-        "remaining": "���� source���� ������CPU��p95������/���ۡ�����/��� ��",
+        "status": "설계 후보",
+        "observed": "사전생성/요청생성/캐시/실시간 비교 계약",
+        "remaining": "같은 source에서 수율·CPU·p95·저장/전송·공격/사람 비교",
         "evidence": [
           "POOL"
         ]
       },
       {
         "id": "D02",
-        "status": "�κ�",
-        "observed": "���� loopback�� media session/expiry �˻�",
-        "remaining": "� private origin��tenant��warm cache��Range/seek����� ��å",
+        "status": "부분",
+        "observed": "기존 loopback의 media session/expiry 검사",
+        "remaining": "운영 private origin·tenant·warm cache·Range/seek·폐기 정책",
         "evidence": [
           "SERVER",
           "POOL"
@@ -499,9 +499,9 @@
       },
       {
         "id": "D03",
-        "status": "�κ�",
-        "observed": "�� lab ���� ����� ���� ����, prod�� ���� ���� fetch ����",
-        "remaining": "����� ���� ��� �ǽð� UX���Է� ��衤oracle/query ��å",
+        "status": "부분",
+        "observed": "새 lab 서버 계산은 기존 구현, prod는 공개 정답 fetch 유지",
+        "remaining": "비공개 정답 기반 실시간 UX·입력 경계·oracle/query 정책",
         "evidence": [
           "PROD",
           "SERVER",
@@ -510,9 +510,9 @@
       },
       {
         "id": "T01",
-        "status": "�κ�",
-        "observed": "�μ� 24���� �Ϻ� ��� �˻�� ���� lab ȸ�͸� ����",
-        "remaining": "�Ʒ� T01~24 ������ �/���ڷ� ������ Ȯ��",
+        "status": "부분",
+        "observed": "인수 24종의 일부 기계 검사와 기존 lab 회귀만 존재",
+        "remaining": "아래 T01~24 각각의 운영/실자료 조건을 확인",
         "evidence": [
           "POOL",
           "HTEST"
@@ -520,18 +520,18 @@
       },
       {
         "id": "W01",
-        "status": "�κ�",
-        "observed": "WP0 ���� ��ϰ� WP2 ���� ���� �Ϻ�",
-        "remaining": "WP1 Ȯ��/schema��WP2 ����/PTS��WP3~5 ��/� ���� �۾�",
+        "status": "부분",
+        "observed": "WP0 감사 기록과 WP2 가림 정비 일부",
+        "remaining": "WP1 확보/schema·WP2 연결/PTS·WP3~5 평가/운영 의존 작업",
         "evidence": [
           "POOL"
         ]
       },
       {
         "id": "G01",
-        "status": "���� �Ϸ�",
-        "observed": "�Կ� �� ���� �� PR #2�� G01~08 ����",
-        "remaining": "R1/P1 ���� �ڵ塤�ڷᡤ���� ���",
+        "status": "문서 완료",
+        "observed": "촬영 대 생성 비교 PR #2와 G01~08 연결",
+        "remaining": "R1/P1 생성 코드·자료·실행 결과",
         "evidence": [
           "GEN",
           "THREED"
@@ -539,9 +539,9 @@
       },
       {
         "id": "G02",
-        "status": "�̽���",
-        "observed": "seed/��/��ü/ī�޶�/���� manifest ����",
-        "remaining": "3D generator���⺻ ��/��ü������ ��ȹ������ manifest",
+        "status": "미실행",
+        "observed": "seed/모델/물체/카메라/접촉 manifest 명세",
+        "remaining": "3D generator·기본 손/물체·접촉 계획·버전 manifest",
         "evidence": [
           "GEN",
           "THREED"
@@ -549,9 +549,9 @@
       },
       {
         "id": "G03",
-        "status": "�̽���",
-        "observed": "���������ˡ�����롤���� ������������ ���",
-        "remaining": "����/���� validator�� ���� ���� ���ɼ� �˻�",
+        "status": "미실행",
+        "observed": "관절·접촉·비관통·안전 가동·편안함 계약",
+        "remaining": "기하/물리 validator와 실제 수행 가능성 검사",
         "evidence": [
           "THREED",
           "GEN"
@@ -559,18 +559,18 @@
       },
       {
         "id": "G04",
-        "status": "�̽���",
-        "observed": "����� �� �����ӿ� ��ü �ܼ��� ���� �ٸ� ������ ����",
-        "remaining": "���� scene ���������� ���ա����/���� ���� ��",
+        "status": "미실행",
+        "observed": "비슷한 손 움직임에 물체 단서로 답이 다른 대응쌍 설계",
+        "remaining": "대응 scene 생성·정답 집합·사람/공격 구분 평가",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "G05",
-        "status": "�̽���",
-        "observed": "���� pass/mesh/seed ����������� ���� ���� ���",
-        "remaining": "���������׸���/�ݻ�/�Ƿ翧��buffer/codec ���� �˻�",
+        "status": "미실행",
+        "observed": "원본 pass/mesh/seed 비공개·최종 가림 렌더 계약",
+        "remaining": "렌더러·그림자/반사/실루엣·buffer/codec 누출 검사",
         "evidence": [
           "THREED",
           "GEN"
@@ -578,18 +578,18 @@
       },
       {
         "id": "G06",
-        "status": "���� �ĺ�",
-        "observed": "G0/G1/G2 ���� �ǹ̿� SCORE3D ����",
-        "remaining": "G0 ���á����� Ư¡������ �䡤��ķ ��Ȯ�Ǽ� ��",
+        "status": "설계 후보",
+        "observed": "G0/G1/G2 과제 의미와 SCORE3D 구분",
+        "remaining": "G0 선택·투영 특징·복수 답·웹캠 불확실성 평가",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "G07",
-        "status": "�̽���",
-        "observed": "B0~B3��A1~A4 ���� �� ����",
-        "remaining": "source/object/contact family ���ҡ����� ������ ���� ����",
+        "status": "미실행",
+        "observed": "B0~B3×A1~A4 공정 비교 명세",
+        "remaining": "source/object/contact family 분할·같은 예산의 실제 실행",
         "evidence": [
           "THREED",
           "GEN"
@@ -597,9 +597,9 @@
       },
       {
         "id": "G08",
-        "status": "�Է� �ʿ�",
-        "observed": "�ܺ� �ڵ�/��/������ �Ǹ����ڿ� ���� ���",
-        "remaining": "��� �ڻꡤcheckpoint��ȯ��/�ڿ� Ȯ�� �� ���� ����",
+        "status": "입력 필요",
+        "observed": "외부 코드/모델/데이터 권리·자원 전제 목록",
+        "remaining": "허용 자산·checkpoint·환경/자원 확보 및 원형 재현",
         "evidence": [
           "GEN",
           "THREED"
@@ -607,9 +607,9 @@
       },
       {
         "id": "B01",
-        "status": "���� �Ϸ�",
-        "observed": "��� �������ð����ߴܡ����ټ� ��ȹ�� ī�� A/B",
-        "remaining": "�� ��� �ڷᡤ���ǡ��������ൿ/��ġ ���ء�����",
+        "status": "문서 완료",
+        "observed": "사람 성공·시간·중단·접근성 계획과 카드 A/B",
+        "remaining": "새 사람 자료·동의·순서·행동/수치 기준·관찰",
         "evidence": [
           "CARDS",
           "VALIDATION"
@@ -617,9 +617,9 @@
       },
       {
         "id": "B02",
-        "status": "�̽���",
-        "observed": "����/�������� ��� ������ ����",
-        "remaining": "���� setup/attempt/CPU/���ۡ�p50/p95�������� �Է�",
+        "status": "미실행",
+        "observed": "공격/방어·구매자 비용 공식은 명세",
+        "remaining": "실측 setup/attempt/CPU/전송·p50/p95·경제성 입력",
         "evidence": [
           "VALIDATION",
           "POOL"
@@ -627,18 +627,18 @@
       },
       {
         "id": "B03",
-        "status": "���� �ĺ�",
-        "observed": "���������������ŷ� ���� ������ ���� ����",
-        "remaining": "���ε� ���� ���硤���������/���� �ٰ�",
+        "status": "설계 후보",
+        "observed": "고객군·질문·거래 증거 기준의 기존 명세",
+        "remaining": "승인된 고객 조사·견적·계약/지급 근거",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "B04",
-        "status": "�̽���",
-        "observed": "CONTINUE/MODIFY/STOP/INCONCLUSIVE ���� ����",
-        "remaining": "��������� ���ݡ���롤�Ǹ� ���Ÿ� ���� �� �ǻ����",
+        "status": "미실행",
+        "observed": "CONTINUE/MODIFY/STOP/INCONCLUSIVE 기준 존재",
+        "remaining": "사람·강한 공격·비용·권리 증거를 모은 새 의사결정",
         "evidence": [
           "VALIDATION",
           "ROADMAP"
@@ -648,9 +648,9 @@
     "AUD": [
       {
         "id": "AUD-01",
-        "status": "���ذ�",
-        "observed": "���� 8 clip manifest ���� ����",
-        "remaining": "���� ����� ����� ���� manifest �и�",
+        "status": "미해결",
+        "observed": "공개 8 clip manifest 구조 보존",
+        "remaining": "공개 응답과 비공개 정답 manifest 분리",
         "evidence": [
           "MANIFEST",
           "PROD"
@@ -658,9 +658,9 @@
       },
       {
         "id": "AUD-02",
-        "status": "���ذ�",
-        "observed": "prod�� landmark fetch �״��",
-        "remaining": "���� reference�� ���� ���� UX",
+        "status": "미해결",
+        "observed": "prod의 landmark fetch 그대로",
+        "remaining": "서버 reference와 정답 없는 UX",
         "evidence": [
           "PROD",
           "SERVER"
@@ -668,9 +668,9 @@
       },
       {
         "id": "AUD-03",
-        "status": "�κ�",
-        "observed": "prod Math.random sort ����; lab�� secrets.choice",
-        "remaining": "���� �߱޿� ������ ������pool ���� ���� ����",
+        "status": "부분",
+        "observed": "prod Math.random sort 유지; lab은 secrets.choice",
+        "remaining": "실제 발급에 안전한 배정·pool 부족 실패 연결",
         "evidence": [
           "PROD",
           "SERVER"
@@ -678,9 +678,9 @@
       },
       {
         "id": "AUD-04",
-        "status": "����",
-        "observed": "���� 5-MCP ��� baseline ���� ����",
-        "remaining": "M0 ����/�躸�� ������ ��",
+        "status": "보존",
+        "observed": "기존 5-MCP 평균 baseline 수식 유지",
+        "remaining": "M0 버전/계보를 명시해 비교",
         "evidence": [
           "LEGACYMASK",
           "POOL"
@@ -688,9 +688,9 @@
       },
       {
         "id": "AUD-05",
-        "status": "�κ�",
-        "observed": "Stage6 ���� �� ���ġ�2D ���",
-        "remaining": "M0/M1 manifest �������� �Ķ���� ����",
+        "status": "부분",
+        "observed": "Stage6 중점 원 수식·2D 계산",
+        "remaining": "M0/M1 manifest 버전·새 파라미터 검증",
         "evidence": [
           "H6",
           "POOL"
@@ -698,9 +698,9 @@
       },
       {
         "id": "AUD-06",
-        "status": "���ذ�",
-        "observed": "w3>1 �ո� �浹 ȸ�͸� ����",
-        "remaining": "��ǥ ROI/����/�ܺ� �ܼ� ���� ����",
+        "status": "미해결",
+        "observed": "w3>1 손목 충돌 회귀를 보존",
+        "remaining": "목표 ROI/수식/외부 단서 조건 합의",
         "evidence": [
           "H7",
           "HGATETEST"
@@ -708,9 +708,9 @@
       },
       {
         "id": "AUD-07",
-        "status": "������",
-        "observed": "Stage6/7 ���� ������ x/y�� ���",
-        "remaining": "��ü adapter����� ��η� �Ϲ�ȭ���� ����",
+        "status": "개선됨",
+        "observed": "Stage6/7 가림 수식은 x/y만 사용",
+        "remaining": "전체 adapter·모든 경로로 일반화하지 않음",
         "evidence": [
           "H6",
           "H7"
@@ -718,9 +718,9 @@
       },
       {
         "id": "AUD-08",
-        "status": "������",
-        "observed": "�̰����� Stage7 ��ü �и� ����",
-        "remaining": "� ���� gate �� �ٸ� ��� ����",
+        "status": "개선됨",
+        "observed": "미검출을 Stage7 전체 분모에 포함",
+        "remaining": "운영 출하 gate 및 다른 경로 통합",
         "evidence": [
           "H7",
           "HTEST"
@@ -728,9 +728,9 @@
       },
       {
         "id": "AUD-09",
-        "status": "������",
-        "observed": "Stage6 ��� mask ���� Ȯ�Ρ����н� ��� �̰Խ�",
-        "remaining": "���� bake/legacy ��ε� ���� ��å ����",
+        "status": "개선됨",
+        "observed": "Stage6 모든 mask 사전 확인·실패시 결과 미게시",
+        "remaining": "별도 bake/legacy 경로도 같은 정책 적용",
         "evidence": [
           "H6",
           "HTEST",
@@ -739,9 +739,9 @@
       },
       {
         "id": "AUD-10",
-        "status": "�κ�",
-        "observed": "Stage6�� �񿬼�/����� �ε����� �ź�",
-        "remaining": "���� filter/reverse ����mask�����䡤PTS �����",
+        "status": "부분",
+        "observed": "Stage6은 비연속/역재생 인덱스를 거부",
+        "remaining": "실제 filter/reverse 영상·mask·정답·PTS 재매핑",
         "evidence": [
           "H6",
           "STAGE4",
@@ -750,18 +750,18 @@
       },
       {
         "id": "AUD-11",
-        "status": "���ذ�",
-        "observed": "run_batch�� Stage6 ȣ�� ����",
-        "remaining": "���� renderer��������immutable manifest ����",
+        "status": "미해결",
+        "observed": "run_batch는 Stage6 호출 없음",
+        "remaining": "최종 renderer·검증·immutable manifest 연결",
         "evidence": [
           "PIPE"
         ]
       },
       {
         "id": "AUD-12",
-        "status": "���ذ�",
-        "observed": "forward+reverse �� len/fps ���",
-        "remaining": "���� PTS ���� gate����ǥ ���� ����",
+        "status": "미해결",
+        "observed": "forward+reverse 및 len/fps 계산",
+        "remaining": "실제 PTS 길이 gate·목표 범위 판정",
         "evidence": [
           "STAGE4",
           "CONFIG"
@@ -769,9 +769,9 @@
       },
       {
         "id": "AUD-13",
-        "status": "���ذ�",
-        "observed": "��ü ��ġ�� open-hand median ���� ����",
-        "remaining": "train-only ����������/�Կ��� �������ߺ� ����",
+        "status": "미해결",
+        "observed": "전체 배치의 open-hand median 추정 유지",
+        "remaining": "train-only 추정·원본/촬영자 균형·중복 제거",
         "evidence": [
           "WEIGHTS",
           "PIPE"
@@ -779,9 +779,9 @@
       },
       {
         "id": "AUD-14",
-        "status": "���ذ�",
-        "observed": "handedness �з� score�� confidence�� ���",
-        "remaining": "���� �з� Ȯ�Ű� landmark ǰ�� �и�",
+        "status": "미해결",
+        "observed": "handedness 분류 score를 confidence로 사용",
+        "remaining": "방향 분류 확신과 landmark 품질 분리",
         "evidence": [
           "EXTRACT",
           "QUALITY"
@@ -789,54 +789,54 @@
       },
       {
         "id": "AUD-15",
-        "status": "���ذ�",
-        "observed": "legacy ���� ���� ���� ����",
-        "remaining": "Stage2/3/7������ byte���Ǹ� ���� ���� ����",
+        "status": "미해결",
+        "observed": "legacy 복사 편입 구조 유지",
+        "remaining": "Stage2/3/7·최종 byte·권리 관문 동일 적용",
         "evidence": [
           "INGEST"
         ]
       },
       {
         "id": "AUD-16",
-        "status": "���ذ�",
-        "observed": "���� export_pool�� import ����",
-        "remaining": "���/��� ���������� �� ������ Ȯ��",
+        "status": "미해결",
+        "observed": "없는 export_pool의 import 유지",
+        "remaining": "모듈/계약 복구·실행 전 의존성 확인",
         "evidence": [
           "INGEST"
         ]
       },
       {
         "id": "AUD-17",
-        "status": "���ذ�",
-        "observed": "���� bake�� !pip Colab �� ����",
-        "remaining": "CLI ��Ű¡��adopted_clips/filter ���",
+        "status": "미해결",
+        "observed": "별도 bake는 !pip Colab 셀 형식",
+        "remaining": "CLI 패키징·adopted_clips/filter 계약",
         "evidence": [
           "BAKE"
         ]
       },
       {
         "id": "AUD-18",
-        "status": "���ذ�",
-        "observed": "���� bake�� last mask ���� ��� ����",
-        "remaining": "��� frame mask���ӽ�/���� �Խá����� �ݸ�",
+        "status": "미해결",
+        "observed": "별도 bake의 last mask 재사용 경로 유지",
+        "remaining": "모든 frame mask·임시/원자 게시·누락 격리",
         "evidence": [
           "BAKE"
         ]
       },
       {
         "id": "AUD-19",
-        "status": "���ذ�",
-        "observed": "���� H264 �� 1:1 ������ ���� ����",
-        "remaining": "���� H264 ��decode��PTS/����/���� �˻�",
+        "status": "미해결",
+        "observed": "별도 H264 후 1:1 프레임 가정 유지",
+        "remaining": "최종 H264 재decode·PTS/개수/가림 검사",
         "evidence": [
           "BAKE"
         ]
       },
       {
         "id": "AUD-20",
-        "status": "���ذ�",
-        "observed": "config�� �̰��� placeholder ǥ�� ����",
-        "remaining": "���� dev �ڷ��� ���ప/�ٰ�/��� ���",
+        "status": "미해결",
+        "observed": "config에 미검증 placeholder 표시 유지",
+        "remaining": "실제 dev 자료의 실행값/근거/잠금 기록",
         "evidence": [
           "CONFIG"
         ]
@@ -845,18 +845,18 @@
     "ACCEPTANCE": [
       {
         "id": "T01",
-        "status": "�̽���",
-        "observed": "�Ǹ� UNKNOWN �źδ� ����",
-        "remaining": "�Ǹ� ���塤release validator������ fixture",
+        "status": "미실행",
+        "observed": "권리 UNKNOWN 거부는 명세",
+        "remaining": "권리 대장·release validator·실패 fixture",
         "evidence": [
           "POOL"
         ]
       },
       {
         "id": "T02",
-        "status": "�̽���",
-        "observed": "prod�� ��ü manifest�� ������ fetch",
-        "remaining": "���� ���� client bundle������ allowlist �˻�",
+        "status": "미실행",
+        "observed": "prod는 전체 manifest와 정답을 fetch",
+        "remaining": "정답 없는 client bundle·응답 allowlist 검사",
         "evidence": [
           "PROD",
           "POOL"
@@ -864,9 +864,9 @@
       },
       {
         "id": "T03",
-        "status": "�κ�",
-        "observed": "Stage6 ���� ���� �ź� �� �߰� ���� ������ �˻�",
-        "remaining": "ù/�� ���� ���� ���ࡤ��� ����� �ݸ�/���� �˻�",
+        "status": "부분",
+        "observed": "Stage6 누락 공통 거부 및 중간 누락 명시적 검사",
+        "remaining": "첫/끝 누락 별도 실행·모든 경로의 격리/송출 검사",
         "evidence": [
           "H6",
           "HTEST",
@@ -875,9 +875,9 @@
       },
       {
         "id": "T04",
-        "status": "�κ�",
-        "observed": "�̰����� �и� �����ϰ� renderer�� �ź�",
-        "remaining": "���� ���� �°� ������ ����",
+        "status": "부분",
+        "observed": "미검출을 분모에 포함하고 renderer가 거부",
+        "remaining": "실제 출하 승격 경계까지 연결",
         "evidence": [
           "H7",
           "HTEST",
@@ -886,9 +886,9 @@
       },
       {
         "id": "T05",
-        "status": "�κ�",
-        "observed": "2D ���� �ڵ�� ū z circle ȸ�� ����",
-        "remaining": "x/y ���� z������ raster��gate ���� ������ ��� �˻�",
+        "status": "부분",
+        "observed": "2D 수식 코드와 큰 z circle 회귀 존재",
+        "remaining": "x/y 동일 z변경의 raster·gate 양쪽 명시적 동등성 검사",
         "evidence": [
           "H6",
           "H7",
@@ -897,9 +897,9 @@
       },
       {
         "id": "T06",
-        "status": "�κ�",
-        "observed": "�񿬼� ���� �ε��� �ź� �˻�",
-        "remaining": "����/�����/�ð������� ���� ����ȭ�ϴ� mapping",
+        "status": "부분",
+        "observed": "비연속 원본 인덱스 거부 검사",
+        "remaining": "삭제/역재생/시간변형을 실제 동기화하는 mapping",
         "evidence": [
           "H6",
           "STAGE4"
@@ -907,9 +907,9 @@
       },
       {
         "id": "T07",
-        "status": "�κ�",
-        "observed": "�ӽ� ��¡���decode�����н� �̰Խ� �� �������� ����",
-        "remaining": "encoder ���� ���� �� ������ RELEASED �°� ���� ����",
+        "status": "부분",
+        "observed": "임시 출력·재decode·실패시 미게시 및 기존파일 보존",
+        "remaining": "encoder 실패 주입 전 범위와 RELEASED 승격 금지 연결",
         "evidence": [
           "H6",
           "HTEST",
@@ -918,9 +918,9 @@
       },
       {
         "id": "T08",
-        "status": "�κ�",
-        "observed": "�ռ� MP4 ��ü count/dimension/���� �ȼ� �˻�",
-        "remaining": "PTS ��������duration����� ���� rendition/���ڷ� ��밪",
+        "status": "부분",
+        "observed": "합성 MP4 전체 count/dimension/내부 픽셀 검사",
+        "remaining": "PTS 단조성·duration·모든 최종 rendition/실자료 기대값",
         "evidence": [
           "H6",
           "HTEST"
@@ -928,9 +928,9 @@
       },
       {
         "id": "T09",
-        "status": "�̽���",
-        "observed": "Stage6 �ϳ��� MP4�� ����",
-        "remaining": "poster/thumbnail/���� track/�����/metadata ���� �˻�",
+        "status": "미실행",
+        "observed": "Stage6 하나의 MP4만 생성",
+        "remaining": "poster/thumbnail/다중 track/오디오/metadata 전수 검사",
         "evidence": [
           "POOL",
           "H6"
@@ -938,18 +938,18 @@
       },
       {
         "id": "T10",
-        "status": "�̽���",
-        "observed": "legacy ������ �ڵ� ��ȸ ���� ����",
-        "remaining": "���� ���� ���ࡤ���� ����",
+        "status": "미실행",
+        "observed": "legacy 재편입 자동 우회 구조 유지",
+        "remaining": "동일 관문 실행·예외 제거",
         "evidence": [
           "INGEST"
         ]
       },
       {
         "id": "T11",
-        "status": "�κ�",
-        "observed": "lab�� ������ ��Ρ�media session �˻�",
-        "remaining": "� private origin/��ϡ����� ���� �� ȸ�� �Ұ� ����",
+        "status": "부분",
+        "observed": "lab의 안전한 경로·media session 검사",
+        "remaining": "운영 private origin/목록·기존 공개 답 회수 불가 고려",
         "evidence": [
           "SERVER",
           "PROD"
@@ -957,9 +957,9 @@
       },
       {
         "id": "T12",
-        "status": "�κ�",
-        "observed": "���� lab�� ����/�ٸ� session �˻�",
-        "remaining": "tenant��REVOKED/release ��å ���� ���� ���� ����",
+        "status": "부분",
+        "observed": "기존 lab에 만료/다른 session 검사",
+        "remaining": "tenant·REVOKED/release 정책 포함 실제 서비스 시험",
         "evidence": [
           "SERVER",
           "G4REVIEW"
@@ -967,9 +967,9 @@
       },
       {
         "id": "T13",
-        "status": "�̽���",
-        "observed": "� CDN/warm cache ��� ����",
-        "remaining": "ĳ�� ���� ���¿����� ������ ��ȯ ���� ����",
+        "status": "미실행",
+        "observed": "운영 CDN/warm cache 경계 없음",
+        "remaining": "캐시 적중 상태에서도 무권한 반환 차단 시험",
         "evidence": [
           "POOL",
           "SERVER"
@@ -977,9 +977,9 @@
       },
       {
         "id": "T14",
-        "status": "�̽���",
-        "observed": "lab media ������ ������ � Range �μ� �ƴ�",
-        "remaining": "���� ���� Range/seek/retry�� ���� ��ȸ ����",
+        "status": "미실행",
+        "observed": "lab media 응답은 완전한 운영 Range 인수 아님",
+        "remaining": "승인 세션 Range/seek/retry와 제한 우회 시험",
         "evidence": [
           "SERVER",
           "POOL"
@@ -987,9 +987,9 @@
       },
       {
         "id": "T15",
-        "status": "���� ���� �Ϸ�",
-        "observed": "in-process ���ǡ���ȸ �Һ�/���� ȸ�� �ٰ� ����",
-        "remaining": "���� worker��DB������ �Һ���� Ȯ���Ϸ��� ���� ����",
+        "status": "기존 로컬 완료",
+        "observed": "in-process 세션·일회 소비/동시 회귀 근거 존재",
+        "remaining": "다중 worker·DB·영속 소비까지 확대하려면 별도 시험",
         "evidence": [
           "SERVER",
           "G4STATE",
@@ -998,9 +998,9 @@
       },
       {
         "id": "T16",
-        "status": "���� ���� �Ϸ�",
-        "observed": "lab�� client passed�� �ŷ����� �ʰ� ���� �Լ� ����",
-        "remaining": "prod ������capture trust�� ȥ������ ����",
+        "status": "기존 로컬 완료",
+        "observed": "lab은 client passed를 신뢰하지 않고 실제 함수 재계산",
+        "remaining": "prod 연동·capture trust와 혼동하지 않음",
         "evidence": [
           "SERVER",
           "G4TEST",
@@ -1009,9 +1009,9 @@
       },
       {
         "id": "T17",
-        "status": "���� �ݷ� Ȯ��",
-        "observed": "���� lookup�� ����/��� ��ȣ ���",
-        "remaining": "�� source/���� ���ѿ� ���� �� �ĺ� ����; ��� ����� ǥ�� �Ұ�",
+        "status": "기존 반례 확인",
+        "observed": "공개 lookup의 성공/취약 신호 기록",
+        "remaining": "새 source/사전 상한에 대한 새 후보 판정; 방어 통과로 표기 불가",
         "evidence": [
           "G4REPORT",
           "G4REVIEW"
@@ -1019,18 +1019,18 @@
       },
       {
         "id": "T18",
-        "status": "�̽���",
-        "observed": "���� ����ũ�� ���� ������ ����",
-        "remaining": "���� source mask ���ġ��ռ� ���ݰ� �Ѱ� ���",
+        "status": "미실행",
+        "observed": "여러 마스크의 누적 복원은 설계",
+        "remaining": "같은 source mask 정렬·합성 공격과 한계 기록",
         "evidence": [
           "POOL"
         ]
       },
       {
         "id": "T19",
-        "status": "�̽���",
-        "observed": "ī�常 �ۼ�",
-        "remaining": "���� ���� ���/���� ���������� �߰�ȿ����UX ����",
+        "status": "미실행",
+        "observed": "카드만 작성",
+        "remaining": "동일 조건 사람/공격 대응·가림 추가효과·UX 측정",
         "evidence": [
           "CARDS",
           "VALIDATION"
@@ -1038,9 +1038,9 @@
       },
       {
         "id": "T20",
-        "status": "�κ�",
-        "observed": "������ source/participant/capture ID �ߺ� �˻�",
-        "remaining": "���� �躸��perceptual/trajectory �ߺ����Կ��� �Ļ��� ����",
+        "status": "부분",
+        "observed": "제공된 source/participant/capture ID 중복 검사",
+        "remaining": "실제 계보·perceptual/trajectory 중복·촬영자 파생본 검증",
         "evidence": [
           "COMPARE",
           "POOL"
@@ -1048,9 +1048,9 @@
       },
       {
         "id": "T21",
-        "status": "�̽���",
-        "observed": "���� �ÿ��� ä���� ���� ��ü ���� �ƴ�",
-        "remaining": "���� fetch ���� �� generic guide������ gate�� �Ϸ�",
+        "status": "미실행",
+        "observed": "독립 시연은 채점이 없어 대체 증거 아님",
+        "remaining": "정답 fetch 제거 후 generic guide·서버 gate로 완료",
         "evidence": [
           "PROD",
           "DEMO",
@@ -1059,9 +1059,9 @@
       },
       {
         "id": "T22",
-        "status": "�̽���",
-        "observed": "retired/revoked artifact ���� ����",
-        "remaining": "�ű� �߱� ������Ȱ�� challenge/ĳ�� ��ȿȭ",
+        "status": "미실행",
+        "observed": "retired/revoked artifact 관리 명세",
+        "remaining": "신규 발급 금지·활성 challenge/캐시 무효화",
         "evidence": [
           "POOL",
           "SERVER"
@@ -1069,9 +1069,9 @@
       },
       {
         "id": "T23",
-        "status": "�̽���",
-        "observed": "�߱� ����/����� � ��ü �帧 �̿�",
-        "remaining": "���� �ڻ� ���������� ���� �� ���� ���� fallback ����",
+        "status": "미실행",
+        "observed": "발급 부족/장애의 운영 대체 흐름 미완",
+        "remaining": "승인 자산 부족·서버 실패 시 원본 없는 fallback 시험",
         "evidence": [
           "POOL",
           "SERVER"
@@ -1079,9 +1079,9 @@
       },
       {
         "id": "T24",
-        "status": "�κ�",
-        "observed": "�ڵ� Ŀ�ԡ����� manifest���˻� ��� ����",
-        "remaining": "�� release�� �Է�/�Ǹ�/�˻硤�ڻ� ���� ���� �ϼ�",
+        "status": "부분",
+        "observed": "코드 커밋·전달 manifest·검사 기록 있음",
+        "remaining": "각 release의 입력/권리/검사·자산 버전 추적 완성",
         "evidence": [
           "REVIEW",
           "PIPE",
@@ -1092,9 +1092,9 @@
     "WORKPACKAGE": [
       {
         "id": "WP0",
-        "status": "���� �Ϸ�",
-        "observed": "���� ���� ���硤����/���� ����/���� ���� ���",
-        "remaining": "�ļ� ������ ���¸� �� ����� ����",
+        "status": "문서 완료",
+        "observed": "기존 정적 감사·수식/정답 노출/연결 공백 기록",
+        "remaining": "후속 변경의 상태를 이 감사로 보충",
         "evidence": [
           "POOL",
           "ARCH"
@@ -1102,9 +1102,9 @@
       },
       {
         "id": "WP1",
-        "status": "��ȹ���Է� �ʿ�",
-        "observed": "�Ǹ�/�Կ�/schema �䱸�� ī�� ����",
-        "remaining": "���� �Ǹ� ���塤capture_protocol��split_manifest��schema ����",
+        "status": "계획·입력 필요",
+        "observed": "권리/촬영/schema 요구와 카드 존재",
+        "remaining": "실제 권리 대장·capture_protocol·split_manifest·schema 구현",
         "evidence": [
           "POOL",
           "CARDS"
@@ -1112,9 +1112,9 @@
       },
       {
         "id": "WP2",
-        "status": "�κ�",
-        "observed": "Stage6/7 ���� �ߴܡ�2D������ ���� �˻�� ����",
-        "remaining": "frame/PTS mapping��recipe��run_batch ���ᡤimmutable manifest��T03~10",
+        "status": "부분",
+        "observed": "Stage6/7 실패 중단·2D·최종 내부 검사는 구현",
+        "remaining": "frame/PTS mapping·recipe·run_batch 연결·immutable manifest·T03~10",
         "evidence": [
           "H6",
           "H7",
@@ -1124,9 +1124,9 @@
       },
       {
         "id": "WP3",
-        "status": "���� Ž��+�ļ� �̽���",
-        "observed": "known-pool G4 ����� ����",
-        "remaining": "�Ǹ�/���� ��� �� �ڷ��� ��������ݡ���� �񱳿� release �ĺ�",
+        "status": "기존 탐색+후속 미실행",
+        "observed": "known-pool G4 결과를 재사용",
+        "remaining": "권리/기하 통과 새 자료의 사람·공격·비용 비교와 release 후보",
         "evidence": [
           "G4REPORT",
           "POOL"
@@ -1134,9 +1134,9 @@
       },
       {
         "id": "WP4",
-        "status": "���� ����+�ļ� �̽���",
-        "observed": "loopback ���������ǡ���ȣ counter ����",
-        "remaining": "� private store��API������ client UX��T11~16/T21~24",
+        "status": "기존 로컬+후속 미실행",
+        "observed": "loopback 서버·세션·보호 counter 존재",
+        "remaining": "운영 private store·API·실제 client UX·T11~16/T21~24",
         "evidence": [
           "SERVER",
           "POOL"
@@ -1144,9 +1144,9 @@
       },
       {
         "id": "WP5",
-        "status": "�̽���",
-        "observed": "� ���� ��Ģ�� ����",
-        "remaining": "���� ���衤�ݺ� ���⡤��������ü UX���/��� ����",
+        "status": "미실행",
+        "observed": "운영 결정 규칙은 명세",
+        "remaining": "제한 시험·반복 노출·고갈·대체 UX·운영/폐기 결정",
         "evidence": [
           "POOL",
           "VALIDATION"
@@ -1156,9 +1156,9 @@
     "VALIDATION": [
       {
         "id": "V0-01",
-        "status": "�κ�",
-        "observed": "�ڵ�/���� manifest �� ���� lab run ��� ����",
-        "remaining": "�� �ʼ� metadata validator������ code/config/split ���",
+        "status": "부분",
+        "observed": "코드/전달 manifest 및 기존 lab run 기록 있음",
+        "remaining": "새 필수 metadata validator·사전 code/config/split 잠금",
         "evidence": [
           "REVIEW",
           "G4STATE",
@@ -1167,9 +1167,9 @@
       },
       {
         "id": "V0-02",
-        "status": "���� �Ϸ� ����",
-        "observed": "���� lab�� L1/L2/���� L3 �и�; CLI�� score_only ǥ��",
-        "remaining": "���� �Է� ��ȣ ������ L3�� ���� Ȯ��",
+        "status": "기존 완료 유지",
+        "observed": "기존 lab은 L1/L2/로컬 L3 분리; CLI도 score_only 표시",
+        "remaining": "실제 입력 보호 조건의 L3는 별도 확인",
         "evidence": [
           "SERVER",
           "G4REPORT",
@@ -1178,9 +1178,9 @@
       },
       {
         "id": "V0-03",
-        "status": "�κ�",
-        "observed": "ī�� B �̺�Ʈ ��ࡤlab events ����",
-        "remaining": "������ attempts/global_frame/�ð�/����/��� ������",
+        "status": "부분",
+        "observed": "카드 B 이벤트 계약·lab events 존재",
+        "remaining": "완전한 attempts/global_frame/시간/실패/비용 수집기",
         "evidence": [
           "CARDS",
           "SERVER",
@@ -1189,9 +1189,9 @@
       },
       {
         "id": "V0-04",
-        "status": "�κ�",
-        "observed": "CLI ����/�ߴ��� attempted �и� ����",
-        "remaining": "��ü ���ǡ���õ���timeout��missing ��� ��谪 ����",
+        "status": "부분",
+        "observed": "CLI 오류/중단을 attempted 분모에 보존",
+        "remaining": "전체 세션·재시도·timeout·missing 결과 경계값 집계",
         "evidence": [
           "COMPARE",
           "VALIDATION"
@@ -1199,18 +1199,18 @@
       },
       {
         "id": "V1-01",
-        "status": "���� �Ϸ� ����",
-        "observed": "���� G4���� ���� �Ǻ� ��� ������ Ž��",
-        "remaining": "�� ���� ������ ������ �� �ڷ�� ���� ����",
+        "status": "기존 완료 유지",
+        "observed": "기존 G4에서 오답 판별 취약 질문을 탐색",
+        "remaining": "새 정상 허용오차 검증은 새 자료로 별도 진행",
         "evidence": [
           "G4REPORT"
         ]
       },
       {
         "id": "V1-02",
-        "status": "���� �Ϸ� ����",
-        "observed": "oracle/����/����/�ٸ� ����/invalid ȸ�� �ٰ�",
-        "remaining": "���� ��ǥ�� �� ���� ��� �ڷ�",
+        "status": "기존 완료 유지",
+        "observed": "oracle/정지/역전/다른 동작/invalid 회귀 근거",
+        "remaining": "같은 목표의 새 정상 사람 자료",
         "evidence": [
           "G4STATE",
           "G4TEST"
@@ -1218,9 +1218,9 @@
       },
       {
         "id": "V1-03",
-        "status": "�κ�",
-        "observed": "���� ��� ����, �� CLI validation threshold ����",
-        "remaining": "���� trial �ĺ� Ư¡����� test��source�� confusion",
+        "status": "부분",
+        "observed": "기존 산식 보존, 새 CLI validation threshold 선택",
+        "remaining": "동일 trial 후보 특징·잠근 test·source별 confusion",
         "evidence": [
           "COMPARE",
           "G4REPORT"
@@ -1228,9 +1228,9 @@
       },
       {
         "id": "V1-04",
-        "status": "���� Ž�� �Ϸ�",
-        "observed": "���� ���� ����������/�������ݷ� ����",
-        "remaining": "�� ����/���� ���� ���ѡ������� Ȯ�� ����",
+        "status": "기존 탐색 완료",
+        "observed": "기존 오답 유형·관문/점수·반례 보고",
+        "remaining": "새 정상/오답 사전 하한·상한의 확증 판정",
         "evidence": [
           "G4REPORT",
           "VALIDATION"
@@ -1238,9 +1238,9 @@
       },
       {
         "id": "V2-01",
-        "status": "�κ�",
-        "observed": "source ������ҡ������ڡ�capture ID �˻� ����",
-        "remaining": "�̻�� ���� ���� manifest�� ���� ������ ����",
+        "status": "부분",
+        "observed": "source 구성요소·참가자·capture ID 검사 구현",
+        "remaining": "미사용 원본 분할 manifest와 실제 독립성 증거",
         "evidence": [
           "COMPARE",
           "CARDS"
@@ -1248,9 +1248,9 @@
       },
       {
         "id": "V2-02",
-        "status": "���� Ž��+�ļ� �̽���",
-        "observed": "����/known-pool ���ݱ� ��� ����",
-        "remaining": "K0/K1 �� source�� ���ݱ�/���꺰 ����",
+        "status": "기존 탐색+후속 미실행",
+        "observed": "공개/known-pool 공격군 기록 있음",
+        "remaining": "K0/K1 새 source와 공격군/예산별 실행",
         "evidence": [
           "G4REPORT",
           "VALIDATION"
@@ -1258,9 +1258,9 @@
       },
       {
         "id": "V2-03",
-        "status": "���� �Ϸ�",
-        "observed": "���� source�����ꡤ���� ���� ����",
-        "remaining": "�ػ�/ũ��/�ڵ� �� ���� ���� ���� ���ۡ�����",
+        "status": "문서 완료",
+        "observed": "동일 source·예산·노출 통제 명세",
+        "remaining": "해상도/크기/코덱 등 대응 조건 실제 제작·시험",
         "evidence": [
           "CARDS",
           "VALIDATION"
@@ -1268,9 +1268,9 @@
       },
       {
         "id": "V2-04",
-        "status": "���� Ž�� �Ϸ�",
-        "observed": "known-pool �ݷʡ��Ѱ� ���� ����",
-        "remaining": "held-out��adaptive �� �򰡸� ���� ����",
+        "status": "기존 탐색 완료",
+        "observed": "known-pool 반례·한계 판정 존재",
+        "remaining": "held-out·adaptive 새 평가를 별도 보고",
         "evidence": [
           "G4REPORT",
           "VALIDATION"
@@ -1278,27 +1278,27 @@
       },
       {
         "id": "V3-01",
-        "status": "���� �Ϸ�",
-        "observed": "������ ��ȣ��������������/������/���� 2��3",
-        "remaining": "P���� ���ɼ� Ȯ��; ��� 2��2�� �����ϸ� ��� ���� ����",
+        "status": "문서 완료",
+        "observed": "원문은 보호유무×과제없음/무가림/가림 2×3",
+        "remaining": "P조건 가능성 확인; 모방 2×2만 실행하면 축소 범위 명시",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V3-02",
-        "status": "�̽���",
-        "observed": "�Է� ��ȣ ���ռ��� ���� �׸� ����",
-        "remaining": "�� �Է¡����� ���ᡤ����ȯ�桤����/�����ȣ������ ��",
+        "status": "미실행",
+        "observed": "입력 보호 적합성의 조사 항목 정의",
+        "remaining": "손 입력·세션 연결·지원환경·증명/위험신호·조건 비교",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V3-03",
-        "status": "�κ�",
-        "observed": "���� ��ǥ ���⡤client ����������/���� �˻�",
-        "remaining": "���� ���� ī�޶�/���� ī�޶�/��ȣ ���� ���� ����",
+        "status": "부분",
+        "observed": "로컬 좌표 제출·client 변조·만료/재사용 검사",
+        "remaining": "실제 정상 카메라/가상 카메라/보호 도구 대응 시험",
         "evidence": [
           "SERVER",
           "G4STATE",
@@ -1307,9 +1307,9 @@
       },
       {
         "id": "V3-04",
-        "status": "�̽���",
-        "observed": "���� protected counter�� �̹� �˻��",
-        "remaining": "O1-U1/P1 �߰�ȿ�������� �񿭵�� �� ����",
+        "status": "미실행",
+        "observed": "로컬 protected counter는 이미 검산됨",
+        "remaining": "O1-U1/P1 추가효과·정상 비열등성의 새 판정",
         "evidence": [
           "G4REPORT",
           "VALIDATION"
@@ -1317,9 +1317,9 @@
       },
       {
         "id": "V4-01",
-        "status": "���� �Ϸ�",
-        "observed": "����/����/�н������� ��ȹ ī��",
-        "remaining": "�� �����ڡ�source ���������ټ� ������ ����",
+        "status": "문서 완료",
+        "observed": "조건/순서/학습·동의 계획 카드",
+        "remaining": "새 참가자·source 대응·접근성 절차와 수행",
         "evidence": [
           "CARDS",
           "VALIDATION"
@@ -1327,9 +1327,9 @@
       },
       {
         "id": "V4-02",
-        "status": "���� �Ϸ�",
-        "observed": "ù �õ����Ϸᡤ�ߴܡ���ü �ð������� ��ǥ ����",
-        "remaining": "���� �̺�Ʈ ���������� ���� �ð�/��� ����",
+        "status": "문서 완료",
+        "observed": "첫 시도·완료·중단·전체 시간·도움 지표 정의",
+        "remaining": "실제 이벤트 수집·실패 포함 시간/결과 집계",
         "evidence": [
           "CARDS",
           "VALIDATION"
@@ -1337,27 +1337,27 @@
       },
       {
         "id": "V4-03",
-        "status": "�̽���",
-        "observed": "�Ϸ������δ� ���� ��Ģ ����",
-        "remaining": "���� ��ġ ������ �� ��� ��� ����",
+        "status": "미실행",
+        "observed": "완료율·부담 판정 규칙 존재",
+        "remaining": "사전 수치 고정과 새 사람 결과 판정",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V5-01",
-        "status": "�̽���",
-        "observed": "setup/attempt �󰢡�p=0 ���� ���� ����",
-        "remaining": "cold/warm��CPU/�޸�/���ۡ��ݺ� ��� ����",
+        "status": "미실행",
+        "observed": "setup/attempt 상각·p=0 주의 공식 명세",
+        "remaining": "cold/warm·CPU/메모리/전송·반복 비용 실측",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V5-02",
-        "status": "�̽���",
-        "observed": "����/����/ä��/����/SDK �и� ���� ����",
-        "remaining": "��ġ�� ��롤���������� ��õ� ����",
+        "status": "미실행",
+        "observed": "가림/검출/채점/서버/SDK 분리 계측 명세",
+        "remaining": "장치별 비용·지연·실패 재시도 측정",
         "evidence": [
           "VALIDATION",
           "POOL"
@@ -1365,45 +1365,45 @@
       },
       {
         "id": "V5-03",
-        "status": "�̽���",
-        "observed": "���� ����ġ ���� ����",
-        "remaining": "����/���� ���� �Է¡��ΰ��� �м�",
+        "status": "미실행",
+        "observed": "고객 순가치 공식 정의",
+        "remaining": "측정/고객 제공 입력·민감도 분석",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V6-01",
-        "status": "���� �Ϸ�",
-        "observed": "������������ �ʵ塤���� �ܰ� ���� ����",
-        "remaining": "���ε� ����� ��ȿ ���� ��ȭ ���",
+        "status": "문서 완료",
+        "observed": "고객군·증거 필드·연락 단계 기준 존재",
+        "remaining": "승인된 조사와 유효 고객 대화 기록",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V6-02",
-        "status": "���� �Ϸ�",
-        "observed": "���� ���ͺ� ������ ����",
-        "remaining": "���� ���ͺ� ���ࡤ�߾�/�ؼ� ����",
+        "status": "문서 완료",
+        "observed": "기존 인터뷰 질문지 있음",
+        "remaining": "실제 인터뷰 실행·발언/해석 구분",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V6-03",
-        "status": "�̽���",
-        "observed": "���/����/���� ���� ����",
-        "remaining": "�� ���������ꡤ��ࡤ������ ���� �ٰ�",
+        "status": "미실행",
+        "observed": "계약/견적/사용권 범위 명세",
+        "remaining": "평가 범위·예산·계약·지급의 실제 근거",
         "evidence": [
           "VALIDATION"
         ]
       },
       {
         "id": "V6-04",
-        "status": "�̽���",
-        "observed": "����/�ǻ�/���ޡ����/�ߴ� ���� ����",
-        "remaining": "���� ���� ��� �ǻ����",
+        "status": "미실행",
+        "observed": "관심/의사/지급·계속/중단 기준 존재",
+        "remaining": "고객 증거 기반 의사결정",
         "evidence": [
           "VALIDATION"
         ]
@@ -1412,9 +1412,9 @@
     "SCORING": [
       {
         "id": "S1",
-        "status": "�̱���",
-        "observed": "ǥ�� ��ǥ/time/missing adapter ����",
-        "remaining": "S1-01/02�� ���� �Է� �ļ���fixture",
+        "status": "미구현",
+        "observed": "표준 좌표/time/missing adapter 명세",
+        "remaining": "S1-01/02의 실제 입력 파서·fixture",
         "evidence": [
           "SCORE",
           "COMPARE"
@@ -1422,18 +1422,18 @@
       },
       {
         "id": "S1-01",
-        "status": "�̱���",
-        "observed": "��/���̡��ѹ��� mirror����ȭ scale ���",
-        "remaining": "��Ⱦ�� ����������/�̷� ���� adapter�� �˻�",
+        "status": "미구현",
+        "observed": "폭/높이·한번만 mirror·퇴화 scale 계약",
+        "remaining": "종횡비 보정·관절/미러 기하 adapter와 검산",
         "evidence": [
           "SCORE"
         ]
       },
       {
         "id": "S1-02",
-        "status": "�κ�",
-        "observed": "�̺� primitive�� ������/�ߺ�/gap �ź�",
-        "remaining": "segment �ð����ʡ����� frame/PTS��null ������resample adapter",
+        "status": "부분",
+        "observed": "미분 primitive는 비유한/중복/gap 거부",
+        "remaining": "segment 시간→초·참조 frame/PTS·null 구간·resample adapter",
         "evidence": [
           "METRICS",
           "SCORE"
@@ -1441,9 +1441,9 @@
       },
       {
         "id": "S2",
-        "status": "���� primitive",
-        "observed": "���� DP DTW��band�����/cell budget ����",
-        "remaining": "���� ������������ grid/radius������/�ð����� ��",
+        "status": "기존 primitive",
+        "observed": "실제 DP DTW·band·경로/cell budget 구현",
+        "remaining": "실제 각도열·사전 grid/radius·오답/시간정렬 평가",
         "evidence": [
           "METRICS",
           "SCORE"
@@ -1451,9 +1451,9 @@
       },
       {
         "id": "S3",
-        "status": "���� primitive",
-        "observed": "����� �ð� gradient������ ��� ����",
-        "remaining": "���ڷ� noise/FPS����Ȱȭ��gap ���� �� ablation",
+        "status": "기존 primitive",
+        "observed": "비균일 시각 gradient·단위 계약 구현",
+        "remaining": "실자료 noise/FPS·평활화·gap 선택 및 ablation",
         "evidence": [
           "METRICS",
           "SCORE"
@@ -1461,9 +1461,9 @@
       },
       {
         "id": "S4",
-        "status": "�κ�",
-        "observed": "�̹� ����� �� ������ ��",
-        "remaining": "Ư¡ ���⡤B0/B1/B2/B3 �н�/�� �� ����",
+        "status": "부분",
+        "observed": "이미 산출된 두 점수를 비교",
+        "remaining": "특징 추출·B0/B1/B2/B3 학습/평가 전 과정",
         "evidence": [
           "COMPARE",
           "SCORE"
@@ -1471,9 +1471,9 @@
       },
       {
         "id": "S4-01",
-        "status": "�κ�",
-        "observed": "CSV human/attack label �䱸",
-        "remaining": "wrong-human/attack-family/knowledge budget�� ���� �躸",
+        "status": "부분",
+        "observed": "CSV human/attack label 요구",
+        "remaining": "wrong-human/attack-family/knowledge budget와 대응 계보",
         "evidence": [
           "COMPARE",
           "SCORE"
@@ -1481,18 +1481,18 @@
       },
       {
         "id": "S4-02",
-        "status": "�̱���",
-        "observed": "B0/B1/B2/B3 �ĺ� ����",
-        "remaining": "B1 Ư¡ ���⡤StandardScaler/LogisticRegression��ablation",
+        "status": "미구현",
+        "observed": "B0/B1/B2/B3 후보 명세",
+        "remaining": "B1 특징 산출·StandardScaler/LogisticRegression·ablation",
         "evidence": [
           "SCORE"
         ]
       },
       {
         "id": "S4-03",
-        "status": "�̱���",
-        "observed": "ID ������ �˻�� validation-only ������ ����",
-        "remaining": "�׷� �н���fit ���� ������calibration������ test",
+        "status": "미구현",
+        "observed": "ID 교집합 검사와 validation-only 선택은 있음",
+        "remaining": "그룹 학습·fit 누출 방지·calibration·최종 test",
         "evidence": [
           "COMPARE",
           "SCORE"
@@ -1500,9 +1500,9 @@
       },
       {
         "id": "S5",
-        "status": "�κ�",
-        "observed": "threshold_table�������validation ����/����",
-        "remaining": "������� CI�����ݱ��� �־ǰ������ڷ� ��",
+        "status": "부분",
+        "observed": "threshold_table·운영점·validation 선택/집계",
+        "remaining": "곡선·군집 CI·공격군별 최악값·실자료 평가",
         "evidence": [
           "METRICS",
           "COMPARE"
@@ -1510,9 +1510,9 @@
       },
       {
         "id": "S6",
-        "status": "�̱���",
-        "observed": "prod legacy gate�� ī�� �α� ��� ����",
-        "remaining": "�ð� gap/coverage������ ���衤���� round-trip",
+        "status": "미구현",
+        "observed": "prod legacy gate와 카드 로그 계약 존재",
+        "remaining": "시간 gap/coverage·구간 집계·저장 round-trip",
         "evidence": [
           "PROD",
           "CARDS",
@@ -1521,9 +1521,9 @@
       },
       {
         "id": "S7",
-        "status": "�κ�",
-        "observed": "���� legacy�� �� �ռ� ���� �˻� ����",
-        "remaining": "adapter����� trial�浶�� �򰡡�JS parity��shadow",
+        "status": "부분",
+        "observed": "기존 legacy와 새 합성 수학 검사 보존",
+        "remaining": "adapter→대응 trial→독립 평가→JS parity→shadow",
         "evidence": [
           "SCORE",
           "REVIEW"
@@ -1531,9 +1531,9 @@
       },
       {
         "id": "S8",
-        "status": "�κ�",
-        "observed": "����12��CSV7 �˻�� ���� ���� ����",
-        "remaining": "���ڷ� �μ���JS/� ��ü ��� ����",
+        "status": "부분",
+        "observed": "수학12·CSV7 검사와 재현 명령 있음",
+        "remaining": "실자료 인수·JS/운영 전체 통과 조건",
         "evidence": [
           "REVIEW",
           "SCORE"
@@ -1543,9 +1543,9 @@
     "UI": [
       {
         "id": "A-01",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "���� ���� ��ȿ bbox������ ū �ĺ������� ó��",
-        "remaining": "���� detector/�κ� �߸����� ũ�� ���� ����",
+        "status": "코드·합성 검사",
+        "observed": "여러 손의 유효 bbox·가장 큰 후보·동률 처리",
+        "remaining": "실제 detector/부분 잘림·손 크기 기준 실증",
         "evidence": [
           "SEL",
           "NTEST"
@@ -1553,9 +1553,9 @@
       },
       {
         "id": "A-02",
-        "status": "�κ�",
-        "observed": "����ȭ�������������ҽ� latch�������� ��ü �����",
-        "remaining": "ª�� �翬�ᡤhandedness/����/gate/timer/log ����",
+        "status": "부분",
+        "observed": "안정화·선택유지·소실 latch·명시적 전체 재시작",
+        "remaining": "짧은 재연결·handedness/문제/gate/timer/log 통합",
         "evidence": [
           "SEL",
           "DEMO",
@@ -1564,9 +1564,9 @@
       },
       {
         "id": "A-03",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "����/����ȭ/����/�ҽ� �ȳ��� �ٽü��� ��ư",
-        "remaining": "���� ����� ���ص������� ����",
+        "status": "코드·합성 검사",
+        "observed": "시작/안정화/선택/소실 안내와 다시선택 버튼",
+        "remaining": "실제 사용자 이해도·문구 선택",
         "evidence": [
           "DEMO",
           "HTML"
@@ -1574,9 +1574,9 @@
       },
       {
         "id": "A-04",
-        "status": "�κ�",
-        "observed": "������ũ�⡤�������ҽǡ��迭���� �ռ� �˻�",
-        "remaining": "���� ���6�� �¿�ա�������gate����� �ʱ�ȭ �� �Ǳ�7��",
+        "status": "부분",
+        "observed": "순서·크기·교차·소실·배열재사용 합성 검사",
+        "remaining": "수용 사례6의 좌우손·문제·gate·기록 초기화 및 실기7종",
         "evidence": [
           "NTEST",
           "PROD"
@@ -1584,9 +1584,9 @@
       },
       {
         "id": "B-01",
-        "status": "�ڵ塤�ռ� �˻�",
-        "observed": "ī�޶� �� ���� ������ ��ġ�� �ÿ�",
-        "remaining": "�ü�/���� �δ� ������ ���� ����",
+        "status": "코드·합성 검사",
+        "observed": "카메라 위 가림 문제를 겹치는 시연",
+        "remaining": "시선/대응 부담 감소의 실제 검증",
         "evidence": [
           "DEMO",
           "HTML",
@@ -1595,9 +1595,9 @@
       },
       {
         "id": "B-02",
-        "status": "�κ�",
-        "observed": "�и�/��ø������������������Ⱦ�񡤿��� ����",
-        "remaining": "���� �¿��/��ġ������ ä��/time ���� ����",
+        "status": "부분",
+        "observed": "분리/중첩·투명도·반전·종횡비·원본 검출",
+        "remaining": "실제 좌우손/장치·기존 채점/time 조건 통합",
         "evidence": [
           "DEMO",
           "HTML",
@@ -1606,9 +1606,9 @@
       },
       {
         "id": "B-03",
-        "status": "�������κ� ����",
-        "observed": "�� �׵θ������������ȳ��� �Ϻ� ȥ�� ����",
-        "remaining": "��桤���������� ȥ���� ���� ���� ����",
+        "status": "문서·부분 구현",
+        "observed": "손 테두리·투명도·안내로 일부 혼동 대응",
+        "remaining": "배경·가림·정렬 혼동과 실제 수행 관찰",
         "evidence": [
           "UI",
           "DEMO"
@@ -1616,9 +1616,9 @@
       },
       {
         "id": "B2",
-        "status": "��ȹ���κ� ����",
-        "observed": "AI �ȳ� �ĺ�6���� ���¾ȳ� �Ϻ�",
-        "remaining": "������ �Ҽ� �ĺ� ���� ��ϡ��߰� UI����",
+        "status": "계획·부분 구현",
+        "observed": "AI 안내 후보6종과 상태안내 일부",
+        "remaining": "연구자 소수 후보 선택 기록·추가 UI·비교",
         "evidence": [
           "UI",
           "CARDS"
@@ -1626,18 +1626,18 @@
       },
       {
         "id": "E1",
-        "status": "���� �Ϸ�",
-        "observed": "����/�ൿ/�̺�Ʈ ���� ��� ī�� B",
-        "remaining": "�ǵ��� �� ���䡤first-correct ���� ��ݡ����� logger",
+        "status": "문서 완료",
+        "observed": "조건/행동/이벤트 수집 계약 카드 B",
+        "remaining": "의도한 손 정답·first-correct 기준 잠금·실제 logger",
         "evidence": [
           "CARDS"
         ]
       },
       {
         "id": "E2",
-        "status": "�̽���",
-        "observed": "ä��/����/���� ���� ����",
-        "remaining": "��ĺ� �� ��������� ����",
+        "status": "미실행",
+        "observed": "채택/수정/보류 기준 설계",
+        "remaining": "비식별 비교 결과·선택 이유",
         "evidence": [
           "CARDS",
           "UI"
@@ -1647,27 +1647,27 @@
     "UI_CASE": [
       {
         "id": "CASE-1",
-        "status": "�ռ� �˻�",
-        "observed": "���� �� ������� �����ϰ� ū ��ȿ �� ����",
-        "remaining": "���� ī�޶��� ���� �� ��ȯ ����",
+        "status": "합성 검사",
+        "observed": "작은 손 선검출과 무관하게 큰 유효 손 선택",
+        "remaining": "실제 카메라의 여러 손 반환 검증",
         "evidence": [
           "NTEST"
         ]
       },
       {
         "id": "CASE-2",
-        "status": "�ռ� �˻�",
-        "observed": "���� �迭 �����Ŀ��� ���� ����",
-        "remaining": "���� �� ������/���� ǰ��",
+        "status": "합성 검사",
+        "observed": "검출 배열 재정렬에도 선택 유지",
+        "remaining": "실제 손 움직임/추적 품질",
         "evidence": [
           "NTEST"
         ]
       },
       {
         "id": "CASE-3",
-        "status": "�ռ� �˻�",
-        "observed": "�� ū �� distractor ���忡�� ����",
-        "remaining": "����� ���� ���� ������ ��",
+        "status": "합성 검사",
+        "observed": "더 큰 먼 distractor 등장에도 유지",
+        "remaining": "가까운 유사 손의 오연결 평가",
         "evidence": [
           "NTEST",
           "SEL"
@@ -1675,18 +1675,18 @@
       },
       {
         "id": "CASE-4",
-        "status": "�ռ� �˻�",
-        "observed": "����� ũ��/���� ��ȣ������ ���� ���� �ź�",
-        "remaining": "���� ���������� �ڷ��� �ΰ���",
+        "status": "합성 검사",
+        "observed": "비슷한 크기/교차 모호성에서 임의 연결 거부",
+        "remaining": "실제 교차·가림 자료의 민감도",
         "evidence": [
           "NTEST"
         ]
       },
       {
         "id": "CASE-5",
-        "status": "�ռ� �˻�",
-        "observed": "���� �� �ҽǽ� ���� ������ ���� �� ��",
-        "remaining": "���� timeout��gate������ ó�� ����",
+        "status": "합성 검사",
+        "observed": "선택 손 소실시 남은 손으로 진행 안 함",
+        "remaining": "실제 timeout·gate·점수 처리 연결",
         "evidence": [
           "NTEST",
           "PROD"
@@ -1694,9 +1694,9 @@
       },
       {
         "id": "CASE-6",
-        "status": "�κ�",
-        "observed": "������ reload�� �ÿ� ��ü �ʱ�ȭ",
-        "remaining": "���� �� handedness������ ���⡤��������� �ϰ���",
+        "status": "부분",
+        "observed": "페이지 reload로 시연 전체 초기화",
+        "remaining": "선택 손 handedness·문제 방향·관문·기록 일관성",
         "evidence": [
           "DEMO",
           "PROD"
@@ -1704,9 +1704,9 @@
       },
       {
         "id": "CASE-7",
-        "status": "�κ�",
-        "observed": "���� ���� ���� �̵� ���� ���� �ռ� �˻�",
-        "remaining": "���� prod ���� �帧�� ���� �� ȸ��",
+        "status": "부분",
+        "observed": "단일 손의 작은 이동 선택 유지 합성 검사",
+        "remaining": "기존 prod 수행 흐름에 통합 후 회귀",
         "evidence": [
           "NTEST",
           "PROD"
@@ -1716,18 +1716,18 @@
     "UI_OPTION": [
       {
         "id": "OPT-1",
-        "status": "�ĺ�",
-        "observed": "ª�� ���� �ù� ���",
-        "remaining": "������ �ٸ� ������ �ù� �������н�ȿ�� ����",
+        "status": "후보",
+        "observed": "짧은 시작 시범 목록",
+        "remaining": "연습용 다른 동작의 시범 구현·학습효과 통제",
         "evidence": [
           "UI"
         ]
       },
       {
         "id": "OPT-2",
-        "status": "�κ� ����",
-        "observed": "���º� �� ���� �ȳ� ����",
-        "remaining": "����/���� �ܰ� �ȳ� ���հ� ��",
+        "status": "부분 구현",
+        "observed": "상태별 한 문장 안내 있음",
+        "remaining": "과제/관문 단계 안내 통합과 비교",
         "evidence": [
           "DEMO",
           "UI"
@@ -1735,18 +1735,18 @@
       },
       {
         "id": "OPT-3",
-        "status": "�ĺ�",
-        "observed": "ū ��ȭ��+���� ����ȭ�� ����",
-        "remaining": "���� ����â UI����ø�� ���� ��",
+        "status": "후보",
+        "observed": "큰 주화면+작은 보조화면 명세",
+        "remaining": "작은 보조창 UI·중첩과 대응 비교",
         "evidence": [
           "UI"
         ]
       },
       {
         "id": "OPT-4",
-        "status": "�κ� ����",
-        "observed": "���� �� �׵θ� ����",
-        "remaining": "���� ���/���� ���� ������ ���� ���� ����",
+        "status": "부분 구현",
+        "observed": "선택 손 테두리 있음",
+        "remaining": "문제 재생/관문 순간 강조와 실제 이해 검증",
         "evidence": [
           "DEMO",
           "UI"
@@ -1754,18 +1754,18 @@
       },
       {
         "id": "OPT-5",
-        "status": "�ĺ�",
-        "observed": "���� ���� ��� ���",
-        "remaining": "ä�� ���� ���� ��������ü �δ� ����",
+        "status": "후보",
+        "observed": "별도 연습 모드 목록",
+        "remaining": "채점 설명 연습 구현·전체 부담 측정",
         "evidence": [
           "UI"
         ]
       },
       {
         "id": "OPT-6",
-        "status": "�ĺ�",
-        "observed": "������ ���� ���",
-        "remaining": "��û�� ����/�ù� ���������� ���� ����",
+        "status": "후보",
+        "observed": "선택형 도움말 목록",
+        "remaining": "요청형 도움/시범 구현·선택 편향 고려",
         "evidence": [
           "UI"
         ]
@@ -1774,9 +1774,9 @@
     "GENERATION": [
       {
         "id": "GEN3D-01",
-        "status": "���踸",
-        "observed": "��� ������seed��generator_version������ ����� ����",
-        "remaining": "��/��ü/ī�޶�/trajectory/contact ������ manifest",
+        "status": "설계만",
+        "observed": "장면 변수·seed·generator_version·정답 비공개 명세",
+        "remaining": "손/물체/카메라/trajectory/contact 생성과 manifest",
         "evidence": [
           "THREED",
           "GEN"
@@ -1784,9 +1784,9 @@
       },
       {
         "id": "GEN3D-02",
-        "status": "���踸",
-        "observed": "����/�ӵ������ˡ�����롤��� ������ ���",
-        "remaining": "����/���� �ڵ� �˻�� ��� ���� �˻�",
+        "status": "설계만",
+        "observed": "관절/속도·접촉·비관통·사람 편안함 계약",
+        "remaining": "기하/물리 자동 검사와 사람 수행 검사",
         "evidence": [
           "THREED",
           "GEN"
@@ -1794,126 +1794,126 @@
       },
       {
         "id": "GEN3D-03",
-        "status": "���踸",
-        "observed": "��ü �ܼ��� ���� �ٲٴ� ������ ����",
-        "remaining": "scene ��������� �䡤���/���� �ΰ� ��",
+        "status": "설계만",
+        "observed": "물체 단서가 답을 바꾸는 대응쌍 명세",
+        "remaining": "scene 생성·허용 답·사람/공격 인과 비교",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "GEN3D-04",
-        "status": "���踸",
-        "observed": "���� ������ ���⡤buffer/seed ���� ����",
-        "remaining": "renderer���������׸���/�ݻ�/�ڵ� �˻硤����",
+        "status": "설계만",
+        "observed": "가림 렌더만 송출·buffer/seed 누출 금지",
+        "remaining": "renderer·가림·그림자/반사/코덱 검사·송출",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "SCORE3D",
-        "status": "���踸",
-        "observed": "G0�� 2D ���, ���� ������ �������� ä������ ����",
-        "remaining": "���� ��������ķ ��Ȯ�Ǽ������� �� ���ա����� ��",
+        "status": "설계만",
+        "observed": "G0는 2D 모사, 가상 접촉을 실측으로 채점하지 않음",
+        "remaining": "투영 참조·웹캠 불확실성·복수 답 집합·서버 평가",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "EVAL3D",
-        "status": "���踸",
-        "observed": "B0~B3�� A1~A4��family holdout ��",
-        "remaining": "���� scene/���/���� ���ݡ���� ����",
+        "status": "설계만",
+        "observed": "B0~B3와 A1~A4·family holdout 비교",
+        "remaining": "실제 scene/사람/강한 공격·비용 실행",
         "evidence": [
           "THREED"
         ]
       },
       {
         "id": "R1-1",
-        "status": "�̽���",
-        "observed": "Text2HOI ���� ���� ���� ���",
-        "remaining": "���� code/checkpoint/data/model �Ǹ���ȯ�� manifest",
+        "status": "미실행",
+        "observed": "Text2HOI 원형 재현 전제 목록",
+        "remaining": "공식 code/checkpoint/data/model 권리·환경 manifest",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "R1-2",
-        "status": "�̽���",
-        "observed": "���� ��ó�� ���� ����",
-        "remaining": "��� GRAB/H2O/ARCTIC �� ���� �غ���ó�� �α�",
+        "status": "미실행",
+        "observed": "원형 전처리 절차 명세",
+        "remaining": "허용 GRAB/H2O/ARCTIC 등 실제 준비·전처리 로그",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "R1-3",
-        "status": "�̽���",
-        "observed": "VAE contact��diffusion��refiner ���� ����",
-        "remaining": "���� demo/checkpoint ���ࡤ�� ��� ����",
+        "status": "미실행",
+        "observed": "VAE contact→diffusion→refiner 구조 명세",
+        "remaining": "공식 demo/checkpoint 실행·원 출력 보존",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "R1-4",
-        "status": "�̽���",
-        "observed": "�� ���� ����/���� �� ���",
-        "remaining": "�پ缺���ڿ��������ˡ����� ���� ��",
+        "status": "미실행",
+        "observed": "원 논문 과제/분할 평가 계약",
+        "remaining": "다양성·자연성·접촉·관통 원형 평가",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "R1-5",
-        "status": "�̽���",
-        "observed": "���� ���� �� CAPTCHA ���� �ܰ� ����",
-        "remaining": "G0 ���͡�����/������byte�˻硤�߱� adaptation",
+        "status": "미실행",
+        "observed": "원형 성공 후 CAPTCHA 전용 단계 명세",
+        "remaining": "G0 필터·렌더/가림·byte검사·발급 adaptation",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "P1-1",
-        "status": "�̽���",
-        "observed": "�Կ� 2~3 family ��� ��ü ���Ϸ� ����",
-        "remaining": "���� ���� �ڼ����ð������� ���� �ڷ�",
+        "status": "미실행",
+        "observed": "촬영 2~3 family 기반 자체 파일럿 제안",
+        "remaining": "원본 대응 자세·시간·접촉 범위 자료",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "P1-2",
-        "status": "�̽���",
-        "observed": "��ü skeleton+primitive������ ���� ����",
-        "remaining": "�⺻ �ա���ü��grasp/contact ��ȹ��trajectory ����",
+        "status": "미실행",
+        "observed": "자체 skeleton+primitive·제한 변형 설계",
+        "remaining": "기본 손·물체·grasp/contact 계획·trajectory 구현",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "P1-3",
-        "status": "�̽���",
-        "observed": "����/����/���� ��ȿ�� ���� ��ǥ",
-        "remaining": "�ĺ� ��������ϰ˻�添��/������Ż������/CPU ����",
+        "status": "미실행",
+        "observed": "수율/지연/가림 유효성 측정 목표",
+        "remaining": "후보 생성→기하검사→렌더/가림→탈락사유/CPU 측정",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "P1-4",
-        "status": "�̽���",
-        "observed": "�Կ� V0�����Ѻ��� V1����ü V2������ V3 ��",
-        "remaining": "���� source/family�����/���ݡ������ ���� ��",
+        "status": "미실행",
+        "observed": "촬영 V0·제한변형 V1·자체 V2·원형 V3 비교",
+        "remaining": "대응 source/family·사람/공격·비용의 실제 비교",
         "evidence": [
           "GEN"
         ]
       },
       {
         "id": "GEN-RELEASE",
-        "status": "�̽���",
-        "observed": "ǰ�����Ǹ������������ ���ݡ���� ���� ����",
-        "remaining": "������ ���� �ڻ�� ��ü ����/����� ���� ���",
+        "status": "미실행",
+        "observed": "품질·권리·사람·강한 공격·비용 도입 관문",
+        "remaining": "생성된 최종 자산과 전체 증거/비공개 서버 경계",
         "evidence": [
           "GEN",
           "THREED",
