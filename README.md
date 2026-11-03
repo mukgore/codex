@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**최신 작업 현황(2026-11-03 전달본):** [두 저장소 통합 할 일](docs/backlog_2026-11-03.md), [실험 카드](docs/experiment_cards_2026-11-03.md), [설명·발표 초안](docs/research_explanation_2026-11-03.md), [handcaptcha 수정 패치와 적용 안내](patches/README.md). 큰 손 선택·중첩 화면과 가림 보강은 [handcaptcha 작업 브랜치](https://github.com/mukgore/handcaptcha/tree/work/todo-consolidation-20261103)에 커밋했고 기존/후보 점수 비교 CLI를 추가했습니다. 이번 적용·검사 내역은 [전달본 반영 기록](docs/deliveries/2026-11-03_review.md)에 있습니다.
+
 이 저장소는 기존 연구의 결과를 재현하고 한계를 검토하는 공개 분석 저장소입니다. 원본 보고서·참여자 응답·개인별 좌표·영상·모델 산출물은 공개 저장소에 포함하지 않습니다. 공개 가능한 집계 결과와 분석 코드만 제공합니다.
 
 G3는 [연구자 종료 결정과 남은 증거 한계](docs/reproducibility/g3_dr3_fr5_researcher_update_2026-10-28.md)를 기록한 단계입니다. 이후 승인된 로컬 G4 공격·방어 탐색을 수행했습니다. 최신 결과는 [G4 실제 코드 보고서](docs/g4_actual/g4_final_report.md), 과거 1차 상태와 결과는 [PROJECT_STATUS.md](PROJECT_STATUS.md) 및 [phase1_review.md](docs/phase1_review.md)에서 확인할 수 있습니다. 운영 배포·신규 참여자 수집·독립 holdout 검증은 수행하지 않았습니다.

@@ -1,0 +1,802 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,5 @@
++__pycache__/
++.pytest_cache/
++*.py[cod]
++pipeline_output/
++*.partial.mp4
+diff --git a/dataset_pipeline/stage6_occlusion.py b/dataset_pipeline/stage6_occlusion.py
+--- a/dataset_pipeline/stage6_occlusion.py
++++ b/dataset_pipeline/stage6_occlusion.py
+@@ -11,10 +11,14 @@
+ distance. We follow the explicit Stage 6 formula here and only reuse
+ generate_occluded_video()'s cv2 I/O loop from handtest1.py, not its math.
+ """
++import math
++import os
++import tempfile
++
+ import cv2
++import numpy as np
+ 
+ from dataset_pipeline.common import P0, P9
+-from dataset_pipeline.geometry import dist, midpoint
+ from dataset_pipeline.stage1_extract import frame_points
+ 
+ 
+@@ -24,37 +28,113 @@
+     Always projects using this same frame's 2D image landmarks -- never a 3D
+     world -> 2D pixel reprojection via a camera model -- since MediaPipe
+     returns both landmark sets from the same detection call."""
+-    w, mcp9 = image_lm_px[P0], image_lm_px[P9]
+-    diameter = dist(w, mcp9) * w3_new
+-    center = midpoint(w, mcp9)
+-    # Keep center in the same (x,y,z) shape as the landmark points so
+-    # downstream dist() calls (Stage 7) don't hit a shape mismatch; only
+-    # x/y are used when actually drawing the mask (cv2.circle is 2D).
+-    return tuple(float(c) for c in center), diameter / 2.0
++    if not math.isfinite(w3_new) or w3_new <= 0:
++        raise ValueError("w3_new must be finite and positive")
++    w, mcp9 = image_lm_px[P0][:2], image_lm_px[P9][:2]
++    if not all(math.isfinite(v) for v in (*w, *mcp9)):
++        raise ValueError("Mask landmarks must be finite")
++    diameter = math.dist(w, mcp9) * w3_new
++    if not math.isfinite(diameter) or diameter <= 0:
++        raise ValueError("Occlusion circle is degenerate")
++    center = tuple((float(a) + float(b)) / 2 for a, b in zip(w, mcp9))
++    return center, diameter / 2.0
+ 
+ 
+ def generate_occluded_video(video_path, frames, info, w3_new, output_path):
+-    """cv2 read/draw/write loop ported from handtest1.py's
+-    generate_occluded_video(); circle math replaced per
+-    project_occlusion_circle() above."""
+-    cap = cv2.VideoCapture(video_path)
+-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+-    out = cv2.VideoWriter(output_path, fourcc, info["fps"], (info["width"], info["height"]))
++    """Diagnostic renderer for unfiltered, un-reversed one-to-one source frames.
+ 
+-    last_center, last_radius = None, None
+-    idx = 0
+-    while True:
+-        ret, frame = cap.read()
+-        if not ret:
+-            break
+-        if idx < len(frames):
+-            pts = frame_points(frames[idx], "px")
+-            if pts is not None:
+-                last_center, last_radius = project_occlusion_circle(pts, w3_new)
+-        if last_center and last_radius:
+-            cv2.circle(frame, (int(last_center[0]), int(last_center[1])), int(last_radius), (0, 0, 0), -1)
+-        out.write(frame)
+-        idx += 1
++    Fail closed for missing masks or frame index/count mismatches. A successful
++    return checks count, dimensions and an eroded mask interior after encoding.
++    It does not prove anatomical coverage, rights or human/security suitability.
++    """
++    # This renderer has no source/output timeline remapping. Refuse filtered or
++    # reversed arrays rather than applying a mask to a different source frame.
++    if os.path.abspath(video_path) == os.path.abspath(output_path):
++        raise ValueError("Output must differ from the original video")
++    if os.path.exists(output_path):
++        raise FileExistsError("Refusing to overwrite an existing masked artifact")
++    if not frames or not math.isfinite(info["fps"]) or info["fps"] <= 0:
++        raise ValueError("Frames and a positive finite FPS are required")
++    if info["width"] <= 0 or info["height"] <= 0:
++        raise ValueError("Invalid video dimensions")
++    masks = []
++    for idx, record in enumerate(frames):
++        if record.get("frame_idx") != idx:
++            raise ValueError("Frames must match consecutive source frame indices")
++        pts = frame_points(record, "px")
++        if pts is None:
++            raise ValueError(f"No mask landmarks at frame {idx}")
++        center, radius = project_occlusion_circle(pts, w3_new)
++        if not (0 <= center[0] < info["width"] and 0 <= center[1] < info["height"]):
++            raise ValueError(f"Mask center outside video at frame {idx}")
++        if int(radius) < 1:
++            raise ValueError(f"Mask radius too small at frame {idx}")
++        masks.append((center, radius))
+ 
+-    cap.release()
+-    out.release()
++    output_dir = os.path.dirname(os.path.abspath(output_path))
++    fd, tmp_path = tempfile.mkstemp(prefix=".masked-", suffix=".mp4", dir=output_dir)
++    os.close(fd)
++    cap = out = None
++    try:
++        cap = cv2.VideoCapture(video_path)
++        if not cap.isOpened():
++            raise ValueError("Could not open source video")
++        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
++        out = cv2.VideoWriter(tmp_path, fourcc, info["fps"], (info["width"], info["height"]))
++        if not out.isOpened():
++            raise ValueError("Could not open masked video writer")
++        count = 0
++        while True:
++            ret, frame = cap.read()
++            if not ret:
++                break
++            if count >= len(masks):
++                raise ValueError("Source has more frames than masks")
++            if frame.shape[:2] != (info["height"], info["width"]):
++                raise ValueError(f"Source dimensions changed at frame {count}")
++            center, radius = masks[count]
++            cv2.circle(frame, (int(center[0]), int(center[1])), int(radius), (0, 0, 0), -1)
++            out.write(frame)
++            count += 1
++        if count != len(masks):
++            raise ValueError("Source has fewer frames than masks")
++        out.release()
++        out = None
++        # Container/encoder failures can produce a missing or undecodable file.
++        check = cv2.VideoCapture(tmp_path)
++        try:
++            if not check.isOpened():
++                raise ValueError("Masked video cannot be decoded")
++            decoded = 0
++            while True:
++                ok, decoded_frame = check.read()
++                if not ok:
++                    break
++                if decoded >= count or decoded_frame.shape[:2] != (info['height'], info['width']):
++                    raise ValueError('Masked video frame count or dimensions changed')
++                center, radius = masks[decoded]
++                # Ignore the codec-sensitive boundary, inspect every interior pixel.
++                # Tolerance 30/255 is an engineering diagnostic, not a security target.
++                cx, cy = int(center[0]), int(center[1])
++                inner = max(0, int(radius) - 2)
++                y0, y1 = max(0, cy-inner), min(info['height'], cy+inner+1)
++                x0, x1 = max(0, cx-inner), min(info['width'], cx+inner+1)
++                yy, xx = np.ogrid[y0:y1, x0:x1]
++                disk = (xx-cx)**2 + (yy-cy)**2 <= inner**2
++                if not disk.any() or (decoded_frame[y0:y1, x0:x1][disk] > 30).any():
++                    raise ValueError(f'Masked video interior check failed at frame {decoded}')
++                decoded += 1
++            if decoded != count:
++                raise ValueError("Masked video frame count changed during encoding")
++        finally:
++            check.release()
++        # Atomic no-clobber publication: a competing writer must not be replaced.
++        os.link(tmp_path, output_path)
++        os.unlink(tmp_path)
++    finally:
++        if cap is not None:
++            cap.release()
++        if out is not None:
++            out.release()
++        if os.path.exists(tmp_path):
++            os.unlink(tmp_path)
+diff --git a/dataset_pipeline/stage7_gate.py b/dataset_pipeline/stage7_gate.py
+--- a/dataset_pipeline/stage7_gate.py
++++ b/dataset_pipeline/stage7_gate.py
+@@ -8,8 +8,9 @@
+ Per-frame AND of both conditions; per-clip gate requires 100% of frames to
+ pass (spec §5).
+ """
++import math
++
+ from dataset_pipeline.common import P9, P10, P11, PALM_CUE_INDICES
+-from dataset_pipeline.geometry import dist, midpoint
+ from dataset_pipeline.stage1_extract import frame_points
+ from dataset_pipeline.stage6_occlusion import project_occlusion_circle
+ 
+@@ -21,12 +22,16 @@
+     condition2: a fixed palm-cue landmark set spanning the palm's outer
+     boundary must all lie outside radius grown by condition2_margin_frac."""
+     p9, p10, p11 = image_lm_px[P9], image_lm_px[P10], image_lm_px[P11]
+-    condition1_points = [p10, midpoint(p9, p10), midpoint(p10, p11)]
++    # Image z is relative depth, whereas center/radius describe a 2D raster.
++    # A geometry gate must use the same x/y coordinates as the rendered mask.
++    middle = lambda a, b: ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
++    distance = lambda p: math.dist(p[:2], center[:2])
++    condition1_points = [p10, middle(p9, p10), middle(p10, p11)]
+     inner_radius = radius * (1 - config.condition1_margin_frac)
+-    condition1 = all(dist(pt, center) <= inner_radius for pt in condition1_points)
++    condition1 = all(distance(pt) <= inner_radius for pt in condition1_points)
+ 
+     outer_radius = radius * (1 + config.condition2_margin_frac)
+-    condition2 = all(dist(image_lm_px[i], center) >= outer_radius for i in PALM_CUE_INDICES)
++    condition2 = all(distance(image_lm_px[i]) >= outer_radius for i in PALM_CUE_INDICES)
+ 
+     return condition1 and condition2, {"condition1": condition1, "condition2": condition2}
+ 
+@@ -36,12 +41,15 @@
+     failing_frame_idxs = []
+     for f in frames:
+         pts = frame_points(f, "px")
++        total += 1
+         if pts is None:
+             failing_frame_idxs.append(f.get("frame_idx"))
+             continue
+-        center, radius = project_occlusion_circle(pts, w3_new)
+-        ok, _detail = check_frame_conditions(pts, center, radius, config)
+-        total += 1
++        try:
++            center, radius = project_occlusion_circle(pts, w3_new)
++            ok, _detail = check_frame_conditions(pts, center, radius, config)
++        except (ValueError, IndexError, TypeError):
++            ok = False
+         if ok:
+             passed += 1
+         else:
+diff --git a/dataset_pipeline/tests/test_mask_delivery.py b/dataset_pipeline/tests/test_mask_delivery.py
+new file mode 100644
+--- /dev/null
++++ b/dataset_pipeline/tests/test_mask_delivery.py
+@@ -0,0 +1,93 @@
++"""Regression tests for source/frame alignment and fail-closed masking."""
++import os
++import tempfile
++import unittest
++
++import cv2
++import numpy as np
++
++from dataset_pipeline.common import LANDMARK_NAMES
++from dataset_pipeline.config import PipelineConfig
++from dataset_pipeline.stage6_occlusion import generate_occluded_video, project_occlusion_circle
++from dataset_pipeline.stage7_gate import gate_clip
++
++
++def record(idx, detected=True):
++    landmarks = {name: {"x": 8.0, "y": 8.0, "z": 0.0} for name in LANDMARK_NAMES}
++    landmarks["MIDDLE_MCP"] = {"x": 24.0, "y": 24.0, "z": 1e6}
++    return {"frame_idx": idx, "detected": detected, "landmarks_px": landmarks}
++
++
++class MaskDeliveryTests(unittest.TestCase):
++    def setUp(self):
++        self.tempdir = tempfile.TemporaryDirectory()
++        self.addCleanup(self.tempdir.cleanup)
++        self.source = os.path.join(self.tempdir.name, "source.mp4")
++        self.target = os.path.join(self.tempdir.name, "masked.mp4")
++        self.info = {"width": 32, "height": 32, "fps": 10.0}
++        writer = cv2.VideoWriter(self.source, cv2.VideoWriter_fourcc(*"mp4v"), 10, (32, 32))
++        self.assertTrue(writer.isOpened())
++        for _ in range(3):
++            writer.write(np.full((32, 32, 3), 255, dtype=np.uint8))
++        writer.release()
++
++    def test_masked_output_is_decodable_and_covers_every_frame(self):
++        generate_occluded_video(self.source, [record(i) for i in range(3)],
++                                self.info, 1.0, self.target)
++        cap = cv2.VideoCapture(self.target)
++        try:
++            count = 0
++            while True:
++                ok, frame = cap.read()
++                if not ok:
++                    break
++                self.assertLess(int(frame[16, 16].max()), 30)
++                count += 1
++            self.assertEqual(count, 3)
++        finally:
++            cap.release()
++
++    def test_missing_middle_mask_never_publishes_video(self):
++        frames = [record(0), record(1, detected=False), record(2)]
++        with self.assertRaisesRegex(ValueError, "No mask landmarks"):
++            generate_occluded_video(self.source, frames, self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_short_mask_array_never_publishes_partial_video(self):
++        with self.assertRaisesRegex(ValueError, "more frames"):
++            generate_occluded_video(self.source, [record(0), record(1)],
++                                    self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_existing_artifact_is_not_replaced(self):
++        with open(self.target, "wb") as fh:
++            fh.write(b"existing-release")
++        with self.assertRaises(FileExistsError):
++            generate_occluded_video(self.source, [record(i) for i in range(3)],
++                                    self.info, 1.0, self.target)
++        with open(self.target, "rb") as fh:
++            self.assertEqual(fh.read(), b"existing-release")
++
++    def test_filtered_timeline_is_rejected(self):
++        with self.assertRaisesRegex(ValueError, "consecutive"):
++            generate_occluded_video(self.source, [record(0), record(2), record(3)],
++                                    self.info, 1.0, self.target)
++        self.assertFalse(os.path.exists(self.target))
++
++    def test_image_depth_is_not_used_to_place_raster_mask(self):
++        pts = [(8.0, 8.0, 0.0)] * 21
++        pts[9] = (24.0, 24.0, 1e6)
++        center, radius = project_occlusion_circle(pts, 1.0)
++        self.assertEqual(center, (16.0, 16.0))
++        self.assertAlmostEqual(radius, 2**0.5 * 8)
++
++    def test_unknown_frame_counts_against_full_gate_denominator(self):
++        frames = [record(0), record(1, detected=False)]
++        result = gate_clip(frames, 1.0, PipelineConfig())
++        self.assertEqual(result["total_checked"], 2)
++        self.assertIn(1, result["failing_frame_idxs"])
++        self.assertFalse(result["accepted"])
++
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/dataset_pipeline/tests/test_mask_integrity.py b/dataset_pipeline/tests/test_mask_integrity.py
+new file mode 100644
+--- /dev/null
++++ b/dataset_pipeline/tests/test_mask_integrity.py
+@@ -0,0 +1,40 @@
++"""Codec output failures and concurrent publication must never expose a candidate."""
++import os
++import unittest
++from unittest.mock import patch
++import numpy as np
++from dataset_pipeline.stage6_occlusion import generate_occluded_video
++from dataset_pipeline.tests import test_mask_delivery as delivery
++record = delivery.record
++
++
++class MaskIntegrityTests(unittest.TestCase):
++    setUp = delivery.MaskDeliveryTests.setUp
++    def test_unmasked_decoded_output_is_rejected(self):
++        import cv2
++        real_capture = cv2.VideoCapture
++        source = self.source
++        class Unmasked:
++            def __init__(self): self.count = 0
++            def isOpened(self): return True
++            def read(self):
++                self.count += 1
++                return (True, np.full((32, 32, 3), 255, np.uint8)) if self.count <= 3 else (False, None)
++            def release(self): pass
++        with patch('dataset_pipeline.stage6_occlusion.cv2.VideoCapture',
++                   side_effect=lambda path: real_capture(path) if path == source else Unmasked()):
++            with self.assertRaisesRegex(ValueError, 'interior check failed'):
++                generate_occluded_video(source, [record(i) for i in range(3)], self.info, 1., self.target)
++        self.assertFalse(os.path.exists(self.target))
++        self.assertEqual(sorted(os.listdir(self.tempdir.name)), ['source.mp4'])
++
++    def test_concurrent_output_creation_is_never_replaced(self):
++        real_link = os.link
++        def competing_link(src, dst):
++            with open(dst, 'wb') as fh: fh.write(b'competing-artifact')
++            return real_link(src, dst)
++        with patch('dataset_pipeline.stage6_occlusion.os.link', side_effect=competing_link):
++            with self.assertRaises(FileExistsError):
++                generate_occluded_video(self.source, [record(i) for i in range(3)], self.info, 1., self.target)
++        with open(self.target, 'rb') as fh: self.assertEqual(fh.read(), b'competing-artifact')
++        self.assertNotIn('.masked-', ''.join(os.listdir(self.tempdir.name)))
+diff --git a/dataset_pipeline/tests/test_stage7_gate.py b/dataset_pipeline/tests/test_stage7_gate.py
+--- a/dataset_pipeline/tests/test_stage7_gate.py
++++ b/dataset_pipeline/tests/test_stage7_gate.py
+@@ -1,7 +1,7 @@
+ # -*- coding: utf-8 -*-
+ from dataset_pipeline.common import P0, THUMB_CMC, P5, RING_MCP, P17, P9, P10, P11
+ from dataset_pipeline.config import PipelineConfig
+-from dataset_pipeline.geometry import dist
++import math
+ from dataset_pipeline.stage6_occlusion import project_occlusion_circle
+ from dataset_pipeline.stage7_gate import check_frame_conditions
+ 
+@@ -63,7 +63,7 @@
+     lm[P9] = (0.0, 100.0, 0.0)
+ 
+     center, radius = project_occlusion_circle(lm, w3_new=1.5)
+-    assert center == (0.0, 50.0, 0.0)
++    assert center == (0.0, 50.0)
+     assert radius == 75.0  # dist(P0,P9)*w3_new/2 = 100*1.5/2
+ 
+ 
+@@ -82,4 +82,4 @@
+     lm[P9] = (0.0, 100.0, 0.0)
+ 
+     center, radius = project_occlusion_circle(lm, w3_new=1.95)
+-    assert dist(lm[P0], center) < radius
++    assert math.dist(lm[P0][:2], center) < radius
+diff --git a/experiments/hand_selection/demo.js b/experiments/hand_selection/demo.js
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/demo.js
+@@ -0,0 +1,78 @@
++'use strict';
++const $ = id => document.getElementById(id);
++const selector = new HandSelection.HandSelector();
++const camera = $('camera'), reference = $('reference');
++const ctx = camera.getContext('2d'), ref = reference.getContext('2d');
++const source = $('cameraSource'), clip = $('referenceSource');
++let stream=null, detector=null, frameId=null, active=false, objectUrl=null, run=0;
++const messages={waiting:'사용할 손을 카메라 가까이에 보여 주세요.',
++  stabilizing:'큰 손을 선택하고 있습니다. 잠깐 유지해 주세요.',
++  selected:'초록 테두리로 표시된 손을 사용합니다.',
++  lost:'선택한 손을 놓쳤습니다. 손 다시 선택을 눌러 처음부터 시작해 주세요.'};
++function status(message) { if ($('status').textContent!==message) $('status').textContent=message; }
++function contain(context,video,alpha=1,mirror=false) {
++  if (video.readyState<2) return;
++  const w=context.canvas.width,h=context.canvas.height;
++  const scale=Math.min(w/video.videoWidth,h/video.videoHeight);
++  const dw=video.videoWidth*scale,dh=video.videoHeight*scale;
++  context.save(); context.globalAlpha=alpha;
++  if(mirror){context.translate(w,0);context.scale(-1,1);}
++  context.drawImage(video,(w-dw)/2,(h-dh)/2,dw,dh); context.restore();
++}
++function render(result) {
++  const choice=selector.update(result.multiHandLandmarks||[]);
++  ctx.clearRect(0,0,camera.width,camera.height);
++  // Mirror only the camera view and its selected-hand outline.
++  ctx.save();ctx.translate(camera.width,0);ctx.scale(-1,1);
++  ctx.drawImage(result.image,0,0,camera.width,camera.height);
++  if(choice.box){const b=choice.box;ctx.strokeStyle=choice.ready?'#00ee99':'#ffcf66';ctx.lineWidth=3;
++    ctx.strokeRect(b.x*camera.width,b.y*camera.height,b.width*camera.width,b.height*camera.height);}
++  ctx.restore();
++  ref.clearRect(0,0,reference.width,reference.height);
++  contain(ref,clip,1,$('mirror').checked);
++  if($('mode').value==='overlay')contain(ctx,clip,Number($('opacity').value),$('mirror').checked);
++  status(messages[choice.state]);
++  if(choice.state==='lost'){active=false;clip.pause();stopCamera();}
++}
++function stopCamera(){
++  if(frameId!==null)cancelAnimationFrame(frameId);frameId=null;
++  if(stream)for(const track of stream.getTracks())track.stop();stream=null;source.srcObject=null;
++}
++function setControls(disabled){for(const id of ['mode','opacity','mirror','media','start'])$(id).disabled=disabled;}
++$('mode').onchange=()=>document.body.classList.toggle('overlay',$('mode').value==='overlay');
++$('media').onchange=()=>{
++  if(objectUrl)URL.revokeObjectURL(objectUrl);
++  const file=$('media').files[0];objectUrl=file?URL.createObjectURL(file):null;
++  clip.src=objectUrl||'';$('start').disabled=true;
++  status(file?'영상 확인 중...':'가림 완료 영상을 선택해 주세요.');
++};
++clip.onloadeddata=()=>{$('start').disabled=active;status('영상을 준비했습니다. 카메라 켜고 시작을 눌러 주세요.');
++  ref.clearRect(0,0,reference.width,reference.height);contain(ref,clip,1,$('mirror').checked);};
++clip.onerror=()=>{$('start').disabled=true;status('영상을 재생할 수 없습니다. MP4 또는 WebM을 확인해 주세요.');};
++$('start').onclick=async()=>{
++  if(active)return; const generation=++run;active=true;setControls(true);
++  try{
++    if(!detector){
++      detector=new Hands({locateFile:f=>`https://unpkg.com/@mediapipe/hands@0.4.1675469240/${f}`});
++      detector.setOptions({maxNumHands:2,modelComplexity:1,minDetectionConfidence:.35,minTrackingConfidence:.4});
++      detector.onResults(r=>{if(active&&generation===run)render(r);});
++      await detector.initialize();
++    }else detector.onResults(r=>{if(active&&generation===run)render(r);});
++    if(!active||generation!==run)return;
++    const acquired=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640},height:{ideal:480}},audio:false});
++    if(!active||generation!==run){acquired.getTracks().forEach(t=>t.stop());return;}
++    stream=acquired;source.srcObject=stream;await source.play();
++    camera.width=reference.width=source.videoWidth;camera.height=reference.height=source.videoHeight;
++    clip.currentTime=0;await clip.play();selector.reset();
++    async function tick(){
++      if(!active||generation!==run)return;
++      try{if(source.readyState>=2)await detector.send({image:source});}
++      catch(error){active=false;stopCamera();clip.pause();status('손 검출을 중단했습니다. 처음부터 다시 선택해 주세요.');return;}
++      if(active&&generation===run)frameId=requestAnimationFrame(tick);
++    }
++    tick();
++  }catch(error){active=false;stopCamera();clip.pause();setControls(false);
++    $('start').disabled=clip.readyState<2;status('카메라 또는 검출기를 시작하지 못했습니다. 권한과 네트워크를 확인해 주세요.');}
++};
++$('reset').onclick=()=>location.reload();
++window.addEventListener('pagehide',()=>{active=false;++run;stopCamera();if(objectUrl)URL.revokeObjectURL(objectUrl);});
+diff --git a/experiments/hand_selection/demo.test.cjs b/experiments/hand_selection/demo.test.cjs
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/demo.test.cjs
+@@ -0,0 +1,47 @@
++const test=require('node:test'),assert=require('node:assert/strict');
++const fs=require('node:fs'),vm=require('node:vm');
++const {HandSelector}=require('./selection.js');
++function setup(){
++  const draws=[],listeners={},elements={},tracks=[{stopped:false,stop(){this.stopped=true;}}];
++  function element(id){return elements[id]??=(Object.assign({id,disabled:false,value:'',checked:false,
++    width:640,height:480,readyState:2,videoWidth:640,videoHeight:480,textContent:'',files:[],
++    play:async()=>{},pause(){this.paused=true;},getContext:()=>({canvas:element(id),
++      save(){},restore(){},translate(){},scale(){},clearRect(){},strokeRect(){},
++      drawImage(image,...args){draws.push({id,image,args});}})},{}));}
++  element('mode').value='overlay';element('opacity').value='.4';element('media').files=[{}];
++  let detector,reloaded=false;
++  class Hands{constructor(){detector=this;}setOptions(x){this.options=x;}onResults(f){this.callback=f;}
++    async initialize(){}async send(input){this.input=input;}}
++  const sandbox={HandSelection:{HandSelector},Hands,document:{getElementById:element,body:{classList:{toggle(){}}}},
++    navigator:{mediaDevices:{getUserMedia:async()=>({getTracks:()=>tracks})}},
++    URL:{createObjectURL:()=> 'blob:local-test',revokeObjectURL(){}},
++    requestAnimationFrame:()=>1,cancelAnimationFrame(){},location:{reload(){reloaded=true;}},
++    window:{addEventListener:(name,fn)=>listeners[name]=fn}};
++  vm.runInNewContext(fs.readFileSync(__dirname+'/demo.js','utf8'),sandbox);
++  return {elements,draws,tracks,listeners,get detector(){return detector;},get reloaded(){return reloaded;}};
++}
++function hand(){return Array.from({length:21},(_,i)=>({x:.1+(i%5)*.03,y:.1+Math.floor(i/5)*.03,z:0}));}
++test('two-hand detector gets original camera; compositing stays in display canvases',async()=>{
++  const t=setup();t.elements.media.onchange();t.elements.referenceSource.onloadeddata();
++  await t.elements.start.onclick();
++  assert.equal(t.detector.options.maxNumHands,2);
++  assert.equal(t.detector.input.image,t.elements.cameraSource);
++  for(let i=0;i<8;i++)t.detector.callback({image:t.elements.cameraSource,multiHandLandmarks:[hand()]});
++  assert.match(t.elements.status.textContent,/초록/);
++  assert.ok(t.draws.some(x=>x.id==='camera'&&x.image===t.elements.referenceSource));
++  assert.ok(t.elements.mode.disabled);
++});
++test('loss stops media and camera, rejects replacement, and requires a full restart',async()=>{
++  const t=setup();await t.elements.start.onclick();
++  for(let i=0;i<8;i++)t.detector.callback({image:t.elements.cameraSource,multiHandLandmarks:[hand()]});
++  t.detector.callback({image:t.elements.cameraSource,multiHandLandmarks:[]});
++  assert.ok(t.tracks[0].stopped);assert.ok(t.elements.referenceSource.paused);
++  const status=t.elements.status.textContent;
++  t.detector.callback({image:t.elements.cameraSource,multiHandLandmarks:[hand()]});
++  assert.equal(t.elements.status.textContent,status);
++  t.elements.reset.onclick();assert.ok(t.reloaded);
++});
++test('leaving page releases camera and local media resources',async()=>{
++  const t=setup();await t.elements.start.onclick();t.listeners.pagehide();
++  assert.ok(t.tracks[0].stopped);assert.equal(t.elements.cameraSource.srcObject,null);
++});
+diff --git a/experiments/hand_selection/index.html b/experiments/hand_selection/index.html
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/index.html
+@@ -0,0 +1,40 @@
++<!doctype html>
++<html lang="ko">
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width,initial-scale=1">
++<title>손 선택 · 중첩 안내 실험</title>
++<style>
++body{margin:0;background:#102032;color:#edf3f8;font:16px/1.6 system-ui,sans-serif}
++main{max-width:1060px;margin:auto;padding:24px} h1{font-size:26px;margin:0 0 8px}
++.controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:20px 0}
++button,select,input{font:inherit}button{padding:8px 16px;border:0;border-radius:6px;cursor:pointer}
++button:disabled{opacity:.5;cursor:default}.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
++figure{margin:0;background:#080f18;border:1px solid #446079;border-radius:8px;overflow:hidden}
++canvas{width:100%;height:auto;display:block}figcaption{padding:8px 12px}
++#cameraSource,#referenceSource{display:none}#status{padding:12px;background:#243d53;border-radius:6px}
++.overlay .panels{grid-template-columns:1fr}.overlay #referencePanel{display:none}
++small{color:#b9cddd}label{display:inline-flex;gap:7px;align-items:center}
++@media(max-width:650px){.panels{grid-template-columns:1fr}main{padding:16px}}
++</style>
++<main>
++<h1>가장 큰 손으로 시작하기 · 화면 안내 비교</h1>
++<p>가려진 영상의 손모양과 움직임을 따라 해 보세요. 초록 테두리가 현재 선택한 손입니다.</p>
++<p><small>개발용 시연입니다. 채점·인증·자료 전송을 하지 않습니다. 원본 카메라는 손 검출에만 사용하고 문제 영상은 화면에만 겹칩니다.</small></p>
++<div class="controls">
++<label>화면 <select id="mode"><option value="split">분리 화면</option><option value="overlay">중첩 화면</option></select></label>
++<label>문제 투명도 <input id="opacity" type="range" min="0.15" max="0.8" step="0.05" value="0.4"></label>
++<label><input id="mirror" type="checkbox">문제 좌우 반전</label>
++<label>가림 완료 영상 <input id="media" type="file" accept="video/mp4,video/webm"></label>
++</div>
++<div class="controls"><button id="start" disabled>카메라 켜고 시작</button><button id="reset">손 다시 선택 · 처음부터</button></div>
++<p id="status" role="status" aria-live="polite">비교할 가림 완료 영상을 먼저 선택해 주세요. 영상은 이 기기에서만 읽습니다.</p>
++<div class="panels">
++<figure><canvas id="camera" width="640" height="480"></canvas><figcaption>내 카메라 · 선택한 손</figcaption></figure>
++<figure id="referencePanel"><canvas id="reference" width="640" height="480"></canvas><figcaption>가려진 문제 · 보이는 움직임 따라 하기</figcaption></figure>
++</div>
++<p><small>손이 사라지거나 두 손의 연결이 모호해지면 이번 시연을 멈춥니다. ‘손 다시 선택’을 누르면 영상과 선택 기록을 초기화합니다. 가장 큰 손은 신원 확인 기준이 아닙니다. 선택 기본값과 실제 사용성은 아직 검증하지 않았습니다.</small></p>
++<video id="cameraSource" playsinline muted></video><video id="referenceSource" playsinline muted loop></video>
++</main>
++<script src="https://unpkg.com/@mediapipe/hands@0.4.1675469240/hands.js"></script>
++<script src="selection.js"></script><script src="demo.js"></script>
++</html>
+diff --git a/experiments/hand_selection/README.md b/experiments/hand_selection/README.md
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/README.md
+@@ -0,0 +1,15 @@
++# 큰 손 선택 · 분리/중첩 화면 실험
++
++기존 prod와 분리된 개발용 시연이다. 점수·관문·인증·자동 저장·업로드를 하지 않는다. MediaPipe Hands의 기존 고정 CDN 버전을 로드하고 원본 카메라에서 최대 2개 손을 검출한다. 원본 카메라 입력과 가린 문제 영상의 화면 합성을 분리한다.
++
++저장소 루트에서 `python -m http.server 8765 --bind 127.0.0.1`을 실행하고 `http://127.0.0.1:8765/experiments/hand_selection/`를 연다. 가림 완료 영상 MP4/WebM을 로컬 파일 선택기로 고른다. 분리/중첩, 투명도, 문제 반전 조건을 정하고 카메라 시작을 누른다. 카메라 허용은 사용자가 수행한다. 영상은 브라우저의 blob URL로 읽고 전송하지 않는다. 검출기 모델 다운로드에는 네트워크가 필요하다.
++
++가장 큰 유효 bbox를 8 callback 동안 안정화한 뒤 위치·크기·상대 형태의 연속성으로 유지한다. 유효한 21개 x/y/z 좌표와 화면 안 x/y, 양의 면적을 요구한다. 비슷한 면적의 두 손은 초기 선택을 미루며, 선택 후 소실/모호성은 즉시 중단한다. 재선택은 전체 페이지·시도를 초기화한다. 가까운 다른 사람의 손이 선택되거나 유사한 손으로 오연결될 가능성은 남으므로 신원 확인으로 쓰지 않는다.
++
++`selection.js`의 모든 기본값은 공학 초기값이며 검증된 연구/운영 기준이 아니다. 손가락 펼침·부분 잘림·fps·빠른 동작에 민감할 수 있다. 짧은 자동 재연결과 prod timer/coverage/채점 통합은 구현하지 않았다. 실제 카메라·기기/레이아웃·사용성 검증 전이다.
++
++```powershell
++node --test experiments/hand_selection/selection.test.cjs experiments/hand_selection/demo.test.cjs
++```
++
++전체 요구사항과 평가 카드는 [codex 통합 목록](https://github.com/mukgore/codex/blob/work/todo-consolidation-20261103/docs/backlog_2026-11-03.md)에 있다.
+diff --git a/experiments/hand_selection/selection.js b/experiments/hand_selection/selection.js
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/selection.js
+@@ -0,0 +1,81 @@
++/* Experimental camera-space selection. Geometry is a heuristic, not identity. */
++(function (root) {
++  'use strict';
++  const DEFAULTS = Object.freeze({stableFrames: 8, tieRatio: 1.1,
++    maxTravel: 0.35, maxScaleRatio: 2, ambiguityMargin: 0.08});
++
++  function candidate(points, index) {
++    if (!Array.isArray(points) || points.length !== 21 || points.some(p =>
++      !p || !Number.isFinite(p.x) || !Number.isFinite(p.y) ||
++      !Number.isFinite(p.z) ||
++      p.x < 0 || p.x > 1 || p.y < 0 || p.y > 1)) return null;
++    const xs = points.map(p => p.x), ys = points.map(p => p.y);
++    const box = {x: Math.min(...xs), y: Math.min(...ys),
++      width: Math.max(...xs) - Math.min(...xs), height: Math.max(...ys) - Math.min(...ys)};
++    const area = box.width * box.height;
++    if (!(area > 1e-6)) return null;
++    return {index, points: points.map(p => ({x:p.x,y:p.y,z:p.z})), box, area, cx: box.x + box.width / 2,
++      cy: box.y + box.height / 2};
++  }
++
++  function distance(a, b, config) {
++    const scaleRatio = Math.max(a.area, b.area) / Math.min(a.area, b.area);
++    const travel = Math.hypot(a.cx - b.cx, a.cy - b.cy) / Math.sqrt(a.area);
++    if (scaleRatio > config.maxScaleRatio || travel > config.maxTravel) return Infinity;
++    // Relative shape helps avoid matching another same-side hand by label alone.
++    let shape = 0;
++    for (let i = 0; i < 21; i++) shape += Math.hypot(
++      (a.points[i].x-a.cx)/Math.sqrt(a.area) - (b.points[i].x-b.cx)/Math.sqrt(b.area),
++      (a.points[i].y-a.cy)/Math.sqrt(a.area) - (b.points[i].y-b.cy)/Math.sqrt(b.area));
++    return travel + shape / 21;
++  }
++
++  class HandSelector {
++    constructor(options = {}) {
++      this.config = {...DEFAULTS, ...options};
++      const c = this.config;
++      if (!Number.isInteger(c.stableFrames) || c.stableFrames < 1 ||
++        ![c.tieRatio,c.maxTravel,c.maxScaleRatio,c.ambiguityMargin].every(Number.isFinite) ||
++        c.tieRatio <= 1 || c.maxTravel <= 0 || c.maxScaleRatio <= 1 || c.ambiguityMargin < 0)
++        throw new Error('Invalid hand selection configuration');
++      this.reset();
++    }
++    reset() { this.state = 'waiting'; this.previous = null; this.count = 0; }
++    update(hands) {
++      if (this.state === 'lost') return this.result(null, 'reselect_required');
++      const candidates = (Array.isArray(hands) ? hands : [])
++        .map(candidate).filter(Boolean);
++      if (this.state === 'selected') {
++        const ranked = candidates.map(c => ({c, d: distance(this.previous,c,this.config)}))
++          .filter(x => Number.isFinite(x.d)).sort((a,b) => a.d-b.d);
++        if (!ranked.length || (ranked.length > 1 &&
++          ranked[1].d-ranked[0].d <= this.config.ambiguityMargin)) {
++          this.state = 'lost';
++          return this.result(null, 'reselect_required');
++        }
++        this.previous = ranked[0].c;
++        return this.result(this.previous, 'tracking');
++      }
++      candidates.sort((a,b) => b.area-a.area);
++      if (!candidates.length || (candidates.length > 1 &&
++        candidates[0].area / candidates[1].area < this.config.tieRatio)) {
++        this.previous = null; this.count = 0; this.state = 'waiting';
++        return this.result(null, candidates.length ? 'similar_sizes' : 'no_valid_hand');
++      }
++      const largest = candidates[0];
++      this.count = this.previous && Number.isFinite(distance(this.previous,largest,this.config))
++        ? this.count + 1 : 1;
++      this.previous = largest;
++      this.state = this.count >= this.config.stableFrames ? 'selected' : 'stabilizing';
++      return this.result(largest, this.state);
++    }
++    result(c, reason) {
++      return {state: this.state, reason, index: c ? c.index : null,
++        points: c ? c.points : null, box: c ? c.box : null,
++        ready: this.state === 'selected', stableCount: this.count};
++    }
++  }
++  const api = {HandSelector, candidate, DEFAULTS};
++  if (typeof module !== 'undefined' && module.exports) module.exports = api;
++  else root.HandSelection = api;
++})(typeof globalThis === 'undefined' ? this : globalThis);
+diff --git a/experiments/hand_selection/selection.test.cjs b/experiments/hand_selection/selection.test.cjs
+new file mode 100644
+--- /dev/null
++++ b/experiments/hand_selection/selection.test.cjs
+@@ -0,0 +1,50 @@
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const {HandSelector, candidate} = require('./selection.js');
++function hand(x,y,size) { return Array.from({length:21}, (_,i) =>
++  ({x:x+(i%5)/4*size, y:y+Math.floor(i/5)/4*size, z:0})); }
++function selector() { return new HandSelector({stableFrames:2}); }
++test('largest wins regardless of detector ordering; waits for stability', () => {
++  const s=selector(), small=hand(.05,.1,.1), large=hand(.5,.1,.3);
++  assert.equal(s.update([small,large]).ready,false);
++  const r=s.update([large,small]); assert.equal(r.index,0); assert.equal(r.ready,true);
++});
++test('array reordering and a larger distant distractor cannot switch selection', () => {
++  const s=selector(), h=hand(.1,.1,.2), other=hand(.6,.5,.15);
++  s.update([h,other]); s.update([other,h]);
++  assert.equal(s.update([hand(.55,.45,.4),hand(.11,.1,.2)]).index,1);
++});
++test('loss latches until explicit reset, even if another hand remains', () => {
++  const s=selector(), h=hand(.1,.1,.2); s.update([h]); s.update([h]);
++  assert.equal(s.update([hand(.7,.7,.2)]).state,'lost');
++  assert.equal(s.update([h]).points,null);
++  s.reset(); s.update([h]); assert.equal(s.update([h]).ready,true);
++});
++test('crossing indistinguishable candidates requires reselect', () => {
++  const s=selector(), h=hand(.1,.1,.2); s.update([h]); s.update([h]);
++  assert.equal(s.update([h,hand(.105,.1,.2)]).state,'lost');
++});
++test('ties do not use detector order as identity', () => {
++  const s=selector(); assert.equal(s.update([hand(.1,.1,.2),hand(.6,.1,.2)]).state,'waiting');
++});
++test('nonfinite, cropped, malformed and degenerate hands are rejected', () => {
++  for (const h of [[],hand(.9,.9,.3),hand(.1,.1,0),hand(.1,.1,.2).map(p=>({...p,x:NaN}))])
++    assert.equal(candidate(h,0),null);
++});
++test('unstable initial candidate restarts count', () => {
++  const s=selector(); s.update([hand(.1,.1,.2)]);
++  assert.equal(s.update([hand(.6,.6,.3)]).ready,false);
++});
++test('single-hand tracking follows small movement', () => {
++  const s=selector(), h=hand(.1,.1,.2); s.update([h]); s.update([h]);
++  assert.equal(s.update([hand(.12,.11,.21)]).ready,true);
++});
++test('invalid policy fails immediately', () => {
++  for (const config of [{stableFrames:0},{tieRatio:1},{maxTravel:NaN}])
++    assert.throws(()=>new HandSelector(config));
++});
++test('detector reuse of point arrays cannot rewrite the previous observation', () => {
++  const s=selector(), h=hand(.1,.1,.2);s.update([h]);s.update([h]);
++  h.forEach(p=>p.x+=.5);
++  assert.equal(s.update([h]).state,'lost');
++});
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,8 @@
+ **<손 동작 추정 기반 CAPTCHA>**
++
++후속 작업은 [ROADMAP.md](ROADMAP.md)와 [두 저장소 통합 목록](https://github.com/mukgore/codex/blob/work/todo-consolidation-20261103/docs/backlog_2026-11-03.md)에서 확인할 수 있습니다. 큰 손 선택·중첩 화면의 별도 개발 시연은 [experiments/hand_selection](experiments/hand_selection/README.md)에 있습니다. 기존 prod의 채점·인증 흐름과는 연결하지 않았습니다.
++
++`dataset_pipeline`의 accepted는 기하 후보 판정이며 운영 승인 풀이 아닙니다. Stage6은 누락/시간축 불일치 시 출력을 중단하고 재디코딩한 개수·크기·가림 내부를 검사합니다. 권리, 해부학적 가림, PTS/VFR, 정답 누출, 사용자/공격 성능과 전체 release gate는 별도 검증입니다. 공개 시제품의 영상/landmark와 화면 통과를 실제 서버 인증으로 취급하지 마세요.
+ 
+ 
+ 
+diff --git a/ROADMAP.md b/ROADMAP.md
+new file mode 100644
+--- /dev/null
++++ b/ROADMAP.md
+@@ -0,0 +1,49 @@
++# handcaptcha 후속 구현 로드맵 — 2026-11-02
++
++
++조영준 연구자가 희망한 후속 방향을 구현 저장소에 남긴다. **계획 문서이며 구현 완료나 새 실험·배포 승인을 뜻하지 않는다.** 연구 질문·실험 조건·완료 기준은 [codex 연구 로드맵](https://github.com/mukgore/codex/blob/main/docs/research_roadmap_2026-11-02.md)을 함께 읽는다.
++
++## 지금 먼저 할 일
++
++기존 연구·발표를 일차 마무리한다. 가림 생성, 손목 원점 이동과 크기 정규화, 선형 보간, 중간 자세 관문과 최종 점수의 관계를 설명할 수 있도록 정리한다. 기존 결과를 방어하기보다 검증된 결과와 한계를 구별한다.
++
++현재 시제품을 실제 보안 제품으로 표현하지 않는다. codex에는 2026-10-28의 실제 함수·공개 영상·localhost 서버 탐색 및 국소 방어 결과가 있으므로 공격·방어가 전혀 시작되지 않았다고도 쓰지 않는다. 이 결과는 실제 신뢰 카메라, 새 사람·독립 원동작, 과거 운영 시스템 전체의 보안 입증과 구별한다.
++
++## 구현 후보와 검증 조건
++
++| 순서 | 하고 싶은 일 | 먼저 확인할 것 |
++|---|---|---|
++| P0 | 가림의 모호성·사람 수행 가능성을 시험할 조건과 기록 설계 | 같은 화면에 여러 답이 가능한지, 지각·운동·추적 오류를 어떻게 구별할지 |
++| P1 | 기존 채점과 표준 DTW·시간 미분 등의 후보 비교 | 역사적 baseline 보존, 정상/오답 판별, source·사람 분리 및 평가 전 기준 잠금 |
++| P1 | 서버 발급·검증·만료·일회성 제출과 보호 동작 연결 | codex 로컬 구현의 재사용 범위, 격리 환경과 종점별 로그 |
++| P1 | OBS·리플레이·좌표 위조·통과 신호 위조에 대한 입력 경계 검증 | 카메라 이름만으로 차단을 보장하지 않음. 점수 통과와 보호 동작 허용을 구별 |
++| P2 | 영상 풀 확장과 가림·출력 검사 | 사용권·동작 계보·중복, 모든 프레임 가림 및 누락 시 발급 중단 |
++| P2 | 생체 제약을 갖춘 3D 손·물체 동작과 랜덤 문제 | 사람 이해·편안함, 복수 정답, 강한 3D 공격, CPU 비용 |
++| P2 | 서버에서 문제·정답을 정하고 가린 화면만 전달 | 원본/정답/관절/seed의 클라이언트 노출 방지, 비저장 범위와 재현성 |
++| P2 | 사전 생성·요청 시 생성·캐시·실시간 송출 비교 | 무료 환경의 생성 지연·송출 비용과 실제 보안 이득 |
++
++3D 손·물체는 설계 후보다. 처음에는 실제 소품 없이 잡는 손모양을 따라 하는 G0를 검토하며, 영상 속 접촉이 사용자의 실제 접촉을 증명한다고 가정하지 않는다. 물체 단서는 AI에도 도움이 될 수 있다.
++
++전체 화면 순간 가림, 여러 가림막과 시간 변화, 잡기/치기, 랜덤 과제·힌트도 후속 비교 후보로 남긴다. 전부 구현하도록 확정한 요구사항은 아니다.
++
++## 연구·개발 순서
++
++1. 기존 검증과 발표 정리, 남은 한계 및 질문 후보 비교.
++2. 연구자가 주 질문과 최소 실험 카드를 선택·검토.
++3. 승인된 범위의 분리된 실험 구현과 정상·공격 조건 비교.
++4. 독립 사람/source 평가와 비용·접근성 확인.
++5. 계속/수정/중단/자료 부족 판정 후 후속 단계 검토.
++
++기존 보고서·원자료와 시제품 baseline을 보존한다. 새 기준을 test 결과에 맞춰 반복 조정한 값을 독립 성능으로 보고하지 않는다. 원자료·개인 좌표·비밀 정답·키를 공개 저장소에 추가하지 않는다. 후속 실험·새 보안 설계·외부 서비스 연결·공개 배포는 연구자 검토 후 진행한다. 2026-11-03에는 별도 손 선택·중첩 시연과 가림 무결성 보강을 개발했다. 기존 prod 교체·배포·사람 실험은 수행하지 않았다.
++
++## 관련 문서
++
++- [전체 연구 계획과 실험 완료 조건](https://github.com/mukgore/codex/blob/main/docs/research_roadmap_2026-11-02.md)
++- [현재 G4 탐색 결과와 한계](https://github.com/mukgore/codex/blob/main/docs/g4_actual/g4_final_report.md)
++- [표준 채점 전환 요구사항](https://github.com/mukgore/codex/blob/main/docs/scoring_standardization_v0.3.md)
++- [영상 풀·가림·송출 요구사항](https://github.com/mukgore/codex/blob/main/docs/video_pool_occlusion_delivery_requirements_v0.4.md)
++- [3D 손·물체 후보 요구사항](https://github.com/mukgore/codex/blob/main/docs/3d_hand_object_challenge_requirements_v0.1.md)
++
++## 2026-11-03 구현 진행
++
++[별도 시연](experiments/hand_selection/README.md)과 [두 저장소 통합 할 일](https://github.com/mukgore/codex/blob/work/todo-consolidation-20261103/docs/backlog_2026-11-03.md)을 함께 읽는다. 현재 패키지는 적용 검토용이며 해당 저장소 main 반영 여부는 별도로 확인한다.
