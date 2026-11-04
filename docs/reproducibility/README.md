@@ -9,6 +9,8 @@ This addition follows the project specification's separation of executable analy
 
 ## Local input layout
 
+The [preregistered additional 0.493 audit plan](initial_score_0493_additional_audit_plan_2026-11-04.md) was pushed before its [execution and results](initial_score_0493_additional_audit_results_2026-11-04.md). See the [aggregate summary](../../reports/reproducibility/initial_score_0493_additional_audit_summary.json) and [public process log](../../reports/reproducibility/initial_score_0493_additional_audit_process.json). Its bounded verdict permits excluding the historical 0.493 from validated results and provisionally treating documentation confusion as a working explanation; a specific mistaken source is not proven.
+
 Initial human-score reconciliation (2026-11-04) is documented in the [results report](initial_score_reconciliation_results_2026-11-04.md), with [aggregate JSON](../../reports/reproducibility/initial_score_reconciliation_summary.json) and [recalculation code](../../analysis/reproducibility/reconcile_initial_scores.py). It replays the distinct historical four-session cohort. Table 7's three composite metrics and the rounded Table 10 score are computationally compatible; the body scores' historical generation remains unresolved. Private inputs and trial outputs stay under ignored `data/`.
 
 Place only authorized local copies in the ignored `data/raw/` tree, or pass equivalent paths as arguments/environment variables:

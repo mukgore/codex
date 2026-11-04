@@ -1,0 +1,121 @@
+{
+  "plan_commit": "93ec35f",
+  "plan_changed_after_execution_started": false,
+  "verdict": "B_local_preserved_evidence_only",
+  "meaning": "Exclude historical 0.493 from validated results; documentation confusion/transcription is a provisional working explanation within the examined preserved sources, not a proven cause.",
+  "specific_source_mixup_proven": false,
+  "valid_alternative_human_level3_0493_path_recovered": false,
+  "local_scan": {
+    "start_utc": "2026-11-04T12:30:24.337075+00:00",
+    "end_utc": "2026-11-04T12:36:17.217547+00:00",
+    "input_files": 677,
+    "unique_contents": 632,
+    "statuses": {
+      "read": 632,
+      "hash_duplicate": 45
+    },
+    "text_hits": 369,
+    "unique_media": 1082,
+    "media_occurrences": 4920,
+    "attachments": 1241,
+    "input_hashes_unchanged": true
+  },
+  "classified_hit_counts": {
+    "later_attack_or_production_metric": 5,
+    "later_attack_or_production_cumulative_frame_score": 32,
+    "later_replay_or_different_unit": 6,
+    "document_prose_or_table_without_original_run_link": 212,
+    "quotation_or_reanalysis_reference": 105,
+    "later_attack_mean_different_cohort": 1,
+    "different_metric_person_action_or_detector_setting": 8
+  },
+  "alternate_numeric_format_hits": 2,
+  "alternate_format_nonreference_hits": 0,
+  "workbooks": {
+    "unique_workbooks": 13,
+    "sheets": 28,
+    "hidden_sheets": 0,
+    "formulas": 1,
+    "external_links": 0,
+    "target_0493_numeric_cells": 0
+  },
+  "visual_audit": {
+    "media_occurrences": 4920,
+    "unique_original_media": 1082,
+    "pixel_distinct_groups": 970,
+    "ocr_success": 1082,
+    "ocr_errors": 0,
+    "ocr_empty_text": 643,
+    "target_images": 0,
+    "uncertain_images": 2,
+    "contact_sheets_reviewed": 16,
+    "unresolved_important_local_candidates": 0
+  },
+  "embedded_chart_audit": {
+    "objects": 22,
+    "unique_editable_xml": 4,
+    "target_numeric_hits": 0,
+    "unresolved": 0
+  },
+  "independent_maxima_check": {
+    "ai_cells": 18,
+    "max_abs_raw_difference": {
+      "angle": 7.105427357601002e-15,
+      "dtw_angle": 3.552713678800501e-15,
+      "tendency": 0.0,
+      "accel": 0.0,
+      "distance": 0.0,
+      "dtw_distance": 0.0,
+      "trajectory": 6.661338147750939e-16
+    },
+    "maxima": {
+      "angle": 39.16728847392678,
+      "dtw_angle": 32.65132901346212,
+      "tendency": 0.7800300601881369,
+      "accel": 0.0236812072568801,
+      "distance": 0.5239291403079547,
+      "dtw_distance": 0.5314763889613001,
+      "trajectory": 1.4948254319660979
+    },
+    "maxima_max_abs_difference": 7.105427357601002e-15,
+    "atol": 1e-08,
+    "source_hash_unchanged": true,
+    "all_within_tolerance": true,
+    "started_utc": "2026-11-04T12:46:21.309580+00:00",
+    "finished_utc": "2026-11-04T12:46:22.815156+00:00"
+  },
+  "source_linked_colab": {
+    "current_bytes": 27484,
+    "byte_identical_to_local": true,
+    "cells": 12,
+    "stored_outputs": 0,
+    "revisions_returned": 1,
+    "historical_revision_endpoint_supported": false
+  },
+  "other_same_number_sources": [
+    {
+      "unit": "MediaPipe level-1 DTW-distance",
+      "value": 0.49346140533981875,
+      "same_target_endpoint": false
+    },
+    {
+      "unit": "later frame-shuffle attack, n=8 mean",
+      "value": 0.4928378379964178,
+      "same_target_endpoint": false
+    },
+    {
+      "unit": "later cumulative attack/production frame scores",
+      "same_target_endpoint": false
+    }
+  ],
+  "original_research_source_fingerprints_unchanged_at_final_check": true,
+  "intentional_public_audit_document_updates_after_initial_hash_check": 3,
+  "limits": [
+    "Not proof of absence in every source.",
+    "Exact original writing/editing history and a specific mistaken source remain unknown.",
+    "No blanket inspection of all accounts, conversations or deleted/unsaved history.",
+    "Observed maxima agree between implementations but do not prove historical run/input identity.",
+    "OCR is fallible; uncertainty checks reduce, not eliminate, that limit."
+  ],
+  "approved_reporting_text": "초기 사람 레벨 3 평균 0.493은 보존자료에서 재현 근거를 확인하지 못한 기재값이므로 검증된 결과에서 제외한다. 조사 범위 안에서는 작성 중 혼동·오기를 잠정 설명으로 처리하되, 특정 원인이나 모든 출처에서의 부재를 확정하지 않는다."
+}

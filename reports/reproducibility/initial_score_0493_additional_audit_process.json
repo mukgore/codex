@@ -1,0 +1,271 @@
+{
+  "plan_commit": "93ec35f",
+  "events": [
+    {
+      "stage": "S0",
+      "status": "completed",
+      "evidence": "plan committed and pushed before execution",
+      "plan_commit": "93ec35f",
+      "plan_commit_utc": "2026-11-04T12:26:59+00:00"
+    },
+    {
+      "stage": "S1_S2_S3_extraction",
+      "status": "completed",
+      "started_utc": "2026-11-04T12:30:24.337075+00:00",
+      "finished_utc": "2026-11-04T12:36:17.217547+00:00",
+      "files": 677,
+      "unique_contents": 632
+    },
+    {
+      "stage": "S2_numeric_formats",
+      "status": "completed",
+      "evidence": "scientific notation, comma decimal, percent; only two plan self-references",
+      "alternate_hits": 2
+    },
+    {
+      "stage": "S3_OCR",
+      "status": "completed",
+      "started_utc": "2026-11-04T12:35:27.5077274Z",
+      "finished_utc": "2026-11-04T12:40:05.4738546Z",
+      "images": 1082,
+      "ocr_errors": 0,
+      "raw_target_images": 0,
+      "uncertain_images_visually_rejected": 2
+    },
+    {
+      "stage": "S3_visual_and_embedded_objects",
+      "status": "completed",
+      "completion_recorded_utc": "2026-11-04T12:55:45.406608+00:00",
+      "pixel_distinct_images_screened": 970,
+      "contact_sheets": 16,
+      "selected_full_size_review": 8,
+      "ole_chart_objects": 22,
+      "unique_chart_xml": 4,
+      "unresolved_important_local_visual_or_embedded_candidates": 0,
+      "limits": "Contact sheets classify image purpose; they are not legible full-size numeric reads of every picture. OCR and full-size follow-up complement them."
+    },
+    {
+      "stage": "S4",
+      "status": "completed",
+      "started_utc": "2026-11-04T12:46:21.309580+00:00",
+      "finished_utc": "2026-11-04T12:46:22.815156+00:00",
+      "ai_cells_independently_compared": 18,
+      "max_raw_difference": 7.105427357601002e-15,
+      "atol": 1e-08
+    },
+    {
+      "stage": "S5",
+      "status": "completed_with_access_limits",
+      "events": [
+        {
+          "provider": "drive",
+          "query": "human_analysis",
+          "at": "2026-11-04T12:27:44.731Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "occlusion_estimation_score",
+          "at": "2026-11-04T12:27:44.752Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "0.493 CAPTCHA",
+          "at": "2026-11-04T12:27:44.752Z",
+          "status": "completed",
+          "result_count": 2
+        },
+        {
+          "provider": "gmail",
+          "query": "\"0.493\" (CAPTCHA OR 캡차)",
+          "at": "2026-11-04T12:27:44.752Z",
+          "status": "completed",
+          "result_count": 1,
+          "has_next_page": false
+        },
+        {
+          "provider": "drive",
+          "query": "verified_final",
+          "at": "2026-11-04T12:28:08.438Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "captcha_v3",
+          "at": "2026-11-04T12:28:08.438Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "0.528 0.546",
+          "at": "2026-11-04T12:28:08.438Z",
+          "status": "completed",
+          "result_count": 3
+        },
+        {
+          "provider": "drive",
+          "query": "초기 사람 점수",
+          "at": "2026-11-04T12:28:08.438Z",
+          "status": "completed",
+          "result_count": 15
+        },
+        {
+          "provider": "gmail",
+          "query": "\"human_analysis\" OR \"occlusion_estimation_score\" OR \"verified_final\" OR \"captcha_v3\"",
+          "at": "2026-11-04T12:28:08.438Z",
+          "status": "completed",
+          "result_count": 0,
+          "has_next_page": false
+        },
+        {
+          "provider": "gmail",
+          "query": "read-target-message",
+          "at": "2026-11-04T12:30:40.885Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-legacy-summary",
+          "at": "2026-11-04T12:30:40.885Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-legacy-native-sheet",
+          "at": "2026-11-04T12:30:40.886Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-research-note-1",
+          "at": "2026-11-04T12:30:40.886Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-historical-pdf-text",
+          "at": "2026-11-04T12:33:09.037Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-current-research-slides",
+          "at": "2026-11-04T12:33:09.038Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "list-native-sheet-revisions",
+          "at": "2026-11-04T12:33:09.038Z",
+          "status": "completed",
+          "revision_count": 2
+        },
+        {
+          "provider": "gmail",
+          "query": "\"0.528\" \"0.546\"",
+          "at": "2026-11-04T12:33:09.038Z",
+          "status": "completed",
+          "result_count": 1,
+          "has_next_page": false
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-native-sheet-revision-1",
+          "at": "2026-11-04T12:35:59.424Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-native-sheet-revision-2",
+          "at": "2026-11-04T12:35:59.424Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "search-research-calculation-types",
+          "at": "2026-11-04T12:35:59.424Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "hand-related-source-filenames",
+          "at": "2026-11-04T12:46:50.783Z",
+          "status": "error"
+        },
+        {
+          "provider": "drive",
+          "query": "0.493",
+          "at": "2026-11-04T12:46:50.783Z",
+          "status": "completed",
+          "result_count": 4
+        },
+        {
+          "provider": "gmail",
+          "query": "\"0.493\" (filename:ipynb OR filename:xlsx OR filename:py OR filename:csv)",
+          "at": "2026-11-04T12:46:50.783Z",
+          "status": "completed",
+          "result_count": 0,
+          "has_next_page": false
+        },
+        {
+          "provider": "drive",
+          "query": "hand-related-source-filenames-corrected",
+          "at": "2026-11-04T12:47:17.729Z",
+          "status": "completed",
+          "result_count": 0
+        },
+        {
+          "provider": "drive",
+          "query": "metadata-colab-id-from-human-analysis-source",
+          "at": "2026-11-04T12:47:18.471Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-colab-human-analysis",
+          "at": "2026-11-04T12:47:35.109Z",
+          "status": "error"
+        },
+        {
+          "provider": "drive",
+          "query": "list-colab-human-analysis-revisions",
+          "at": "2026-11-04T12:47:35.109Z",
+          "status": "completed",
+          "revision_count": 1
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-colab-human-analysis-canonical-drive",
+          "at": "2026-11-04T12:47:48.419Z",
+          "status": "completed"
+        },
+        {
+          "provider": "drive",
+          "query": "fetch-colab-human-analysis-saved-revision",
+          "at": "2026-11-04T12:47:48.419Z",
+          "status": "error"
+        }
+      ],
+      "limits": [
+        "Drive search MIME filter excludes Colab notebooks; source-linked Colab was accessed directly.",
+        "Colab revision content endpoint returned unsupported MIME; current binary was retrieved and compared.",
+        "Mailbox attachment content read was not enabled by the returned support flag; report counterpart was read in Drive.",
+        "No ChatGPT/Claude conversation-history connector or deleted/unsaved Colab history was accessed."
+      ]
+    },
+    {
+      "stage": "S6",
+      "status": "completed_before_results_commit",
+      "completion_recorded_utc": "2026-11-04T12:55:45.406608+00:00",
+      "decision": "B_local_preserved_evidence_only",
+      "specific_error_cause_confirmed": false,
+      "publication_verification": "Separate results commit and push are verified by Git after this payload is written."
+    }
+  ]
+}

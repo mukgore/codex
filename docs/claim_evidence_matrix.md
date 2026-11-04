@@ -29,6 +29,8 @@
 
 C02 추가 자료 탐색: [0.493 출력·생성 코드 후속 조사](reproducibility/initial_score_0493_output_search_2026-11-04.md)에서 notebook 34개와 보고서 판본 등을 확인했다. 본문에 수치는 존재하지만 당시 실행 출력·생성 경로는 찾지 못했다. 새 MediaPipe 입력 여섯 개의 발견은 이전 검색 범위를 보충하며 본문 오류나 역사적 입력 revision을 확정하지 않는다. 연구자의 작성 중 계산/오기 가능성에 관한 기억도 미확정 단서로 기록했다.
 
+C02 추가 감사 최종 상태(2026-11-04): [사전 계획 실행 결과](reproducibility/initial_score_0493_additional_audit_results_2026-11-04.md)에 따라 **B: 조사한 보존자료에 한정해 혼동·오기를 작업 가설로 잠정 처리하고 0.493을 검증된 결과에서 제외**한다. 677파일·1,082종 이미지 OCR·임베디드 chart·원격 결과표와 source-linked Colab을 확인했으나 같은 단위의 당시 실행 근거는 복구되지 않았다. 특정 값을 잘못 옮겼다는 원인 확인(A)이나 모든 출처에서의 부재를 뜻하지 않는다. 0.557로 자동 교체하지 않으며 본문의 0.528/0.546/0.522도 출처 공백을 함께 명시한다.
+
 ## 참고문헌 확인 상태
 
 - Usuzaki 외, 가려진 한자 텍스트 CAPTCHA 논문은 J-STAGE가 2025-12-01, IEICE Communications Express 14(12), 441–444, DOI `10.23919/comex.2025COL0018`로 표시한다. PDF 참고문헌의 2026 표기 및 `Usazaki` 철자와 차이가 있다. 유사한 visual-completion 동기는 근거가 되지만 손동작 CAPTCHA의 방어 근거는 아니다. [J-STAGE 서지/초록](https://www.jstage.jst.go.jp/article/comex/14/12/14_2025COL0018/_article/-char/en)
