@@ -90,6 +90,7 @@ G4 근거: [실제 코드 탐색 보고](g4_actual/g4_final_report.md).
 
 - [보완 실험 F0–F4](followup_experiments.md)
 - [실용성 검증 v0.3](practical_validation_requirements_v0.3.md)
+- [공격 실행시간 다조건 검증 TODO (2026-11-04)](runtime_validation_todo_2026-11-04.md): 장비·처리 설정·공격 경로별 계측과 Colab 로그 보존의 R0–R9 실행 계획.
 - [표준 채점 전환 v0.3](scoring_standardization_v0.3.md)
 - [영상 풀·가림·송출 v0.4](video_pool_occlusion_delivery_requirements_v0.4.md)
 - [3D 손·물체 요구사항 v0.1](3d_hand_object_challenge_requirements_v0.1.md)

@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**재개 후속:** [legacy/bake 재처리·승격 등록부·비공개 저장 분리·기존 원본 한 개 점검](docs/deliveries/2026-11-04_resume_followup.md). 과거 상태와 최신 구현 범위를 구분해 기록합니다.
+
 **기존 prod 기반 UI 수정안:** [A 문구 / B 비교 그림 / C 기존 가이드 손금 및 12종 재평가](docs/deliveries/2026-11-04_prod_palm_variants.md). 사용자가 원한 기존 화면 기반으로 다시 구현했습니다. 목표·카메라 패널과 원래 동작을 사용하며 앞선 독립 시연의 별도 준비 단계는 제외했습니다.
 
 **순차 구현:** [실행 기록](docs/deliveries/2026-11-04_execution_progress.md)에 프레임 대응·연구 후보 MP4, [손바닥 안내 12종 평가·3종 구현](docs/deliveries/2026-11-04_palm_ui_evaluation.md), [표준 좌표/시간 adapter](docs/deliveries/2026-11-04_standard_adapter.md), 자체 작성 3D 골격 fixture를 기록했습니다. 관련 합성/회귀 106개와 준비 화면 배치를 확인했습니다. 원본 동작 자료는 없으며 실측 기반 생성·사람 효과·운영 release는 미완료입니다.
@@ -60,3 +62,7 @@ python -m unittest discover -s tests -p test_standard_metrics.py -v
 ## 후속 연구·개발 계획 (2026-11-02)
 
 [후속 로드맵](docs/research_roadmap_2026-11-02.md)에 기존 연구·발표 마무리, 가림 모호성과 사람 수행 가능성, 채점·입력 보호 검증, 영상 풀 및 3D 손·물체 생성 후보의 우선순위와 단계 전환 조건을 정리했습니다. 계획 기록이며 신규 실험·배포 완료를 의미하지 않습니다.
+
+## 공격 실행시간 다조건 검증 계획 (2026-11-04)
+
+[HaMeR·공격 실행시간 검증 TODO](docs/runtime_validation_todo_2026-11-04.md)는 과거 Colab 실행시간 회고의 한계를 출발점으로, CPU/GPU·최초/반복 실행·프레임 처리 설정·저비용 공격의 비교, 중단에도 보존 가능한 로그, 오프라인/온라인/서버 종점의 구분을 R0–R9 할 일과 완료 기준으로 정리합니다. 벤치마크 구현이나 새 성능 측정을 완료한 기록은 아닙니다.
