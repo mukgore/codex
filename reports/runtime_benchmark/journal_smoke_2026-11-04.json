@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "scope": "model_free_journal_logging_only",
+  "planned_cases": 5,
+  "statuses": {
+    "COMPLETED": 1,
+    "ERROR": 1,
+    "TIMED_OUT": 1,
+    "UNAVAILABLE": 1,
+    "INTERRUPTED": 1
+  },
+  "cases": [
+    {
+      "case": "completed",
+      "status": "COMPLETED",
+      "completed_frames": 32,
+      "elapsed_ns": 36306200,
+      "independent_recovery_matches": true
+    },
+    {
+      "case": "error",
+      "status": "ERROR",
+      "completed_frames": 0,
+      "elapsed_ns": 5779700,
+      "independent_recovery_matches": true
+    },
+    {
+      "case": "timeout",
+      "status": "TIMED_OUT",
+      "completed_frames": 0,
+      "elapsed_ns": 29286600,
+      "independent_recovery_matches": true
+    },
+    {
+      "case": "unavailable",
+      "status": "UNAVAILABLE",
+      "completed_frames": 0,
+      "elapsed_ns": 2499300,
+      "independent_recovery_matches": true
+    },
+    {
+      "case": "worker_exit",
+      "status": "INTERRUPTED",
+      "completed_frames": 1,
+      "elapsed_ns": null,
+      "independent_recovery_matches": true
+    }
+  ],
+  "limitations": [
+    "no model inference or attack benchmark",
+    "no camera or authentication trial",
+    "logging overhead included",
+    "timeout checks are cooperative, not GPU preemption",
+    "local separate-process recovery, not a Colab VM reset experiment"
+  ]
+}
