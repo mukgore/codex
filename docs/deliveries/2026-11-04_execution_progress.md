@@ -9,11 +9,30 @@
 | 1 | 손바닥 안내 UI 후보 | 평가·3종 구현 | [12종 평가와 선정 근거](2026-11-04_palm_ui_evaluation.md). 01 문구/02 비교 그림/03 준비 단계 |
 | 2 | 가림·타임라인·배치 산출물 | 연구 후보 경로 구현·검사 | 필터/역재생 map→비공개 FFV1→변경 없는 Stage6→MP4/시간검사→후보 manifest. 독립 PTS/운영 release는 별도 |
 | 3 | 선택 손·손바닥 안내·이벤트 기록 | 독립 시연 구현·검사 | 준비/선택/자가 확인/재생 분리, trial별 로컬 허용 이벤트. 실제 prod/카메라·사람 효과 검증은 남음 |
-| 4 | 표준 좌표/시간 adapter와 후보 비교 | 대기 | raw schema·단위·gap를 명시하고 합성 검산 후 대응 실자료 입력 |
-| 5 | 자체 P1 생성 파일럿 | 대기 | 자체 skeleton/primitive와 명시적 공학 범위; 실제 인체/접촉 타당성은 별도 |
+| 4 | 표준 좌표/시간 adapter와 후보 비교 | 코드·합성 검사 완료, 실자료 평가 대기 | [명시 단위/미러·gap·분모·후보 특징](2026-11-04_standard_adapter.md). 보정 점수·B0 변경 없음 |
+| 5 | 자체 P1 생성 파일럿 | 연결 시험용 3D fixture 구현, 실측 P1 대기 | 사용자: 원본 동작/대응 자료 없음. 자체 골격 3종→렌더→가림 MP4. 인체·접촉·사람 검증 없음 |
 | 6 | R1 원형 재현·사람/공격·운영 | 입력 조건별 진행 | 허용 데이터·모델·checkpoint/자원·대응 정상/독립 source 필요 |
 
 별도 새 참가자 모집·기업 연락·유료 결제·운영 배포가 필요한 항목은 현재 사용자 요청에서 자동 실행하지 않는다. 필요한 자료를 확인하고 독립 가능한 코드·합성 검증을 계속한다. 추가 패키지 설치를 기본 선행 조건으로 삼지 않는다.
+
+## 표준 adapter와 자체 작성 3D fixture 후속 실행
+
+[표준 adapter](2026-11-04_standard_adapter.md)는 입력 영상 크기·좌표 공간·ms/s·미러·최대 gap을 명시해야 한다. 손목 중심/중지 MCP scale, 15개 각도와 실제 초 단위 시각을 보존하며 누락·잘못된 기하·큰 공백을 연속 block으로 나눈다. 실패/짧은 block도 분모에 남긴다. 기존 DTW와 실제 시각 미분을 연결해 raw 후보 특징을 만들지만 score=None이며 B0 산식·임계값은 변경하지 않는다. 새 11개와 기존 수학12/점수 비교7의 30개 검사를 통과했다. 실자료 대응·학습/calibration·군집 CI·JS 이식은 남아 있다.
+
+사용자에게 가림 없는 원본 동작 2~3종 및 대응 자세·시간 자료를 물었고, 답변은 **없음**이었다. 이를 임의의 가려진 관절 추정치로 대체하지 않았다. handcaptcha의 [자체 작성 골격 fixture](https://github.com/mukgore/handcaptcha/tree/work/todo-consolidation-20261103/experiments/motion_fixture)는 정해진 index_flex/middle_flex/alternating 동작과 seed 진폭으로 3D 뼈 좌표를 만들고, 정사영 렌더·decoder 시각·Stage7 v2·기존 Stage6·출력 검사까지 연결한다.
+
+실제 실행은 세 동작 각각 seed=7, 24frame, 12fps, w3=2.5다. 각각 24/24 frame의 기하 gate를 통과했고 masked MP4와 manifest를 생성했다. source/가림 preview를 눈으로 확인했다. 이 수치와 관절 범위는 연결 시험 조건이며 인체의 안전 범위나 연구 기준이 아니다. 결과는 `RESEARCH_FIXTURE_ONLY`, release_allowed=false이며, 자체 좌표·영상은 Git 제외 폴더에만 남긴다. surface collision/물체 접촉/잡기 물리/사람 수행 가능성/보안 효과는 시험하지 않았다. seed나 동작 이름을 독립 family 수로 세지 않는다. Text2HOI 원형 재현 또는 완성된 실측 P1로 표시하지 않는다.
+
+fixture 5개 검사까지 포함한 관련 검사는 **106개**다: handcaptcha unittest39 + 기존 함수17 + Node20, codex adapter11 + 수학12 + 점수 비교7. 기존 test_calculations 4개는 openpyxl 부재로 앞서 실행 불가였으며 이 숫자에 포함하지 않는다. 추가 설치는 하지 않았다. 아래 71개는 adapter/fixture 추가 전 단계의 기록이다.
+
+## 다음에 필요한 입력과 남은 작업
+
+- UI: 실제 카메라와 모델·좌우손/미러/소실·재시도 사용성, 손바닥 방향 효과 비교, prod의 문제/gate/timer 연결. 현재는 독립 시연이다.
+- 표준 특징: metadata가 확인된 같은 trial의 legacy 결과와 후보 특징, 사전 고정한 개발/validation/test 분할, score 변환·학습·calibration 및 독립 사람/공격 평가.
+- 생성: 허용된 가림 없는 원본 동작과 대응 자세·시간, 물체·접촉 모델/검사, 사람 수행 가능성과 공격·비용 평가. 원본 부재 상태에서는 실측 P1을 완료할 수 없다. R1은 별도의 허용 데이터/모델/checkpoint/자원이 필요하다.
+- 가림/운영: 별도 legacy/bake 경로의 동일 검증 적용, 독립 container PTS/VFR·track 검사, 권리/상태 전이/release validator·운영 media/server 검증. 현재 후보 MP4가 있어도 운영 출하는 완료되지 않았다.
+
+190행 스냅샷의 과거 미구현 판정은 위 후속 변경과 함께 읽는다. 남은 요구를 통째로 완료로 승격하거나 완료율로 환산하지 않았다.
 
 ## 손바닥 방향 요구의 코드상 공백
 
