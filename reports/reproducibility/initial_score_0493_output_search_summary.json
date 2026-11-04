@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-04",
+  "status": "historical_human_level3_0493_execution_output_not_found_in_scanned_scope",
+  "target": {
+    "value": 0.493,
+    "unit": "historical initial human level-3 CAPTCHA mean"
+  },
+  "code_and_output_scan": {
+    "files": 214,
+    "by_extension": {
+      ".ipynb": 34,
+      ".py": 42,
+      ".html": 36,
+      ".md": 78,
+      ".txt": 7,
+      ".zip": 2,
+      ".csv": 15
+    },
+    "exact_target_family_matches": 27,
+    "non_reference_document_matches": 0,
+    "notebook_rounding_neighborhood_matches": 0,
+    "archive_members_inspected": 5
+  },
+  "report_version_scan": {
+    "files": 103,
+    "unique_file_contents": 97,
+    "by_extension": {
+      ".hwp": 35,
+      ".pdf": 47,
+      ".docx": 7,
+      ".pptx": 8,
+      ".hwpx": 6
+    },
+    "target_0493_occurrences": 97,
+    "body_0493_with_0528_0546_context_occurrences": 43,
+    "evidence_classification": "report prose and table entries; not execution output"
+  },
+  "workbook_scan": {
+    "candidate_workbooks": 5,
+    "numeric_cells_rounding_to_target": 0
+  },
+  "new_material": {
+    "matching_format_mediapipe_landmark_inputs": 6,
+    "additional_initial_mediapipe_notebook": 1,
+    "historical_run_identity_confirmed": false
+  },
+  "recomputed_observed_maxima_from_new_inputs": {
+    "angle": 39.167288473926774,
+    "dtw_angle": 32.65132901346212,
+    "tendency": 0.7800300601881369,
+    "accel": 0.0236812072568801,
+    "distance": 0.5239291403079547,
+    "dtw_distance": 0.5314763889613001,
+    "trajectory": 1.4948254319660985
+  },
+  "same_number_different_endpoint": {
+    "target": "MediaPipe level-1 estimated DTW-distance",
+    "value": 0.49346140533981875,
+    "rounded": 0.493,
+    "is_human_level3_captcha": false,
+    "transcription_error_proven": false
+  },
+  "new_input_table7_candidate_weighted_human_level_means": [
+    0.6143382753135782,
+    0.6279893187151872,
+    0.5568965482361212
+  ],
+  "researcher_recollection": {
+    "calculated_during_report_writing_possible": true,
+    "transcription_error_possible": true,
+    "source_environment_recalled": false,
+    "error_confirmed": false
+  },
+  "limitations": [
+    "Scope is listed local research sources, not the entire computer or cloud conversation history.",
+    "Report text, notebook text/HTML outputs and workbook cells were searched; not all report embedded raster images or deleted/unsaved history were audited.",
+    "Observed maxima were recomputed from newly located inputs; historical use of those exact inputs is unproven."
+  ],
+  "source_hashes_unchanged_after_readonly_search": true
+}
