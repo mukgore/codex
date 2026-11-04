@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**기존 prod 기반 UI 수정안:** [A 문구 / B 비교 그림 / C 기존 가이드 손금 및 12종 재평가](docs/deliveries/2026-11-04_prod_palm_variants.md). 사용자가 원한 기존 화면 기반으로 다시 구현했습니다. 목표·카메라 패널과 원래 동작을 사용하며 앞선 독립 시연의 별도 준비 단계는 제외했습니다.
+
 **순차 구현:** [실행 기록](docs/deliveries/2026-11-04_execution_progress.md)에 프레임 대응·연구 후보 MP4, [손바닥 안내 12종 평가·3종 구현](docs/deliveries/2026-11-04_palm_ui_evaluation.md), [표준 좌표/시간 adapter](docs/deliveries/2026-11-04_standard_adapter.md), 자체 작성 3D 골격 fixture를 기록했습니다. 관련 합성/회귀 106개와 준비 화면 배치를 확인했습니다. 원본 동작 자료는 없으며 실측 기반 생성·사람 효과·운영 release는 미완료입니다.
 
 **전달본 후속 점검:** [작업 완료 여부·손동작 자동 생성 감사](docs/deliveries/2026-11-04_completion_audit.md)는 통합 목록 62개와 하위 요구를 대조합니다. 전달 당시 자동 생성은 설계 단계였고, 이후 자체 작성 골격으로 연결 시험을 추가했습니다. 실측 P1·Text2HOI 재현과는 구분하며, 남은 작업은 위 실행 기록을 따릅니다.
