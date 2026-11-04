@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**순차 구현:** [실행 기록](docs/deliveries/2026-11-04_execution_progress.md)에 프레임 대응·연구 후보 MP4 출력 연결과 [손바닥 안내 12종 평가·3종 구현](docs/deliveries/2026-11-04_palm_ui_evaluation.md)을 기록했습니다. 합성/회귀 71개 및 준비 화면 배치를 확인했으며, 사람 효과·운영 release는 별도 검증입니다.
+
 **전달본 후속 점검:** [작업 완료 여부·손동작 자동 생성 감사](docs/deliveries/2026-11-04_completion_audit.md)는 통합 목록 62개와 하위 요구를 대조합니다. 자동 생성은 기존 설계에 포함돼 있으나 구현·실행되지 않았고, 손 선택 시연·가림 보강·점수 비교 도구도 남은 통합 작업을 구분해 기록했습니다.
 
 **최신 작업 현황(2026-11-03 전달본):** [두 저장소 통합 할 일](docs/backlog_2026-11-03.md), [실험 카드](docs/experiment_cards_2026-11-03.md), [설명·발표 초안](docs/research_explanation_2026-11-03.md), [handcaptcha 수정 패치와 적용 안내](patches/README.md). 큰 손 선택·중첩 화면과 가림 보강은 [handcaptcha 작업 브랜치](https://github.com/mukgore/handcaptcha/tree/work/todo-consolidation-20261103)에 커밋했고 기존/후보 점수 비교 CLI를 추가했습니다. 이번 적용·검사 내역은 [전달본 반영 기록](docs/deliveries/2026-11-03_review.md)에 있습니다.
