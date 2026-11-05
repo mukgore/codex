@@ -4,7 +4,7 @@
   "date": "2026-11-05",
   "tests": {
     "handcaptcha_python": 109,
-    "codex_python": 63,
+    "codex_python": 70,
     "handcaptcha_javascript": 29
   },
   "extraction": [

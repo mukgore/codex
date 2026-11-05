@@ -1,0 +1,16 @@
+{
+  "hamer_core": {
+    "repository": "https://github.com/geopavlakos/hamer",
+    "expected_revision": "3a01849f4148352e9260b69bf28b65d1671a4905",
+    "files": ["_DATA/data/mano/MANO_RIGHT.pkl", "_DATA/hamer_ckpts/checkpoints/hamer.ckpt", "_DATA/hamer_ckpts/model_config.yaml"],
+    "directories": [],
+    "additional_requirements": ["remaining model-config referenced files", "detector and ViTPose weights for full demo", "compatible GPU runtime", "user-accepted MANO access conditions"]
+  },
+  "text2hoi_grab_demo": {
+    "repository": "https://github.com/JunukCha/Text2HOI",
+    "expected_revision": "9643c209f08e28d7ed870095cea78c7244e4fd42",
+    "files": ["data/mano/mano_v1_2/models/MANO_LEFT.pkl", "data/mano/mano_v1_2/models/MANO_RIGHT.pkl", "data/mano/mano_v1_2/models/LICENSE.txt", "data/grab/obj.pkl", "checkpoints/grab/seq_cvae.pth", "checkpoints/grab/pointfeat.pth", "checkpoints/grab/contact_estimator.pth", "checkpoints/grab/texthom.pth", "checkpoints/grab/refiner.pth"],
+    "directories": ["data/grab/processed_object_meshes"],
+    "additional_requirements": ["MPNet sentence-transformers/all-mpnet-base-v2 and CLIP model assets", "object mesh completeness for chosen prompt", "compatible Python3.8/CUDA runtime", "user-accepted MANO/GRAB access conditions"]
+  }
+}
