@@ -106,10 +106,24 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--min-human-accept', type=float, required=True)
     parser.add_argument('--max-attack-accept', type=float, required=True)
+    parser.add_argument('--cluster-repetitions', type=int)
+    parser.add_argument('--cluster-seed', type=int)
+    parser.add_argument('--cluster-confidence', type=float)
     args = parser.parse_args()
     with args.input.open(encoding='utf-8-sig', newline='') as stream:
         rows = list(csv.DictReader(stream))
     report = compare(rows, min_human_accept=args.min_human_accept, max_attack_accept=args.max_attack_accept)
+    cluster_options=(args.cluster_repetitions,args.cluster_seed,args.cluster_confidence)
+    if any(value is not None for value in cluster_options):
+        if any(value is None for value in cluster_options):
+            parser.error('Cluster intervals require repetitions, seed and confidence together')
+        if all(report['metrics'][metric]['status']=='evaluated' for metric in METRICS):
+            from validation_v03.cluster_intervals import test_intervals
+            report['cluster_intervals']=test_intervals(rows,
+                {metric:report['metrics'][metric]['threshold'] for metric in METRICS},
+                repetitions=args.cluster_repetitions,seed=args.cluster_seed,confidence=args.cluster_confidence)
+        else:
+            report['cluster_intervals']={'status':'UNAVAILABLE_NO_TWO_FINITE_VALIDATION_THRESHOLDS'}
     report['input_sha256'] = hashlib.sha256(args.input.read_bytes()).hexdigest()
     # This private integrity fingerprint is not consent to publish a data manifest.
     with args.output.open('x', encoding='utf-8') as stream:

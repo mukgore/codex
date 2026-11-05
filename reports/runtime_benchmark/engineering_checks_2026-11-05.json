@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scope": "engineering_checks_not_population_or_attack_performance",
+  "date": "2026-11-05",
+  "tests": {
+    "handcaptcha_python": 109,
+    "codex_python": 63,
+    "handcaptcha_javascript": 29
+  },
+  "extraction": [
+    {
+      "environment": "existing_research_venv",
+      "model": "MediaPipe Hands 0.10.9",
+      "planned_frames": 113,
+      "decoded_frames": 113,
+      "detected_frames": 113,
+      "supervisor_status": "EXITED",
+      "worker_status": "COMPLETED",
+      "supervisor_elapsed_ns": 4603126600
+    },
+    {
+      "environment": "isolated_windows_cp310",
+      "model": "MediaPipe Hands 0.10.14",
+      "planned_frames": 113,
+      "decoded_frames": 113,
+      "detected_frames": 113,
+      "supervisor_status": "EXITED",
+      "worker_status": "COMPLETED",
+      "supervisor_elapsed_ns": 4813264500
+    },
+    {
+      "environment": "existing_research_venv",
+      "timeout_seconds": 2,
+      "supervisor_status": "TIMED_OUT",
+      "worker_status": "INTERRUPTED",
+      "completed": false
+    }
+  ],
+  "environment_rebuild": {
+    "wheel_count": 26,
+    "wheel_bytes": 230783583,
+    "pip_check_passed": true,
+    "offline_second_environment_passed": true,
+    "lock_sha256": "70aad5637c73ebd5e3065bad04c7f07e6567991a89662f685df0de7b57c88633"
+  },
+  "contact_fixture": {
+    "frames": 24,
+    "contact_frames": [
+      11,
+      12
+    ],
+    "penetrating_frames": 0,
+    "geometry_gate_passed_frames": 24,
+    "release_allowed": false
+  },
+  "real_container_cases": {
+    "planned": 6,
+    "matched_expectations": 6,
+    "expected_pass": 3,
+    "expected_reject": 3
+  },
+  "limitations": [
+    "one extraction per environment; uncontrolled cache; no comparative performance conclusion",
+    "no HaMeR/Text2HOI, online authentication or attack benchmark",
+    "no independent human evaluation or operating release approval",
+    "contact uses authored capsule/sphere proxies, not anatomical mesh or grasp physics",
+    "raw JS parity and cluster bootstrap are synthetic software checks"
+  ]
+}

@@ -1,4 +1,8 @@
-# 프로젝트 진행 상태 — 2026-10-17
+# 프로젝트 진행 상태
+
+## 최신 후속 구현 — 2026-11-05
+
+현재 기준은 [통합 실행 계획](docs/deliveries/2026-11-05_work_plan.md)이다. 감독기/실제113frame 추출, capsule-sphere 접촉 fixture, registry 기반 private delivery, cluster bootstrap/원시 JS parity, 해시 고정 Windows 환경과 오프라인 재설치를 보완했다. 실제 Text2HOI/HaMeR 모델, 사람/공격 자료, 권리·검토자/운영 gateway 입력은 남는다. 아래2026-10-17의 현재 단계/미실행 표현은 당시 기록으로 유지한다.
 
 ## 후속 구현 사실 조사 — 2026-10-17
 
