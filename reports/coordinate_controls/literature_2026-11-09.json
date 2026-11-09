@@ -1,0 +1,1157 @@
+{
+  "scope": "known_public_2d_fixtures_synthetic_matches_no_human_labels",
+  "source_revision": "e21a974cd223236bccf2a647cba45f5c559f6430",
+  "numpy": "1.26.4",
+  "dtw_python": "1.5.1",
+  "phase_samples": 32,
+  "dtw_radius": 3,
+  "clip_splits": [
+    [
+      "custom01",
+      "custom03",
+      "custom05",
+      "custom08"
+    ],
+    [
+      "custom02",
+      "custom04",
+      "custom06",
+      "custom07"
+    ]
+  ],
+  "historical_score_gate_full_pool": {
+    "hold_first": {
+      "accepted": 5,
+      "n": 8
+    },
+    "hold_middle": {
+      "accepted": 6,
+      "n": 8
+    },
+    "hold_last": {
+      "accepted": 5,
+      "n": 8
+    },
+    "endpoint_interpolation": {
+      "accepted": 8,
+      "n": 8
+    },
+    "reverse": {
+      "accepted": 6,
+      "n": 8
+    },
+    "middle_half_only": {
+      "accepted": 8,
+      "n": 8
+    },
+    "wrong_library": {
+      "accepted": 37,
+      "n": 56
+    },
+    "synthetic_match": {
+      "accepted": 32,
+      "n": 32
+    },
+    "exact_replay": {
+      "accepted": 8,
+      "n": 8
+    }
+  },
+  "historical_score_full_pool": {
+    "hold_first": {
+      "accepted": 8,
+      "n": 8
+    },
+    "hold_middle": {
+      "accepted": 8,
+      "n": 8
+    },
+    "hold_last": {
+      "accepted": 8,
+      "n": 8
+    },
+    "endpoint_interpolation": {
+      "accepted": 8,
+      "n": 8
+    },
+    "reverse": {
+      "accepted": 8,
+      "n": 8
+    },
+    "middle_half_only": {
+      "accepted": 8,
+      "n": 8
+    },
+    "wrong_library": {
+      "accepted": 56,
+      "n": 56
+    },
+    "synthetic_match": {
+      "accepted": 32,
+      "n": 32
+    },
+    "exact_replay": {
+      "accepted": 8,
+      "n": 8
+    }
+  },
+  "oracle_replay_raw_errors_max": {
+    "angle_dtw": 0.0,
+    "palm_bone_dtw": 0.0,
+    "angle_ddtw": 0.0,
+    "tip_open_dtw": 0.0,
+    "tip_closed_dtw": 0.0
+  },
+  "folds": [
+    {
+      "fusion_calibration_median": [
+        -8.014793577112759,
+        -0.1776155937498118,
+        -2.9705138865425456
+      ],
+      "fusion_calibration_iqr": [
+        28.008529452875457,
+        0.3607174309649859,
+        3.6375854181692793
+      ],
+      "methods": {
+        "legacy": {
+          "threshold": 0.9225108397433053,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 1,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 3,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 1,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 1,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 14,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9548611111111112
+        },
+        "angle_dtw": {
+          "threshold": -3.5964250493431926,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 1,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 0,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 14,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9826388888888888
+        },
+        "palm_bone_dtw": {
+          "threshold": -0.029312595158446843,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 0,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 0,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 0,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 12,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9895833333333334
+        },
+        "angle_ddtw": {
+          "threshold": -3.196517061745145,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 2,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 1,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 2,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 2,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 1,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 14,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9340277777777778
+        },
+        "tip_open_dtw": {
+          "threshold": -0.24811614355989314,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 4,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 3,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 8,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 4,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 2,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 4,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.4357638888888889
+        },
+        "tip_closed_dtw": {
+          "threshold": -0.26535360684736214,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 3,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 3,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 7,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 3,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 3,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 2,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.7413194444444444
+        },
+        "fusion": {
+          "threshold": 0.16891808806913575,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 1,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 1,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 0,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 14,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9722222222222222
+        }
+      }
+    },
+    {
+      "fusion_calibration_median": [
+        -18.335283114809727,
+        -0.27704795468702836,
+        -3.565235804584888
+      ],
+      "fusion_calibration_iqr": [
+        48.902380752360315,
+        0.5254757574140205,
+        9.296534432359458
+      ],
+      "methods": {
+        "legacy": {
+          "threshold": 0.9108693808920845,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 1,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 3,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 1,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9166666666666666
+        },
+        "angle_dtw": {
+          "threshold": -6.391370105598388,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 1,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9722222222222222
+        },
+        "palm_bone_dtw": {
+          "threshold": -0.0695141309162265,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 0,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 1,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 3,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9861111111111112
+        },
+        "angle_ddtw": {
+          "threshold": -6.083410968040347,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 2,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 2,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 2,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 2,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 3,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 3,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 3,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 3,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 3,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 6,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.9166666666666666
+        },
+        "tip_open_dtw": {
+          "threshold": -0.24362055115056988,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 4,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 2,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 4,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 4,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 3,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 8,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 14,
+              "n": 16
+            }
+          },
+          "test_auc": 0.3576388888888889
+        },
+        "tip_closed_dtw": {
+          "threshold": -0.25556857661534715,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 3,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 3,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 2,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 4,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 3,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 4,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 3,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 7,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 10,
+              "n": 16
+            }
+          },
+          "test_auc": 0.6197916666666666
+        },
+        "fusion": {
+          "threshold": 0.12277068939848779,
+          "zero_negative_accept_feasible_on_calibration": false,
+          "calibration": {
+            "hold_first": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 0,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 0,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 2,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 0,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 2,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test": {
+            "hold_first": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_middle": {
+              "accepted": 1,
+              "n": 4
+            },
+            "hold_last": {
+              "accepted": 1,
+              "n": 4
+            },
+            "endpoint_interpolation": {
+              "accepted": 3,
+              "n": 4
+            },
+            "reverse": {
+              "accepted": 1,
+              "n": 4
+            },
+            "middle_half_only": {
+              "accepted": 4,
+              "n": 4
+            },
+            "wrong_library": {
+              "accepted": 0,
+              "n": 12
+            },
+            "synthetic_match": {
+              "accepted": 16,
+              "n": 16
+            }
+          },
+          "test_auc": 0.96875
+        }
+      }
+    }
+  ]
+}
