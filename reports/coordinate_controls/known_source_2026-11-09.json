@@ -1,0 +1,378 @@
+{
+  "scope": "published_coordinates_known_sources_only",
+  "sources": 8,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "node": "v24.22.1",
+  "handcaptcha_commit": "e21a974cd223236bccf2a647cba45f5c559f6430",
+  "dtw_radius": "round(0.1 * frame_count)",
+  "time_axis": "published nominal frame timestamps",
+  "forward_time_warp": "phase + 0.10 * sin(pi * phase), linear interpolation",
+  "comparison": "candidate error minus exact replay error on the same target",
+  "conditions": {
+    "exact_replay": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 8,
+      "both_pass": 8,
+      "legacy_score_median": 0.9933922865173865,
+      "legacy_score_lower_than_exact": 0,
+      "legacy_score_lower_than_warp": 0,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 0,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 0,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 0,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "positive_over_1e-9": 0
+        },
+        "dtw_angle_path_rmse": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "positive_over_1e-9": 0
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "positive_over_1e-9": 0
+        }
+      }
+    },
+    "forward_time_warp": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 8,
+      "both_pass": 8,
+      "legacy_score_median": 0.9725100537827169,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 0,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 0,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 0,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 0,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 2.086218661938668,
+          "min": 0.6937160105682534,
+          "max": 9.290950152801733,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 0.5248555127370108,
+          "min": 0.11691312194472489,
+          "max": 2.1208019332045223,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.2110992236474605,
+          "min": 1.6723454811693457,
+          "max": 5.888914871254664,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "hold_first": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 5,
+      "both_pass": 5,
+      "legacy_score_median": 0.860971638554374,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 8,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 1,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 8.777249645449189,
+          "min": 2.637206063871458,
+          "max": 38.35106619060389,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 22.790290402354053,
+          "min": 5.946188675193706,
+          "max": 71.28872370642404,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.082831256074138,
+          "min": 1.4095386196439572,
+          "max": 3.7199685310764283,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "hold_middle": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 6,
+      "both_pass": 6,
+      "legacy_score_median": 0.8805836856715596,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 8,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 1,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 7.3768593985300575,
+          "min": 2.139898638366602,
+          "max": 26.964745529038456,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 19.53034441078412,
+          "min": 6.200386193066849,
+          "max": 59.036466962638634,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.0828312560741393,
+          "min": 1.4095386196439579,
+          "max": 3.719968531076431,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "hold_last": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 5,
+      "both_pass": 5,
+      "legacy_score_median": 0.8738233927044475,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 8,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 1,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 7.9563861935150175,
+          "min": 2.6675882216392943,
+          "max": 35.929283439973624,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 22.02679849454499,
+          "min": 6.986636550028519,
+          "max": 68.07510937742974,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.0828312560741375,
+          "min": 1.4095386196439583,
+          "max": 3.7199685310764283,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "endpoint_interpolation": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 8,
+      "both_pass": 8,
+      "legacy_score_median": 0.9250935443566575,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 8,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 1,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 4.239470815341294,
+          "min": 1.2662631988969797,
+          "max": 20.099070879746005,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 8.659764833497231,
+          "min": 1.8591402404548305,
+          "max": 32.811946458510036,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.082574322266004,
+          "min": 1.4095340005503263,
+          "max": 3.719848395249891,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "reverse": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 6,
+      "both_pass": 6,
+      "legacy_score_median": 0.8140061197260302,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 8,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 8,
+          "pairs": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 8,
+          "pairs": 8
+        }
+      },
+      "complete_feature_pairs": 8,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 13.717252229636312,
+          "min": 3.9924619456522863,
+          "max": 52.39950834432651,
+          "positive_over_1e-9": 8
+        },
+        "dtw_angle_path_rmse": {
+          "median": 28.780385112011203,
+          "min": 8.192271525196821,
+          "max": 80.60338311893932,
+          "positive_over_1e-9": 8
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.917946972937017,
+          "min": 2.115671448283256,
+          "max": 6.520759208798741,
+          "positive_over_1e-9": 8
+        }
+      }
+    },
+    "wrong_library": {
+      "attempts": 56,
+      "legacy_score_pass": 56,
+      "offline_gate_pass": 37,
+      "both_pass": 37,
+      "legacy_score_median": 0.6978039106985809,
+      "legacy_score_lower_than_exact": 56,
+      "legacy_score_lower_than_warp": 56,
+      "candidate_error_higher_than_warp": {
+        "angle_phase_grid_mae_degrees": {
+          "higher": 56,
+          "pairs": 56
+        },
+        "dtw_angle_path_rmse": {
+          "higher": 56,
+          "pairs": 56
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "higher": 47,
+          "pairs": 56
+        }
+      },
+      "complete_feature_pairs": 56,
+      "candidate_error_delta_from_exact": {
+        "angle_phase_grid_mae_degrees": {
+          "median": 22.106729492293056,
+          "min": 7.121022618684467,
+          "max": 47.41190971549863,
+          "positive_over_1e-9": 56
+        },
+        "dtw_angle_path_rmse": {
+          "median": 50.083338503298066,
+          "min": 13.04622787698642,
+          "max": 73.67697149451405,
+          "positive_over_1e-9": 56
+        },
+        "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": {
+          "median": 2.85066267898804,
+          "min": 1.8242533264688787,
+          "max": 4.810212592103391,
+          "positive_over_1e-9": 56
+        }
+      }
+    },
+    "middle_frame_missing": {
+      "attempts": 8,
+      "legacy_score_pass": 8,
+      "offline_gate_pass": 8,
+      "both_pass": 8,
+      "legacy_score_median": 0.9767293744875786,
+      "legacy_score_lower_than_exact": 8,
+      "legacy_score_lower_than_warp": 1,
+      "candidate_error_higher_than_warp": {},
+      "complete_feature_pairs": 0,
+      "candidate_error_delta_from_exact": {}
+    }
+  }
+}
