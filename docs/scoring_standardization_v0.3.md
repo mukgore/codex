@@ -173,6 +173,8 @@ split_name 검사만으로 실제 데이터 독립성이 입증되지 않는다.
 
 ## 9. S6 — 자세 관문·구간 집계·데이터 수집
 
+**2026-11-10 저장 계약 검증:** [18개 보존 세션·현재 소유 JS 내보내기·canonical 재로드·사전 snapshot](deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 실제 실행했다. source bytes·좌표/null·저장 counts를 보존했으며 잘림/부분 저장/변조를 구분한다. 새 per-frame 사건/카메라 coverage·정책 채택과 과거 실행 build 확인은 완료하지 않았다.
+
 - 최신 prod의 38도/200ms 유지 규칙을 legacy 기준으로 기록한다.
 - gate 진입/이탈, 유지 시간, 검출 끊김, 프레임 공백을 로그에 남긴다.
 - 프레임 사이 미관측 시간을 무조건 연속 자세 유지로 인정하지 않는 gap 규칙을 검토한다.

@@ -32,9 +32,9 @@
 | S03 | 3B | 실제 초 미분·gap 분리·[72개 sampling/합성 노이즈/평활화 계산](deliveries/2026-11-10_derivative_sensitivity.md) | 필터가 원래 미분도 바꾸는 민감도 확인. 실제 기기·정상/오답 이득 평가는 입력 대기 |
 | S04 | 3B | 원시 특징·고정 점수 비교 도구 [진단][DIAG] | B1 독립 보정·B2/B3 학습은 대응 자료/군집·표본 필요 |
 | S05 | 3B | ROC/DET·AUC/EER 진단·유형별 최악률·유형별 군집 구간 [진단][DIAG] | 독립 실제 평가 대기. 최악 유형 동시 위험 상한은 미구현/미주장 |
-| S06 | 3B | 구간 대응·기존 선택 손 gap 정책·회귀 [실행][EXEC] | **추가 작업 가능:** 저장/재로드·이벤트/coverage 계약 검증. 실제 정책 채택은 사람 자료 필요 |
+| S06 | 3B | [18세션 저장/재로드·실제 JS export 3종·손상/잘림 검증][PERSIST] | 실제 camera coverage·새 per-frame/permission 이벤트·정책 채택은 실제 수집/연결 입력 필요 |
 | S07 | 3B | legacy 회귀·adapter/원시 JS 수치 검사 | 독립 보정/평가와 동일 trial shadow 입력 필요 |
-| V00 | 4/공통 | 실험 로그/감독기·scope·실패 분모 코드 | **추가 작업 가능:** 공통 사전 실행 manifest 필수 필드 검증·잠금·추적 연결 |
+| V00 | 4/공통 | [사전 metadata/파일/코드/lock 검사·후검사·runtime journal 연결 실제 실행][PERSIST] | 새 실험은 이 경로로 scope별 기록. 신규 사람/모델/운영 사건 계측은 별도 입력 필요 |
 | V01 | 3A | 기존 known-pool 수용 유지, 카메라 대응 분석기 [진단][DIAG] | 실제 같은 사람/문제/카메라 입력 필요 |
 | V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | **추가 작업 가능:** 전체 계보/중복 사전 검사. 미사용 실제 source는 수집 필요 |
 | V03 | 5 | 가림×입력 보호 설계와 과거 국소 진단 | 신뢰 입력 방식·실제 대응 2×2 자료·동일 예산 필요 |
@@ -42,7 +42,7 @@
 | V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | **추가 작업 가능:** caller별 query 제한/실행 예산. 운영 다중 worker·gateway는 별도 |
 | V06 | 3A/4 | 기존 human18/공개 pool 차이 유지 | 공통 challenge·실제 카메라·새 정상 자료 필요 |
 | N01 | 1/5 | 전달 파일·Git 패턴/ZIP 감사·비공개 분리 기록 | **추가 작업 가능:** 남은 현재/이력 의미 검토. 값 자체는 공개 금지 |
-| N02 | 공통 | 해시 잠금 환경·오프라인 재설치·실행 snapshot | **추가 작업 가능:** 새 실행 manifest에 환경/코드/자료 잠금 연결 |
+| N02 | 공통 | 해시 잠금 환경·오프라인 재설치·[26 pin metadata 검사와 실행 manifest 연결][PERSIST] | 과거 build 미확인·다른 OS/브라우저/모델 runtime은 미검증 유지 |
 | N03 | 공통 | 주장 근거표·기존 선행 한계 기록 | **추가 작업 가능:** 채택 가능한 제한적 주장과 최신 1차 문헌 대조. 특허성 확정 금지 |
 | P01 | 1/5 | 기존 본인 촬영·본인 손·연구 사용/영구 비공개 확인 [촬영][CAPTURE] | 외부/다른 참가자 자산의 동의·운영 송출 권한은 별도 입력 |
 | P02 | 1 | 원본 1개·21개 촬영 접수 계획 [촬영][CAPTURE] | 새 촬영·수행자/family 계보·주석 필요 |
@@ -71,10 +71,11 @@
 
 ## 다음 구현 우선순위
 
-새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도를 수행했다. 이어 **S06 → V00/V02 → V05·N01·M01/M03·T01 → 6단계의 계측/fixture** 순으로 가능한 작업을 계속한다. N02는 공통 잠금과 함께 처리한다. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
+새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도·S06 저장/재로드·V00/N02 공통 snapshot과 실제 journal 연결을 수행했다. 이어 **V02 → V05·N01·M01/M03·T01 → 6단계의 계측/fixture** 순으로 가능한 작업을 계속한다. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
 
 [EXEC]: deliveries/2026-11-10_all_stage_execution.md
 [DIAG]: ../validation_v03/SCORE_DIAGNOSTICS.md
 [CAPTURE]: deliveries/2026-11-10_rights_capture_screening_protocol.md
 [ACCEPT]: reproducibility/g3_dr3_fr5_researcher_update_2026-10-28.md
 [AUDIT]: deliveries/2026-11-04_completion_audit.md
+[PERSIST]: deliveries/2026-11-10_session_artifacts_and_run_manifest.md

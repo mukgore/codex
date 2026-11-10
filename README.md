@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**S06·V00/N02 후속:** [18세션 저장/재로드·실제 JS export·실행 전 snapshot과 runtime journal 연결](docs/deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 검증했습니다. 새로운 사람/모델 성능 결과나 과거 build 복원이 아닙니다. 다음 가능한 작업은 전체 추적표의 V02 계보·중복 검사입니다.
+
 **3A/3B 후속:** [62개 항목 전체 추적과 다음 작업](docs/backlog_execution_audit_2026-11-10.md), [실제 카메라 대응 분석·ROC/DET·공격 유형별 결과 도구](validation_v03/SCORE_DIAGNOSTICS.md). 대응 키가 맞을 때만 정상/정지/사진을 비교하고, validation에서 잠근 기준으로 유형별 결과·군집 구간을 낸다. Python 103개가 통과했다. 구현 검사는 합성 자료이며 새 사람 실험 결과가 아니다. 전체 목표는 진행 중이다.
 
 **최신 실행(2026-11-10):** [현재 자료로 실행한 전 단계 작업과 필요한 입력](docs/deliveries/2026-11-10_all_stage_execution.md). 기존 18세션 경계 대응, 세 가림색의 실제 MediaPipe 비교, prod 점수 검산, 로컬 상태 상한/만료 정리와 회귀를 완료했습니다. 새 촬영·사람 응답·HaMeR·운영 인증은 별도 입력 대기입니다. **UI 수정 단계 전까지 설계와 화면은 handcaptcha prod를 기준으로 유지합니다.** 아래는 과거 시점의 기록입니다.

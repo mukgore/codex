@@ -1,0 +1,77 @@
+{
+  "scope": "saved_legacy_session_storage_and_owned_js_export_roundtrip",
+  "legacy_sessions_attempted": 18,
+  "legacy_sessions_verified": 18,
+  "legacy_segments": 126,
+  "legacy_segment_frames": 8782,
+  "legacy_missing_frames": 141,
+  "source_bytes_unchanged": true,
+  "synthetic_js_exports_verified": [
+    {
+      "case": "bridge_completed",
+      "schema_valid": true,
+      "input_source_authenticated": false,
+      "format": "selected_hand_gate_v1",
+      "saved_events_n": 3,
+      "event_counts": {
+        "selected": 1,
+        "completed": 1,
+        "phase_changed": 1
+      },
+      "truncated": false,
+      "observed_terminal_events": {
+        "completed": 1
+      },
+      "timeline_span_ms": 33,
+      "reconstruction_status": "TERMINAL_EVENT_OBSERVED",
+      "camera_frame_coverage": null,
+      "score_observed": false,
+      "scope": "saved local events only; no per-frame capture or authentication proof"
+    },
+    {
+      "case": "bridge_aborted",
+      "schema_valid": true,
+      "input_source_authenticated": false,
+      "format": "selected_hand_gate_v1",
+      "saved_events_n": 2,
+      "event_counts": {
+        "selected": 1,
+        "aborted": 1
+      },
+      "truncated": false,
+      "observed_terminal_events": {
+        "aborted": 1
+      },
+      "timeline_span_ms": 33,
+      "reconstruction_status": "TERMINAL_EVENT_OBSERVED",
+      "camera_frame_coverage": null,
+      "score_observed": false,
+      "scope": "saved local events only; no per-frame capture or authentication proof"
+    },
+    {
+      "case": "demo_truncated",
+      "schema_valid": true,
+      "input_source_authenticated": false,
+      "format": "palm_guidance_v1",
+      "saved_events_n": 2,
+      "event_counts": {
+        "selected": 1,
+        "lost": 1
+      },
+      "truncated": true,
+      "observed_terminal_events": {},
+      "timeline_span_ms": 10,
+      "reconstruction_status": "TRUNCATED_PARTIAL_LOG",
+      "camera_frame_coverage": null,
+      "score_observed": false,
+      "scope": "saved local events only; no per-frame capture or authentication proof"
+    }
+  ],
+  "new_human_observations": 0,
+  "source_authentication_proven": false,
+  "limitations": [
+    "Checks persisted layout/counts/timelines and exact local round-trip.",
+    "No recovery of missing historical build, image size, playback/wait events or camera truth.",
+    "Synthetic exported events are not participant trials or authentication results."
+  ]
+}

@@ -6,8 +6,7 @@
   "duplicate_ids": [],
   "full_goal_completion_proven": false,
   "next_engineering": [
-    "S06",
-    "V00/V02",
+    "V02",
     "V05/N01/M01/M03/T01",
     "stage6_cost_and_fixtures"
   ]

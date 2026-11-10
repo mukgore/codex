@@ -1,0 +1,18 @@
+{
+  "camera_opened": false,
+  "journal_bundle_recovery": "COMPLETED",
+  "journal_provenance_link_verified": true,
+  "limitations": [
+    "Checks source/code/dependency metadata and the declared synthetic export task.",
+    "Browser/permissions/hardware descriptions are not independently verified.",
+    "Runtime includes local process/serialization/storage overhead, not camera or model latency."
+  ],
+  "model_inference": false,
+  "new_human_observations": 0,
+  "planned_js_exports": 3,
+  "planned_video_frames": 0,
+  "postflight_snapshot_matched": true,
+  "pre_execution_snapshot_created": true,
+  "scope": "pre_execution_metadata_guard_and_owned_js_export_contract_run",
+  "validated_js_exports": 3
+}
