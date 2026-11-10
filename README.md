@@ -61,6 +61,8 @@ python -m unittest discover -s tests -p test_standard_metrics.py -v
 
 [실험 코드와 재현 안내](g4_lab/README.md)는 실제 HTML 채점·관문 함수, 공개 MP4 및 새 localhost 서버를 연결합니다. [공격 결과](docs/g4_actual/g4_attack_matrix.md), [방어 비교](docs/g4_actual/g4_defense_matrix.md), [회귀·교차검산](docs/g4_actual/g4_test_results.md), [독립 검토](docs/g4_actual/g4_independent_review.md), [비식별 집계](reports/g4_actual)를 보존했습니다. 실제 카메라·인간 성능·미사용 source 일반화·과거 시스템 L3를 입증한 결과는 아닙니다. 원자료와 개별 replay 입력은 공개하지 않습니다.
 
+[연구 목표와 후속 실험 추가 기록 (2026-11-10)](docs/research_goal_followups_2026-11-10.md)에 측정 방향, 복수 해석, 기존 데이터의 한계, 접근성, 가림색 비교를 정리했습니다.
+
 ## 후속 연구·개발 계획 (2026-11-02)
 
 [후속 로드맵](docs/research_roadmap_2026-11-02.md)에 기존 연구·발표 마무리, 가림 모호성과 사람 수행 가능성, 채점·입력 보호 검증, 영상 풀 및 3D 손·물체 생성 후보의 우선순위와 단계 전환 조건을 정리했습니다. 계획 기록이며 신규 실험·배포 완료를 의미하지 않습니다.
