@@ -30,13 +30,17 @@ APP='''let challenge,grant; const out=x=>document.getElementById('result').textC
 
 class LabService:
     def __init__(self,evaluator:ActualEvaluator,*,clock=time.monotonic,ttl=CHALLENGE_TTL_SECONDS,stationary_filter=False,source_order=None,
-                 session_ttl=300,max_sessions=1024,max_challenges=4096,max_grants=4096,max_events=10000):
+                 session_ttl=300,max_sessions=1024,max_challenges=4096,max_grants=4096,max_events=10000, max_issues_per_session=None):
         for value in (ttl,session_ttl):
             if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not 0<value<=3600:
                 raise ValueError('Bounded positive finite lifetime required')
         for value in (max_sessions,max_challenges,max_grants,max_events):
             if type(value) is not int or not 1<=value<=100000:
                 raise ValueError('Bounded positive integer capacity required')
+        if max_issues_per_session is not None and (
+                type(max_issues_per_session) is not int or not 1 <= max_issues_per_session <= 100000):
+            raise ValueError('Bounded positive integer session issue budget required')
+        self.max_issues_per_session = max_issues_per_session
         self.evaluator=evaluator
         self.clock=clock;self.ttl=ttl;self.stationary_filter=stationary_filter
         self.session_ttl=session_ttl
@@ -52,8 +56,8 @@ class LabService:
     def _purge(self):
         # Called while holding the service lock. Event retention is separately bounded.
         now=self.clock()
-        for token,expires in list(self.sessions.items()):
-            if now>=expires:del self.sessions[token]
+        for token,session in list(self.sessions.items()):
+            if now>=session['expires']:del self.sessions[token]
         for records in (self.challenges,self.grants):
             for token,record in list(records.items()):
                 if now>=record['expires'] or record['session'] not in self.sessions:del records[token]
@@ -62,18 +66,24 @@ class LabService:
         with self.lock:
             self._purge()
             if len(self.sessions)>=self.max_sessions:raise LabCapacityError('session_capacity')
-            session=secrets.token_urlsafe(24);self.sessions[session]=self.clock()+self.session_ttl;return session
+            session = secrets.token_urlsafe(24)
+            self.sessions[session] = {'expires': self.clock() + self.session_ttl, 'issued': 0}
+            return session
 
     def issue(self,session):
         with self.lock:
             self._purge()
             if session not in self.sessions: raise PermissionError('session_required')
+            state = self.sessions[session]
+            if self.max_issues_per_session is not None and state['issued'] >= self.max_issues_per_session:
+                raise LabCapacityError('session_issue_budget')
             if len(self.challenges)>=self.max_challenges:raise LabCapacityError('challenge_capacity')
             keys=list(self.evaluator.sources)
             key=self.source_order[self.issued%len(self.source_order)] if self.source_order else secrets.choice(keys)
             self.issued+=1
             token=secrets.token_urlsafe(24)
-            self.challenges[token]={'session':session,'key':key,'expires':min(self.clock()+self.ttl,self.sessions[session]),'used':False}
+            self.challenges[token]={'session':session,'key':key,'expires':min(self.clock()+self.ttl,state['expires']),'used':False}
+            state['issued'] += 1
             self.log('issued',source_family=key)
             return {'challenge_id':token,'media_url':'/media/'+token,'expires_in_s':self.challenges[token]['expires']-self.clock(),'input_channel':'offline_landmark_replay'}
 
@@ -186,9 +196,13 @@ def create_server(service):
     return ThreadingHTTPServer(('127.0.0.1',0),handler_for(service))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--source-root',type=Path,required=True);args=parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source-root', type=Path, required=True)
+    parser.add_argument('--max-issues-per-session', type=int, default=64)
+    args = parser.parse_args()
     with ActualEvaluator(args.source_root) as evaluator:
-        service=LabService(evaluator);server=create_server(service)
+        service = LabService(evaluator, max_issues_per_session=args.max_issues_per_session)
+        server = create_server(service)
         print(f'Local replay UI: http://127.0.0.1:{server.server_port}',flush=True)
         try:server.serve_forever()
         finally:server.server_close()

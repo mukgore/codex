@@ -40,6 +40,25 @@ class LabCapacityTests(unittest.TestCase):
         self.now=5;service.issue(session)
         self.assertEqual(len(service.challenges),1)
 
+    def test_session_budget_survives_challenge_expiry_and_isolated_by_session(self):
+        service = self.service(max_issues_per_session=2, ttl=5)
+        session = service.session()
+
+        def issue(_):
+            try:
+                return service.issue(session)
+            except LabCapacityError:
+                return None
+
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            results = list(pool.map(issue, range(8)))
+        self.assertEqual(sum(result is not None for result in results), 2)
+        self.now = 5
+        with self.assertRaisesRegex(LabCapacityError, 'session_issue_budget'):
+            service.issue(session)
+        self.assertEqual(service.challenges, {})
+        self.assertIn('challenge_id', service.issue(service.session()))
+
     def test_child_lifetime_cannot_outlive_session(self):
         service=self.service(session_ttl=3,ttl=60)
         session=service.session();challenge=service.issue(session)

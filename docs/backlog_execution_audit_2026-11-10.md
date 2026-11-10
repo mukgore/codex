@@ -36,25 +36,25 @@
 | S07 | 3B | legacy 회귀·adapter/원시 JS 수치 검사 | 독립 보정/평가와 동일 trial shadow 입력 필요 |
 | V00 | 4/공통 | [사전 metadata/파일/코드/lock 검사·후검사·runtime journal 연결 실제 실행][PERSIST] | 새 실험은 이 경로로 scope별 기록. 신규 사람/모델/운영 사건 계측은 별도 입력 필요 |
 | V01 | 3A | 기존 known-pool 수용 유지, 카메라 대응 분석기 [진단][DIAG] | 실제 같은 사람/문제/카메라 입력 필요 |
-| V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | **추가 작업 가능:** 전체 계보/중복 사전 검사. 미사용 실제 source는 수집 필요 |
+| V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | [계보·바이트 중복 사전검사][PREFLIGHT] 합성 검증. 실제 미사용 source 및 유사 촬영 확인 필요 |
 | V03 | 5 | 가림×입력 보호 설계와 과거 국소 진단 | 신뢰 입력 방식·실제 대응 2×2 자료·동일 예산 필요 |
 | V04 | 5 | 기존 국소 endpoint 수용·단일 소비/세션 회귀 [실행][EXEC] | 운영 인증·실제 capture trust는 대기 |
-| V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | **추가 작업 가능:** caller별 query 제한/실행 예산. 운영 다중 worker·gateway는 별도 |
+| V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | [로컬 세션 발급 예산][PREFLIGHT] 적용. 실제 사용자별 제한·운영 다중 worker·gateway는 별도 |
 | V06 | 3A/4 | 기존 human18/공개 pool 차이 유지 | 공통 challenge·실제 카메라·새 정상 자료 필요 |
-| N01 | 1/5 | 전달 파일·Git 패턴/ZIP 감사·비공개 분리 기록 | **추가 작업 가능:** 남은 현재/이력 의미 검토. 값 자체는 공개 금지 |
+| N01 | 1/5 | 전달 파일·Git 패턴/ZIP 감사·비공개 분리 기록 | [두 저장소 이력과 현재 자료 형태 대조][PREFLIGHT]. 비도달 이력·영상 의미·권리 범위는 별도 |
 | N02 | 공통 | 해시 잠금 환경·오프라인 재설치·[26 pin metadata 검사와 실행 manifest 연결][PERSIST] | 과거 build 미확인·다른 OS/브라우저/모델 runtime은 미검증 유지 |
 | N03 | 공통 | 주장 근거표·기존 선행 한계 기록 | **추가 작업 가능:** 채택 가능한 제한적 주장과 최신 1차 문헌 대조. 특허성 확정 금지 |
 | P01 | 1/5 | 기존 본인 촬영·본인 손·연구 사용/영구 비공개 확인 [촬영][CAPTURE] | 외부/다른 참가자 자산의 동의·운영 송출 권한은 별도 입력 |
 | P02 | 1 | 원본 1개·21개 촬영 접수 계획 [촬영][CAPTURE] | 새 촬영·수행자/family 계보·주석 필요 |
 | P03 | 5 | private 경로·SQLite 승격/철회 검증 [실행][EXEC] | 실제 운영 reviewer·배포/접근 통제 환경 필요 |
 | P04 | 5 | 알려진 pool 재생/lookup 반례·노출 구분 | 미사용 pool·반복 노출 예산·새 대응 공격 필요 |
-| M01 | 1/5 | frame map·후보 렌더·독립 container 점검 [실행][EXEC] | **추가 작업 가능:** VFR/다중 track/끝 시각의 경계 fixture 검산 |
+| M01 | 1/5 | frame map·후보 렌더·독립 container 점검 [실행][EXEC] | [실제 합성 container 경계 재검사][PREFLIGHT]. 신규 원본의 실제 타임라인은 대기 |
 | M02 | 1/4 | 원본 1개 3색×3회 실제 추적 [실행][EXEC] | **추가 작업 가능:** 다른 보존 가림 수준의 개발 진단. 새 source/사람 이해도 대기 |
-| M03 | 1/5 | 최종 프레임·영역·track 검사와 후보 gate [실행][EXEC] | **추가 작업 가능:** poster/부가 rendition/metadata까지 최종 검사 계약 대조 |
+| M03 | 1/5 | 최종 프레임·영역·track 검사와 후보 gate [실행][EXEC] | [container·부가 자산 증거 대조][PREFLIGHT]. 실제 페이지 poster와 최종 배포 rendition 검사 대기 |
 | D01 | 6 | 실제 FFV1 크기·배치 경과 기준선 [실행][EXEC] | **추가 작업 가능:** 재사용 가능한 생성/인코딩/전송 비용 계측. 운영 요금/품질은 별도 |
 | D02 | 5 | local Range/HEAD/no-store·만료/철회 core 회귀 [실행][EXEC] | 실제 origin/cache/gateway·운영 환경 필요 |
 | D03 | 5 | 정답 공개 fetch 한계·신뢰 evaluator 경계 기록 [실행][EXEC] | 인증된 gateway·trusted evaluator·prod 단계별 연결 입력 필요 |
-| T01 | 5 | 일부 T01–T24 인수 코드·문서 연결 [이전 감사][AUDIT] | **추가 작업 가능:** 24개 전부 실제 증거/부재 대조. 합성 통과를 전체 승인으로 승격 금지 |
+| T01 | 5 | 일부 T01–T24 인수 코드·문서 연결 [이전 감사][AUDIT] | [24개 전체 증거와 공백 대조][PREFLIGHT]. 실제 운영 인수는 대기 |
 | W01 | 1–6 | 입력 없는 실험과 독립 개발을 나눠 진행, 이 전체 추적표 | 각 WP 선행 조건을 유지한 실행 계속. 현재 목표 active |
 | G01 | 6 | 촬영 풀/3D 비교 설계와 기존 fixture | 실제 권리·수행 가능성·품질·동일 범위 비용 입력 필요 |
 | G02 | 6 | 자체 골격/MANO fixture·manifest·렌더 구현 | 실제 다양성·사용 가능한 동작/물체/카메라 계보 확정 필요 |
@@ -71,7 +71,7 @@
 
 ## 다음 구현 우선순위
 
-새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도·S06 저장/재로드·V00/N02 공통 snapshot과 실제 journal 연결을 수행했다. 이어 **V02 → V05·N01·M01/M03·T01 → 6단계의 계측/fixture** 순으로 가능한 작업을 계속한다. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
+새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도·S06 저장/재로드·V00/N02 공통 snapshot과 실제 journal 연결을 수행했다. 이후 [V02·V05·N01·M01/M03·T01의 코드와 근거를 보강했다][PREFLIGHT]. 다음 독립 작업은 M02와 6단계 비용·반례 fixture 보강이다. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
 
 [EXEC]: deliveries/2026-11-10_all_stage_execution.md
 [DIAG]: ../validation_v03/SCORE_DIAGNOSTICS.md
@@ -79,3 +79,5 @@
 [ACCEPT]: reproducibility/g3_dr3_fr5_researcher_update_2026-10-28.md
 [AUDIT]: deliveries/2026-11-04_completion_audit.md
 [PERSIST]: deliveries/2026-11-10_session_artifacts_and_run_manifest.md
+
+[PREFLIGHT]: deliveries/2026-11-10_preflight_and_acceptance_audit.md
