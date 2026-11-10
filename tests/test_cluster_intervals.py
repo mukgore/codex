@@ -58,6 +58,29 @@ class ClusterIntervalsTests(unittest.TestCase):
         result = self.evaluate(rows)['labels']['attack']['intervals']['candidate']
         self.assertEqual(result['status'], 'DEGENERATE_RESAMPLING'); self.assertIsNone(result['bounds'])
 
+    def test_attack_family_marginals_use_frozen_thresholds_and_keep_failures(self):
+        rows=fixture()
+        for row in rows:row['attack_family']='replay' if row['label']=='attack' else ''
+        failed=next(row for row in rows if row['trial_id']=='test-attack-3')
+        failed.update(outcome='technical_error',legacy_score='',candidate_score='')
+        report=self.evaluate(rows)
+        family=report['attack_families']['groups']['replay']
+        self.assertEqual(family['attempted_n'],4)
+        self.assertEqual(family['cluster_n'],4)
+        self.assertEqual(family['legacy_accepts_per_attempt'],.25)
+        self.assertEqual(report['thresholds'],{'legacy_score':.5,'candidate_score':.5})
+
+    def test_family_filter_keeps_transitive_connections_from_other_families(self):
+        rows=fixture()
+        for row in rows:row['attack_family']='replay' if row['label']=='attack' else ''
+        attacks=[row for row in rows if row['split']=='test' and row['label']=='attack']
+        for row,source in zip(attacks,('a','b','a;b','c')):row['source_family_ids']=source
+        attacks[2]['attack_family']=attacks[3]['attack_family']='stationary_hand'
+        family=self.evaluate(rows)['attack_families']['groups']['replay']
+        self.assertEqual(family['cluster_n'],1)
+        self.assertEqual(family['status'],'INSUFFICIENT_CLUSTERS')
+        self.assertIsNone(family['intervals'])
+
     def test_test_scores_never_modify_frozen_thresholds_and_lineage_leakage_fails(self):
         rows = fixture(); result = self.evaluate(rows)
         self.assertEqual(result['thresholds'], {'legacy_score': .5, 'candidate_score': .5})

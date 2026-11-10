@@ -121,9 +121,57 @@ def operating_point(labels, scores, threshold):
 
 def threshold_table(labels, scores):
     """Empirical ROC/DET operating points with all ties handled together."""
-    _, s = _labelled_scores(labels, scores)
-    thresholds = [math.inf] + sorted(set(s.tolist()), reverse=True)
-    return [operating_point(labels, scores, t) for t in thresholds]
+    y, s = _labelled_scores(labels, scores)
+    order = np.argsort(-s, kind='stable')
+    sorted_scores, sorted_labels = s[order], y[order]
+    human_total, attack_total = int(y.sum()), int(len(y)-y.sum())
+    human_cumulative = np.cumsum(sorted_labels)
+    attack_cumulative = np.cumsum(1-sorted_labels)
+    # Emit only the end of a tied-score block. Complexity is O(n log n),
+    # rather than rescanning the whole input at each distinct threshold.
+    ends = np.flatnonzero(np.r_[sorted_scores[1:] != sorted_scores[:-1], True])
+    table = [dict(threshold=math.inf, human_n=human_total, attack_n=attack_total,
+                  human_accepted=0, attack_accepted=0, human_accept_rate=0.,
+                  attack_accept_rate=0., human_reject_rate=1.)]
+    for end in ends:
+        ha, aa = int(human_cumulative[end]), int(attack_cumulative[end])
+        table.append(dict(threshold=float(sorted_scores[end]), human_n=human_total,
+                          attack_n=attack_total, human_accepted=ha, attack_accepted=aa,
+                          human_accept_rate=ha/human_total, attack_accept_rate=aa/attack_total,
+                          human_reject_rate=1-ha/human_total))
+    return table
+
+
+def roc_det_summary(labels, scores):
+    """All empirical points and rank AUC; diagnostic only, never a threshold selector.
+
+    JSON uses null plus an explicit rule for the reject-all +infinity endpoint.
+    AUC gives tied human/attack score pairs half credit via trapezoid integration.
+    DET coordinates are probabilities, without probit clipping or interpolation.
+    """
+    points = threshold_table(labels, scores)
+    auc = sum((b['attack_accept_rate']-a['attack_accept_rate']) *
+              (a['human_accept_rate']+b['human_accept_rate'])/2
+              for a, b in zip(points, points[1:]))
+    eer = None
+    for a,b in zip(points,points[1:]):
+        da=a['attack_accept_rate']-a['human_reject_rate']
+        db=b['attack_accept_rate']-b['human_reject_rate']
+        if da<=0<=db:
+            fraction=-da/(db-da) if db!=da else 0.
+            eer=a['attack_accept_rate']+fraction*(b['attack_accept_rate']-a['attack_accept_rate'])
+            break
+    return {'auc': auc, 'human_scored_n': points[0]['human_n'],
+            'attack_scored_n': points[0]['attack_n'],
+            'score_direction': 'higher_accepts_human',
+            'roc_axes': ['attack_accept_rate','human_accept_rate'],
+            'det_axes': ['attack_accept_rate','human_reject_rate'],
+            'eer_diagnostic': {'rate':eer,
+                'method':'linear_probability_interpolation_between_empirical_points',
+                'operating_threshold_selected':False},
+            'points': [{**point, 'threshold': None if math.isinf(point['threshold']) else point['threshold'],
+                        'accept_rule': 'reject_all' if math.isinf(point['threshold']) else 'score_greater_or_equal'}
+                       for point in points]}
 
 
 def select_validation_threshold(labels, scores, *, split_name,

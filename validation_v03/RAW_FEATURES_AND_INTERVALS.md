@@ -1,5 +1,7 @@
 # 원시 특징 일치와 군집 구간 (2026-11-05)
 
+2026-11-10 후속: [3A 대응·3B 진단 도구](SCORE_DIAGNOSTICS.md)에 attack_family별 주변 bootstrap 구간을 추가했다. 전체 test에서 만든 계보 연결 성분을 유지한 채 유형을 고른다. 유형별 구간은 동시 최악 위험 상한이 아니다. 전체/유형별 resampling 작업 합계에도 계산 예산을 적용한다.
+
 `raw_features.cjs`는 Python adapters.py의 명시적 좌표/시간/미러/분리 block, 15각도, band DTW, 실제 초 기반 2차 gradient/가속도와 위상 재표본화의 독립 JavaScript 구현이다. CommonJS module이며 stdin JSON CLI로도 검사할 수 있다. prod UI/점수/임계값에 연결하지 않았고 score는 null이다. 실제 adoption 이후의 JS shadow 검증을 대신하지 않는다.
 
 검사에는 단위/미러/누락/잘못된 기하/큰 gap, 불규칙 시간의 원시 특징, seeded DTW와 tie path, 잘못된 timestamp/spec 거부를 포함한다. 정상 위치 오차1e-12, 각도2e-6도, 비교 특징2e-9의 허용을 검사에 명시한다. 수치 범위가 다른 실제 후보/긴 sequence/다른 브라우저 engine의 검증은 별도다.

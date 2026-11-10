@@ -144,6 +144,8 @@ D(i,j) = ||a_i - b_j||² + min(D(i-1,j), D(i,j-1), D(i-1,j-1))
 
 ## 8. S5 — ROC/DET와 운영 임계값
 
+**2026-11-10 구현 갱신:** [점수 진단 도구](../validation_v03/SCORE_DIAGNOSTICS.md)에 전체 ROC/DET·AUC/EER 참고값·독립 그림 출력·공격 유형별 최악률·유형별 군집 bootstrap을 추가했다. threshold 선택은 validation에만 남겼고, test 곡선은 기술통계다. 실제 독립 자료의 성능평가는 여전히 대기다.
+
 점수가 클수록 사람으로 수용한다는 방향을 고정한다.
 
 - Human accept rate = 수용된 정상 사람 / 정상 사람 수.

@@ -1,0 +1,14 @@
+{
+  "scope": "backlog_id_and_reference_coverage_not_requirement_completion",
+  "expected_unique_ids": 62,
+  "covered_unique_ids": 62,
+  "missing_ids": [],
+  "duplicate_ids": [],
+  "full_goal_completion_proven": false,
+  "next_engineering": [
+    "S03/S06",
+    "V00/V02",
+    "V05/N01/M01/M03/T01",
+    "stage6_cost_and_fixtures"
+  ]
+}

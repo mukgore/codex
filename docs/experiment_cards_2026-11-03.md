@@ -38,6 +38,8 @@
 
 ## 카드 C — 동일 trial의 기존/후보 채점 비교
 
+**2026-11-10 구현:** [ROC/DET·공격 유형별 결과·군집 구간](../validation_v03/SCORE_DIAGNOSTICS.md). 선택 열 attack_family와 곡선 옵션을 추가했으며 validation 고정과 원래 split 누출 검사를 유지한다. 실제 독립 대응 자료를 만들거나 test로 보정하지 않았다.
+
 **질문:** 잠근 source/참가자/캡처 분할에서 후보 점수가 기존 점수보다 정상/오답을 잘 구분하는가? gate·L3 결과와 분리한다.
 
 **단계:** private manifest 확인 → 연속 segment/time/missing adapter → 같은 trial의 legacy/candidate 특징·점수 산출 → 독립 일부 검산 → development 비교 → validation에서 사전 제약에 맞는 threshold 선택 → test 한 번 적용. test로 파라미터를 바꾸면 새 버전과 새 미사용 test가 필요하다.
@@ -53,6 +55,8 @@ python -m validation_v03.compare_scores --input data/work/paired_scores.csv --ou
 **보고:** score 수용/거부, scored 분모 비율, 전체 attempted 분모의 관측 수용, 기술 오류/중단을 함께 제시한다. technical_error를 공격 거부 성공으로 세지 않는다. 군집 CI와 공격군별 최악 성능은 별도 후속 구현이다. 표본 부족·허용 threshold 부재는 자료 부족/후보 수정 결과로 남긴다.
 
 ## 카드 D — 실제 카메라에서 정지 손과 동작 시도 비교
+
+**2026-11-10 구현:** [고정 0.25 기준 카메라 대응 분석기](../validation_v03/SCORE_DIAGNOSTICS.md). protocol/참가자/목표/family/카메라/기록 길이/반복/점수 출처가 모두 맞는 경우만 대응하고, 사진·실제 정지와 offline/live 점수를 분리한다. 실제 입력 수집은 대기다.
 
 **질문:** 실제 입력에서 정지한 손과 목표 동작을 따라 한 손의 점수는 얼마나 차이 나는가? 움직였지만 다른 동작을 한 손도 거부하는가?
 
