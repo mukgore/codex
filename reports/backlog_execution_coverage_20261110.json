@@ -5,8 +5,11 @@
   "missing_ids": [],
   "duplicate_ids": [],
   "full_goal_completion_proven": false,
-  "next_engineering": [
-    "M02",
-    "stage6_cost_and_fixtures"
+  "next_engineering": [],
+  "next_external_inputs": [
+    "new_controlled_source_clips",
+    "independent_annotations_and_consented_observations",
+    "pinned_models_and_execution_environment",
+    "approved_release_and_evaluation_environment"
   ]
 }

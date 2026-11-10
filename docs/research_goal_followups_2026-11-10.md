@@ -12,6 +12,8 @@
 
 **S06·V00/N02 후속:** [실제 18세션 저장/재로드와 사전 실행 snapshot·runtime journal 연결](deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 검증했다. 실제 카메라/사람/모델 출처를 인증하거나 과거 실행 metadata를 소급한 결과는 아니다.
 
+**추가 개발 검산:** [분할·인수 증거](deliveries/2026-11-10_preflight_and_acceptance_audit.md)와 [보존 가림 수준·비용·픽셀 반례](deliveries/2026-11-10_level_cost_and_visibility.md). 다음 실제 수집의 조건은 촬영·선별 실행안을 따른다.
+
 **현재 실행:** [촬영본 설명과 전 단계 실행 결과](deliveries/2026-11-10_all_stage_execution.md). 실제 촬영·사람 입력이 없는 항목은 대기 상태로 두고, 다른 단계의 독립적인 분석·구현·검증을 계속했다. 실험의 선행 조건이 충족됐다는 뜻은 아니다.
 
 **1단계 실행 기록:** [재사용 원본 확인·대응 세 조건 제작·촬영 목록과 단계별 선행 조건](deliveries/2026-11-10_stimulus_intake_and_capture_list.md). 무가림 원본 1개는 알려진 개발 자료로 확인했고, 신규 통제 촬영·권리 확인·사람 선별은 필요한 입력으로 남아 있다.

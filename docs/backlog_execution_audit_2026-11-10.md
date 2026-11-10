@@ -43,15 +43,15 @@
 | V06 | 3A/4 | 기존 human18/공개 pool 차이 유지 | 공통 challenge·실제 카메라·새 정상 자료 필요 |
 | N01 | 1/5 | 전달 파일·Git 패턴/ZIP 감사·비공개 분리 기록 | [두 저장소 이력과 현재 자료 형태 대조][PREFLIGHT]. 비도달 이력·영상 의미·권리 범위는 별도 |
 | N02 | 공통 | 해시 잠금 환경·오프라인 재설치·[26 pin metadata 검사와 실행 manifest 연결][PERSIST] | 과거 build 미확인·다른 OS/브라우저/모델 runtime은 미검증 유지 |
-| N03 | 공통 | 주장 근거표·기존 선행 한계 기록 | **추가 작업 가능:** 채택 가능한 제한적 주장과 최신 1차 문헌 대조. 특허성 확정 금지 |
+| N03 | 공통 | 주장 근거표·기존 선행 한계 기록 | [InterHand·HaMeR 원 논문과 주장 범위 대조][LEVEL]. 과제 동일성·특허성 확정은 별도 |
 | P01 | 1/5 | 기존 본인 촬영·본인 손·연구 사용/영구 비공개 확인 [촬영][CAPTURE] | 외부/다른 참가자 자산의 동의·운영 송출 권한은 별도 입력 |
 | P02 | 1 | 원본 1개·21개 촬영 접수 계획 [촬영][CAPTURE] | 새 촬영·수행자/family 계보·주석 필요 |
 | P03 | 5 | private 경로·SQLite 승격/철회 검증 [실행][EXEC] | 실제 운영 reviewer·배포/접근 통제 환경 필요 |
 | P04 | 5 | 알려진 pool 재생/lookup 반례·노출 구분 | 미사용 pool·반복 노출 예산·새 대응 공격 필요 |
 | M01 | 1/5 | frame map·후보 렌더·독립 container 점검 [실행][EXEC] | [실제 합성 container 경계 재검사][PREFLIGHT]. 신규 원본의 실제 타임라인은 대기 |
-| M02 | 1/4 | 원본 1개 3색×3회 실제 추적 [실행][EXEC] | **추가 작업 가능:** 다른 보존 가림 수준의 개발 진단. 새 source/사람 이해도 대기 |
+| M02 | 1/4 | 원본 1개 3색×3회 실제 추적 [실행][EXEC] | [보존 원본과 3개 가림 수준의 실제 추적][LEVEL]. 새 source/사람 이해도 대기 |
 | M03 | 1/5 | 최종 프레임·영역·track 검사와 후보 gate [실행][EXEC] | [container·부가 자산 증거 대조][PREFLIGHT]. 실제 페이지 poster와 최종 배포 rendition 검사 대기 |
-| D01 | 6 | 실제 FFV1 크기·배치 경과 기준선 [실행][EXEC] | **추가 작업 가능:** 재사용 가능한 생성/인코딩/전송 비용 계측. 운영 요금/품질은 별도 |
+| D01 | 6 | 실제 FFV1 크기·배치 경과 기준선 [실행][EXEC] | [합성 영상 인코딩·컨테이너 검사·크기 분리 계측][LEVEL]. 전송·운영 요금/품질은 별도 |
 | D02 | 5 | local Range/HEAD/no-store·만료/철회 core 회귀 [실행][EXEC] | 실제 origin/cache/gateway·운영 환경 필요 |
 | D03 | 5 | 정답 공개 fetch 한계·신뢰 evaluator 경계 기록 [실행][EXEC] | 인증된 gateway·trusted evaluator·prod 단계별 연결 입력 필요 |
 | T01 | 5 | 일부 T01–T24 인수 코드·문서 연결 [이전 감사][AUDIT] | [24개 전체 증거와 공백 대조][PREFLIGHT]. 실제 운영 인수는 대기 |
@@ -59,19 +59,19 @@
 | G01 | 6 | 촬영 풀/3D 비교 설계와 기존 fixture | 실제 권리·수행 가능성·품질·동일 범위 비용 입력 필요 |
 | G02 | 6 | 자체 골격/MANO fixture·manifest·렌더 구현 | 실제 다양성·사용 가능한 동작/물체/카메라 계보 확정 필요 |
 | G03 | 6 | capsule/sphere·mesh/가림 예비 검사 | 생체 범위·접촉/관통 주석·실제 편안함 검증 필요 |
-| G04 | 6 | 대안쌍 질문 정의·A06/A07 촬영 계획 [촬영][CAPTURE] | **추가 작업 가능:** 물체 단서/무단서 반례 fixture. 사람 복수 해석은 대기 |
-| G05 | 6 | 최종 masked-only·비공개 pass 경계 | **추가 작업 가능:** shadow/reflection/실루엣 누설 검사 가능한 fixture 대조 |
+| G04 | 6 | 대안쌍 질문 정의·A06/A07 촬영 계획 [촬영][CAPTURE] | [접촉/간격과 외부 단서의 합성 픽셀 반례][LEVEL]. 실제 장면과 사람 복수 해석은 대기 |
+| G05 | 6 | 최종 masked-only·비공개 pass 경계 | [가림 바깥 단서의 합성 대조][LEVEL]. 실제 그림자·반사·윤곽의 최종 렌더 검사는 대기 |
 | G06 | 6 | G0 손 모양 따라 하기 후보와 별도 접촉 범위 | 연구 과제 선택·복수 정답 기준·사람 입력 필요 |
-| G07 | 6 | B0–B3×A1–A4 비교 요구 유지 | **추가 작업 가능:** 조건·예산·분모별 실행/대기 행렬. 모델/사람 자료 없는 성능은 미작성 |
+| G07 | 6 | B0–B3×A1–A4 비교 요구 유지 | [16개 비교 셀과 예산·분모의 증거 구분][LEVEL]. 독립 평가 자극과 실제 대응 자료 대기 |
 | G08 | 4/6 | MANO private intake·HaMeR preflight [실행][EXEC] | HaMeR/Text2HOI checkpoint·나머지 자산·허용 실행 환경 필요 |
 | B01 | 2/6 | 사용성/이해·접근성 절차·중단 기준 [촬영][CAPTURE] | 동의한 참가자·경험/기기 기록·실제 관찰 필요 |
-| B02 | 5/6 | batch 시간·실측 저장 bytes 기준선 [실행][EXEC] | **추가 작업 가능:** 공격 사전/요청 비용·방어 비용 계측 계약과 현재 로컬 측정 |
+| B02 | 5/6 | batch 시간·실측 저장 bytes 기준선 [실행][EXEC] | [로컬 인코딩·검사 기준선][LEVEL]. 요청·전송·운영·사람 검수 비용은 별도 계측 |
 | B03 | 6 | 고객 문제/인터뷰 후보 보존 | 용도·고객·연락 범위·거래 조건 입력 필요. 외부 연락/판매 안 함 |
 | B04 | 6 | CONTINUE/MODIFY/STOP/INCONCLUSIVE 기준 유지 | 사람·강한 공격·비용·권리의 실제 결과와 연구자 최종 결정 필요 |
 
 ## 다음 구현 우선순위
 
-새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도·S06 저장/재로드·V00/N02 공통 snapshot과 실제 journal 연결을 수행했다. 이후 [V02·V05·N01·M01/M03·T01의 코드와 근거를 보강했다][PREFLIGHT]. 다음 독립 작업은 M02와 6단계 비용·반례 fixture 보강이다. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
+새 촬영/사람 자료가 없는 현재는 3A 대응 분석·S05 엔지니어링·S03 sampling/합성 잡음 민감도·S06 저장/재로드·V00/N02 공통 snapshot과 실제 journal 연결을 수행했다. 이후 [V02·V05·N01·M01/M03·T01의 코드와 근거를 보강했다][PREFLIGHT]. [M02 보존 가림 수준·6단계 비용과 모호성 반례도 개발 범위에서 검산했다][LEVEL]. 원문에 요구된 실제 평가를 문서/fixture로 대체해 완료시키지 않는다. 현재 전체 목표를 완료나 차단으로 판정할 근거는 없다.
 
 [EXEC]: deliveries/2026-11-10_all_stage_execution.md
 [DIAG]: ../validation_v03/SCORE_DIAGNOSTICS.md
@@ -81,3 +81,5 @@
 [PERSIST]: deliveries/2026-11-10_session_artifacts_and_run_manifest.md
 
 [PREFLIGHT]: deliveries/2026-11-10_preflight_and_acceptance_audit.md
+
+[LEVEL]: deliveries/2026-11-10_level_cost_and_visibility.md
