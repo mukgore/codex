@@ -1,5 +1,9 @@
 # 프로젝트 진행 상태
 
+## 최신 실행 — 2026-11-10
+
+[전 단계 실행 기록](docs/deliveries/2026-11-10_all_stage_execution.md)과 [비식별 집계](reports/research_followups_20261110.json)를 현재 기준으로 삼는다. 실제 촬영본은 가림 전 카메라 원파일이다. 기존 무가림 원본 1개로 세 가림색을 각 3회 실행했고, 18세션·126구간을 로그에 대응시켰다. 로컬 서버 자원 상한·만료 정리를 구현하고 136건 회귀 및 독립 수식 검산을 완료했다. 사용자 확인에 따라 기존 본인 자료는 연구용 비공개 영구 보관이다. 신규 촬영·사람 응답·독립 주석·HaMeR 자산/실행환경·운영 검증은 입력 대기로 남는다. 입력이 없는 실험과 별개로 이후 단계의 준비·구현·검증을 진행한다. UI 수정 단계 전까지 CAPTCHA 설계와 화면은 handcaptcha prod가 기준이다.
+
 ## 최신 후속 구현 — 2026-11-05
 
 현재 기준은 [통합 실행 계획](docs/deliveries/2026-11-05_work_plan.md)이다. 감독기/실제113frame 추출, capsule-sphere 접촉 fixture, registry 기반 private delivery, cluster bootstrap/원시 JS parity, 해시 고정 Windows 환경과 오프라인 재설치를 보완했다. 실제 Text2HOI/HaMeR 모델, 사람/공격 자료, 권리·검토자/운영 gateway 입력은 남는다. 아래2026-10-17의 현재 단계/미실행 표현은 당시 기록으로 유지한다.

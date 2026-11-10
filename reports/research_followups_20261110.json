@@ -1,0 +1,352 @@
+{
+  "scope": "available_material_only_no_new_human_observations",
+  "prod_baseline": {
+    "file": "handcaptcha/hand_captcha_prod.html",
+    "sha256": "0d82dd439fe7976f8b860eb82e654e6f5637b2d7a3fcce2d02f2f99e5f5bea11",
+    "ui_modification_stage_entered": false
+  },
+  "sessions": {
+    "sessions_attempted": 18,
+    "sessions_exactly_mapped": 18,
+    "sessions_unmapped": 0,
+    "segments_mapped": 126,
+    "segment_frames": 8782,
+    "recording_log_frames": 8764,
+    "extra_initial_matching_frames": 18,
+    "missing_segment_frames": 141,
+    "max_segment_offset_span_ms": 11.300000011920929,
+    "continuous_motion_interpretation_allowed": false,
+    "limitations": [
+      "No videoPlaying/fading/gate events in saved log.",
+      "Coordinate correspondence does not recover historical build.",
+      "Browser callback clocks differ; no frame capture time inferred."
+    ]
+  },
+  "color_comparison": {
+    "batches": 9,
+    "versions": {
+      "mediapipe": "0.10.14",
+      "numpy": "1.26.4",
+      "protobuf": "4.25.3",
+      "opencv_runtime": "4.10.0"
+    },
+    "rows": [
+      {
+        "condition": "unmasked",
+        "detected_frames_per_repeat": [
+          113,
+          113,
+          113
+        ],
+        "input_frames_per_repeat": 113,
+        "legacy_score_per_repeat": [
+          0.948932005993848,
+          0.948932005993848,
+          0.948932005993848
+        ],
+        "offline_gate_per_repeat": [
+          true,
+          true,
+          true
+        ],
+        "batch_seconds_median": 3.210832600016147,
+        "batch_seconds_range": [
+          3.0781029999488965,
+          3.3620439999504015
+        ],
+        "archive_tracker_disagreement": {
+          "visible": {
+            "reference_points": 1253,
+            "compared_points": 1253,
+            "mean_distance_pixels_on_compared_points": 0.16275047234777565
+          },
+          "hidden": {
+            "reference_points": 1120,
+            "compared_points": 1120,
+            "mean_distance_pixels_on_compared_points": 0.15303995077517216
+          }
+        },
+        "legacy_internal_score_details": {
+          "totalSegments": 3,
+          "tF": 115,
+          "dC": 115,
+          "dR": 1,
+          "rA": 0.06583421736262825,
+          "rDA": 5.628667192518041,
+          "rAc": 0.001097145434469992,
+          "sA": 0.9985975203634618,
+          "sDA": 0.8720798158122687,
+          "sAc": 0.9943035024170821,
+          "captcha": 0.948932005993848
+        },
+        "candidate_features_first_repeat": {
+          "angle_phase_grid_mae_degrees": 0.05318069808431689,
+          "dtw_angle_path_rmse": 0.10893605149989873,
+          "acceleration_phase_aligned_mae_hand_lengths_per_second_squared": 0.23597572028994282
+        }
+      },
+      {
+        "condition": "black",
+        "detected_frames_per_repeat": [
+          53,
+          53,
+          53
+        ],
+        "input_frames_per_repeat": 113,
+        "legacy_score_per_repeat": [
+          0.28335048306177585,
+          0.28335048306177585,
+          0.28335048306177585
+        ],
+        "offline_gate_per_repeat": [
+          false,
+          false,
+          false
+        ],
+        "batch_seconds_median": 3.4735409000422806,
+        "batch_seconds_range": [
+          3.1454994999803603,
+          3.9625711999833584
+        ],
+        "archive_tracker_disagreement": {
+          "visible": {
+            "reference_points": 1253,
+            "compared_points": 752,
+            "mean_distance_pixels_on_compared_points": 23.946092600828422
+          },
+          "hidden": {
+            "reference_points": 1120,
+            "compared_points": 361,
+            "mean_distance_pixels_on_compared_points": 37.67230757459897
+          }
+        },
+        "legacy_internal_score_details": {
+          "totalSegments": 3,
+          "tF": 115,
+          "dC": 54,
+          "dR": 0.46956521739130436,
+          "rA": 27.496892771753128,
+          "rDA": 21.94663482773825,
+          "rAc": 0.03154078059816983,
+          "sA": 0.19450712500882572,
+          "sDA": 0.23535957043701464,
+          "sAc": 0.3926677433608212,
+          "captcha": 0.28335048306177585
+        },
+        "candidate_features_first_repeat": null
+      },
+      {
+        "condition": "skin",
+        "detected_frames_per_repeat": [
+          87,
+          87,
+          87
+        ],
+        "input_frames_per_repeat": 113,
+        "legacy_score_per_repeat": [
+          0.5749785440439504,
+          0.5749785440439504,
+          0.5749785440439504
+        ],
+        "offline_gate_per_repeat": [
+          true,
+          true,
+          true
+        ],
+        "batch_seconds_median": 3.208472399972379,
+        "batch_seconds_range": [
+          3.0882227000547573,
+          3.5452792999567464
+        ],
+        "archive_tracker_disagreement": {
+          "visible": {
+            "reference_points": 1253,
+            "compared_points": 1199,
+            "mean_distance_pixels_on_compared_points": 16.872481856629786
+          },
+          "hidden": {
+            "reference_points": 1120,
+            "compared_points": 628,
+            "mean_distance_pixels_on_compared_points": 35.15423385077776
+          }
+        },
+        "legacy_internal_score_details": {
+          "totalSegments": 3,
+          "tF": 115,
+          "dC": 88,
+          "dR": 0.7652173913043478,
+          "rA": 16.16268669216376,
+          "rDA": 14.449658519142245,
+          "rAc": 0.019645098199239198,
+          "sA": 0.5017400494529919,
+          "sDA": 0.5139269778798505,
+          "sAc": 0.687165621855025,
+          "captcha": 0.5749785440439504
+        },
+        "candidate_features_first_repeat": null
+      }
+    ],
+    "limitations": [
+      "No independent human landmark truth; distances are tracker disagreements.",
+      "Visibility groups use archived estimated locations, not independent annotation.",
+      "Batch time includes imports/resource copying/decoding; not per-frame or request latency.",
+      "Repetitions share one source and are not independent trials.",
+      "No live camera, human interpretation, HaMeR, calibration or authentication efficacy."
+    ]
+  },
+  "g4_regression": {
+    "attempts": 136,
+    "rows": [
+      {
+        "attack_id": "exact_replay",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 8,
+        "validation_pass": 8,
+        "guarded_local_l3": 8,
+        "stationary_candidate_local_l3": 8,
+        "mean_score": 0.9911334177126725,
+        "median_compute_ms": 261.8851999868639
+      },
+      {
+        "attack_id": "hold_first",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 5,
+        "validation_pass": 8,
+        "guarded_local_l3": 5,
+        "stationary_candidate_local_l3": 0,
+        "mean_score": 0.7702089471456828,
+        "median_compute_ms": 244.92800002917647
+      },
+      {
+        "attack_id": "hold_middle",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 6,
+        "validation_pass": 8,
+        "guarded_local_l3": 6,
+        "stationary_candidate_local_l3": 0,
+        "mean_score": 0.8162097121416896,
+        "median_compute_ms": 229.81670004082844
+      },
+      {
+        "attack_id": "hold_last",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 5,
+        "validation_pass": 8,
+        "guarded_local_l3": 5,
+        "stationary_candidate_local_l3": 0,
+        "mean_score": 0.777976455266964,
+        "median_compute_ms": 256.267549993936
+      },
+      {
+        "attack_id": "endpoint_interpolation",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 8,
+        "validation_pass": 8,
+        "guarded_local_l3": 8,
+        "stationary_candidate_local_l3": 8,
+        "mean_score": 0.8631084982087402,
+        "median_compute_ms": 239.48534997180104
+      },
+      {
+        "attack_id": "reverse",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 6,
+        "validation_pass": 8,
+        "guarded_local_l3": 6,
+        "stationary_candidate_local_l3": 6,
+        "mean_score": 0.7064131357385629,
+        "median_compute_ms": 249.89169999025762
+      },
+      {
+        "attack_id": "frame_shuffle",
+        "n": 8,
+        "score_pass": 7,
+        "offline_gate_pass": 6,
+        "validation_pass": 8,
+        "guarded_local_l3": 6,
+        "stationary_candidate_local_l3": 6,
+        "mean_score": 0.4928378379964178,
+        "median_compute_ms": 260.61250001657754
+      },
+      {
+        "attack_id": "all_zero",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 0,
+        "validation_pass": 0,
+        "guarded_local_l3": 0,
+        "stationary_candidate_local_l3": 0,
+        "mean_score": 0.35091737303656567,
+        "median_compute_ms": 287.0418500970118
+      },
+      {
+        "attack_id": "bounded_random",
+        "n": 8,
+        "score_pass": 5,
+        "offline_gate_pass": 5,
+        "validation_pass": 8,
+        "guarded_local_l3": 5,
+        "stationary_candidate_local_l3": 5,
+        "mean_score": 0.28978956920308174,
+        "median_compute_ms": 304.7857499914244
+      },
+      {
+        "attack_id": "hold_first_epsilon",
+        "n": 8,
+        "score_pass": 8,
+        "offline_gate_pass": 5,
+        "validation_pass": 8,
+        "guarded_local_l3": 5,
+        "stationary_candidate_local_l3": 5,
+        "mean_score": 0.7702092253686033,
+        "median_compute_ms": 289.35895004542544
+      },
+      {
+        "attack_id": "wrong_library",
+        "n": 56,
+        "score_pass": 56,
+        "offline_gate_pass": 37,
+        "validation_pass": 56,
+        "guarded_local_l3": 37,
+        "stationary_candidate_local_l3": 37,
+        "mean_score": 0.7155716403979513,
+        "median_compute_ms": 280.5591500364244
+      }
+    ],
+    "independent_formula_check": {
+      "attempt_count": 136,
+      "checks": {
+        "gate_pass": 136,
+        "score": 136,
+        "score_pass": 136
+      },
+      "mismatches": {
+        "gate_pass": 0,
+        "score": 0,
+        "score_pass": 0
+      },
+      "scope": "independent_python_formula_cross_check; not an independent source holdout",
+      "score_error_max_abs": 2.220446049250313e-16,
+      "score_tolerance": 1e-10
+    }
+  },
+  "supply_bytes": {
+    "unmasked": 11551202,
+    "black": 8063468,
+    "skin": 7893714
+  },
+  "not_completed": [
+    "new controlled filming",
+    "human screening and imitation",
+    "independent calibration/test",
+    "HaMeR inference",
+    "deployment",
+    "usability effectiveness"
+  ]
+}

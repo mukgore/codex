@@ -1,5 +1,16 @@
 # Actual-code local G4 lab
 
+2026-11-10 resource bounds: the loopback service now expires sessions (default
+300 seconds) and removes expired sessions/challenges/grants on service access.
+Challenge/grant expiry cannot exceed session expiry. Defaults cap retained
+sessions/challenges/grants/events at 1024/4096/4096/10000. State saturation fails
+closed with HTTP 429; event indices remain monotonic when older events are dropped.
+These are local engineering limits, not per-user rate limiting or DoS protection.
+Expired records are cleaned lazily; retained state remains bounded while idle.
+Existing scoring, gates and the default stationary-filter setting are unchanged.
+The lab page is a replay test harness. Product design/UI continues to use
+handcaptcha's `hand_captcha_prod.html` until the explicit UI modification stage.
+
 The actual owned HTML is read from a separate handcaptcha source copy. Only selected pure scoring/gate functions run in Node; page startup, remote scripts, camera and upload code never run. The current harness uses within-clip phase partitions and a fake-clock gate with video scheduling omitted. It is not a full production browser session.
 
 Source revisions and results are recorded in [the report](../docs/g4_actual/g4_final_report.md). New server-side source selection, opaque media paths, evaluation, cookie sessions, expiry and one-time protected test action are implemented in `server.py`. The server binds only to 127.0.0.1 and serves an allowlisted local replay UI. It has no outbound client. Existing source repositories and research data stay unchanged.
