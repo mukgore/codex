@@ -36,7 +36,7 @@
 | S07 | 3B | legacy 회귀·adapter/원시 JS 수치 검사 | 독립 보정/평가와 동일 trial shadow 입력 필요 |
 | V00 | 4/공통 | [사전 metadata/파일/코드/lock 검사·후검사·runtime journal 연결 실제 실행][PERSIST] | 새 실험은 이 경로로 scope별 기록. 신규 사람/모델/운영 사건 계측은 별도 입력 필요 |
 | V01 | 3A | 기존 known-pool 수용 유지, 카메라 대응 분석기 [진단][DIAG] | 실제 같은 사람/문제/카메라 입력 필요 |
-| V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | [계보·바이트 중복 사전검사][PREFLIGHT] 합성 검증. 실제 미사용 source 및 유사 촬영 확인 필요 |
+| V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | [계보·바이트 중복 사전검사][PREFLIGHT] 및 [복수 부모·노출 전파·점수 CSV 연결][LINEAGE] 검증. 실제 미사용 source 및 유사 촬영 확인 필요 |
 | V03 | 5 | 가림×입력 보호 설계와 과거 국소 진단 | 신뢰 입력 방식·실제 대응 2×2 자료·동일 예산 필요 |
 | V04 | 5 | 기존 국소 endpoint 수용·단일 소비/세션 회귀 [실행][EXEC] | 운영 인증·실제 capture trust는 대기 |
 | V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | [로컬 세션 발급 예산][PREFLIGHT] 적용. 실제 사용자별 제한·운영 다중 worker·gateway는 별도 |
@@ -83,3 +83,5 @@
 [PREFLIGHT]: deliveries/2026-11-10_preflight_and_acceptance_audit.md
 
 [LEVEL]: deliveries/2026-11-10_level_cost_and_visibility.md
+
+[LINEAGE]: deliveries/2026-11-12_lineage_score_preflight.md

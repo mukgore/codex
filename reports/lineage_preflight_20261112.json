@@ -1,0 +1,19 @@
+{
+  "scope": "real_files_synthetic_split_counterexample",
+  "source_entries_n": 4,
+  "source_paths_verified_n": 4,
+  "unique_byte_sequences_n": 4,
+  "allocation_entries_n": 3,
+  "declared_constraint_findings": {
+    "EXPOSED_TEST_SOURCE": 1,
+    "CROSS_SPLIT_BYTE_IDENTITY": 3,
+    "CROSS_SPLIT_CAPTURE": 3,
+    "CROSS_SPLIT_FAMILY": 3,
+    "CROSS_SPLIT_SOURCE_IDENTITY": 3
+  },
+  "source_bytes_rechecked": true,
+  "declared_constraints_satisfied": false,
+  "independence_proven": false,
+  "source_authentication_proven": false,
+  "new_human_trials_n": 0
+}

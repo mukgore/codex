@@ -1,6 +1,8 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
-**S06·V00/N02 후속:** [18세션 저장/재로드·실제 JS export·실행 전 snapshot과 runtime journal 연결](docs/deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 검증했습니다. 새로운 사람/모델 성능 결과나 과거 build 복원이 아닙니다. 다음 가능한 작업은 전체 추적표의 V02 계보·중복 검사입니다.
+**V02 후속(2026-11-12):** [복수 부모·바이트 복사·노출 이력 검사와 점수 CSV 사전검사](docs/deliveries/2026-11-12_lineage_score_preflight.md)를 구현했습니다. 보존 원본과 세 파생본의 잘못된 분할을 실제 파일로 탐지했습니다. 신규 촬영·독립 평가 자료는 대기이며, 다음 검토는 V05 실행·연결 예산입니다.
+
+**S06·V00/N02 후속:** [18세션 저장/재로드·실제 JS export·실행 전 snapshot과 runtime journal 연결](docs/deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 검증했습니다. 새로운 사람/모델 성능 결과나 과거 build 복원이 아닙니다. 이후 V02 작업은 위 후속 기록을 따릅니다.
 
 **3A/3B 후속:** [62개 항목 전체 추적과 다음 작업](docs/backlog_execution_audit_2026-11-10.md), [실제 카메라 대응 분석·ROC/DET·공격 유형별 결과 도구](validation_v03/SCORE_DIAGNOSTICS.md). 대응 키가 맞을 때만 정상/정지/사진을 비교하고, validation에서 잠근 기준으로 유형별 결과·군집 구간을 낸다. Python 103개가 통과했다. 구현 검사는 합성 자료이며 새 사람 실험 결과가 아니다. 전체 목표는 진행 중이다.
 

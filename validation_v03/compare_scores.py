@@ -31,8 +31,10 @@ def validate_rows(rows):
                 'capture_id', 'outcome', *METRICS}
     has_attack_family = any('attack_family' in row for row in rows)
     for row in rows:
-        if not required.issubset(row):
+        if not isinstance(row,dict) or not required.issubset(row):
             raise ValueError('Missing input columns')
+        if not all(isinstance(row[key],str) for key in required-set(METRICS)):
+            raise ValueError('Trial metadata columns must be strings')
         if not row['trial_id'] or row['trial_id'] in seen:
             raise ValueError('Trial IDs must be nonempty and unique')
         seen.add(row['trial_id'])
@@ -163,6 +165,8 @@ def main():
     parser.add_argument('--cluster-repetitions', type=int)
     parser.add_argument('--cluster-seed', type=int)
     parser.add_argument('--cluster-confidence', type=float)
+    parser.add_argument('--lineage-manifest',type=Path,
+                        help='Require file-backed lineage preflight before selecting any threshold')
     args = parser.parse_args()
     with args.input.open(encoding='utf-8-sig', newline='') as stream:
         rows = list(csv.DictReader(stream))
@@ -170,9 +174,23 @@ def main():
         parser.error('Choose new report and plot paths; existing outputs are preserved')
     if args.curve_plot and args.curve_plot.resolve()==args.output.resolve():
         parser.error('Report and plot paths must differ')
+    lineage=None
+    if args.lineage_manifest:
+        from validation_v03.lineage_manifest import audit,validate_score_rows
+        from validation_v03.session_artifacts import decode,_read
+        try:
+            validate_rows(rows)
+            manifest_path=args.lineage_manifest.resolve(strict=True)
+            manifest_bytes=_read(manifest_path)
+            lineage=audit(decode(manifest_bytes),base=manifest_path.parent)
+            validate_score_rows(rows,lineage)
+        except (OSError,ValueError,TypeError,KeyError,RecursionError):
+            parser.error('Lineage preflight rejected input; no thresholds selected')
     report = compare(rows, min_human_accept=args.min_human_accept, max_attack_accept=args.max_attack_accept,
                      include_curves=args.curves or args.curve_plot is not None)
     report['data_scope'] = args.data_scope
+    report['lineage_preflight']=lineage['summary'] if lineage else {'status':'not_supplied','independence_proven':False}
+    if lineage:report['lineage_manifest_sha256']=hashlib.sha256(manifest_bytes).hexdigest()
     cluster_options=(args.cluster_repetitions,args.cluster_seed,args.cluster_confidence)
     if any(value is not None for value in cluster_options):
         if any(value is None for value in cluster_options):
