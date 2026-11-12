@@ -5,7 +5,7 @@
   "missing_ids": [],
   "duplicate_ids": [],
   "full_goal_completion_proven": false,
-  "next_engineering": ["V05_execution_and_connection_budget"],
+  "next_engineering": ["V05_evaluator_queue_io_and_execution_deadline"],
   "next_external_inputs": [
     "new_controlled_source_clips",
     "independent_annotations_and_consented_observations",

@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from http.client import HTTPConnection
 from http.cookies import SimpleCookie
 import json
+import os
 from pathlib import Path
 import re
 import threading
@@ -20,7 +21,8 @@ from .server import CHALLENGE_TTL_SECONDS, LabService, create_server
 from .validation import validate_frames
 
 
-SOURCE_ROOT = Path(__file__).resolve().parents[2] / "g4-handcaptcha-source"
+SOURCE_ROOT = Path(os.environ.get('HANDCAPTCHA_SOURCE_ROOT',
+                   Path(__file__).resolve().parents[2] / 'g4-handcaptcha-source')).resolve()
 
 
 class FakeClock:

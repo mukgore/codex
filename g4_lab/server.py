@@ -11,6 +11,7 @@ import json
 import math
 from pathlib import Path
 import secrets
+import socket
 import threading
 import time
 from urllib.parse import urlsplit
@@ -142,6 +143,9 @@ class LabService:
 def handler_for(service):
     class Handler(BaseHTTPRequestHandler):
         server_version='G4LocalLab/1'
+        def handle(self):
+            try:super().handle()
+            except (OSError,TimeoutError):pass  # deadline/client disconnect; no tokens in logs
         def log_message(self,*args): pass  # no request bodies/tokens in console logs
         def session_cookie(self):
             jar=cookies.SimpleCookie()
@@ -192,17 +196,64 @@ def handler_for(service):
             except LabCapacityError:return self.send(429,{'error':'local_capacity_exceeded'})
     return Handler
 
-def create_server(service):
-    return ThreadingHTTPServer(('127.0.0.1',0),handler_for(service))
+class BoundedLabHTTPServer(ThreadingHTTPServer):
+    """Local connection budget; does not interrupt CPU work or authenticate callers."""
+    daemon_threads=True
+
+    def __init__(self,address,handler,*,max_connections,request_timeout):
+        if type(max_connections) is not int or not 1<=max_connections<=256:
+            raise ValueError('Connection budget must be an integer from 1 to 256')
+        if (type(request_timeout) not in (int,float) or not math.isfinite(request_timeout) or
+                not 0<request_timeout<=60):
+            raise ValueError('Connection deadline must be finite and at most 60 seconds')
+        self.connection_slots=threading.BoundedSemaphore(max_connections)
+        self.request_timeout=request_timeout
+        super().__init__(address,handler)
+
+    def process_request(self,request,client_address):
+        request.settimeout(self.request_timeout)
+        if not self.connection_slots.acquire(blocking=False):
+            try:
+                request.settimeout(.05)
+                request.sendall(b'HTTP/1.0 503 Service Unavailable\r\nConnection: close\r\nContent-Length: 0\r\nCache-Control: no-store\r\n\r\n')
+            except OSError:pass
+            finally:self.shutdown_request(request)
+            return
+        try:super().process_request(request,client_address)
+        except BaseException:
+            self.connection_slots.release()
+            raise
+
+    @staticmethod
+    def expire_connection(request):
+        try:request.shutdown(socket.SHUT_RDWR)
+        except OSError:pass
+
+    def process_request_thread(self,request,client_address):
+        deadline=threading.Timer(self.request_timeout,self.expire_connection,args=(request,))
+        deadline.daemon=True
+        try:
+            deadline.start()
+            super().process_request_thread(request,client_address)
+        finally:
+            deadline.cancel()
+            self.connection_slots.release()
+
+
+def create_server(service,*,max_connections=16,request_timeout=20):
+    return BoundedLabHTTPServer(('127.0.0.1',0),handler_for(service),
+                               max_connections=max_connections,request_timeout=request_timeout)
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--source-root', type=Path, required=True)
     parser.add_argument('--max-issues-per-session', type=int, default=64)
+    parser.add_argument('--max-connections',type=int,default=16)
+    parser.add_argument('--request-timeout',type=float,default=20)
     args = parser.parse_args()
     with ActualEvaluator(args.source_root) as evaluator:
         service = LabService(evaluator, max_issues_per_session=args.max_issues_per_session)
-        server = create_server(service)
+        server = create_server(service,max_connections=args.max_connections,request_timeout=args.request_timeout)
         print(f'Local replay UI: http://127.0.0.1:{server.server_port}',flush=True)
         try:server.serve_forever()
         finally:server.server_close()
