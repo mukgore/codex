@@ -173,6 +173,8 @@ split_name 검사만으로 실제 데이터 독립성이 입증되지 않는다.
 
 ## 9. S6 — 자세 관문·구간 집계·데이터 수집
 
+**2026-11-13 구간 집계 진단:** [18세션·126구간의 실제 HTML 계산 비교](deliveries/2026-11-13_segment_aggregation_and_priority_gates.md)를 수행했다. 서로 다른 영상 사이 18구간은 기준이 모두 두 프레임이라 세 지표가 계산 불가이고 0점을 냈다. 구간 최솟값을 새 규칙으로 채택하지 않으며 계산 불가와 동작 실패를 구별한다.
+
 **2026-11-10 저장 계약 검증:** [18개 보존 세션·현재 소유 JS 내보내기·canonical 재로드·사전 snapshot](deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 실제 실행했다. source bytes·좌표/null·저장 counts를 보존했으며 잘림/부분 저장/변조를 구분한다. 새 per-frame 사건/카메라 coverage·정책 채택과 과거 실행 build 확인은 완료하지 않았다.
 
 - 최신 prod의 38도/200ms 유지 규칙을 legacy 기준으로 기록한다.

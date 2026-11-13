@@ -32,7 +32,7 @@
 | S03 | 3B | 실제 초 미분·gap 분리·[72개 sampling/합성 노이즈/평활화 계산](deliveries/2026-11-10_derivative_sensitivity.md) | 필터가 원래 미분도 바꾸는 민감도 확인. 실제 기기·정상/오답 이득 평가는 입력 대기 |
 | S04 | 3B | 원시 특징·고정 점수 비교 도구 [진단][DIAG] | B1 독립 보정·B2/B3 학습은 대응 자료/군집·표본 필요 |
 | S05 | 3B | ROC/DET·AUC/EER 진단·유형별 최악률·유형별 군집 구간 [진단][DIAG] | 독립 실제 평가 대기. 최악 유형 동시 위험 상한은 미구현/미주장 |
-| S06 | 3B | [18세션 저장/재로드·실제 JS export 3종·손상/잘림 검증][PERSIST] | 실제 camera coverage·새 per-frame/permission 이벤트·정책 채택은 실제 수집/연결 입력 필요 |
+| S06 | 3B | [저장/재로드][PERSIST]·[18세션/126구간 집계와 계산 불가 기준 분리][SEGMENTS] | 영상 간 전환 기준·실제 camera coverage·새 이벤트·정책 채택은 실제 수집/연결 입력 필요 |
 | S07 | 3B | legacy 회귀·adapter/원시 JS 수치 검사 | 독립 보정/평가와 동일 trial shadow 입력 필요 |
 | V00 | 4/공통 | [사전 metadata/파일/코드/lock 검사·후검사·runtime journal 연결 실제 실행][PERSIST] | 새 실험은 이 경로로 scope별 기록. 신규 사람/모델/운영 사건 계측은 별도 입력 필요 |
 | V01 | 3A | 기존 known-pool 수용 유지, 카메라 대응 분석기 [진단][DIAG] | 실제 같은 사람/문제/카메라 입력 필요 |
@@ -93,3 +93,5 @@
 [DEADLINE]: deliveries/2026-11-13_evaluator_deadline.md
 
 [UI64]: deliveries/2026-11-13_ui_factorial.md
+
+[SEGMENTS]: deliveries/2026-11-13_segment_aggregation_and_priority_gates.md

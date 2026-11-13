@@ -1,0 +1,93 @@
+{
+  "aggregations": {
+    "concatenated": {
+      "max": 0.8910050505611384,
+      "mean": 0.663060276281861,
+      "median": 0.7000801255715161,
+      "min": 0.2338431065943152,
+      "n": 18
+    },
+    "segment_equal_mean": {
+      "max": 0.7683995617381802,
+      "mean": 0.6353152706904941,
+      "median": 0.6359753193346561,
+      "min": 0.42325073031356925,
+      "n": 18
+    },
+    "segment_frame_weighted_mean": {
+      "max": 0.8711800372047105,
+      "mean": 0.6667424153626751,
+      "median": 0.7136706880551664,
+      "min": 0.28020040640401356,
+      "n": 18
+    },
+    "segment_minimum": {
+      "max": 0,
+      "mean": 0,
+      "median": 0.0,
+      "min": 0,
+      "n": 18
+    }
+  },
+  "all_required_segment_replacement_rule_status": "NOT_CALIBRATED_AND_INCOMPLETE_REFERENCE_COVERAGE",
+  "below_fixed_025_counts": {
+    "concatenated": 1,
+    "segment_equal_mean": 0,
+    "segment_frame_weighted_mean": 0,
+    "segment_minimum": 18
+  },
+  "by_transition_kind": {
+    "cross_clip": {
+      "below_fixed_025_n": 18,
+      "missing_legacy_accel_metric_n": 18,
+      "missing_legacy_angle_metric_n": 18,
+      "missing_legacy_dtw_metric_n": 18,
+      "reference_frames": {
+        "max": 2,
+        "mean": 2,
+        "median": 2.0,
+        "min": 2,
+        "n": 18
+      },
+      "segments_n": 18,
+      "zero_scores_n": 18
+    },
+    "within_clip": {
+      "below_fixed_025_n": 2,
+      "missing_legacy_accel_metric_n": 0,
+      "missing_legacy_angle_metric_n": 0,
+      "missing_legacy_dtw_metric_n": 0,
+      "reference_frames": {
+        "max": 70,
+        "mean": 38.574074074074076,
+        "median": 38.0,
+        "min": 9,
+        "n": 108
+      },
+      "segments_n": 108,
+      "zero_scores_n": 0
+    }
+  },
+  "concat_at_or_above_with_low_segment_sessions_n": 17,
+  "cross_clip_segments_n": 18,
+  "historical_build_proven": false,
+  "human_motion_errors_proven": false,
+  "limitations": [
+    "The current reference/HTML reproduce saved values conditionally; executed historical build is unknown.",
+    "The existing 0.25 boundary is illustrative on new aggregations, not a calibrated operating threshold.",
+    "Nonlinear scoring, normalization and concatenation differ from segment means; no single cause attribution.",
+    "Too-short references can produce zero with no available legacy features; this is not observed motion failure.",
+    "No response video, independent correctness labels, new people or attack discrimination measured."
+  ],
+  "new_human_observations_n": 0,
+  "postflight_snapshot_matched": true,
+  "pre_execution_snapshot": true,
+  "scope": "conditional_legacy_saved_coordinates_segment_aggregation_diagnostic",
+  "segment_frames_n": 8782,
+  "segments_below_fixed_025_n": 20,
+  "segments_fewer_than_three_detected_frames_n": 0,
+  "segments_n": 126,
+  "sessions_n": 18,
+  "sessions_with_unavailable_required_metric_n": 18,
+  "stored_replay_max_abs_error": 1.1102230246251565e-16
+}
