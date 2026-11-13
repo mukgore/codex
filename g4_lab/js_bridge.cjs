@@ -34,6 +34,12 @@ function run(request) {
   vm.runInContext(source, context, {timeout: 1000});
   context.request = request;
   if (request.op === 'prepare') return vm.runInContext(`({ ...getBaseFromLandmarkData(request.data, !!request.mirror), constants: {MATCH_ANGLE_THRESH,MATCH_HOLD_MS,THRESHOLD,W2,MX}, keyframeIndices: findKeyframes(getBaseFromLandmarkData(request.data, !!request.mirror).frames) })`, context, {timeout:1000});
+  if (request.op === 'score_saved') return vm.runInContext(`
+    const keyframes=request.keyframes,segments=request.segments;
+    if(!Array.isArray(keyframes)||keyframes.length>128||!Array.isArray(segments)||segments.length>100)
+      throw Error('saved diagnostic budget');
+    if(segments.reduce((n,s)=>n+s.frames.length,0)>100000)throw Error('saved frame budget');
+    computeScores();`,context,{timeout:5000});
   const result = vm.runInContext(`
     const base = request.base;
     // Within-clip keyframe partitions, with shared boundary frames. Replay
