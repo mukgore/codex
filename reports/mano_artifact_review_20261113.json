@@ -1,0 +1,21 @@
+{
+  "scope": "existing_model_derived_pilot_mask_and_codec_recheck",
+  "source_cases": 12,
+  "all_frame_feasible_cases": 4,
+  "masked_cases": 4,
+  "not_feasible_cases": 8,
+  "h264_renditions": 4,
+  "h264_frames_verified": 96,
+  "container_checks_passed": true,
+  "maximum_visible_region_codec_mae": 0.21216519176959991,
+  "prior_case_acceptance_matches": true,
+  "pre_execution_snapshot": true,
+  "postflight_snapshot_matched": true,
+  "models_imported": false,
+  "new_model_inference": false,
+  "new_generated_motion_cases": 0,
+  "human_feasibility_verified": false,
+  "release_allowed": false,
+  "pipeline_tests_passed": 105,
+  "full_goal_completion_proven": false
+}

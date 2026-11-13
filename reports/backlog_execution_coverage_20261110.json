@@ -5,7 +5,7 @@
   "missing_ids": [],
   "duplicate_ids": [],
   "full_goal_completion_proven": false,
-  "next_engineering": ["G02_G03_review_existing_unpublished_MANO_code", "remaining_full_requirement_and_input_gate_audit"],
+  "next_engineering": ["G02_G04_two_grasp_and_2d_3d_counterexample_fixture_requirement_audit", "remaining_full_requirement_and_input_gate_audit"],
   "next_external_inputs": [
     "new_controlled_source_clips",
     "independent_annotations_and_consented_observations",
