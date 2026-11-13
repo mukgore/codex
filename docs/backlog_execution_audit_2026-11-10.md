@@ -57,10 +57,10 @@
 | T01 | 5 | 일부 T01–T24 인수 코드·문서 연결 [이전 감사][AUDIT] | [24개 전체 증거와 공백 대조][PREFLIGHT]. 실제 운영 인수는 대기 |
 | W01 | 1–6 | 입력 없는 실험과 독립 개발을 나눠 진행, 이 전체 추적표 | 각 WP 선행 조건을 유지한 실행 계속. 현재 목표 active |
 | G01 | 6 | 촬영 풀/3D 비교 설계와 기존 fixture | 실제 권리·수행 가능성·품질·동일 범위 비용 입력 필요 |
-| G02 | 6 | 자체 골격/MANO fixture·[기존 12개 연결/4개 가림·codec 재검사][MANO] | 두 grasp와 2D/3D 대안쌍 요구 대조, 실제 다양성·동작/물체/카메라 계보 필요 |
+| G02 | 6 | 자체 골격/MANO fixture·[기존 재검사][MANO]·[두 접촉 proxy/깊이 대안쌍][CONTACT] | 실제 grasp 안정성·다양성·동작/물체/카메라 계보 필요 |
 | G03 | 6 | capsule/sphere·[전 프레임 반경 교집합/실제 래스터 재검사][MANO] | 생체 범위·접촉/관통 주석·실제 편안함 검증 필요 |
-| G04 | 6 | 대안쌍 질문 정의·A06/A07 촬영 계획 [촬영][CAPTURE] | [접촉/간격과 외부 단서의 합성 픽셀 반례][LEVEL]. 실제 장면과 사람 복수 해석은 대기 |
-| G05 | 6 | 최종 masked-only·비공개 pass 경계 | [가림 바깥 단서의 합성 대조][LEVEL]. 실제 그림자·반사·윤곽의 최종 렌더 검사는 대기 |
+| G04 | 6 | 대안쌍 질문 정의·A06/A07 촬영 계획 [촬영][CAPTURE]·[깊이 반전 대조][CONTACT] | [외부 단서 반례][LEVEL]. oracle 깊이와 영상 정보를 구분. 실제 장면/사람 해석 대기 |
+| G05 | 6 | 최종 masked-only·비공개 pass 경계·[정사영 대안쌍][CONTACT] | [가림 바깥 단서 대조][LEVEL]. depth buffer/표면 가림·그림자·반사의 최종 렌더 검사 대기 |
 | G06 | 6 | G0 손 모양 따라 하기 후보와 별도 접촉 범위 | 연구 과제 선택·복수 정답 기준·사람 입력 필요 |
 | G07 | 6 | B0–B3×A1–A4 비교 요구 유지 | [16개 비교 셀과 예산·분모의 증거 구분][LEVEL]. 독립 평가 자극과 실제 대응 자료 대기 |
 | G08 | 4/6 | MANO private intake·HaMeR preflight [실행][EXEC] | HaMeR/Text2HOI checkpoint·나머지 자산·허용 실행 환경 필요 |
@@ -97,3 +97,5 @@
 [SEGMENTS]: deliveries/2026-11-13_segment_aggregation_and_priority_gates.md
 
 [MANO]: deliveries/2026-11-13_mano_artifact_review.md
+
+[CONTACT]: deliveries/2026-11-13_grasp_contact_counterexamples.md
