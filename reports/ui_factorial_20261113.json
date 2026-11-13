@@ -1,0 +1,22 @@
+{
+  "scope": "prod_derived_ui_engineering_checks_not_human_effects",
+  "binary_factors": ["selection", "overlay", "copy", "compare", "guide", "reveal"],
+  "conditions_n": 64,
+  "node_tests_passed": 24,
+  "viewport_cases_passed": 128,
+  "synthetic_runtime_cases_passed": 64,
+  "javascript_errors_n": 0,
+  "hold_ms": 500,
+  "fade_ms": 500,
+  "common_prelude_ms": 1000,
+  "browser_media_conditions_prepared": 3,
+  "frames_each": 113,
+  "known_development_source_families": 1,
+  "new_captures": 0,
+  "new_human_trials": 0,
+  "real_camera_used_in_tests": false,
+  "model_inference_used_in_tests": false,
+  "human_effects_verified": false,
+  "production_release_performed": false,
+  "full_goal_completion_proven": false
+}
