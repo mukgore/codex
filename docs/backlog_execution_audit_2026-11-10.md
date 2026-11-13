@@ -39,7 +39,7 @@
 | V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | [계보·바이트 중복 사전검사][PREFLIGHT] 및 [복수 부모·노출 전파·점수 CSV 연결][LINEAGE] 검증. 실제 미사용 source 및 유사 촬영 확인 필요 |
 | V03 | 5 | 가림×입력 보호 설계와 과거 국소 진단 | 신뢰 입력 방식·실제 대응 2×2 자료·동일 예산 필요 |
 | V04 | 5 | 기존 국소 endpoint 수용·단일 소비/세션 회귀 [실행][EXEC] | 운영 인증·실제 capture trust는 대기 |
-| V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | [세션 발급 예산][PREFLIGHT]·[연결 수/전체 수명 상한][CONNECTION] 적용. evaluator 전체 실행 예산은 추가 개발, 실제 사용자별 제한·운영 다중 worker·gateway는 별도 |
+| V05 | 5 | TTL/상한/정리/429·소비·영속 core 회귀 [실행][EXEC] | [세션 발급 예산][PREFLIGHT]·[연결 수/전체 수명 상한][CONNECTION]·[채점 대기/입출력 예산][DEADLINE] 검증. 실제 사용자별 제한·운영 다중 worker·gateway는 별도 |
 | V06 | 3A/4 | 기존 human18/공개 pool 차이 유지 | 공통 challenge·실제 카메라·새 정상 자료 필요 |
 | N01 | 1/5 | 전달 파일·Git 패턴/ZIP 감사·비공개 분리 기록 | [두 저장소 이력과 현재 자료 형태 대조][PREFLIGHT]. 비도달 이력·영상 의미·권리 범위는 별도 |
 | N02 | 공통 | 해시 잠금 환경·오프라인 재설치·[26 pin metadata 검사와 실행 manifest 연결][PERSIST] | 과거 build 미확인·다른 OS/브라우저/모델 runtime은 미검증 유지 |
@@ -87,3 +87,5 @@
 [LINEAGE]: deliveries/2026-11-12_lineage_score_preflight.md
 
 [CONNECTION]: deliveries/2026-11-12_lab_connection_budget.md
+
+[DEADLINE]: deliveries/2026-11-13_evaluator_deadline.md

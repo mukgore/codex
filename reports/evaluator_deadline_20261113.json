@@ -1,0 +1,14 @@
+{
+  "scope": "local_evaluator_failure_controls_and_known_source_regression",
+  "python_tests_passed": 161,
+  "actual_prod_bridge_integration_tests_passed": 9,
+  "known_source_attempts": 136,
+  "conditions": 11,
+  "non_timing_aggregate_mismatches": 0,
+  "independent_formula_mismatches": {"score": 0, "score_pass": 0, "gate_pass": 0},
+  "score_max_abs_error": 2.220446049250313e-16,
+  "independent_holdout": false,
+  "new_human_trials": 0,
+  "production_security_proven": false,
+  "full_goal_completion_proven": false
+}

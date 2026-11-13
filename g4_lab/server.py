@@ -5,6 +5,7 @@ stored-answer replay can pass. No client-supplied passed/score flag is trusted.
 """
 from __future__ import annotations
 import argparse
+from contextlib import contextmanager
 from http import cookies
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -26,12 +27,21 @@ CHALLENGE_TTL_SECONDS=60.0  # local test setting only
 class LabCapacityError(RuntimeError):
     """Fail closed when the bounded in-memory lab cannot accept more state."""
 
+
+class LabEvaluationError(RuntimeError):
+    """An attempted evaluation failed; it must not produce a grant."""
+
 PAGE='''<!doctype html><html lang="en"><meta charset="utf-8"><title>G4 local replay lab</title><h1>Owned CAPTCHA: local replay evaluation</h1><p>New experimental server. Offline landmarks only; no camera, CDN or external upload. Not a historical authentication service.</p><button id="issue">Issue local challenge</button><video id="video" controls width="480"></video><p>Paste an approved local replay array [{t_ms,lm}] below.</p><textarea id="frames" rows="10" cols="85"></textarea><p><button id="submit">Evaluate replay</button><button id="consume">Consume test action once</button></p><pre id="result"></pre><script src="/app.js"></script></html>'''
 APP='''let challenge,grant; const out=x=>document.getElementById('result').textContent=JSON.stringify(x,null,2); async function post(path,body={}){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});return r.json();} document.getElementById('issue').onclick=async()=>{await post('/api/session');challenge=await post('/api/challenge');document.getElementById('video').src=challenge.media_url;out(challenge);};document.getElementById('submit').onclick=async()=>{const r=await post('/api/submit',{challenge_id:challenge.challenge_id,frames:JSON.parse(document.getElementById('frames').value)});grant=r.grant_id;out(r);};document.getElementById('consume').onclick=async()=>out(await post('/api/protected_action',{grant_id:grant}));'''
 
 class LabService:
     def __init__(self,evaluator:ActualEvaluator,*,clock=time.monotonic,ttl=CHALLENGE_TTL_SECONDS,stationary_filter=False,source_order=None,
-                 session_ttl=300,max_sessions=1024,max_challenges=4096,max_grants=4096,max_events=10000, max_issues_per_session=None):
+                 session_ttl=300,max_sessions=1024,max_challenges=4096,max_grants=4096,max_events=10000, max_issues_per_session=None,
+                 state_wait_timeout=1):
+        if (type(state_wait_timeout) not in (int,float) or not math.isfinite(state_wait_timeout) or
+                not 0<state_wait_timeout<=20):
+            raise ValueError('State wait budget must be finite and at most 20 seconds')
+        self.state_wait_timeout=state_wait_timeout
         for value in (ttl,session_ttl):
             if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not 0<value<=3600:
                 raise ValueError('Bounded positive finite lifetime required')
@@ -54,6 +64,13 @@ class LabService:
         self.events.append({'event_index':self.event_index,'kind':kind,**fields})
         del self.events[:-self.max_events]
 
+    @contextmanager
+    def _locked(self):
+        if not self.lock.acquire(timeout=self.state_wait_timeout):
+            raise LabCapacityError('state_wait_budget')
+        try:yield
+        finally:self.lock.release()
+
     def _purge(self):
         # Called while holding the service lock. Event retention is separately bounded.
         now=self.clock()
@@ -64,7 +81,7 @@ class LabService:
                 if now>=record['expires'] or record['session'] not in self.sessions:del records[token]
 
     def session(self):
-        with self.lock:
+        with self._locked():
             self._purge()
             if len(self.sessions)>=self.max_sessions:raise LabCapacityError('session_capacity')
             session = secrets.token_urlsafe(24)
@@ -72,7 +89,7 @@ class LabService:
             return session
 
     def issue(self,session):
-        with self.lock:
+        with self._locked():
             self._purge()
             if session not in self.sessions: raise PermissionError('session_required')
             state = self.sessions[session]
@@ -89,7 +106,7 @@ class LabService:
             return {'challenge_id':token,'media_url':'/media/'+token,'expires_in_s':self.challenges[token]['expires']-self.clock(),'input_channel':'offline_landmark_replay'}
 
     def submit(self,session,payload):
-        with self.lock:
+        with self._locked():
             self._purge()
             if not isinstance(payload,dict) or set(payload)!={'challenge_id','frames'}: raise ValueError('unexpected_submission_schema')
             token=payload['challenge_id']
@@ -104,13 +121,22 @@ class LabService:
             except ValueError:
                 self.log('evaluated',source_family=record['key'],validation_pass=False,gate_pass=None,score_pass=None,protected_action_allowed=False)
                 raise
-            result=self.evaluator.evaluate(record['key'],frames)
+            try:result=self.evaluator.evaluate(record['key'],frames)
+            except (TimeoutError,RuntimeError) as error:
+                self.log('evaluation_error',validation_pass=True,gate_pass=None,score_pass=None,
+                         error_type='timeout' if isinstance(error,TimeoutError) else 'unavailable',
+                         grant_issued=False,protected_action_allowed=False)
+                raise LabEvaluationError('evaluator_unavailable') from None
             stationary=False
             detected=[f['lm'] for f in frames if f['lm'] is not None]
             if detected:
                 arr=np.asarray(detected)
                 stationary=bool(np.all(arr==arr[0]))
             passed=result['gate_pass'] and result['score_pass'] and not(self.stationary_filter and stationary)
+            if self.clock()>=record['expires']:
+                self.log('evaluation_error',validation_pass=True,gate_pass=None,score_pass=None,
+                         error_type='expired_during_evaluation',grant_issued=False,protected_action_allowed=False)
+                raise PermissionError('challenge_expired_during_evaluation')
             reply={**result,'validation_pass':True,'stationary_filter_reject':bool(self.stationary_filter and stationary),'grant_id':None,'protected_action_allowed':False}
             if passed:
                 grant=secrets.token_urlsafe(24)
@@ -120,7 +146,7 @@ class LabService:
             return reply
 
     def consume(self,session,payload):
-        with self.lock:
+        with self._locked():
             self._purge()
             if not isinstance(payload,dict) or set(payload)!={'grant_id'} or not isinstance(payload['grant_id'],str): raise ValueError('invalid_grant')
             grant=self.grants.get(payload['grant_id'])
@@ -131,7 +157,7 @@ class LabService:
             return {'protected_action_allowed':allowed,'protected_action_counter':self.protected_actions}
 
     def media(self,session,token):
-        with self.lock:
+        with self._locked():
             self._purge()
             record=self.challenges.get(token)
             if not record or record['session']!=session or self.clock()>=record['expires']: raise PermissionError('media_denied')
@@ -172,6 +198,7 @@ def handler_for(service):
                     return self.send(200,media.read_bytes(),'video/mp4')
                 return self.send(404,{'error':'not_found'})
             except PermissionError as exc:return self.send(403,{'error':str(exc)})
+            except LabCapacityError:return self.send(429,{'error':'local_capacity_exceeded'})
         def do_POST(self):
             if not self.allowed_host(): return self.send(403,{'error':'host_denied'})
             origin=self.headers.get('Origin')
@@ -194,6 +221,7 @@ def handler_for(service):
             except (ValueError,TypeError,UnicodeError,RecursionError):return self.send(400,{'error':'invalid_request'})
             except PermissionError as exc:return self.send(403,{'error':str(exc)})
             except LabCapacityError:return self.send(429,{'error':'local_capacity_exceeded'})
+            except LabEvaluationError:return self.send(503,{'error':'evaluator_unavailable'})
     return Handler
 
 class BoundedLabHTTPServer(ThreadingHTTPServer):
@@ -250,9 +278,12 @@ def main():
     parser.add_argument('--max-issues-per-session', type=int, default=64)
     parser.add_argument('--max-connections',type=int,default=16)
     parser.add_argument('--request-timeout',type=float,default=20)
+    parser.add_argument('--state-wait-timeout',type=float,default=1)
+    parser.add_argument('--evaluator-timeout',type=float,default=15)
     args = parser.parse_args()
-    with ActualEvaluator(args.source_root) as evaluator:
-        service = LabService(evaluator, max_issues_per_session=args.max_issues_per_session)
+    with ActualEvaluator(args.source_root,call_timeout=args.evaluator_timeout) as evaluator:
+        service = LabService(evaluator, max_issues_per_session=args.max_issues_per_session,
+                             state_wait_timeout=args.state_wait_timeout)
         server = create_server(service,max_connections=args.max_connections,request_timeout=args.request_timeout)
         print(f'Local replay UI: http://127.0.0.1:{server.server_port}',flush=True)
         try:server.serve_forever()

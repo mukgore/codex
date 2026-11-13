@@ -9,6 +9,10 @@ from g4_lab.server import LabService,create_server
 
 
 class LabConnectionTests(unittest.TestCase):
+    def assert_socket_closed(self,connection):
+        try:self.assertEqual(connection.recv(1024),b'')
+        except (ConnectionResetError,ConnectionAbortedError):pass  # Windows shutdown forms.
+
     def start_server(self,**kwargs):
         service=LabService(SimpleNamespace(sources={'synthetic':{}}))
         server=create_server(service,**kwargs)
@@ -54,7 +58,7 @@ class LabConnectionTests(unittest.TestCase):
             self.assertEqual(service.sessions,{})
         finally:conn.close()
         # A hard deadline closes the incomplete body and releases the only slot.
-        self.assertEqual(slow.recv(1024),b'')
+        self.assert_socket_closed(slow)
         def recovered():
             if not server.connection_slots.acquire(False):return False
             server.connection_slots.release();return True
@@ -81,7 +85,7 @@ class LabConnectionTests(unittest.TestCase):
         thread=threading.Thread(target=trickle,daemon=True);thread.start()
         try:self.assertTrue(expired.wait(2))
         finally:stopped.set();thread.join(timeout=2)
-        self.assertEqual(slow.recv(1024),b'')
+        self.assert_socket_closed(slow)
 
 
 if __name__=='__main__':unittest.main()
