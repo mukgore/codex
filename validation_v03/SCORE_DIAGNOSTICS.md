@@ -56,6 +56,10 @@ python -m validation_v03.compare_scores --input ../private_artifacts/paired_scor
 
 군집 옵션을 함께 쓰면 test의 기존 전체 human/attack 구간에 더해 유형별 별도 bootstrap 구간도 낸다. source·참가자·capture 연결 성분은 **전체 test에서 먼저 만든 뒤** 유형을 고른다. 다른 유형을 매개로 연결된 자료도 독립으로 쪼개지 않는다. 한 군집은 `INSUFFICIENT_CLUSTERS`, 퇴화 재표본화는 `DEGENERATE_RESAMPLING`과 구간 없음으로 남긴다. 유형별 구간들은 개별 주변 구간이며, 모든 유형 또는 최악 유형을 동시에 덮는 신뢰구간이 아니다.
 
+## 생성 장면의 분할 사전검사
+
+3D 생성 자극의 점수 비교에는 [생성 장면 manifest](GENERATED_SCENE_MANIFEST.md)와 `--generated-scene-manifest`를 사용한다. 일반 `--lineage-manifest`와 동시에 지정할 수 없다. 여섯 scene family 축·모든 부모/동일 bytes·노출과 CSV allocation을 연결해 threshold 선택 전에 검사한다. 생성 원본에는 카메라 capture ID를 만들지 않으며 실제 사람 응답 capture는 별도 유지한다. 미사용 seed만으로 독립 family를 주장하지 않는다. [실제 기존 파일 진단](../docs/deliveries/2026-11-14_generated_scene_lineage.md)은 실제 사람/공격 성능이 아니다.
+
 ## 이번 검증 범위
 
 신규 3A 8개, 점수 진단 7개, 기존 CSV 비교 7개·수학 12개·군집(확장 후) 8개 검사를 통과했다. 군집 연결 검사에는 다른 공격 유형을 통해 같은 family 자료가 연결되는 반례가 포함된다. 실제 CLI로 합성 CSV→JSON→그림→군집 연결과 기존 출력 덮어쓰기 거부를 확인했다. 그림을 열어 제목·범례·축·validation marker·합성 표시를 확인했다. 이 결과를 사람/공격 성능 향상이나 S05의 독립 평가 완료로 표시하지 않는다.

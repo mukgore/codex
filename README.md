@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**3D 계보·생체/랜덤 계획(2026-11-14):** [기존 112개 영상의 가족관계/분할 검사](docs/deliveries/2026-11-14_generated_scene_lineage.md)를 마쳤습니다. seed만 바꾼 자료의 독립 평가 주장을 막습니다. [학술 근거를 둔 제약 프로필과 랜덤 생성 계획](docs/3d_biomechanics_and_random_generation_2026-11-14.md)도 명시했습니다. 현재 생물학적으로 타당한 동작만 생성하는 완성된 모델은 아닙니다.
+
 **3D 표면 단서(2026-11-14):** [앞뒤 가림·물체/조명 네 조건을 실제 영상으로 비교](docs/deliveries/2026-11-14_surface_depth_cues.md)했습니다. 32개·768프레임과 실행 기록을 확인했습니다. 같은 최종 영상의 다른 깊이 정답과 조명 단서를 구분했으며 사람/AI 성능 검증은 남아 있습니다.
 
 **실험 기록(2026-11-14):** [명령·시각·종료 상태·결과 파일을 연결해 보존](docs/deliveries/2026-11-14_execution_evidence_and_priority_resume.md)합니다. 실제 재실행 파일 69개를 검증했고, 과거 자료의 사후 보존과 구분했습니다. 전체 Python 177개 통과. [새 실험 기록 기준](docs/experiment_evidence_protocol_2026-11-14.md)을 따릅니다.

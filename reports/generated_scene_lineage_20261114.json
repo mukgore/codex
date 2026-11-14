@@ -1,0 +1,247 @@
+{
+  "actual_media_files_by_stage": {
+    "candidate": 32,
+    "h264": 32,
+    "raw": 48
+  },
+  "actual_media_files_n": 112,
+  "actual_participant_trials_n": 0,
+  "audits": {
+    "depth_variant_split_counterexample": {
+      "all_six_axes_requested": true,
+      "allocation_entries_n": 112,
+      "allocation_split_counts": {
+        "development": 48,
+        "test": 16,
+        "validation": 48
+      },
+      "asset_records_rechecked_n": 1,
+      "byte_alias_distinct_scene_groups_n": 10,
+      "byte_duplicate_groups_n": 30,
+      "cross_split_overlap_counts_by_axis": {
+        "camera": 3,
+        "contact_plan": 6,
+        "hand_geometry": 3,
+        "object_geometry": 3,
+        "renderer": 3,
+        "trajectory": 3
+      },
+      "cross_split_overlap_counts_by_kind": {
+        "byte_identity": 74,
+        "family": 45,
+        "source_identity": 144
+      },
+      "data_scope": "real_files_synthetic_allocation",
+      "declared_constraint_findings": {
+        "CROSS_SPLIT_BYTE_IDENTITY": 3,
+        "CROSS_SPLIT_FAMILY": 3,
+        "CROSS_SPLIT_SCENE_AXIS": 18,
+        "CROSS_SPLIT_SOURCE_IDENTITY": 3,
+        "EXPOSED_TEST_SOURCE": 16
+      },
+      "declared_constraints_satisfied": false,
+      "generation_runs_n": 1,
+      "independence_proven": false,
+      "limitations": [
+        "IDs, parent edges, family/capture membership and exposure are caller declarations.",
+        "Byte identity catches exact copies; re-encoding/mirroring/semantic near duplicates need review.",
+        "No matched response trials, consent, unused-person status or authentication outcome verified.",
+        "Scene axes, generator recipe and asset status are declarations; hashes do not prove their semantics/rights.",
+        "Generated stimulus sources have no fabricated camera capture IDs; response capture/participants remain separate.",
+        "A seed or generation batch count is not an independent family count.",
+        "A subset of held-out axes supports only that declared preflight scope, never a general independence claim."
+      ],
+      "rights_or_semantic_independence_proven": false,
+      "scene_entries_n": 4,
+      "scene_recipe_alias_groups_n": 0,
+      "schema_version": 1,
+      "scope": "generated_scene_declared_axes_and_file_lineage_only",
+      "seed_values_n": 2,
+      "separate_axes": [
+        "hand_geometry",
+        "object_geometry",
+        "contact_plan",
+        "trajectory",
+        "camera",
+        "renderer"
+      ],
+      "source_authentication_proven": false,
+      "source_bytes_rechecked": true,
+      "source_entries_n": 112,
+      "source_origin": "generated_3d",
+      "source_paths_verified_n": 112,
+      "unique_byte_sequences_n": 66,
+      "unique_declared_families_by_axis": {
+        "camera": 1,
+        "contact_plan": 2,
+        "hand_geometry": 1,
+        "object_geometry": 1,
+        "renderer": 1,
+        "trajectory": 1
+      },
+      "used_scene_entries_n": 4
+    },
+    "diagnostic_only": {
+      "all_six_axes_requested": true,
+      "allocation_entries_n": 112,
+      "allocation_split_counts": {
+        "diagnostic": 112
+      },
+      "asset_records_rechecked_n": 1,
+      "byte_alias_distinct_scene_groups_n": 10,
+      "byte_duplicate_groups_n": 30,
+      "cross_split_overlap_counts_by_axis": {},
+      "cross_split_overlap_counts_by_kind": {},
+      "data_scope": "real_files_synthetic_allocation",
+      "declared_constraint_findings": {
+        "MISSING_INDEPENDENT_PARTITIONS": 1
+      },
+      "declared_constraints_satisfied": false,
+      "generation_runs_n": 1,
+      "independence_proven": false,
+      "limitations": [
+        "IDs, parent edges, family/capture membership and exposure are caller declarations.",
+        "Byte identity catches exact copies; re-encoding/mirroring/semantic near duplicates need review.",
+        "No matched response trials, consent, unused-person status or authentication outcome verified.",
+        "Scene axes, generator recipe and asset status are declarations; hashes do not prove their semantics/rights.",
+        "Generated stimulus sources have no fabricated camera capture IDs; response capture/participants remain separate.",
+        "A seed or generation batch count is not an independent family count.",
+        "A subset of held-out axes supports only that declared preflight scope, never a general independence claim."
+      ],
+      "rights_or_semantic_independence_proven": false,
+      "scene_entries_n": 4,
+      "scene_recipe_alias_groups_n": 0,
+      "schema_version": 1,
+      "scope": "generated_scene_declared_axes_and_file_lineage_only",
+      "seed_values_n": 2,
+      "separate_axes": [
+        "hand_geometry",
+        "object_geometry",
+        "contact_plan",
+        "trajectory",
+        "camera",
+        "renderer"
+      ],
+      "source_authentication_proven": false,
+      "source_bytes_rechecked": true,
+      "source_entries_n": 112,
+      "source_origin": "generated_3d",
+      "source_paths_verified_n": 112,
+      "unique_byte_sequences_n": 66,
+      "unique_declared_families_by_axis": {
+        "camera": 1,
+        "contact_plan": 2,
+        "hand_geometry": 1,
+        "object_geometry": 1,
+        "renderer": 1,
+        "trajectory": 1
+      },
+      "used_scene_entries_n": 4
+    },
+    "seed_only_split_counterexample": {
+      "all_six_axes_requested": true,
+      "allocation_entries_n": 112,
+      "allocation_split_counts": {
+        "development": 56,
+        "test": 56
+      },
+      "asset_records_rechecked_n": 1,
+      "byte_alias_distinct_scene_groups_n": 10,
+      "byte_duplicate_groups_n": 30,
+      "cross_split_overlap_counts_by_axis": {
+        "camera": 1,
+        "contact_plan": 2,
+        "hand_geometry": 1,
+        "object_geometry": 1,
+        "renderer": 1,
+        "trajectory": 1
+      },
+      "cross_split_overlap_counts_by_kind": {
+        "byte_identity": 22,
+        "family": 15,
+        "source_identity": 56
+      },
+      "data_scope": "real_files_synthetic_allocation",
+      "declared_constraint_findings": {
+        "CROSS_SPLIT_BYTE_IDENTITY": 1,
+        "CROSS_SPLIT_FAMILY": 1,
+        "CROSS_SPLIT_SCENE_AXIS": 6,
+        "CROSS_SPLIT_SOURCE_IDENTITY": 1,
+        "EXPOSED_TEST_SOURCE": 56,
+        "MISSING_INDEPENDENT_PARTITIONS": 1
+      },
+      "declared_constraints_satisfied": false,
+      "generation_runs_n": 1,
+      "independence_proven": false,
+      "limitations": [
+        "IDs, parent edges, family/capture membership and exposure are caller declarations.",
+        "Byte identity catches exact copies; re-encoding/mirroring/semantic near duplicates need review.",
+        "No matched response trials, consent, unused-person status or authentication outcome verified.",
+        "Scene axes, generator recipe and asset status are declarations; hashes do not prove their semantics/rights.",
+        "Generated stimulus sources have no fabricated camera capture IDs; response capture/participants remain separate.",
+        "A seed or generation batch count is not an independent family count.",
+        "A subset of held-out axes supports only that declared preflight scope, never a general independence claim."
+      ],
+      "rights_or_semantic_independence_proven": false,
+      "scene_entries_n": 4,
+      "scene_recipe_alias_groups_n": 0,
+      "schema_version": 1,
+      "scope": "generated_scene_declared_axes_and_file_lineage_only",
+      "seed_values_n": 2,
+      "separate_axes": [
+        "hand_geometry",
+        "object_geometry",
+        "contact_plan",
+        "trajectory",
+        "camera",
+        "renderer"
+      ],
+      "source_authentication_proven": false,
+      "source_bytes_rechecked": true,
+      "source_entries_n": 112,
+      "source_origin": "generated_3d",
+      "source_paths_verified_n": 112,
+      "unique_byte_sequences_n": 66,
+      "unique_declared_families_by_axis": {
+        "camera": 1,
+        "contact_plan": 2,
+        "hand_geometry": 1,
+        "object_geometry": 1,
+        "renderer": 1,
+        "trajectory": 1
+      },
+      "used_scene_entries_n": 4
+    }
+  },
+  "geometry_frames_recomputed_and_matched": 288,
+  "independent_partitions_created": false,
+  "limitations": [
+    "Existing authored scene media only; split assignments are intentionally synthetic diagnostics.",
+    "Same recipe seeds/variants are not new families or independent evaluation data.",
+    "Asset/family definitions are scoped engineering records, not rights/anatomical/security validation."
+  ],
+  "new_model_inference": false,
+  "release_allowed": false,
+  "scene_entries_n": 4,
+  "scope": "existing_recorded_generated_media_lineage_with_synthetic_split_counterexamples",
+  "source_execution_record_verified_before_and_after": true,
+  "unique_declared_families_by_axis": {
+    "camera": 1,
+    "contact_plan": 2,
+    "hand_geometry": 1,
+    "object_geometry": 1,
+    "renderer": 1,
+    "trajectory": 1
+  },
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 8,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "worker_code_commit": "b129989",
+  "python_tests_passed": 189,
+  "new_scene_manifest_tests_passed": 12,
+  "whole_goal_completion_proven": false
+}

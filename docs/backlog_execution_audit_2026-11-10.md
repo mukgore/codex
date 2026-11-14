@@ -57,8 +57,8 @@
 | T01 | 5 | 일부 T01–T24 인수 코드·문서 연결 [이전 감사][AUDIT] | [24개 전체 증거와 공백 대조][PREFLIGHT]. 실제 운영 인수는 대기 |
 | W01 | 1–6 | 입력 없는 실험과 독립 개발을 나눠 진행, 이 전체 추적표 | 각 WP 선행 조건을 유지한 실행 계속. 현재 목표 active |
 | G01 | 6 | 촬영 풀/3D 비교 설계와 기존 fixture | 실제 권리·수행 가능성·품질·동일 범위 비용 입력 필요 |
-| G02 | 6 | 자체 골격/MANO fixture·[기존 재검사][MANO]·[두 접촉 proxy/깊이 대안쌍][CONTACT] | 실제 grasp 안정성·다양성·동작/물체/카메라 계보 필요 |
-| G03 | 6 | capsule/sphere·[전 프레임 반경 교집합/실제 래스터 재검사][MANO] | 생체 범위·접촉/관통 주석·실제 편안함 검증 필요 |
+| G02 | 6 | 자체 골격/MANO·[두 접촉 proxy][CONTACT]·[112개 파일/장면 계보와 분할 검사][SCENE] | [학술 근거/제약 있는 랜덤 계획][BIO]. 생체/물리·실제 다양성·사람 평가 필요 |
+| G03 | 6 | capsule/sphere·[반경/래스터 재검사][MANO]·[근거 문헌/생체 프로필 계획][BIO] | 근거 수치/좌표계 매핑·관절 연동·자기 충돌/시간·실제 편안함 검증 필요 |
 | G04 | 6 | 대안쌍·촬영 계획 [촬영][CAPTURE]·[깊이 반전][CONTACT]·[실제 표면/물체/조명 네 조건][SURFACE] | oracle 깊이와 같은 영상 구분. 실제 장면/사람 해석·강한 공격은 대기 |
 | G05 | 6 | masked-only·비공개 pass·[표면 depth/두 뼈 proxy 가림·32 H.264 검사][SURFACE] | 전체 해부학/그림자/반사·실제 배포 최종 송출 검증 대기 |
 | G06 | 6 | G0 손 모양 따라 하기 후보와 별도 접촉 범위 | 연구 과제 선택·복수 정답 기준·사람 입력 필요 |
@@ -70,6 +70,8 @@
 | B04 | 6 | CONTINUE/MODIFY/STOP/INCONCLUSIVE 기준 유지 | 사람·강한 공격·비용·권리의 실제 결과와 연구자 최종 결정 필요 |
 
 ## 다음 구현 우선순위
+
+2026-11-14 [장면 계보/분할 사전검사][SCENE]를 실제 실행해 마무리했다. 사용자 요청으로 다음 독립 단위는 [학술 근거를 코드에 대응하는 제약 프로필과 거부 관문, 이후 제한된 랜덤 생성][BIO]이다. 현재 임의 공학 fixture를 생체 검증 완료로 승격하지 않는다. 앞 단계 입력이 오면 원래 연구 순서로 우선 실행한다. 아래는 과거의 다음 작업 기록이다.
 
 2026-11-14에는 [앞 단계 등록 입력 재확인][EVIDENCE] 뒤 [표면/물체/조명 단서 실제 비교][SURFACE]를 마쳤다. [3D 요구별 대조](3d_execution_requirement_audit_2026-11-14.md)의 다음 독립 개발은 장면/object/contact/trajectory/camera/renderer 계보와 분할 사전검사다. 새 촬영·선별·3A/3B·4단계 자료가 접수되면 그 앞 단계부터 우선 실행한다. 아래는 이전 구현 기록이다.
 
@@ -105,3 +107,6 @@
 [EVIDENCE]: deliveries/2026-11-14_execution_evidence_and_priority_resume.md
 
 [SURFACE]: deliveries/2026-11-14_surface_depth_cues.md
+
+[SCENE]: deliveries/2026-11-14_generated_scene_lineage.md
+[BIO]: 3d_biomechanics_and_random_generation_2026-11-14.md
