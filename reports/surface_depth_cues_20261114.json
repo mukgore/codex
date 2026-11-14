@@ -1,0 +1,197 @@
+{
+  "scope": "authored_surface_visibility_and_cue_diagnostics_not_efficacy",
+  "renderer_version": "authored_capsule_sphere_orthographic_surface_v1",
+  "recipe_instances_n": 4,
+  "depth_control_cases_n": 12,
+  "render_modes_n": 4,
+  "surface_frames_computed_n": 288,
+  "lossless_mode_frames_verified_n": 1152,
+  "wire_identical_pair_frames_n": 192,
+  "comparisons_by_mode": {
+    "flat_object": {
+      "frame_pairs": 192,
+      "raw_different_frames": 96,
+      "masked_different_frames": 48,
+      "outside_changed_pixels": 2136,
+      "maximum_outside_changed_pixels_per_frame": 48
+    },
+    "lit_object": {
+      "frame_pairs": 192,
+      "raw_different_frames": 192,
+      "masked_different_frames": 96,
+      "outside_changed_pixels": 12552,
+      "maximum_outside_changed_pixels_per_frame": 153
+    },
+    "flat_hand_only": {
+      "frame_pairs": 192,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0,
+      "outside_changed_pixels": 0,
+      "maximum_outside_changed_pixels_per_frame": 0
+    },
+    "lit_hand_only": {
+      "frame_pairs": 192,
+      "raw_different_frames": 192,
+      "masked_different_frames": 96,
+      "outside_changed_pixels": 14688,
+      "maximum_outside_changed_pixels_per_frame": 153
+    }
+  },
+  "contact_quarantined_mode_cases_n": 16,
+  "surface_quarantined_mode_cases_n": 0,
+  "h264_renditions_n": 32,
+  "h264_frames_verified_n": 768,
+  "encoded_pair_frames_n": 384,
+  "encoded_different_pair_frames_n": 144,
+  "maximum_visible_region_codec_mae": 0.10912158340215683,
+  "release_allowed": false,
+  "human_or_ai_efficacy_tested": false,
+  "new_model_inference": false,
+  "limitations": [
+    "authored capsules/sphere, no palm mesh/anatomy/force closure",
+    "orthographic opaque nearest-surface rendering; no cast shadows or reflections",
+    "flat/lit and object/hand-only controls use the same correlated geometry, not independent families",
+    "target surface diagnostic covers only two middle-finger bone proxies, not all hidden anatomy",
+    "nonzero pixel differences do not prove human recognizability or strong-attack failure"
+  ],
+  "comparisons_by_topology_control_mode": [
+    {
+      "topology": "opposed_two_tip",
+      "control": "hand_reflection",
+      "mode": "flat_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "hand_reflection",
+      "mode": "lit_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 48
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "hand_reflection",
+      "mode": "flat_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "hand_reflection",
+      "mode": "lit_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 48
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "joint_reflection",
+      "mode": "flat_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 48
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "joint_reflection",
+      "mode": "lit_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 48
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "joint_reflection",
+      "mode": "flat_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "opposed_two_tip",
+      "control": "joint_reflection",
+      "mode": "lit_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 48
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "hand_reflection",
+      "mode": "flat_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "hand_reflection",
+      "mode": "lit_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "hand_reflection",
+      "mode": "flat_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "hand_reflection",
+      "mode": "lit_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "joint_reflection",
+      "mode": "flat_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "joint_reflection",
+      "mode": "lit_object",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "joint_reflection",
+      "mode": "flat_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 0,
+      "masked_different_frames": 0
+    },
+    {
+      "topology": "three_tip_front",
+      "control": "joint_reflection",
+      "mode": "lit_hand_only",
+      "frame_pairs": 48,
+      "raw_different_frames": 48,
+      "masked_different_frames": 0
+    }
+  ],
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 359,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "worker_code_commit": "43e809a",
+  "pipeline_tests_passed": 118,
+  "whole_goal_completion_proven": false
+}

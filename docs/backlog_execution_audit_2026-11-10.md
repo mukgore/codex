@@ -59,8 +59,8 @@
 | G01 | 6 | 촬영 풀/3D 비교 설계와 기존 fixture | 실제 권리·수행 가능성·품질·동일 범위 비용 입력 필요 |
 | G02 | 6 | 자체 골격/MANO fixture·[기존 재검사][MANO]·[두 접촉 proxy/깊이 대안쌍][CONTACT] | 실제 grasp 안정성·다양성·동작/물체/카메라 계보 필요 |
 | G03 | 6 | capsule/sphere·[전 프레임 반경 교집합/실제 래스터 재검사][MANO] | 생체 범위·접촉/관통 주석·실제 편안함 검증 필요 |
-| G04 | 6 | 대안쌍 질문 정의·A06/A07 촬영 계획 [촬영][CAPTURE]·[깊이 반전 대조][CONTACT] | [외부 단서 반례][LEVEL]. oracle 깊이와 영상 정보를 구분. 실제 장면/사람 해석 대기 |
-| G05 | 6 | 최종 masked-only·비공개 pass 경계·[정사영 대안쌍][CONTACT] | [가림 바깥 단서 대조][LEVEL]. depth buffer/표면 가림·그림자·반사의 최종 렌더 검사 대기 |
+| G04 | 6 | 대안쌍·촬영 계획 [촬영][CAPTURE]·[깊이 반전][CONTACT]·[실제 표면/물체/조명 네 조건][SURFACE] | oracle 깊이와 같은 영상 구분. 실제 장면/사람 해석·강한 공격은 대기 |
+| G05 | 6 | masked-only·비공개 pass·[표면 depth/두 뼈 proxy 가림·32 H.264 검사][SURFACE] | 전체 해부학/그림자/반사·실제 배포 최종 송출 검증 대기 |
 | G06 | 6 | G0 손 모양 따라 하기 후보와 별도 접촉 범위 | 연구 과제 선택·복수 정답 기준·사람 입력 필요 |
 | G07 | 6 | B0–B3×A1–A4 비교 요구 유지 | [16개 비교 셀과 예산·분모의 증거 구분][LEVEL]. 독립 평가 자극과 실제 대응 자료 대기 |
 | G08 | 4/6 | MANO private intake·HaMeR preflight [실행][EXEC] | HaMeR/Text2HOI checkpoint·나머지 자산·허용 실행 환경 필요 |
@@ -70,6 +70,8 @@
 | B04 | 6 | CONTINUE/MODIFY/STOP/INCONCLUSIVE 기준 유지 | 사람·강한 공격·비용·권리의 실제 결과와 연구자 최종 결정 필요 |
 
 ## 다음 구현 우선순위
+
+2026-11-14에는 [앞 단계 등록 입력 재확인][EVIDENCE] 뒤 [표면/물체/조명 단서 실제 비교][SURFACE]를 마쳤다. [3D 요구별 대조](3d_execution_requirement_audit_2026-11-14.md)의 다음 독립 개발은 장면/object/contact/trajectory/camera/renderer 계보와 분할 사전검사다. 새 촬영·선별·3A/3B·4단계 자료가 접수되면 그 앞 단계부터 우선 실행한다. 아래는 이전 구현 기록이다.
 
 2026-11-13 현재 V05 한 단위를 완료·push한 뒤 [prod 기반 UI 64조합][UI64]을 별도 단위로 구현·검사했다. 이후에는 원래 연구 실행 순서의 선행 조건과 전체 요구를 다시 대조한다. UI 수정 결과를 실제 사람 효과로, 합성 3D fixture를 실제 생성 모델 평가로 승격하지 않는다.
 
@@ -101,3 +103,5 @@
 [CONTACT]: deliveries/2026-11-13_grasp_contact_counterexamples.md
 
 [EVIDENCE]: deliveries/2026-11-14_execution_evidence_and_priority_resume.md
+
+[SURFACE]: deliveries/2026-11-14_surface_depth_cues.md
