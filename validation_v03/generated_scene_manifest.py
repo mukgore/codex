@@ -75,24 +75,20 @@ def audit(packet, *, base):
             degree[child]-=1
             if degree[child]==0:queue.append(child)
     if len(order)!=len(records):raise ValueError('Cyclic generated source lineage')
-    inherited={};adapted=[]
-    for sid in order:
-        row=records[sid];scene=scene_map[row['scene_id']]
-        families={'scene:'+scene['scene_id'],'recipe:'+scene['recipe_id']}
-        families.update('axis:'+axis+':'+scene['family_axes'][axis] for axis in selected if scene['family_axes'][axis] is not None)
-        for parent in row['parent_ids']:families.update(inherited[parent])
-        inherited[sid]=families
-        adapted.append({k:row[k] for k in ('source_id','path','parent_ids','lineage_status','exposure')})
-        adapted[-1].update(family_ids=sorted(families),capture_ids=[])
-        if 'sha256' in row:adapted[-1]['sha256']=row['sha256']
-    result=lineage_audit({'schema_version':1,'data_scope':packet['data_scope'],
-        'require_unexposed_test':packet['require_unexposed_test'],'source_origin':'generated_3d',
-        'sources':adapted,'allocations':packet['allocations']},base=base)
-    findings.extend(result['private_findings'])
-    # Include unallocated byte aliases/parents when checking every axis.
-    hashes=defaultdict(set)
-    for row in result['private_sources']:hashes[row['sha256']].add(row['source_id'])
-    source_hash={row['source_id']:row['sha256'] for row in result['private_sources']}
+    # Alias closure must be expanded before auto-declaring inherited families.
+    # A child of a byte-identical parent otherwise acquires extra families only
+    # inside the generic audit and is falsely reported as omitting metadata.
+    hashes=defaultdict(set);file_cache={};source_hash={}
+    for sid,row in records.items():
+        if not isinstance(row['path'],str) or not row['path']:raise ValueError('Explicit source file path required')
+        path=Path(row['path']);path=(path if path.is_absolute() else base/path).resolve(strict=True)
+        if path not in file_cache:
+            if sum(v['bytes'] for v in file_cache.values())+path.stat().st_size>4*1024**3:
+                raise ValueError('Scene source hashing budget exceeded')
+            file_cache[path]=snapshot_file(path)
+        fingerprint=file_cache[path]['sha256']
+        if 'sha256' in row and row['sha256']!=fingerprint:raise ValueError('Declared scene source bytes differ')
+        hashes[fingerprint].add(sid);source_hash[sid]=fingerprint
     closures={};budget=0
     for sid in records:
         reachable=set();todo=[sid]
@@ -103,6 +99,19 @@ def audit(packet, *, base):
         budget+=len(reachable)
         if budget>1000000:raise ValueError('Scene closure budget exceeded')
         closures[sid]=reachable
+    adapted=[]
+    for sid in order:
+        row=records[sid];families=set()
+        for node in closures[sid]:
+            scene=scene_map[records[node]['scene_id']]
+            families.update(('scene:'+scene['scene_id'],'recipe:'+scene['recipe_id']))
+            families.update('axis:'+axis+':'+scene['family_axes'][axis] for axis in selected if scene['family_axes'][axis] is not None)
+        adapted.append({k:row[k] for k in ('source_id','path','parent_ids','lineage_status','exposure')})
+        adapted[-1].update(family_ids=sorted(families),capture_ids=[],sha256=source_hash[sid])
+    result=lineage_audit({'schema_version':1,'data_scope':packet['data_scope'],
+        'require_unexposed_test':packet['require_unexposed_test'],'source_origin':'generated_3d',
+        'sources':adapted,'allocations':packet['allocations']},base=base)
+    findings.extend(result['private_findings'])
     used=set();by_split={split:{axis:set() for axis in AXES} for split in SPLITS}
     for allocation in packet['allocations']:
         reachable=set().union(*(closures[s] for s in allocation['source_ids']));used.update(reachable)
@@ -131,6 +140,7 @@ def audit(packet, *, base):
         'generation_runs_n':len({scene_map[s]['generation_run_id'] for s in used_scenes}),
         'seed_values_n':len({scene_map[s]['seed'] for s in used_scenes}),
         'scene_recipe_alias_groups_n':sum(len(v)>1 for v in recipes.values()),
+        'byte_alias_distinct_scene_groups_n':sum(len({records[s]['scene_id'] for s in group})>1 for group in hashes.values()),
         'separate_axes':selected,'all_six_axes_requested':set(selected)==set(AXES),
         'unique_declared_families_by_axis':{a:len({scene_map[s]['family_axes'][a] for s in used_scenes if scene_map[s]['family_axes'][a] is not None}) for a in AXES},
         'cross_split_overlap_counts_by_axis':dict(axis_overlap),

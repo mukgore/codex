@@ -88,12 +88,26 @@ class GeneratedSceneTests(unittest.TestCase):
         codes=self.check()['summary']['declared_constraint_findings']
         self.assertIn('UNRESOLVED_SCENE_FAMILY_AXIS',codes);self.assertIn('UNREVIEWED_SCENE_ASSETS',codes)
 
+    def test_alias_parent_families_are_automatically_inherited_without_false_missing_metadata(self):
+        (self.base/'test.bin').write_bytes((self.base/'development.bin').read_bytes())
+        (self.base/'child.bin').write_bytes(b'child representation')
+        self.packet['sources'].append(dict(self.packet['sources'][0],source_id='child',path='child.bin',
+                                          parent_ids=['development'],lineage_status='derived'))
+        self.packet['allocations'].append({'allocation_id':'child','split':'development','source_ids':['child'],
+                                          'participant_ids':[],'capture_ids':[]})
+        s=self.check()['summary'];codes=s['declared_constraint_findings']
+        self.assertEqual(s['byte_alias_distinct_scene_groups_n'],1)
+        self.assertIn('CROSS_SPLIT_BYTE_IDENTITY',codes)
+        self.assertNotIn('MISSING_DECLARED_PARENT_FAMILY',codes)
+        self.assertNotIn('BYTE_ALIAS_FAMILY_CONFLICT',codes)
+
     def test_asset_record_changes_during_audit_are_rejected(self):
         calls=0
         def changing(path):
             nonlocal calls
-            calls+=1
-            if calls==2:Path(path).write_bytes(b'changed asset declaration')
+            if Path(path)==self.base/'assets.json':
+                calls+=1
+                if calls==2:Path(path).write_bytes(b'changed asset declaration')
             return snapshot_file(path)
         with patch('validation_v03.generated_scene_manifest.snapshot_file',side_effect=changing):
             with self.assertRaisesRegex(ValueError,'Asset record changed'):self.check()
