@@ -1,0 +1,51 @@
+{
+  "biological_validity_proven": false,
+  "canonical_point_count": 21,
+  "cases_n": 2,
+  "exact_legacy_canonical_joints_reproduced_cases_n": 2,
+  "exact_legacy_pose_coefficients_reproduced_cases_n": 2,
+  "exact_legacy_vertices_reproduced_cases_n": 2,
+  "full_generator_ready": false,
+  "limitations": [
+    "Current producer is recorded; this does not recover historical worker source bytes.",
+    "Native SDK index and named surface-tip contract is explicit, not independent human annotation.",
+    "Model-native units and biological/static/temporal admissible limits remain unresolved.",
+    "No anatomical mesh collision, object dynamics, human/attack study or operating clearance.",
+    "Private research only; original intake/license snapshots and model files are preserved."
+  ],
+  "measurable_feature_frames_n": 48,
+  "new_independent_families_n": 0,
+  "new_model_forward_frames_n": 48,
+  "new_model_inference": true,
+  "physical_unit_verified": false,
+  "producer_version": "recorded_mano_native_replay_v1",
+  "random_motion_sampled": false,
+  "raw_sdk_and_full_pose_saved_cases_n": 2,
+  "raw_sdk_joint_count": 16,
+  "release_allowed": false,
+  "rendered_decoded_frames_n": 48,
+  "runtime_journal_completed_frames_n": 48,
+  "runtime_journal_status": "COMPLETED",
+  "runtime_versions": {
+    "numpy": "1.23.5",
+    "opencv-contrib-python": "4.10.0.84",
+    "smplx": "0.1.28",
+    "torch": "2.5.1+cpu"
+  },
+  "scope": "new_controlled_cpu_mano_replay_with_raw_sdk_point_contract_not_random_or_bio_validation",
+  "execution_record": {
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "integrity": "RECORDED_FILES_MATCH",
+    "postflight_snapshot_matched": true,
+    "artifact_files_n": 17,
+    "elapsed_seconds": 7.8577249
+  },
+  "producer_code_commit": "5b4cf85",
+  "pilot_reader_code_commit": "ebdfcb8",
+  "research_tests_passed": 193,
+  "pipeline_full_suite_passed_before_final_import_regression": 138,
+  "final_targeted_bridge_tests_passed": 8,
+  "preserved_failed_attempts_n": 1,
+  "whole_goal_completion_proven": false
+}
