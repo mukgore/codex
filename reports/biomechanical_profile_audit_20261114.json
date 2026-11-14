@@ -1,0 +1,67 @@
+{
+  "biological_validity_proven": false,
+  "feature_version": "bmc21_column_frames_signed_angles_v1",
+  "full_generator_ready": false,
+  "groups": {
+    "existing_recorded_surface_reference": {
+      "cases_n": 12,
+      "declared_rules_pass_cases_n": 0,
+      "evidence_backed_rule_checks_pass_cases_n": 0,
+      "frames_n": 288,
+      "geometry_error_counts": {
+        "CANCELLING_PALM_EDGE_NORMALS": 288
+      },
+      "measurable_frames_n": 0,
+      "states": {
+        "UNMEASURABLE_GEOMETRY": 12
+      }
+    },
+    "procedural_baseline_recomputation": {
+      "cases_n": 8,
+      "declared_rules_pass_cases_n": 0,
+      "evidence_backed_rule_checks_pass_cases_n": 0,
+      "frames_n": 192,
+      "geometry_error_counts": {},
+      "measurable_frames_n": 192,
+      "states": {
+        "UNRESOLVED_LIMITS": 8
+      }
+    }
+  },
+  "learned_model_inference": false,
+  "length_unit": "authored_units",
+  "limitations": [
+    "Formula features are implemented; no accepted human/range-of-motion limits are bundled.",
+    "Authored length units and thumb/rig anatomy correspondence remain unresolved.",
+    "Unmeasurable palm bases are rejected, not silently repaired or certified as anatomical.",
+    "No human comfort, anatomical mesh/self-collision, grasp dynamics or continuous-between-sample guarantee."
+  ],
+  "new_human_observations_n": 0,
+  "profile_version": "bmc21_limits_pending_v1",
+  "release_allowed": false,
+  "scope": "sampled_biomechanical_formula_mapping_and_pending_limits_diagnostic",
+  "source_execution_record_verified_before_and_after": true,
+  "stored_reference_frames_recomputed_and_matched": 288,
+  "total_cases_n": 20,
+  "total_frames_n": 480,
+  "unresolved_rules": [
+    "angular_acceleration_rad_s2",
+    "angular_speed_rad_s",
+    "bone_lengths",
+    "joint_angle_hulls",
+    "palm_curvatures",
+    "palm_spread_radians"
+  ],
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 23,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "worker_code_commit": "5b43e86",
+  "audit_code_commit": "daa3185",
+  "pipeline_tests_passed": 131,
+  "new_biomechanical_tests_passed": 13,
+  "whole_goal_completion_proven": false
+}
