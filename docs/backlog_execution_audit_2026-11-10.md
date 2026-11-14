@@ -34,7 +34,7 @@
 | S05 | 3B | ROC/DET·AUC/EER 진단·유형별 최악률·유형별 군집 구간 [진단][DIAG] | 독립 실제 평가 대기. 최악 유형 동시 위험 상한은 미구현/미주장 |
 | S06 | 3B | [저장/재로드][PERSIST]·[18세션/126구간 집계와 계산 불가 기준 분리][SEGMENTS] | 영상 간 전환 기준·실제 camera coverage·새 이벤트·정책 채택은 실제 수집/연결 입력 필요 |
 | S07 | 3B | legacy 회귀·adapter/원시 JS 수치 검사 | 독립 보정/평가와 동일 trial shadow 입력 필요 |
-| V00 | 4/공통 | [사전 metadata/파일/코드/lock 검사·후검사·runtime journal 연결 실제 실행][PERSIST] | 새 실험은 이 경로로 scope별 기록. 신규 사람/모델/운영 사건 계측은 별도 입력 필요 |
+| V00 | 4/공통 | [사전 snapshot·journal][PERSIST]·[실제 명령/종료/전체 출력 연결과 재실행][EVIDENCE] | 새 실험은 scope별 기록. 사람/모델/운영 사건 계측·독립 인증은 별도 입력 필요 |
 | V01 | 3A | 기존 known-pool 수용 유지, 카메라 대응 분석기 [진단][DIAG] | 실제 같은 사람/문제/카메라 입력 필요 |
 | V02 | 3B/4 | source/사람/capture 분할·바이트 중복 탐색 [실행][EXEC] | [계보·바이트 중복 사전검사][PREFLIGHT] 및 [복수 부모·노출 전파·점수 CSV 연결][LINEAGE] 검증. 실제 미사용 source 및 유사 촬영 확인 필요 |
 | V03 | 5 | 가림×입력 보호 설계와 과거 국소 진단 | 신뢰 입력 방식·실제 대응 2×2 자료·동일 예산 필요 |
@@ -99,3 +99,5 @@
 [MANO]: deliveries/2026-11-13_mano_artifact_review.md
 
 [CONTACT]: deliveries/2026-11-13_grasp_contact_counterexamples.md
+
+[EVIDENCE]: deliveries/2026-11-14_execution_evidence_and_priority_resume.md

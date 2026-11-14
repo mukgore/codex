@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**실험 기록(2026-11-14):** [명령·시각·종료 상태·결과 파일을 연결해 보존](docs/deliveries/2026-11-14_execution_evidence_and_priority_resume.md)합니다. 실제 재실행 파일 69개를 검증했고, 과거 자료의 사후 보존과 구분했습니다. 전체 Python 177개 통과. [새 실험 기록 기준](docs/experiment_evidence_protocol_2026-11-14.md)을 따릅니다.
+
 **접촉 모형 후속:** [두 접촉 모형·깊이 대안쌍](docs/deliveries/2026-11-13_grasp_contact_counterexamples.md), 12개 대조/8개 출력·192프레임·검사 111개 통과. 선 그림의 개발 검사이며 실제 손/사람·AI 효과는 미검증입니다. 원래 순서의 촬영·선별·실제 대응 자료가 우선입니다.
 
 **3D 코드 후속:** [기존 가상 손 12개·가림 4개/96프레임 재검사](docs/deliveries/2026-11-13_mano_artifact_review.md). 미공유 로컬 코드를 검토·보완했으며, 새 모델 추론이나 실제 사람/공격 성능 결과는 아닙니다.

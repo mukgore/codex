@@ -1,0 +1,39 @@
+{
+  "scope": "execution_evidence_recording_and_same_recipe_replay_not_new_efficacy_study",
+  "recorder_code_commit": "2796549",
+  "worker_code_commit": "da50a07",
+  "python_tests_passed": 177,
+  "new_recorded_execution": {
+    "run_id": "G02-G04-RECORDED-REPLAY-20261114",
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 69,
+    "scientific_result_or_source_authentication_proven": false,
+    "postflight_snapshot_matched": true,
+    "same_aggregates_as_prior_run": true,
+    "control_cases_n": 12,
+    "h264_frames_verified_n": 192
+  },
+  "retrospective_inventories": {
+    "prior_contact_run": {
+      "integrity": "RECORDED_FILES_MATCH",
+      "mode": "RETROSPECTIVE_ARTIFACT_INVENTORY",
+      "state": "EXISTING_FILES_BOUND_NOT_EXECUTION_ATTESTED",
+      "artifact_files_n": 77,
+      "scientific_result_or_source_authentication_proven": false
+    },
+    "model_preflight": {
+      "integrity": "RECORDED_FILES_MATCH",
+      "mode": "RETROSPECTIVE_ARTIFACT_INVENTORY",
+      "state": "EXISTING_FILES_BOUND_NOT_EXECUTION_ATTESTED",
+      "artifact_files_n": 2,
+      "scientific_result_or_source_authentication_proven": false
+    }
+  },
+  "new_independent_motion_families": 0,
+  "new_human_observations": 0,
+  "model_inference": false,
+  "release_allowed": false,
+  "full_goal_completion_proven": false
+}

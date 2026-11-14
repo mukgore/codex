@@ -1,0 +1,22 @@
+{
+  "scope": "registered_intake_records_only_not_whole_disk_search",
+  "capture_jobs": 21,
+  "capture_jobs_with_source_path": 0,
+  "capture_jobs_awaiting": 21,
+  "response_template_observed_fields": 0,
+  "annotation_rater_forms": 2,
+  "annotation_points_filled": 0,
+  "new_human_observations_verified": false,
+  "model_core_expected_layout": {
+    "hamer_core": {
+      "state": "UNAVAILABLE_MISSING_CORE_ASSETS",
+      "missing_items_n": 3
+    },
+    "text2hoi_grab_demo": {
+      "state": "UNAVAILABLE_MISSING_CORE_ASSETS",
+      "missing_items_n": 10
+    }
+  },
+  "models_imported": false,
+  "whole_goal_completion_proven": false
+}
