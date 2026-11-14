@@ -165,8 +165,11 @@ def main():
     parser.add_argument('--cluster-repetitions', type=int)
     parser.add_argument('--cluster-seed', type=int)
     parser.add_argument('--cluster-confidence', type=float)
-    parser.add_argument('--lineage-manifest',type=Path,
+    provenance=parser.add_mutually_exclusive_group()
+    provenance.add_argument('--lineage-manifest',type=Path,
                         help='Require file-backed lineage preflight before selecting any threshold')
+    provenance.add_argument('--generated-scene-manifest',type=Path,
+                        help='Require generated-scene family axes and file lineage before selecting thresholds')
     args = parser.parse_args()
     with args.input.open(encoding='utf-8-sig', newline='') as stream:
         rows = list(csv.DictReader(stream))
@@ -175,14 +178,18 @@ def main():
     if args.curve_plot and args.curve_plot.resolve()==args.output.resolve():
         parser.error('Report and plot paths must differ')
     lineage=None
-    if args.lineage_manifest:
+    if args.lineage_manifest or args.generated_scene_manifest:
         from validation_v03.lineage_manifest import audit,validate_score_rows
         from validation_v03.session_artifacts import decode,_read
         try:
             validate_rows(rows)
-            manifest_path=args.lineage_manifest.resolve(strict=True)
+            manifest_path=(args.lineage_manifest or args.generated_scene_manifest).resolve(strict=True)
             manifest_bytes=_read(manifest_path)
-            lineage=audit(decode(manifest_bytes),base=manifest_path.parent)
+            if args.generated_scene_manifest:
+                from validation_v03.generated_scene_manifest import audit as scene_audit
+                lineage=scene_audit(decode(manifest_bytes),base=manifest_path.parent)
+            else:
+                lineage=audit(decode(manifest_bytes),base=manifest_path.parent)
             validate_score_rows(rows,lineage)
         except (OSError,ValueError,TypeError,KeyError,RecursionError):
             parser.error('Lineage preflight rejected input; no thresholds selected')

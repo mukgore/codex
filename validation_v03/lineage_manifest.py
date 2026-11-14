@@ -27,6 +27,9 @@ def audit(packet, *, base):
             packet.get('data_scope') not in ('declared_metadata','synthetic_metadata','real_files_synthetic_allocation') or
             type(packet.get('require_unexposed_test')) is not bool):
         raise ValueError('Explicit source manifest schema, scope and exposure policy required')
+    source_origin=packet.get('source_origin','recorded_video')
+    if source_origin not in ('recorded_video','generated_3d'):
+        raise ValueError('Known source origin required')
     sources,allocations=packet.get('sources'),packet.get('allocations')
     if (not isinstance(sources,list) or not 1<=len(sources)<=1000 or
             not isinstance(allocations,list) or not 1<=len(allocations)<=10000):
@@ -40,6 +43,8 @@ def audit(packet, *, base):
                 source['source_id'] in records or not isinstance(source['path'],str) or not source['path']):
             raise ValueError('Missing, duplicate or unsupported source entry')
         parents=_ids(source['parent_ids']);_ids(source['family_ids']);_ids(source['capture_ids'])
+        if source_origin=='generated_3d' and source['capture_ids']:
+            raise ValueError('Generated stimuli must not invent source camera captures')
         declared_memberships+=len(parents)+len(source['family_ids'])+len(source['capture_ids'])
         if declared_memberships>20000:raise ValueError('Declared membership budget exceeded')
         if source['lineage_status'] not in ('root_of_supplied_material','derived','unresolved') or source['exposure'] not in EXPOSURES:
@@ -126,7 +131,8 @@ def audit(packet, *, base):
         row=records[sid]
         if row['lineage_status']=='unresolved':issue('UNRESOLVED_PARENT_LINEAGE',source_id=sid)
         if not effective[sid]['family_ids']:issue('UNRESOLVED_SOURCE_FAMILY',source_id=sid)
-        if not effective[sid]['capture_ids']:issue('UNRESOLVED_CAPTURE_LINEAGE',source_id=sid)
+        if source_origin=='recorded_video' and not effective[sid]['capture_ids']:
+            issue('UNRESOLVED_CAPTURE_LINEAGE',source_id=sid)
         inherited=set().union(*(effective[parent]['family_ids'] for parent in row['parent_ids'])) if row['parent_ids'] else set()
         if not inherited.issubset(row['family_ids']):issue('MISSING_DECLARED_PARENT_FAMILY',source_id=sid)
     for members in hash_groups.values():
@@ -146,6 +152,7 @@ def audit(packet, *, base):
     for path,expected_file in snapshots.items():
         if snapshot_file(path)!=expected_file:raise ValueError('Source bytes changed during lineage audit')
     summary={'schema_version':1,'scope':'file_and_declared_lineage_constraints_only',
+        'source_origin':source_origin,
         'data_scope':packet['data_scope'],'source_entries_n':len(records),'source_paths_verified_n':len(snapshots),
         'unique_byte_sequences_n':len(hash_groups),'byte_duplicate_groups_n':sum(len(group)>1 for group in hash_groups.values()),
         'allocation_entries_n':len(allocations),'allocation_split_counts':dict(Counter(row['split'] for row in allocations)),
