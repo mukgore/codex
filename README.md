@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**Cloud 이전 준비:** [현재 작업 보존·이전 가능 범위·실행 초안](docs/codex_cloud_migration_preparation_2026-11-14.md), [새 작업 인계문](docs/codex_cloud_handoff_2026-11-14.md). Cloud 실행과 비공개 자료 전송은 아직 하지 않았습니다.
+
 **새 손 생성 실행(2026-11-14):** [양손 48프레임을 다시 만들고 원래 관절·손끝·전체 자세를 보관](docs/deliveries/2026-11-14_mano_controlled_producer.md)했습니다. 이전 결과와 값이 일치하고 실행 증거를 확인했습니다. 랜덤 생성과 생물학적 타당성 검증은 남아 있습니다.
 
 **보관 손 모델 대응(2026-11-14):** [MANO 12개의 저장 손끝·화면 좌표 연결과 288프레임 계산](docs/deliveries/2026-11-14_mano_reference_mapping.md)을 확인했습니다. 생체 허용 범위·물리 단위 승인은 남아 있습니다. [3D 문제 생성과 사용자 채점의 차이](docs/3d_scoring_baseline_explanation_2026-11-14.md)도 기록했습니다.
