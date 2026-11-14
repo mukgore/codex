@@ -1,0 +1,64 @@
+{
+  "biological_validity_proven": false,
+  "full_generator_ready": false,
+  "groups": {
+    "explicit_flat_mean_label": {
+      "all_named_tips_match_cases_n": 6,
+      "cases_n": 6,
+      "current_candidate_worker_source_matches_cases_n": 0,
+      "feature_geometry_error_counts": {},
+      "flat_mean_flag_recorded_cases_n": 6,
+      "frames_n": 144,
+      "max_non_tip_joint_edge_relative_span": 3.311393410459091e-07,
+      "max_projection_abs_error_px": 3.688140344593194e-05,
+      "max_surface_tip_edge_relative_span": 0.07830165807587927,
+      "measurable_feature_frames_n": 144,
+      "projection_matches_cases_n": 6,
+      "reference_quarantined_cases_n": 0
+    },
+    "legacy_default_label": {
+      "all_named_tips_match_cases_n": 6,
+      "cases_n": 6,
+      "current_candidate_worker_source_matches_cases_n": 0,
+      "feature_geometry_error_counts": {},
+      "flat_mean_flag_recorded_cases_n": 0,
+      "frames_n": 144,
+      "max_non_tip_joint_edge_relative_span": 3.327037225456125e-07,
+      "max_projection_abs_error_px": 3.5350308962733834e-05,
+      "max_surface_tip_edge_relative_span": 0.08024757922900302,
+      "measurable_feature_frames_n": 144,
+      "projection_matches_cases_n": 6,
+      "reference_quarantined_cases_n": 0
+    }
+  },
+  "length_unit_policy": "model_native_units_only_no_inferred_meter_or_mm_conversion",
+  "limitations": [
+    "Names/hand/mean flags remain recorded declarations, with only the stated saved-geometry relations checked.",
+    "Current candidate worker-source mismatch is not proof that no historical source exists elsewhere.",
+    "Named surface tips are not rigid anatomical joint centers; authored fixed-20-bone policy is not applied.",
+    "No physical unit, whole-joint semantic recovery, admissible motion limits, collision/physics or human validation."
+  ],
+  "models_imported": false,
+  "new_human_observations_n": 0,
+  "new_model_inference": false,
+  "non_tip_joint_semantics_independently_recovered": false,
+  "physical_unit_verified_cases_n": 0,
+  "prior_input_files_checked_before_and_after_n": 58,
+  "release_allowed": false,
+  "scope": "stored_mano_reference_mapping_and_native_unit_evidence_only",
+  "source_cases_n": 12,
+  "source_frames_n": 288,
+  "worker_journal_completed_cases_n": 12,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 13,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "worker_code_commit": "ba2f89a",
+  "audit_code_commit": "3f027cd",
+  "pipeline_tests_passed": 138,
+  "new_mapping_tests_passed": 7,
+  "whole_goal_completion_proven": false
+}

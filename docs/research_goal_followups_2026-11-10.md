@@ -6,7 +6,7 @@
 
 **실행 기록(2026-11-14):** 사용자 요청에 따라 새 실험은 [실제 명령·시각·종료 상태·코드/입력/환경·산출물 연결 기록](experiment_evidence_protocol_2026-11-14.md)을 남긴다. 과거에 없던 실행 정보를 소급하지 않으며, 실패·중단·사후 보존과 실제 새 실행을 구분한다.
 
-**현재 단위(2026-11-14):** [BMC feature/프로필과 실제 480프레임 진단](deliveries/2026-11-14_biomechanical_features_and_profile.md)을 마쳤다. [생체 근거·제약 있는 랜덤 생성](3d_biomechanics_and_random_generation_2026-11-14.md)은 실제 골격/단위와 허용 수치부터 확인한 뒤 이어간다. [장면 계보/분할 단위](deliveries/2026-11-14_generated_scene_lineage.md)도 보존한다. 6단계의 독립 개발이며 앞 단계 촬영·선별·실제 대응 실험은 여전히 우선이다. 아래 순서와 필요한 입력을 유지한다.
+**현재 단위(2026-11-14):** [MANO 저장 자료 12개·288좌표 프레임의 tip/투영 대응](deliveries/2026-11-14_mano_reference_mapping.md)을 마쳤다. 계산 가능성과 물리 단위/전체 관절 의미·생체 승인을 구분한다. 다음은 기록된 자산 사용 범위와 생산자 source/SDK·관절/단위 근거를 확인해 [제약 있는 랜덤 생성](3d_biomechanics_and_random_generation_2026-11-14.md)으로 이어간다. [현재 2D 채점과 3D 계획](3d_scoring_baseline_explanation_2026-11-14.md)도 구분했다. 6단계의 독립 개발이며 앞 단계 촬영·선별·실제 대응 실험은 여전히 우선이다. 아래 순서와 필요한 입력을 유지한다.
 
 **V02 후속(2026-11-12):** [복수 부모·실제 동일 바이트·노출 전파와 점수 CSV 배정 사전검사](deliveries/2026-11-12_lineage_score_preflight.md)를 추가했다. 실제 원본과 세 파생본의 합성 분할 누출을 탐지했으며 새 독립 평가 자료는 아니다.
 

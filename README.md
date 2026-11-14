@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**보관 손 모델 대응(2026-11-14):** [MANO 12개의 저장 손끝·화면 좌표 연결과 288프레임 계산](docs/deliveries/2026-11-14_mano_reference_mapping.md)을 확인했습니다. 생체 허용 범위·물리 단위 승인은 남아 있습니다. [3D 문제 생성과 사용자 채점의 차이](docs/3d_scoring_baseline_explanation_2026-11-14.md)도 기록했습니다.
+
 **생체 검사 개발(2026-11-14):** [논문 수식을 코드로 옮겨 480프레임에 적용](docs/deliveries/2026-11-14_biomechanical_features_and_profile.md)했습니다. 현재 접촉 모형의 손바닥 기준 공백과 허용 수치 미확인을 찾아 통과시키지 않았습니다. 실제 생물학적 타당성·제약 있는 랜덤 생성은 아직 미완료입니다.
 
 **3D 계보·생체/랜덤 계획(2026-11-14):** [기존 112개 영상의 가족관계/분할 검사](docs/deliveries/2026-11-14_generated_scene_lineage.md)를 마쳤습니다. seed만 바꾼 자료의 독립 평가 주장을 막습니다. [학술 근거를 둔 제약 프로필과 랜덤 생성 계획](docs/3d_biomechanics_and_random_generation_2026-11-14.md)도 명시했습니다. 현재 생물학적으로 타당한 동작만 생성하는 완성된 모델은 아닙니다.
