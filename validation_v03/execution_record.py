@@ -96,12 +96,13 @@ def run(config, repo, output, command, artifact_roots):
         raise ValueError('Explicit command argument array required; no shell expansion')
     executable = Path(command[0])
     if not executable.is_absolute(): raise ValueError('Absolute executable path required')
-    tool = _file(executable)
+    resolved_executable = executable.resolve(strict=True)
+    tool = _file(resolved_executable)
     manifest, fingerprint = prepare(config, repo, output/'provenance')
     started = time.time_ns(); clock = time.perf_counter_ns()
     start = {'schema_version': 1, 'mode': 'RECORDED_COMMAND_EXECUTION', 'run_id': manifest['configuration']['run_id'],
              'started_utc_epoch_ns': started, 'command': command, 'cwd': str(repo),
-             'executable': {'path': str(executable), **tool}, 'provenance_sha256': fingerprint,
+             'executable': {'path': str(executable), 'resolved_path': str(resolved_executable), **tool}, 'provenance_sha256': fingerprint,
              'artifact_roots': [str(p) for p in roots], 'recorder': _file(__file__),
              'timeout_seconds': manifest['configuration']['timeout_seconds']}
     _write(output/'started.private.json', start)
@@ -131,7 +132,8 @@ def run(config, repo, output, command, artifact_roots):
     postflight = None
     try:
         postflight = verify_current(output/'provenance')
-        if _file(executable) != tool: raise ValueError('Executable changed during execution')
+        if executable.resolve(strict=True) != resolved_executable or _file(resolved_executable) != tool:
+            raise ValueError('Executable target or bytes changed during execution')
         if _file(__file__) != start['recorder']: raise ValueError('Recorder changed during execution')
         _write(output/'postflight.private.json', postflight)
     except (ValueError, OSError) as exc:

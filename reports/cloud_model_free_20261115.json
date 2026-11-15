@@ -1,0 +1,503 @@
+{
+  "scope": "model_free_cloud_development_not_biological_or_human_validation",
+  "date": "2026-11-15",
+  "baseline_commits": {
+    "codex": "5546f813968c21ded96622ff1305f8ae73ef78a5",
+    "handcaptcha": "ebdfcb85d551328bd9e5f1788f921ad630991302"
+  },
+  "final_test_counts": {
+    "research": 196,
+    "pipeline": 147,
+    "node": 24
+  },
+  "command_records": [
+    {
+      "step": "browser_baseline",
+      "command": [
+        "/workspace/work/venvs/ui/bin/python",
+        "-m",
+        "experiments.prod_ui_factorial.browser_check",
+        "--chrome",
+        "/usr/bin/chromium",
+        "--ffmpeg",
+        "/usr/bin/ffmpeg",
+        "--output",
+        "/workspace/work/private_artifacts/cloud_ui_20261115_baseline"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:09:35.985231+00:00",
+      "finished_utc": "2026-11-15T02:09:36.111094+00:00",
+      "elapsed_seconds": 0.12586978899997803,
+      "exit_code": 1
+    },
+    {
+      "step": "browser_guard_fixed",
+      "command": [
+        "/workspace/work/venvs/ui/bin/python",
+        "-m",
+        "experiments.prod_ui_factorial.browser_check",
+        "--chrome",
+        "/usr/bin/chromium",
+        "--ffmpeg",
+        "/usr/bin/ffmpeg",
+        "--output",
+        "/workspace/work/private_artifacts/cloud_ui_20261115_guard_fixed"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:11:12.544376+00:00",
+      "finished_utc": "2026-11-15T02:11:13.146605+00:00",
+      "elapsed_seconds": 0.6022344460000113,
+      "exit_code": 1
+    },
+    {
+      "step": "browser_tmp",
+      "command": [
+        "/workspace/work/venvs/ui/bin/python",
+        "-m",
+        "experiments.prod_ui_factorial.browser_check",
+        "--chrome",
+        "/usr/bin/chromium",
+        "--ffmpeg",
+        "/usr/bin/ffmpeg",
+        "--output",
+        "/tmp/private_artifacts/cloud_ui_20261115_baseline"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:09:47.474323+00:00",
+      "finished_utc": "2026-11-15T02:09:47.545197+00:00",
+      "elapsed_seconds": 0.07088278599999853,
+      "exit_code": 1
+    },
+    {
+      "step": "chromium_probe",
+      "command": [
+        "/usr/bin/chromium",
+        "--headless=new",
+        "--no-first-run",
+        "--user-data-dir=/workspace/work/private_artifacts/chrome_probe",
+        "--dump-dom",
+        "about:blank"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:11:19.639480+00:00",
+      "finished_utc": "2026-11-15T02:11:19.693389+00:00",
+      "elapsed_seconds": 0.05391359300000431,
+      "exit_code": -6
+    },
+    {
+      "step": "execution_link_regression",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_execution_record.py"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:15:12.469538+00:00",
+      "finished_utc": "2026-11-15T02:15:14.217621+00:00",
+      "elapsed_seconds": 1.7480904170000144,
+      "exit_code": 0
+    },
+    {
+      "step": "inventory",
+      "command": [
+        "bash",
+        "-c",
+        "uname -a; cat /etc/os-release; id; nproc; cat /sys/fs/cgroup/cpu.max; cat /sys/fs/cgroup/memory.max; free -h; df -h /workspace; python3 --version; node --version; ffmpeg -version; ffprobe -version; chromium --version; git --version; git -C /workspace/work/codex status --short; git -C /workspace/work/codex rev-parse HEAD; git -C /workspace/work/handcaptcha status --short; git -C /workspace/work/handcaptcha rev-parse HEAD"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:08:40.655117+00:00",
+      "finished_utc": "2026-11-15T02:08:40.834719+00:00",
+      "elapsed_seconds": 0.17960889900000154,
+      "exit_code": 0
+    },
+    {
+      "step": "node_baseline",
+      "command": [
+        "node",
+        "--test",
+        "experiments/prod_ui_factorial/conditions.test.cjs",
+        "experiments/hand_selection/selection.test.cjs",
+        "experiments/prod_selected_hand/bridge.test.cjs",
+        "experiments/prod_selected_hand/async.test.cjs"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:08:53.932540+00:00",
+      "finished_utc": "2026-11-15T02:08:54.251521+00:00",
+      "elapsed_seconds": 0.31898996300000704,
+      "exit_code": 0
+    },
+    {
+      "step": "node_final",
+      "command": [
+        "node",
+        "--test",
+        "experiments/prod_ui_factorial/conditions.test.cjs",
+        "experiments/hand_selection/selection.test.cjs",
+        "experiments/prod_selected_hand/bridge.test.cjs",
+        "experiments/prod_selected_hand/async.test.cjs"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:18:35.617097+00:00",
+      "finished_utc": "2026-11-15T02:18:35.913134+00:00",
+      "elapsed_seconds": 0.2960465630000044,
+      "exit_code": 0
+    },
+    {
+      "step": "pipeline_baseline",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "dataset_pipeline/tests"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:11:31.612451+00:00",
+      "finished_utc": "2026-11-15T02:11:37.987830+00:00",
+      "elapsed_seconds": 6.375409298000022,
+      "exit_code": 0
+    },
+    {
+      "step": "pipeline_final",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "dataset_pipeline/tests"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:17:53.174679+00:00",
+      "finished_utc": "2026-11-15T02:17:59.756931+00:00",
+      "elapsed_seconds": 6.582262399000001,
+      "exit_code": 0
+    },
+    {
+      "step": "pipeline_semantics",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "dataset_pipeline/tests"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:12:47.286232+00:00",
+      "finished_utc": "2026-11-15T02:12:53.450679+00:00",
+      "elapsed_seconds": 6.164456016000031,
+      "exit_code": 0
+    },
+    {
+      "step": "research_baseline",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:09:46.193336+00:00",
+      "finished_utc": "2026-11-15T02:09:59.152875+00:00",
+      "elapsed_seconds": 12.959567974999999,
+      "exit_code": 1
+    },
+    {
+      "step": "research_check",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:09:45.911594+00:00",
+      "finished_utc": "2026-11-15T02:09:46.160987+00:00",
+      "elapsed_seconds": 0.2494032349999884,
+      "exit_code": 0
+    },
+    {
+      "step": "research_final",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:17:51.632734+00:00",
+      "finished_utc": "2026-11-15T02:18:06.698966+00:00",
+      "elapsed_seconds": 15.066239878000033,
+      "exit_code": 0
+    },
+    {
+      "step": "research_guard_fixed",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:11:20.154738+00:00",
+      "finished_utc": "2026-11-15T02:11:33.692224+00:00",
+      "elapsed_seconds": 13.53752401700001,
+      "exit_code": 1
+    },
+    {
+      "step": "research_linux_fixed",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:12:02.448101+00:00",
+      "finished_utc": "2026-11-15T02:12:17.467161+00:00",
+      "elapsed_seconds": 15.019070049999982,
+      "exit_code": 0
+    },
+    {
+      "step": "sampler_recorded",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "validation_v03.execution_record",
+        "run",
+        "--config",
+        "/workspace/work/private_artifacts/cloud_20261115/sampler_config.private.json",
+        "--repo",
+        "/workspace/work/codex",
+        "--record",
+        "/workspace/work/private_artifacts/cloud_sampler_record_20261115_01",
+        "--artifact-root",
+        "/workspace/work/private_artifacts/cloud_sampler_20261115_01",
+        "--",
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "experiments.motion_fixture.bounded_sampling",
+        "--output",
+        "/workspace/work/private_artifacts/cloud_sampler_20261115_01",
+        "--seed",
+        "19",
+        "--max-attempts",
+        "6",
+        "--timeout-seconds",
+        "30"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:17:35.650699+00:00",
+      "finished_utc": "2026-11-15T02:17:35.849184+00:00",
+      "elapsed_seconds": 0.1984931609999876,
+      "exit_code": 2
+    },
+    {
+      "step": "sampler_recorded_02",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "validation_v03.execution_record",
+        "run",
+        "--config",
+        "/workspace/work/private_artifacts/cloud_20261115/sampler_config_02.private.json",
+        "--repo",
+        "/workspace/work/codex",
+        "--record",
+        "/workspace/work/private_artifacts/cloud_sampler_record_20261115_02",
+        "--artifact-root",
+        "/workspace/work/private_artifacts/cloud_sampler_20261115_02",
+        "--",
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "experiments.motion_fixture.bounded_sampling",
+        "--output",
+        "/workspace/work/private_artifacts/cloud_sampler_20261115_02",
+        "--seed",
+        "19",
+        "--max-attempts",
+        "6",
+        "--timeout-seconds",
+        "30"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:17:50.077352+00:00",
+      "finished_utc": "2026-11-15T02:17:52.203259+00:00",
+      "elapsed_seconds": 2.1259175459999824,
+      "exit_code": 0
+    },
+    {
+      "step": "sampler_verify",
+      "command": [
+        "/workspace/work/venvs/research/bin/python",
+        "-m",
+        "validation_v03.execution_record",
+        "verify",
+        "--record",
+        "/workspace/work/private_artifacts/cloud_sampler_record_20261115_02"
+      ],
+      "cwd": "/workspace/work/codex",
+      "started_utc": "2026-11-15T02:18:35.497960+00:00",
+      "finished_utc": "2026-11-15T02:18:35.572005+00:00",
+      "elapsed_seconds": 0.07405188699999599,
+      "exit_code": 0
+    },
+    {
+      "step": "sampling_tests",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "dataset_pipeline/tests",
+        "-p",
+        "test_bounded_sampling.py"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:16:11.635779+00:00",
+      "finished_utc": "2026-11-15T02:16:13.708814+00:00",
+      "elapsed_seconds": 2.073167828999999,
+      "exit_code": 0
+    },
+    {
+      "step": "ui_install",
+      "command": [
+        "/workspace/work/venvs/ui/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-cache-dir",
+        "websockets==16.0"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:09:02.799316+00:00",
+      "finished_utc": "2026-11-15T02:09:06.967866+00:00",
+      "elapsed_seconds": 4.168555037999994,
+      "exit_code": 0
+    },
+    {
+      "step": "ui_setup",
+      "command": [
+        "python3",
+        "-m",
+        "venv",
+        "/workspace/work/venvs/ui"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:08:54.681636+00:00",
+      "finished_utc": "2026-11-15T02:08:56.326368+00:00",
+      "elapsed_seconds": 1.6447412770000085,
+      "exit_code": 0
+    },
+    {
+      "step": "video_check",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/workspace/work/handcaptcha",
+      "started_utc": "2026-11-15T02:11:31.137504+00:00",
+      "finished_utc": "2026-11-15T02:11:31.583543+00:00",
+      "elapsed_seconds": 0.4460473330000241,
+      "exit_code": 0
+    },
+    {
+      "step": "video_install",
+      "command": [
+        "/workspace/work/venvs/video/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-cache-dir",
+        "-r",
+        "/workspace/work/handcaptcha/dataset_pipeline/requirements-win-py310.txt"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:09:31.302800+00:00",
+      "finished_utc": "2026-11-15T02:11:05.082316+00:00",
+      "elapsed_seconds": 93.779629591,
+      "exit_code": 0
+    },
+    {
+      "step": "video_python",
+      "command": [
+        "uv",
+        "python",
+        "install",
+        "3.10"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:09:04.323355+00:00",
+      "finished_utc": "2026-11-15T02:09:05.114413+00:00",
+      "elapsed_seconds": 0.7910676829999943,
+      "exit_code": 0
+    },
+    {
+      "step": "video_venv",
+      "command": [
+        "/workspace/work/python/cpython-3.10-linux-x86_64-gnu/bin/python3.10",
+        "-m",
+        "venv",
+        "/workspace/work/venvs/video"
+      ],
+      "cwd": "/workspace",
+      "started_utc": "2026-11-15T02:09:28.361092+00:00",
+      "finished_utc": "2026-11-15T02:09:31.276716+00:00",
+      "elapsed_seconds": 2.9156359870000017,
+      "exit_code": 0
+    }
+  ],
+  "sampler_summary": {
+    "attempts_n": 6,
+    "biological_validity_proven": false,
+    "elapsed_seconds": 0.2912671390000696,
+    "human_observations_n": 0,
+    "model_used": false,
+    "reason_counts": {
+      "NO_HUMAN_FEASIBILITY_EVIDENCE": 6,
+      "UNCHECKED_SURFACE_COLLISION_PHYSICS": 6,
+      "UNRESOLVED_LIMIT:angular_acceleration_rad_s2": 6,
+      "UNRESOLVED_LIMIT:angular_speed_rad_s": 6,
+      "UNRESOLVED_LIMIT:bone_lengths": 6,
+      "UNRESOLVED_LIMIT:joint_angle_hulls": 6,
+      "UNRESOLVED_LIMIT:palm_curvatures": 6,
+      "UNRESOLVED_LIMIT:palm_spread_radians": 6,
+      "UNVERIFIED_PHYSICAL_UNITS": 6
+    },
+    "rejected_n": 6,
+    "release_allowed": false,
+    "scope": "authored_QA_sampler_and_rejection_ledger_only",
+    "states": {
+      "UNRESOLVED_LIMITS": 6
+    },
+    "stop_reason": "ATTEMPT_BUDGET",
+    "validated_pool_candidates_n": 0,
+    "version": "bounded_authored_recipe_diagnostic_v1"
+  },
+  "limitations": [
+    "Initial clone/read/research install commands have tool output only, not these per-command receipts.",
+    "UTC values are actual host clock readings, not independent timestamp authentication.",
+    "Public rows exclude detailed logs, raw/synthetic coordinates, model assets, input fingerprints and participant records.",
+    "Installed-version locks do not verify downloaded wheel bytes.",
+    "Chromium sandbox blocked browser checks; Node checks do not establish human effects.",
+    "handcaptcha Git push and connector tree writes both returned 403; patch retained in codex PR."
+  ]
+}

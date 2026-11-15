@@ -47,6 +47,17 @@ class ExecutionRecordTests(unittest.TestCase):
         self.assertEqual(verify(self.record)['integrity'], 'RECORDED_FILES_MATCH')
         self.assertFalse(verify(self.record)['scientific_result_or_source_authentication_proven'])
 
+    @unittest.skipIf(sys.platform=='win32','POSIX venv executable-link contract')
+    def test_executable_link_records_target_but_artifact_links_remain_forbidden(self):
+        executable=self.root/'python-link';executable.symlink_to(Path(sys.executable).resolve())
+        result=run(self.config,self.repo,self.record,[str(executable),str(self.worker),str(self.output)],[self.output])
+        self.assertEqual(result['state'],'EXITED_ZERO')
+        start=json.loads((self.record/'started.private.json').read_text())
+        self.assertEqual(start['executable']['path'],str(executable))
+        self.assertEqual(start['executable']['resolved_path'],str(Path(sys.executable).resolve()))
+        (self.output/'link').symlink_to(self.input)
+        with self.assertRaises(ValueError):verify(self.record)
+
     def test_nonzero_and_missing_outputs_remain_inspectable_failure(self):
         result = self.execute("print('failed attempt');raise SystemExit(3)")
         self.assertEqual(result['state'], 'PROCESS_ERROR'); self.assertEqual(result['process_exit_code'], 3)
