@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "source_id": "BIO-06",
+  "doi": "10.1155/2013/910961",
+  "title": "Constraint Study for a Hand Exoskeleton: Human Hand Kinematics and Dynamics",
+  "year": 2013,
+  "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1155/2013/910961",
+  "original_paper_mirror": "https://pdfs.semanticscholar.org/5a84/3ade1ba00d075c4a9ae93c331dc7ee2c4b70.pdf",
+  "checked_date": "2026-11-15",
+  "verification": "Original paper PDF identity and selected pages 2,6,11,12 checked; tables 6/9 and Section 6 visually reviewed.",
+  "status": "REFERENCE_EXTRACTION_NOT_ADMISSIBLE_PROFILE",
+  "production_profile_applied": false,
+  "release_allowed": false,
+  "table6_selected_rows": [
+    {"finger":"thumb","joint":"TMC","flexion_reported_degrees":[50,90],"extension_reported_degrees":[15,15],"abduction_adduction_reported_degrees":[45,60]},
+    {"finger":"index","joint":"MCP","flexion_reported_degrees":[90,90],"extension_reported_degrees":[30,40],"abduction_adduction_reported_degrees":[60,60]},
+    {"finger":"index","joint":"PIP","flexion_reported_degrees":[110,110],"extension_reported_degrees":[0,0],"abduction_adduction_reported_degrees":[0,0]},
+    {"finger":"index","joint":"DIP","flexion_reported_degrees":[80,90],"extension_reported_degrees":[5,5],"abduction_adduction_reported_degrees":[0,0]}
+  ],
+  "table6_semantics": "Selected reported excursion entries, NOT signed intervals of allowed poses. Table cites Cobos et al. [13]. Joint axes, neutral pose, thumb and BMC/MANO correspondence remain unresolved.",
+  "coupling_reference": {
+    "locator": "Section 3.1 Eq.(1), paper page 2 and following caveat on page 3",
+    "relations": ["theta_DIP approximately (2/3)*theta_PIP", "theta_PIP approximately (3/4)*theta_MCP_flexion_extension"],
+    "hard_equality_allowed": false,
+    "reason": "Paper explicitly treats these as non-strict and subject/task dependent; no project residual tolerance established."
+  },
+  "velocity_reference": {
+    "locator": "Section 6 paper page 11; Table 9 paper page 12",
+    "subjects": {"male":10,"female":10},
+    "task": "Repeated unloaded fist closure and opening as fast as possible for 10 seconds",
+    "measurement_window_seconds": 10,
+    "index_excursions_degrees": {"MCP":85,"PIP":105,"DIP":70},
+    "reported_flexion_sign": "negative in the paper's Section 4.1 convention",
+    "mean_cycles": {"male":26.1,"female":26.0},
+    "table9_reported_max_rad_s": {"male":{"MCP":12.164,"PIP":15.026,"DIP":10.018},"female":{"MCP":12.118,"PIP":14.969,"DIP":9.979}},
+    "printed_motion_law": "theta(t)=(D/2)*(cos(pi*t/t1)-1)",
+    "printed_t1_definition": "t1=10 seconds / number of cycles; described as period of each cycle",
+    "printed_max_speed_formula": "abs(-pi*D/(2*t1))",
+    "speed_type": "table maxima derived using an assumed sinusoidal law and task summary, not a universal safe/admissible speed limit",
+    "phase_definition_status": "full_cycle_vs_half_cycle_requires_clarification",
+    "acceleration_limit_established": false
+  },
+  "unresolved_before_profile_use": [
+    "Trace Table 6 to original cited source and its measurement population/protocol",
+    "Map neutral pose, MDH axes/signs and anatomical joints to BMC frames and native MANO points",
+    "Do not reinterpret a reported range of excursions as a signed admissible interval",
+    "Clarify full-cycle versus half-cycle definition in Section 6 before using temporal numbers",
+    "Establish task/population scope, uncertainty and subject variation; maxima are not comfort limits",
+    "Obtain coupled angle regions and calibrated velocity/acceleration criteria for this task"
+  ]
+}
