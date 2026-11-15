@@ -165,8 +165,12 @@ def render_video(case, vertices, joints, faces, spec, timer):
             ids.append(visible_faces); depths.append(z); raster_rows.append(report)
             if frame == 12:
                 with timer.phase('preview_store'):
-                    if not cv2.imwrite(str(case/'preview.private.png'), image):
+                    # OpenCV's direct image filename API is not Unicode-safe on
+                    # this Windows runtime; encode bytes, then use pathlib I/O.
+                    ok, png = cv2.imencode('.png', image)
+                    if not ok:
                         raise ValueError('Preview PNG encoding failed')
+                    (case/'preview.private.png').write_bytes(png.tobytes())
     finally:
         with timer.phase('encoder_finalize'):
             writer.release()
