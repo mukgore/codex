@@ -32,6 +32,9 @@ VERSION = 'primitive_conditioned_model_prior_mano_private_generator_v1'
 FRAMES = 25
 SEEDS = (7, 19)
 PRIMITIVES = ('synchronous_flex_spread', 'sequential_flex_spread')
+CUE_PRIMITIVES = ('middle_only_cues_open', 'middle_ring_cues_open')
+PROFILES = {'legacy_all_fingers': PRIMITIVES, 'non_target_cues_open': CUE_PRIMITIVES}
+ALL_PRIMITIVES = PRIMITIVES + CUE_PRIMITIVES
 POLICIES = ('author_exact', 'ideal_mirror_comparator')
 PLANNED = 402  # two fresh neutral forwards plus sixteen 25-frame candidates
 
@@ -72,14 +75,14 @@ def smooth(x):
 
 
 def recipe(seed, primitive):
-    if type(seed) is not int or seed not in SEEDS or primitive not in PRIMITIVES:
+    if type(seed) is not int or seed not in SEEDS or primitive not in ALL_PRIMITIVES:
         raise ValueError('Explicit registered engineering seed/primitive required')
-    index = PRIMITIVES.index(primitive)
+    index = ALL_PRIMITIVES.index(primitive)
     domains = {name: [seed, index, domain] for name, domain in (('trajectory', 1), ('geometry', 2), ('appearance', 3))}
     motion = np.random.default_rng(np.random.SeedSequence(domains['trajectory']))
     geometry = np.random.default_rng(np.random.SeedSequence(domains['geometry']))
     appearance = np.random.default_rng(np.random.SeedSequence(domains['appearance']))
-    return {'version': VERSION, 'seed': seed, 'primitive': primitive, 'rng': 'numpy.PCG64 via SeedSequence',
+    spec = {'version': VERSION, 'seed': seed, 'primitive': primitive, 'rng': 'numpy.PCG64 via SeedSequence',
         'numpy_version': np.__version__, 'substreams_entropy': domains,
         'duration_seconds': float(motion.choice([2., 3.])), 'peak_fraction': float(motion.uniform(.4, .6)),
         'shared_bend_degrees': float(motion.uniform(40., 60.)),
@@ -94,6 +97,14 @@ def recipe(seed, primitive):
         'engineering_parameters_not_clinical_or_population_ranges': True,
         'coupling_status': 'authored engineering synergy; not transferred Chen clinical coupling coefficients',
         'independent_joint_uniform_sampling': False, 'new_independent_family': False}
+    if primitive in CUE_PRIMITIVES:
+        # Native finger order is index, middle, pinky, ring. Holding authored
+        # angles at zero is a proposal constraint, not proof of visible pixels
+        # or of independent finger control/comfort in a human hand.
+        spec['coupling']['finger_weights_native_order'] = [0., 1., 0., 0. if primitive == CUE_PRIMITIVES[0] else .8]
+        spec.update(non_target_cue_constraint='index and pinky anatomical angles fixed at model neutral; thumb neutral',
+                    visibility_verified=False, human_independent_finger_control_verified=False)
+    return spec
 
 
 def trajectory(spec, hand, policy):
@@ -111,6 +122,14 @@ def trajectory(spec, hand, policy):
         result[:, start, 2] = bend*p; result[:, start+1, 2] = bend*coupling['PIP_to_MCP']*p
         result[:, start+2, 2] = bend*coupling['DIP_to_MCP']*p
         result[:, start, 1] = spec['shared_spread_degrees']*(1.-finger*.15)*p
+    if spec['primitive'] in CUE_PRIMITIVES:
+        # No index/pinky MCP spread despite a nonzero sampled shared-spread
+        # value; keep the unused random draw in the reproducible proposal.
+        result[:, [0, 6], :] = 0.
+        if spec['primitive'] == CUE_PRIMITIVES[0]: result[:, 9:12, :] = 0.
+        if hand == 'left' and policy == 'ideal_mirror_comparator':
+            result *= np.array([-1., -1., 1.])
+        return times, result*np.pi/180
     p = pulse(.08 if spec['primitive'] == 'sequential_flex_spread' else 0.)
     result[:, 12, 0] = spec['thumb_cmc_twist_degrees']*p
     result[:, 12, 1] = spec['thumb_cmc_spread_degrees']*p
@@ -211,7 +230,10 @@ def render_video(case, vertices, joints, faces, spec, timer):
         'decoded_pixel_hashes_match': True, 'masked_video': False, 'final_delivery_rendition_checked': False}
 
 
-def execute(intake, research_record, worker_root, anatomical_root, anatomical_record, loss_source, output):
+def execute(intake, research_record, worker_root, anatomical_root, anatomical_record, loss_source, output, profile='legacy_all_fingers'):
+    if profile not in PROFILES: raise ValueError('Explicit registered primitive profile required')
+    primitives = PROFILES[profile]
+    planned = 2 + 2*len(SEEDS)*len(primitives)*len(POLICIES)*FRAMES
     sources = authorize_inputs(intake, research_record); verify(anatomical_record)
     anatomical_root = _private(anatomical_root); output = _private(output)
     receipt = json.loads((_private(anatomical_record)/'receipt.private.json').read_text(encoding='utf-8'))
@@ -229,7 +251,7 @@ def execute(intake, research_record, worker_root, anatomical_root, anatomical_re
         'endpoint': 'conditioned_native_generation_surface_and_unmasked_video_QA',
         'input_exposure': 'existing private research model and source model defaults',
         'cache_state': 'sequential hand-shared model; OS/module/codec caches uncontrolled',
-        'planned_frames': PLANNED, 'timeout_seconds': 900,
+        'planned_frames': planned, 'timeout_seconds': 900,
         'scope': 'model-conditioned engineering primitives, not biological, human, object, security or pool approval'})
     cases = []; setups = []; completed = 0; fingerprints = {}; video_fingerprints = {}
     try:
@@ -278,7 +300,7 @@ def execute(intake, research_record, worker_root, anatomical_root, anatomical_re
                 setups.append({'hand': hand, 'wall_ns': time.perf_counter_ns()-setup_start,
                                'fresh_neutral_max_abs_error_native_units': error, 'scope': 'shared setup excluded from per-video times'})
                 for seed in SEEDS:
-                    for primitive in PRIMITIVES:
+                    for primitive in primitives:
                         for policy in POLICIES:
                             journal.check_budget(); label = f'{hand}_s{seed}_{primitive}_{policy}'
                             case = output/label; case.mkdir(); timer = Timings(); ready = None; state = 'INCOMPLETE'
@@ -376,12 +398,12 @@ def execute(intake, research_record, worker_root, anatomical_root, anatomical_re
             for row in sources.values():
                 if snapshot_file(row['path']) != row: raise ValueError('Original model input changed')
             if extract_profile(loss_source) != source_prior: raise ValueError('Pinned prior source changed')
-        if completed != PLANNED: raise ValueError('Native forward/QC sample count differs from design')
+        if completed != planned: raise ValueError('Native forward/QC sample count differs from design')
         journal.finish('COMPLETED')
     finally:
         if not journal.closed: journal.close_without_terminal()
     export_bundle(output/'journal', output/'journal_bundle.private.zip'); verified = verify_bundle(output/'journal_bundle.private.zip')
-    summary = {'version': VERSION, 'scope': 'private_model_conditioned_primitives_surface_and_unmasked_video_diagnostics',
+    summary = {'version': VERSION, 'primitive_profile': profile, 'scope': 'private_model_conditioned_primitives_surface_and_unmasked_video_diagnostics',
         'cases_n': len(cases), 'frames_per_case': FRAMES, 'native_forward_frames_n': completed,
         'rendered_decoded_frames_n': sum(r['render']['frames_n'] for r in cases), 'cases': cases, 'shared_hand_setups': setups,
         'runtime_environment': environment,
@@ -405,6 +427,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('intake', 'research-record', 'worker-root', 'anatomical-root', 'anatomical-record', 'loss-source', 'output'):
         parser.add_argument('--'+name, type=Path, required=True)
+    parser.add_argument('--profile', choices=tuple(PROFILES), default='legacy_all_fingers')
     a = parser.parse_args()
     print(json.dumps(execute(a.intake, a.research_record, a.worker_root, a.anatomical_root,
-                             a.anatomical_record, a.loss_source, a.output)))
+                             a.anatomical_record, a.loss_source, a.output, a.profile)))

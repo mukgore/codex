@@ -5,12 +5,32 @@ import unittest
 import numpy as np
 
 from analysis.runtime_benchmark.mano_conditioned_generator import (
-    Timings, recipe, trajectory, policy_profile, SEEDS, PRIMITIVES, POLICIES, FRAMES,
+    Timings, recipe, trajectory, policy_profile, SEEDS, PRIMITIVES, CUE_PRIMITIVES, POLICIES, FRAMES,
 )
 from analysis.runtime_benchmark.mano_model_prior_audit import assess
 
 
 class ConditionedGeneratorTests(unittest.TestCase):
+    def test_cue_proposals_keep_index_pinky_and_thumb_neutral_across_hands_and_policies(self):
+        source = self.source()
+        for seed in SEEDS:
+            for primitive in CUE_PRIMITIVES:
+                spec = recipe(seed, primitive)
+                self.assertFalse(spec['visibility_verified'])
+                self.assertFalse(spec['human_independent_finger_control_verified'])
+                for hand in ('right', 'left'):
+                    for policy in POLICIES:
+                        times, angles = trajectory(spec, hand, policy)
+                        np.testing.assert_array_equal(angles[:, list(range(3))+list(range(6,9))+list(range(12,15))], 0.)
+                        self.assertGreater(np.max(angles[:,3:6,2]), 0.)
+                        if primitive == CUE_PRIMITIVES[0]: np.testing.assert_array_equal(angles[:,9:12], 0.)
+                        else: self.assertGreater(np.max(angles[:,9:12,2]), 0.)
+                        self.assertFalse(assess(angles, policy_profile(source,hand,policy))[1].any())
+                        np.testing.assert_allclose(angles[[0,-1]], 0., atol=1e-14)
+                        replay_t, replay = trajectory(recipe(seed,primitive),hand,policy)
+                        np.testing.assert_array_equal(replay,angles)
+                        np.testing.assert_array_equal(replay_t,times)
+
     def source(self):
         return json.loads((Path(__file__).resolve().parents[1]/'references/manotorch_default_constraint_extraction.json').read_text())
 
