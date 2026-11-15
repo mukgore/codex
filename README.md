@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**현재 상태 — 사용자 요청으로 중단:** [MANO 원래 축182자세 진단](docs/deliveries/2026-11-15_mano_axis_probe.md)을 마무리했습니다. 임상 축/생체 허용 범위는 미확인이고, 다음 작업은 재개 지시 후 진행합니다.
+
 **좌표계 참고 검산:** [논문 두 모델의264조건과BMC 방향25조건](docs/deliveries/2026-11-15_kinematic_conventions.md)을 맞춰봤습니다. 실제 MANO/임상 좌표 대응이나 생체 허용값 승인과는 구분합니다.
 
 **생체 원문 대조:** [가동 범위 원출처를 확보해 재인용표와 비교](docs/deliveries/2026-11-15_original_constraint_comparison.md)했습니다. 엄지2칸의 차이와 좌표계 차이를 기록했고 실행 허용값으로 자동 채택하지 않았습니다.

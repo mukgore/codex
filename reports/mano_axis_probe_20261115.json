@@ -1,0 +1,67 @@
+{
+  "biological_validity_proven": false,
+  "cases": [
+    {
+      "clinical_axis_mapping_verified": false,
+      "forward_samples_n": 91,
+      "geometry_errors_n": 0,
+      "hand": "right",
+      "max_native_rotation_abs_error": 5.192675303633543e-09,
+      "measurable_axis_pairs_n": 45,
+      "measurable_bmc_samples_n": 91,
+      "native_numeric_tolerance": 1.5156182016808281e-06,
+      "native_rotation_checks_n": 90,
+      "release_allowed": false,
+      "target_response_rank_counts": {
+        "2": 15
+      }
+    },
+    {
+      "clinical_axis_mapping_verified": false,
+      "forward_samples_n": 91,
+      "geometry_errors_n": 0,
+      "hand": "left",
+      "max_native_rotation_abs_error": 5.192675303633543e-09,
+      "measurable_axis_pairs_n": 45,
+      "measurable_bmc_samples_n": 91,
+      "native_numeric_tolerance": 1.5156182016808281e-06,
+      "native_rotation_checks_n": 90,
+      "release_allowed": false,
+      "target_response_rank_counts": {
+        "2": 15
+      }
+    }
+  ],
+  "clinical_axes_verified_n": 0,
+  "hands_n": 2,
+  "limitations": [
+    "Input +/-0.02 radians is an engineering probe, not a biological admissibility or safety bound.",
+    "Native parent-frame coordinate axes at flat model mean are not measured clinical/MDH flexion axes.",
+    "A single BMC pair has two scalar outputs; local rank does not establish a unique three-axis anatomical inverse.",
+    "Surface tips and pose blendshapes can respond beyond rigid joint-center motion; all BMC responses retained.",
+    "Sample index orders independent probes, not a continuous trajectory; no speed or acceleration derived.",
+    "No collision, hand-object mechanics, human comfort, final masked rendering or pool admission."
+  ],
+  "measurable_axis_pairs_n": 90,
+  "measurable_bmc_samples_n": 182,
+  "native_forward_samples_n": 182,
+  "native_rotation_checks_n": 180,
+  "new_model_inference": true,
+  "numeric_biomechanical_profile_changed": false,
+  "physical_unit_verified": false,
+  "release_allowed": false,
+  "runtime_journal_completed_frames_n": 182,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "systematic_flat_native_axis_forward_probe_not_motion_or_clinical_calibration",
+  "version": "mano_flat_native_axis_central_probe_v1",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 12,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "research_tests_passed": 206,
+  "producer_code_commit": "faf9c3b",
+  "hand_feature_code_commit": "5c13624"
+}
