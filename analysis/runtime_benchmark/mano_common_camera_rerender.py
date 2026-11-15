@@ -13,7 +13,8 @@ import time
 import numpy as np
 
 from analysis.runtime_benchmark.common_camera_mask import (
-    common_camera, view_basis, project, surface_proxy, surface_weight_interval, VIEWS, VERSION, WIDTH, HEIGHT,
+    common_camera, view_basis, project, surface_proxy, surface_weight_interval, neutral_registration,
+    CAMERA_MODES, VIEWS, VERSION, WIDTH, HEIGHT,
 )
 from analysis.runtime_benchmark.private_mesh_raster import rasterize, BACKGROUND_FACE
 from analysis.runtime_benchmark.mano_conditioned_generator import Timings
@@ -69,7 +70,8 @@ def check_proxy_encoded(path, amodal, fps):
             'anatomical_coverage_proven': False, 'scope': 'declared rest-bone amodal surface proxy only'}
 
 
-def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
+def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_mode):
+    if camera_mode not in CAMERA_MODES: raise ValueError('Explicit camera registration mode required')
     source = _private(source); output = _private(output); before = verify(source_record)
     receipt = json.loads((_private(source_record)/'receipt.private.json').read_text())
     if before['state'] != 'EXITED_ZERO' or receipt['artifact_roots'] != [str(source)]:
@@ -96,7 +98,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
         'scope': '32 source videos; masking only if unchanged geometry and conservative proxy gates allow; all quarantined'})
     completed = 0; cases = []; media = []
     try:
-        shared_start = time.perf_counter_ns(); loaded = []; proxies = {}
+        shared_start = time.perf_counter_ns(); loaded = []; proxies = {}; registrations = {}; neutral_references = {}
         with journal.stage('bound_sources_static_proxies_and_one_shared_calibration'):
             for original in source_summary['cases']:
                 directory = source/original['case']
@@ -114,10 +116,33 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
                 with np.load(source/(hand+'_fresh_neutral.private.npz'), allow_pickle=False) as neutral:
                     proxy = surface_proxy(neutral['vertices'][0], neutral['points'], neutral['faces'])
                     proxy['faces'] = neutral['faces'].copy(); proxies[hand] = proxy
+                    neutral_references[hand] = neutral['points'].copy()
+                    registrations[hand] = neutral_registration(neutral['points'], hand)
                     if hand == 'right': reference = neutral['points'].copy()
                 np.savez_compressed(output/(hand+'_proxy_definition.private.npz'),
                     protected_face_ids=proxy['protected_face_ids'], vertex_nearest_edge=proxy['vertex_nearest_edge'],
                     **{k+'_patch_face_ids': v for k, v in proxy['tip_patches'].items()})
+            registration_rows = []
+            for case in loaded:
+                hand = case['original']['hand']; original_points = case['joints'].astype(float).copy()
+                origin = original_points[0, 0].copy(); case['native_joints'] = original_points
+                case['source_first_wrist'] = origin; case['registration_basis'] = np.eye(3)
+                if camera_mode == 'hand_neutral_registered':
+                    basis = registrations[hand]; case['registration_basis'] = basis
+                    native_vertices = case['vertices'].astype(float)
+                    case['vertices'] = (native_vertices-origin)@basis
+                    case['joints'] = (original_points-origin)@basis
+                    error = float(np.abs(np.linalg.norm(native_vertices-origin,axis=2)-np.linalg.norm(case['vertices'],axis=2)).max())
+                    if error > 1e-10: raise ValueError('Rigid registration changed source point distances')
+                else: error = 0.
+                registration_rows.append({'case':case['original']['case'],'hand':hand,
+                    'matrix_columns':case['registration_basis'].tolist(),'first_wrist':origin.tolist(),
+                    'max_radial_distance_residual_native_units':error,'per_frame_orientation_fit':False})
+            if camera_mode == 'hand_neutral_registered':
+                reference = (reference-reference[0])@registrations['right']
+            (output/'neutral_registration.private.json').write_bytes(canonical({'camera_mode':camera_mode,
+                'fixed_hand_bases':{k:v.tolist() for k,v in registrations.items()},'cases':registration_rows,
+                'left_basis_lateral_sign':-1,'clinical_or_palm_back_axes_verified':False}))
             camera = common_camera(reference, loaded, config)
             (output/'shared_camera.private.json').write_bytes(canonical(camera))
             shared_ns = time.perf_counter_ns()-shared_start
@@ -141,14 +166,16 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
                                 'landmarks_px': {name: {'x': float(p[0]), 'y': float(p[1]), 'z': float(z)}
                                     for name, p, z in zip(LANDMARK_NAMES, points, zs)},
                                 'landmarks_world': {name: dict(zip(('x','y','z'), p.tolist())) for name,p in zip(LANDMARK_NAMES, raw)}}
-                                for i,(t,points,zs,raw) in enumerate(zip(case['times'],joint_xy,joint_depth,case['joints']))]
+                                for i,(t,points,zs,raw) in enumerate(zip(case['times'],joint_xy,joint_depth,case['native_joints']))]
                             info = {'width': WIDTH, 'height': HEIGHT, 'fps': fps, 'total_frames': n}
                             (directory/'reference.private.json').write_bytes(canonical({'frames': frames, 'source_info': info,
                                 'px_z_semantics': 'render-camera depth in unverified native length units, not pixel/metric depth',
-                                'world_semantics': 'original SDK native coordinates; only renderer subtracts first wrist'}))
+                                'world_semantics': 'original SDK native coordinates; renderer applies recorded fixed neutral registration/first wrist translation'}))
                             (directory/'camera_use.private.json').write_bytes(canonical({'view': view,
                                 'basis_columns': basis.tolist(), 'center': center.tolist(), 'scale': camera['pixels_per_native_unit'],
-                                'first_wrist_origin': origin.tolist(), 'shared_calibration': True}))
+                                'first_wrist_origin': origin.tolist(), 'shared_calibration': True,'camera_mode':camera_mode,
+                                'native_to_registered_basis_columns':case['registration_basis'].tolist(),
+                                'native_first_wrist':case['source_first_wrist'].tolist()}))
                         source_video = directory/'source.private.avi'
                         with timer.phase('encoder_open'):
                             writer = cv2.VideoWriter(str(source_video), cv2.VideoWriter_fourcc(*'FFV1'), fps, (WIDTH, HEIGHT))
@@ -264,7 +291,9 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
     finally:
         if not journal.closed: journal.close_without_terminal()
     export_bundle(output/'journal',output/'journal_bundle.private.zip'); recovered=verify_bundle(output/'journal_bundle.private.zip')
-    summary={'version':VERSION,'scope':'shared proper cameras and rest-bone proxy mask/codec diagnostic, not anatomical/human/security approval',
+    summary={'version':'shared_camera_hand_neutral_registration_modes_v2','camera_contract_version':VERSION,
+        'camera_mode':camera_mode,'registration_max_radial_residual_native_units':max(r['max_radial_distance_residual_native_units'] for r in registration_rows),
+        'scope':'shared proper cameras and rest-bone proxy mask/codec diagnostic, not anatomical/human/security approval',
         'source_cases_n':16,'views_n':2,'rendered_source_cases_n':len(cases),'rendered_source_frames_n':completed,
         'upstream_distinct_surface_indicator_frames_n':sum(c['surface_indicator_frames_n'] for c in source_summary['cases']),
         'upstream_collision_counts_are_reused_per_view_not_new_3D_tests':True,
@@ -276,6 +305,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
         'source_record_reverified':True,'new_independent_families_n':0,'masked_sources_sent_to_browser_n':0,
         'full_anatomical_mask_coverage_proven':False,'biological_validity_proven':False,'accepted_into_pool_n':0,'release_allowed':False,
         'limitations':['Calibration fits current complete development sequences/circle envelopes, not a calibrated physical or causal live camera.',
+            'Optional hand-neutral registration is a fixed proper model convention with signed left lateral axis, not measured clinical or palm/back alignment.',
             'Only first wrist translation is removed; both views use proper shared axes and reverse horizontal/depth signs.',
             'Nearest-rest-bone face sets and nonempty distal patches are geometric surrogates, not independent anatomical/recognizability labels.',
             'Opposite views and duplicate source policies are correlated and not independent tasks or security entropy.',
@@ -287,4 +317,5 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('source','source-record','worker-root','ffmpeg','ffprobe','output'):parser.add_argument('--'+name,type=Path,required=True)
-    a=parser.parse_args();print(json.dumps(execute(a.source,a.source_record,a.worker_root,a.ffmpeg,a.ffprobe,a.output)))
+    parser.add_argument('--camera-mode',choices=CAMERA_MODES,required=True)
+    a=parser.parse_args();print(json.dumps(execute(a.source,a.source_record,a.worker_root,a.ffmpeg,a.ffprobe,a.output,a.camera_mode)))

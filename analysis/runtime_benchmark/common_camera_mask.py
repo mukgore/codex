@@ -9,6 +9,25 @@ EDGES = tuple((0, b) for b in BASES)+tuple((b+j, b+j+1) for b in BASES for j in 
 PROTECTED_EDGES = ((9, 10), (10, 11))
 TIP_EDGES = {'thumb': (3, 4), 'index': (7, 8), 'ring': (15, 16), 'pinky': (19, 20)}
 VERSION = 'shared_reference_camera_and_rest_nearest_bone_proxy_v1'
+CAMERA_MODES = ('world_shared', 'hand_neutral_registered')
+
+
+def neutral_registration(reference, hand):
+    """Proper fixed model-neutral basis; left lateral sign preserves chirality.
+
+    This is a model reference convention, not measured clinical palm/back axes.
+    Apply row-vector coordinates as (points - first_wrist) @ basis for all
+    frames. No reflection, scale change or per-frame orientation fitting.
+    """
+    p = np.asarray(reference, float)
+    if p.shape != (21, 3) or not np.isfinite(p).all() or hand not in ('right', 'left'):
+        raise ValueError('Finite neutral reference and explicit hand required')
+    y = unit(p[9]-p[0]); x = p[17]-p[5]; x = unit(x-(x@y)*y)
+    if hand == 'left': x *= -1
+    result = np.column_stack((x, y, np.cross(x, y)))
+    if not np.allclose(result.T@result, np.eye(3), atol=1e-10) or np.linalg.det(result) < 0:
+        raise ValueError('Proper neutral registration required')
+    return result
 
 
 def unit(vector):

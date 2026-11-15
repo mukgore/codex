@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 
 from analysis.runtime_benchmark.common_camera_mask import (
-    common_camera, view_basis, project, surface_proxy, surface_weight_interval, VIEWS, WIDTH, HEIGHT,
+    common_camera, view_basis, project, surface_proxy, surface_weight_interval, neutral_registration, VIEWS, WIDTH, HEIGHT,
 )
 
 
@@ -21,6 +21,28 @@ def calibration():
 
 
 class CommonCameraMaskTests(unittest.TestCase):
+    def test_neutral_registration_preserves_chirality_under_rotated_native_left_frame(self):
+        right = reference(); reflection = np.diag([-1.,1.,1.])
+        # Arbitrary proper native embedding, including an upside-down long axis.
+        rotation = np.diag([-1.,-1.,1.]); offset = np.array([3.,-4.,2.])
+        left = right@reflection@rotation.T+offset
+        br = neutral_registration(right,'right'); bl = neutral_registration(left,'left')
+        rr = (right-right[0])@br; ll = (left-left[0])@bl
+        np.testing.assert_allclose(ll,rr*[-1.,1.,1.],atol=1e-14)
+        self.assertGreater(rr[9,1],0); self.assertGreater(ll[9,1],0)
+        self.assertAlmostEqual(np.linalg.det(bl),1.)
+
+    def test_registration_is_rigid_and_uses_a_fixed_neutral_not_each_frame(self):
+        neutral = reference(); basis = neutral_registration(neutral,'left')
+        sequence = np.stack((neutral,neutral+[.2,.1,.3])); origin = sequence[0,0]
+        registered = (sequence-origin)@basis
+        np.testing.assert_allclose(np.linalg.norm(sequence-origin,axis=2),np.linalg.norm(registered,axis=2),atol=1e-14)
+        self.assertGreater(np.linalg.norm(registered[1,0]-registered[0,0]),.1)
+
+    def test_registration_rejects_unlabeled_or_degenerate_hand_references(self):
+        with self.assertRaises(ValueError): neutral_registration(reference(),'unknown')
+        with self.assertRaises(ValueError): neutral_registration(np.zeros((21,3)),'right')
+
     def test_two_views_are_proper_fixed_cameras_and_opposite_depth(self):
         camera = calibration(); points = np.array([[.2, 1., .3], [-.7, 2., -.4]])
         positive, zp = project(points, np.zeros(3), camera, VIEWS[0])
