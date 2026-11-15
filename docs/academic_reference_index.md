@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**현재 모델 제약과 최종 표시의 한계 관측:** [상대 중지 대안의 실제 SDK/영상 대조](deliveries/2026-11-15_relative_middle_display_counterfactual.md)에서 변경48시점 중46개의 최종 H.264가 부모와 정확히 같았다. BIO-09는 모델 축/제약의 출처이며 이46/48은 본 프로젝트의 새로운 관측이다. 원형 연동·변경량·시간은 공학 대조이고 모델/샘플 표면 통과를 사람 유효 답·임상/보안 승인으로 바꾸지 않는다.
+
 **부위 근거의 제작 관문 연결:** [고정 profile/assignment/source-review·현재 모델 대응을 요구하는 기본 합집합 관문](deliveries/2026-11-15_author_union_generation_guard.md)을 실제 제작32source·가림/H.264 각16개로 검증했다. RGB/source 확인은 공유 helper로 옮겼으며 고정 source blob/프로젝트 대응표는 그대로다. 모델 부위의 추가 보호이며 독립 해부학/임상/사람 승인은 아니다.
 
 **BIO-09 부위 근거/실제 합집합 검사:** [CPF 보충 A.2–A.3·그림3–4와 palette/현재 양손 모델의 대응](deliveries/2026-11-15_author_surface_region_union_audit.md)을 추가했다. 숫자 ID/부위 이름은 논문 그림 색과 저자 RGB를 연결한 프로젝트 대응이며 각 손15개 centroid/예상 뼈·index 연결을 확인했다. 기존 보호를 줄이지 않은800프레임 검사에서 기존 가림/H.26416쌍도 추가 영역까지 통과했다. 원문 control point 병합 이름 불일치와 경계의 독립 해부학/임상/사람 검증은 남는다. 원문 렌더/정확한 source blob/불일치 기록은 private_artifacts/cpf_region_review_20261115, 계산/QC는 mano_author_region_audit_20261115에 보존한다.
