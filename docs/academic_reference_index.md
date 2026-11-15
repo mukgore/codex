@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**BIO-09 기본값 진단:** [고정 저자 기본값과 기존 랜덤8동작의 실제 손실 대조](deliveries/2026-11-15_mano_model_prior_audit.md)를 완료했다. [출처·구간·관절 배정 JSON](../references/manotorch_default_constraint_extraction.json)의 `BIO-09-IMPL-DEFAULTS`는 모델용 제약이며 원측정/사람 한계가 아니다. 엄지 비대칭 구간의 이상적 반사 대조, strict 초과와1e-6 영 mask 후 벌점을 구분했다. 코드: `analysis/runtime_benchmark/mano_model_prior_audit.py`.
+
 **BIO-09 구현 대조:** [실제1130자세·고정 저자 메서드/독립 계산](deliveries/2026-11-15_mano_anatomical_frames.md)을 완료했다. 기준축·회전 순서·비root 왕복과 별도 root를 확인했다. 원논문 전체 재현·임상 축 측정·제한값 승인은 아니다. 코드: `analysis/runtime_benchmark/mano_anatomical_frame_probe.py`. 원본4파일은 고정 Git blob 바이트와 일치하는 비공개 사본으로 보존했다.
 
 **자세/형상 후속:** [실제4346자세·24조건의 현재/고정 BMC 축 대조](deliveries/2026-11-15_mano_bmc_context_controls.md)를 완료했다. 기하 검산과 임상 축·생체 한계는 구분한다. 다음 축 후보의 논문과 저자 구현은 BIO-09에 추가했다.
