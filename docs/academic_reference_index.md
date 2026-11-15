@@ -1,8 +1,10 @@
 # 학술 자료 색인과 코드·주장 연결
 
-**공개 단서/시작 자세 후속:** [실제 가림/H.264 각16개와 실패 대조](deliveries/2026-11-15_visible_cue_conditioned_generation.md)를 기록했다. BIO-09는 모델 각도 제약의 출처이며20도 시작값·연동 계수는 공학 제안이다. 저자17label은 아직 적용하지 않았고 nearest-bone proxy의 기술 통과를 해부학/임상/사람 승인으로 바꾸지 않는다.
+**BIO-09 부위 근거/실제 합집합 검사:** [CPF 보충 A.2–A.3·그림3–4와 palette/현재 양손 모델의 대응](deliveries/2026-11-15_author_surface_region_union_audit.md)을 추가했다. 숫자 ID/부위 이름은 논문 그림 색과 저자 RGB를 연결한 프로젝트 대응이며 각 손15개 centroid/예상 뼈·index 연결을 확인했다. 기존 보호를 줄이지 않은800프레임 검사에서 기존 가림/H.26416쌍도 추가 영역까지 통과했다. 원문 control point 병합 이름 불일치와 경계의 독립 해부학/임상/사람 검증은 남는다. 원문 렌더/정확한 source blob/불일치 기록은 private_artifacts/cpf_region_review_20261115, 계산/QC는 mano_author_region_audit_20261115에 보존한다.
 
-**BIO-09 표면 label 후보 추가 확인:** 고정 저자 revision의 [778정점/17label 파일](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/assets/anchor/merged_vertex_assignment.txt), [loader](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/manotorch/utils/anchorutils.py)를 읽고 원본 blob 바이트와 일치하는 private 사본/License를 보존했다. 부위별 label 의미·paper§A.2·우리 topology/좌우손 대응은 미확인이며 이번 renderer에 적용하지 않았다. pickle mapping은 받거나 실행하지 않았다. 위치: `private_artifacts/manotorch_region_source_20261115/`. 독립적인 사람 해부학 주석이 아니라 저자 모델의 부위 정의 후보로 추적한다.
+**공개 단서/시작 자세 후속(당시 범위):** [실제 가림/H.264 각16개와 실패 대조](deliveries/2026-11-15_visible_cue_conditioned_generation.md)를 기록했다. BIO-09는 모델 각도 제약의 출처이며20도 시작값·연동 계수는 공학 제안이다. 저자17label은 아직 적용하지 않았고 nearest-bone proxy의 기술 통과를 해부학/임상/사람 승인으로 바꾸지 않는다.
+
+**BIO-09 표면 label 첫 확보(이력):** 고정 저자 revision의 [778정점/17label 파일](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/assets/anchor/merged_vertex_assignment.txt), [loader](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/manotorch/utils/anchorutils.py)를 읽고 원본 blob 바이트와 일치하는 private 사본/License를 보존했다. 당시 부위별 label 의미·paper§A.2·우리 topology/좌우손 대응은 미확인이었으며 그 렌더에는 적용하지 않았다. 후속 검토 범위는 위 최신 검사 링크에 구분한다. pickle mapping은 받거나 실행하지 않았다. 위치: `private_artifacts/manotorch_region_source_20261115/`. 독립적인 사람 해부학 주석이 아니라 저자 모델의 부위 정의 후보로 추적한다.
 
 **카메라/임시 표면 진단:** [공통 카메라와 중립 정렬 후 가림 가능성](deliveries/2026-11-15_shared_camera_and_mask_feasibility.md)을 확인했다. nearest-rest-bone proxy는 프로젝트 기하 선택이며 BIO-09 label을 이미 검증/사용한 결과가 아니다. 가림 관문 불충족으로 실제 가림/H.264는 미실행이다.
 
@@ -87,6 +89,8 @@ Ryf, C.; Weymann, A. (1995). **The neutral zero method — A principle of measur
 BMC 본문의 한계 출처 예시인 참고문헌[33]에서 서지를 확인했다. 11월15일 DOI 접근은 실패했으며 **원문 미열람**이다. 중립자세와 측정 원칙 확인을 위한 후속이며, 구체적 관절 값이나 우리 모델 대응을 이 자료에서 확보했다고 표시하지 않는다.
 
 ### BIO-09 — CPF의 A-MANO와 저자 구현
+
+- **추가 열람/부위 대응:** 보충 §A.2–A.3/PDF1–2쪽·그림3–4와 [고정 CPF palette](https://github.com/lixiny/CPF/blob/a9577729716f7579c206b8978bdd10af42dad0ab/lib/viztools/utils.py), [고정 manotorch loader](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/manotorch/manolayer.py)를 대조했다. [출처/프로젝트 대응표](../references/cpf_model_surface_region_review.json), [실제 검사/불일치/제한](deliveries/2026-11-15_author_surface_region_union_audit.md)에 연결한다. source 숫자 ID→이름은 그림/색상 기반 프로젝트 대응이며 독립 임상 주석이 아니다.
 
 Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021). **CPF: Learning a Contact Potential Field To Model the Hand-Object Interaction.** ICCV, pp.11097–11106. [CVF 서지](https://openaccess.thecvf.com/content/ICCV2021/html/Yang_CPF_Learning_a_Contact_Potential_Field_To_Model_the_Hand-Object_ICCV_2021_paper.html), BibTeX `Yang2021CPF`.
 
