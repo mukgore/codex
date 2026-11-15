@@ -1,0 +1,2493 @@
+{
+  "accepted_into_pool_n": 0,
+  "biological_validity_proven": false,
+  "cases": [
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.885008931752253e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s7_synchronous_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 2.3769703915854734,
+      "max_anatomical_axis_speed_rad_s": 1.176941021670828,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 3.125,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 8.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 3.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 426696,
+        "visible_pixels_min": 36091,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10478,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732002877203800,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2331000
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 81767200
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2455200
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 4643200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 108929500
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2967700
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 11942300
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 30053800
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3573300
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3325000
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39298200
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5421200
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2796875000,
+            "wall_ns": 2820688100
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2890625000,
+            "wall_ns": 2918239700
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 390625000,
+            "wall_ns": 379066400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794731996455508200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6359375000,
+        "validated_pipeline_wall_ns": 6422773200,
+        "video_ready_wall_ns": 5953698800
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.885008931752253e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s7_synchronous_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 2.3769703915854734,
+      "max_anatomical_axis_speed_rad_s": 1.176941021670828,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 3.125,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 8.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 3.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 426696,
+        "visible_pixels_min": 36091,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10478,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732009323203300,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2176800
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 66903000
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2480700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 701500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 102764600
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3311900
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 11835400
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 28869300
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2882600
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2598100
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39208000
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4098000
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2750000000,
+            "wall_ns": 2803758300
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2953125000,
+            "wall_ns": 2976089700
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 373885600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732002893307500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6406250000,
+        "validated_pipeline_wall_ns": 6428912700,
+        "video_ready_wall_ns": 5979905000
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9108554566725786e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s7_sequential_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 5.229072106156859,
+      "max_anatomical_axis_speed_rad_s": 1.44395434595137,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 437182,
+        "visible_pixels_min": 38021,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10111,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732015472594100,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2103900
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 69619100
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2295400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 655900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 102229000
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2983600
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12339900
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 31894900
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2835300
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 3038300
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 76438000
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 4163800
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2843750000,
+            "wall_ns": 2803836500
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2671875000,
+            "wall_ns": 2686707200
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 349510900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732009324950600,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6156250000,
+        "validated_pipeline_wall_ns": 6158580600,
+        "video_ready_wall_ns": 5731008000
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9108554566725786e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s7_sequential_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 5.229072106156859,
+      "max_anatomical_axis_speed_rad_s": 1.44395434595137,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 437182,
+        "visible_pixels_min": 38021,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10111,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732021563631900,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2258800
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 83797900
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2462800
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 652900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 112593400
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2986400
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12184700
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 29898500
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2858100
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2891900
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 38208000
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5070700
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2781250000,
+            "wall_ns": 2770257000
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2625000000,
+            "wall_ns": 2642237600
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 366695800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732015485599800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6078125000,
+        "validated_pipeline_wall_ns": 6082834100,
+        "video_ready_wall_ns": 5624096800
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.984487879054143e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s19_synchronous_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 6.352605320212444,
+      "max_anatomical_axis_speed_rad_s": 1.9603867596018478,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 422974,
+        "visible_pixels_min": 35585,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10782,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732027646354500,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2234400
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 79597200
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2554200
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 706100
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 106725500
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3308500
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 13528000
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 25943100
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2958800
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2910800
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 40615400
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4188400
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2703125000,
+            "wall_ns": 2702369000
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2671875000,
+            "wall_ns": 2696098400
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 383566600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732021570974100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6109375000,
+        "validated_pipeline_wall_ns": 6075952700,
+        "video_ready_wall_ns": 5603079100
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.984487879054143e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s19_synchronous_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 6.352605320212444,
+      "max_anatomical_axis_speed_rad_s": 1.9603867596018478,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 422974,
+        "visible_pixels_min": 35585,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10782,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732033941690100,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2307200
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 86833900
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 6646200
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 690200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 104634800
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 3251400
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 13583800
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 27925000
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2863800
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2800300
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 38156100
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4184900
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2671875000,
+            "wall_ns": 2682198500
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2984375000,
+            "wall_ns": 2983911400
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 340636300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732027649057500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6328125000,
+        "validated_pipeline_wall_ns": 6307887200,
+        "video_ready_wall_ns": 5872167800
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9743752349986607e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s19_sequential_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 5.509817339716357,
+      "max_anatomical_axis_speed_rad_s": 1.448137981894049,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 462992,
+        "visible_pixels_min": 39177,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10000,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732040431042900,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2980200
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 77694000
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2204700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 862700
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 110105100
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2992200
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 15294900
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 28759400
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2876100
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2868200
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 44357600
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4169200
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2828125000,
+            "wall_ns": 2839241800
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 3015625000,
+            "wall_ns": 3035549200
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 296875000,
+            "wall_ns": 303256000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732033959853200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6484375000,
+        "validated_pipeline_wall_ns": 6480793700,
+        "video_ready_wall_ns": 6092083700
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9743752349986607e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "right_s19_sequential_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "right",
+      "max_anatomical_axis_acceleration_rad_s2": 5.509817339716357,
+      "max_anatomical_axis_speed_rad_s": 1.448137981894049,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 462992,
+        "visible_pixels_min": 39177,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10000,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732046555027100,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2430000
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 75875900
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2487900
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 667300
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 102811700
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2816500
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12245700
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 29937400
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3318300
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2610300
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 38352300
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5456900
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2734375000,
+            "wall_ns": 2741216400
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2765625000,
+            "wall_ns": 2798515000
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 296875000,
+            "wall_ns": 298625100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732040442614800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6093750000,
+        "validated_pipeline_wall_ns": 6124579700,
+        "video_ready_wall_ns": 5742389700
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 3.015155047858542e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "left_s7_synchronous_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 2.376970444265339,
+      "max_anatomical_axis_speed_rad_s": 1.1769412461611708,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "SAMPLED_SURFACE_INTERSECTION_INDICATOR"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 3.125,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 8.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 3.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 501064,
+        "visible_pixels_min": 36999,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 13800,
+      "surface_indicator_frames_n": 11,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732053062887000,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2180300
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 68465000
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2303500
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 702100
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 105563800
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3055400
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 13574600
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 27715000
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3175000
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2884000
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42751100
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4264400
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2765625000,
+            "wall_ns": 2773622300
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2859375000,
+            "wall_ns": 2888840900
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 381287300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732046733652200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6281250000,
+        "validated_pipeline_wall_ns": 6328847600,
+        "video_ready_wall_ns": 5870295200
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.885008931752253e-08,
+      "author_default_penalized_frames_n": 11,
+      "case": "left_s7_synchronous_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 2.3769703915854734,
+      "max_anatomical_axis_speed_rad_s": 1.176941021670828,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "AUTHOR_DEFAULT_RESIDUAL_VIOLATION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 3.125,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 8.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 3.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 513354,
+        "visible_pixels_min": 37927,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10356,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732059310833000,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2767700
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 79819700
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2327400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 919200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 104901300
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2850100
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12385000
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 27943400
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3008900
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3313800
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 41196700
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4325100
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2750000000,
+            "wall_ns": 2808245600
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2781250000,
+            "wall_ns": 2809984200
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 328125000,
+            "wall_ns": 332008500
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732053070593500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6187500000,
+        "validated_pipeline_wall_ns": 6243750200,
+        "video_ready_wall_ns": 5823902200
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9108554566725786e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "left_s7_sequential_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 5.229072041892873,
+      "max_anatomical_axis_speed_rad_s": 1.4439546179484721,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "SAMPLED_SURFACE_INTERSECTION_INDICATOR"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 470780,
+        "visible_pixels_min": 35789,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 14224,
+      "surface_indicator_frames_n": 9,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732065726626400,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2326800
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 70632500
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2377600
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 689700
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 103991300
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3138400
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12542100
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 28178200
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2881200
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2803200
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 38656800
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4006300
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2718750000,
+            "wall_ns": 2738998100
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 3015625000,
+            "wall_ns": 3009524000
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 390625000,
+            "wall_ns": 381589000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732059310833000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6421875000,
+        "validated_pipeline_wall_ns": 6409427900,
+        "video_ready_wall_ns": 5949230300
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9108554566725786e-08,
+      "author_default_penalized_frames_n": 11,
+      "case": "left_s7_sequential_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 5.229072106156859,
+      "max_anatomical_axis_speed_rad_s": 1.44395434595137,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "AUTHOR_DEFAULT_RESIDUAL_VIOLATION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 480460,
+        "visible_pixels_min": 36390,
+        "width": 512
+      },
+      "seed": 7,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10292,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732071967293000,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2730700
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 66706500
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2240000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 676900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 104064100
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2841000
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 13004500
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 26976300
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2871500
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3141500
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 43845200
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4824000
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2750000000,
+            "wall_ns": 2778343200
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2812500000,
+            "wall_ns": 2849289100
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 328125000,
+            "wall_ns": 340142800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732065728611100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6234375000,
+        "validated_pipeline_wall_ns": 6248863500,
+        "video_ready_wall_ns": 5834566300
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9158298886500233e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "left_s19_synchronous_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 6.352604186320104,
+      "max_anatomical_axis_speed_rad_s": 1.9603862558409215,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "SAMPLED_SURFACE_INTERSECTION_INDICATOR"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 488662,
+        "visible_pixels_min": 35611,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 14683,
+      "surface_indicator_frames_n": 12,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732078436500000,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2236300
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 73995600
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2118000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 686100
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 104736100
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2831300
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 14826600
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 27208300
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2888100
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2690600
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42420400
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 5145800
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2765625000,
+            "wall_ns": 2793394700
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2968750000,
+            "wall_ns": 2994697800
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 379808400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732071967293000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6421875000,
+        "validated_pipeline_wall_ns": 6457547000,
+        "video_ready_wall_ns": 5995709700
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.984487879054143e-08,
+      "author_default_penalized_frames_n": 12,
+      "case": "left_s19_synchronous_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 6.352605320212444,
+      "max_anatomical_axis_speed_rad_s": 1.9603867596018478,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "synchronous_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "AUTHOR_DEFAULT_RESIDUAL_VIOLATION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 501606,
+        "visible_pixels_min": 36215,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 10748,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732084740174000,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2687200
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 74822700
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2270000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 689700
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 106970200
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3670500
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 14287300
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 29932400
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3050700
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3023000
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 38090700
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 4901300
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2859375000,
+            "wall_ns": 2828227400
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2828125000,
+            "wall_ns": 2857161900
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 328125000,
+            "wall_ns": 322855200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732078440357400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6312500000,
+        "validated_pipeline_wall_ns": 6301676600,
+        "video_ready_wall_ns": 5894915000
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9743752349986607e-08,
+      "author_default_penalized_frames_n": 0,
+      "case": "left_s19_sequential_flex_spread_author_exact",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 5.509816126987752,
+      "max_anatomical_axis_speed_rad_s": 1.4481377941439775,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "author_exact",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "SAMPLED_SURFACE_INTERSECTION_INDICATOR"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 515548,
+        "visible_pixels_min": 39010,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 13464,
+      "surface_indicator_frames_n": 9,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732090974241700,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2205900
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 64333500
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2223200
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 804200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 106866700
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2853300
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 15211600
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 28247400
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2956800
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 3344900
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39059900
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 4149700
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2734375000,
+            "wall_ns": 2787329600
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2812500000,
+            "wall_ns": 2809896400
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 360413900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732084744278100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6265625000,
+        "validated_pipeline_wall_ns": 6237577900,
+        "video_ready_wall_ns": 5804779800
+      }
+    },
+    {
+      "accepted_into_pool": false,
+      "angle_roundtrip_max_abs_radians": 2.9743752349986607e-08,
+      "author_default_penalized_frames_n": 10,
+      "case": "left_s19_sequential_flex_spread_ideal_mirror_comparator",
+      "decision": "QUARANTINED_DIAGNOSTIC",
+      "frames_n": 25,
+      "hand": "left",
+      "max_anatomical_axis_acceleration_rad_s2": 5.509817339716357,
+      "max_anatomical_axis_speed_rad_s": 1.448137981894049,
+      "parameter_corrections_n": 0,
+      "pending_BMC_state": "UNRESOLVED_LIMITS",
+      "policy": "ideal_mirror_comparator",
+      "policy_penalized_frames_n": 0,
+      "primitive": "sequential_flex_spread",
+      "recipe_replay_exact": true,
+      "rejection_reasons": [
+        "MODEL_PRIOR_ONLY_NOT_BIOLOGICAL_ADMISSION",
+        "BMC_LIMITS_UNRESOLVED",
+        "CONTACT_OBJECT_PHYSICS_NOT_TESTED",
+        "FINAL_MASKED_RENDITION_NOT_CHECKED",
+        "HUMAN_FEASIBILITY_NOT_OBSERVED",
+        "NO_EVIDENCE_BACKED_POOL_ADMISSION",
+        "AUTHOR_DEFAULT_RESIDUAL_VIOLATION"
+      ],
+      "release_allowed": false,
+      "render": {
+        "codec": "FFV1 AVI",
+        "decoded_pixel_hashes_match": true,
+        "decoder_backend": "FFMPEG",
+        "encoded_clip_duration_seconds": 2.0833333333333335,
+        "encoder_backend": "FFMPEG",
+        "final_delivery_rendition_checked": false,
+        "fps": 12.0,
+        "frames_n": 25,
+        "height": 420,
+        "masked_video": false,
+        "motion_last_frame_time_seconds": 2.0,
+        "projected_degenerate_face_instances_n": 0,
+        "raster_version": "orthographic_pixel_center_barycentric_zbuffer_v1",
+        "video_bytes": 523192,
+        "visible_pixels_min": 39528,
+        "width": 512
+      },
+      "seed": 19,
+      "speed_acceleration_limits_verified": false,
+      "surface_boundary_edges_n": 16,
+      "surface_candidate_pair_tests_n": 9980,
+      "surface_indicator_frames_n": 0,
+      "surface_scope": "nonshared-vertex sampled triangles only; no continuous/volume/adjacent-face proof",
+      "surface_unmeasurable_frames_n": 0,
+      "timing": {
+        "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+        "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+        "ended_utc_epoch_ns": 1794732097155751600,
+        "gpu_used": false,
+        "phases": {
+          "camera_projection": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2369400
+          },
+          "decode_qa": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 72964000
+          },
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2607000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 676200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 107887400
+          },
+          "lineage_and_aggregate_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 3730500
+          },
+          "native_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 12614800
+          },
+          "native_availability_journal": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 28742500
+          },
+          "native_forward": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2954400
+          },
+          "preview_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3159000
+          },
+          "prior_and_pending_feature_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39290400
+          },
+          "proposal_and_compose": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5484800
+          },
+          "rasterization": {
+            "calls_n": 25,
+            "process_cpu_ns": 2796875000,
+            "wall_ns": 2830693100
+          },
+          "sampled_triangle_surface_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 2718750000,
+            "wall_ns": 2737889600
+          },
+          "visibility_artifact_store": {
+            "calls_n": 1,
+            "process_cpu_ns": 312500000,
+            "wall_ns": 313248300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794732090985968500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 6187500000,
+        "validated_pipeline_wall_ns": 6173413700,
+        "video_ready_wall_ns": 5777401500
+      }
+    }
+  ],
+  "cases_n": 16,
+  "exact_duplicate_native_geometry_time_groups": [
+    [
+      "right_s7_synchronous_flex_spread_author_exact",
+      "right_s7_synchronous_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s7_sequential_flex_spread_author_exact",
+      "right_s7_sequential_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s19_synchronous_flex_spread_author_exact",
+      "right_s19_synchronous_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s19_sequential_flex_spread_author_exact",
+      "right_s19_sequential_flex_spread_ideal_mirror_comparator"
+    ]
+  ],
+  "exact_duplicate_video_byte_groups": [
+    [
+      "right_s7_synchronous_flex_spread_author_exact",
+      "right_s7_synchronous_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s7_sequential_flex_spread_author_exact",
+      "right_s7_sequential_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s19_synchronous_flex_spread_author_exact",
+      "right_s19_synchronous_flex_spread_ideal_mirror_comparator"
+    ],
+    [
+      "right_s19_sequential_flex_spread_author_exact",
+      "right_s19_sequential_flex_spread_ideal_mirror_comparator"
+    ]
+  ],
+  "frames_per_case": 25,
+  "full_generator_ready": false,
+  "limitations": [
+    "Author model defaults and project mirrored comparator are distinct and not clinical limits.",
+    "Primitive coupling, time, shape and appearance sampling are authored engineering parameters.",
+    "Sampled triangle QA excludes shared vertices and cannot prove volume/continuous/adjacent-face clearance.",
+    "Z-buffer diagnostic source videos are unmasked, nonphotorealistic and not delivery/security approved.",
+    "Per-video times exclude shared model setup and final receipt sealing; fixed-order local run, no fair method/cold-cache benchmark.",
+    "No object/contact physics, independent human/attack study or pool admission."
+  ],
+  "masked_videos_n": 0,
+  "native_forward_frames_n": 402,
+  "native_geometry_time_unique_n": 12,
+  "new_independent_families_n": 0,
+  "new_model_inference": true,
+  "physical_unit_verified": false,
+  "quarantined_cases_n": 16,
+  "random_motion_sampled": true,
+  "release_allowed": false,
+  "rendered_decoded_frames_n": 400,
+  "runtime_environment": {
+    "benchmark_scope": "one sequential local diagnostic run; no background-load/cache control",
+    "gpu_used": false,
+    "logical_cpus_available": 8,
+    "numpy_BLAS_and_FFmpeg_codec_thread_counts": "not separately controlled or measured",
+    "opencv_threads": 1,
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "python": "3.10.3 (tags/v3.10.3:a342a49, Mar 16 2022, 13:07:40) [MSC v.1929 64 bit (AMD64)]",
+    "torch_threads": 1,
+    "versions": {
+      "numpy": "1.23.5",
+      "opencv-contrib-python": "4.10.0.84",
+      "smplx": "0.1.28",
+      "torch": "2.5.1+cpu"
+    }
+  },
+  "runtime_journal_completed_frames_n": 402,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "private_model_conditioned_primitives_surface_and_unmasked_video_diagnostics",
+  "shared_hand_setups": [
+    {
+      "fresh_neutral_max_abs_error_native_units": 0.0,
+      "hand": "right",
+      "scope": "shared setup excluded from per-video times",
+      "wall_ns": 268548200
+    },
+    {
+      "fresh_neutral_max_abs_error_native_units": 0.0,
+      "hand": "left",
+      "scope": "shared setup excluded from per-video times",
+      "wall_ns": 169311600
+    }
+  ],
+  "version": "primitive_conditioned_model_prior_mano_private_generator_v1",
+  "video_byte_unique_n": 12,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 203,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "110d5464d6d6a4c4e5cb80e1f26311dfb802d061",
+  "generation_code_tests_passed": 239,
+  "test_count_scope": "caller-reported suite result for generation code; exporter itself is checked by actual export and row validation, not a test-execution attestation",
+  "recorded_input_files_n": 105,
+  "recorded_dependency_pins_n": 17,
+  "video_ready_seconds_summary": {
+    "min": 5.6030791,
+    "median": 5.85243075,
+    "max": 6.0920837
+  },
+  "validated_pipeline_seconds_summary": {
+    "min": 6.0759527,
+    "median": 6.27527005,
+    "max": 6.4807937
+  },
+  "failed_initial_attempt": {
+    "execution_record": {
+      "integrity": "RECORDED_FILES_MATCH",
+      "mode": "RECORDED_COMMAND_EXECUTION",
+      "state": "PROCESS_ERROR",
+      "artifact_files_n": 16,
+      "scientific_result_or_source_authentication_proven": false
+    },
+    "producer_code_commit": "a179117829252c43f193aec631284a6440b121d0",
+    "case_timings": [
+      {
+        "case": "right_s7_synchronous_flex_spread_author_exact",
+        "timing": {
+          "boundary": "case proposal start through video finalize; validated adds visibility store and lossless decode; decision/receipt sealing excluded",
+          "cache_state": "model loaded; OS/module/codec caches uncontrolled",
+          "ended_utc_epoch_ns": 1794731746254681900,
+          "gpu_used": false,
+          "phases": {
+            "camera_projection": {
+              "calls_n": 1,
+              "process_cpu_ns": 0,
+              "wall_ns": 2316200
+            },
+            "encoder_finalize": {
+              "calls_n": 1,
+              "process_cpu_ns": 0,
+              "wall_ns": 3368000
+            },
+            "encoder_open": {
+              "calls_n": 1,
+              "process_cpu_ns": 15625000,
+              "wall_ns": 47498600
+            },
+            "encoder_write": {
+              "calls_n": 13,
+              "process_cpu_ns": 62500000,
+              "wall_ns": 69266800
+            },
+            "native_artifact_store": {
+              "calls_n": 1,
+              "process_cpu_ns": 0,
+              "wall_ns": 13505500
+            },
+            "native_availability_journal": {
+              "calls_n": 1,
+              "process_cpu_ns": 15625000,
+              "wall_ns": 27835600
+            },
+            "native_forward": {
+              "calls_n": 1,
+              "process_cpu_ns": 0,
+              "wall_ns": 5463400
+            },
+            "preview_store": {
+              "calls_n": 1,
+              "process_cpu_ns": 0,
+              "wall_ns": 9851100
+            },
+            "prior_and_pending_feature_QA": {
+              "calls_n": 1,
+              "process_cpu_ns": 62500000,
+              "wall_ns": 48296100
+            },
+            "proposal_and_compose": {
+              "calls_n": 1,
+              "process_cpu_ns": 15625000,
+              "wall_ns": 4789500
+            },
+            "rasterization": {
+              "calls_n": 13,
+              "process_cpu_ns": 1453125000,
+              "wall_ns": 1468155100
+            },
+            "sampled_triangle_surface_QA": {
+              "calls_n": 1,
+              "process_cpu_ns": 3015625000,
+              "wall_ns": 3034657100
+            }
+          },
+          "queue_wait_scope": "not_applicable_offline_sequential",
+          "shared_hand_model_setup_included": false,
+          "started_utc_epoch_ns": 1794731741524363500,
+          "state": "INCOMPLETE",
+          "validated_pipeline_process_cpu_ns": 4640625000,
+          "validated_pipeline_wall_ns": 4738655400,
+          "video_ready_wall_ns": null
+        }
+      }
+    ],
+    "journal": {
+      "status": "ERROR",
+      "valid_events": 31,
+      "elapsed_ns": 7152220400,
+      "completed_frames": 26,
+      "dropped_frames": 0,
+      "reason": null
+    },
+    "failure": "Preview PNG filename API failed; original partial files retained; encode-to-bytes fix in retry."
+  },
+  "postrun_camera_metadata_review": {
+    "same_view_hand_comparison_ready": false,
+    "normal_alignment_after_ideal_x_reflection_dot": -0.9999998450605055,
+    "scope": "sample pair of recorded camera normals; not physical palm/back annotation",
+    "interpretation": "per-clip hand-relative fit is not a shared same-view camera; matched-camera rerender required"
+  },
+  "timing_export_rows_n": 17,
+  "timing_scope": "actual local fixed-order diagnostics; failed ready time is null, not zero; shared setup/receipt sealing excluded",
+  "public_exposure_scope": "diagnostic recipe metadata only; no eligible operating challenges"
+}

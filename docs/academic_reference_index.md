@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**BIO-09/GEO-01 생성 연결:** [모델 조건부16영상·샘플 표면 교차·영상별 시간](deliveries/2026-11-15_mano_conditioned_videos.md)을 실행했다. 저자 모델 기본값과 프로젝트 이상적 반사 조건을 구분했고, 모델 조건 안에서도41프레임의 삼각형 교차 지표를 관측했다. 임의 원형 연동·시간/형상 분포를 임상 수치로 표시하지 않는다. 최종 가림·사람/물리/전체 충돌 승인은 미완료다.
+
 **BIO-09 기본값 진단:** [고정 저자 기본값과 기존 랜덤8동작의 실제 손실 대조](deliveries/2026-11-15_mano_model_prior_audit.md)를 완료했다. [출처·구간·관절 배정 JSON](../references/manotorch_default_constraint_extraction.json)의 `BIO-09-IMPL-DEFAULTS`는 모델용 제약이며 원측정/사람 한계가 아니다. 엄지 비대칭 구간의 이상적 반사 대조, strict 초과와1e-6 영 mask 후 벌점을 구분했다. 코드: `analysis/runtime_benchmark/mano_model_prior_audit.py`.
 
 **BIO-09 구현 대조:** [실제1130자세·고정 저자 메서드/독립 계산](deliveries/2026-11-15_mano_anatomical_frames.md)을 완료했다. 기준축·회전 순서·비root 왕복과 별도 root를 확인했다. 원논문 전체 재현·임상 축 측정·제한값 승인은 아니다. 코드: `analysis/runtime_benchmark/mano_anatomical_frame_probe.py`. 원본4파일은 고정 Git blob 바이트와 일치하는 비공개 사본으로 보존했다.
