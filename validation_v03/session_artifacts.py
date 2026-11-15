@@ -12,6 +12,8 @@ import os
 from pathlib import Path
 import sys
 
+from validation_v03.private_paths import inside_repository
+
 MAX_BYTES=32*1024*1024
 POLICY={'version':'selected_hand_gate_v1','maxGateGapMs':200,
         'maxTrackingGapMs':500,'maxTrialMs':60000,'maxEvents':1000}
@@ -189,7 +191,7 @@ def inspect(payload):
 
 def _private(path):
     path=Path(path).resolve()
-    if 'private_artifacts' not in path.parts or any((parent/'.git').exists() for parent in path.parents):
+    if 'private_artifacts' not in path.parts or inside_repository(path):
         raise ValueError('Private artifact directory outside repositories required')
     return path
 
