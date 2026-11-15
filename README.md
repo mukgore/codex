@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**좌표계 참고 검산:** [논문 두 모델의264조건과BMC 방향25조건](docs/deliveries/2026-11-15_kinematic_conventions.md)을 맞춰봤습니다. 실제 MANO/임상 좌표 대응이나 생체 허용값 승인과는 구분합니다.
+
 **생체 원문 대조:** [가동 범위 원출처를 확보해 재인용표와 비교](docs/deliveries/2026-11-15_original_constraint_comparison.md)했습니다. 엄지2칸의 차이와 좌표계 차이를 기록했고 실행 허용값으로 자동 채택하지 않았습니다.
 
 **각도 이름표 확인:** [각도가 놓인 관절과 뼈 끝점을 구분](docs/deliveries/2026-11-15_angle_center_mapping.md)했습니다. 기존960개 수치 배열은 그대로이며 임상 허용값 적용은 아직 보류입니다.

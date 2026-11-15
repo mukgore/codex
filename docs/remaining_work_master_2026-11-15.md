@@ -4,6 +4,8 @@
 
 ## 현재 위치와 바로 다음 작업
 
+**좌표계 후속:** [두 논문 국소 chain264조건·작성 기준축BMC 방향25조건](deliveries/2026-11-15_kinematic_conventions.md)의 계산 대응을 확인했다. 다음은 실제 MANO의 알려진 중립/축 perturbation·wrist/finger 기저·엄지/twist·단위/허용 영역을 근거와 대조하는 일이다. 국소 참고 변환을 실제 임상 축 fitting 완료로 보지 않는다.
+
 **원출처 확보 후속:** [Cobos2008 원문·선택18칸 비교](deliveries/2026-11-15_original_constraint_comparison.md)를 완료했다. 이전 PDF 접근 대기는 해소됐다. 다른 엄지2칸과 일반D-H/수정D-H 차이를 유지하며, 원도서·측정 조건·BMC/MANO/임상 축 대응 확인이 다음이다. 기존 허용 한계/격리는 바꾸지 않았다.
 
 **관절 대응의 최신 상태:** [15개 각도 중심/뼈 끝점·선택 문헌4행 후보](deliveries/2026-11-15_angle_center_mapping.md)를 명시했고192프레임/960수치 배열 불변을 확인했다. Cobos 원문 접근 대기는 해소됐지만 이름 후보를 넘어 일반D-H/수정D-H/BMC 축·중립/부호·엄지/root 기준을 검증하는 일은 남는다.

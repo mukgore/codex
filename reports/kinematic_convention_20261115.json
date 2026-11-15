@@ -1,0 +1,40 @@
+{
+  "biological_validity_proven": false,
+  "chain_cases_n": 264,
+  "clinical_neutral_axes_verified": false,
+  "isolated_mcp_vector_cases_n": 25,
+  "length_unit": "engineering_reference_units",
+  "limitations": [
+    "Two local mathematical chain conventions only; full hand wrist/finger offsets and anthropometry are not fitted.",
+    "BMC isolated neutral basis is explicitly authored, not measured from a participant or MANO anatomy.",
+    "Same endpoint direction does not uniquely determine axial twist or certify a downstream clinical joint frame.",
+    "Engineering angle grid/lengths are not admissible physiological limits; original source table conflicts remain unresolved."
+  ],
+  "mano_rig_mapping_verified": false,
+  "max_aligned_point_error": 8.881784197001252e-16,
+  "max_aligned_tip_transform_error": 8.881784197001252e-16,
+  "max_bmc_vector_reconstruction_error": 1.1102230246251565e-16,
+  "max_naive_bmc_dh_angle_difference_radians": 0.15550505269189982,
+  "naive_same_inputs_mismatch_cases_n": 214,
+  "new_model_inference": false,
+  "nonthumb_cases_n": 216,
+  "nonthumb_declared_correspondence": "negate modified-DH MCP abduction input and apply output Rx(-pi/2)",
+  "numeric_profile_changed": false,
+  "release_allowed": false,
+  "scope": "published_local_chain_convention_and_chosen_basis_vector_reference_only",
+  "source_tables": [
+    "BIO-07 Tables I-II",
+    "BIO-06 Tables 7-8"
+  ],
+  "thumb_cases_n": 48,
+  "thumb_declared_correspondence": "same joint inputs with explicit modified-DH terminal tip translation",
+  "version": "published_dh_mdh_local_chain_reference_v1",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 3,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "pipeline_tests_passed": 157
+}
