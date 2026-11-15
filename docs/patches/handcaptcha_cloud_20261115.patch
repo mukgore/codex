@@ -1,0 +1,388 @@
+diff --git a/dataset_pipeline/tests/test_biomechanical_profile.py b/dataset_pipeline/tests/test_biomechanical_profile.py
+index 32fc386..7050bfa 100644
+--- a/dataset_pipeline/tests/test_biomechanical_profile.py
++++ b/dataset_pipeline/tests/test_biomechanical_profile.py
+@@ -99,28 +99,53 @@ class BiomechanicalProfileTests(unittest.TestCase):
+         v,_=angular_derivatives(angles,[0.,1.,2.]);np.testing.assert_allclose(v[:,:,0],.2,atol=1e-12)
+ 
+     def test_pending_profile_never_qualifies_generation(self):
+-        result=assess(np.array([synthetic_hand()]*3),[0.,1.,2.],pending_profile(),handedness='right',length_unit='authored_units')
++        result=assess(np.array([synthetic_hand()]*3),[0.,1.,2.],pending_profile(),handedness='right',length_unit='authored_units',point_semantics='articulated_joint21')
+         self.assertEqual(result['state'],'UNRESOLVED_LIMITS');self.assertEqual(len(result['unresolved_rules']),6)
+         self.assertFalse(result['full_generator_ready']);self.assertFalse(result['biological_validity_proven'])
+ 
+     def test_synthetic_math_pass_is_not_a_biological_or_release_pass(self):
+-        result=assess(np.array([synthetic_hand()]*3),[0.,1.,2.],synthetic_profile(),handedness='right',length_unit='authored_units')
++        result=assess(np.array([synthetic_hand()]*3),[0.,1.,2.],synthetic_profile(),handedness='right',length_unit='authored_units',point_semantics='articulated_joint21')
+         self.assertEqual(result['state'],'DECLARED_RULES_PASS');self.assertTrue(result['declared_rules_pass'])
+         self.assertFalse(result['evidence_backed_rule_checks_pass']);self.assertFalse(result['release_allowed'])
+ 
+     def test_temporal_violations_reject_moving_sequences(self):
+         profile=synthetic_profile();profile['rules']['angular_speed_rad_s']['values']=np.full((15,2),.1).tolist()
+         profile['rules']['angular_acceleration_rad_s2']['values']=np.full((15,2),.1).tolist()
+-        result=assess(np.array([synthetic_hand(f) for f in (0.,.3,0.)]),[0.,.1,.2],profile,handedness='right',length_unit='authored_units')
++        result=assess(np.array([synthetic_hand(f) for f in (0.,.3,0.)]),[0.,.1,.2],profile,handedness='right',length_unit='authored_units',point_semantics='articulated_joint21')
+         self.assertEqual(result['state'],'RULE_VIOLATIONS')
+         for key in ('angular_speed_rad_s','angular_acceleration_rad_s2'):
+             self.assertTrue(any(row['rule']==key for row in result['violations']))
+ 
+     def test_rig_length_changes_are_rejected_even_inside_broad_length_intervals(self):
+         poses=np.array([synthetic_hand()]*3);direction=poses[1,20]-poses[1,19];poses[1,20]+=direction*.01
+-        result=assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',length_unit='authored_units')
++        result=assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',length_unit='authored_units',point_semantics='articulated_joint21')
+         self.assertTrue(any(row['rule']=='fixed_generated_rig_bone_lengths' for row in result['violations']))
+ 
++    def test_mano_surface_tip_variation_is_not_a_rigid_bone_violation(self):
++        poses=np.array([synthetic_hand()]*3);poses[1,20]+=(poses[1,20]-poses[1,19])*.01
++        result=assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',
++                      length_unit='authored_units',point_semantics='mano16_surface5')
++        self.assertFalse(any(v['rule']=='fixed_generated_rig_bone_lengths' for v in result['violations']))
++        self.assertEqual(len(result['fixed_length_edge_indices']),15)
++        self.assertEqual(len(result['nonrigid_surface_tip_edge_indices']),5)
++        self.assertFalse(result['evidence_backed_rule_checks_pass'])
++        self.assertFalse(result['release_allowed'])
++        # A changed internal model edge remains detectable under the same contract.
++        poses[1,19]+=(poses[1,19]-poses[1,18])*.01
++        result=assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',
++                      length_unit='authored_units',point_semantics='mano16_surface5')
++        self.assertTrue(any(v['rule']=='fixed_generated_rig_bone_lengths' for v in result['violations']))
++
++    def test_unknown_point_semantics_cannot_silently_pass_or_impose_rigidity(self):
++        poses=np.array([synthetic_hand()]*3)
++        result=assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',length_unit='authored_units')
++        self.assertEqual(result['state'],'UNRESOLVED_POINT_SEMANTICS')
++        self.assertEqual(result['fixed_length_edge_indices'],[])
++        self.assertFalse(result['declared_rules_pass'])
++        with self.assertRaises(ValueError):
++            assess(poses,[0.,1.,2.],synthetic_profile(),handedness='right',
++                   length_unit='authored_units',point_semantics='guessed')
++
+     def test_bad_profile_shapes_units_and_incomplete_evidence_are_rejected(self):
+         for change in ('shape','angle_unit','evidence','physical_unit','missing'):
+             profile=synthetic_profile()
+diff --git a/dataset_pipeline/tests/test_bounded_sampling.py b/dataset_pipeline/tests/test_bounded_sampling.py
+new file mode 100644
+index 0000000..7fb7642
+--- /dev/null
++++ b/dataset_pipeline/tests/test_bounded_sampling.py
+@@ -0,0 +1,49 @@
++import json
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++
++from experiments.motion_fixture.bounded_sampling import run
++from experiments.motion_fixture.biomechanical_profile import pending_profile
++
++
++class BoundedSamplingTests(unittest.TestCase):
++    def setUp(self):
++        self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
++        self.root=Path(self.tmp.name)/'private_artifacts'
++
++    def execute(self,name,**kwargs):
++        return run(self.root/name,seed=19,max_attempts=3,timeout_seconds=30,profile=pending_profile(),**kwargs)
++
++    def test_same_seed_recipes_and_all_rejections_are_reproducible(self):
++        a=self.execute('a');b=self.execute('b')
++        self.assertEqual(a['attempts_n'],3);self.assertEqual(a['rejected_n'],3)
++        self.assertEqual(a['validated_pool_candidates_n'],0);self.assertFalse(a['release_allowed'])
++        self.assertEqual(a['states'],{'UNRESOLVED_LIMITS':3})
++        events=[json.loads(line) for line in (self.root/'a/attempts.private.jsonl').read_text().splitlines()]
++        self.assertEqual([e['event'] for e in events],['attempt_started','attempt_finished']*3)
++        self.assertTrue(all(len(e['reasons'])==9 for e in events if e['event']=='attempt_finished'))
++        for i in range(3):
++            name=f'attempt-{i:04d}.private.json'
++            self.assertEqual((self.root/'a'/name).read_bytes(),(self.root/'b'/name).read_bytes())
++        with self.assertRaises(FileExistsError):self.execute('a')
++
++    def test_failed_producer_is_logged_and_not_given_a_completed_summary(self):
++        with patch('experiments.motion_fixture.bounded_sampling.generate_motion',side_effect=RuntimeError('fixture failure')):
++            with self.assertRaises(RuntimeError):self.execute('failed')
++        events=[json.loads(line) for line in (self.root/'failed/attempts.private.jsonl').read_text().splitlines()]
++        self.assertEqual([e['event'] for e in events],['attempt_started','attempt_error'])
++        self.assertFalse((self.root/'failed/summary.json').exists())
++
++    def test_deadline_stops_new_attempts_and_does_not_relax_rules(self):
++        with patch('experiments.motion_fixture.bounded_sampling.time.monotonic',side_effect=[0.,31.,32.]):
++            result=self.execute('deadline')
++        self.assertEqual(result['attempts_n'],0);self.assertEqual(result['stop_reason'],'TIME_BUDGET')
++        self.assertEqual(result['validated_pool_candidates_n'],0)
++
++    def test_physical_profile_cannot_be_applied_to_uncalibrated_qa_units(self):
++        profile=pending_profile();profile['length_unit']='mm'
++        with self.assertRaises(ValueError):
++            run(self.root/'bad',seed=1,max_attempts=1,timeout_seconds=1,profile=profile)
++        self.assertFalse((self.root/'bad').exists())
+diff --git a/dataset_pipeline/tests/test_private_paths.py b/dataset_pipeline/tests/test_private_paths.py
+new file mode 100644
+index 0000000..37df69a
+--- /dev/null
++++ b/dataset_pipeline/tests/test_private_paths.py
+@@ -0,0 +1,26 @@
++import os
++from pathlib import Path
++import tempfile
++import unittest
++from experiments.private_paths import inside_repository
++
++
++class PrivatePathTests(unittest.TestCase):
++    def test_nested_and_output_root_markers_remain_blocked(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);repo=root/'repo';repo.mkdir();marker=repo/'.git';marker.mkdir()
++            self.assertTrue(inside_repository(repo))
++            self.assertTrue(inside_repository(repo/'private_artifacts'/'out'))
++            marker.rmdir();marker.write_text('gitdir: /elsewhere')
++            self.assertTrue(inside_repository(repo/'out'))
++            marker.unlink();marker.symlink_to(root/'missing')
++            self.assertTrue(inside_repository(repo/'out'))
++
++    def test_cloud_guards_are_empty_readonly_exact_anchor_exceptions(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp)
++            # Outside a checkout even when a managed Cloud anchor is an ancestor.
++            self.assertFalse(inside_repository(root/'private_artifacts'/'new'))
++            (root/'.git').mkdir();(root/'.git').chmod(0o555)
++            self.assertTrue(inside_repository(root/'out'))
++            (root/'.git').chmod(0o755)
+diff --git a/experiments/motion_fixture/README.md b/experiments/motion_fixture/README.md
+index a2421ce..2599350 100644
+--- a/experiments/motion_fixture/README.md
++++ b/experiments/motion_fixture/README.md
+@@ -1,5 +1,7 @@
+ # 자체 작성한 3D 동작 연결 시험
+ 
++**2026-11-15 Cloud 독립 검토:** `assess(..., point_semantics=...)`에 생산자가 선언한 점 의미를 요구한다. `articulated_joint21`은20개 길이, `mano16_surface5`는 표면 tip5구간을 제외한15개 모델 관절 구간만 고정 길이 수치 검사한다. `unspecified`는 고정 길이를 추정하지 않고 미통과다. 표면 tip 구간은 나머지 선언된 feature 범위 검사에는 남지만 해부학 관절 길이로 승인하지 않는다. MANO 혼합점에 기존21관절 hull을 적용한 값은 evidence-backed anatomy pass로 승격하지 않는다. 실제 MANO 모델·좌표를 로드하지 않았으며 로컬 미검증 수정의 복구본이 아니다. pipeline143검사 종료0; prod/채점/64조합은 유지했다.
++
+ **2026-11-14 보관 MANO 대응:** `mano_reference_audit.py`는 저장 reference/NPZ, 다섯 named mesh tip, 고정 화면 투영을 대조한다. 코드로 해석할 자료만 읽으며 모델/pickle/Torch를 불러오지 않는다. 기존 12개·288좌표 프레임에서 tip/투영과 BMC feature 계산을 확인했고 pipeline 138개가 통과했다(신규 7개). 물리 단위와 전체 관절 의미/당시 source 코드 복구는 미확인이다. 표면 tip에 고정 뼈대의 20개 길이 불변 규칙을 적용하지 않는다. [실제 기록·한계·다음 조건](https://github.com/mukgore/codex/blob/work/todo-consolidation-20261103/docs/deliveries/2026-11-14_mano_reference_mapping.md). 생체/운영 승인은 아니다.
+ 
+ **2026-11-14 생체 feature/profile 진단:** `biomechanical_features.py`는 BMC 논문의 뼈/손바닥/local 각도 수식을 독립 구현하고, `biomechanical_profile.py`는 근거·단위·버전이 있는 수치 프로필과 시간/고정 길이 조건을 검사한다. 기본 프로필은 여섯 허용 범위 모두 미확인이다. 기존 접촉 모형은 손바닥 기준이 퇴화해 288프레임 모두 계산 불가였고, 다른 기본 template 192프레임은 계산 가능하나 범위 미확인으로 미통과다. 생물학적으로 타당한 동작만 생성하는 완성된 경로가 아니다.
+@@ -49,3 +51,15 @@ python -m experiments.motion_fixture.generate --output ../private_artifacts/auth
+ `--template middle_touch_sphere`는 기존 middle_flex에 정적 구형 물체를 두고 중지 끝이 접근·접촉·후퇴하도록 배치한다. 같은 원본/가림 출력 경로를 사용한다. 손가락/손목 연결의 20개 선분을 반지름0.025 capsule로 간주하고 구 반지름0.10과 모든 프레임의 최소 거리를 검사한다. 접촉 허용0.003과 길이 단위는 미검증 공학값이다. 고정 bone 길이·전체 frame 순서·비관통·시작/끝 이격·중간 접촉을 모두 요구하며 실패하면 후보 출력하지 않는다.
+ 
+ fixture_report.json의 object_contact_model에 분모/접촉 frame/관통 frame/최소 간격이 기록된다. 물체는 정사영 wireframe circle로 표시하며 실제 depth occlusion을 표현하지 않는다. palm mesh/손 자체 충돌/역학/실제 사람 타당성/정밀3D 정답을 검증한 결과가 아니다. 기존 skeleton/seed를 독립 family로 늘려 세지 않으며 release_allowed=false를 유지한다.
++
++## Cloud 제한 샘플링 진단 (2026-11-15)
++
++`bounded_sampling.py`는 기존 세 공학 QA template의 seed 변형만 재사용한다. 독립 PCG64 흐름으로 template과 producer seed를 뽑고, 시도 수/시간 예산·원 recipe·좌표·프로필 평가·모든 거부 사유를 Git 밖 새 폴더에 기록한다. 시작 이벤트를 먼저 flush/fsync하고 오류를 전파하므로 중단/실패를 완료로 표시하지 않는다. 시간 예산은 시도 사이와 완료 후 점검하며, foreground 실행 전체의 강제 timeout은 codex의 execution_record로 감싼다. 기존 진폭 범위를 넓히거나 관절을 독립 무작위화하지 않는다. seed 수를 독립 family/보안 entropy로 세지 않는다.
++
++기본 여섯 제한은 미확인이다. 물리 단위·표면 충돌/역학·사람 수행도 미검증이므로 모든 시도는 검증된 문제 풀에서 거부한다. 합성 프로필 수치 검사 통과도 이 관문을 해제하지 않는다. MANO 생성/자연스러움/생체 검증 완료가 아니다.
++
++```bash
++python -m experiments.motion_fixture.bounded_sampling --output /workspace/work/private_artifacts/NEW_SAMPLING --seed 19 --max-attempts 6 --timeout-seconds 30
++```
++
++기존 결과는 덮어쓰지 않는다. 실제 실험은 execution_record로 코드·프로필·환경 snapshot, 명령/종료, 출력 hash와 연결한다. 상세 recipe/좌표/ledger는 공개 저장소에 넣지 않는다.
+diff --git a/experiments/motion_fixture/biomechanical_profile.py b/experiments/motion_fixture/biomechanical_profile.py
+index 775c797..7f11cf0 100644
+--- a/experiments/motion_fixture/biomechanical_profile.py
++++ b/experiments/motion_fixture/biomechanical_profile.py
+@@ -8,7 +8,7 @@ import math
+ 
+ import numpy as np
+ 
+-from .biomechanical_features import VERSION,GeometryError,extract,angular_derivatives
++from .biomechanical_features import VERSION,BONE_LABELS,GeometryError,extract,angular_derivatives
+ 
+ RULES=('bone_lengths','palm_curvatures','palm_spread_radians','joint_angle_hulls',
+        'angular_speed_rad_s','angular_acceleration_rad_s2')
+@@ -109,7 +109,13 @@ def validate(profile):
+     return parsed
+ 
+ 
+-def assess(points,times,profile,*,handedness,length_unit):
++def assess(points,times,profile,*,handedness,length_unit,point_semantics='unspecified'):
++    # Producer declaration only, never inferred from the 21-point array shape.
++    if point_semantics not in ('unspecified','articulated_joint21','mano16_surface5'):
++        raise ValueError('Explicit supported point semantics required')
++    tip_edges=np.array([label.endswith('_TIP') for label in BONE_LABELS])
++    fixed_edges=(np.ones(20,dtype=bool) if point_semantics=='articulated_joint21' else
++                 ~tip_edges if point_semantics=='mano16_surface5' else np.zeros(20,dtype=bool))
+     parsed=validate(profile);raw=np.asarray(points);times=np.asarray(times,float)
+     if raw.ndim!=3 or raw.shape[1:]!=(21,3) or len(raw)<3 or times.shape!=(len(raw),) or not np.isfinite(times).all() or (np.diff(times)<=0).any():
+         raise ValueError('Complete sampled 3D motion and increasing timestamps in seconds required')
+@@ -133,9 +139,10 @@ def assess(points,times,profile,*,handedness,length_unit):
+             if (residual>1e-10).any():violations.append({'frame_idx':index,'rule':'joint_angle_hulls','indices':np.flatnonzero(residual>1e-10).tolist()})
+     if not errors:
+         lengths=np.array([f['bone_lengths'] for _,f in features])
+-        variation=np.abs(lengths-lengths[0]);tolerance=np.maximum(1e-10,lengths[0]*1e-8)
++        variation=np.abs(lengths-lengths[0]);variation[:,~fixed_edges]=0.;tolerance=np.maximum(1e-10,lengths[0]*1e-8)
+         for index in np.flatnonzero((variation>tolerance).any(axis=1)):
+-            violations.append({'frame_idx':int(index),'rule':'fixed_generated_rig_bone_lengths'})
++            violations.append({'frame_idx':int(index),'rule':'fixed_generated_rig_bone_lengths',
++                               'indices':np.flatnonzero(variation[index]>tolerance).tolist()})
+         angular=np.array([f['joint_angles_radians'] for _,f in features]);v,a=angular_derivatives(angular,times)
+         for name,values in (('angular_speed_rad_s',v),('angular_acceleration_rad_s2',a)):
+             if parsed[name] is None:continue
+@@ -143,11 +150,14 @@ def assess(points,times,profile,*,handedness,length_unit):
+             maximum_residual[name]=float(residual.max())
+             for index in np.flatnonzero((residual>1e-10).any(axis=(1,2))):
+                 violations.append({'time_interval_idx':int(index),'rule':name})
+-    sourced=profile['mapping_status']=='documented' and all(profile['rules'][k]['status']=='evidence_backed' for k in RULES)
+-    passed=not errors and not unresolved and not violations
+-    state='UNMEASURABLE_GEOMETRY' if errors else 'UNRESOLVED_LIMITS' if unresolved else 'RULE_VIOLATIONS' if violations else 'DECLARED_RULES_PASS'
++    sourced=point_semantics=='articulated_joint21' and profile['mapping_status']=='documented' and all(profile['rules'][k]['status']=='evidence_backed' for k in RULES)
++    passed=not errors and not unresolved and not violations and point_semantics!='unspecified'
++    state='UNMEASURABLE_GEOMETRY' if errors else 'UNRESOLVED_LIMITS' if unresolved else 'RULE_VIOLATIONS' if violations else 'UNRESOLVED_POINT_SEMANTICS' if point_semantics=='unspecified' else 'DECLARED_RULES_PASS'
+     return {'scope':'sampled_bmc_features_and_declared_limits_only','state':state,'profile_version':profile['profile_version'],
+-        'feature_version':VERSION,'frames_n':len(raw),'measurable_frames_n':len(features),'geometry_errors':errors,
++        'feature_version':VERSION,'point_semantics':point_semantics,
++        'fixed_length_edge_indices':np.flatnonzero(fixed_edges).tolist(),
++        'nonrigid_surface_tip_edge_indices':np.flatnonzero(tip_edges).tolist() if point_semantics=='mano16_surface5' else [],
++        'surface_tip_anatomical_limits_verified':False,'frames_n':len(raw),'measurable_frames_n':len(features),'geometry_errors':errors,
+         'unresolved_rules':unresolved,'violations':violations,'maximum_residual':maximum_residual,
+         'declared_rules_pass':passed,'evidence_backed_rule_checks_pass':passed and sourced,
+         'biological_validity_proven':False,'full_generator_ready':False,'release_allowed':False,
+diff --git a/experiments/motion_fixture/bounded_sampling.py b/experiments/motion_fixture/bounded_sampling.py
+new file mode 100644
+index 0000000..9342f42
+--- /dev/null
++++ b/experiments/motion_fixture/bounded_sampling.py
+@@ -0,0 +1,97 @@
++"""Bounded, logged sampling of existing authored QA recipes; no model or pool release.
++
++Existing engineering variation is reused unchanged. Pending anatomical limits,
++physics and human feasibility keep every proposal out of a validated pool.
++"""
++import argparse
++from collections import Counter
++import json
++import math
++import os
++from pathlib import Path
++import time
++
++import numpy as np
++
++from dataset_pipeline.common import LANDMARK_NAMES
++from experiments.private_paths import inside_repository
++from .biomechanical_profile import assess,pending_profile,validate
++from .generate import generate_motion,VERSION as PRODUCER_VERSION
++
++VERSION='bounded_authored_recipe_diagnostic_v1'
++TEMPLATES=('index_flex','middle_flex','alternating')
++
++
++def write(path,value):
++    with path.open('x',encoding='utf8') as stream:
++        json.dump(value,stream,allow_nan=False,sort_keys=True);stream.write('\n')
++        stream.flush();os.fsync(stream.fileno())
++
++
++def run(output,*,seed,max_attempts,timeout_seconds,profile):
++    if type(seed) is not int or not 0<=seed<2**63:raise ValueError('Bounded integer seed required')
++    if type(max_attempts) is not int or not 1<=max_attempts<=1000:raise ValueError('Attempt budget 1..1000 required')
++    if type(timeout_seconds) not in (int,float) or not math.isfinite(timeout_seconds) or not 0<timeout_seconds<=3600:
++        raise ValueError('Finite time budget up to one hour required')
++    validate(profile)
++    if profile['length_unit']!='authored_units':raise ValueError('Existing QA producer uses authored units only')
++    output=Path(output).resolve()
++    if 'private_artifacts' not in output.parts or inside_repository(output):raise ValueError('Private output outside Git required')
++    output.mkdir(parents=True,exist_ok=False)
++    # Explicit PCG64 and separate recipe-choice / producer-seed streams.
++    choice_rng,seed_rng=[np.random.Generator(np.random.PCG64(s)) for s in np.random.SeedSequence(seed).spawn(2)]
++    started=time.monotonic();finished=[]
++    write(output/'config.private.json',{'version':VERSION,'producer_version':PRODUCER_VERSION,'seed':seed,
++        'rng':'PCG64','rng_streams':['template_choice','producer_seed'],'templates':list(TEMPLATES),
++        'max_attempts':max_attempts,'timeout_seconds':timeout_seconds,'frames':24,'fps':12,
++        'point_semantics':'articulated_joint21','length_unit':'authored_units','profile':profile,
++        'scope':'existing_authored_QA_variation_only_not_MANO_or_biological_generation'})
++    with (output/'attempts.private.jsonl').open('x',encoding='utf8') as ledger:
++        def event(value):
++            ledger.write(json.dumps(value,allow_nan=False,sort_keys=True)+'\n');ledger.flush();os.fsync(ledger.fileno())
++        for index in range(max_attempts):
++            if time.monotonic()-started>=timeout_seconds:break
++            recipe={'attempt_idx':index,'template':TEMPLATES[int(choice_rng.integers(len(TEMPLATES)))],
++                    'producer_seed':int(seed_rng.integers(0,2**63)),'frames':24,'fps':12}
++            event({'event':'attempt_started','utc_epoch_ns':time.time_ns(),'recipe':recipe})
++            try:
++                frames=generate_motion(recipe['template'],recipe['producer_seed'],24,12)
++                points=np.array([[[f['landmarks_world'][name][a] for a in ('x','y','z')] for name in LANDMARK_NAMES] for f in frames])
++                result=assess(points,[f['source_pts_ms']/1000 for f in frames],profile,handedness='right',
++                              length_unit='authored_units',point_semantics='articulated_joint21')
++                write(output/f'attempt-{index:04d}.private.json',{'recipe':recipe,'frames':frames,'assessment':result})
++                reasons=['UNRESOLVED_LIMIT:'+r for r in result['unresolved_rules']]
++                reasons+=['GEOMETRY:'+e['code'] for e in result['geometry_errors']]
++                reasons+=['RULE:'+v['rule'] for v in result['violations']]
++                reasons+=['UNVERIFIED_PHYSICAL_UNITS','UNCHECKED_SURFACE_COLLISION_PHYSICS','NO_HUMAN_FEASIBILITY_EVIDENCE']
++                row={'event':'attempt_finished','attempt_idx':index,'status':'REJECTED','state':result['state'],
++                     'reasons':sorted(set(reasons)),'declared_rules_pass':result['declared_rules_pass']}
++            except Exception as error:
++                event({'event':'attempt_error','attempt_idx':index,'error_type':type(error).__name__,
++                       'utc_epoch_ns':time.time_ns()})
++                # Preserve the failed attempt and propagate unexpected failures.
++                # No success summary is written for an incomplete diagnostic.
++                raise
++            if time.monotonic()-started>=timeout_seconds:row['reasons'].append('TIME_BUDGET_EXCEEDED')
++            event({**row,'utc_epoch_ns':time.time_ns()});finished.append(row)
++    summary={'version':VERSION,'scope':'authored_QA_sampler_and_rejection_ledger_only',
++        'stop_reason':'ATTEMPT_BUDGET' if len(finished)==max_attempts else 'TIME_BUDGET',
++        'attempts_n':len(finished),'rejected_n':len(finished),'validated_pool_candidates_n':0,
++        'states':dict(Counter(row['state'] for row in finished)),
++        'reason_counts':dict(Counter(r for row in finished for r in row['reasons'])),
++        'biological_validity_proven':False,'release_allowed':False,'model_used':False,'human_observations_n':0,
++        'elapsed_seconds':time.monotonic()-started}
++    write(output/'summary.json',summary);return summary
++
++
++def main():
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--seed',type=int,required=True)
++    parser.add_argument('--max-attempts',type=int,required=True);parser.add_argument('--timeout-seconds',type=float,required=True)
++    parser.add_argument('--profile',type=Path)
++    args=parser.parse_args()
++    profile=json.loads(args.profile.read_text()) if args.profile else pending_profile()
++    print(json.dumps(run(args.output,seed=args.seed,max_attempts=args.max_attempts,timeout_seconds=args.timeout_seconds,profile=profile)))
++
++
++if __name__=='__main__':main()
+diff --git a/experiments/private_paths.py b/experiments/private_paths.py
+new file mode 100644
+index 0000000..066caee
+--- /dev/null
++++ b/experiments/private_paths.py
+@@ -0,0 +1,20 @@
++"""Recognize Cloud's empty read-only anchor guards without allowing Git output."""
++from pathlib import Path
++import stat
++
++
++def inside_repository(path):
++    path=Path(path).resolve()
++    for parent in (path,*path.parents):
++        marker=parent/'.git'
++        if not marker.exists() and not marker.is_symlink():continue
++        # Managed Cloud reserves these exact anchors using empty, read-only
++        # directories. They are not Git metadata. All other markers fail closed,
++        # including gitdir files, symlinks, writable/filled guards and nested repos.
++        if parent in (Path('/workspace'),Path('/tmp')) and not marker.is_symlink() and marker.is_dir():
++            try:
++                if not marker.stat().st_mode & (stat.S_IWUSR|stat.S_IWGRP|stat.S_IWOTH) and not any(marker.iterdir()):
++                    continue
++            except OSError:pass
++        return True
++    return False
+diff --git a/experiments/prod_ui_factorial/browser_check.py b/experiments/prod_ui_factorial/browser_check.py
+index 48f7205..adef086 100644
+--- a/experiments/prod_ui_factorial/browser_check.py
++++ b/experiments/prod_ui_factorial/browser_check.py
+@@ -14,6 +14,8 @@ import threading
+ import time
+ from urllib.request import Request,urlopen
+ 
++from experiments.private_paths import inside_repository
++
+ import websockets
+ from experiments.preview_server import handler_for
+ 
+@@ -168,7 +170,7 @@ def main():
+     parser.add_argument('--ffmpeg',type=Path,help='Also run all 64 live paths with generated media and a synthetic detector/camera')
+     args=parser.parse_args()
+     output=args.output.resolve()
+-    if 'private_artifacts' not in output.parts or any((p/'.git').exists() for p in output.parents):
++    if 'private_artifacts' not in output.parts or inside_repository(output):
+         raise ValueError('Use a new private_artifacts directory outside Git')
+     output.mkdir(parents=True,exist_ok=False)
+     server=ThreadingHTTPServer(('127.0.0.1',0),handler_for(ROOT));thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
