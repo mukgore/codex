@@ -1,7 +1,72 @@
 """Review model region correspondence; never infer clinical/anatomical approval."""
+import ast
+import hashlib
+import json
+from pathlib import Path
+
 import numpy as np
 
 FINGER_LINKS = tuple((b+j,b+j+1) for b in (1,5,9,13,17) for j in range(3))
+PROTECTION_MODES = ('author_region_union','legacy_rest_proxy')
+
+
+def blob(path):
+    data=Path(path).read_bytes()
+    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+
+
+def validate_protection_request(mode,profile,assignment,review):
+    if mode not in PROTECTION_MODES:raise ValueError('Explicit registered protection mode required')
+    values=(profile,assignment,review)
+    if mode=='author_region_union' and any(v is None for v in values):
+        raise ValueError('Author-region union requires pinned profile, assignment and source-review files; no legacy fallback')
+    if mode=='legacy_rest_proxy' and any(v is not None for v in values):
+        raise ValueError('Legacy reproduction must not silently ignore author-region inputs')
+
+
+def source_profile(profile,assignment,review):
+    profile=json.loads(Path(profile).read_text());review=Path(review).resolve(strict=True)
+    if (profile['version']!='cpf_paper_palette_geometry_region_review_v1'
+            or profile['release_allowed'] is not False or profile['review_target_region_ids']!=[6,7]
+            or blob(assignment)!=profile['assignment_blob_sha']
+            or blob(review/'cpf_viz_utils.py')!=profile['author_palette_blob_sha']
+            or blob(review/'author_manolayer.py')!='0e96fe330efee46ed898e4211896a50db2f05eba'):
+        raise ValueError('Pinned source blobs and explicit review-only region profile required')
+    # Parse literal RGB assignments without importing/executing author code.
+    tree=ast.parse((review/'cpf_viz_utils.py').read_text());colors={}
+    for node in ast.walk(tree):
+        if not isinstance(node,ast.Assign) or len(node.targets)!=1:continue
+        target=node.targets[0];value=node.value
+        if not (isinstance(target,ast.Subscript) and isinstance(target.value,ast.Name) and target.value.id=='vertex_color'
+                and isinstance(target.slice,ast.Compare) and isinstance(target.slice.left,ast.Name) and target.slice.left.id=='x'
+                and len(target.slice.ops)==1 and isinstance(target.slice.ops[0],ast.Eq)
+                and isinstance(target.slice.comparators[0],ast.Constant) and type(target.slice.comparators[0].value) is int
+                and isinstance(value,ast.BinOp) and isinstance(value.op,ast.Div) and isinstance(value.left,ast.Call)
+                and isinstance(value.left.func,ast.Attribute) and isinstance(value.left.func.value,ast.Name)
+                and value.left.func.value.id=='np' and value.left.func.attr=='array'
+                and isinstance(value.right,ast.Constant) and value.right.value==255.):continue
+        colors[target.slice.comparators[0].value]=ast.literal_eval(value.left.args[0])
+    if any(colors.get(r['id'])!=r['rgb'] for r in profile['regions']):
+        raise ValueError('Project region colors do not match the pinned author palette')
+    labels=np.loadtxt(assignment,dtype=int)
+    if labels.shape!=(778,) or set(labels.tolist())!=set(range(17)):
+        raise ValueError('Exact 778-vertex/17-region author assignment required')
+    return profile,labels
+
+
+def union_proxy(previous,labels,vertices,joints,faces):
+    review=review_neutral(labels,vertices,joints,faces)
+    if review['finger_centroids_matching_expected_links_n']!=15:
+        raise ValueError('Current model region geometry does not match reviewed finger-link correspondence')
+    selected=whole_region_faces(labels,faces,[6,7])
+    original=np.asarray(previous['protected_face_ids']).copy()
+    result=dict(previous)
+    result.update(protected_face_ids=protective_union(original,selected,len(faces)),
+                  original_rest_protected_face_ids=original,author_region_face_ids=selected,
+                  author_finger_centroid_matches_n=15,
+                  anatomical_coverage_proven=False,
+                  definition='union of prior rest-nearest-bone whole faces and paper/palette-reviewed author middle proximal/intermediate whole faces')
+    return result
 
 
 def validated_arrays(labels, vertices, joints, faces):

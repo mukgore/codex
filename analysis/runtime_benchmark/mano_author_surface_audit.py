@@ -5,8 +5,6 @@ The source numeric-ID/name correspondence is a project paper/palette review,
 checked against model geometry, not independent human anatomical annotation.
 """
 import argparse
-import ast
-import hashlib
 import json
 from pathlib import Path
 import time
@@ -14,7 +12,7 @@ import time
 import numpy as np
 
 from analysis.runtime_benchmark.author_surface_regions import (
-    review_neutral,whole_region_faces,protective_union,undirected_topology_equal,
+    review_neutral,whole_region_faces,protective_union,undirected_topology_equal,source_profile,
 )
 from analysis.runtime_benchmark.common_camera_mask import (
     project,surface_weight_interval,WIDTH,HEIGHT,
@@ -26,47 +24,12 @@ from validation_v03.execution_record import verify
 from validation_v03.session_artifacts import _private,canonical
 
 
-def blob(path):
-    data=Path(path).read_bytes()
-    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
-
-
 def bound(root,record):
     root=_private(root);record=_private(record);status=verify(record)
     receipt=json.loads((record/'receipt.private.json').read_text())
     if status['state']!='EXITED_ZERO' or receipt['artifact_roots']!=[str(root)]:
         raise ValueError('Completed immutable source and exact bound root required')
     return root,record,status
-
-
-def source_profile(profile,assignment,review):
-    profile=json.loads(Path(profile).read_text());review=_private(review)
-    if (profile['version']!='cpf_paper_palette_geometry_region_review_v1'
-            or profile['release_allowed'] is not False or profile['review_target_region_ids']!=[6,7]
-            or blob(assignment)!=profile['assignment_blob_sha']
-            or blob(review/'cpf_viz_utils.py')!=profile['author_palette_blob_sha']
-            or blob(review/'author_manolayer.py')!='0e96fe330efee46ed898e4211896a50db2f05eba'):
-        raise ValueError('Pinned source blobs and explicit review-only region profile required')
-    # Parse literal RGB assignments without importing/executing author code.
-    tree=ast.parse((review/'cpf_viz_utils.py').read_text());colors={}
-    for node in ast.walk(tree):
-        if not isinstance(node,ast.Assign) or len(node.targets)!=1:continue
-        target=node.targets[0];value=node.value
-        if not (isinstance(target,ast.Subscript) and isinstance(target.value,ast.Name) and target.value.id=='vertex_color'
-                and isinstance(target.slice,ast.Compare) and isinstance(target.slice.left,ast.Name) and target.slice.left.id=='x'
-                and len(target.slice.ops)==1 and isinstance(target.slice.ops[0],ast.Eq)
-                and isinstance(target.slice.comparators[0],ast.Constant) and type(target.slice.comparators[0].value) is int
-                and isinstance(value,ast.BinOp) and isinstance(value.op,ast.Div) and isinstance(value.left,ast.Call)
-                and isinstance(value.left.func,ast.Attribute) and isinstance(value.left.func.value,ast.Name)
-                and value.left.func.value.id=='np' and value.left.func.attr=='array'
-                and isinstance(value.right,ast.Constant) and value.right.value==255.):continue
-        colors[target.slice.comparators[0].value]=ast.literal_eval(value.left.args[0])
-    if any(colors.get(r['id'])!=r['rgb'] for r in profile['regions']):
-        raise ValueError('Project region colors do not match the pinned author palette')
-    labels=np.loadtxt(assignment,dtype=int)
-    if labels.shape!=(778,) or set(labels.tolist())!=set(range(17)):
-        raise ValueError('Exact 778-vertex/17-region author assignment required')
-    return profile,labels
 
 
 def execute(source,source_record,rendered,rendered_record,assignment,review,profile,worker_root,output):

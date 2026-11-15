@@ -17,6 +17,9 @@ from analysis.runtime_benchmark.common_camera_mask import (
     CAMERA_MODES, VIEWS, VERSION, WIDTH, HEIGHT,
 )
 from analysis.runtime_benchmark.private_mesh_raster import rasterize, BACKGROUND_FACE
+from analysis.runtime_benchmark.author_surface_regions import (
+    PROTECTION_MODES,validate_protection_request,source_profile,union_proxy,undirected_topology_equal,
+)
 from analysis.runtime_benchmark.mano_conditioned_generator import Timings
 from analysis.runtime_benchmark.journal import Journal, export_bundle, verify_bundle
 from validation_v03.execution_record import verify
@@ -67,10 +70,15 @@ def check_proxy_encoded(path, amodal, fps):
         capture.release()
     return {'frames_n': len(rows), 'frames': rows, 'mask_interior_tolerance': 30,
             'passed': all(r['pixels_above_existing_interior_tolerance'] == 0 for r in rows),
-            'anatomical_coverage_proven': False, 'scope': 'declared rest-bone amodal surface proxy only'}
+            'anatomical_coverage_proven': False, 'scope': 'caller-declared model/proxy amodal region; see bound run protection definition'}
 
 
-def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_mode):
+def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_mode,
+            protection_mode='author_region_union',region_profile=None,region_assignment=None,region_review=None):
+    validate_protection_request(protection_mode,region_profile,region_assignment,region_review)
+    author_profile=author_labels=None
+    if protection_mode=='author_region_union':
+        author_profile,author_labels=source_profile(region_profile,_private(region_assignment),_private(region_review))
     if camera_mode not in CAMERA_MODES: raise ValueError('Explicit camera registration mode required')
     source = _private(source); output = _private(output); before = verify(source_record)
     receipt = json.loads((_private(source_record)/'receipt.private.json').read_text())
@@ -95,7 +103,8 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
         'endpoint': 'shared_camera_source_render_and_proxy_mask_codec_QA', 'input_exposure': 'recorded private mesh sequences',
         'cache_state': 'all source arrays loaded once; no model load/inference; local codec caches uncontrolled',
         'planned_frames': 800, 'timeout_seconds': 900,
-        'scope': '32 source videos; masking only if unchanged geometry and conservative proxy gates allow; all quarantined'})
+        'scope': '32 source videos; masking only if unchanged geometry and declared model-region protection allow; all quarantined',
+        'protection_mode':protection_mode,'legacy_reproduction_only':protection_mode=='legacy_rest_proxy'})
     completed = 0; cases = []; media = []
     try:
         shared_start = time.perf_counter_ns(); loaded = []; proxies = {}; registrations = {}; neutral_references = {}
@@ -115,13 +124,26 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
             for hand in ('right', 'left'):
                 with np.load(source/(hand+'_fresh_neutral.private.npz'), allow_pickle=False) as neutral:
                     proxy = surface_proxy(neutral['vertices'][0], neutral['points'], neutral['faces'])
+                    if author_profile is not None:
+                        proxy=union_proxy(proxy,author_labels,neutral['vertices'][0],neutral['points'],neutral['faces'])
                     proxy['faces'] = neutral['faces'].copy(); proxies[hand] = proxy
                     neutral_references[hand] = neutral['points'].copy()
                     registrations[hand] = neutral_registration(neutral['points'], hand)
                     if hand == 'right': reference = neutral['points'].copy()
                 np.savez_compressed(output/(hand+'_proxy_definition.private.npz'),
                     protected_face_ids=proxy['protected_face_ids'], vertex_nearest_edge=proxy['vertex_nearest_edge'],
+                    **({key:proxy[key] for key in ('original_rest_protected_face_ids','author_region_face_ids')}
+                       if author_profile is not None else {}),
                     **{k+'_patch_face_ids': v for k, v in proxy['tip_patches'].items()})
+            if author_profile is not None and not undirected_topology_equal(proxies['right']['faces'],proxies['left']['faces']):
+                raise ValueError('Reviewed region index connectivity differs between current hands')
+            (output/'protection_scope.private.json').write_bytes(canonical({
+                'mode':protection_mode,'legacy_reproduction_only':protection_mode=='legacy_rest_proxy',
+                'author_region_profile_version':None if author_profile is None else author_profile['version'],
+                'prior_protection_shrunk':False,'independent_anatomical_annotation':False,
+                'hands':{hand:{'protected_faces_n':len(proxy['protected_face_ids']),
+                    'author_finger_centroid_matches_n':proxy.get('author_finger_centroid_matches_n'),
+                    'definition':proxy['definition']} for hand,proxy in proxies.items()}}))
             registration_rows = []
             for case in loaded:
                 hand = case['original']['hand']; original_points = case['joints'].astype(float).copy()
@@ -282,6 +304,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
                     'minimum_visible_distal_patch_count':min((d['tip_patch_count'] for d in diagnostics),default=None),
                     'upstream_surface_indicator_frames_n':original['surface_indicator_frames_n'],
                     'upstream_model_prior_policy':original['policy'],'anatomical_surface_annotations_verified':False,
+                    'protection_mode':protection_mode,'legacy_reproduction_only':protection_mode=='legacy_rest_proxy',
                     'decision':'QUARANTINED_RESEARCH_DIAGNOSTIC','accepted_into_pool':False,'release_allowed':False}
                 (directory/'decision.private.json').write_bytes(canonical(row)); cases.append(row)
                 print('Shared-camera cases completed: '+str(len(cases))+'/32',flush=True)
@@ -291,9 +314,12 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
     finally:
         if not journal.closed: journal.close_without_terminal()
     export_bundle(output/'journal',output/'journal_bundle.private.zip'); recovered=verify_bundle(output/'journal_bundle.private.zip')
-    summary={'version':'shared_camera_hand_neutral_registration_modes_v2','camera_contract_version':VERSION,
+    summary={'version':'shared_camera_model_region_protection_modes_v3','camera_contract_version':VERSION,
+        'protection_mode':protection_mode,'legacy_reproduction_only':protection_mode=='legacy_rest_proxy',
+        'author_region_profile_version':None if author_profile is None else author_profile['version'],
+        'prior_protection_shrunk':False,
         'camera_mode':camera_mode,'registration_max_radial_residual_native_units':max(r['max_radial_distance_residual_native_units'] for r in registration_rows),
-        'scope':'shared proper cameras and rest-bone proxy mask/codec diagnostic, not anatomical/human/security approval',
+        'scope':'shared proper cameras and declared model-region/proxy mask/codec diagnostic, not anatomical/human/security approval',
         'source_cases_n':16,'views_n':2,'rendered_source_cases_n':len(cases),'rendered_source_frames_n':completed,
         'upstream_distinct_surface_indicator_frames_n':sum(c['surface_indicator_frames_n'] for c in source_summary['cases']),
         'upstream_collision_counts_are_reused_per_view_not_new_3D_tests':True,
@@ -308,6 +334,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
             'Optional hand-neutral registration is a fixed proper model convention with signed left lateral axis, not measured clinical or palm/back alignment.',
             'Only first wrist translation is removed; both views use proper shared axes and reverse horizontal/depth signs.',
             'Nearest-rest-bone face sets and nonempty distal patches are geometric surrogates, not independent anatomical/recognizability labels.',
+            'Author-region union adds paper/palette-reviewed whole faces; model centroid/connection checks do not prove all anatomical boundaries or clinical validity.',
             'Opposite views and duplicate source policies are correlated and not independent tasks or security entropy.',
             'Original surface intersections/BMC/physical/human/attack holds remain; codec success is a separate lower-level check.',
             'Media timing scopes differ for encoder-close vs library-return boundaries; own-process CPU omits ffmpeg child CPU.']}
@@ -318,4 +345,7 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('source','source-record','worker-root','ffmpeg','ffprobe','output'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--camera-mode',choices=CAMERA_MODES,required=True)
-    a=parser.parse_args();print(json.dumps(execute(a.source,a.source_record,a.worker_root,a.ffmpeg,a.ffprobe,a.output,a.camera_mode)))
+    parser.add_argument('--protection-mode',choices=PROTECTION_MODES,default='author_region_union')
+    for name in ('region-profile','region-assignment','region-review'):parser.add_argument('--'+name,type=Path)
+    a=parser.parse_args();print(json.dumps(execute(a.source,a.source_record,a.worker_root,a.ffmpeg,a.ffprobe,a.output,a.camera_mode,
+        a.protection_mode,a.region_profile,a.region_assignment,a.region_review)))

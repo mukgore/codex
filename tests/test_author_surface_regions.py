@@ -3,6 +3,7 @@ import numpy as np
 
 from analysis.runtime_benchmark.author_surface_regions import (
     FINGER_LINKS,review_neutral,whole_region_faces,protective_union,undirected_topology_equal,
+    validate_protection_request,union_proxy,
 )
 
 
@@ -16,6 +17,24 @@ def sample():
 
 
 class AuthorSurfaceRegionTests(unittest.TestCase):
+    def test_default_generation_rejects_missing_author_inputs_before_any_source_io(self):
+        from analysis.runtime_benchmark.mano_common_camera_rerender import execute
+        with self.assertRaisesRegex(ValueError,'no legacy fallback'):
+            execute(None,None,None,None,None,None,'hand_neutral_registered')
+        validate_protection_request('legacy_rest_proxy',None,None,None)
+        with self.assertRaises(ValueError):validate_protection_request('legacy_rest_proxy','profile',None,None)
+        with self.assertRaises(ValueError):validate_protection_request('unregistered',None,None,None)
+
+    def test_generation_union_retains_old_faces_without_mutating_proxy_and_rejects_misaligned_regions(self):
+        labels,v,j,f=sample();original=np.array([3]);previous={'protected_face_ids':original,'tip_patches':{}}
+        result=union_proxy(previous,labels,v,j,f)
+        np.testing.assert_array_equal(result['protected_face_ids'],[0,1,2,3])
+        np.testing.assert_array_equal(original,[3])
+        self.assertFalse(result['anatomical_coverage_proven'])
+        bad=labels.copy();bad[[6,9]]=bad[[9,6]]
+        with self.assertRaisesRegex(ValueError,'model region geometry'):
+            union_proxy(previous,bad,v,j,f)
+
     def test_expected_model_region_geometry_and_reflected_hand_are_distinguished_from_clinical_proof(self):
         labels,v,j,f=sample()
         for matrix in (np.eye(3),np.diag([-1.,1.,1.])):
