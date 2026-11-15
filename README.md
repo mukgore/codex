@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**표면 검사 후속:** [랜덤 손192프레임의 삼각형 교차 진단](docs/deliveries/2026-11-15_mano_surface_intersections.md)을 추가했습니다. 검사 범위에서 교차 지표는 없었으나 전체 관통 부재·생체 타당성은 미확인입니다.
+
 **학술 자료 찾기:** [논문 색인·참고 절/식·코드 연결·미확인 근거](docs/academic_reference_index.md), [핵심 논문 BibTeX](references/hand_research_core.bib). 생체 제약·기하 검사·채점·선행 CAPTCHA 자료를 구분합니다.
 
 **랜덤 손동작 진단:** [실제8동작·192프레임 생성과 시도/거부 기록](docs/deliveries/2026-11-15_mano_random_diagnostic.md)을 마쳤습니다. 생체 허용 범위는 미확인이라 모두 비공개 진단으로 격리했고 문제 풀에 추가하지 않았습니다.

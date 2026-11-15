@@ -1,0 +1,152 @@
+{
+  "algorithm_version": "sampled_triangle_sat_shared_vertex_excluded_v1",
+  "biological_validity_proven": false,
+  "boundary_edge_counts": {
+    "16": 8
+  },
+  "cases": [
+    {
+      "boundary_edges_n": 16,
+      "case": "left_s19_a0",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8347,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "left_s19_a1",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8412,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "left_s7_a0",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8245,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "left_s7_a1",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8401,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "right_s19_a0",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8304,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "right_s19_a1",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8311,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "right_s7_a0",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8345,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    },
+    {
+      "boundary_edges_n": 16,
+      "case": "right_s7_a1",
+      "coplanar_overlap_frames_n": 0,
+      "frames_n": 24,
+      "indicator_frames_n": 0,
+      "nonmanifold_edges_n": 0,
+      "shared_vertex_pairs_excluded_per_frame_n": 9320,
+      "tested_pair_instances_n": 8203,
+      "touch_or_ambiguous_frames_n": 0,
+      "two_plane_straddling_frames_n": 0,
+      "unmeasurable_frames_n": 0
+    }
+  ],
+  "cases_n": 8,
+  "continuous_collision_free_proven": false,
+  "coplanar_overlap_frames_n": 0,
+  "frames_n": 192,
+  "indicator_cases_n": 0,
+  "indicator_frames_n": 0,
+  "limitations": [
+    "Shared-vertex face pairs excluded and counted; overlap away from the common vertex can be missed.",
+    "Finite precision tolerance and sampled instants only; no exact predicates or continuous collision.",
+    "Surface contacts/plane straddling are indicators, not penetration volume/depth or force measurements.",
+    "Closed-surface containment, anatomical correspondence, hand-object physics and human comfort unchecked.",
+    "Original failed biological admission remains unchanged; no source mutation or pool promotion."
+  ],
+  "new_model_inference": false,
+  "nonmanifold_edge_counts": {
+    "0": 8
+  },
+  "original_quarantine_preserved": true,
+  "reference": "GEO-01 Eberly separating axes Sec.9; independent implementation",
+  "relative_numeric_epsilon": 1e-07,
+  "release_allowed": false,
+  "scope": "recorded_sampled_non_shared_vertex_triangle_surface_diagnostic",
+  "tested_pair_instances_n": 66568,
+  "touch_or_ambiguous_frames_n": 0,
+  "two_plane_straddling_frames_n": 0,
+  "unmeasurable_frames_n": 0,
+  "volume_penetration_free_proven": false,
+  "audit_code_commit": "1fd4285",
+  "hand_surface_code_commit": "670ec33",
+  "pipeline_tests_passed": 150,
+  "new_surface_tests_passed": 8,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 9,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "whole_goal_completion_proven": false
+}

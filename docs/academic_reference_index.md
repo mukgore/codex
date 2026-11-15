@@ -116,7 +116,7 @@ Christen, Sammy; Kocabas, Muhammed; Aksan, Emre; Hwangbo, Jemin; Song, Jie; Hill
 
 | 안정 ID | 자료 | 검토한 위치와 상태 |
 |---|---|---|
-| GEO-01 | David Eberly, [Intersection of Convex Objects: The Method of Separating Axes](https://www.geometrictools.com/Documentation/MethodOfSeparatingAxes.pdf), 문서 수정2022-06-20 | 11월15일 §9/PDF18쪽의 두 삼각형 축 후보·공면 처리 관련 절을 확인. 표면 교차 코드의 다음 참고이며 **아직 mesh 검사 구현/실행 결과 없음** |
+| GEO-01 | David Eberly, [Intersection of Convex Objects: The Method of Separating Axes](https://www.geometrictools.com/Documentation/MethodOfSeparatingAxes.pdf), 문서 수정2022-06-20 | 11월15일 §9/PDF18쪽의 두 삼각형 축 후보·공면 처리 관련 절을 확인. handcaptcha `mesh_intersections.py`에 독립 구현, [192프레임·후보66,568쌍 진단](deliveries/2026-11-15_mano_surface_intersections.md). 인접 면 제외·샘플 시간·수치 허용값은 프로젝트 선택이며 부피/연속/생체 검증 아님 |
 | GEO-02 | Tomas Möller1997, [A Fast Triangle-Triangle Intersection Test](https://web.stanford.edu/class/cs277/resources/papers/Moller1997b.pdf), [출판 DOI](https://www.tandfonline.com/doi/abs/10.1080/10867651.1997.10487472) | 11월15일 원 논문 검색 결과에서 평면 거리/교차 방법을 확인한 대안 참고. 알고리즘 구현/전체 원문 검토 완료로 표시하지 않음 |
 
 기하 검사에서는 접함·공면·교차 의심, 인접 면 제외와 수치 오차, 샘플 사이 충돌 누락을 구분해야 한다. 이 문헌은 관절의 생체 허용 각도·속도·사람 편안함의 근거가 아니다.
