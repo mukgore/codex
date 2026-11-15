@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**자세/형상 후속:** [실제4346자세·24조건의 현재/고정 BMC 축 대조](deliveries/2026-11-15_mano_bmc_context_controls.md)를 완료했다. 기하 검산과 임상 축·생체 한계는 구분한다. 다음 축 후보의 논문과 저자 구현은 BIO-09에 추가했다.
+
 **로컬 재개 후 기하 대조:** [실제 MANO409자세의 중립 BMC 방향·왼손 반사 검산](deliveries/2026-11-15_local_resume_and_bmc_directions.md)을 추가했다. BIO-02/03을 참고한 프로젝트 계산이며 임상 축 측정 결과가 아니다. 관절 중심240개와 표면 손끝120개를 구분했고 자세/형상 변화·임상 대응·허용 범위는 남아 있다.
 
 최초 정리: 2026-11-15. 앞으로 참고한 논문을 이 문서에 계속 추가한다. **생물학적 타당성은 학술 근거와 실제 모델의 관절·좌표계·단위·적용 조건을 대응해 판단한다.** 기하 검사, 자연스러워 보이는 모양, 논문 인용, 코드 검사 통과만으로 생체 유효성을 승인하지 않는다.
@@ -71,6 +73,15 @@ BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기�
 Ryf, C.; Weymann, A. (1995). **The neutral zero method — A principle of measuring joint function.** Injury26. [DOI10.1016/0020-1383(95)90116-7](https://doi.org/10.1016/0020-1383(95)90116-7).
 
 BMC 본문의 한계 출처 예시인 참고문헌[33]에서 서지를 확인했다. 11월15일 DOI 접근은 실패했으며 **원문 미열람**이다. 중립자세와 측정 원칙 확인을 위한 후속이며, 구체적 관절 값이나 우리 모델 대응을 이 자료에서 확보했다고 표시하지 않는다.
+
+### BIO-09 — CPF의 A-MANO와 저자 구현
+
+Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021). **CPF: Learning a Contact Potential Field To Model the Hand-Object Interaction.** ICCV, pp.11097–11106. [CVF 서지](https://openaccess.thecvf.com/content/ICCV2021/html/Yang_CPF_Learning_a_Contact_Potential_Field_To_Model_the_Hand-Object_ICCV_2021_paper.html), BibTeX `Yang2021CPF`.
+
+- **읽은 범위:** 11월15일 [본문](https://openaccess.thecvf.com/content/ICCV2021/papers/Yang_CPF_Learning_a_Contact_Potential_Field_To_Model_the_Hand-Object_ICCV_2021_paper.pdf) §3/PDF3쪽·그림2, [보충](https://openaccess.thecvf.com/content/ICCV2021/supplemental/Yang_CPF_Learning_a_ICCV_2021_supplemental.pdf) §A.1/PDF1쪽·그림1–2를 렌더/대조했다. twist/splay/bend 축과 회전 제약을 참고한다. 접촉/물리/전체 성능 재현은 아니다. 웹 PDF 도구403 후 기본 TLS의 로컬 다운로드200으로 확보했으며 원PDF는 비공개다.
+- **저자 구현:** [manotorch 고정 revision](https://github.com/lixiny/manotorch/tree/a2a70c591f91551078b7bb2af9b5d9f275b626e0)의 README, `axislayer.py`, `anatomy_loss.py`, `manolayer.py` 초기화를 확인했다. README는 기존 posed축/axis-angle 제약의 한계와 v0.0.2 이후 flat 기준축·FK 운반·Euler 제약을 구분한다. 원2021 방법과 현재 코드가 같다고 표시하지 않는다.
+- **도입 전:** BMC 각도와 해부학적 축을 따로 추적하고 엄지/좌우손·중립·Euler 순서·wrist·왕복 복원을 실제 SDK와 대조한다. 현재 프로젝트의 root만 운반한 frozen 대조는 이 FK 방법 검사가 아니다. 기본 한계 수치의 측정 근거·대상/과제는 미확인이다.
+- **자산:** 고정 revision의 LICENSE는 Apache-2.0, README의 MANO 모델은 별도 MANO 라이선스다. 코드 라이선스를 모델 재배포 허가로 취급하지 않는다. 설치·모델 업로드·생체 프로필 변경은 하지 않았다.
 
 ## 각 생체 판단에 무엇이 아직 필요한가
 

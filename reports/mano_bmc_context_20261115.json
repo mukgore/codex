@@ -1,0 +1,332 @@
+{
+  "biological_validity_proven": false,
+  "clinical_axes_verified_n": 0,
+  "context_design": [
+    {
+      "beta0": -1.0,
+      "context_id": 0,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 1,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 2,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 3,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 4,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 5,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 6,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 7,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 8,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 9,
+      "hand": "right",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 10,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 11,
+      "hand": "right",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 0,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 1,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 2,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": -1.0,
+      "context_id": 3,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 4,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 5,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 6,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 0.0,
+      "context_id": 7,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 8,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 9,
+      "hand": "left",
+      "pose_name": "flat",
+      "root_name": "rotated"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 10,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "identity"
+    },
+    {
+      "beta0": 1.0,
+      "context_id": 11,
+      "hand": "left",
+      "pose_name": "compound",
+      "root_name": "rotated"
+    }
+  ],
+  "contexts_n": 24,
+  "groups": [
+    {
+      "child_kind": "native_child_joint",
+      "geometry_errors_n": 0,
+      "max_angle_residual_radians": 3.454988696041661e-07,
+      "max_world_bone_residual_native_units": 7.450580598658552e-09,
+      "median_angle_residual_radians": 3.3017227866680154e-08,
+      "method": "adaptive",
+      "samples_n": 1440
+    },
+    {
+      "child_kind": "mesh_surface_tip",
+      "geometry_errors_n": 0,
+      "max_angle_residual_radians": 0.0019028555000081687,
+      "max_world_bone_residual_native_units": 0.00010697543615439953,
+      "median_angle_residual_radians": 0.000454676263757451,
+      "method": "adaptive",
+      "samples_n": 720
+    },
+    {
+      "child_kind": "native_child_joint",
+      "geometry_errors_n": 0,
+      "max_angle_residual_radians": 0.005415642042514296,
+      "max_world_bone_residual_native_units": 8.04432926174159e-09,
+      "median_angle_residual_radians": 0.00016367501518188207,
+      "method": "frozen_mean_neutral",
+      "samples_n": 1440
+    },
+    {
+      "child_kind": "mesh_surface_tip",
+      "geometry_errors_n": 0,
+      "max_angle_residual_radians": 0.0072367340694748095,
+      "max_world_bone_residual_native_units": 0.00010775409842805721,
+      "median_angle_residual_radians": 0.000593989601975476,
+      "method": "frozen_mean_neutral",
+      "samples_n": 720
+    }
+  ],
+  "limitations": [
+    "One shape coefficient only; beta +/-1 is engineering, not a population validity range.",
+    "Two authored poses and two roots do not cover global motion space or singularities.",
+    "Geometric axes are not measured clinical axes; no clinical limits are applied.",
+    "Mesh surface tips are not rigid native joints.",
+    "Independent samples are not a time series; no speed, physics, comfort or human task was tested."
+  ],
+  "native_forward_samples_n": 4346,
+  "new_model_inference": true,
+  "numeric_profile_changed": false,
+  "release_allowed": false,
+  "runtime_journal_completed_frames_n": 4346,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "engineering_pose_shape_root_geometric_directions_not_clinical",
+  "step_radians": 0.02,
+  "version": "mano_bmc_pose_shape_root_direction_controls_v1",
+  "native_center_factor_maxima": [
+    {
+      "method": "adaptive",
+      "pose_name": "flat",
+      "beta0": -1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 2.299284363425913e-07
+    },
+    {
+      "method": "adaptive",
+      "pose_name": "flat",
+      "beta0": 0,
+      "samples_n": 240,
+      "max_angle_residual_radians": 1.8963122265513999e-07
+    },
+    {
+      "method": "adaptive",
+      "pose_name": "flat",
+      "beta0": 1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 1.6229439270959434e-07
+    },
+    {
+      "method": "adaptive",
+      "pose_name": "compound",
+      "beta0": -1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 3.454988696041661e-07
+    },
+    {
+      "method": "adaptive",
+      "pose_name": "compound",
+      "beta0": 0,
+      "samples_n": 240,
+      "max_angle_residual_radians": 2.999500149231116e-07
+    },
+    {
+      "method": "adaptive",
+      "pose_name": "compound",
+      "beta0": 1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 2.208661940283907e-07
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "flat",
+      "beta0": -1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 0.0010142932805848603
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "flat",
+      "beta0": 0,
+      "samples_n": 240,
+      "max_angle_residual_radians": 1.8963122265513999e-07
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "flat",
+      "beta0": 1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 0.0009680203643972762
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "compound",
+      "beta0": -1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 0.005415642042514296
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "compound",
+      "beta0": 0,
+      "samples_n": 240,
+      "max_angle_residual_radians": 0.005237280097316249
+    },
+    {
+      "method": "frozen_mean_neutral",
+      "pose_name": "compound",
+      "beta0": 1,
+      "samples_n": 240,
+      "max_angle_residual_radians": 0.005064771638832843
+    }
+  ],
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 79,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "research_tests_passed": 215,
+  "producer_code_commit": "4c5fa65",
+  "preflight_failure": {
+    "occurred": true,
+    "model_started": false,
+    "cause": "recorder_environment_did_not_match_CPU_lock",
+    "remedy": "invoke_existing_CPU_runtime_without_environment_changes",
+    "detailed_note_private": true
+  },
+  "comparison_boundary": "Frozen BMC control uses root-only axis transport; this is not a test or refutation of the author manotorch FK anatomical frame."
+}
