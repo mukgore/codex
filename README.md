@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**학술 자료 찾기:** [논문 색인·참고 절/식·코드 연결·미확인 근거](docs/academic_reference_index.md), [핵심 논문 BibTeX](references/hand_research_core.bib). 생체 제약·기하 검사·채점·선행 CAPTCHA 자료를 구분합니다.
+
 **랜덤 손동작 진단:** [실제8동작·192프레임 생성과 시도/거부 기록](docs/deliveries/2026-11-15_mano_random_diagnostic.md)을 마쳤습니다. 생체 허용 범위는 미확인이라 모두 비공개 진단으로 격리했고 문제 풀에 추가하지 않았습니다.
 
 **앞으로 할 일 한 문서:** [우선순위·필요 입력·전체62개 백로그·3D 요구·실행시간 후속](docs/remaining_work_master_2026-11-15.md). 로컬 연구를 다시 진행하며 Cloud 이전은 보류합니다.

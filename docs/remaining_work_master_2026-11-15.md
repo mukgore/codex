@@ -4,6 +4,8 @@
 
 ## 현재 위치와 바로 다음 작업
 
+**문헌 관리:** [학술 자료 통합 색인](academic_reference_index.md)과 [핵심 BibTeX](../references/hand_research_core.bib)를 추가했다. 앞으로 새 자료/수치마다 출처·절/식·대상/단위·모델 대응·코드/검사·확인일을 함께 갱신한다. 현재 기하 표면 교차 참고 절을 확인했으며 구현/실행은 다음 작업이다.
+
 로컬 연구를 다시 진행한다. Cloud 이전은 조사/인계 문서를 보존한 상태로 보류하며 현재 연구의 선행 조건으로 삼지 않는다. 공개 브랜치는 두 repo 모두 `work/todo-consolidation-20261103`이다.
 
 - **최근 마친 것:** [MANO 원래 관절·전체 자세를 기록한 양손48프레임 생성](deliveries/2026-11-14_mano_controlled_producer.md), [점 종류별 프로필 검사](deliveries/2026-11-15_mano_typed_profile.md), [실제 랜덤8동작·192프레임과 시도/거부 기록](deliveries/2026-11-15_mano_random_diagnostic.md). pipeline142개·연구198개 검사 통과. 랜덤 결과는 모두 격리, 풀 채택0개다.
