@@ -1,0 +1,35 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "execution_record": {
+        "integrity": "RECORDED_FILES_MATCH",
+        "mode": "RECORDED_COMMAND_EXECUTION",
+        "state": "POSTFLIGHT_REJECTED",
+        "artifact_files_n": 203,
+        "scientific_result_or_source_authentication_proven": false
+      },
+      "producer_code_commit": "21f0633f87a02d6a51858a8ead0204fba07e69e9",
+      "process_exit_code": 0,
+      "timed_video_attempts_n": 16,
+      "accepted_as_completed_experiment": false
+    },
+    {
+      "attempt": 2,
+      "execution_record": {
+        "integrity": "RECORDED_FILES_MATCH",
+        "mode": "RECORDED_COMMAND_EXECUTION",
+        "state": "PROCESS_ERROR",
+        "artifact_files_n": 11,
+        "scientific_result_or_source_authentication_proven": false
+      },
+      "producer_code_commit": "5bb68e8c27e9acb457deaac961e7a4e9cf225292",
+      "process_exit_code": 1,
+      "timed_video_attempts_n": 1,
+      "accepted_as_completed_experiment": false
+    }
+  ],
+  "timing_rows_n": 17,
+  "scope": "actual failed/rejected synthetic media attempts; not successful experiment results",
+  "release_allowed": false
+}

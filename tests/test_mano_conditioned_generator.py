@@ -11,6 +11,21 @@ from analysis.runtime_benchmark.mano_model_prior_audit import assess
 
 
 class ConditionedGeneratorTests(unittest.TestCase):
+    def test_preflex_entry_is_a_paired_proposal_change_without_reroll_or_clipping(self):
+        for seed in SEEDS:
+            for primitive in CUE_PRIMITIVES:
+                neutral=recipe(seed,primitive); bent=recipe(seed,primitive,'preflex20')
+                for key in ('beta0','base_bgr','duration_seconds','peak_fraction','shared_bend_degrees','substreams_entropy'):
+                    self.assertEqual(neutral[key],bent[key])
+                for hand in ('right','left'):
+                    for policy in POLICIES:
+                        times,angles=trajectory(bent,hand,policy)
+                        np.testing.assert_allclose(np.rad2deg(angles[[0,-1],3,2]),20.,atol=1e-12)
+                        np.testing.assert_array_equal(angles[:,list(range(3))+list(range(6,9))+list(range(12,15))],0.)
+                        self.assertLessEqual(float(np.rad2deg(angles[:,3,2]).max()),bent['shared_bend_degrees'])
+                        self.assertFalse(assess(angles,policy_profile(self.source(),hand,policy))[1].any())
+        with self.assertRaises(ValueError): recipe(7,PRIMITIVES[0],'preflex20')
+
     def test_cue_proposals_keep_index_pinky_and_thumb_neutral_across_hands_and_policies(self):
         source = self.source()
         for seed in SEEDS:

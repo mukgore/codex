@@ -34,6 +34,7 @@ SEEDS = (7, 19)
 PRIMITIVES = ('synchronous_flex_spread', 'sequential_flex_spread')
 CUE_PRIMITIVES = ('middle_only_cues_open', 'middle_ring_cues_open')
 PROFILES = {'legacy_all_fingers': PRIMITIVES, 'non_target_cues_open': CUE_PRIMITIVES}
+PROFILES['non_target_cues_open_preflex20'] = CUE_PRIMITIVES
 ALL_PRIMITIVES = PRIMITIVES + CUE_PRIMITIVES
 POLICIES = ('author_exact', 'ideal_mirror_comparator')
 PLANNED = 402  # two fresh neutral forwards plus sixteen 25-frame candidates
@@ -74,7 +75,9 @@ def smooth(x):
     return x*x*x*(10.-15.*x+6.*x*x)
 
 
-def recipe(seed, primitive):
+def recipe(seed, primitive, entry_pose='neutral'):
+    if entry_pose not in ('neutral', 'preflex20') or (entry_pose != 'neutral' and primitive not in CUE_PRIMITIVES):
+        raise ValueError('Explicit cue-only entry pose required')
     if type(seed) is not int or seed not in SEEDS or primitive not in ALL_PRIMITIVES:
         raise ValueError('Explicit registered engineering seed/primitive required')
     index = ALL_PRIMITIVES.index(primitive)
@@ -104,6 +107,10 @@ def recipe(seed, primitive):
         spec['coupling']['finger_weights_native_order'] = [0., 1., 0., 0. if primitive == CUE_PRIMITIVES[0] else .8]
         spec.update(non_target_cue_constraint='index and pinky anatomical angles fixed at model neutral; thumb neutral',
                     visibility_verified=False, human_independent_finger_control_verified=False)
+        if entry_pose == 'preflex20':
+            spec.update(cue_entry_pose=entry_pose, cue_entry_bend_degrees=20.,
+                        shared_bend_semantics='sampled peak; pulse interpolates from fixed authored entry bend to peak and back',
+                        entry_pose_status='engineering development condition, not a measured human neutral or comfort limit')
     return spec
 
 
@@ -118,9 +125,17 @@ def trajectory(spec, hand, policy):
     coupling = spec['coupling']; shared = spec['shared_bend_degrees']
     for finger, start in enumerate((0, 3, 6, 9)):
         delay = .055*finger if spec['primitive'] == 'sequential_flex_spread' else 0.
-        p = pulse(delay); bend = shared*coupling['finger_weights_native_order'][finger]
-        result[:, start, 2] = bend*p; result[:, start+1, 2] = bend*coupling['PIP_to_MCP']*p
-        result[:, start+2, 2] = bend*coupling['DIP_to_MCP']*p
+        p = pulse(delay)
+        if spec.get('cue_entry_pose') == 'preflex20':
+            floor = spec['cue_entry_bend_degrees']; level = floor+(shared-floor)*p
+            bend = level*coupling['finger_weights_native_order'][finger]
+            result[:, start, 2] = bend; result[:, start+1, 2] = bend*coupling['PIP_to_MCP']
+            result[:, start+2, 2] = bend*coupling['DIP_to_MCP']
+        else:
+            # Preserve legacy arithmetic order as well as the random draws.
+            bend = shared*coupling['finger_weights_native_order'][finger]
+            result[:, start, 2] = bend*p; result[:, start+1, 2] = bend*coupling['PIP_to_MCP']*p
+            result[:, start+2, 2] = bend*coupling['DIP_to_MCP']*p
         result[:, start, 1] = spec['shared_spread_degrees']*(1.-finger*.15)*p
     if spec['primitive'] in CUE_PRIMITIVES:
         # No index/pinky MCP spread despite a nonzero sampled shared-spread
@@ -233,6 +248,7 @@ def render_video(case, vertices, joints, faces, spec, timer):
 def execute(intake, research_record, worker_root, anatomical_root, anatomical_record, loss_source, output, profile='legacy_all_fingers'):
     if profile not in PROFILES: raise ValueError('Explicit registered primitive profile required')
     primitives = PROFILES[profile]
+    entry_pose = 'preflex20' if profile == 'non_target_cues_open_preflex20' else 'neutral'
     planned = 2 + 2*len(SEEDS)*len(primitives)*len(POLICIES)*FRAMES
     sources = authorize_inputs(intake, research_record); verify(anatomical_record)
     anatomical_root = _private(anatomical_root); output = _private(output)
@@ -308,8 +324,8 @@ def execute(intake, research_record, worker_root, anatomical_root, anatomical_re
                             try:
                                 with journal.stage(label+'_proposal_native_QA_and_video'):
                                     with timer.phase('proposal_and_compose'):
-                                        spec = recipe(seed, primitive); times, angles = trajectory(spec, hand, policy)
-                                        _, replay = trajectory(recipe(seed, primitive), hand, policy)
+                                        spec = recipe(seed, primitive, entry_pose); times, angles = trajectory(spec, hand, policy)
+                                        _, replay = trajectory(recipe(seed, primitive, entry_pose), hand, policy)
                                         if not np.array_equal(replay, angles):
                                             raise ValueError('Seed replay differs within locked runtime')
                                         applied = policy_profile(source_prior, hand, policy)

@@ -23,7 +23,7 @@ def export(source, source_record, rendered, rendered_record, report, timings):
         raise ValueError('Never alter sealed private roots')
     generated, generation_status, generation_manifest = read_bound(source,source_record)
     rerender, render_status, render_manifest = read_bound(rendered,rendered_record)
-    if (generated.get('primitive_profile') != 'non_target_cues_open'
+    if (generated.get('primitive_profile') not in ('non_target_cues_open','non_target_cues_open_preflex20')
             or generated['cases_n'] != 16 or generated['native_forward_frames_n'] != 402
             or rerender['rendered_source_frames_n'] != 800
             or generated['release_allowed'] is not False or rerender['release_allowed'] is not False):
@@ -44,6 +44,7 @@ def export(source, source_record, rendered, rendered_record, report, timings):
         for key,value in timer['phases'].items(): row[key+'_seconds'] = value['wall_ns']/1e9
         rows.append(row)
     for row in rows:
+        row['primitive_profile'] = generated['primitive_profile']
         if (row['state'] != 'COMPLETED' or row['decoded_frames'] != 25
                 or not 0 < row['video_ready_seconds'] <= row['observed_pipeline_seconds']
                 or row['ended_utc_epoch_ns'] < row['started_utc_epoch_ns']):
