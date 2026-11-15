@@ -1,0 +1,66 @@
+{
+  "biological_validity_proven": false,
+  "cases": [
+    {
+      "declared_rules_pass": false,
+      "evidence_backed_rule_checks_pass": false,
+      "frames_n": 24,
+      "hand": "right",
+      "measurable_frames_n": 24,
+      "rig_policy": "native_joint_edges_only_surface_tips_not_rigid",
+      "rig_relative_numeric_tolerance": 7.62939453125e-06,
+      "rigid_edges_checked_n": 15,
+      "state": "UNRESOLVED_LIMITS",
+      "unresolved_rules": [
+        "bone_lengths",
+        "palm_curvatures",
+        "palm_spread_radians",
+        "joint_angle_hulls",
+        "angular_speed_rad_s",
+        "angular_acceleration_rad_s2"
+      ],
+      "violations": []
+    },
+    {
+      "declared_rules_pass": false,
+      "evidence_backed_rule_checks_pass": false,
+      "frames_n": 24,
+      "hand": "left",
+      "measurable_frames_n": 24,
+      "rig_policy": "native_joint_edges_only_surface_tips_not_rigid",
+      "rig_relative_numeric_tolerance": 7.62939453125e-06,
+      "rigid_edges_checked_n": 15,
+      "state": "UNRESOLVED_LIMITS",
+      "unresolved_rules": [
+        "bone_lengths",
+        "palm_curvatures",
+        "palm_spread_radians",
+        "joint_angle_hulls",
+        "angular_speed_rad_s",
+        "angular_acceleration_rad_s2"
+      ],
+      "violations": []
+    }
+  ],
+  "cases_n": 2,
+  "frames_n": 48,
+  "full_generator_ready": false,
+  "measurable_frames_n": 48,
+  "new_model_inference": false,
+  "physical_unit_verified": false,
+  "random_motion_sampled": false,
+  "release_allowed": false,
+  "rig_length_violation_cases_n": 0,
+  "scope": "recorded_native_mano_sampled_profile_diagnostic_not_new_inference",
+  "assessor_code_commit": "f26573a",
+  "hand_code_commit": "b927813",
+  "pipeline_tests_passed": 142,
+  "new_profile_tests_passed": 3,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 4,
+    "scientific_result_or_source_authentication_proven": false
+  }
+}
