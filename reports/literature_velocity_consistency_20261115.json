@@ -1,0 +1,76 @@
+{
+  "biomechanical_profile_changed": false,
+  "human_speed_limit_established": false,
+  "interpretation": "Reported rounded table values agree closely with half-cycle t1; literal stated full-cycle t1 gives about half. Author intent and task applicability remain unresolved.",
+  "max_half_cycle_residual_rad_s": 0.0004727006585500959,
+  "paper_error_proven": false,
+  "phase_intent_resolved": false,
+  "release_allowed": false,
+  "rows": [
+    {
+      "group": "male",
+      "half_cycle_abs_residual_rad_s": 0.0002874243426358447,
+      "joint": "MCP",
+      "literal_t1_equals_cycle_rad_s": 6.082143712171318,
+      "reported_rad_s": 12.164,
+      "reported_to_literal_ratio": 1.999952742921536,
+      "t1_equals_half_cycle_rad_s": 12.164287424342636
+    },
+    {
+      "group": "male",
+      "half_cycle_abs_residual_rad_s": 0.0004727006585500959,
+      "joint": "PIP",
+      "literal_t1_equals_cycle_rad_s": 7.513236350329275,
+      "reported_rad_s": 15.026,
+      "reported_to_literal_ratio": 1.9999370842821245,
+      "t1_equals_half_cycle_rad_s": 15.02647270065855
+    },
+    {
+      "group": "male",
+      "half_cycle_abs_residual_rad_s": 0.00035153289430134294,
+      "joint": "DIP",
+      "literal_t1_equals_cycle_rad_s": 5.00882423355285,
+      "reported_rad_s": 10.018,
+      "reported_to_literal_ratio": 2.000070182717123,
+      "t1_equals_half_cycle_rad_s": 10.0176484671057
+    },
+    {
+      "group": "female",
+      "half_cycle_abs_residual_rad_s": 0.00031904088473311276,
+      "joint": "MCP",
+      "literal_t1_equals_cycle_rad_s": 6.058840479557634,
+      "reported_rad_s": 12.118,
+      "reported_to_literal_ratio": 2.0000526570860893,
+      "t1_equals_half_cycle_rad_s": 12.117680959115267
+    },
+    {
+      "group": "female",
+      "half_cycle_abs_residual_rad_s": 9.999168113949963e-05,
+      "joint": "PIP",
+      "literal_t1_equals_cycle_rad_s": 7.48445000415943,
+      "reported_rad_s": 14.969,
+      "reported_to_literal_ratio": 2.0000133599237198,
+      "t1_equals_half_cycle_rad_s": 14.96890000831886
+    },
+    {
+      "group": "female",
+      "half_cycle_abs_residual_rad_s": 0.00026667221257348217,
+      "joint": "DIP",
+      "literal_t1_equals_cycle_rad_s": 4.989633336106286,
+      "reported_rad_s": 9.979,
+      "reported_to_literal_ratio": 1.9999465547476918,
+      "t1_equals_half_cycle_rad_s": 9.979266672212573
+    }
+  ],
+  "rows_n": 6,
+  "scope": "published_formula_table_arithmetic_with_two_explicit_phase_interpretations",
+  "source_id": "BIO-06",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 1,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "research_tests_passed": 200
+}

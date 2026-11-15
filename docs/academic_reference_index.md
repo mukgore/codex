@@ -52,6 +52,24 @@ Christen, Sammy; Kocabas, Muhammed; Aksan, Emre; Hwangbo, Jemin; Song, Jie; Hill
 - **적용/미적용:** 물리 기반 접근/잡기/이동의 설계 참고다. 현재 prescribed trajectory·capsule 거리 또는 PCA 곡선이 D-Grasp의 강화학습/물리 모델 재현은 아니다.
 - **남은 확인:** 원문 방법·제약/보상·접촉/지지·평가 조건·자산 사용권을 실제 도입 범위와 대응해야 한다.
 
+### BIO-06 — Chen Chen et al.2013의 수치와 연동 참고
+
+Fai Chen Chen et al. (2013). **Constraint Study for a Hand Exoskeleton: Human Hand Kinematics and Dynamics.** Journal of Robotics, Article910961. [출판 DOI](https://doi.org/10.1155/2013/910961), [동일 논문 PDF 사본](https://pdfs.semanticscholar.org/5a84/3ade1ba00d075c4a9ae93c331dc7ee2c4b70.pdf), BibTeX `ChenChen2013Constraints`.
+
+2026-11-15 원PDF2·6·11·12쪽을 렌더/시각 대조했다. §3.1 식(1)·표6 선택4행·§6/표9 집계속도를 [비승인 참고JSON](../references/chen2013_constraint_extraction.json)에 추출했다. [수식/표 산술 대조](deliveries/2026-11-15_biomechanical_numeric_sources.md)에서는6개 속도가 반주기 해석에서 반올림 수준으로 맞음을 확인했지만 저자 의도는 미확정이다. 관절 정의·MDH부호·BMC/MANO·과제/대상 대응 전 실행 한계로 쓰지 않는다. 표6은 BIO-07을 재인용한 것이다.
+
+### BIO-07 — Cobos et al.2008 원출처 추적
+
+Cobos, Ferre, Sánchez-Urán, Ortego & Peña (2008). **Efficient Human Hand Kinematics for Manipulation Tasks.** IROS. [저자기관 UPM 서지/원문 연결](https://oa.upm.es/4040/).
+
+BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기관 서지/초록을 확인했다. [기관PDF](https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf)는 직접 열기 timeout으로 **본문 추가 검토 대기**다. 정적/동적 모델 제약을 실제 참가자 전체의 보편 경계로 읽지 않는다. 원측정·neutral/axis·task/개인차를 추적해야 한다.
+
+### BIO-08 — Neutral-zero 관절 기능 측정
+
+Ryf, C.; Weymann, A. (1995). **The neutral zero method — A principle of measuring joint function.** Injury26. [DOI10.1016/0020-1383(95)90116-7](https://doi.org/10.1016/0020-1383(95)90116-7).
+
+BMC 본문의 한계 출처 예시인 참고문헌[33]에서 서지를 확인했다. 11월15일 DOI 접근은 실패했으며 **원문 미열람**이다. 중립자세와 측정 원칙 확인을 위한 후속이며, 구체적 관절 값이나 우리 모델 대응을 이 자료에서 확보했다고 표시하지 않는다.
+
 ## 각 생체 판단에 무엇이 아직 필요한가
 
 | 판단 항목 | 현재 연결된 학술 근거/코드 | 아직 비어 있는 근거 |
@@ -59,7 +77,7 @@ Christen, Sammy; Kocabas, Muhammed; Aksan, Emre; Hwangbo, Jemin; Song, Jie; Hill
 | 뼈 길이/비율 | BIO-01 모델·BIO-02 길이 구간 표현·profile `bone_lengths` | 실제 SI단위, 관절 중심/표면 손끝 구분 이후 대상별 수치와 근거 |
 | 손바닥 곡률/벌림 | BIO-02 §3.1 식(1)–(3)·`palm_curvatures`/`palm_spread_radians` | 실제 허용값·population/과제·모델 대응 |
 | 굽힘/벌림 결합·엄지·좌우손 | BIO-02 local frame/각도·BIO-03 §1·`joint_angle_hulls` | 관절별 hull·엄지 정의·좌우 대응·문헌/관측 대상과 일반화 범위 |
-| 속도/가속도·연속 움직임 | 실제 초 미분 코드는 프로젝트 확장 | **확정된 생체 한계 학술 근거 없음.** 정적 BMC 식을 동적 허용값으로 쓰지 않음. 별도 논문 탐색/수치 추출 필요 |
+| 속도/가속도·연속 움직임 | 실제 초 미분은 프로젝트 확장. BIO-06 §6/표9의 과제별 속도 참고 수치를 추출 | **실행용 생체 한계는 미확정.** 주기 해석·대상/과제/부호 대응과 가속도 기준을 더 확인. 빠른 수행의 집계값을 안전/편안함 한계로 쓰지 않음 |
 | 자기/물체 충돌·접촉·지지 | BIO-04/05는 관련 데이터/방법 후보, GEO는 기하 검사 참고 | 실제 표면/물리 모델·오차·자기 접촉/관통 정의와 검증 사례 |
 | 편안함·피로·따라 하기 | 문헌 검토와 별개로 실제 사람 관측 필요 | 대상 참가자·동의·사전 정의 과제·중단/부담/수행 결과. 컴퓨터 검사만으로 승인 불가 |
 

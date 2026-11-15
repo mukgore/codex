@@ -1,5 +1,7 @@
 # 프로젝트 진행 상태
 
+**2026-11-15 생체 수치 출처:** [BMC→Chen Chen2013→Cobos/Ryf 원출처 추적과6개 속도값 산술 대조](docs/deliveries/2026-11-15_biomechanical_numeric_sources.md)를 수행했다. 선택 가동 범위·연동·속도를 비승인 참고JSON으로 저장했고 주기/반주기 해석을 명시했다. 연구200개 검사·실행 출력1개 검산 통과. 실제 생체 프로필/기존 격리는 변경하지 않았다. [학술 색인](docs/academic_reference_index.md)에 BIO-06–08과 핵심 인용을 추가했다.
+
 **2026-11-15 표면 교차 진단:** [기존8동작·192프레임의66,568개 후보 면 쌍 검사](docs/deliveries/2026-11-15_mano_surface_intersections.md)를 실행했다. 검사 범위의 교차/닿음 지표0, 퇴화0. hand 검사150개와 실행 출력9개 재검사 통과. 인접 면 제외·시간 사이 충돌·부피/물리·생체 한계는 미검증이며 기존 격리 유지. GEO-01의 참고 절과 구현을 [학술 색인](docs/academic_reference_index.md)에 연결했다.
 
 **학술 근거 정리(2026-11-15):** [안정ID별 원문/프로젝트·열람 범위·코드·한계 색인](docs/academic_reference_index.md)과 [핵심4편 인용 파일](references/hand_research_core.bib)을 추가했다. 생체 허용 수치가 미확인인 항목을 명시하고 기하/충돌 검사 근거와 구분했다. 표면 교차의 관련 절은 검토했지만 아직 해당 mesh 검사 구현/실행은 미완료다.

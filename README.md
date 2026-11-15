@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**생체 근거 후속:** [관절 범위·연동·속도의 원출처와 주기 해석 대조](docs/deliveries/2026-11-15_biomechanical_numeric_sources.md). 참고 수치를 보존했으며 모델의 허용 한계로 자동 적용하지 않았습니다.
+
 **표면 검사 후속:** [랜덤 손192프레임의 삼각형 교차 진단](docs/deliveries/2026-11-15_mano_surface_intersections.md)을 추가했습니다. 검사 범위에서 교차 지표는 없었으나 전체 관통 부재·생체 타당성은 미확인입니다.
 
 **학술 자료 찾기:** [논문 색인·참고 절/식·코드 연결·미확인 근거](docs/academic_reference_index.md), [핵심 논문 BibTeX](references/hand_research_core.bib). 생체 제약·기하 검사·채점·선행 CAPTCHA 자료를 구분합니다.

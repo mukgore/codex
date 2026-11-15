@@ -4,6 +4,8 @@
 
 ## 현재 위치와 바로 다음 작업
 
+**생체 수치 추적:** [Chen Chen2013의 선택 정적 값·연동·과제별 속도와 원출처](deliveries/2026-11-15_biomechanical_numeric_sources.md)를 추출/대조했다. 다음은 Cobos 원측정/모델·neutral/axes·엄지·BMC/MANO 대응과 시간 기준의 적용 조건 확인이다. 주기 해석과 보편성 미확인으로 현재 여섯 규칙과 랜덤 결과 격리는 유지한다.
+
 **문헌 관리:** [학술 자료 통합 색인](academic_reference_index.md)과 [핵심 BibTeX](../references/hand_research_core.bib)를 추가했다. 앞으로 새 자료/수치마다 출처·절/식·대상/단위·모델 대응·코드/검사·확인일을 함께 갱신한다. GEO-01을 참고한 [표면 교차 진단](deliveries/2026-11-15_mano_surface_intersections.md)을192프레임에 실행했으며 인접 면·연속 충돌/부피·생체 검증은 남는다.
 
 로컬 연구를 다시 진행한다. Cloud 이전은 조사/인계 문서를 보존한 상태로 보류하며 현재 연구의 선행 조건으로 삼지 않는다. 공개 브랜치는 두 repo 모두 `work/todo-consolidation-20261103`이다.
