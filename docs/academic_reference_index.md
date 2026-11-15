@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**공개 단서/시작 자세 후속:** [실제 가림/H.264 각16개와 실패 대조](deliveries/2026-11-15_visible_cue_conditioned_generation.md)를 기록했다. BIO-09는 모델 각도 제약의 출처이며20도 시작값·연동 계수는 공학 제안이다. 저자17label은 아직 적용하지 않았고 nearest-bone proxy의 기술 통과를 해부학/임상/사람 승인으로 바꾸지 않는다.
+
 **BIO-09 표면 label 후보 추가 확인:** 고정 저자 revision의 [778정점/17label 파일](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/assets/anchor/merged_vertex_assignment.txt), [loader](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/manotorch/utils/anchorutils.py)를 읽고 원본 blob 바이트와 일치하는 private 사본/License를 보존했다. 부위별 label 의미·paper§A.2·우리 topology/좌우손 대응은 미확인이며 이번 renderer에 적용하지 않았다. pickle mapping은 받거나 실행하지 않았다. 위치: `private_artifacts/manotorch_region_source_20261115/`. 독립적인 사람 해부학 주석이 아니라 저자 모델의 부위 정의 후보로 추적한다.
 
 **카메라/임시 표면 진단:** [공통 카메라와 중립 정렬 후 가림 가능성](deliveries/2026-11-15_shared_camera_and_mask_feasibility.md)을 확인했다. nearest-rest-bone proxy는 프로젝트 기하 선택이며 BIO-09 label을 이미 검증/사용한 결과가 아니다. 가림 관문 불충족으로 실제 가림/H.264는 미실행이다.

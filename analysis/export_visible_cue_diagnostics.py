@@ -32,7 +32,7 @@ def export(source, source_record, rendered, rendered_record, report, timings):
     for case in generated['cases']:
         row = timing_row(case['case'],case['timing'],'native_generation',case['render'],case)
         row.update(kind='unmasked_FFV1_native_diagnostic',view='',
-                   ready_boundary='encoder finalized',timing_boundary=case['timing']['boundary'])
+                   fps=case['render']['fps'],ready_boundary='encoder finalized',timing_boundary=case['timing']['boundary'])
         rows.append(row)
     for media in rerender['media']:
         timer = media['timing']
@@ -40,6 +40,8 @@ def export(source, source_record, rendered, rendered_record, report, timings):
         row = timing_row(media['case'],timer,'shared_camera',metadata=metadata)
         row.update(kind=media['kind'],view=media['view'],decoded_frames=media['frames_n'],
                    video_bytes=media['video_bytes'],fps=media['fps'],
+                   motion_last_frame_seconds=(media['frames_n']-1)/media['fps'],
+                   encoded_clip_duration_seconds=media['frames_n']/media['fps'],
                    ready_boundary=media['ready_boundary'],timing_boundary=timer['boundary'])
         for key,value in timer['phases'].items(): row[key+'_seconds'] = value['wall_ns']/1e9
         rows.append(row)
