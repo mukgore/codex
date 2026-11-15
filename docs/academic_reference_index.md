@@ -1,5 +1,9 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**BIO-09 표면 label 후보 추가 확인:** 고정 저자 revision의 [778정점/17label 파일](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/assets/anchor/merged_vertex_assignment.txt), [loader](https://github.com/lixiny/manotorch/blob/a2a70c591f91551078b7bb2af9b5d9f275b626e0/manotorch/utils/anchorutils.py)를 읽고 원본 blob 바이트와 일치하는 private 사본/License를 보존했다. 부위별 label 의미·paper§A.2·우리 topology/좌우손 대응은 미확인이며 이번 renderer에 적용하지 않았다. pickle mapping은 받거나 실행하지 않았다. 위치: `private_artifacts/manotorch_region_source_20261115/`. 독립적인 사람 해부학 주석이 아니라 저자 모델의 부위 정의 후보로 추적한다.
+
+**카메라/임시 표면 진단:** [공통 카메라와 중립 정렬 후 가림 가능성](deliveries/2026-11-15_shared_camera_and_mask_feasibility.md)을 확인했다. nearest-rest-bone proxy는 프로젝트 기하 선택이며 BIO-09 label을 이미 검증/사용한 결과가 아니다. 가림 관문 불충족으로 실제 가림/H.264는 미실행이다.
+
 **BIO-09/GEO-01 생성 연결:** [모델 조건부16영상·샘플 표면 교차·영상별 시간](deliveries/2026-11-15_mano_conditioned_videos.md)을 실행했다. 저자 모델 기본값과 프로젝트 이상적 반사 조건을 구분했고, 모델 조건 안에서도41프레임의 삼각형 교차 지표를 관측했다. 임의 원형 연동·시간/형상 분포를 임상 수치로 표시하지 않는다. 최종 가림·사람/물리/전체 충돌 승인은 미완료다.
 
 **BIO-09 기본값 진단:** [고정 저자 기본값과 기존 랜덤8동작의 실제 손실 대조](deliveries/2026-11-15_mano_model_prior_audit.md)를 완료했다. [출처·구간·관절 배정 JSON](../references/manotorch_default_constraint_extraction.json)의 `BIO-09-IMPL-DEFAULTS`는 모델용 제약이며 원측정/사람 한계가 아니다. 엄지 비대칭 구간의 이상적 반사 대조, strict 초과와1e-6 영 mask 후 벌점을 구분했다. 코드: `analysis/runtime_benchmark/mano_model_prior_audit.py`.
