@@ -1,5 +1,7 @@
 # 학술 자료 색인과 코드·주장 연결
 
+**BIO-09 구현 대조:** [실제1130자세·고정 저자 메서드/독립 계산](deliveries/2026-11-15_mano_anatomical_frames.md)을 완료했다. 기준축·회전 순서·비root 왕복과 별도 root를 확인했다. 원논문 전체 재현·임상 축 측정·제한값 승인은 아니다. 코드: `analysis/runtime_benchmark/mano_anatomical_frame_probe.py`. 원본4파일은 고정 Git blob 바이트와 일치하는 비공개 사본으로 보존했다.
+
 **자세/형상 후속:** [실제4346자세·24조건의 현재/고정 BMC 축 대조](deliveries/2026-11-15_mano_bmc_context_controls.md)를 완료했다. 기하 검산과 임상 축·생체 한계는 구분한다. 다음 축 후보의 논문과 저자 구현은 BIO-09에 추가했다.
 
 **로컬 재개 후 기하 대조:** [실제 MANO409자세의 중립 BMC 방향·왼손 반사 검산](deliveries/2026-11-15_local_resume_and_bmc_directions.md)을 추가했다. BIO-02/03을 참고한 프로젝트 계산이며 임상 축 측정 결과가 아니다. 관절 중심240개와 표면 손끝120개를 구분했고 자세/형상 변화·임상 대응·허용 범위는 남아 있다.
