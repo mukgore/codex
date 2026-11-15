@@ -1,0 +1,4201 @@
+{
+  "H264_rendition_videos_n": 16,
+  "accepted_into_pool_n": 0,
+  "author_region_profile_version": "cpf_paper_palette_geometry_region_review_v1",
+  "biological_validity_proven": false,
+  "camera_contract_version": "shared_reference_camera_and_rest_nearest_bone_proxy_v1",
+  "camera_mode": "hand_neutral_registered",
+  "cases": [
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c00v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c00v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c01v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c01v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c02v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c02v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c03v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c03v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c04v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c04v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c05v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c05v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c06v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c06v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c07v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "right_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c07v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "right",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c08v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c08v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c09v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c09v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c10v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c10v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c11v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c11v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c12v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c12v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c13v0",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": true,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c13v1",
+      "final_proxy_pixels_verified": true,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": true,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": true,
+      "minimum_visible_distal_patch_count": 2,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": true,
+      "technical_proxy_mask_allowed": true,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c14v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_ring_cues_open_author_exact",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c14v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "author_exact",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c15v0",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_positive"
+    },
+    {
+      "H264_rendition_created": false,
+      "accepted_into_pool": false,
+      "anatomical_surface_annotations_verified": false,
+      "case": "left_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "decision": "QUARANTINED_RESEARCH_DIAGNOSTIC",
+      "directory_id": "c15v1",
+      "final_proxy_pixels_verified": false,
+      "hand": "left",
+      "legacy_landmark_interval_feasible": false,
+      "legacy_reproduction_only": false,
+      "masked_candidate_created": false,
+      "minimum_visible_distal_patch_count": null,
+      "protection_mode": "author_region_union",
+      "release_allowed": false,
+      "source_frames_n": 25,
+      "surface_interval_feasible": false,
+      "technical_proxy_mask_allowed": false,
+      "upstream_model_prior_policy": "ideal_mirror_comparator",
+      "upstream_surface_indicator_frames_n": 0,
+      "view": "reference_negative"
+    }
+  ],
+  "full_anatomical_mask_coverage_proven": false,
+  "legacy_reproduction_only": false,
+  "limitations": [
+    "Calibration fits current complete development sequences/circle envelopes, not a calibrated physical or causal live camera.",
+    "Optional hand-neutral registration is a fixed proper model convention with signed left lateral axis, not measured clinical or palm/back alignment.",
+    "Only first wrist translation is removed; both views use proper shared axes and reverse horizontal/depth signs.",
+    "Nearest-rest-bone face sets and nonempty distal patches are geometric surrogates, not independent anatomical/recognizability labels.",
+    "Author-region union adds paper/palette-reviewed whole faces; model centroid/connection checks do not prove all anatomical boundaries or clinical validity.",
+    "Opposite views and duplicate source policies are correlated and not independent tasks or security entropy.",
+    "Original surface intersections/BMC/physical/human/attack holds remain; codec success is a separate lower-level check.",
+    "Media timing scopes differ for encoder-close vs library-return boundaries; own-process CPU omits ffmpeg child CPU."
+  ],
+  "masked_candidate_videos_n": 16,
+  "masked_sources_sent_to_browser_n": 0,
+  "media": [
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752537474877400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2341100
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3037300
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 107080400
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3129784000
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 5695900
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 203125000,
+            "wall_ns": 214668400
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 50936400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752533933628200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3562500000,
+        "validated_pipeline_wall_ns": 3550954300,
+        "video_ready_wall_ns": 3284048400
+      },
+      "video_bytes": 399572,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3821324900,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752537798093200,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 41495400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 328125000,
+            "wall_ns": 267940000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752537474877400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 375000000,
+        "validated_pipeline_wall_ns": 312190300,
+        "video_ready_wall_ns": 269087700
+      },
+      "video_bytes": 22384,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4398450600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752538381994000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 50655700
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 406250000,
+            "wall_ns": 531958300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752537798093200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 453125000,
+        "validated_pipeline_wall_ns": 585103100,
+        "video_ready_wall_ns": 532997800
+      },
+      "video_bytes": 7686,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752542071087000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2244600
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 797200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 111196900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3244719300
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 6055100
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 233737800
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 47377100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752538381994000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3671875000,
+        "validated_pipeline_wall_ns": 3687970500,
+        "video_ready_wall_ns": 3403898600
+      },
+      "video_bytes": 439324,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3961571200,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752542388890900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39963000
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 270830300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752542071087000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 375000000,
+        "validated_pipeline_wall_ns": 313364000,
+        "video_ready_wall_ns": 272066800
+      },
+      "video_bytes": 23426,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4508982000,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752542928392800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 45809200
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 406250000,
+            "wall_ns": 503630400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752542388890900,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 437500000,
+        "validated_pipeline_wall_ns": 552265000,
+        "video_ready_wall_ns": 504742000
+      },
+      "video_bytes": 7892,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752546571622100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2154600
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1403000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 102205000
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3156250000,
+            "wall_ns": 3200004400
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5675800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 218750000,
+            "wall_ns": 222793700
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 49291400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752542944356300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3562500000,
+        "validated_pipeline_wall_ns": 3629256600,
+        "video_ready_wall_ns": 3355557100
+      },
+      "video_bytes": 399572,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3907834900,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752546887823200,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 40222100
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 275473000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752546571622100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 318642200,
+        "video_ready_wall_ns": 277006600
+      },
+      "video_bytes": 22384,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4444228800,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752547427423400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 43160500
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 492488800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752546887823200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 406250000,
+        "validated_pipeline_wall_ns": 538529600,
+        "video_ready_wall_ns": 493741600
+      },
+      "video_bytes": 7686,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752551086805300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2333100
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 815800
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 101677600
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3187500000,
+            "wall_ns": 3182464600
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 27832600
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 250000000,
+            "wall_ns": 245404600
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 48628400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752547427423400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3718750000,
+        "validated_pipeline_wall_ns": 3651233300,
+        "video_ready_wall_ns": 3356047000
+      },
+      "video_bytes": 439324,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3977733500,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752551472684100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 57249000
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 421875000,
+            "wall_ns": 324359200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752551086805300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 468750000,
+        "validated_pipeline_wall_ns": 383854300,
+        "video_ready_wall_ns": 325324000
+      },
+      "video_bytes": 23426,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4674669300,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752552157953700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 49492200
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 468750000,
+            "wall_ns": 635457500
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752551473464200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 531250000,
+        "validated_pipeline_wall_ns": 687378400,
+        "video_ready_wall_ns": 636625500
+      },
+      "video_bytes": 7892,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752555747330300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2424300
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 1076000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 101816600
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3203125000,
+            "wall_ns": 3245909700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 7120900
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 129528200
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 54036900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752552157953700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3609375000,
+        "validated_pipeline_wall_ns": 3584206200,
+        "video_ready_wall_ns": 3398572700
+      },
+      "video_bytes": 382136,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752559259166700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2255300
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 958000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 100669200
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3187500000,
+            "wall_ns": 3166137700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6111600
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 143028600
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 52301600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752555747330300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3500000000,
+        "validated_pipeline_wall_ns": 3512467900,
+        "video_ready_wall_ns": 3315304300
+      },
+      "video_bytes": 420728,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752562704959700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2140700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 843300
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 101230900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3062500000,
+            "wall_ns": 3115801200
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5279200
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 130497900
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 43767700
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752559259166700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3437500000,
+        "validated_pipeline_wall_ns": 3440316200,
+        "video_ready_wall_ns": 3264758900
+      },
+      "video_bytes": 382136,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752566247502300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2762400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1550000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 101755100
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3199586600
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5620200
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 137648100
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 53528300
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752562704959700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3515625000,
+        "validated_pipeline_wall_ns": 3541270100,
+        "video_ready_wall_ns": 3348811000
+      },
+      "video_bytes": 420728,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752569799904100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2140400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 895400
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 101849500
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3125000000,
+            "wall_ns": 3146484400
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5409200
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 203125000,
+            "wall_ns": 205715700
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 48619000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752566247502300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3546875000,
+        "validated_pipeline_wall_ns": 3551479700,
+        "video_ready_wall_ns": 3295035600
+      },
+      "video_bytes": 404570,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3829231500,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752570120582000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 41342100
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 328125000,
+            "wall_ns": 275319800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752569803567800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 359375000,
+        "validated_pipeline_wall_ns": 319026700,
+        "video_ready_wall_ns": 276330800
+      },
+      "video_bytes": 21437,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4397672400,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752570690555700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42936600
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 523599600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752570120582000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 390625000,
+        "validated_pipeline_wall_ns": 568950600,
+        "video_ready_wall_ns": 524748200
+      },
+      "video_bytes": 7751,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752574379337600,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2268100
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 1362500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 105623900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3234375000,
+            "wall_ns": 3285115000
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6393800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 203125000,
+            "wall_ns": 207022800
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 46047900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752570690555700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3703125000,
+        "validated_pipeline_wall_ns": 3697607700,
+        "video_ready_wall_ns": 3442037800
+      },
+      "video_bytes": 443834,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3992679600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752574730850100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 41118800
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 292561400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752574379337600,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 336329700,
+        "video_ready_wall_ns": 293957000
+      },
+      "video_bytes": 21619,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4576360300,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752575314723400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 43280800
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 390625000,
+            "wall_ns": 539556400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752574730850100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 437500000,
+        "validated_pipeline_wall_ns": 584988500,
+        "video_ready_wall_ns": 540427200
+      },
+      "video_bytes": 7810,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752578928173800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2276600
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1333900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 100057200
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3109375000,
+            "wall_ns": 3168368800
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5353800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 237201300
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 49091900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752575314723400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3546875000,
+        "validated_pipeline_wall_ns": 3609628500,
+        "video_ready_wall_ns": 3322046900
+      },
+      "video_bytes": 404570,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3910334800,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752579270640700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42496100
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 297830900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752578930186800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 406250000,
+        "validated_pipeline_wall_ns": 342841300,
+        "video_ready_wall_ns": 298864100
+      },
+      "video_bytes": 21437,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4451438600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752579810329900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 43677000
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 494888100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752579270640700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 540993900,
+        "video_ready_wall_ns": 495864000
+      },
+      "video_bytes": 7751,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752583423448700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2156300
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1344900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 102254000
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3187500000,
+            "wall_ns": 3188324900
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5596800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 222317900
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 46471100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752579816977100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3593750000,
+        "validated_pipeline_wall_ns": 3608622400,
+        "video_ready_wall_ns": 3338112400
+      },
+      "video_bytes": 443834,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3898948100,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752583755423600,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 39430100
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 287557200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752583423448700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 329453900,
+        "video_ready_wall_ns": 288734600
+      },
+      "video_bytes": 21619,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4448458400,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752584307455700,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 43119600
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 506355800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752583755423600,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 551838300,
+        "video_ready_wall_ns": 507493100
+      },
+      "video_bytes": 7810,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752587882896000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1874000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1359200
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 103273800
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3234375000,
+            "wall_ns": 3233698700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5653700
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 153235700
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 46779400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752584307455700,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3593750000,
+        "validated_pipeline_wall_ns": 3585605400,
+        "video_ready_wall_ns": 3383861100
+      },
+      "video_bytes": 405730,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752591403663000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2729000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1414100
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 103893300
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3156250000,
+            "wall_ns": 3165655100
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 5715800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 130931700
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 52291600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752587898705800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3515625000,
+        "validated_pipeline_wall_ns": 3504026800,
+        "video_ready_wall_ns": 3319548100
+      },
+      "video_bytes": 441660,
+      "view": "reference_negative"
+    },
+    {
+      "case": "right_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752595034843800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1891700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1139600
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 104614100
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3281250000,
+            "wall_ns": 3270989700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5415300
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 153043400
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 50066200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752591403663000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3656250000,
+        "validated_pipeline_wall_ns": 3629237200,
+        "video_ready_wall_ns": 3423990400
+      },
+      "video_bytes": 405730,
+      "view": "reference_positive"
+    },
+    {
+      "case": "right_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752598542120500,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2445600
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 1777500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 101785800
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3093750000,
+            "wall_ns": 3151319100
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6111100
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 157613600
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 45358600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752595039149400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3500000000,
+        "validated_pipeline_wall_ns": 3506435700,
+        "video_ready_wall_ns": 3302239800
+      },
+      "video_bytes": 441660,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752602168419300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1936300
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1580500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 107263100
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3197045600
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5646800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 221292800
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 47024200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752598542120500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3609375000,
+        "validated_pipeline_wall_ns": 3625329300,
+        "video_ready_wall_ns": 3355672100
+      },
+      "video_bytes": 416318,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3913197600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752602506004900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 42615500
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 285150100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752602168419300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 330274300,
+        "video_ready_wall_ns": 286330900
+      },
+      "video_bytes": 23011,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4450324800,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752603042826400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 44621800
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 491199600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752602506723800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 406250000,
+        "validated_pipeline_wall_ns": 539111600,
+        "video_ready_wall_ns": 492141100
+      },
+      "video_bytes": 7833,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752606644847300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2200800
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1194500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 103376000
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3196842500
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6417300
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 203125000,
+            "wall_ns": 201313200
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 45467600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752603042826400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3593750000,
+        "validated_pipeline_wall_ns": 3600239800,
+        "video_ready_wall_ns": 3352386200
+      },
+      "video_bytes": 435042,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3893292700,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752606977057000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 39092900
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 406250000,
+            "wall_ns": 291299600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752606644847300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 437500000,
+        "validated_pipeline_wall_ns": 333001400,
+        "video_ready_wall_ns": 292197900
+      },
+      "video_bytes": 23109,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4448932600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752607539734400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42399400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 512779900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752606983269100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 390625000,
+        "validated_pipeline_wall_ns": 557657300,
+        "video_ready_wall_ns": 513772100
+      },
+      "video_bytes": 7714,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752611090498900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1960700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1192500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 99598900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3109375000,
+            "wall_ns": 3132920900
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 6517000
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 218750000,
+            "wall_ns": 222935600
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 43053400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752607539734400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3531250000,
+        "validated_pipeline_wall_ns": 3551532200,
+        "video_ready_wall_ns": 3284380400
+      },
+      "video_bytes": 415934,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3822508600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752611392236300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 37309400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 312500000,
+            "wall_ns": 269049200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752611090498900,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 359375000,
+        "validated_pipeline_wall_ns": 309106300,
+        "video_ready_wall_ns": 270005400
+      },
+      "video_bytes": 22960,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4384947400,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752611971849100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 42838400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 406250000,
+            "wall_ns": 520860800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752611392236300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 453125000,
+        "validated_pipeline_wall_ns": 566081000,
+        "video_ready_wall_ns": 521993200
+      },
+      "video_bytes": 7871,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752615817665800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2048700
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2270800
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 106792900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3390625000,
+            "wall_ns": 3409003700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5924500
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 226349500
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 58915200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752611973859200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3843750000,
+        "validated_pipeline_wall_ns": 3857988100,
+        "video_ready_wall_ns": 3571474600
+      },
+      "video_bytes": 435228,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4164084100,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752616164744800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 38332500
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 303924700
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752615817665800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 345001100,
+        "video_ready_wall_ns": 305147900
+      },
+      "video_bytes": 23108,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4684821200,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752616699210400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 40498400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 478955700
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752616164744800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 406250000,
+        "validated_pipeline_wall_ns": 521569900,
+        "video_ready_wall_ns": 479881000
+      },
+      "video_bytes": 7777,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752620427333300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1966900
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 708500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 104903400
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3375000000,
+            "wall_ns": 3370066500
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6298800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 153787800
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 55292100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752616699210400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3750000000,
+        "validated_pipeline_wall_ns": 3734905600,
+        "video_ready_wall_ns": 3524711700
+      },
+      "video_bytes": 396340,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752623979658800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 3978500
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 861300
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 103405200
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3187500000,
+            "wall_ns": 3201523000
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 7136700
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 132700000
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 49869400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752620427333300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3531250000,
+        "validated_pipeline_wall_ns": 3541263100,
+        "video_ready_wall_ns": 3357506200
+      },
+      "video_bytes": 424916,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752627757573500,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2096400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 724600
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 107205200
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3296875000,
+            "wall_ns": 3315508400
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 5475600
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 153280200
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 52949200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752623979658800,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3656250000,
+        "validated_pipeline_wall_ns": 3775220100,
+        "video_ready_wall_ns": 3567790900
+      },
+      "video_bytes": 395468,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s7_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752631326469100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 2497900
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 794900
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 102406900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3171875000,
+            "wall_ns": 3195195600
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 5991500
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 159534000
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 56723500
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752627757573500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3546875000,
+        "validated_pipeline_wall_ns": 3567339200,
+        "video_ready_wall_ns": 3349885100
+      },
+      "video_bytes": 424290,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752635088187000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2126000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 618500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 108321900
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3312500000,
+            "wall_ns": 3343726900
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5333400
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 187500000,
+            "wall_ns": 200259100
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 51739000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752631328215100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3750000000,
+        "validated_pipeline_wall_ns": 3766563800,
+        "video_ready_wall_ns": 3513441900
+      },
+      "video_bytes": 406490,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4045147500,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752635404744000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 39289900
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 276691700
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752635088187000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 406250000,
+        "validated_pipeline_wall_ns": 318477500,
+        "video_ready_wall_ns": 277649200
+      },
+      "video_bytes": 21919,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4633716400,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752635991408500,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 40094900
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 406250000,
+            "wall_ns": 545899800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752635404744000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 468750000,
+        "validated_pipeline_wall_ns": 588212700,
+        "video_ready_wall_ns": 546812400
+      },
+      "video_bytes": 7563,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752639802879500,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2236000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1128300
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 107048000
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3312500000,
+            "wall_ns": 3344067300
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6016300
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 234375000,
+            "wall_ns": 234287400
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 61837200
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752635991408500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3812500000,
+        "validated_pipeline_wall_ns": 3796641800,
+        "video_ready_wall_ns": 3498672100
+      },
+      "video_bytes": 435562,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4085828300,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752640117351900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 39139800
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 390625000,
+            "wall_ns": 286328600
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752639802879500,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 453125000,
+        "validated_pipeline_wall_ns": 328497500,
+        "video_ready_wall_ns": 287533500
+      },
+      "video_bytes": 21929,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_author_exact",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4678972100,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752640725351200,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 43394800
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 453125000,
+            "wall_ns": 542564400
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752640133400100,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 500000000,
+        "validated_pipeline_wall_ns": 595241300,
+        "video_ready_wall_ns": 550806800
+      },
+      "video_bytes": 7597,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752644419147900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1954300
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1235000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 101605600
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3265625000,
+            "wall_ns": 3253464100
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 7722300
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 218750000,
+            "wall_ns": 224648900
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 53242700
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752640725351200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3718750000,
+        "validated_pipeline_wall_ns": 3692145000,
+        "video_ready_wall_ns": 3412702500
+      },
+      "video_bytes": 406762,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 3974622200,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752644753533900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 31250000,
+            "wall_ns": 42782400
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 343750000,
+            "wall_ns": 280424100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752644419147900,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 375000000,
+        "validated_pipeline_wall_ns": 334085800,
+        "video_ready_wall_ns": 281363100
+      },
+      "video_bytes": 21929,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4607379700,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752645371316800,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 45560100
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 390625000,
+            "wall_ns": 578071800
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752644753533900,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 437500000,
+        "validated_pipeline_wall_ns": 625652900,
+        "video_ready_wall_ns": 578963600
+      },
+      "video_bytes": 7590,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752649134900200,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2048000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1338000
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 104657400
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3296875000,
+            "wall_ns": 3312509900
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 15625000,
+            "wall_ns": 8890000
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 218750000,
+            "wall_ns": 226357400
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 56043000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752645387843400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3781250000,
+        "validated_pipeline_wall_ns": 3750811700,
+        "video_ready_wall_ns": 3467126800
+      },
+      "video_bytes": 435740,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_candidate",
+      "parent_state": "cached source file/reference/mask",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4030594600,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752649457883000,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 62500000,
+            "wall_ns": 38912900
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 359375000,
+            "wall_ns": 277452100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752649134900200,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 318879500,
+        "video_ready_wall_ns": 278797500
+      },
+      "video_bytes": 21913,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+      "fps": 12.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "masked_H264_rendition",
+      "parent_state": "cached masked candidate",
+      "ready_boundary": "library return after encode and QC; internal encoder finalize not observed",
+      "timing": {
+        "boundary": "library return after encode plus library QC; then additional all-frame proxy pixel QA; upstream cached parent excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "case_origin_to_media_ready_ns": 4613370000,
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752650044791400,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "all_frame_surface_proxy_encoded_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 46875000,
+            "wall_ns": 41508000
+          },
+          "library_encode_and_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 375000000,
+            "wall_ns": 540222000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752649457883000,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 421875000,
+        "validated_pipeline_wall_ns": 583909100,
+        "video_ready_wall_ns": 541195000
+      },
+      "video_bytes": 7613,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752653829009900,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2472400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2497800
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 203125000,
+            "wall_ns": 106249400
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3296875000,
+            "wall_ns": 3418554900
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6076000
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 148164600
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 109375000,
+            "wall_ns": 56041100
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752650044791400,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3843750000,
+        "validated_pipeline_wall_ns": 3786456200,
+        "video_ready_wall_ns": 3580734500
+      },
+      "video_bytes": 406236,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_ring_cues_open_author_exact",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752657475711300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2049000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1561500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 101969400
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3218750000,
+            "wall_ns": 3286365700
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5641900
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 155111400
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 125000000,
+            "wall_ns": 51021500
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752653829009900,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3671875000,
+        "validated_pipeline_wall_ns": 3648603400,
+        "video_ready_wall_ns": 3441176800
+      },
+      "video_bytes": 434914,
+      "view": "reference_negative"
+    },
+    {
+      "case": "left_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752661237245300,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1986400
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1541600
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 140625000,
+            "wall_ns": 105196800
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3343750000,
+            "wall_ns": 3383061400
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 6669700
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 156250000,
+            "wall_ns": 160351500
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 78125000,
+            "wall_ns": 52911000
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752657475711300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 3750000000,
+        "validated_pipeline_wall_ns": 3750765300,
+        "video_ready_wall_ns": 3536314200
+      },
+      "video_bytes": 406128,
+      "view": "reference_positive"
+    },
+    {
+      "case": "left_s19_middle_ring_cues_open_ideal_mirror_comparator",
+      "fps": 8.0,
+      "frames_n": 25,
+      "gpu_used": false,
+      "kind": "unmasked_FFV1_source",
+      "parent_state": "cached recorded arrays",
+      "ready_boundary": "encoder finalized",
+      "timing": {
+        "boundary": "cached-source projection/raster through encoder finalize; validated adds decode, visibility and proxy interval/QC; common source load/calibration excluded",
+        "cache_state": "cached recorded arrays/common camera; no model load; codec/OS caches uncontrolled",
+        "child_process_cpu_measured": false,
+        "cpu_scope": "own Python process; ffmpeg subprocess CPU not included",
+        "ended_utc_epoch_ns": 1794752665216819100,
+        "gpu_used": false,
+        "new_model_inference": false,
+        "phases": {
+          "encoder_finalize": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 2565000
+          },
+          "encoder_open": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 1311500
+          },
+          "encoder_write": {
+            "calls_n": 25,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 113806300
+          },
+          "full_and_amodal_proxy_raster": {
+            "calls_n": 25,
+            "process_cpu_ns": 3609375000,
+            "wall_ns": 3578387800
+          },
+          "projection_and_reference": {
+            "calls_n": 1,
+            "process_cpu_ns": 0,
+            "wall_ns": 5926800
+          },
+          "proxy_mask_interval_and_exact_pixel_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 187500000,
+            "wall_ns": 188605500
+          },
+          "source_decode_QA": {
+            "calls_n": 1,
+            "process_cpu_ns": 93750000,
+            "wall_ns": 51967900
+          }
+        },
+        "queue_wait_scope": "not_applicable_offline_sequential",
+        "shared_calibration_included": false,
+        "shared_hand_model_setup_included": false,
+        "started_utc_epoch_ns": 1794752661237245300,
+        "state": "COMPLETED",
+        "validated_pipeline_process_cpu_ns": 4000000000,
+        "validated_pipeline_wall_ns": 3981030800,
+        "video_ready_wall_ns": 3739226900
+      },
+      "video_bytes": 434528,
+      "view": "reference_negative"
+    }
+  ],
+  "new_independent_families_n": 0,
+  "new_model_inference": false,
+  "numpy_version": "1.26.4",
+  "opencv_version": "4.10.0",
+  "prior_protection_shrunk": false,
+  "protection_mode": "author_region_union",
+  "registration_max_radial_residual_native_units": 5.551115123125783e-17,
+  "release_allowed": false,
+  "rendered_source_cases_n": 32,
+  "rendered_source_frames_n": 800,
+  "runtime_journal_completed_frames_n": 800,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "shared proper cameras and declared model-region/proxy mask/codec diagnostic, not anatomical/human/security approval",
+  "shared_source_load_and_calibration_wall_ns": 100165700,
+  "source_arrays_modified": false,
+  "source_cases_n": 16,
+  "source_record_reverified": true,
+  "upstream_collision_counts_are_reused_per_view_not_new_3D_tests": true,
+  "upstream_distinct_surface_indicator_frames_n": 0,
+  "version": "shared_camera_model_region_protection_modes_v3",
+  "views_n": 2,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 425,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "36d46d6b7f567a371b966bbb71ea422df4c56866",
+  "recorded_input_files_n": 274,
+  "dependency_pins_n": 26,
+  "author_neutral_centroid_matches_n": {
+    "right": 15,
+    "left": 15
+  },
+  "timing_rows_n": 64,
+  "timing_statistics": {
+    "masked_H264_rendition": {
+      "videos_n": 16,
+      "ready_wall_seconds": {
+        "min": 0.479881,
+        "median": 0.5233707000000001,
+        "max": 0.6366255
+      },
+      "validated_wall_seconds": {
+        "min": 0.5215699,
+        "median": 0.5675158,
+        "max": 0.6873784
+      }
+    },
+    "masked_candidate": {
+      "videos_n": 16,
+      "ready_wall_seconds": {
+        "min": 0.2690877,
+        "median": 0.28384699999999996,
+        "max": 0.325324
+      },
+      "validated_wall_seconds": {
+        "min": 0.3091063,
+        "median": 0.3289757,
+        "max": 0.3838543
+      }
+    },
+    "unmasked_FFV1_source": {
+      "videos_n": 32,
+      "ready_wall_seconds": {
+        "min": 3.2647589,
+        "median": 3.37068365,
+        "max": 3.7392269
+      },
+      "validated_wall_seconds": {
+        "min": 3.4403162,
+        "median": 3.62728325,
+        "max": 3.9810308
+      }
+    }
+  },
+  "timing_scope": "actual new rerender/masked-media times only; cached source model inference and shared setup excluded",
+  "public_scope": "synthetic decisions/timing aggregates only; no source mesh coordinates, ROI IDs/masks or individual hashes"
+}

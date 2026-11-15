@@ -1,5 +1,7 @@
 # 3D 요구별 현재 근거와 공백 — 2026-11-14
 
+**진단 제작의 추가 보호 필수화:** [기본 author-region 합집합 관문과 실제 제작](deliveries/2026-11-15_author_union_generation_guard.md)을 연결했다. 누락/불일치 시 legacy 자동 대체 없이 거부하고 기존 보호를 보존한다. 현64영상은 이전과 바이트 동일하므로 독립 문제/사람·공격 효과나 GEN3D-04 전체 인수로 세지 않는다.
+
 **저자 영역/기존 보호 합집합 후속:** [현재 양손 모델의 부위 대응과800프레임 추가 검사](deliveries/2026-11-15_author_surface_region_union_audit.md)를 실제 수행했다. 기존 가림/H.26416쌍이 추가 영역도 가렸으나 model-region 검토이며 GEN3D-04 전체 해부학/임상/사람/보안 인수는 여전히 미완료다. 기존 보호와 원본 영상은 줄이거나 변경하지 않았다.
 
 **재개 후 실제 mask/codec 일부 실행:** [공개 단서·시작 자세 대조](deliveries/2026-11-15_visible_cue_conditioned_generation.md)에서16렌더의 가림 후보/H.264와 전 프레임 proxy 픽셀 검사를 실제 완료했다. 임시 표면 정의/작은 tip patch 범위이며 GEN3D-04 전체 해부학 보호/사람/보안 인수는 미완료다. 풀/독립 family/브라우저0개다.
