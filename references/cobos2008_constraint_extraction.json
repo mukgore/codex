@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source_id": "BIO-07",
+  "title": "Efficient Human Hand Kinematics for Manipulation Tasks",
+  "authors": ["Salvador Cobos","Manuel Ferre","M. A. Sanchez-Uran","Javier Ortego","Cesar Pena"],
+  "year": 2008,
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+  "pages": "2246-2251",
+  "institution_record": "https://oa.upm.es/4040/",
+  "original_pdf": "https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf",
+  "checked_date": "2026-11-15",
+  "verification": "Institution-hosted original PDF identity checked; all six pages rendered and visually reviewed. Earlier access failures retained in prior notes; normal TLS verification was not disabled.",
+  "status": "REFERENCE_EXTRACTION_NOT_ADMISSIBLE_PROFILE",
+  "production_profile_applied": false,
+  "release_allowed": false,
+  "kinematic_convention": {
+    "locator": "Section II.A, Figure 1, Tables I-II; printed pages 2246-2248",
+    "kind": "standard_Denavit_Hartenberg",
+    "nonthumb_joint_order": ["CMC_flexion_extension","MCP_abduction_adduction","MCP_flexion_extension","PIP_flexion_extension","DIP_flexion_extension"],
+    "thumb_joint_order": ["TMC_abduction_adduction","TMC_flexion_extension","MCP_flexion_extension","IP_flexion_extension"],
+    "individual_finger_base_offsets_from_wrist": true,
+    "BMC_or_MANO_axes_equivalence_verified": false
+  },
+  "selected_static_comparison": {
+    "cobos_locator": "Table III, printed page 2249 / PDF page 4",
+    "chen_locator": "BIO-06 Table 6, printed/PDF page 6",
+    "units": "degree",
+    "semantics": "Selected reported excursions; not signed admissible pose intervals. No unilateral/bilateral abduction interpretation imposed.",
+    "rows": [
+      {"finger":"thumb","joint":"TMC","cobos":{"flexion":[50,90],"extension":[15,15],"abduction_adduction":[45,60]},"chen":{"flexion":[50,90],"extension":[15,15],"abduction_adduction":[45,60]}},
+      {"finger":"thumb","joint":"MCP","cobos":{"flexion":[75,80],"extension":[0,0],"abduction_adduction":[0,0]},"chen":{"flexion":[75,80],"extension":[0,0],"abduction_adduction":[5,5]}},
+      {"finger":"thumb","joint":"IP","cobos":{"flexion":[75,80],"extension":[5,10],"abduction_adduction":[0,0]},"chen":{"flexion":[75,80],"extension":[5,10],"abduction_adduction":[5,5]}},
+      {"finger":"index","joint":"MCP","cobos":{"flexion":[90,90],"extension":[30,40],"abduction_adduction":[60,60]},"chen":{"flexion":[90,90],"extension":[30,40],"abduction_adduction":[60,60]}},
+      {"finger":"index","joint":"PIP","cobos":{"flexion":[110,110],"extension":[0,0],"abduction_adduction":[0,0]},"chen":{"flexion":[110,110],"extension":[0,0],"abduction_adduction":[0,0]}},
+      {"finger":"index","joint":"DIP","cobos":{"flexion":[80,90],"extension":[5,5],"abduction_adduction":[0,0]},"chen":{"flexion":[80,90],"extension":[5,5],"abduction_adduction":[0,0]}}
+    ],
+    "resolution_policy": "Retain both reported values; do not choose wider/tighter bounds, declare an error, or apply a profile automatically."
+  },
+  "earlier_sources_reported_by_cobos": [
+    {"reference_number":11,"citation_as_reported":"A. Kapandji, The Physiology of the Joints, volume I, E. and S. Livingstone, Edinburgh and London, 2nd edition, 1970","original_book_checked":false},
+    {"reference_number":12,"citation_as_reported":"A. Perez Casas and M. E. Bengoechea, Functional anatomy of the locomotor apparatus, volume I, Paz Montalvo, 1978 (in Spanish)","original_book_checked":false}
+  ],
+  "interpretation_limits": [
+    "Static table combines active/passive movement and cites earlier literature, not a new normative population measurement.",
+    "Circular and prismatic grasp coupling tables are task-specific simplified model rules, not universal equalities.",
+    "Cyberglove reconstruction experiments are not this project's hand motion or human comfort validation.",
+    "Standard DH differs from BIO-06 modified DH and current BMC geometry frames; mapping still required."
+  ]
+}
