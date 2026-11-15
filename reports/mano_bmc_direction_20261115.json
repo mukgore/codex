@@ -1,0 +1,75 @@
+{
+  "biological_validity_proven": false,
+  "cases": [
+    {
+      "clinical_axis_verified": false,
+      "designed_forward_samples_n": 181,
+      "geometry_errors_n": 0,
+      "groups": {
+        "mesh_surface_tip": {
+          "max_abs_residual_radians": 0.002515976617255486,
+          "samples_n": 60
+        },
+        "native_child_joint": {
+          "max_abs_residual_radians": 1.1800836336763043e-07,
+          "samples_n": 120
+        }
+      },
+      "hand": "right",
+      "incorrect_left_polar_sign_non_twist_controls_n": 0,
+      "neutral_forward_samples_n": 1,
+      "neutral_numeric_tolerance": 1.8386165265837917e-06,
+      "neutral_repeat_abs_error": 0.0,
+      "wrong_sign_max_residual_radians": null
+    },
+    {
+      "clinical_axis_verified": false,
+      "designed_forward_samples_n": 226,
+      "geometry_errors_n": 0,
+      "groups": {
+        "mesh_surface_tip": {
+          "max_abs_residual_radians": 0.002515976617255486,
+          "samples_n": 60
+        },
+        "native_child_joint": {
+          "max_abs_residual_radians": 1.1800836336763043e-07,
+          "samples_n": 120
+        }
+      },
+      "hand": "left",
+      "incorrect_left_polar_sign_non_twist_controls_n": 30,
+      "neutral_forward_samples_n": 1,
+      "neutral_numeric_tolerance": 1.8386165265837917e-06,
+      "neutral_repeat_abs_error": 0.0,
+      "wrong_sign_max_residual_radians": 0.06084158230738809
+    }
+  ],
+  "clinical_axes_verified_n": 0,
+  "limitations": [
+    "Axes are derived from neutral BMC geometry, not clinical anatomy or a measured participant.",
+    "Only neutral mean shape and two local step sizes; no global pose-dependent mapping or safety range.",
+    "Mesh-tip shape/skinning response is separate from native rigid child-joint behavior.",
+    "Independent probes are not a temporal motion; no velocity, comfort, physics or pool admission."
+  ],
+  "native_forward_samples_n": 409,
+  "new_model_inference": true,
+  "numeric_profile_changed": false,
+  "release_allowed": false,
+  "runtime_journal_completed_frames_n": 409,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "neutral_bmc_geometric_direction_forward_check_not_clinical_calibration",
+  "steps_radians": [
+    0.01,
+    0.03
+  ],
+  "version": "mano_bmc_neutral_geometric_direction_probe_v1",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 11,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "research_tests_passed": 210,
+  "producer_code_commit": "0443949"
+}
