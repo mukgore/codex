@@ -1,4 +1,5 @@
 import copy
+import json
 from types import SimpleNamespace
 import unittest
 import numpy as np
@@ -101,6 +102,10 @@ class CommonCameraMaskTests(unittest.TestCase):
         mask = np.zeros((1, HEIGHT, WIDTH), bool); mask[0, 200, 256] = True
         result = surface_weight_interval({'minimum_w3': .5, 'maximum_w3': 2., 'feasible': True}, points, mask)
         self.assertTrue(result['feasible']); self.assertAlmostEqual(result['minimum_w3'], 1.04)
+        # A feasible interval used to leak numpy.bool_ into the immutable
+        # diagnostics receipt; rejection-only runs never exercised that path.
+        self.assertIs(type(result['feasible']), bool)
+        self.assertEqual(json.loads(json.dumps(result,allow_nan=False)), result)
 
     def test_malformed_reference_or_target_is_rejected(self):
         with self.assertRaises(ValueError): common_camera(np.zeros((21, 3)), [{'vertices': [], 'joints': []}], SimpleNamespace())

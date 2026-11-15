@@ -136,8 +136,8 @@ def surface_weight_interval(legacy, projected_joints, amodal):
         if not len(xx): empty += 1; rows.append(None); continue
         # Two pixels are a predeclared raster/codec buffer, not anatomical mm.
         required_radius = math.ceil(float(np.hypot(xx-int(center[0]), yy-int(center[1])).max()))+2
-        value = 2*required_radius/scale; lower = max(lower, value); rows.append(value)
-    feasible = not empty and bool(legacy['feasible']) and lower <= upper
+        value = float(2*required_radius/scale); lower = max(lower, value); rows.append(value)
+    feasible = bool(not empty and bool(legacy['feasible']) and lower <= upper)
     return {'minimum_w3': lower, 'maximum_w3': upper, 'feasible': feasible,
         'proposed_w3': (lower+upper)/2 if feasible else None, 'empty_proxy_frames_n': empty,
         'raster_buffer_pixels': 2, 'surface_frame_minimum_w3': rows,
