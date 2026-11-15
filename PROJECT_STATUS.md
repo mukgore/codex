@@ -1,6 +1,6 @@
 # 프로젝트 진행 상태
 
-**2026-11-15 Cloud 실제 시작:** [환경·실패·호환성·필요 입력](docs/cloud_validation_2026-11-15.md). 모델/개인 자료 없이 분리 환경과 연구195/Node24/pipeline기준139 검사를 실행했다. Chromium sandbox가 막혀 브라우저 검사는 미완료다. 원래 순서와 입력 대기·전체 연구 active 상태를 유지한다.
+**2026-11-15 Cloud 실제 시작:** [환경·실패·호환성·필요 입력](docs/cloud_validation_2026-11-15.md). 모델/개인 자료 없이 분리 환경과 최종 연구196/Node24/pipeline147 검사를 통과했다. 관절/표면tip 검사와 기존 공학 QA 제한 sampler6회/144프레임을 구현·실행했고 전부 미검증 조건으로 거부했다. handcaptcha 쓰기403으로 복구 패치를 codex PR3에 보존했다. Chromium sandbox가 막혀 브라우저 검사는 미완료다. 원래 순서와 입력 대기·전체 연구 active 상태를 유지한다.
 
 **추가 준비 — Cloud 이전:** 현재 MANO 단위를 마친 뒤 [작업별 이전 판단·의존성·명령·결과 대조·PC 종료 순서](docs/codex_cloud_migration_preparation_2026-11-14.md)와 [인계 지시](docs/codex_cloud_handoff_2026-11-14.md)를 작성했다. 문서만 추가했으며 Cloud 환경/연구 코드 변경·모델/개인 자료 전송은 하지 않았다. 계정 접근·Linux 실행·MANO 호스팅 허용 범위는 미검증이다. 기존 연구 우선순위와 전체 목표는 유지한다.
 
