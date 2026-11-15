@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**랜덤 손동작 진단:** [실제8동작·192프레임 생성과 시도/거부 기록](docs/deliveries/2026-11-15_mano_random_diagnostic.md)을 마쳤습니다. 생체 허용 범위는 미확인이라 모두 비공개 진단으로 격리했고 문제 풀에 추가하지 않았습니다.
+
 **앞으로 할 일 한 문서:** [우선순위·필요 입력·전체62개 백로그·3D 요구·실행시간 후속](docs/remaining_work_master_2026-11-15.md). 로컬 연구를 다시 진행하며 Cloud 이전은 보류합니다.
 
 **Cloud 이전 준비:** [현재 작업 보존·이전 가능 범위·실행 초안](docs/codex_cloud_migration_preparation_2026-11-14.md), [새 작업 인계문](docs/codex_cloud_handoff_2026-11-14.md). Cloud 실행과 비공개 자료 전송은 아직 하지 않았습니다.

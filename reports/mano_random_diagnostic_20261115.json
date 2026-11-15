@@ -1,0 +1,62 @@
+{
+  "accepted_into_pool_n": 0,
+  "assessment_states": {
+    "UNRESOLVED_LIMITS": 8
+  },
+  "attempts_n": 8,
+  "biological_validity_proven": false,
+  "exact_recipe_replays_n": 8,
+  "full_generator_ready": false,
+  "limitations": [
+    "Engineering PCA bounds and smooth curve are not admissible anatomical or safety limits.",
+    "No object, collision, full scene, final masked raster, independent family or human study.",
+    "Rejected native arrays remain private diagnostic records; no delivery/pool promotion."
+  ],
+  "measurable_frames_n": 192,
+  "native_forward_frames_n": 192,
+  "new_independent_families_n": 0,
+  "new_model_inference": true,
+  "physical_unit_verified": false,
+  "quarantined_attempts_n": 8,
+  "random_motion_sampled": true,
+  "rejection_reason_counts": {
+    "CONTACT_PHYSICS_NOT_CHECKED": 8,
+    "ENGINEERING_DIAGNOSTIC_NOT_ELIGIBLE_FOR_POOL": 8,
+    "FINAL_MASKED_RENDER_NOT_CHECKED": 8,
+    "HUMAN_FEASIBILITY_NOT_OBSERVED": 8,
+    "NO_EVIDENCE_BACKED_ADMISSION": 8,
+    "SELF_COLLISION_NOT_CHECKED": 8,
+    "UNRESOLVED_ANGULAR_ACCELERATION_RAD_S2": 8,
+    "UNRESOLVED_ANGULAR_SPEED_RAD_S": 8,
+    "UNRESOLVED_BONE_LENGTHS": 8,
+    "UNRESOLVED_JOINT_ANGLE_HULLS": 8,
+    "UNRESOLVED_PALM_CURVATURES": 8,
+    "UNRESOLVED_PALM_SPREAD_RADIANS": 8
+  },
+  "release_allowed": false,
+  "rendered_videos_n": 0,
+  "rig_violation_attempts_n": 0,
+  "runtime_journal_completed_frames_n": 192,
+  "runtime_journal_status": "COMPLETED",
+  "scope": "bounded_random_native_mano_engineering_diagnostic_all_outputs_quarantined",
+  "seeds": [
+    7,
+    19
+  ],
+  "version": "mano_bounded_pca_engineering_diagnostic_v1",
+  "producer_code_commit": "d178820",
+  "hand_profile_code_commit": "b927813",
+  "research_tests_passed": 198,
+  "sampler_tests_in_model_runtime_passed": 5,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 39,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "postflight_snapshot_matched": true,
+  "reloaded_recipe_native_mapping_checks_passed_n": 8,
+  "attempt_log_events_checked_n": 16,
+  "whole_goal_completion_proven": false
+}

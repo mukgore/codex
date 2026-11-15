@@ -1,5 +1,7 @@
 # 3D 요구별 현재 근거와 공백 — 2026-11-14
 
+**2026-11-15 후속:** [제한 PCA 랜덤8동작/192프레임·전 시도/거부 기록](deliveries/2026-11-15_mano_random_diagnostic.md)은 실제 실행했다. GEN3D-05의 공학 샘플러/기록 일부를 보완했으며 여섯 생체 한계 미확인으로 전부 격리했다. 정식 후보/풀·생체/물리/사람 관문은 여전히 미완료다.
+
 추가 근거: [기록된 새 MANO 생산자](deliveries/2026-11-14_mano_controlled_producer.md)는 원래 관절 16개와 표면 손끝 5개·full pose·부모 표를 저장하고 양손 48프레임을 재현했다. 아래 GEN3D-01의 생산자 source/SDK 연결 공백을 일부 해소하며, 물리 단위·전체 해부학적 타당성·GEN3D-02 허용 수치와 랜덤 생성 완료는 여전히 미입증이다.
 
 [3D 명세 v0.1](3d_hand_object_challenge_requirements_v0.1.md)의 요구 범위를 유지한다. 아래 ‘부분’은 전체 요구 완료가 아니다. 코드/fixture 검사는 실제 사람·강한 공격·운영 인수의 대체가 아니다. 원래 [연구 순서](research_goal_followups_2026-11-10.md)의 1–5단계 실제 입력은 [등록 기록 확인](deliveries/2026-11-14_execution_evidence_and_priority_resume.md)대로 대기다.
