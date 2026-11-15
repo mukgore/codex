@@ -1,0 +1,27 @@
+{
+  "angle_centers_labeled_n": 15,
+  "angle_record_version": "bmc_angle_center_child_and_clinical_candidate_v1",
+  "biological_validity_proven": false,
+  "cases_n": 8,
+  "frames_recomputed_n": 192,
+  "limitations": [
+    "Center/child is a canonical skeleton label correspondence, not independent anatomical annotation.",
+    "BMC geometry frames and clinical/MDH neutral pose, rotation axes and signs remain unverified.",
+    "Existing hand model quarantine and all unresolved rule limits remain unchanged."
+  ],
+  "new_model_inference": false,
+  "numeric_profile_changed": false,
+  "numerical_feature_arrays_exactly_equal_n": 960,
+  "release_allowed": false,
+  "scope": "angle_center_child_label_clarification_and_saved_feature_regression",
+  "selected_literature_label_candidates_n": 4,
+  "verified_clinical_axis_mappings_n": 0,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 3,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "pipeline_tests_passed": 152
+}

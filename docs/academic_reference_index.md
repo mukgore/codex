@@ -62,7 +62,7 @@ Fai Chen Chen et al. (2013). **Constraint Study for a Hand Exoskeleton: Human Ha
 
 Cobos, Ferre, Sánchez-Urán, Ortego & Peña (2008). **Efficient Human Hand Kinematics for Manipulation Tasks.** IROS. [저자기관 UPM 서지/원문 연결](https://oa.upm.es/4040/).
 
-BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기관 서지/초록을 확인했다. [기관PDF](https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf)는 직접 열기 timeout으로 **본문 추가 검토 대기**다. 정적/동적 모델 제약을 실제 참가자 전체의 보편 경계로 읽지 않는다. 원측정·neutral/axis·task/개인차를 추적해야 한다.
+BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기관 서지/초록을 확인했다. [기관PDF](https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf)는 웹 timeout과 로컬 TLS/자격 획득 오류로 **본문 추가 검토 대기**다. 검증을 끄거나 시스템 설정을 바꾸지 않았다. 정적/동적 모델 제약을 실제 참가자 전체의 보편 경계로 읽지 않는다. 원측정·neutral/axis·task/개인차를 추적해야 한다.
 
 ### BIO-08 — Neutral-zero 관절 기능 측정
 
@@ -71,6 +71,8 @@ Ryf, C.; Weymann, A. (1995). **The neutral zero method — A principle of measur
 BMC 본문의 한계 출처 예시인 참고문헌[33]에서 서지를 확인했다. 11월15일 DOI 접근은 실패했으며 **원문 미열람**이다. 중립자세와 측정 원칙 확인을 위한 후속이며, 구체적 관절 값이나 우리 모델 대응을 이 자료에서 확보했다고 표시하지 않는다.
 
 ## 각 생체 판단에 무엇이 아직 필요한가
+
+**2026-11-15 이름표 대조:** [각도 중심점/나가는 뼈 끝점의15개 기록과 선택 문헌4행](deliveries/2026-11-15_angle_center_mapping.md)을 연결했다. 192프레임의 기존960개 수치 배열이 그대로임을 확인했다. 이름 대응은 임상/MDH 축·중립/부호 검증이 아니다. BIO-02의 자식점에 따른 뼈 이름과 실제 각도 중심을 구분한다.
 
 | 판단 항목 | 현재 연결된 학술 근거/코드 | 아직 비어 있는 근거 |
 |---|---|---|

@@ -4,6 +4,8 @@
 
 ## 현재 위치와 바로 다음 작업
 
+**관절 대응의 최신 상태:** [15개 각도 중심/뼈 끝점·선택 문헌4행 후보](deliveries/2026-11-15_angle_center_mapping.md)를 명시했고192프레임/960수치 배열 불변을 확인했다. 다음은 이름 후보를 넘어 임상/MDH 축·중립/부호·엄지/root 기준을 확인하는 일이다. Cobos 기관 PDF 접근은 실패해 원문 검토 대기이며 다른 독립 개발은 계속한다.
+
 **생체 수치 추적:** [Chen Chen2013의 선택 정적 값·연동·과제별 속도와 원출처](deliveries/2026-11-15_biomechanical_numeric_sources.md)를 추출/대조했다. 다음은 Cobos 원측정/모델·neutral/axes·엄지·BMC/MANO 대응과 시간 기준의 적용 조건 확인이다. 주기 해석과 보편성 미확인으로 현재 여섯 규칙과 랜덤 결과 격리는 유지한다.
 
 **문헌 관리:** [학술 자료 통합 색인](academic_reference_index.md)과 [핵심 BibTeX](../references/hand_research_core.bib)를 추가했다. 앞으로 새 자료/수치마다 출처·절/식·대상/단위·모델 대응·코드/검사·확인일을 함께 갱신한다. GEO-01을 참고한 [표면 교차 진단](deliveries/2026-11-15_mano_surface_intersections.md)을192프레임에 실행했으며 인접 면·연속 충돌/부피·생체 검증은 남는다.

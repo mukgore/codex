@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**각도 이름표 확인:** [각도가 놓인 관절과 뼈 끝점을 구분](docs/deliveries/2026-11-15_angle_center_mapping.md)했습니다. 기존960개 수치 배열은 그대로이며 임상 허용값 적용은 아직 보류입니다.
+
 **생체 근거 후속:** [관절 범위·연동·속도의 원출처와 주기 해석 대조](docs/deliveries/2026-11-15_biomechanical_numeric_sources.md). 참고 수치를 보존했으며 모델의 허용 한계로 자동 적용하지 않았습니다.
 
 **표면 검사 후속:** [랜덤 손192프레임의 삼각형 교차 진단](docs/deliveries/2026-11-15_mano_surface_intersections.md)을 추가했습니다. 검사 범위에서 교차 지표는 없었으나 전체 관통 부재·생체 타당성은 미확인입니다.
