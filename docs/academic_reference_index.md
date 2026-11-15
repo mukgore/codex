@@ -62,7 +62,7 @@ Fai Chen Chen et al. (2013). **Constraint Study for a Hand Exoskeleton: Human Ha
 
 Cobos, Ferre, Sánchez-Urán, Ortego & Peña (2008). **Efficient Human Hand Kinematics for Manipulation Tasks.** IROS. [저자기관 UPM 서지/원문 연결](https://oa.upm.es/4040/).
 
-BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기관 서지/초록을 확인했다. [기관PDF](https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf)는 웹 timeout과 로컬 TLS/자격 획득 오류로 **본문 추가 검토 대기**다. 검증을 끄거나 시스템 설정을 바꾸지 않았다. 정적/동적 모델 제약을 실제 참가자 전체의 보편 경계로 읽지 않는다. 원측정·neutral/axis·task/개인차를 추적해야 한다.
+BIO-06 표6의 참고문헌[13], BMC의 참고문헌[10]이다. 11월15일 기관 서지/초록 확인 후 [기관PDF](https://oa.upm.es/4040/1/INVE_MEM_2008_58022.pdf)를 기본 인증서 검증을 유지한 Windows curl 재시도로 확보했다.6쪽을 렌더/검토하고 §II/표I–II의 일반D-H, §III/표III의 가동 범위·원출처, 과제별 모델 평가를 읽었다. [원표 대조](deliveries/2026-11-15_original_constraint_comparison.md)에서 선택18칸 중 엄지2칸이2013년 재인용과 다름을 확인했다. 임의로 합의/오류를 확정하지 않았다. [추출JSON](../references/cobos2008_constraint_extraction.json)·BibTeX `Cobos2008Kinematics`. 이전 접근 실패는 당시 기록이며 원도서·neutral/axis·task/개인차는 계속 추적해야 한다.
 
 ### BIO-08 — Neutral-zero 관절 기능 측정
 

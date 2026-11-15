@@ -1,0 +1,51 @@
+{
+  "axis_equivalence_verified": false,
+  "compared_source_id": "BIO-06",
+  "different_reported_cells": [
+    {
+      "BIO06_reported_degrees": [
+        5,
+        5
+      ],
+      "BIO07_reported_degrees": [
+        0,
+        0
+      ],
+      "exactly_equal": false,
+      "finger": "thumb",
+      "joint": "MCP",
+      "reported_axis": "abduction_adduction"
+    },
+    {
+      "BIO06_reported_degrees": [
+        5,
+        5
+      ],
+      "BIO07_reported_degrees": [
+        0,
+        0
+      ],
+      "exactly_equal": false,
+      "finger": "thumb",
+      "joint": "IP",
+      "reported_axis": "abduction_adduction"
+    }
+  ],
+  "equal_reported_cells_n": 16,
+  "joint_rows_n": 6,
+  "paper_error_proven": false,
+  "profile_changed": false,
+  "release_allowed": false,
+  "reported_cell_comparisons_n": 18,
+  "scope": "selected_published_table_cell_comparison_not_admissible_profile",
+  "source_id": "BIO-07",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 1,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "research_tests_passed": 202,
+  "code_commit": "bc3146a"
+}
