@@ -1,5 +1,7 @@
 # TF-02 원형 없는 자세 제안 파일럿 사전등록 v1
 
+**실행 후 갱신:** [TF-02 실제 결과/실패와 성공 ID 구분](deliveries/2026-11-16_template_free_pose_pilot.md), [별도 TF-02P 수정원출력 감사](deliveries/2026-11-16_projected_pose_audit.md), [TF-03 경로 결과](deliveries/2026-11-16_template_free_paths.md)에 연결한다. 아래는 실행 전에 고정했던 명세이며 당시 ‘대기’ 상태를 보존한다.
+
 상태: **등록 완료, 코드/실행 대기**. [TF-01 적용표](tf01_constraint_application_2026-11-16.md)에 따라 모델용 prior만 적용한다. 실제 촬영/사람 입력이 오면 원래1→2→3A가 우선이다. 성공할 후보 수를 미리 정하지 않는다.
 
 질문은 고정 굽힘-복귀 파형/원형ID 없이 제안한 PCA연동 자세가 현재 모델 prior·샘플표면 지표를 얼마나 만족하는지다. 움직임·사람 타당성·완성 공급기를 시험하는 실험이 아니다. 기존2PC 고정시간 envelope를 이름만 바꿔 재사용하지 않는다.
@@ -7,6 +9,8 @@
 ## 조건과 고정 예산
 
 양손×seed7/19×8시도 = 각 arm32자세를 계획한다. NumPy PCG64/SeedSequence를 버전과 함께 고정하고 proposal stream을 hand/seed/attempt로 분리한다. B/U는 같은32제안을 짝지어 사용한다. geometry는 beta=0, root axis-angle=0, flat_hand_mean=true로 고정하고 appearance는 생성하지 않는다.
+
+**실행 전 구현 명세 확정:** SeedSequence entropy는 `[seed, hand_index, attempt, 62026]`, hand_index는 right=0/left=1이다. 제안6계수는 float64 원추출과 float32 SDK입력을 모두 보존한다. 모델의6×45 float32 PCA기저로 전개하고, 실제 SDK의 PCA 경로와 full-pose 경로를1e-6으로 비교한다. A는 기존 recipe/선택프레임을 재사용하되 위의 beta=0을 공통 적용하는 새 정적 계산이다. 기존 beta 변형 영상/좌표를 그대로 재현했다는 주장은 하지 않는다. 모든 표현 검산은64개 본시도 전에 수행하며 계수/기저/최대오차를 비공개 보존한다. 코드: `analysis/runtime_benchmark/template_free_pose.py`, `mano_template_free_pose_pilot.py`.
 
 | arm | 제안 | 검사·목적 |
 |---|---|---|

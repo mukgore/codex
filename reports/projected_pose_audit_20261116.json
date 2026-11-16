@@ -1,0 +1,39 @@
+{
+  "accepted_into_pool_n": 0,
+  "bmc_geometry_measurable_n": 32,
+  "changed_axis_components_n": 1023,
+  "changed_proposals_n": 32,
+  "correction_l2_degrees_max": 88.45142607032177,
+  "correction_l2_degrees_min": 13.47509182329869,
+  "correction_max_degrees": 40.64617618377088,
+  "exact_neutral_geometry_n": 0,
+  "human_trials_n": 0,
+  "model_prior_zero_n": 18,
+  "model_surface_eligible_n": 18,
+  "new_actual_forward_poses_n": 0,
+  "new_independent_families_n": 0,
+  "new_motion_sequences_n": 0,
+  "new_random_draws_n": 0,
+  "new_videos_n": 0,
+  "original_actual_forward_poses_n": 34,
+  "original_producer_state": "PROCESS_ERROR",
+  "original_sdk_journal_state": "COMPLETED",
+  "pending_BMC_state": "UNRESOLVED_LIMITS",
+  "projected_proposals_n": 32,
+  "rejection_reason_counts": {
+    "AUTHOR_MODEL_PRIOR_EXCESS": 14
+  },
+  "release_allowed": false,
+  "sampled_surface_clear_n": 32,
+  "scope": "separate raw-output audit; original failed producer is not relabeled EXITED_ZERO",
+  "timing": {
+    "ended_utc_epoch_ns": 1794834298621677600,
+    "own_cpu_ns": 546875000,
+    "scope": "raw-output algebra/decision/duplicate audit; producer verification and recorder snapshot/sealing excluded",
+    "started_utc_epoch_ns": 1794834298078461600,
+    "wall_ns": 543990100
+  },
+  "unique_actual_geometry_payloads_n": 32,
+  "version": "saved_pca_model_box_projected_static_pose_v1",
+  "audit_record_integrity": "RECORDED_FILES_MATCH"
+}
