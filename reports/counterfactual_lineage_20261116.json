@@ -1,0 +1,683 @@
+{
+  "H264_exact_byte_groups_n": 14,
+  "H264_files_n": 64,
+  "H264_groups_with_multiple_model_references_n": 12,
+  "accepted_into_pool_n": 0,
+  "allocation_is_real_human_or_model_evaluation": false,
+  "audit_own_process_cpu_ns": 3843750000,
+  "audit_wall_ns": 3931774400,
+  "conservative_current_development_families_n": 1,
+  "diagnostic_inventory_findings": {
+    "MISSING_INDEPENDENT_PARTITIONS": 1
+  },
+  "ended_utc_epoch_ns": 1794825533548042600,
+  "family_definition": "conservative same procedural middle-only development family; no new family from seed, policy, delta or view labels",
+  "groups": [
+    {
+      "H264_files_n": 8,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E01",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p00d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V00",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p00d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V02",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p00d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V04",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p00d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V06",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p01d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V08",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p01d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V10",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p01d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V12",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p01d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V14",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 8,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E02",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p00d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V01",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p00d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V03",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p00d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V05",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p00d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_author_exact",
+          "source_id": "V07",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p01d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V09",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p01d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V11",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p01d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V13",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p01d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V15",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 8,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E03",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p02d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V16",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p02d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V18",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p02d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V20",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p02d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V22",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p03d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V24",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p03d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V26",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p03d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V28",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p03d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V30",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 8,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E04",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p02d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V17",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p02d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V19",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p02d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V21",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p02d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_author_exact",
+          "source_id": "V23",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p03d0",
+          "delta_degrees": 0.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V25",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p03d1",
+          "delta_degrees": -5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V27",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p03d2",
+          "delta_degrees": 5.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V29",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p03d3",
+          "delta_degrees": 10.0,
+          "hand": "right",
+          "parent_case": "right_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V31",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 3,
+      "distinct_native_geometry_time_n": 3,
+      "group_id": "E05",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p04d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V32",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p04d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V36",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p04d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V38",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E06",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p04d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V33",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p04d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V35",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p04d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V37",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p04d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V39",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 1,
+      "distinct_native_geometry_time_n": 1,
+      "group_id": "E07",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p04d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_author_exact",
+          "source_id": "V34",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": false
+    },
+    {
+      "H264_files_n": 3,
+      "distinct_native_geometry_time_n": 3,
+      "group_id": "E08",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p05d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V40",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p05d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V44",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p05d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V46",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E09",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p05d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V41",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p05d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V43",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p05d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V45",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p05d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V47",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 1,
+      "distinct_native_geometry_time_n": 1,
+      "group_id": "E10",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p05d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s7_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V42",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": false
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E11",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p06d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V48",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p06d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V50",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p06d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V52",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p06d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V54",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E12",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p06d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V49",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p06d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V51",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p06d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V53",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p06d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_author_exact",
+          "source_id": "V55",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E13",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p07d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V56",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p07d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V58",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p07d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V60",
+          "view": "reference_positive"
+        },
+        {
+          "case_id": "p07d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V62",
+          "view": "reference_positive"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    },
+    {
+      "H264_files_n": 4,
+      "distinct_native_geometry_time_n": 4,
+      "group_id": "E14",
+      "human_acceptable_answer_set_defined": false,
+      "members": [
+        {
+          "case_id": "p07d0",
+          "delta_degrees": 0.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V57",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p07d1",
+          "delta_degrees": -5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V59",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p07d2",
+          "delta_degrees": 5.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V61",
+          "view": "reference_negative"
+        },
+        {
+          "case_id": "p07d3",
+          "delta_degrees": 10.0,
+          "hand": "left",
+          "parent_case": "left_s19_middle_only_cues_open_ideal_mirror_comparator",
+          "source_id": "V63",
+          "view": "reference_negative"
+        }
+      ],
+      "multiple_model_references_for_exact_file": true
+    }
+  ],
+  "human_acceptable_answers_defined": false,
+  "native_coordinate_sequences_n": 32,
+  "native_geometry_time_unique_n": 24,
+  "new_independent_trials_n": 0,
+  "new_model_inference": false,
+  "new_video_created": false,
+  "release_allowed": false,
+  "scope": "exact file/geometry inventory and declared lineage only; roots bound the supplied recorded material, not independent origin",
+  "source_entries_n": 120,
+  "specific_final_H264_alias_cross_split_detected": true,
+  "started_utc_epoch_ns": 1794825529615705300,
+  "synthetic_invalid_partition_findings": {
+    "CROSS_SPLIT_BYTE_IDENTITY": 3,
+    "CROSS_SPLIT_FAMILY": 3,
+    "CROSS_SPLIT_SOURCE_IDENTITY": 3,
+    "EXPOSED_TEST_SOURCE": 1
+  },
+  "version": "actual_counterfactual_file_geometry_lineage_v1",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 5,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "97964ee61bff69004bfdeab6fe4a00364cba9848",
+  "recorded_input_files_n": 1763,
+  "dependency_pins_n": 26
+}
