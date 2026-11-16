@@ -1,0 +1,463 @@
+{
+  "accepted_into_pool_n": 0,
+  "by_arm": [
+    {
+      "arm": "A",
+      "final_created_n": 8,
+      "interval_gap_max": -0.026913773409008357,
+      "interval_gap_min": -0.0269137734090088,
+      "legacy_feasible_n": 8,
+      "mask_allowed_n": 8,
+      "union_interval_feasible_n": 8,
+      "upstream_model_surface_eligible_n": 8,
+      "views_n": 8
+    },
+    {
+      "arm": "B",
+      "final_created_n": 0,
+      "interval_gap_max": 0.15710998722022573,
+      "interval_gap_min": 0.07025525999047044,
+      "legacy_feasible_n": 6,
+      "mask_allowed_n": 0,
+      "union_interval_feasible_n": 0,
+      "upstream_model_surface_eligible_n": 8,
+      "views_n": 8
+    },
+    {
+      "arm": "C",
+      "final_created_n": 0,
+      "interval_gap_max": 0.19903475954920324,
+      "interval_gap_min": 0.1032479685001042,
+      "legacy_feasible_n": 6,
+      "mask_allowed_n": 0,
+      "union_interval_feasible_n": 0,
+      "upstream_model_surface_eligible_n": 8,
+      "views_n": 8
+    },
+    {
+      "arm": "U",
+      "final_created_n": 0,
+      "interval_gap_max": 0.13994735000794423,
+      "interval_gap_min": -0.018482436077779774,
+      "legacy_feasible_n": 6,
+      "mask_allowed_n": 0,
+      "union_interval_feasible_n": 2,
+      "upstream_model_surface_eligible_n": 0,
+      "views_n": 8
+    }
+  ],
+  "constants": {
+    "MATCH_ANGLE_THRESH": 38,
+    "MATCH_HOLD_MS": 200,
+    "MX": {
+      "accel": 0.1926,
+      "angle": 46.9413,
+      "dtw_angle": 44.0014
+    },
+    "THRESHOLD": 0.25,
+    "W2": {
+      "a": 0.25,
+      "ac": 0.37,
+      "da": 0.38
+    }
+  },
+  "decoded_pixel_groups_n": {
+    "candidate": 8,
+    "final": 8,
+    "source": 32
+  },
+  "extraction": {
+    "prod_sha256": "0d82dd439fe7976f8b860eb82e654e6f5637b2d7a3fcce2d02f2f99e5f5bea11",
+    "ranges": [
+      {
+        "end_line": 271,
+        "sha256": "7873558743321ffa6cd4edc21c30b08c55fe10af6e24d93b5769a92076f3160f",
+        "start_line": 252
+      },
+      {
+        "end_line": 292,
+        "sha256": "2603c4f7533a68bb7878c9601f78fb21a5b9ca77519963d948c1f2699d8f8292",
+        "start_line": 276
+      },
+      {
+        "end_line": 308,
+        "sha256": "2c2041659eae64e6467fad9298efd3f5bdf1a0d6240003d7469dcf224afb0284",
+        "start_line": 294
+      },
+      {
+        "end_line": 869,
+        "sha256": "c365d183517dc0764ad4844d3e1a3bf161f3b2855c1531e79b1cc154fe60e860",
+        "start_line": 843
+      }
+    ]
+  },
+  "file_groups_n": {
+    "candidate": 8,
+    "final": 8,
+    "source": 32
+  },
+  "final_file_groups_with_distinct_native_payloads_n": 0,
+  "final_file_groups_with_multiple_native_cases_n": 0,
+  "hold_or_authentication_validated": false,
+  "human_trials_n": 0,
+  "independent_evaluation_partitions_n": 0,
+  "lineage_findings": {
+    "MISSING_INDEPENDENT_PARTITIONS": 1
+  },
+  "lineage_sources_n": 64,
+  "media_timings_rows_n": 48,
+  "native_payload_groups_n": 16,
+  "new_independent_families_n": 0,
+  "new_model_inference_n": 0,
+  "new_score_diagnostics_n": 0,
+  "new_static_raster_views_n": 0,
+  "new_videos_n": 0,
+  "prior_analysis_state": "PROCESS_ERROR",
+  "release_allowed": false,
+  "reused_score_diagnostics_n": 256,
+  "reused_static_raster_views_n": 36,
+  "score_aggregates": [
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9970486542854475,
+      "score_min": 0.9868971623952066,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9970486542854475,
+      "score_min": 0.9876560862841831,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9741607498853979,
+      "score_min": 0.9281035111616373,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9741607498853979,
+      "score_min": 0.9289475527146864,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9779532766078091,
+      "score_min": 0.941555608333676,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9779532766078091,
+      "score_min": 0.9425922857567315,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9970486542854475,
+      "score_min": 0.9868971623952066,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9970486542854475,
+      "score_min": 0.9876560862841831,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999998,
+      "score_min": 0.9999999999999987,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9548154456863231,
+      "score_min": 0.909239660129408,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "B",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9548154456863231,
+      "score_min": 0.9100964193371989,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9990276686186838,
+      "score_min": 0.9982024063803465,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9990276686186838,
+      "score_min": 0.9982024063803465,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9881377836404496,
+      "score_min": 0.9759851629547256,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9881377836404496,
+      "score_min": 0.9759851629547256,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.994079834113105,
+      "score_min": 0.9884274819926759,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.994079834113105,
+      "score_min": 0.9884274819926759,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9578051903658398,
+      "score_min": 0.9106084814321982,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "C",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9578051903658398,
+      "score_min": 0.9121061010073923,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "self",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "static_start",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "partial_half",
+      "diagnostics_n": 8,
+      "score_max": 0.9999999999999999,
+      "score_min": 0.9999999999999982,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9486534734912718,
+      "score_min": 0.90069808650286,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval"
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "condition": "A_reference",
+      "diagnostics_n": 8,
+      "score_max": 0.9486534734912718,
+      "score_min": 0.9016027457202398,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes"
+    }
+  ],
+  "score_diagnostics_n": 256,
+  "static_candidates_n": 18,
+  "static_codec_or_human_approval": false,
+  "static_display_eligible_views_n": 0,
+  "static_eligible_native_cases_n": 0,
+  "static_raster_views_n": 36,
+  "timing": {
+    "ended_utc_epoch_ns": 1794839081941427700,
+    "node_child_cpu_measured": false,
+    "own_python_cpu_ns": 20437500000,
+    "scope": "conversion/scoring/decode/file-lineage/static raster screen/store and parent recheck; initial parent verification/recorder excluded",
+    "started_utc_epoch_ns": 1794839066187594100,
+    "wall_ns": 15753984400
+  },
+  "version": "tf04_matched_display_analysis_v1",
+  "analysis_record_integrity": "RECORDED_FILES_MATCH",
+  "analysis_timing_scope_clarification": "v2 reused256 scores and36 rasters; core wall/CPU cover existing media decode/file-lineage, saved-result copy/store and parent recheck. Initial original-input hash verification and recorder excluded; no new score/raster computation.",
+  "native_bundle_actual_SDK_pose_evaluations_n": 102,
+  "native_bundle_reused_coordinate_frames_n": 300,
+  "display_source_videos_n": 32,
+  "display_masked_candidate_videos_n": 8,
+  "display_H264_videos_n": 8
+}

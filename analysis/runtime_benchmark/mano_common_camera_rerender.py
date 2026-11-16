@@ -74,7 +74,8 @@ def check_proxy_encoded(path, amodal, fps):
 
 
 def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_mode,
-            protection_mode='author_region_union',region_profile=None,region_assignment=None,region_review=None):
+            protection_mode='author_region_union',region_profile=None,region_assignment=None,region_review=None,
+            frozen_camera=None):
     validate_protection_request(protection_mode,region_profile,region_assignment,region_review)
     author_profile=author_labels=None
     if protection_mode=='author_region_union':
@@ -99,6 +100,8 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
     config = PipelineConfig(); source_summary = json.loads((source/'summary.json').read_text())
     if source_summary['cases_n'] != 16 or source_summary['release_allowed'] is not False:
         raise ValueError('Explicit sixteen quarantined source cases required')
+    if frozen_camera is not None or source_summary.get('version')=='tf04_matched_ABC_U_native_bundle_v1':
+        validate_frozen_bundle(source_summary,source,frozen_camera,camera_mode,protection_mode)
     journal = Journal(output/'journal', {'condition_id': 'COMMON_CAMERA_PROXY_MASK_RERENDER',
         'endpoint': 'shared_camera_source_render_and_proxy_mask_codec_QA', 'input_exposure': 'recorded private mesh sequences',
         'cache_state': 'all source arrays loaded once; no model load/inference; local codec caches uncontrolled',
@@ -165,7 +168,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
             (output/'neutral_registration.private.json').write_bytes(canonical({'camera_mode':camera_mode,
                 'fixed_hand_bases':{k:v.tolist() for k,v in registrations.items()},'cases':registration_rows,
                 'left_basis_lateral_sign':-1,'clinical_or_palm_back_axes_verified':False}))
-            camera = common_camera(reference, loaded, config)
+            camera = common_camera(reference, loaded, config) if frozen_camera is None else read_frozen_camera(frozen_camera)
             (output/'shared_camera.private.json').write_bytes(canonical(camera))
             shared_ns = time.perf_counter_ns()-shared_start
         for case_index, case in enumerate(loaded):
@@ -235,7 +238,7 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
                         with timer.phase('proxy_mask_interval_and_exact_pixel_QA'):
                             legacy = legacy_interval(frames, config)
                             interval = surface_weight_interval(legacy, joint_xy, amodal)
-                            diagnostics = []; allowed = interval['feasible']; weight = interval['proposed_w3']; gate = None
+                            diagnostics = []; allowed = bool(interval['feasible'] and original.get('model_surface_eligible_for_display_comparison',True)); weight = interval['proposed_w3']; gate = None
                             if allowed:
                                 gate = gate_clip(frames, weight, config); allowed = gate['accepted']
                                 masks, cores, geometries = raster_masks(frames, weight, project_occlusion_circle, LANDMARK_NAMES)
@@ -306,6 +309,9 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
                     'upstream_model_prior_policy':original['policy'],'anatomical_surface_annotations_verified':False,
                     'protection_mode':protection_mode,'legacy_reproduction_only':protection_mode=='legacy_rest_proxy',
                     'decision':'QUARANTINED_RESEARCH_DIAGNOSTIC','accepted_into_pool':False,'release_allowed':False}
+                if 'arm' in original:
+                    row.update(arm=original['arm'],seed=original['seed'],
+                        upstream_model_surface_eligible=original['model_surface_eligible_for_display_comparison'])
                 (directory/'decision.private.json').write_bytes(canonical(row)); cases.append(row)
                 print('Shared-camera cases completed: '+str(len(cases))+'/32',flush=True)
         if verify(source_record) != before: raise ValueError('Original source artifacts changed during rerender')
@@ -338,7 +344,34 @@ def execute(source, source_record, worker_root, ffmpeg, ffprobe, output, camera_
             'Opposite views and duplicate source policies are correlated and not independent tasks or security entropy.',
             'Original surface intersections/BMC/physical/human/attack holds remain; codec success is a separate lower-level check.',
             'Media timing scopes differ for encoder-close vs library-return boundaries; own-process CPU omits ffmpeg child CPU.']}
+    if frozen_camera is not None:
+        summary.update(camera_frozen_from_input=True,camera_recalibrated=False,
+          source_bundle_version=source_summary['version'])
+        summary['limitations'][0]='Camera is copied from a bound existing development calibration; no refit to these four-arm sequences or physical/live calibration.'
     (output/'summary.json').write_bytes(canonical(summary));return summary
+
+
+def read_frozen_camera(path):
+    camera=json.loads(_private(path).read_text())
+    scale=camera.get('pixels_per_native_unit')
+    if (camera.get('width')!=WIDTH or camera.get('height')!=HEIGHT
+            or type(scale) not in (int,float) or not np.isfinite(scale) or scale<=0
+            or not np.isfinite(np.asarray(camera.get('center_base'),float)).all()
+            or np.asarray(camera.get('center_base')).shape!=(2,)):
+        raise ValueError('Complete finite existing512x420 camera required')
+    for view in VIEWS:view_basis(camera,view)
+    return camera
+
+
+def validate_frozen_bundle(summary,source,frozen_camera,camera_mode,protection_mode):
+    cases=summary.get('cases',[])
+    if (summary.get('version')!='tf04_matched_ABC_U_native_bundle_v1' or len(cases)!=16
+            or frozen_camera is None
+            or _private(frozen_camera)!=Path(source)/'frozen_camera.private.json'
+            or camera_mode!='hand_neutral_registered' or protection_mode!='author_region_union'
+            or any(sum(c.get('arm')==arm for c in cases)!=4 for arm in ('A','B','C','U'))
+            or any(type(c.get('model_surface_eligible_for_display_comparison')) is not bool for c in cases)):
+        raise ValueError('Frozen camera requires registered four-arm16-case union-protected bundle')
 
 
 if __name__=='__main__':
@@ -347,5 +380,6 @@ if __name__=='__main__':
     parser.add_argument('--camera-mode',choices=CAMERA_MODES,required=True)
     parser.add_argument('--protection-mode',choices=PROTECTION_MODES,default='author_region_union')
     for name in ('region-profile','region-assignment','region-review'):parser.add_argument('--'+name,type=Path)
+    parser.add_argument('--frozen-camera',type=Path)
     a=parser.parse_args();print(json.dumps(execute(a.source,a.source_record,a.worker_root,a.ffmpeg,a.ffprobe,a.output,a.camera_mode,
-        a.protection_mode,a.region_profile,a.region_assignment,a.region_review)))
+        a.protection_mode,a.region_profile,a.region_assignment,a.region_review,a.frozen_camera)))
