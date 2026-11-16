@@ -1,0 +1,191 @@
+{
+  "float_supplement": {
+    "accepted_into_pool_n": 0,
+    "biological_validity_proven": false,
+    "cases": [
+      {
+        "case_id": "left_s19",
+        "counts": {
+          "EXPECTED_SHARED_SIMPLEX_ONLY": 232992,
+          "NONLOCAL_OVERLAP_INDICATOR": 0,
+          "NUMERICALLY_UNRESOLVED": 8,
+          "UNMEASURABLE_DEGENERATE_TRIANGLES": 0
+        },
+        "degenerate_frames_n": 0,
+        "frame_compute_own_cpu_ns": 47812500000,
+        "frame_compute_wall_ns": 47964176800,
+        "frames_n": 25,
+        "hand": "left",
+        "indicator_frames_n": 0,
+        "seed": 19,
+        "shared_edge_pairs_per_frame_n": 2299,
+        "shared_pairs_per_frame_n": 9320,
+        "shared_vertex_only_pairs_per_frame_n": 7021,
+        "source_nonshared_nonclear_frames_n": 0,
+        "supplement_clear_frames_n": 21,
+        "unresolved_frames_n": 4
+      },
+      {
+        "case_id": "left_s7",
+        "counts": {
+          "EXPECTED_SHARED_SIMPLEX_ONLY": 233000,
+          "NONLOCAL_OVERLAP_INDICATOR": 0,
+          "NUMERICALLY_UNRESOLVED": 0,
+          "UNMEASURABLE_DEGENERATE_TRIANGLES": 0
+        },
+        "degenerate_frames_n": 0,
+        "frame_compute_own_cpu_ns": 48671875000,
+        "frame_compute_wall_ns": 48952829500,
+        "frames_n": 25,
+        "hand": "left",
+        "indicator_frames_n": 0,
+        "seed": 7,
+        "shared_edge_pairs_per_frame_n": 2299,
+        "shared_pairs_per_frame_n": 9320,
+        "shared_vertex_only_pairs_per_frame_n": 7021,
+        "source_nonshared_nonclear_frames_n": 0,
+        "supplement_clear_frames_n": 25,
+        "unresolved_frames_n": 0
+      },
+      {
+        "case_id": "right_s19",
+        "counts": {
+          "EXPECTED_SHARED_SIMPLEX_ONLY": 233000,
+          "NONLOCAL_OVERLAP_INDICATOR": 0,
+          "NUMERICALLY_UNRESOLVED": 0,
+          "UNMEASURABLE_DEGENERATE_TRIANGLES": 0
+        },
+        "degenerate_frames_n": 0,
+        "frame_compute_own_cpu_ns": 47562500000,
+        "frame_compute_wall_ns": 47783958100,
+        "frames_n": 25,
+        "hand": "right",
+        "indicator_frames_n": 0,
+        "seed": 19,
+        "shared_edge_pairs_per_frame_n": 2299,
+        "shared_pairs_per_frame_n": 9320,
+        "shared_vertex_only_pairs_per_frame_n": 7021,
+        "source_nonshared_nonclear_frames_n": 0,
+        "supplement_clear_frames_n": 25,
+        "unresolved_frames_n": 0
+      },
+      {
+        "case_id": "right_s7",
+        "counts": {
+          "EXPECTED_SHARED_SIMPLEX_ONLY": 233000,
+          "NONLOCAL_OVERLAP_INDICATOR": 0,
+          "NUMERICALLY_UNRESOLVED": 0,
+          "UNMEASURABLE_DEGENERATE_TRIANGLES": 0
+        },
+        "degenerate_frames_n": 0,
+        "frame_compute_own_cpu_ns": 47781250000,
+        "frame_compute_wall_ns": 48048697500,
+        "frames_n": 25,
+        "hand": "right",
+        "indicator_frames_n": 0,
+        "seed": 7,
+        "shared_edge_pairs_per_frame_n": 2299,
+        "shared_pairs_per_frame_n": 9320,
+        "shared_vertex_only_pairs_per_frame_n": 7021,
+        "source_nonshared_nonclear_frames_n": 0,
+        "supplement_clear_frames_n": 25,
+        "unresolved_frames_n": 0
+      }
+    ],
+    "continuous_collision_free_proven": false,
+    "counts": {
+      "EXPECTED_SHARED_SIMPLEX_ONLY": 931992,
+      "NONLOCAL_OVERLAP_INDICATOR": 0,
+      "NUMERICALLY_UNRESOLVED": 8,
+      "UNMEASURABLE_DEGENERATE_TRIANGLES": 0
+    },
+    "degenerate_frames_n": 0,
+    "frames_n": 100,
+    "indicator_frames_n": 0,
+    "journal_status": "COMPLETED",
+    "limitations": [
+      "Existing non-shared-pair SAT not rerun or replaced.",
+      "Floating-point tolerance and ill-conditioned pairs can remain unresolved.",
+      "Off-simplex contact is an indicator, not measured penetration volume/depth.",
+      "No continuous collision, closed-surface containment, hand-object physics or human comfort approval."
+    ],
+    "new_SDK_calls_n": 0,
+    "new_human_trials_n": 0,
+    "new_videos_n": 0,
+    "paths_n": 4,
+    "relative_epsilon": 1e-07,
+    "release_allowed": false,
+    "scope": "TF03_saved_mesh_shared_simplex_supplement",
+    "source_quarantine_preserved": true,
+    "supplement_clear_frames_n": 96,
+    "timing": {
+      "ended_utc_epoch_ns": 1794872129650931900,
+      "own_cpu_ns": 192562500000,
+      "scope": "source loading, topology, per-frame supplement, store/journal and source receipt recheck; recorder excluded",
+      "started_utc_epoch_ns": 1794871936130705000,
+      "wall_ns": 193527944700
+    },
+    "unresolved_frames_n": 4,
+    "version": "shared_simplex_plane_sections_clip_v1",
+    "volume_penetration_free_proven": false,
+    "execution_record": {
+      "integrity": "RECORDED_FILES_MATCH",
+      "mode": "RECORDED_COMMAND_EXECUTION",
+      "state": "EXITED_ZERO",
+      "artifact_files_n": 8,
+      "scientific_result_or_source_authentication_proven": false
+    },
+    "producer_code_commit": "ba4ece5eeab5397a07fff9ab3360b7644670d207",
+    "recorded_input_files_n": 40,
+    "recorded_dependency_pins_n": 17
+  },
+  "exact_eight_residual_followup": {
+    "accepted_into_pool_n": 0,
+    "all_pairs_rationally_checked": false,
+    "beyond_registered_resolution_n": 0,
+    "biological_validity_proven": false,
+    "branches": {
+      "noncoplanar_rational_section_interval": 8
+    },
+    "continuous_collision_free_proven": false,
+    "exact_off_shared_simplex_n": 0,
+    "limitations": [
+      "Exact arithmetic applies to supplied binary64 coordinates, not unknown physical/anatomical truth.",
+      "Only the eight float-unresolved instances were refined; other float outcomes are not exact-predicate certified.",
+      "No continuous collision, volume containment, physical contact or human validity admission."
+    ],
+    "new_SDK_calls_n": 0,
+    "new_human_trials_n": 0,
+    "new_videos_n": 0,
+    "original_float_supplement_preserved": true,
+    "pairs_n": 8,
+    "relative_epsilon": 1e-07,
+    "release_allowed": false,
+    "resolved_n": 8,
+    "scope": "followup_of_eight_unresolved_pair_instances_only",
+    "timing": {
+      "ended_utc_epoch_ns": 1794872342979032200,
+      "own_cpu_ns": 218750000,
+      "scope": "residual selection/load/exact geometry/store and both source rechecks; initial source verification and recorder excluded",
+      "started_utc_epoch_ns": 1794872342754892000,
+      "wall_ns": 219162500
+    },
+    "unique_frames_n": 4,
+    "version": "binary64_rational_shared_simplex_v1",
+    "volume_penetration_free_proven": false,
+    "execution_record": {
+      "integrity": "RECORDED_FILES_MATCH",
+      "mode": "RECORDED_COMMAND_EXECUTION",
+      "state": "EXITED_ZERO",
+      "artifact_files_n": 9,
+      "scientific_result_or_source_authentication_proven": false
+    },
+    "producer_code_commit": "be546c13a8fc44aa6ed1ad8e807304438d8957bb",
+    "recorded_input_files_n": 55,
+    "recorded_dependency_pins_n": 17
+  },
+  "frame_timing_rows_n": 100,
+  "original_outputs_modified": false,
+  "all_pairs_rationally_checked": false,
+  "release_allowed": false
+}

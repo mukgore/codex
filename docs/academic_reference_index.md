@@ -203,3 +203,7 @@ Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021)
 ## STAT-01 — S05 조건부 동시 상한
 
 2026-11-17 공식 본문을 열람했다. NIST Dataplot [Exact Binomial Confidence Limits](https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbici.htm)의 Description1–3(이항 CDF 역산/일측 꼬리)과 NIST Handbook [7.4.7.3 Bonferroni](https://www.itl.nist.gov/div898/handbook/prc/section4/prc473.htm)의 일반 부등식을 사용한다. 저자 논문/생체 수치가 아닌 통계 참조다. 우리 적용은 사전지정 유형 K와 두 방식2K개의 고정 군집 사건 상한이며 [코드/가정/11검사](../validation_v03/SIMULTANEOUS_RISK.md)에 연결했다. 같은 군집 내부 반복을 iid로 세지 않는다. 군집 간 iid/명단/사전고정 여부는 미인증이며 사람/공격 평가 결과는 아직 없다. 기존 SciPy1.15.3의 beta 역함수 사용, 환경 설치 없음.
+
+## GEO-03 — 공유 simplex 밖의 삼각형 교집합
+
+2026-11-17 [CGAL 공식 intersection 계약](https://doc.cgal.org/latest/Kernel_23/group__intersection__linear__grp.html)의 교집합 정의·Triangle_3×Triangle_3 반환 표를 열람했다. 삼각형 내부를 포함하는 집합 교차와 점/선분/삼각형/다각형 범위를 참고했다. [독립 float/유리수 구현·사전등록·실행·19검사](deliveries/2026-11-17_shared_simplex_surface.md)에 연결한다. CGAL 구현을 복제/설치/실행하지 않았다. 기존 GEO-01 비공유 면 SAT는 보존한다. 정확 유리수는 미확정8건의 저장 binary64 좌표에만 적용했으며 모든 쌍/실제 해부학의 정확성·연속 무충돌 인증이 아니다.
