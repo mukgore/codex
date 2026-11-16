@@ -1,0 +1,271 @@
+{
+  "version": "mediapipe_matched_video_pixel_only_v1",
+  "videos_n": 48,
+  "actual_model_frames_n": 1200,
+  "detected_frames_n": 769,
+  "score_diagnostics_n": 96,
+  "aggregates": [
+    {
+      "arm": "A",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": 0.05993773091760421,
+      "conditional_mean_point_error_pixels": 8.577897160268183,
+      "conditional_middle_PIP_error_pixels": 7.8642904341072,
+      "detected_frames_n": 200,
+      "detected_point_comparisons_n": 4200,
+      "kind": "source",
+      "normalized_point_comparisons_n": 4200,
+      "videos_n": 8
+    },
+    {
+      "arm": "A",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": null,
+      "conditional_mean_point_error_pixels": null,
+      "conditional_middle_PIP_error_pixels": null,
+      "detected_frames_n": 0,
+      "detected_point_comparisons_n": 0,
+      "kind": "candidate",
+      "normalized_point_comparisons_n": 0,
+      "videos_n": 8
+    },
+    {
+      "arm": "A",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": null,
+      "conditional_mean_point_error_pixels": null,
+      "conditional_middle_PIP_error_pixels": null,
+      "detected_frames_n": 0,
+      "detected_point_comparisons_n": 0,
+      "kind": "final",
+      "normalized_point_comparisons_n": 0,
+      "videos_n": 8
+    },
+    {
+      "arm": "B",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": 0.05984489111086971,
+      "conditional_mean_point_error_pixels": 8.564610532590498,
+      "conditional_middle_PIP_error_pixels": 5.921165401657174,
+      "detected_frames_n": 175,
+      "detected_point_comparisons_n": 3675,
+      "kind": "source",
+      "normalized_point_comparisons_n": 3675,
+      "videos_n": 8
+    },
+    {
+      "arm": "C",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": 0.0601896072881077,
+      "conditional_mean_point_error_pixels": 8.613944063782943,
+      "conditional_middle_PIP_error_pixels": 6.127076292748811,
+      "detected_frames_n": 194,
+      "detected_point_comparisons_n": 4074,
+      "kind": "source",
+      "normalized_point_comparisons_n": 4074,
+      "videos_n": 8
+    },
+    {
+      "arm": "U",
+      "attempted_frames_n": 200,
+      "conditional_mean_error_reference_hand_lengths": 0.0587702107172922,
+      "conditional_mean_point_error_pixels": 8.410809283274983,
+      "conditional_middle_PIP_error_pixels": 6.475403488981009,
+      "detected_frames_n": 200,
+      "detected_point_comparisons_n": 4200,
+      "kind": "source",
+      "normalized_point_comparisons_n": 4200,
+      "videos_n": 8
+    }
+  ],
+  "score_aggregates": [
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 8,
+      "score_max": 0.9105083440768519,
+      "score_min": 0.8631482974968916,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "A",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 8,
+      "score_max": 0.9105083440768519,
+      "score_min": 0.8655832006928403,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 0,
+      "arm": "A",
+      "kind": "candidate",
+      "score_and_keyframe_conditions_met_n": 0,
+      "score_max": 0,
+      "score_min": 0,
+      "score_threshold_met_n": 0,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 0,
+      "arm": "A",
+      "kind": "candidate",
+      "score_and_keyframe_conditions_met_n": 0,
+      "score_max": 0,
+      "score_min": 0,
+      "score_threshold_met_n": 0,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 0,
+      "arm": "A",
+      "kind": "final",
+      "score_and_keyframe_conditions_met_n": 0,
+      "score_max": 0,
+      "score_min": 0,
+      "score_threshold_met_n": 0,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 0,
+      "arm": "A",
+      "kind": "final",
+      "score_and_keyframe_conditions_met_n": 0,
+      "score_max": 0,
+      "score_min": 0,
+      "score_threshold_met_n": 0,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 7,
+      "arm": "B",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 7,
+      "score_max": 0.9447817879861993,
+      "score_min": 0,
+      "score_threshold_met_n": 7,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 7,
+      "arm": "B",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 7,
+      "score_max": 0.9447817879861993,
+      "score_min": 0,
+      "score_threshold_met_n": 7,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 7,
+      "arm": "C",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 7,
+      "score_max": 0.9301111322675071,
+      "score_min": 0.7056992603711989,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 7,
+      "arm": "C",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 7,
+      "score_max": 0.9301111322675071,
+      "score_min": 0.7056992603711989,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 8,
+      "score_max": 0.9495753322413,
+      "score_min": 0.9148277148569921,
+      "score_threshold_met_n": 8,
+      "segmentation": "full_interval",
+      "videos_n": 8
+    },
+    {
+      "all_keyframe_angle_conditions_met_n": 8,
+      "arm": "U",
+      "kind": "source",
+      "score_and_keyframe_conditions_met_n": 8,
+      "score_max": 0.9495753322413,
+      "score_min": 0.9148277148569921,
+      "score_threshold_met_n": 8,
+      "segmentation": "auto_keyframes",
+      "videos_n": 8
+    }
+  ],
+  "parameters": {
+    "graph_reset_per_video": true,
+    "graph_simulated_step_microseconds": 33333,
+    "input_PTS_passed_to_graph": false,
+    "max_num_hands": 1,
+    "min_detection_confidence": 0.5,
+    "min_tracking_confidence": 0.5,
+    "model_complexity": 1,
+    "profile": "existing_offline_stage1_not_browser_prod_detector",
+    "static_image_mode": false
+  },
+  "versions": {
+    "mediapipe": "0.10.14",
+    "numpy": "1.26.4",
+    "opencv-contrib-python": "4.10.0.84",
+    "protobuf": "4.25.3"
+  },
+  "source_info_to_video_info_adapter": true,
+  "mirror": false,
+  "new_model_or_asset_downloads_n": 0,
+  "new_video_generation_n": 0,
+  "new_human_trials_n": 0,
+  "new_independent_families_n": 0,
+  "accepted_into_pool_n": 0,
+  "release_allowed": false,
+  "browser_prod_detector_equivalence_proven": false,
+  "hold_or_authentication_validated": false,
+  "journal_status": "COMPLETED",
+  "frame_event_scope": "batch accounted; not per-frame model timestamps",
+  "timing": {
+    "ended_utc_epoch_ns": 1794841448548156000,
+    "node_child_cpu_measured": false,
+    "parent_own_cpu_ns": 11171875000,
+    "scope": "worker import/extract/validate, parent errors/prod score/store and parent recheck; recorder excluded",
+    "started_utc_epoch_ns": 1794841287465958400,
+    "wall_ns": 161081747000,
+    "worker_own_cpu_sum_ns": 118171875000
+  },
+  "limitations": [
+    "Synthetic model references are not independent human truth or observed imitation.",
+    "Conditional errors exclude missing detections; missing frames stay in full denominators and prod score inputs.",
+    "Existing Python video-mode confidence.5 differs from browser prod.35/.4; no detector parity claim.",
+    "Python graph simulates33333us per call; decoded8FPS PTS are retained for analysis but not fed to graph.",
+    "Fresh worker/graph per video, warm resource/OS caches uncontrolled; not a controlled cold/warm or online latency test.",
+    "Raw world/handedness outputs are retained privately; no metric depth or handedness correctness claim."
+  ],
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 391,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "03971e6d898bf4c32a1f7039fd3b3ac2622af37e",
+  "recorded_input_files_n": 394,
+  "recorded_dependency_pins_n": 26
+}

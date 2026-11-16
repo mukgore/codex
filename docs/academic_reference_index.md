@@ -199,3 +199,7 @@ Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021)
 3. 주장/규칙→출처→대상/단위/좌표 대응→코드→실제 검사/실행 근거를 연결한다. **논문의 근거·프로젝트의 구현 선택·실험 관측**을 나눠 쓴다.
 4. 실제 생체 수치·허용 hull·시간 한계·불확실성을 추출하면 출처 ID와 적용 범위를 profile의 evidence에 넣고 이 색인의 미확인 칸도 갱신한다.
 5. [앞으로 할 일 통합표](remaining_work_master_2026-11-15.md)를 함께 갱신한다. 공식 링크/서지 중심으로 보관하며 논문/자산의 공개 여부를 파일 재배포 권리로 해석하지 않는다.
+
+## STAT-01 — S05 조건부 동시 상한
+
+2026-11-17 공식 본문을 열람했다. NIST Dataplot [Exact Binomial Confidence Limits](https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbici.htm)의 Description1–3(이항 CDF 역산/일측 꼬리)과 NIST Handbook [7.4.7.3 Bonferroni](https://www.itl.nist.gov/div898/handbook/prc/section4/prc473.htm)의 일반 부등식을 사용한다. 저자 논문/생체 수치가 아닌 통계 참조다. 우리 적용은 사전지정 유형 K와 두 방식2K개의 고정 군집 사건 상한이며 [코드/가정/11검사](../validation_v03/SIMULTANEOUS_RISK.md)에 연결했다. 같은 군집 내부 반복을 iid로 세지 않는다. 군집 간 iid/명단/사전고정 여부는 미인증이며 사람/공격 평가 결과는 아직 없다. 기존 SciPy1.15.3의 beta 역함수 사용, 환경 설치 없음.
