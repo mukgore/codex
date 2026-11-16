@@ -207,3 +207,7 @@ Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021)
 ## GEO-03 — 공유 simplex 밖의 삼각형 교집합
 
 2026-11-17 [CGAL 공식 intersection 계약](https://doc.cgal.org/latest/Kernel_23/group__intersection__linear__grp.html)의 교집합 정의·Triangle_3×Triangle_3 반환 표를 열람했다. 삼각형 내부를 포함하는 집합 교차와 점/선분/삼각형/다각형 범위를 참고했다. [독립 float/유리수 구현·사전등록·실행·19검사](deliveries/2026-11-17_shared_simplex_surface.md)에 연결한다. CGAL 구현을 복제/설치/실행하지 않았다. 기존 GEO-01 비공유 면 SAT는 보존한다. 정확 유리수는 미확정8건의 저장 binary64 좌표에만 적용했으며 모든 쌍/실제 해부학의 정확성·연속 무충돌 인증이 아니다.
+
+## GEO-04 — 비선형 경로와 연속 충돌 검사 계약
+
+2026-11-17 [IPC Toolkit nonlinear_ccd.hpp](https://github.com/ipc-sim/ipc-toolkit/blob/main/src/ipc/ccd/nonlinear_ccd.hpp)의 NonlinearTrajectory 위치 평가/구간 최대 선형 이탈 상한·interval variant 선언을 열람했다. [Tight-Inclusion 공식 저장소](https://github.com/Continuous-Collision-Detection/Tight-Inclusion)의 선형 primitive CCD·오차/최소 간격 계약도 참고했다. 최신 main의 선언 확인이며 고정 revision 라이브러리를 설치/실행하거나 논문 전체를 재현하지 않았다. 우리 [실제96중간시점 SDK 진단/25검사](deliveries/2026-11-17_nonlinear_midpoint_probe.md)는 원경로와 chord 차이의 관측이며 이탈 상한/CCD 보증이 아니다. 후속은 실제 Euler→axis-angle/float32→SDK Rodrigues/LBS를 포함하는 보수적 enclosure와 수치 오차 검증이다. 생체/물리 안전의 근거로 쓰지 않는다.
