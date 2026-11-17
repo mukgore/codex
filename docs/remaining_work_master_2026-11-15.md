@@ -1,5 +1,7 @@
 # 앞으로 해야 할 일 통합표 — 2026-11-15
 
+**2026-11-17 R8 HTTP 계측 준비:** [기존 G4 서버의 선택적 request/evaluator/client 계측](r8_http_timing_contract_2026-11-17.md)을 연결했다. 합성평가기+실제 loopback8검사, 기존관련24검사와 전체 `Ran371, OK(skipped=1)`을 통과했다. score/gate/grant/일회 동작·이중 consume과 client/server clock을 구분하며 실제 first pixel은 미관측이다. 지정 UI8영상/8좌표·Node/prod hash preflight는 통과했지만 새 실제 JS/HTTP 기록 실험은 아직0이다. 다음은 전용 실행기와 별도 사전등록 후 알려진 reference/정지/schema 거부의 새 계측이다. 전체62ID/3D44표행/R0–R9·실제 입력 우선/원본/비공개/Cloud보류를 유지한다.
+
 **2026-11-17 R7 process 재생 검산:** [별도 worker/current-batch 전달과 고정7사례](deliveries/2026-11-17_process_replay_fixture.md)를 기록 실행했고41출력 검산을 통과했다. 모델/원영상/사람/게이트/서버 실행0이며 FIFO/latest·EOS·timeout/handler error/exit/setup 분모를 구분했다. 원log/clock/hash는 private, 공개 집계에는 합성 성능값을 제외했다. R7 실제 모델/관문·R8 전체 흐름·독립 세션 인수는 미완료이며 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0과 실제 입력 우선/원본 불변/비공개/Cloud보류를 유지한다.
 
 **2026-11-17 R4 계측 준비:** [선택적 stage 계측과 합성5경로 검산](deliveries/2026-11-17_stage_profile_fixture.md)을 추가했다. 실제 모델/완료 추론 재실행0, 합성 source 함수의 결과·예외·정리/복원과 raw event→summary 일치를 확인했고14검사/11출력 검산을 통과했다. 실제 모델의 새 단계 시간·cold/warm·GPU/온라인/인증은 미검증이며 과거 시간을 소급하지 않는다. G03의 미확정4leaf/미검증 오차와 전체62ID·3D44표행·R0–R9/실제입력 우선을 유지한다.
@@ -95,7 +97,7 @@
 | R5 | 확보 장비/해상도/batch/정밀도/샘플링 조건의 속도와 판정 품질 대응 비교 |
 | R6 | 조회/재생/정지/보간 등 저비용 공격과 전체길이 과제의 같은 정보 비교 |
 | R7 | [queue API/원로그](r7_arrival_queue_contract_2026-11-17.md)와 [별도 process 고정7합성 사례/41출력](deliveries/2026-11-17_process_replay_fixture.md) 검산. 실제 모델·같은 정보 공격·고정 관문/기한·전체 정보경계 인수는 미완료 |
-| R8 | 새 localhost 제시→제출→서버→보호 동작 전체 시간과 각 판정 결과 연결 |
+| R8 | [선택적 HTTP/server/client 계측·합성8검사](r8_http_timing_contract_2026-11-17.md) 준비. 실제 JS/새 localhost 기록·모델/관문/기한·UI first pixel/동일 클라이언트 전체 종점은 미완료 |
 | R9 | 독립 실제 세션 재실행·모든 실패/유실/미할당 분모·raw log 재집계 검증 |
 
 ## 전체 62개 백로그별 남은 일

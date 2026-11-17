@@ -64,3 +64,7 @@ R4 이후 독립 구현 큐를 다시 검색했다. 현재 runtime 모듈에는 
 [고정7합성 사례](deliveries/2026-11-17_process_replay_fixture.md)를 생산3d00b92에서 실행했고 입력3/연구6pin/41출력·postflight 검산을 통과했다. 부모 timed release/별도 worker의 현재 batch bytes와 queue 분모를 확인했다. 실제 모델/원영상/사람/게이트/서버0이며 R7 전체 인수는 미완료다. 등록21촬영의 source_path0도 다시 확인했다. 다음 독립 작업은 기존 R8 localhost 코드의 타이밍/판정 계약 점검과 연결 준비다. 전체62ID/3D44표행/R0–R9/원래 앞 단계 실제 입력 우선·원본/비공개/Cloud보류는 유지한다.
 
 R7 process 전체 회귀 후속: 초기362개 전체 실행의 latest timing 가정1실패를 확인하고 실제 arrival에 따른 정책 검산과 지연 회귀를 추가했다. 최종 `Ran 363, OK(skipped=1)`이며 skip은 기본 환경의 optional SDK mpmath 모듈이다. 원래7사례41출력은 변경/재실행하지 않았다.
+
+## R8 HTTP 계측 준비 후속
+
+[선택적 기존서버 request/평가기/client 계측](r8_http_timing_contract_2026-11-17.md)을 추가했고 합성평가기+실제loopback8검사/관련24검사·전체371검사(skip1)를 통과했다. 서버 write/클라이언트 body receipt/first pixel을 구분하며 서로 다른 clock을 빼지 않는다. 기본서버의 논리·점수/gate/grant/일회 동작은 유지한다. 지정 UI8영상/8좌표와 Node/prod hash는 준비됐지만 새 실제 JS 기록 실행은 아직0이다. 다음은 알려진 reference/정지/schema 거부 전용 실행기와 별도 사전등록/새 immutable 기록이다. 실제 모델/카메라/운영·독립세션과 전체62ID/3D44표행/R0–R9 인수는 계속 미완료다.

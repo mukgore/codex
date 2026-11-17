@@ -1,5 +1,7 @@
 # 다음 로컬 세션을 위한 인계 — 2026-11-16 최종 정리
 
+**2026-11-17 R8 HTTP 계측 준비:** [기존 G4 서버의 선택적 request/evaluator/client 계측](r8_http_timing_contract_2026-11-17.md)을 연결했다. 합성평가기+실제 loopback8검사, 기존관련24검사와 전체 `Ran371, OK(skipped=1)`을 통과했다. score/gate/grant/일회 동작·이중 consume과 client/server clock을 구분하며 실제 first pixel은 미관측이다. 지정 UI8영상/8좌표·Node/prod hash preflight는 통과했지만 새 실제 JS/HTTP 기록 실험은 아직0이다. 다음은 전용 실행기와 별도 사전등록 후 알려진 reference/정지/schema 거부의 새 계측이다. 전체62ID/3D44표행/R0–R9·실제 입력 우선/원본/비공개/Cloud보류를 유지한다.
+
 **2026-11-17 R7 process 재생 검산:** [별도 worker/current-batch 전달과 고정7사례](deliveries/2026-11-17_process_replay_fixture.md)를 기록 실행했고41출력 검산을 통과했다. 모델/원영상/사람/게이트/서버 실행0이며 FIFO/latest·EOS·timeout/handler error/exit/setup 분모를 구분했다. 원log/clock/hash는 private, 공개 집계에는 합성 성능값을 제외했다. R7 실제 모델/관문·R8 전체 흐름·독립 세션 인수는 미완료이며 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0과 실제 입력 우선/원본 불변/비공개/Cloud보류를 유지한다.
 
 **2026-11-17 R7 원로그 준비 후속:** [queue 원로그 복구·fresh private 보존](r7_arrival_queue_contract_2026-11-17.md#후속-원로그-복구와-비공개-보존)을 추가했다. queue17/stage·journal포함35검사 통과, 계획 미도착/drop/처리 중 미완료·prefix/손상·시간/정책 불일치를 구별한다. storage 종료를 queue 완료로 만들지 않으며 새 실제 모델/영상/재생 실험0이다. 다음은 고정 도착 일정과 별도 worker process scheduling 연결·새 실행 사전등록이다. 아래 원로그가 다음이라는 문장은 이 후속 전 상태다. 실제 모델/관문/서버·R7 전체 완료는 계속 미충족이다.

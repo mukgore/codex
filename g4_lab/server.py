@@ -166,9 +166,26 @@ class LabService:
             if not path.is_relative_to(self.evaluator.source_root) or path.suffix.lower()!='.mp4': raise PermissionError('unsafe_media')
             return path
 
-def handler_for(service):
+def handler_for(service,timing=None):
     class Handler(BaseHTTPRequestHandler):
         server_version='G4LocalLab/1'
+        trace=None
+        def timed_call(self,phase,operation,*args):
+            if self.trace is None:return operation(*args)
+            return self.trace.call(phase,operation,*args)
+        def dispatch(self,method,operation):
+            if timing is None:return operation()
+            try:route=urlsplit(self.path).path
+            except ValueError:route='other'
+            route='/media/:challenge' if route.startswith('/media/') else route
+            if route not in ('/','/app.js','/api/session','/api/challenge','/api/submit','/api/protected_action','/media/:challenge'):
+                route='other'
+            with timing.request(self.headers.get('X-Lab-Correlation'),method,route) as trace:
+                self.trace=trace
+                try:return operation()
+                finally:self.trace=None
+        def do_GET(self):return self.dispatch('GET',self.get_request)
+        def do_POST(self):return self.dispatch('POST',self.post_request)
         def handle(self):
             try:super().handle()
             except (OSError,TimeoutError):pass  # deadline/client disconnect; no tokens in logs
@@ -181,25 +198,31 @@ def handler_for(service):
         def allowed_host(self):
             return self.headers.get('Host') in (f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}')
         def send(self,status,data,ctype='application/json',cookie=None):
-            raw=data if isinstance(data,bytes) else (data.encode('utf-8') if isinstance(data,str) else json.dumps(data,allow_nan=False).encode('utf-8'))
-            self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(raw)))
-            self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
-            self.send_header('Content-Security-Policy',"default-src 'none'; script-src 'self'; media-src 'self'; connect-src 'self'; style-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
-            if cookie:self.send_header('Set-Cookie',f'g4_session={cookie}; HttpOnly; SameSite=Strict; Path=/')
-            self.end_headers();self.wfile.write(raw)
-        def do_GET(self):
+            def encode():
+                return data if isinstance(data,bytes) else (data.encode('utf-8') if isinstance(data,str) else json.dumps(data,allow_nan=False).encode('utf-8'))
+            raw=self.timed_call('response_encode',encode)
+            def write():
+                self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(raw)))
+                self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
+                self.send_header('Content-Security-Policy',"default-src 'none'; script-src 'self'; media-src 'self'; connect-src 'self'; style-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+                if cookie:self.send_header('Set-Cookie',f'g4_session={cookie}; HttpOnly; SameSite=Strict; Path=/')
+                self.end_headers();self.wfile.write(raw)
+            if self.trace is not None:self.trace.http_status=status
+            self.timed_call('response_write',write)
+            if self.trace is not None:self.trace.response_write_completed=True
+        def get_request(self):
             if not self.allowed_host(): return self.send(403,{'error':'host_denied'})
             try:
                 path=urlsplit(self.path).path
                 if path=='/': return self.send(200,PAGE,'text/html; charset=utf-8')
                 if path=='/app.js': return self.send(200,APP,'text/javascript; charset=utf-8')
                 if path.startswith('/media/'):
-                    media=service.media(self.session_cookie(),path[len('/media/'):])
-                    return self.send(200,media.read_bytes(),'video/mp4')
+                    media=self.timed_call('media_authorize',service.media,self.session_cookie(),path[len('/media/'):])
+                    return self.send(200,self.timed_call('media_read',media.read_bytes),'video/mp4')
                 return self.send(404,{'error':'not_found'})
             except PermissionError as exc:return self.send(403,{'error':str(exc)})
             except LabCapacityError:return self.send(429,{'error':'local_capacity_exceeded'})
-        def do_POST(self):
+        def post_request(self):
             if not self.allowed_host(): return self.send(403,{'error':'host_denied'})
             origin=self.headers.get('Origin')
             if origin and origin!=f'http://{self.headers.get("Host")}':return self.send(403,{'error':'origin_denied'})
@@ -207,16 +230,17 @@ def handler_for(service):
                 if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('json_required')
                 length=int(self.headers.get('Content-Length','-1'))
                 if not 0<=length<=MAX_BODY_BYTES:raise ValueError('body_limit')
-                payload=json.loads(self.rfile.read(length),parse_constant=lambda s:(_ for _ in ()).throw(ValueError('nonfinite_json')))
+                body=self.timed_call('request_body_read',self.rfile.read,length)
+                payload=self.timed_call('request_json_parse',lambda:json.loads(body,parse_constant=lambda s:(_ for _ in ()).throw(ValueError('nonfinite_json'))))
                 path=urlsplit(self.path).path;session=self.session_cookie()
                 if path=='/api/session':
                     if payload!={}:raise ValueError('session_schema')
-                    session=service.session();return self.send(200,{'session_created':True},cookie=session)
+                    session=self.timed_call('session',service.session);return self.send(200,{'session_created':True},cookie=session)
                 if path=='/api/challenge':
                     if payload!={}:raise ValueError('challenge_schema')
-                    return self.send(200,service.issue(session))
-                if path=='/api/submit':return self.send(200,service.submit(session,payload))
-                if path=='/api/protected_action':return self.send(200,service.consume(session,payload))
+                    return self.send(200,self.timed_call('issue',service.issue,session))
+                if path=='/api/submit':return self.send(200,self.timed_call('submit',service.submit,session,payload))
+                if path=='/api/protected_action':return self.send(200,self.timed_call('protected_action',service.consume,session,payload))
                 return self.send(404,{'error':'not_found'})
             except (ValueError,TypeError,UnicodeError,RecursionError):return self.send(400,{'error':'invalid_request'})
             except PermissionError as exc:return self.send(403,{'error':str(exc)})
@@ -268,8 +292,8 @@ class BoundedLabHTTPServer(ThreadingHTTPServer):
             self.connection_slots.release()
 
 
-def create_server(service,*,max_connections=16,request_timeout=20):
-    return BoundedLabHTTPServer(('127.0.0.1',0),handler_for(service),
+def create_server(service,*,max_connections=16,request_timeout=20,timing=None):
+    return BoundedLabHTTPServer(('127.0.0.1',0),handler_for(service,timing),
                                max_connections=max_connections,request_timeout=request_timeout)
 
 def main():

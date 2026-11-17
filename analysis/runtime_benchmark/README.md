@@ -34,3 +34,7 @@ operation 시간에서 trace write를 제외하고 Python/PTS/결과 변환+trac
 ## 별도 worker timed-release 연결 — 2026-11-17
 
 [고정7합성 사례/41출력 기록](../../docs/deliveries/2026-11-17_process_replay_fixture.md)을 확인했다. `arrival_replay.run`은 preloaded pixels를 일정 offset 이후 부모 ingress에서 전달하고 `replay_worker`는 현재 batch만 받는다. 실제 도착/lateness·queue/drop·IPC 포함 service·setup/release/cleanup을 구분한다. 신뢰하는 로컬 handler의 process/API 경계이며 악성 코드 sandbox나 실제 카메라/모델/인증 성능은 아니다. 새 실제 실행은 별도 사전등록과 execution_record를 사용한다.
+
+## 선택적 localhost HTTP 계측 — 2026-11-17
+
+[계약/범위/다음 실제 실행](../../docs/r8_http_timing_contract_2026-11-17.md). `ServerTiming`과 `TimedEvaluator`를 기존 G4 `create_server(..., timing=...)`에 선택 연결한다. `TimedLocalClient`/`measure_attempt`는 issue→media body receipt→제공 replay→submit→첫 일회 동작 응답을 같은 client clock으로 기록한다. raw 복구와 ID 결합은 server/client clock을 서로 빼지 않는다. phase는 inclusive이고 tracing I/O가 포함돼 nested 합계를 전체시간으로 쓰지 않는다. 실제 first pixel/카메라/모델/과거 인증은 미검증이며 합성평가기와 실제 HTTP 단위 검사만 완료했다. 새 실제 기록 실행기는 다음 단위다.
