@@ -44,3 +44,7 @@ GitHub push는 여전히 보류다. 자동 승인 검토는 정확한 전송 내
 ## 실제 경로/선형 대체 진단 갱신
 
 [새96중간시점 SDK/표면/정점 이탈 진단](deliveries/2026-11-17_nonlinear_midpoint_probe.md)을 완료/검산했다. 기존100프레임은 재추론하지 않았다.96구간 모두 상대1e-7보다 큰 chord 차이를 관측했으며 추가 샘플은 연속 무충돌의 증명이 아니다. 다음 실제 연속 검사는 Euler→native/float32→SDK Rodrigues/pose blend/LBS의 all-time enclosure/remainder와 수치 오차/공유 simplex 처리를 필요로 한다. 다른 실제 촬영/선별·3A/3B·사람/모델·운영 인수 입력 대기와 전체 요구 범위는 바뀌지 않았다.
+
+## 조건부 SDK 경계 구현 갱신
+
+[실제 변환/float32/Rodrigues/LBS의 조건부 시간구간 계산과 refinement](deliveries/2026-11-17_conditional_sdk_envelopes.md)을 구현/실행했다. v1/v2의 오차 가정·모델buffer는 동일하고32raw출력을 보존했다. v2의764/768유한 후보·196저장관측 포함을 실제 backend 보증으로 확대하지 않는다. 남은4leaf·미검증 error assumptions·continuous narrow phase는 미완료다. 앞 단계 실제 촬영/선별·대응/독립평가/운영 입력과 R0–R9의 실제 stage별 시간 검증도 대기이며 전체 큐를 유지한다. 다음 독립 작업 선택은 원래 우선순위와 입력을 다시 대조한다.

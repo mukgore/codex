@@ -211,3 +211,7 @@ Yang, Lixin; Zhan, Xinyu; Li, Kailin; Xu, Wenqiang; Li, Jiefeng; Lu, Cewu (2021)
 ## GEO-04 — 비선형 경로와 연속 충돌 검사 계약
 
 2026-11-17 [IPC Toolkit nonlinear_ccd.hpp](https://github.com/ipc-sim/ipc-toolkit/blob/main/src/ipc/ccd/nonlinear_ccd.hpp)의 NonlinearTrajectory 위치 평가/구간 최대 선형 이탈 상한·interval variant 선언을 열람했다. [Tight-Inclusion 공식 저장소](https://github.com/Continuous-Collision-Detection/Tight-Inclusion)의 선형 primitive CCD·오차/최소 간격 계약도 참고했다. 최신 main의 선언 확인이며 고정 revision 라이브러리를 설치/실행하거나 논문 전체를 재현하지 않았다. 우리 [실제96중간시점 SDK 진단/25검사](deliveries/2026-11-17_nonlinear_midpoint_probe.md)는 원경로와 chord 차이의 관측이며 이탈 상한/CCD 보증이 아니다. 후속은 실제 Euler→axis-angle/float32→SDK Rodrigues/LBS를 포함하는 보수적 enclosure와 수치 오차 검증이다. 생체/물리 안전의 근거로 쓰지 않는다.
+
+## GEO-05 — 실제 회전/SDK 경로의 조건부 interval 계산
+
+2026-11-17 [SciPy v1.10.1 고정 _rotation.pyx](https://raw.githubusercontent.com/scipy/scipy/v1.10.1/scipy/spatial/transform/_rotation.pyx)의 선택된 from_euler/as_matrix/from_matrix/as_rotvec 계산과 [mpmath interval 문서](https://mpmath.org/doc/1.3.0/contexts.html#arbitrary-precision-interval-arithmetic-iv)의 포함/experimental 제한을 확인했다. installed smplx0.1.28 lbs.py·Torch vec256/vec512 float headers와 binary는 비공개 snapshot에 연결했다. [구현·사전등록·두실행·16검사](deliveries/2026-11-17_conditional_sdk_envelopes.md)를 추적한다. helper의 실수 포함은 목표 backend의 오차 인증이 아니며1e-12/1e-14/1e-6 pad는 미검증 가정이다. a/sin(a/2)의 상관 유지 개선은 명시한 domain/monotonicity를 검사한 프로젝트 계산이다.196관측 포함이나 source 헤더 확인을 continuous/physical/human admission으로 바꾸지 않는다.

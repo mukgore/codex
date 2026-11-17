@@ -1,0 +1,267 @@
+{
+  "scope": "conditional_path_envelope_candidates_not_validated_backend_or_CCD",
+  "runs": {
+    "v1": {
+      "CCD_clearance": false,
+      "SDK_forwards_n": 0,
+      "accepted_into_pool_n": 0,
+      "assumptions": {
+        "backend_error_bounds_validated": false,
+        "basic_arithmetic": "IEEE binary32/binary64, ordinary finite reductions/FMA, bounded underflow",
+        "float32_sin_cos_absolute_error": 1e-06,
+        "float64_transcendental_absolute_error": 1e-14,
+        "producer_polynomial_absolute_error": 1e-12
+      },
+      "attempted_leaves_n": 192,
+      "backend_error_bounds_validated": false,
+      "cases": [
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "right_s7",
+          "checkpoint_comparisons_n": 86,
+          "complete_original_intervals_n": 19,
+          "conditional_max_chord_remainder_native": 1.8956842713755004,
+          "finite_candidate_leaves_n": 43,
+          "hand": "right",
+          "leaves_n": 48,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 7,
+          "unresolved_leaves_n": 5
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "right_s19",
+          "checkpoint_comparisons_n": 86,
+          "complete_original_intervals_n": 19,
+          "conditional_max_chord_remainder_native": 1.1804034236579053,
+          "finite_candidate_leaves_n": 43,
+          "hand": "right",
+          "leaves_n": 48,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 19,
+          "unresolved_leaves_n": 5
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "left_s7",
+          "checkpoint_comparisons_n": 88,
+          "complete_original_intervals_n": 20,
+          "conditional_max_chord_remainder_native": 0.6580241593915835,
+          "finite_candidate_leaves_n": 44,
+          "hand": "left",
+          "leaves_n": 48,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 7,
+          "unresolved_leaves_n": 4
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "left_s19",
+          "checkpoint_comparisons_n": 92,
+          "complete_original_intervals_n": 22,
+          "conditional_max_chord_remainder_native": 20.18483410518009,
+          "finite_candidate_leaves_n": 46,
+          "hand": "left",
+          "leaves_n": 48,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 19,
+          "unresolved_leaves_n": 2
+        }
+      ],
+      "checkpoint_comparisons_n": 352,
+      "continuous_collision_free_proven": false,
+      "finite_candidate_leaves_n": 176,
+      "journal_status": "COMPLETED",
+      "limitations": [
+        "Stored sample containment is a regression check, not proof of a target-backend error envelope.",
+        "Transcendental and producer-polynomial padding values are explicit unvalidated engineering assumptions.",
+        "No linear/nonlinear CCD narrow phase, whole-time shared-simplex proof, volume or biological admission."
+      ],
+      "model_buffer_loads_n": 2,
+      "new_human_trials_n": 0,
+      "new_videos_n": 0,
+      "outside_checkpoint_coordinates_n": 0,
+      "release_allowed": false,
+      "timing": {
+        "ended_utc_epoch_ns": 1794874654228820600,
+        "own_cpu_ns": 47625000000,
+        "scope": "model buffer loading, interval candidates, stored checks, store/journal and source rechecks; initial receipt verification/recorder excluded",
+        "started_utc_epoch_ns": 1794874606009738100,
+        "wall_ns": 48218911700
+      },
+      "unique_saved_observation_frames_n": 196,
+      "unresolved_leaves_n": 16,
+      "version": "conditional_scipy_1101_sdk_rodrigues_lbs_boxes_v1",
+      "execution_record": {
+        "integrity": "RECORDED_FILES_MATCH",
+        "mode": "RECORDED_COMMAND_EXECUTION",
+        "state": "EXITED_ZERO",
+        "artifact_files_n": 16,
+        "scientific_result_or_source_authentication_proven": false
+      },
+      "producer_code_commit": "7cb821a6784f418cdd06c7a883224047c631bdc5",
+      "recorded_input_files_n": 879,
+      "recorded_dependency_pins_n": 17,
+      "unresolved_reasons": {
+        "SDK_SHIFTED_NORM_INCLUDES_ZERO": 16
+      },
+      "unique_checked_observation_frames_n": 187
+    },
+    "v2": {
+      "CCD_clearance": false,
+      "SDK_forwards_n": 0,
+      "accepted_into_pool_n": 0,
+      "assumptions": {
+        "backend_error_bounds_validated": false,
+        "basic_arithmetic": "IEEE binary32/binary64, ordinary finite reductions/FMA, bounded underflow",
+        "float32_sin_cos_absolute_error": 1e-06,
+        "float64_transcendental_absolute_error": 1e-14,
+        "producer_polynomial_absolute_error": 1e-12
+      },
+      "attempted_leaves_n": 768,
+      "backend_error_bounds_validated": false,
+      "cases": [
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "right_s7",
+          "checkpoint_comparisons_n": 95,
+          "complete_original_intervals_n": 23,
+          "conditional_max_chord_remainder_native": 0.10824939186651632,
+          "finite_candidate_leaves_n": 191,
+          "hand": "right",
+          "leaves_n": 192,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 7,
+          "unresolved_leaves_n": 1
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "right_s19",
+          "checkpoint_comparisons_n": 95,
+          "complete_original_intervals_n": 22,
+          "conditional_max_chord_remainder_native": 0.007436352836152865,
+          "finite_candidate_leaves_n": 190,
+          "hand": "right",
+          "leaves_n": 192,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 19,
+          "unresolved_leaves_n": 2
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "left_s7",
+          "checkpoint_comparisons_n": 96,
+          "complete_original_intervals_n": 24,
+          "conditional_max_chord_remainder_native": 0.08337883729624894,
+          "finite_candidate_leaves_n": 192,
+          "hand": "left",
+          "leaves_n": 192,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 7,
+          "unresolved_leaves_n": 0
+        },
+        {
+          "CCD_clearance": false,
+          "backend_error_bounds_validated": false,
+          "case_id": "left_s19",
+          "checkpoint_comparisons_n": 95,
+          "complete_original_intervals_n": 23,
+          "conditional_max_chord_remainder_native": 0.012708500717812172,
+          "finite_candidate_leaves_n": 191,
+          "hand": "left",
+          "leaves_n": 192,
+          "outside_checkpoint_coordinates_n": 0,
+          "seed": 19,
+          "unresolved_leaves_n": 1
+        }
+      ],
+      "checkpoint_comparisons_n": 381,
+      "continuous_collision_free_proven": false,
+      "finite_candidate_leaves_n": 764,
+      "journal_status": "COMPLETED",
+      "limitations": [
+        "Stored sample containment is a regression check, not proof of a target-backend error envelope.",
+        "Transcendental and producer-polynomial padding values are explicit unvalidated engineering assumptions.",
+        "No linear/nonlinear CCD narrow phase, whole-time shared-simplex proof, volume or biological admission."
+      ],
+      "model_buffer_loads_n": 2,
+      "new_human_trials_n": 0,
+      "new_videos_n": 0,
+      "outside_checkpoint_coordinates_n": 0,
+      "release_allowed": false,
+      "subdivisions_per_original_interval": 8,
+      "timing": {
+        "ended_utc_epoch_ns": 1794875182457990000,
+        "own_cpu_ns": 197734375000,
+        "scope": "model buffer loading, interval candidates, stored checks, store/journal and source rechecks; initial receipt verification/recorder excluded",
+        "started_utc_epoch_ns": 1794874982694106600,
+        "wall_ns": 199759335100
+      },
+      "unique_checked_observation_frames_n": 196,
+      "unique_saved_observation_frames_n": 196,
+      "unresolved_leaves_n": 4,
+      "version": "conditional_scipy_1101_sdk_rodrigues_lbs_boxes_v2_correlated_scale",
+      "execution_record": {
+        "integrity": "RECORDED_FILES_MATCH",
+        "mode": "RECORDED_COMMAND_EXECUTION",
+        "state": "EXITED_ZERO",
+        "artifact_files_n": 16,
+        "scientific_result_or_source_authentication_proven": false
+      },
+      "producer_code_commit": "346725ba5ab4d7a4b5dc3bb7e1b292c5571e117e",
+      "recorded_input_files_n": 904,
+      "recorded_dependency_pins_n": 17,
+      "unresolved_reasons": {
+        "SDK_SHIFTED_NORM_INCLUDES_ZERO": 4
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "case_id": "right_s7",
+      "common_complete_original_intervals_n": 19,
+      "vertex_interval_entries_compared_n": 14782,
+      "strictly_smaller_candidate_entries_n": 14782,
+      "new_over_old_ratio_median": 0.0770903975977795,
+      "new_over_old_ratio_max": 0.8817799222760563
+    },
+    {
+      "case_id": "right_s19",
+      "common_complete_original_intervals_n": 19,
+      "vertex_interval_entries_compared_n": 14782,
+      "strictly_smaller_candidate_entries_n": 14782,
+      "new_over_old_ratio_median": 0.09507276871488307,
+      "new_over_old_ratio_max": 0.9772600334733186
+    },
+    {
+      "case_id": "left_s7",
+      "common_complete_original_intervals_n": 20,
+      "vertex_interval_entries_compared_n": 15560,
+      "strictly_smaller_candidate_entries_n": 15560,
+      "new_over_old_ratio_median": 0.0819405833772002,
+      "new_over_old_ratio_max": 0.9228620713736054
+    },
+    {
+      "case_id": "left_s19",
+      "common_complete_original_intervals_n": 22,
+      "vertex_interval_entries_compared_n": 17116,
+      "strictly_smaller_candidate_entries_n": 17116,
+      "new_over_old_ratio_median": 0.09201309259221149,
+      "new_over_old_ratio_max": 0.9676812344023012
+    }
+  ],
+  "leaf_timing_rows_n": 960,
+  "model_buffers_bitwise_correspond": true,
+  "assumptions_unchanged": true,
+  "backend_error_bounds_validated": false,
+  "continuous_collision_free_proven": false,
+  "CCD_clearance": false,
+  "release_allowed": false
+}
