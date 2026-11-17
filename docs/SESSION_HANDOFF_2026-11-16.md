@@ -1,5 +1,7 @@
 # 다음 로컬 세션을 위한 인계 — 2026-11-16 최종 정리
 
+**2026-11-17 R7 API 준비:** [도착 queue 계약/합성8검사](r7_arrival_queue_contract_2026-11-17.md)를 추가했고 stage/journal과26검사를 통과했다. FIFO/latest·batch 대기·기한·미완료 기록의 API 검산이며 실제 모델/영상 재실행0이다. 다음은 raw event의 독립 재구성/보존과 producer/worker process 재생 연결이다. 실제 모델·관문/서버·독립 세션은 미완료이며 R7 전체 완료로 닫지 않는다. R4 보존/CLI 수정은 로컬 dfd12c4에 있고, 승인된 원격은68417fc로 재확인했다. 전체 우선순위/백로그/비공개/기존 원본 불변은 유지한다.
+
 **2026-11-17 R4 계측 준비:** [선택적 stage 계측과 합성5경로 검산](deliveries/2026-11-17_stage_profile_fixture.md)을 추가했다. 실제 모델/완료 추론 재실행0, 합성 source 함수의 결과·예외·정리/복원과 raw event→summary 일치를 확인했고14검사/11출력 검산을 통과했다. 실제 모델의 새 단계 시간·cold/warm·GPU/온라인/인증은 미검증이며 과거 시간을 소급하지 않는다. G03의 미확정4leaf/미검증 오차와 전체62ID·3D44표행·R0–R9/실제입력 우선을 유지한다.
 
 **2026-11-17 조건부 SDK 경계:** [실제 회전 변환/float32/SDK Rodrigues/LBS 경계 v1·v2](deliveries/2026-11-17_conditional_sdk_envelopes.md)를 기록 실행/검산했다. v2는768leaf 중764유한/4미확정이며 저장196시점을 모두 비교해 이탈0이다. SDK forward0·영상0이고두실행32출력을보존했다. 미검증 backend 오차 가정이 있으므로 연속 무충돌/CCD승인false다. 남은4leaf/오차 근거와 continuous narrow phase는 미완료이며 전체62ID·3D44표행·R0–R9/실제입력 우선을 유지한다.

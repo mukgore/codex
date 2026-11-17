@@ -1,5 +1,7 @@
 # 실행 기록 기반
 
+2026-11-17 [R7 도착 대기열 계약/합성 검사](../../docs/r7_arrival_queue_contract_2026-11-17.md)를 추가했다. `arrival_queue.ArrivalQueue`는 현재 도착 bytes의 FIFO/latest·batch 대기·기한·중단 분모를 기록하는 순차 event-loop API다. 실제 producer/worker process scheduling·모델·관문/서버 연결과 durable raw 재집계는 미완료다. 주입 시계 검사 결과를 온라인 지연/인증 증거로 쓰지 않는다.
+
 2026-11-10 [공통 사전 실행 snapshot과 기존 journal 연결](../../docs/deliveries/2026-11-10_session_artifacts_and_run_manifest.md)을 추가했다. `validation_v03.run_manifest`는 실제 코드/입력/lock·설치 metadata를 고정하고 후검사한다. `analysis.provenance_guard_smoke`는 소유 JS export/storage 기술 실행을 그 SHA로 journal에 연결한다. 준비/후검사 성공 자체를 사람/모델 과제 완료로 표시하지 않는다. 민감한 manifest와 입력 hash는 private에만 보관한다.
 
 모델을 실행하지 않아도 완료/오류/timeout/중단/미할당/로그 유실을 구분하고 보존 bundle을 다시 읽을 수 있는 기반이다. 설치/체크포인트 다운로드·HaMeR 성능·GPU 측정·인증 성공을 실행한 결과가 아니다.
