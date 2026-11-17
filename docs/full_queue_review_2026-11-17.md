@@ -56,3 +56,5 @@ G03 조건부 경계의 남은 사항은 보존하고 앞 단계의 시간 계�
 R4 이후 독립 구현 큐를 다시 검색했다. 현재 runtime 모듈에는 도착하지 않은 프레임을 모델에서 차단하는 R7 replay queue 구현이 없으므로 다음은 그 계약과 고정 도착/drop 기록의 준비다. 실제 모델/카메라/서버 종점 검증과 코드/합성 queue 검산은 계속 구분한다.
 
 후속 갱신: [R7 도착 queue API 계약](r7_arrival_queue_contract_2026-11-17.md)과 합성8검사를 추가했고 stage/journal과 합해26검사를 통과했다. producer/worker 실제 재생·raw 복구/재집계·모델/관문·서버 연결은 다음 단계다. 위 ‘구현 없음’은 이번 API 추가 전 검색 이력이며 실제 R7 완료 조건은 여전히 미충족이다.
+
+원로그 후속: 같은 계약에 version/config/계획 frame header와 원bytes의 정책 재생·분모/시간 검산 및 fresh private 보존을 추가했다. queue17/stage·journal포함35검사가 통과했다. prefix/미완료/손상과 미도착을 완료로 바꾸지 않는다. 다음은 실제 producer/worker scheduling 준비이며 모델/관문/서버·전체62ID/3D44표행/R0–R9 인수 대기는 유지한다.

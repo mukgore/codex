@@ -23,12 +23,22 @@ R4의 실제 HaMeR/새 모델 계측과 R6의 같은 정보 공격 비교는 입
 
 arrival/start/finish/drop/end_input/close event에는 증가 event ID와 같은 단조 시각을 남긴다. pixel bytes는 event에 쓰지 않는다. 각 프레임의 queue wait와 arrival→finish 지연을 개별 기록하며, service time을 batch 크기로 나누지 않는다. frame 나이는 현재 구현에서 **실제 ingress 도착 이후 나이**다. source capture clock과 ingress clock을 정렬하지 않았으므로 촬영 이후 나이로 부르지 않는다. batch의 deadline_met는 응답 시각 조건이며 전체 관문 결과가 아니다.
 
-sink는 기존 durable JSONL writer에 연결할 수 있다. 쓰기 실패가 나면 이후 처리를 거부하고 미완료 기록을 보존해야 한다. 현재 API의 event list 자체는 영구 저장이 아니며, raw queue event에서 summary 재생성·변조/부분 로그 복구·manifest 결합은 다음 구현 과제다. 성공한 unit test를 별도 실행 record/재생기 실험으로 주장하지 않는다.
+sink는 기존 durable JSONL writer에 연결할 수 있다. 쓰기 실패가 나면 이후 처리를 거부하고 미완료 기록을 보존해야 한다. event list 자체는 영구 저장이 아니다. 아래 후속 구현으로 durable raw 재집계/부분 복구를 준비했으며 외부 실행 manifest 결합과 실제 재생 연결은 여전히 다음 과제다. 성공한 unit test를 별도 실행 record/재생기 실험으로 주장하지 않는다.
 
 ## 수행한 검사와 미완료
 
 8개 새 합성 검사는 미도착 조회 부재와 PTS/시계 분리, batch 대기/EOS, 처리 중 FIFO 과부하, latest 교체, queue/compute를 포함한 기한, 중단의 미완료 보존, ID/path/시계 회귀 거부, sink 실패 후 중단을 검사했다. 기존 stage/journal과 합해 `Ran 26, OK`다. 주입 시계이므로 실제 처리 성능값은 없다.
 
 다음은 queue 원event의 독립 재구성/보존, 고정된 도착 일정의 producer와 worker process 연결 및 미래 프레임 차단 검사다. 실제 모델·같은 정보 공격 비교·원래 관문/기한·localhost 전체 흐름·독립 세션 재실행이 확보되기 전에는 R7/R8/R9 전체 완료로 닫지 않는다. 새 실제 재생 실험은 별도 사전등록과 immutable output/record 및 입력·코드·환경 snapshot을 갖춘다. 완료48영상 추론은 반복하지 않는다.
+
+## 후속: 원로그 복구와 비공개 보존
+
+[arrival_recovery](../analysis/runtime_benchmark/arrival_recovery.py)는 원event를 고정 queue 정책으로 재생성해 각 event의 ID·시각·분모·start/drop/finish/close 및 중간 계산값을 대조한다. pixel bytes를 불러오지 않으며 byte 크기만으로 큰 메모리를 할당하지 않는다. queue 시작 header에 version·정책·batch/기한·clock role·계획 frame 수를 기록한다. 계획 수가 주어졌을 때 누락된 도착을 completed로 닫지 않는다. 지정하지 않으면 계획/미도착 수는 null이다.
+
+복구는 도착/완료/drop/처리 중 미완료/미정착 수, 프레임별 queue wait와 arrival→finish, batch service/outcome/기한 판정을 재구성한다. 중간 prefix와 마지막 부분 줄은 INTERRUPTED, 빈 기록은 LOG_LOST다. 모순·잘못된 JSON·완료 뒤 추가 event/부분 줄은 LOG_CORRUPT다. active 작업의 미관측 finish와 전체 종료시간은 null/미완료로 남긴다. 실제 모델 응답/게이트 성공을 증명하지 않는다.
+
+[arrival_record](../analysis/runtime_benchmark/arrival_record.py)의 `RecordedQueue(new_private_directory, **config)`는 저장소 밖 새 디렉터리에 fsync JSONL을 쓰고, `finish_recording()`으로 원bytes→recovery를 저장/다시 읽어 비교한다. **storage 종료는 queue 종료가 아니다.** caller가 queue terminal을 기록하지 않으면 INTERRUPTED로 남긴다. 기존 root/최종 recovery는 덮어쓰지 않는다. `verify_directory()`는 원bytes SHA256·크기·재구성 결과를 다시 비교한다. 이 SHA는 저장된 결과와의 byte 결합이며 작성자 인증/악의적 전체 재작성 방지는 외부 execution receipt의 범위와 구분한다.
+
+새9검사를 더해 queue17검사, 기존 stage/journal과 합해35검사를 통과했다. FIFO/latest 보존 분모와 시간, 모든 durable prefix, deadline/close/active 미완료, 잘못된 타입/정책/시각/중간 값, 부분/추가 줄, 너무 이른 batch/누락 drop, 계획 미도착, 비공개 fresh root/byte 변경/readback, storage 종료의 미완료 유지를 검사했다. 모든 pixel은 합성 값이고 실제 모델/원영상 재실행0이다. 다음은 고정 도착 일정과 별도 worker process의 실제 scheduling 연결 및 새 기록 실행 사전등록이다.
 
 전체62개 ID·3D44표행·R0–R9, 앞 단계 실제 촬영/선별/대응 입력 우선, 비공개 영구 보관·Cloud보류·기존 prod 불변을 유지한다.

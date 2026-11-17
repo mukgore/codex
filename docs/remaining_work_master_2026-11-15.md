@@ -92,7 +92,7 @@
 | R4 | [선택적 MediaPipe stage hook·합성5경로 검산](deliveries/2026-11-17_stage_profile_fixture.md)은 준비 완료. 실제 HaMeR/새 모델의 decode→추론→변환/채점/저장·cold/warm/GPU 계측은 입력/자산 대기 |
 | R5 | 확보 장비/해상도/batch/정밀도/샘플링 조건의 속도와 판정 품질 대응 비교 |
 | R6 | 조회/재생/정지/보간 등 저비용 공격과 전체길이 과제의 같은 정보 비교 |
-| R7 | [도착 queue API/합성8검사](r7_arrival_queue_contract_2026-11-17.md) 준비. raw 복구·실제 producer/worker scheduling·모델의 인과적 streaming·관문·기한/미래 프레임 차단은 미완료 |
+| R7 | [도착 queue API/원로그 복구·보존/합성17검사](r7_arrival_queue_contract_2026-11-17.md) 준비. 실제 producer/worker scheduling·모델의 인과적 streaming·관문·기한/미래 프레임 차단은 미완료 |
 | R8 | 새 localhost 제시→제출→서버→보호 동작 전체 시간과 각 판정 결과 연결 |
 | R9 | 독립 실제 세션 재실행·모든 실패/유실/미할당 분모·raw log 재집계 검증 |
 

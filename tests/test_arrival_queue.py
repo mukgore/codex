@@ -24,7 +24,7 @@ class ArrivalQueueTests(unittest.TestCase):
         clock.now=12; result=worker.finish(batch,outcome='response_ready')
         self.assertEqual(result['arrival_to_finish_ns'],[7])
         self.assertEqual(result['service_ns'],5)
-        self.assertEqual(queue.events[1]['queue_wait_ns'],[2])
+        self.assertEqual(queue.events[2]['queue_wait_ns'],[2])
 
     def test_batch_wait_and_eos_partial_flush(self):
         clock,queue=self.make(min_batch=2,max_batch=3,max_wait_ns=10); worker=queue.consumer()
@@ -78,7 +78,8 @@ class ArrivalQueueTests(unittest.TestCase):
         with self.assertRaises(RuntimeError): q.arrive(2,2,b'a')
 
     def test_recording_failure_prohibits_continuation(self):
-        def bad_sink(event): raise OSError('disk full')
+        def bad_sink(event):
+            if event['kind'] != 'queue_started': raise OSError('disk full')
         q=ArrivalQueue(policy='fifo',capacity=1,sink=bad_sink)
         with self.assertRaises(OSError): q.arrive(0,0,b'a')
         with self.assertRaises(RuntimeError): q.consumer().take()
