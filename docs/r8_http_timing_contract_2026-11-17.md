@@ -1,5 +1,7 @@
 # R8 선택적 HTTP/클라이언트 계측 계약 — 2026-11-17
 
+**후속 완료:** [전용 실행기·사전등록과 새 known-source localhost 기록](deliveries/2026-11-17_local_http_timing.md)을 추가했다.3사례·11요청/8출력 검산이며 실제 모델/카메라/운영 인수는 미완료다. 아래 실행기/새JS기록이 없다는 문장은 이 후속 전 상태다.
+
 기존 [G4 서버](../g4_lab/server.py)는 세션·문제 발급·입력 validation·서버 재채점·grant·일회 보호 시험 동작을 이미 구현한다. 이번 변경은 그 서버에 선택적 계측을 연결한다. 기본 `create_server(service)`는 계측 없이 동작하고, `create_server(service, timing=...)`일 때만 기록한다. root prod/원자료/기존 완료 결과는 변경하지 않는다.
 
 [서버 계측/복구](../analysis/runtime_benchmark/http_timing.py) · [클라이언트/시도 구간/결합](../analysis/runtime_benchmark/http_client_timing.py) · [8개 새 검사](../tests/test_http_timing.py).

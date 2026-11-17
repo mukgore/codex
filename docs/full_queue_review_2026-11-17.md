@@ -68,3 +68,7 @@ R7 process 전체 회귀 후속: 초기362개 전체 실행의 latest timing 가
 ## R8 HTTP 계측 준비 후속
 
 [선택적 기존서버 request/평가기/client 계측](r8_http_timing_contract_2026-11-17.md)을 추가했고 합성평가기+실제loopback8검사/관련24검사·전체371검사(skip1)를 통과했다. 서버 write/클라이언트 body receipt/first pixel을 구분하며 서로 다른 clock을 빼지 않는다. 기본서버의 논리·점수/gate/grant/일회 동작은 유지한다. 지정 UI8영상/8좌표와 Node/prod hash는 준비됐지만 새 실제 JS 기록 실행은 아직0이다. 다음은 알려진 reference/정지/schema 거부 전용 실행기와 별도 사전등록/새 immutable 기록이다. 실제 모델/카메라/운영·독립세션과 전체62ID/3D44표행/R0–R9 인수는 계속 미완료다.
+
+## R8 실제 known-source/localhost 기록 후속
+
+[원문JS·known reference/정지/schema3사례](deliveries/2026-11-17_local_http_timing.md)를 생산b8481bc에서 새 기록 실행했다. 입력22/6pin/출력8·11요청 대응과 source1개/모델0/원본불변을 검산했다. reference 시험 동작1회/재사용false, 정지 score통과·offline gate거부, schema400을 구분했다. 다음은 R9 독립 세션의 기존 raw 재검산/재현 범위 명세다. 실제 모델/강한 같은 정보 공격/카메라·신뢰입력/독립평가와 전체62ID/3D44표행/R0–R9 인수는 계속 미완료다.

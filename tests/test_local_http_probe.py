@@ -9,6 +9,8 @@ from unittest.mock import patch
 import time
 
 from analysis.runtime_benchmark import local_http_probe as probe
+from analysis.export_local_http_probe import aggregate
+from analysis.runtime_benchmark.journal import _private as temporary_fixture_path
 
 
 def frames():
@@ -73,6 +75,20 @@ class LocalHTTPProbeTests(unittest.TestCase):
             control=joined['requests'][-1]['server']
             self.assertEqual(control['http_status'],400)
             self.assertNotIn('evaluator',[p['name'] for p in control['phases']])
+            # Production exports require the designated private artifact root.
+            # This deliberately synthetic fixture uses the existing temp guard.
+            with patch('analysis.export_local_http_probe._private',side_effect=temporary_fixture_path):
+                public,request_rows=aggregate(root/'run')
+            self.assertEqual(public['matched_requests_n'],len(request_rows))
+            self.assertTrue(public['cases'][0]['new_local_test_action_allowed'])
+            self.assertGreaterEqual(public['cases'][0]['procedure_entry_to_first_action_body_ms'],
+                                    public['cases'][0]['issue_trace_start_to_first_action_body_ms'])
+            self.assertNotIn('correlation',json.dumps(public));self.assertNotIn('fixture',json.dumps(public))
+            stored=json.loads((root/'run/attempts.private.json').read_text())
+            stored['cases'][1]['correlations'][0]=stored['cases'][0]['correlations'][0]
+            (root/'run/attempts.private.json').write_text(json.dumps(stored))
+            with patch('analysis.export_local_http_probe._private',side_effect=temporary_fixture_path):
+                with self.assertRaises(ValueError):aggregate(root/'run')
 
     def test_prod_hash_and_existing_output_fail_before_evaluator(self):
         with tempfile.TemporaryDirectory() as temp:

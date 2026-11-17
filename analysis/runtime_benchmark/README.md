@@ -38,3 +38,7 @@ operation 시간에서 trace write를 제외하고 Python/PTS/결과 변환+trac
 ## 선택적 localhost HTTP 계측 — 2026-11-17
 
 [계약/범위/다음 실제 실행](../../docs/r8_http_timing_contract_2026-11-17.md). `ServerTiming`과 `TimedEvaluator`를 기존 G4 `create_server(..., timing=...)`에 선택 연결한다. `TimedLocalClient`/`measure_attempt`는 issue→media body receipt→제공 replay→submit→첫 일회 동작 응답을 같은 client clock으로 기록한다. raw 복구와 ID 결합은 server/client clock을 서로 빼지 않는다. phase는 inclusive이고 tracing I/O가 포함돼 nested 합계를 전체시간으로 쓰지 않는다. 실제 first pixel/카메라/모델/과거 인증은 미검증이며 합성평가기와 실제 HTTP 단위 검사만 완료했다. 새 실제 기록 실행기는 다음 단위다.
+
+## 실제 known-source localhost 계측 — 2026-11-17
+
+[사전등록/실제결과](../../docs/deliveries/2026-11-17_local_http_timing.md). `local_http_probe`의3사례는 기존8source를 준비한 뒤 고정1source의 reference/정지/schema를 원문JS와 새 localhost에 제출했다. 입력22/연구6pin/출력8·client/server11요청 대응을 확인했다. 공개 JSON과 요청11행 CSV는 source ID/원clock/hash를 제외하고 같은 client trace 시작→본문 수신과 server inclusive 구간을 구분한다. 실제 모델/영상추론/카메라/first pixel/hold/과거·운영인증 결과가 아니다. 이미 완료한 이 실행은 반복하지 않으며 R9 독립 재현은 별도 명세/새 기록으로 구분한다.

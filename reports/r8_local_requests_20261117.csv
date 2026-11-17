@@ -1,0 +1,12 @@
+request_index,case,method,route,http_status,client_elapsed_ms,server_dispatch_elapsed_ms,server_response_write_completed
+0,session_setup,POST,/api/session,200,26.0175,19.7134,True
+1,known_reference,POST,/api/challenge,200,18.622,14.4225,True
+2,known_reference,GET,/media/:challenge,200,18.1792,15.1878,True
+3,known_reference,POST,/api/submit,200,539.7866,528.5539,True
+4,known_reference,POST,/api/protected_action,200,19.7273,15.7483,True
+5,known_reference,POST,/api/protected_action,200,20.4708,16.8785,True
+6,static_first_detected,POST,/api/challenge,200,18.3699,13.6635,True
+7,static_first_detected,GET,/media/:challenge,200,44.2141,15.8298,True
+8,static_first_detected,POST,/api/submit,200,512.0707,498.5596,True
+9,invalid_schema_claims,POST,/api/challenge,200,18.5143,14.4425,True
+10,invalid_schema_claims,POST,/api/submit,400,47.2842,20.0255,True
