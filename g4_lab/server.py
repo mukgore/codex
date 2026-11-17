@@ -166,7 +166,7 @@ class LabService:
             if not path.is_relative_to(self.evaluator.source_root) or path.suffix.lower()!='.mp4': raise PermissionError('unsafe_media')
             return path
 
-def handler_for(service,timing=None):
+def handler_for(service,timing=None,timing_page=False):
     class Handler(BaseHTTPRequestHandler):
         server_version='G4LocalLab/1'
         trace=None
@@ -214,8 +214,14 @@ def handler_for(service,timing=None):
             if not self.allowed_host(): return self.send(403,{'error':'host_denied'})
             try:
                 path=urlsplit(self.path).path
-                if path=='/': return self.send(200,PAGE,'text/html; charset=utf-8')
-                if path=='/app.js': return self.send(200,APP,'text/javascript; charset=utf-8')
+                if path=='/':
+                    page=Path(__file__).with_name('timing_page.html').read_text(encoding='utf-8') if timing_page else PAGE
+                    return self.send(200,page,'text/html; charset=utf-8')
+                if path=='/app.js':
+                    script=Path(__file__).with_name('timing_app.js').read_text(encoding='utf-8') if timing_page else APP
+                    return self.send(200,script,'text/javascript; charset=utf-8')
+                if path=='/browser-timing.js' and timing_page:
+                    return self.send(200,Path(__file__).with_name('browser_timing.js').read_text(encoding='utf-8'),'text/javascript; charset=utf-8')
                 if path.startswith('/media/'):
                     media=self.timed_call('media_authorize',service.media,self.session_cookie(),path[len('/media/'):])
                     return self.send(200,self.timed_call('media_read',media.read_bytes),'video/mp4')
@@ -292,8 +298,9 @@ class BoundedLabHTTPServer(ThreadingHTTPServer):
             self.connection_slots.release()
 
 
-def create_server(service,*,max_connections=16,request_timeout=20,timing=None):
-    return BoundedLabHTTPServer(('127.0.0.1',0),handler_for(service,timing),
+def create_server(service,*,max_connections=16,request_timeout=20,timing=None,timing_page=False):
+    if type(timing_page) is not bool:raise ValueError('Explicit boolean timing_page required')
+    return BoundedLabHTTPServer(('127.0.0.1',0),handler_for(service,timing,timing_page),
                                max_connections=max_connections,request_timeout=request_timeout)
 
 def main():
@@ -304,11 +311,13 @@ def main():
     parser.add_argument('--request-timeout',type=float,default=20)
     parser.add_argument('--state-wait-timeout',type=float,default=1)
     parser.add_argument('--evaluator-timeout',type=float,default=15)
+    parser.add_argument('--timing-page',action='store_true')
     args = parser.parse_args()
     with ActualEvaluator(args.source_root,call_timeout=args.evaluator_timeout) as evaluator:
         service = LabService(evaluator, max_issues_per_session=args.max_issues_per_session,
                              state_wait_timeout=args.state_wait_timeout)
-        server = create_server(service,max_connections=args.max_connections,request_timeout=args.request_timeout)
+        server = create_server(service,max_connections=args.max_connections,request_timeout=args.request_timeout,
+                               timing_page=args.timing_page)
         print(f'Local replay UI: http://127.0.0.1:{server.server_port}',flush=True)
         try:server.serve_forever()
         finally:server.server_close()

@@ -1,0 +1,18 @@
+{
+  "scope": "registered_intake_forms_and_designated_model_layout_only_not_whole_disk",
+  "evidence_kind": "read_only_metadata_recheck_not_new_model_experiment",
+  "capture_jobs_n": 21,
+  "capture_jobs_with_source_path_n": 0,
+  "response_observation_fields_filled_n": 0,
+  "annotation_rater_forms_n": 2,
+  "annotation_coordinate_scalars_filled_n": 0,
+  "model_core_expected_layout": {
+    "hamer_core": {"expected_items_n": 3, "missing_items_n": 3},
+    "text2hoi_grab_demo": {"expected_items_n": 10, "missing_items_n": 10}
+  },
+  "separate_MANO_intake_left_right_files_present": true,
+  "models_imported": false,
+  "weights_deserialized": false,
+  "new_human_observations_verified": false,
+  "whole_goal_completion_proven": false
+}

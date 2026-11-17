@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>로컬 재생 시간 기록</title>
+<h1>로컬 재생 시간 기록</h1>
+<p>카메라를 사용하지 않는 연구용 재생 시험입니다. 저장 좌표의 점수·관문·일회 시험 동작을 구분합니다.</p>
+<p><button id="issue">새 문제 받기</button></p>
+<video id="video" controls muted playsinline width="480"></video>
+<p id="frame-status" role="status">영상 callback: 미관측</p>
+<p><label for="frames">승인된 로컬 replay 배열 [{t_ms,lm}]</label></p>
+<textarea id="frames" rows="8" cols="75"></textarea>
+<p><button id="submit" disabled>재생 좌표 평가</button>
+<button id="consume" disabled>일회 시험 동작 확인</button>
+<button id="export" disabled>시간 기록 내려받기</button></p>
+<pre id="result" aria-live="polite"></pre>
+<p>Callback은 합성 제출 관측이며, 실제 화면 표시·사람 존재·인증을 입증하지 않습니다.</p>
+<script src="/browser-timing.js"></script>
+<script src="/app.js"></script>
+</html>

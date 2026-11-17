@@ -1,5 +1,7 @@
 # 다음 로컬 세션을 위한 인계 — 2026-11-16 최종 정리
 
+**현재 정리/대시보드 요청:** [선택적 browser timing 페이지 준비](browser_timing_page_2026-11-17.md)를 추가했고 전체384검사(skip1)를 통과했다. 실제 browser engine/표시 측정은 아직0이며 callback/물리표시를 구분한다. 사용자가 지금까지의 활동 정리와 GitHub 기반 이해용 대시보드를 요청했으므로 새 연구 실행보다 그 산출물을 먼저 만든다. 공개 집계/커밋 이력만 사용하고 기존 로컬·비공개/Cloud보류·원본/전체큐를 유지한다.
+
 **2026-11-17 R9 별도 process 재구성:** [기존 runtime4종 읽기 전용 재구성](deliveries/2026-11-17_runtime_reconstruction.md)에서 원출력812개·공개JSON4/CSV59행이 일치했다. 입력807/6pin/새24출력·postflight 검산과 전체382검사(skip1)를 통과했다. 모델/Node/HTTP 측정 재실행0이며 독립 구현/제3자/새 실측 세션은 아니다. R9 전체 인수와 실제 모델·카메라·운영/독립평가 입력은 미완료다. 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0/실제 입력 우선·원본/비공개/Cloud보류를 유지한다. 다음은 전체 큐와 지정 입력/자산의 현재 상태를 다시 대조해 가능한 앞 단계를 선택한다.
 
 **2026-11-17 R8 실제 localhost 계측:** [known reference/정지/schema3사례](deliveries/2026-11-17_local_http_timing.md)를 원문JS·새localhost로 실행했고22입력/6pin/8출력·11요청 대응 검산을 통과했다. reference는 새 시험 동작1회 허용/재사용 거부, 정지는 score.608통과지만 offline gate거부/grant없음, schema는400이다. 실제 모델/새영상/사람0·first pixel/실제hold/과거·운영인증은 미검증이다. 다음은 R9 독립 세션의 기존 raw 재검산/재현 범위 명세이며 실제 모델/카메라/독립평가 입력 대기는 유지한다. 전체62ID/3D44표행/R0–R9·원본/비공개/Cloud보류를 유지한다. 아래 새JS기록0은 이 후속 전 상태다.

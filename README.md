@@ -1,5 +1,7 @@
 # 가려진 손동작 CAPTCHA 연구 검증
 
+**Browser 시간 기록 준비(2026-11-17):** [선택적 G4 페이지/clock·frame callback 계약](docs/browser_timing_page_2026-11-17.md)을 추가했고 전체384검사(skip1)를 통과했다. 실제 browser 표시/카메라/운영 인증은 미검증이다. 기본 페이지와 root prod는 유지한다.
+
 **2026-11-17 R9 별도 process 재구성:** [기존 runtime4종 읽기 전용 재구성](docs/deliveries/2026-11-17_runtime_reconstruction.md)에서 원출력812개·공개JSON4/CSV59행이 일치했다. 입력807/6pin/새24출력·postflight 검산과 전체382검사(skip1)를 통과했다. 모델/Node/HTTP 측정 재실행0이며 독립 구현/제3자/새 실측 세션은 아니다. R9 전체 인수와 실제 모델·카메라·운영/독립평가 입력은 미완료다. 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0/실제 입력 우선·원본/비공개/Cloud보류를 유지한다. 다음은 전체 큐와 지정 입력/자산의 현재 상태를 다시 대조해 가능한 앞 단계를 선택한다.
 
 **2026-11-17 R8 실제 localhost 계측:** [known reference/정지/schema3사례](docs/deliveries/2026-11-17_local_http_timing.md)를 원문JS·새localhost로 실행했고22입력/6pin/8출력·11요청 대응 검산을 통과했다. reference는 새 시험 동작1회 허용/재사용 거부, 정지는 score.608통과지만 offline gate거부/grant없음, schema는400이다. 실제 모델/새영상/사람0·first pixel/실제hold/과거·운영인증은 미검증이다. 다음은 R9 독립 세션의 기존 raw 재검산/재현 범위 명세이며 실제 모델/카메라/독립평가 입력 대기는 유지한다. 전체62ID/3D44표행/R0–R9·원본/비공개/Cloud보류를 유지한다. 아래 새JS기록0은 이 후속 전 상태다.
