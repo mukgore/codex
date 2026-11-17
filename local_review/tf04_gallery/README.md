@@ -11,7 +11,7 @@
 - 보기용 metadata/사본: `../private_artifacts/tf04_viewer_20261118_v2/`, MP4는 그 안 `viewing_mp4/`.
 - 원래 기록: `../private_artifacts/tf04_display_record_20261116_v1/`.
 
-서버는 현재 사용자 열람을 위해 유지한다. 닫혔다면 저장소 루트에서 각 명령을 별도 터미널로 실행한다. 지정 포트가 이미 사용 중이면 다른 서버를 종료하지 말고 `--port 0`으로 새 주소를 받는다. 포트가 바뀌면 private manifest의 `ui_url`도 해당 실제 UI 주소에 맞춰 사용해야 한다.
+위 주소는 마지막 열람 주소다. 사용자 안전 종료 요청으로 갤러리·UI 서버를 종료했다. 다시 보려면 각 저장소 루트에서 아래 명령을 별도 터미널로 실행한다. 지정 포트가 이미 사용 중이면 다른 서버를 종료하지 말고 `--port 0`으로 새 주소를 받는다. 포트가 바뀌면 private manifest의 `ui_url`도 해당 실제 UI 주소에 맞춰 사용해야 한다.
 
 ```powershell
 # handcaptcha-ui-20261113 루트에서 기존 서버

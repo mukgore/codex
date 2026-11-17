@@ -77,7 +77,7 @@ def serve(viewer,port):
                         data=stream.read(min(65536,length))
                         if not data:break
                         self.wfile.write(data);length-=len(data)
-            except (BrokenPipeError,ConnectionResetError):pass
+            except ConnectionError:pass
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler);server.daemon_threads=True
     address=f'http://127.0.0.1:{server.server_port}/'
     (viewer/'server-info.private.json').write_text(json.dumps({'gallery_url':address,'ui_url':manifest['ui_url'],'bind':'127.0.0.1'},indent=2),encoding='utf-8')

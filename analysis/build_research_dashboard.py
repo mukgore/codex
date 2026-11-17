@@ -124,6 +124,11 @@ def build():
         state='기존 범위 수용' if id in ('R02','R03','R04','R07') else '상시 관리' if id in ('NOW-01','W01') else '추가 검증·입력 필요'
         items.append(dict(id=id,stage=stage,remaining=remaining,evidence=evidence.get(id,''),state=state))
     assert len(items)==62 and len({r['id'] for r in items})==62
+    master=(REPO/'docs/remaining_work_master_2026-11-15.md').read_text(encoding='utf-8')
+    geometry=[dict(requirement=label,remaining=remaining) for label,remaining in section_rows('docs/remaining_work_master_2026-11-15.md','## 3D 명세의 세부 잔여 요구')]
+    runtime=[dict(requirement=label,remaining=remaining) for label,remaining in section_rows('docs/remaining_work_master_2026-11-15.md','## 실행시간 R0–R9의 후속')]
+    assert len(geometry)==44 and [r['requirement'] for r in runtime]==[f'R{i}' for i in range(10)]
+    generator_note=next(line for line in master.splitlines() if line.startswith('GEN3D-05:'))
     docs=[]
     for p in sorted((REPO/'docs/deliveries').glob('*.md')):
         text=p.read_text(encoding='utf-8');title=next((s.lstrip('# ').strip() for s in text.splitlines() if s.startswith('# ')),p.stem)
@@ -132,6 +137,7 @@ def build():
     data=dict(title='손동작 CAPTCHA 연구 지도',as_of='2026-11-17',research_cutoff=git(REPO,'rev-parse',CUTOFF),github_verified_at=snapshot['verified_at'],
               coverage=snapshot['coverage'],commits=records,daily=sorted(daily.values(),key=lambda x:x['date']),repositories=repo_stats,
               stages=STAGES,milestones=MILESTONES,backlog=items,documents=docs,
+              geometry_requirements=geometry,runtime_requirements=runtime,generator_note=generator_note,
               metrics=dict(stored_human_sessions=18,registered_new_capture_jobs=21,registered_source_paths=0,tests_run=384,tests_skipped=1,
                            backlog_ids=62,geometry_detail_rows=44,runtime_items=10,reconstructed_artifacts=812),
               detector_groups=[{k:r[k] for k in ('arm','kind','videos_n','attempted_frames_n','detected_frames_n')} for r in mp['aggregates']],
