@@ -7,7 +7,7 @@ from scipy.spatial.transform import Rotation
 from analysis.runtime_benchmark.interval_boxes import Box, Unresolved, elementary, norm
 from analysis.runtime_benchmark.sdk_path_boxes import (
     euler_matrix, matrix_quaternion, quaternion_rotvec, sdk_rodrigues,
-    local_rotations, lbs_box, chord_remainder, euler_range,
+    local_rotations, lbs_box, chord_remainder, euler_range, correlated_rotvec_scale,
 )
 from analysis.template_free_temporal_path import evaluate
 
@@ -18,6 +18,14 @@ def contained(box, value):
 
 
 class SDKPathBoxTests(unittest.TestCase):
+    def test_correlated_scale_encloses_full_angle_range_without_ratio_blowup(self):
+        b = correlated_rotvec_scale(Box(.001, 1.), 1e-14)
+        a = np.linspace(.001, 1, 1001)
+        for error in (-1e-14, 0., 1e-14):
+            self.assertTrue(contained(b, a/(np.sin(a/2)+error)))
+        self.assertLess(float(b.hi-b.lo), .1)
+        with self.assertRaises(Unresolved): correlated_rotvec_scale(Box(0, 1), 1e-14)
+
     def test_outward_arithmetic_contains_exact_rational_values(self):
         a, b = Box(.1), Box(.3)
         for candidate, exact in ((a+b, Fraction.from_float(.1)+Fraction.from_float(.3)),

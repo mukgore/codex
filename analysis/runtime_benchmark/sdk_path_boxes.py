@@ -7,7 +7,7 @@ import numpy as np
 
 from analysis.runtime_benchmark.interval_boxes import Box, Unresolved, elementary, atan2_positive, norm, pack, hull, iv
 
-VERSION = 'conditional_scipy_1101_sdk_rodrigues_lbs_boxes_v1'
+VERSION = 'conditional_scipy_1101_sdk_rodrigues_lbs_boxes_v2_correlated_scale'
 ASSUMPTIONS = {'producer_polynomial_absolute_error': 1e-12,
                'float64_transcendental_absolute_error': 1e-14,
                'float32_sin_cos_absolute_error': 1e-6,
@@ -93,8 +93,27 @@ def quaternion_rotvec(q):
         square = a.square(); choices.append(2+square/12+7*square.square()/2880)
     if float(angle.hi) > 1e-3:
         a = Box(max(1e-3, float(angle.lo)), float(angle.hi))
-        choices.append(a/elementary('sin', a/2, delta))
+        choices.append(correlated_rotvec_scale(a, delta))
     return q[:3]*hull(choices)
+
+
+def correlated_rotvec_scale(angle, delta):
+    """Retain correlation in a/sin(a/2), including a bounded sine error.
+
+    For .001<=a<=4, sin(x)-x*cos(x) is increasing (x=a/2 in [0,2]).
+    If its left endpoint exceeds delta, both a/(sin(a/2)+/-delta)
+    are increasing. This bounds the actual perturbed quotient at endpoints.
+    """
+    lo, hi = float(angle.lo), float(angle.hi)
+    if not 1e-3 <= lo <= hi <= 4 or not 0 <= delta <= 1e-14:
+        raise Unresolved('CORRELATED_SCALE_DOMAIN_NOT_PROVEN')
+    x = iv.mpf(lo)/2
+    derivative_numerator = iv.sin(x)-x*iv.cos(x)
+    if float(derivative_numerator.a) <= delta:
+        raise Unresolved('CORRELATED_SCALE_MONOTONICITY_NOT_RESOLVED')
+    first = Box(lo)/elementary('sin', Box(lo)/2, delta)
+    last = Box(hi)/elementary('sin', Box(hi)/2, delta)
+    return Box.rounded(first.lo, last.hi, 64)
 
 
 def sdk_rodrigues(rotvec):
