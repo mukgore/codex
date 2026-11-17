@@ -27,12 +27,16 @@ def relative_resources(solution_base,resources):
     finally:solution_base.os=previous
 
 
-def execute(request_path,output,worker_root):
+def execute(request_path,output,worker_root,stage_profile_output=None):
     from validation_v03.session_artifacts import _private,canonical
     request=json.loads(_private(request_path).read_text());output=_private(output)
     if set(request)!={'video_path','confidence','expected_resource_fingerprint'} or request['confidence']!=.5:
         raise ValueError('Registered pixel-only request and existing offline confidence.5 required')
     if output.exists():raise FileExistsError('Never overwrite worker predictions')
+    if stage_profile_output is not None:
+        stage_profile_output=_private(stage_profile_output)
+        if stage_profile_output.exists() or stage_profile_output.parent!=output.parent:
+            raise ValueError('Fresh stage profile directory beside new predictions required')
     source=_private(request['video_path']).resolve(strict=True)
     utc=time.time_ns();wall=time.perf_counter_ns();cpu=time.process_time_ns()
     sys.path.insert(0,str(Path(worker_root).resolve(strict=True)))
@@ -41,6 +45,7 @@ def execute(request_path,output,worker_root):
     import mediapipe.python.solution_base as solution_base
     from dataset_pipeline.resource_worker import _prepare_resources
     from dataset_pipeline.stage1_extract import _extract_landmarks_native
+    from dataset_pipeline import stage1_extract as stage1_module
     if importlib.metadata.version('mediapipe')!='0.10.14':raise ValueError('Existing pinned MediaPipe0.10.14 required')
     if inspect.signature(mp.solutions.hands.Hands).parameters['model_complexity'].default!=1:
         raise ValueError('Existing full model complexity1 default required')
@@ -52,7 +57,24 @@ def execute(request_path,output,worker_root):
     import_wall=time.perf_counter_ns()-wall;import_cpu=time.process_time_ns()-cpu
     start=time.perf_counter_ns();pcpu=time.process_time_ns()
     with relative_resources(solution_base,resources):
-        frames,info=_extract_landmarks_native(str(source),.5)
+        if stage_profile_output is None:
+            frames,info=_extract_landmarks_native(str(source),.5)
+        else:
+            from analysis.runtime_benchmark.stage_profile import Trace,JsonlSink,profile_stage1,rebuild_summary,recover_events
+            stage_profile_output.mkdir()
+            events=stage_profile_output/'events.private.jsonl'
+            sink=JsonlSink(events);trace=Trace(sink=sink,workload_role='installed_mediapipe_native_video_extraction')
+            try:
+                with profile_stage1(stage1_module,trace):
+                    frames,info=_extract_landmarks_native(str(source),.5)
+            finally:
+                sink.close()
+                profile=trace.summary() if trace.closed else {'status':'INCOMPLETE','recovery':recover_events(events.read_bytes())}
+                with (stage_profile_output/'summary.private.json').open('xb') as stream:stream.write(canonical(profile))
+                if trace.closed and rebuild_summary(events.read_bytes())!=profile:
+                    raise ValueError('Stage trace cannot regenerate measured summary')
+            if profile['measurement_metadata_errors_n']:
+                raise ValueError('Stage measurement metadata failed')
     batch_wall=time.perf_counter_ns()-start;batch_cpu=time.process_time_ns()-pcpu
     if len(frames)!=25 or info['decoded_frames']!=25 or (info['width'],info['height'])!=(512,420) or info['fps']!=8. or not info['timestamps_monotonic']:
         raise ValueError('Matched25-frame8FPS source grid required')
@@ -73,6 +95,7 @@ def execute(request_path,output,worker_root):
         'worker_validated_wall_ns':time.perf_counter_ns()-wall,'worker_own_cpu_ns':time.process_time_ns()-cpu,
         'scope':'after request validation through runtime/resources, decoder+Hands setup/process/close and checks; JSON store/Python startup excluded'},
       'input_scope':'video pixels only; request contains no native/reference coordinates','gpu_used':False,
+      'stage_profile_collected':stage_profile_output is not None,
       'world_prediction_scope':'raw model output only; no metric groundtruth/depth evaluation'}
     with output.open('xb') as stream:stream.write(canonical(result))
 
@@ -80,4 +103,5 @@ def execute(request_path,output,worker_root):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for n in ('request','output','worker-root'):p.add_argument('--'+n,type=Path,required=True)
+    p.add_argument('--stage-profile-output',type=Path)
     a=p.parse_args();execute(a.request,a.output,a.worker_root)
