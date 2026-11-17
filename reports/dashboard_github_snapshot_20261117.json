@@ -1,0 +1,1576 @@
+{
+  "verified_at": "2026-11-17T10:39:21.138Z",
+  "branch": "work/todo-consolidation-20261103",
+  "repositories": [
+    {
+      "full_name": "mukgore/codex",
+      "remote_sha": "68417fc5d8d4814ae51c907a6e77a7b26dad8439",
+      "branch_url": "https://github.com/mukgore/codex/tree/work/todo-consolidation-20261103"
+    },
+    {
+      "full_name": "mukgore/handcaptcha",
+      "remote_sha": "9f29ac44adb42509ca7a6c475b82031c9d30f198",
+      "branch_url": "https://github.com/mukgore/handcaptcha/tree/work/todo-consolidation-20261103"
+    }
+  ],
+  "main_commits": [
+    {
+      "sha": "0e61413676fb6c4f06bdadddf9d08cb894c0946e",
+      "subject": "research: execute preregistered 0.493 evidence audit",
+      "timestamp": "2026-11-04T13:10:03Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/0e61413676fb6c4f06bdadddf9d08cb894c0946e",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "93ec35fb0ff44e40f57b2469f83dd06f062946f6",
+      "subject": "research: preregister additional audit of initial 0.493 score",
+      "timestamp": "2026-11-04T12:26:59Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/93ec35fb0ff44e40f57b2469f83dd06f062946f6",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "b07df7440ba42f150c68e4646c6b4e55be2cc6e3",
+      "subject": "research: trace historical 0.493 score output evidence",
+      "timestamp": "2026-11-04T12:10:53Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/b07df7440ba42f150c68e4646c6b4e55be2cc6e3",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "08a95586860f007a35e4e0b50d315f27f31b9e0c",
+      "subject": "research: reconcile initial human score calculation paths",
+      "timestamp": "2026-11-04T11:43:02Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/08a95586860f007a35e4e0b50d315f27f31b9e0c",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "edb6a72c59966f6db71ba72ee0ef2d8f9378adbe",
+      "subject": "docs: specify local reconciliation of initial human CAPTCHA scores",
+      "timestamp": "2026-11-04T09:41:20Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/edb6a72c59966f6db71ba72ee0ef2d8f9378adbe",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "ce8e199161cfb6a9672beb8ab816b9269d66719f",
+      "subject": "docs: plan reproducible multi-condition attack runtime validation",
+      "timestamp": "2026-11-04T08:41:13Z",
+      "date": "2026-11-04",
+      "url": "https://github.com/mukgore/codex/commit/ce8e199161cfb6a9672beb8ab816b9269d66719f",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "6cfe1b14683b908d7ad47ae864ca20545e279404",
+      "subject": "docs: specify largest-hand selection and overlay guidance UI proposals",
+      "timestamp": "2026-11-02T11:50:59Z",
+      "date": "2026-11-02",
+      "url": "https://github.com/mukgore/codex/commit/6cfe1b14683b908d7ad47ae864ca20545e279404",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "fc656c38d844d4ab07ff2f7d18bf0975477c44e4",
+      "subject": "docs: link preserved handcaptcha roadmap and clarify pending status",
+      "timestamp": "2026-11-02T11:47:30Z",
+      "date": "2026-11-02",
+      "url": "https://github.com/mukgore/codex/commit/fc656c38d844d4ab07ff2f7d18bf0975477c44e4",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "3eeeef4ccb39d50ca8e7bfe04506a8c402babf91",
+      "subject": "docs: preserve handcaptcha roadmap pending repository write access",
+      "timestamp": "2026-11-02T11:47:23Z",
+      "date": "2026-11-02",
+      "url": "https://github.com/mukgore/codex/commit/3eeeef4ccb39d50ca8e7bfe04506a8c402babf91",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "2c81c556e61558e0e1894e6c99989ca482b49f18",
+      "subject": "docs: record research priorities and follow-up validation roadmap",
+      "timestamp": "2026-11-02T11:46:46Z",
+      "date": "2026-11-02",
+      "url": "https://github.com/mukgore/codex/commit/2c81c556e61558e0e1894e6c99989ca482b49f18",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "a1ee071635f9b927d7dace447e09635c57f6a90b",
+      "subject": "research: add actual-code G4 attacks and local defenses",
+      "timestamp": "2026-10-28T14:31:42Z",
+      "date": "2026-10-28",
+      "url": "https://github.com/mukgore/codex/commit/a1ee071635f9b927d7dace447e09635c57f6a90b",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "76bd22d406f1e1d8efba54207dcb27094522755a",
+      "subject": "docs: record local CAPTCHA computer-use attempt",
+      "timestamp": "2026-10-28T12:58:15Z",
+      "date": "2026-10-28",
+      "url": "https://github.com/mukgore/codex/commit/76bd22d406f1e1d8efba54207dcb27094522755a",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "1f6460612cd1946e5c61bb13eb2e8d09c165f0d6",
+      "subject": "docs: record G3 DR3 and FR5 researcher updates",
+      "timestamp": "2026-10-28T12:56:48Z",
+      "date": "2026-10-28",
+      "url": "https://github.com/mukgore/codex/commit/1f6460612cd1946e5c61bb13eb2e8d09c165f0d6",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "86fcda1b9653b8538705d051b5c7d94ac5613310",
+      "subject": "docs: add 2014 3D hand CAPTCHA prior art and object-aware attack boundary",
+      "timestamp": "2026-10-26T01:25:47Z",
+      "date": "2026-10-26",
+      "url": "https://github.com/mukgore/codex/commit/86fcda1b9653b8538705d051b5c7d94ac5613310",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "805347d2e61aa396c16368f2e7c05b218dbf7739",
+      "subject": "docs: link 3D hand-object candidate from video pool requirements",
+      "timestamp": "2026-10-26T01:21:16Z",
+      "date": "2026-10-26",
+      "url": "https://github.com/mukgore/codex/commit/805347d2e61aa396c16368f2e7c05b218dbf7739",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "b34e218ad3921f643dc3c0f1a39db2b212872d3b",
+      "subject": "docs: specify generated 3D hand-object CAPTCHA candidate and falsification tests",
+      "timestamp": "2026-10-26T01:21:00Z",
+      "date": "2026-10-26",
+      "url": "https://github.com/mukgore/codex/commit/b34e218ad3921f643dc3c0f1a39db2b212872d3b",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "e007d413131687c96c5d5e150a29851032944732",
+      "subject": "Detail v0.2 evidence gaps and researcher decisions",
+      "timestamp": "2026-10-25T17:33:57Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/e007d413131687c96c5d5e150a29851032944732",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "1c2e36350e264c651da66cb9e8878cd7dd73f3c1",
+      "subject": "Record Colab MediaPipe provenance for future experiment videos",
+      "timestamp": "2026-10-25T17:29:29Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/1c2e36350e264c651da66cb9e8878cd7dd73f3c1",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "ead47ce6486dc0aea1fdef0a444a84ecdc1d588c",
+      "subject": "Document score compatibility and candidate source data limits",
+      "timestamp": "2026-10-25T17:24:51Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/ead47ce6486dc0aea1fdef0a444a84ecdc1d588c",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "a9c161e775300c34f4d3c623e4ca6edb7d0769f2",
+      "subject": "docs: distinguish on-demand pilot from operational adoption",
+      "timestamp": "2026-10-25T17:24:43Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/a9c161e775300c34f4d3c623e4ca6edb7d0769f2",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "8feeeaabd76cb8e510be35abf59bdb1492a0204c",
+      "subject": "docs: compare dataset-backed masking and on-demand delivery paths",
+      "timestamp": "2026-10-25T17:24:34Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/8feeeaabd76cb8e510be35abf59bdb1492a0204c",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "02aa9908aa2b2bf1468543a729ddc1bd1c9bd170",
+      "subject": "docs: clarify prebuilt MP4 reuse and per-request costs",
+      "timestamp": "2026-10-25T17:22:49Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/02aa9908aa2b2bf1468543a729ddc1bd1c9bd170",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "272f429c622125304a929b197233c7308971bd1a",
+      "subject": "Correct prod_v2_pool source lineage after duplicate verification",
+      "timestamp": "2026-10-25T17:22:38Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/272f429c622125304a929b197233c7308971bd1a",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "a66516cc22a6fb2234f45a009f114b9df47924b6",
+      "subject": "docs: specify video pool acquisition, occlusion integrity and secure delivery",
+      "timestamp": "2026-10-25T17:20:36Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/a66516cc22a6fb2234f45a009f114b9df47924b6",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "c0983ae0fddd8ba761ad73a459e7de836f318443",
+      "subject": "Record aggregate human and attack pool overlap",
+      "timestamp": "2026-10-25T17:20:14Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/c0983ae0fddd8ba761ad73a459e7de836f318443",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "d0a48371de488cf4b00c7d5ced3075dee3e871b0",
+      "subject": "Document aggregate source map for candidate human data",
+      "timestamp": "2026-10-25T17:18:58Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/d0a48371de488cf4b00c7d5ced3075dee3e871b0",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "a4b18aa60873522f16f7be5ba5b463502b9a8365",
+      "subject": "Add concrete validation requirements and start standard scoring migration",
+      "timestamp": "2026-10-25T17:07:18Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/a4b18aa60873522f16f7be5ba5b463502b9a8365",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "5d94e58b3d60aa8c2b2079b0dc022e9d511be7f8",
+      "subject": "Record local G4 page audit and endpoint limits",
+      "timestamp": "2026-10-25T17:05:48Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/5d94e58b3d60aa8c2b2079b0dc022e9d511be7f8",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "8980bc248599f6b96ac8219c304fad7accd4bfc9",
+      "subject": "Add evidence update for DR4 and G4 replay",
+      "timestamp": "2026-10-25T17:05:00Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/8980bc248599f6b96ac8219c304fad7accd4bfc9",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "93db87871009d5a40aa02dae2129c5cf94e94eee",
+      "subject": "Document replay of existing G4 source clip extraction",
+      "timestamp": "2026-10-25T17:04:45Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/93db87871009d5a40aa02dae2129c5cf94e94eee",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "c8e863fa67da92e51c11ed72a74569796628b87d",
+      "subject": "docs: record public tree privacy scan result",
+      "timestamp": "2026-10-25T16:59:34Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/c8e863fa67da92e51c11ed72a74569796628b87d",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "8b4e7ae6a77df9ad1a4f76ec01647e6fe9c37168",
+      "subject": "docs: link G4 preregistration template from status report",
+      "timestamp": "2026-10-25T16:59:04Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/8b4e7ae6a77df9ad1a4f76ec01647e6fe9c37168",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "e947604fa26ac597c2af48ceb82328cfd4e6d7ec",
+      "subject": "docs: add G4 preregistration and leakage checklist template",
+      "timestamp": "2026-10-25T16:57:31Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/e947604fa26ac597c2af48ceb82328cfd4e6d7ec",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "d337d2a96de4409ecf2621b13ec21fa15d1afbfe",
+      "subject": "docs: record v0.2 acceptance status and G4 next steps",
+      "timestamp": "2026-10-25T16:56:48Z",
+      "date": "2026-10-25",
+      "url": "https://github.com/mukgore/codex/commit/d337d2a96de4409ecf2621b13ec21fa15d1afbfe",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "728525c4d3e81142f1d916a8a58205c7fb36d977",
+      "subject": "docs: record G3 interpretation and bounded G4 replay",
+      "timestamp": "2026-10-24T13:36:42Z",
+      "date": "2026-10-24",
+      "url": "https://github.com/mukgore/codex/commit/728525c4d3e81142f1d916a8a58205c7fb36d977",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "380a43a4589d7e588b2215c0536ae23e74863503",
+      "subject": "Keep aggregate summary without duplicate statistics",
+      "timestamp": "2026-10-24T10:04:37Z",
+      "date": "2026-10-24",
+      "url": "https://github.com/mukgore/codex/commit/380a43a4589d7e588b2215c0536ae23e74863503",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "e396da56b6986b786ba650b0ae1685f2adcf6aa1",
+      "subject": "Remove participant-level score differences from public report",
+      "timestamp": "2026-10-24T10:04:26Z",
+      "date": "2026-10-24",
+      "url": "https://github.com/mukgore/codex/commit/e396da56b6986b786ba650b0ae1685f2adcf6aa1",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "733687ed795a884582d2e0def0a8b96c4bde2ede",
+      "subject": "privacy: remove raw input inventory hash from run report",
+      "timestamp": "2026-10-23T13:32:20Z",
+      "date": "2026-10-23",
+      "url": "https://github.com/mukgore/codex/commit/733687ed795a884582d2e0def0a8b96c4bde2ede",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "961cf804ae292c7ae7297536ec819c46a8270f3d",
+      "subject": "privacy: remove raw input hashes from attack report",
+      "timestamp": "2026-10-23T13:32:14Z",
+      "date": "2026-10-23",
+      "url": "https://github.com/mukgore/codex/commit/961cf804ae292c7ae7297536ec819c46a8270f3d",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "ca00cf7fc9deb57f105ad592343d18483ccd7d6c",
+      "subject": "research: preserve CAPTCHA replay and A/B analysis",
+      "timestamp": "2026-10-20T12:16:12Z",
+      "date": "2026-10-20",
+      "url": "https://github.com/mukgore/codex/commit/ca00cf7fc9deb57f105ad592343d18483ccd7d6c",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "3de57b1ff239079a55cacc7626a7de1c541d9c2c",
+      "subject": "docs: guide Codex agents adoption of v0.2 analysis requirements",
+      "timestamp": "2026-10-19T08:19:57Z",
+      "date": "2026-10-19",
+      "url": "https://github.com/mukgore/codex/commit/3de57b1ff239079a55cacc7626a7de1c541d9c2c",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "9e6c69f67d13d5dbb3adc3812c358b6a63f5a5c3",
+      "subject": "docs: add v0.2 human CAPTCHA data analysis requirements",
+      "timestamp": "2026-10-19T08:19:55Z",
+      "date": "2026-10-19",
+      "url": "https://github.com/mukgore/codex/commit/9e6c69f67d13d5dbb3adc3812c358b6a63f5a5c3",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "334501f8d5cfedf1e70a867fc1d84e8e09014ca2",
+      "subject": "docs: connect archived A/B and parameter-grid sources",
+      "timestamp": "2026-10-17T12:59:47Z",
+      "date": "2026-10-17",
+      "url": "https://github.com/mukgore/codex/commit/334501f8d5cfedf1e70a867fc1d84e8e09014ca2",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "7bab6f44ffb5429f55fc0d39f366497ac28171ca",
+      "subject": "docs: record remaining implementation evidence gaps",
+      "timestamp": "2026-10-17T12:18:57Z",
+      "date": "2026-10-17",
+      "url": "https://github.com/mukgore/codex/commit/7bab6f44ffb5429f55fc0d39f366497ac28171ca",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "a8b048a774648f6148a81dd0fc8322f4646b0b15",
+      "subject": "docs: add patent implementation audit findings",
+      "timestamp": "2026-10-17T12:17:16Z",
+      "date": "2026-10-17",
+      "url": "https://github.com/mukgore/codex/commit/a8b048a774648f6148a81dd0fc8322f4646b0b15",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "47f5c71e4e5315e94c17e613d0ae13fdcf10ff25",
+      "subject": "docs: record recovery preparation push status",
+      "timestamp": "2026-10-06T11:13:10Z",
+      "date": "2026-10-06",
+      "url": "https://github.com/mukgore/codex/commit/47f5c71e4e5315e94c17e613d0ae13fdcf10ff25",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "b5ce279451e23ef456ccb1263184c8f1430ab8af",
+      "subject": "research: finalize phase1 status and prepare recovery scan",
+      "timestamp": "2026-10-06T11:09:41Z",
+      "date": "2026-10-06",
+      "url": "https://github.com/mukgore/codex/commit/b5ce279451e23ef456ccb1263184c8f1430ab8af",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "e553d22e7d0750d0068bf4821db9341e3da18b87",
+      "subject": "docs: record phase-one review delivery and pending approval",
+      "timestamp": "2026-10-02T15:10:02Z",
+      "date": "2026-10-02",
+      "url": "https://github.com/mukgore/codex/commit/e553d22e7d0750d0068bf4821db9341e3da18b87",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "aa82fdc70e4764eaef47366f3b1c01e33e864d48",
+      "subject": "docs: complete phase-one evidence and experiment review",
+      "timestamp": "2026-10-02T14:51:56Z",
+      "date": "2026-10-02",
+      "url": "https://github.com/mukgore/codex/commit/aa82fdc70e4764eaef47366f3b1c01e33e864d48",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "25307974b8c3038c633a4e8122c6d94fb2d5cb71",
+      "subject": "WIP: 1차 데이터 감사와 기존 공격 재현 및 안전 종료 인계",
+      "timestamp": "2026-10-01T14:22:56Z",
+      "date": "2026-10-01",
+      "url": "https://github.com/mukgore/codex/commit/25307974b8c3038c633a4e8122c6d94fb2d5cb71",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "26c792b2b777f856c345ed7aba3a0e06f7678cf2",
+      "subject": "chore: preserve source snapshot and establish phase-one audit scope",
+      "timestamp": "2026-10-01T14:15:47Z",
+      "date": "2026-10-01",
+      "url": "https://github.com/mukgore/codex/commit/26c792b2b777f856c345ed7aba3a0e06f7678cf2",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "75a5dbab13c74dba164d4e4a09d7d0c6ac7c163a",
+      "subject": "Initial commit",
+      "timestamp": "2026-10-01T14:02:27Z",
+      "date": "2026-10-01",
+      "url": "https://github.com/mukgore/codex/commit/75a5dbab13c74dba164d4e4a09d7d0c6ac7c163a",
+      "source": "github_main",
+      "repo": "codex"
+    },
+    {
+      "sha": "b4d96d1e84324edd5376f9258f9863a0b6282a5a",
+      "subject": "Clarify award details in README",
+      "timestamp": "2026-10-28T12:27:36Z",
+      "date": "2026-10-28",
+      "url": "https://github.com/mukgore/handcaptcha/commit/b4d96d1e84324edd5376f9258f9863a0b6282a5a",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "037873299a9e45435250aa158857b35e07668259",
+      "subject": "Fix typos and enhance clarity in README.md",
+      "timestamp": "2026-10-12T09:43:30Z",
+      "date": "2026-10-12",
+      "url": "https://github.com/mukgore/handcaptcha/commit/037873299a9e45435250aa158857b35e07668259",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "aa298d72bb487557712a009cd615cba4f355d6d7",
+      "subject": "Update README.md",
+      "timestamp": "2026-10-12T09:41:44Z",
+      "date": "2026-10-12",
+      "url": "https://github.com/mukgore/handcaptcha/commit/aa298d72bb487557712a009cd615cba4f355d6d7",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "2c21abde3986fba51b0c32030cf3e1f6605a3bca",
+      "subject": "Disable local JSON download to stop Edge's Save-As prompt during exhibition",
+      "timestamp": "2026-09-13T02:00:41Z",
+      "date": "2026-09-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/2c21abde3986fba51b0c32030cf3e1f6605a3bca",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "a4406f88298b70d0ec1a073ac50b66828ed9f126",
+      "subject": "Make hand_captcha_prod.html loop back to the start screen on completion",
+      "timestamp": "2026-09-13T01:41:47Z",
+      "date": "2026-09-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/a4406f88298b70d0ec1a073ac50b66828ed9f126",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "53b9b310d7d5e10a42f3aab77bb33754930fa177",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-29T07:09:00Z",
+      "date": "2026-07-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/53b9b310d7d5e10a42f3aab77bb33754930fa177",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "b98933c05a7cfac988dc04712da45625bff827be",
+      "subject": "Update UPLOAD_URL to new Google Apps Script URL",
+      "timestamp": "2026-07-29T07:00:45Z",
+      "date": "2026-07-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/b98933c05a7cfac988dc04712da45625bff827be",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "3ffcb57fdbb8abc2b477ebea99cfbe1912dd88d9",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-29T06:55:08Z",
+      "date": "2026-07-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/3ffcb57fdbb8abc2b477ebea99cfbe1912dd88d9",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "542d4aec8f75b372e6f451bab992b959fae4b0ed",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-20T02:01:58Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/542d4aec8f75b372e6f451bab992b959fae4b0ed",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "333b0649b70b30a966fd3cc8b1be16179820cd56",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-20T01:58:09Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/333b0649b70b30a966fd3cc8b1be16179820cd56",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d1f8d5946cbaf63ed46c59e26cbbfe3959b74e8e",
+      "subject": "Fix formatting and update project details in README",
+      "timestamp": "2026-07-20T01:56:46Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d1f8d5946cbaf63ed46c59e26cbbfe3959b74e8e",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "f3fc9ba64f76e982c943c79fd0dec10e53132703",
+      "subject": "Refine usage instructions in README.md",
+      "timestamp": "2026-07-20T01:55:53Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/f3fc9ba64f76e982c943c79fd0dec10e53132703",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "cec7a05e73efd1667186e2a92852f38ffea6cd81",
+      "subject": "Add upcoming event to project history",
+      "timestamp": "2026-07-20T01:55:03Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/cec7a05e73efd1667186e2a92852f38ffea6cd81",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "79fee46230d4305364285600fd4c2ed4974e64cb",
+      "subject": "Update README with project contribution details",
+      "timestamp": "2026-07-20T01:54:09Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/79fee46230d4305364285600fd4c2ed4974e64cb",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "81f033f70984b37c9bd96e931a61073b48dad955",
+      "subject": "Update README with AI contribution and project history",
+      "timestamp": "2026-07-20T01:52:45Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/81f033f70984b37c9bd96e931a61073b48dad955",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "202af48febccb84be8106c58641e4aa07f4e1952",
+      "subject": "Enhance README with project details and usage instructions",
+      "timestamp": "2026-07-20T01:44:41Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/202af48febccb84be8106c58641e4aa07f4e1952",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e9a79e959d12dfd43574485c2190a8400e88dfff",
+      "subject": "Update README.md",
+      "timestamp": "2026-07-20T01:39:50Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e9a79e959d12dfd43574485c2190a8400e88dfff",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4f9988a93dd73c56cc31b184fe019cc6aa23be28",
+      "subject": "Enhance README with project details and usage instructions",
+      "timestamp": "2026-07-20T01:39:16Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4f9988a93dd73c56cc31b184fe019cc6aa23be28",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "22f713187ece611c2691b89d9360fd5239053bbd",
+      "subject": "Update README.md",
+      "timestamp": "2026-07-20T01:38:50Z",
+      "date": "2026-07-20",
+      "url": "https://github.com/mukgore/handcaptcha/commit/22f713187ece611c2691b89d9360fd5239053bbd",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e8a07af245c348f64decb203836c88b58daba83f",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-16T03:09:55Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e8a07af245c348f64decb203836c88b58daba83f",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "ac9343a2b44196fb70c732f77ee4affd196aadb9",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-16T00:53:14Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/ac9343a2b44196fb70c732f77ee4affd196aadb9",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "59a363b56601095f9b96fb8a743a6ececaf4c684",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-16T00:26:23Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/59a363b56601095f9b96fb8a743a6ececaf4c684",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "155450074d6aa116fecd306355c509b902fc209c",
+      "subject": "Update README.md",
+      "timestamp": "2026-07-16T00:25:25Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/155450074d6aa116fecd306355c509b902fc209c",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "8e1dab49512e4a4f9d53d369fe3ace3d827fc641",
+      "subject": "Initialize README with project overview",
+      "timestamp": "2026-07-16T00:25:11Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/8e1dab49512e4a4f9d53d369fe3ace3d827fc641",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e725fab484d11b1b2ae72bb28d389cd6d5574c89",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-16T00:05:10Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e725fab484d11b1b2ae72bb28d389cd6d5574c89",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7a418c397911b5ac007ea88259ebf4c37137ec99",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-16T00:02:43Z",
+      "date": "2026-07-16",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7a418c397911b5ac007ea88259ebf4c37137ec99",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "675f6d77a52336554ba04beeaf00ec832e142f0d",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-15T23:40:51Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/675f6d77a52336554ba04beeaf00ec832e142f0d",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "1af32ce0ffc328a7856d04678d30e0ada4d8e991",
+      "subject": "Remove clips from pool_manifest.json",
+      "timestamp": "2026-07-15T23:25:39Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/1af32ce0ffc328a7856d04678d30e0ada4d8e991",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "114e29b4ab126b7fca8a56605b4e66b476be52e8",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-15T21:46:13Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/114e29b4ab126b7fca8a56605b4e66b476be52e8",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "a2b017c25d8bfc0ab2f9227d2dfe3fa179b49c78",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-15T21:36:12Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/a2b017c25d8bfc0ab2f9227d2dfe3fa179b49c78",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "95da7fb61de15683094caf639ac8d2ae5c39d99d",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-15T14:26:08Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/95da7fb61de15683094caf639ac8d2ae5c39d99d",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "259d9ae44a35e6de808814aec70d6dfdfea2c30e",
+      "subject": "Add script to ingest experiment folders into manifest",
+      "timestamp": "2026-07-15T12:13:51Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/259d9ae44a35e6de808814aec70d6dfdfea2c30e",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "76ff1a5f1e9f337db893e5d01b32eb4a52a7526c",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-15T12:09:40Z",
+      "date": "2026-07-15",
+      "url": "https://github.com/mukgore/handcaptcha/commit/76ff1a5f1e9f337db893e5d01b32eb4a52a7526c",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "b0a936d8022e7941cf9eac236ba38fabc4105e95",
+      "subject": "Delete __init__.py",
+      "timestamp": "2026-07-14T00:22:10Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/b0a936d8022e7941cf9eac236ba38fabc4105e95",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4bea054c0bbffa5bdb360bc6cae73ec5036305dd",
+      "subject": "Delete stage7_gate.py",
+      "timestamp": "2026-07-14T00:21:57Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4bea054c0bbffa5bdb360bc6cae73ec5036305dd",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "1e1306c0d38d1a1c610b07ee020a816d7cfa1559",
+      "subject": "Delete stage6_occlusion.py",
+      "timestamp": "2026-07-14T00:21:45Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/1e1306c0d38d1a1c610b07ee020a816d7cfa1559",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "2161015292bb5ba6e5e7bb7631ca8e70e2a674d4",
+      "subject": "Delete stage5_weights.py",
+      "timestamp": "2026-07-14T00:21:32Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/2161015292bb5ba6e5e7bb7631ca8e70e2a674d4",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6ca63895a2f4ad161c5c4c725b726890e934a932",
+      "subject": "Delete stage4_length_norm.py",
+      "timestamp": "2026-07-14T00:21:19Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6ca63895a2f4ad161c5c4c725b726890e934a932",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "bccf886679b260c3375377e63444f0d9ddecc0ca",
+      "subject": "Delete stage3_frontality.py",
+      "timestamp": "2026-07-14T00:21:07Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/bccf886679b260c3375377e63444f0d9ddecc0ca",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "9c875eeb07bdf71e7910e858b3ae1930e33a02ad",
+      "subject": "Delete stage2_quality.py",
+      "timestamp": "2026-07-14T00:20:55Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/9c875eeb07bdf71e7910e858b3ae1930e33a02ad",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "13f7f8eadc09d6d690fc7df930252b0892066e8a",
+      "subject": "Delete stage1_extract.py",
+      "timestamp": "2026-07-14T00:20:43Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/13f7f8eadc09d6d690fc7df930252b0892066e8a",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "0cf84711df2247ab6783dafaad227bd6f52819aa",
+      "subject": "Delete smoke_test.py",
+      "timestamp": "2026-07-14T00:20:30Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/0cf84711df2247ab6783dafaad227bd6f52819aa",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d5e500804fee36e295894041cabf514cdc4fda55",
+      "subject": "Delete requirements.txt",
+      "timestamp": "2026-07-14T00:20:18Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d5e500804fee36e295894041cabf514cdc4fda55",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4790472233a3710efeb655f46c66245b12c19c55",
+      "subject": "Delete pipeline.py",
+      "timestamp": "2026-07-14T00:20:06Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4790472233a3710efeb655f46c66245b12c19c55",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7f683a01245dd67855b51645513a1d9f5fcb1905",
+      "subject": "Delete grid_search_frontal.py",
+      "timestamp": "2026-07-14T00:19:53Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7f683a01245dd67855b51645513a1d9f5fcb1905",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e848bae54f446ff3e4677669560172ca34e73f1b",
+      "subject": "Delete geometry.py",
+      "timestamp": "2026-07-14T00:19:40Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e848bae54f446ff3e4677669560172ca34e73f1b",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "fcfef11b7758ea1cfd5b5f30617522c4f093e34f",
+      "subject": "Delete config.py",
+      "timestamp": "2026-07-14T00:19:27Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/fcfef11b7758ea1cfd5b5f30617522c4f093e34f",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d032be59da15175b0ce5b49493c784fcde641bfa",
+      "subject": "Delete common.py",
+      "timestamp": "2026-07-14T00:19:15Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d032be59da15175b0ce5b49493c784fcde641bfa",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "1914f5e3fcce95834e6709087db7ff850d17bd94",
+      "subject": "Delete cli.py",
+      "timestamp": "2026-07-14T00:18:49Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/1914f5e3fcce95834e6709087db7ff850d17bd94",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "af8a7b45f7cac8a7929a78840002ba7d3f6da3fb",
+      "subject": "Create test_stage7_gate.py",
+      "timestamp": "2026-07-14T00:18:11Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/af8a7b45f7cac8a7929a78840002ba7d3f6da3fb",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "21235b45fb992a82c0f5759ddb9f920fbf539df4",
+      "subject": "Create test_stage5_weights.py",
+      "timestamp": "2026-07-14T00:17:40Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/21235b45fb992a82c0f5759ddb9f920fbf539df4",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "f8a0d664ece96bdecb47ba11ef355ca9f39da62e",
+      "subject": "Create test_stage3_frontality.py",
+      "timestamp": "2026-07-14T00:17:21Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/f8a0d664ece96bdecb47ba11ef355ca9f39da62e",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6569c13cb79d3fa61167d4b3ea0fe30aca62cd61",
+      "subject": "Create test_geometry.py",
+      "timestamp": "2026-07-14T00:17:02Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6569c13cb79d3fa61167d4b3ea0fe30aca62cd61",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "71614e843e9138ca01d15298c33ca27ba79d0bfb",
+      "subject": "Create fixtures.py",
+      "timestamp": "2026-07-14T00:16:42Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/71614e843e9138ca01d15298c33ca27ba79d0bfb",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "749021eb897780cc666ee5865632290818d29f19",
+      "subject": "Create __init__.py",
+      "timestamp": "2026-07-14T00:16:07Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/749021eb897780cc666ee5865632290818d29f19",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "459261d67e5ef333a1538c49bf7577ef11a342a3",
+      "subject": "Create stage7_gate.py",
+      "timestamp": "2026-07-14T00:15:45Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/459261d67e5ef333a1538c49bf7577ef11a342a3",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "54eae42770b7ff9c24225f7dca7174e3a4cc6ca0",
+      "subject": "Create stage6_occlusion.py",
+      "timestamp": "2026-07-14T00:15:19Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/54eae42770b7ff9c24225f7dca7174e3a4cc6ca0",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "1ac426e375eb0a0dcdd2e8ba0d8d04caff061878",
+      "subject": "Create stage5_weights.py",
+      "timestamp": "2026-07-14T00:14:53Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/1ac426e375eb0a0dcdd2e8ba0d8d04caff061878",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "8e5617bc18899dccfdf446bdcd9493f85f857b52",
+      "subject": "Create stage4_length_norm.py",
+      "timestamp": "2026-07-14T00:14:25Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/8e5617bc18899dccfdf446bdcd9493f85f857b52",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6b1e38326ea52bb00ffdbe3bca696b317b2a72d1",
+      "subject": "Create stage3_frontality.py",
+      "timestamp": "2026-07-14T00:14:06Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6b1e38326ea52bb00ffdbe3bca696b317b2a72d1",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4b25973e69b17ecb3461fd99be8a9b865ca860d1",
+      "subject": "Create stage2_quality.py",
+      "timestamp": "2026-07-14T00:13:43Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4b25973e69b17ecb3461fd99be8a9b865ca860d1",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "deafceede46177ecb08f3c8d89f701e4c1229ca0",
+      "subject": "Create stage1_extract.py",
+      "timestamp": "2026-07-14T00:13:22Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/deafceede46177ecb08f3c8d89f701e4c1229ca0",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "aadf85c2b86a1ef22678bfdd453e93490a7e1b03",
+      "subject": "Create smoke_test.py",
+      "timestamp": "2026-07-14T00:12:58Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/aadf85c2b86a1ef22678bfdd453e93490a7e1b03",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "bb482a5685af98d7c79c8bb150eb0b2cd400b6d2",
+      "subject": "Create requirements.txt",
+      "timestamp": "2026-07-14T00:12:31Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/bb482a5685af98d7c79c8bb150eb0b2cd400b6d2",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "710c63c894a800afc184799d065949d302714cad",
+      "subject": "Create pipeline.py",
+      "timestamp": "2026-07-14T00:12:15Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/710c63c894a800afc184799d065949d302714cad",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "66f89984ab756d03d540ce133d8347497dc729d9",
+      "subject": "Create grid_search_frontal.py",
+      "timestamp": "2026-07-14T00:11:42Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/66f89984ab756d03d540ce133d8347497dc729d9",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "caaa65cd9854a11be4c8d87b0c7e2cd2eaae2aa5",
+      "subject": "Create geometry.py",
+      "timestamp": "2026-07-14T00:11:07Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/caaa65cd9854a11be4c8d87b0c7e2cd2eaae2aa5",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "f637c8dc0c42da86421347b204e65eda4832bca5",
+      "subject": "Add MediaPipe hand landmark constants and definitions",
+      "timestamp": "2026-07-14T00:10:35Z",
+      "date": "2026-07-14",
+      "url": "https://github.com/mukgore/handcaptcha/commit/f637c8dc0c42da86421347b204e65eda4832bca5",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "2824986d1ce82f1b2b0ea5c8db9a3dee7fb08ee5",
+      "subject": "Add CLI for dataset pipeline with commands",
+      "timestamp": "2026-07-13T23:54:07Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/2824986d1ce82f1b2b0ea5c8db9a3dee7fb08ee5",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "46067bd6250d07a5bdc8361d6bbdd8c8b6438750",
+      "subject": "Add configuration for dataset pipeline parameters",
+      "timestamp": "2026-07-13T23:51:21Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/46067bd6250d07a5bdc8361d6bbdd8c8b6438750",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "cf6a7b045ad1e50fa89c22b54877c00ec9cd2332",
+      "subject": "Create __init__.py",
+      "timestamp": "2026-07-13T23:40:35Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/cf6a7b045ad1e50fa89c22b54877c00ec9cd2332",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "309614e19237f2afade60e6695ffdfbf3b5e7ccf",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-13T15:24:26Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/309614e19237f2afade60e6695ffdfbf3b5e7ccf",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "5cebca073b43f5d97f46b3eeb274008787ffddad",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-13T15:16:27Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/5cebca073b43f5d97f46b3eeb274008787ffddad",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "fedb41230968fdf07573791cbe24b75dded5ed23",
+      "subject": "Add files via upload",
+      "timestamp": "2026-07-13T14:47:38Z",
+      "date": "2026-07-13",
+      "url": "https://github.com/mukgore/handcaptcha/commit/fedb41230968fdf07573791cbe24b75dded5ed23",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "441feee176ff32e4c40eac3ff63af290b97a23d2",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:56:11Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/441feee176ff32e4c40eac3ff63af290b97a23d2",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d8a97cc4a46b4885f6f94a9d1e36dcd10ffd699c",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:52:43Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d8a97cc4a46b4885f6f94a9d1e36dcd10ffd699c",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "55859dd508b7857c1315ba18ff48d2c89c4f2656",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T12:51:44Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/55859dd508b7857c1315ba18ff48d2c89c4f2656",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "cf58780f15b34725e89c7a88129dcdb2a8116487",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:47:49Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/cf58780f15b34725e89c7a88129dcdb2a8116487",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d24464f2adf5f17eb0c7f47141b192e4922f72e0",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:43:29Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d24464f2adf5f17eb0c7f47141b192e4922f72e0",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "60a984accb77fd4c51e997fbca720ba7567ed4cc",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:36:00Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/60a984accb77fd4c51e997fbca720ba7567ed4cc",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "c9182e94ed3c6ec3f14f1f8ce7bbf97b3ca0e153",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:22:54Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/c9182e94ed3c6ec3f14f1f8ce7bbf97b3ca0e153",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "79eafe4c7921e88433828e05c5b32bfca63eb8d1",
+      "subject": "Update hand_captcha_ab.html",
+      "timestamp": "2026-03-29T12:15:19Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/79eafe4c7921e88433828e05c5b32bfca63eb8d1",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "29a2c1b13d0137a0c92b84f0b1186378bd104cd2",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T12:04:32Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/29a2c1b13d0137a0c92b84f0b1186378bd104cd2",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "256ee68c3b165a104b3dc9edec938e99efbd6807",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T11:57:34Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/256ee68c3b165a104b3dc9edec938e99efbd6807",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "b397cd5c0acb02e2c5a8a4fe5691dc9fb6ae9eaa",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T11:41:57Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/b397cd5c0acb02e2c5a8a4fe5691dc9fb6ae9eaa",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "20d2f17aae9ad52589fa859dff6b5c37c85a45f7",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T11:18:18Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/20d2f17aae9ad52589fa859dff6b5c37c85a45f7",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "cd8001b99c5906147fa5660b46a055548825db1c",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T11:05:30Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/cd8001b99c5906147fa5660b46a055548825db1c",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "cce87a9d36ffdff61c471be9f36549eda530c5aa",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T11:01:38Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/cce87a9d36ffdff61c471be9f36549eda530c5aa",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4bb05ae60645392a4b60ff15ac0bee4c12f20e23",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T10:55:42Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4bb05ae60645392a4b60ff15ac0bee4c12f20e23",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "0a932bb895108bd0a91133d655dff14213af8020",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T10:50:33Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/0a932bb895108bd0a91133d655dff14213af8020",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "76e178c9c593fa72b092aaa3e3ba29620e86b5ad",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T09:24:46Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/76e178c9c593fa72b092aaa3e3ba29620e86b5ad",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "3e1ef16a454f97388c898cd538e3c84d3e1a6530",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T09:21:38Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/3e1ef16a454f97388c898cd538e3c84d3e1a6530",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "854825f3649e887212b9be44a9389bdf3ce0f008",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T09:15:26Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/854825f3649e887212b9be44a9389bdf3ce0f008",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d907ad3ca83ce72d405f25663b18373f832c1da6",
+      "subject": "Update hand_captcha_v2.html",
+      "timestamp": "2026-03-29T08:58:15Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d907ad3ca83ce72d405f25663b18373f832c1da6",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7f4f4b7561062bc3335b28723ac87e6715df1f40",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T08:37:08Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7f4f4b7561062bc3335b28723ac87e6715df1f40",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "da6cbbe72402305f171fd57434da090c5e1d893e",
+      "subject": "Update 0329_handtest.html",
+      "timestamp": "2026-03-29T08:27:46Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/da6cbbe72402305f171fd57434da090c5e1d893e",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e1c6d1a62170c4e0e982c0422864835bbcc12a4c",
+      "subject": "Update 0329_handtest.html",
+      "timestamp": "2026-03-29T08:25:13Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e1c6d1a62170c4e0e982c0422864835bbcc12a4c",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "d1ed4ea955981618b98cebf989a2190544d72ecb",
+      "subject": "Update 0329_handtest.html",
+      "timestamp": "2026-03-29T08:22:33Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/d1ed4ea955981618b98cebf989a2190544d72ecb",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "fe061e0c16ae69bc27417f7f470e536bf524e1c3",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T08:10:19Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/fe061e0c16ae69bc27417f7f470e536bf524e1c3",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6cbe16bb4d83274709063ca9334fd7b6bd0662e8",
+      "subject": "Update 0329_handtest.html",
+      "timestamp": "2026-03-29T08:07:19Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6cbe16bb4d83274709063ca9334fd7b6bd0662e8",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6877cb73325b40d20a7653ca361b1eaf6bbfd366",
+      "subject": "Update 0329_handtest.html",
+      "timestamp": "2026-03-29T08:02:55Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6877cb73325b40d20a7653ca361b1eaf6bbfd366",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "3623a5a62be1cb3aebbcf6c1275aa7f35ad52664",
+      "subject": "Add files via upload",
+      "timestamp": "2026-03-29T07:56:07Z",
+      "date": "2026-03-29",
+      "url": "https://github.com/mukgore/handcaptcha/commit/3623a5a62be1cb3aebbcf6c1275aa7f35ad52664",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "34fbe60982e32adf6d8dcdcf9cc09bf41ae5e77a",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T13:51:24Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/34fbe60982e32adf6d8dcdcf9cc09bf41ae5e77a",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "0b9368cf53d3b899143b77523a69c9b0f6d414d4",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T13:46:11Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/0b9368cf53d3b899143b77523a69c9b0f6d414d4",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "8c8b6a53a923f2f58ca2db4fef0d3780ce73ca32",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T13:17:31Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/8c8b6a53a923f2f58ca2db4fef0d3780ce73ca32",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "4bb1119d1d0ae40829ba7ffb3058d1087318318d",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T13:09:23Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/4bb1119d1d0ae40829ba7ffb3058d1087318318d",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "9afbf85daef0efd92e7d554f9b7bde4066d06b0e",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T12:54:56Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/9afbf85daef0efd92e7d554f9b7bde4066d06b0e",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7a3911a88618d1a531563236dddd76dfd3a480e2",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T12:51:05Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7a3911a88618d1a531563236dddd76dfd3a480e2",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "0d56f97169d518df52645f266be10689272812a7",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T12:35:03Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/0d56f97169d518df52645f266be10689272812a7",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "e88aa9660465daa92ee2cdead87d8013a33f637f",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T11:52:28Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/e88aa9660465daa92ee2cdead87d8013a33f637f",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "bc2d602e863d578d0eaa983363abb20d1bd16c28",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-24T03:04:01Z",
+      "date": "2026-02-24",
+      "url": "https://github.com/mukgore/handcaptcha/commit/bc2d602e863d578d0eaa983363abb20d1bd16c28",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "f710042cf74854653ee17034a326a7e70970064a",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-23T13:33:16Z",
+      "date": "2026-02-23",
+      "url": "https://github.com/mukgore/handcaptcha/commit/f710042cf74854653ee17034a326a7e70970064a",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7f5bc73cd2d5a29aadc6be88b5dafe48b5d8b9b9",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T13:30:09Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7f5bc73cd2d5a29aadc6be88b5dafe48b5d8b9b9",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "6337c34653e7f869d391c10a85610fcc5dca952b",
+      "subject": "Rename experiment (2).html to handtest.html",
+      "timestamp": "2026-02-22T13:16:10Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/6337c34653e7f869d391c10a85610fcc5dca952b",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "611c11e80bc70c07681d91cb206d27dd7496f8fa",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T13:13:47Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/611c11e80bc70c07681d91cb206d27dd7496f8fa",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "5d46e5eca23b18057bb1c6ba7bd5c080032e3d58",
+      "subject": "Create a.nojekyll",
+      "timestamp": "2026-02-22T13:13:13Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/5d46e5eca23b18057bb1c6ba7bd5c080032e3d58",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "626180919128e15f44f51ececc024fa2ebeab94d",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T13:09:21Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/626180919128e15f44f51ececc024fa2ebeab94d",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "7fabf7a276cd4fe6e9489ef47e43ec923ac1f184",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T12:58:25Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/7fabf7a276cd4fe6e9489ef47e43ec923ac1f184",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "f883e42b931337cb5a958c02887912caab02df96",
+      "subject": "Create index.html",
+      "timestamp": "2026-02-22T11:24:36Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/f883e42b931337cb5a958c02887912caab02df96",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "3cbd70b84447fba5ed917eb3d6122b23604f4934",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T11:06:03Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/3cbd70b84447fba5ed917eb3d6122b23604f4934",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    },
+    {
+      "sha": "58b1f7a5b8f55b57c0357ea3d973547cdb2d27d6",
+      "subject": "Add files via upload",
+      "timestamp": "2026-02-22T11:03:01Z",
+      "date": "2026-02-22",
+      "url": "https://github.com/mukgore/handcaptcha/commit/58b1f7a5b8f55b57c0357ea3d973547cdb2d27d6",
+      "source": "github_main",
+      "repo": "handcaptcha"
+    }
+  ],
+  "coverage": "GitHub main complete REST pages; selected work branch Git history from preserved local checkouts, remote tips verified through GitHub API. Other branches excluded."
+}
