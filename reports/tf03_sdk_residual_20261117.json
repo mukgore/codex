@@ -1,0 +1,107 @@
+{
+  "CCD_clearance": false,
+  "SDK_forwards_n": 0,
+  "accepted_into_pool_n": 0,
+  "assumptions": {
+    "backend_error_bounds_validated": false,
+    "basic_arithmetic": "IEEE binary32/binary64, ordinary finite reductions/FMA, bounded underflow",
+    "float32_sin_cos_absolute_error": 1e-06,
+    "float64_transcendental_absolute_error": 1e-14,
+    "producer_polynomial_absolute_error": 1e-12
+  },
+  "attempted_intervals_n": 42,
+  "backend_error_bounds_validated": false,
+  "base_version": "conditional_scipy_1101_sdk_rodrigues_lbs_boxes_v2_correlated_scale",
+  "cases": [
+    {
+      "attempted_intervals_n": 13,
+      "case_id": "right_s7",
+      "complete_conditional_parent": false,
+      "finite_terminal_intervals_n": 6,
+      "maximum_finite_chord_remainder_native": 0.006795094727657491,
+      "original_interval_idx": 5,
+      "subdivision_idx": 7,
+      "terminal_intervals_n": 7,
+      "unresolved_reasons": [
+        "SDK_SHIFTED_NORM_INCLUDES_ZERO"
+      ],
+      "unresolved_terminal_intervals_n": 1
+    },
+    {
+      "attempted_intervals_n": 13,
+      "case_id": "right_s19",
+      "complete_conditional_parent": true,
+      "finite_terminal_intervals_n": 7,
+      "maximum_finite_chord_remainder_native": 0.048718672956161245,
+      "original_interval_idx": 6,
+      "subdivision_idx": 4,
+      "terminal_intervals_n": 7,
+      "unresolved_reasons": [],
+      "unresolved_terminal_intervals_n": 0
+    },
+    {
+      "attempted_intervals_n": 13,
+      "case_id": "right_s19",
+      "complete_conditional_parent": false,
+      "finite_terminal_intervals_n": 6,
+      "maximum_finite_chord_remainder_native": 0.003217860098184744,
+      "original_interval_idx": 16,
+      "subdivision_idx": 6,
+      "terminal_intervals_n": 7,
+      "unresolved_reasons": [
+        "SDK_SHIFTED_NORM_INCLUDES_ZERO"
+      ],
+      "unresolved_terminal_intervals_n": 1
+    },
+    {
+      "attempted_intervals_n": 3,
+      "case_id": "left_s19",
+      "complete_conditional_parent": true,
+      "finite_terminal_intervals_n": 2,
+      "maximum_finite_chord_remainder_native": 0.0004998263247261758,
+      "original_interval_idx": 12,
+      "subdivision_idx": 0,
+      "terminal_intervals_n": 2,
+      "unresolved_reasons": [],
+      "unresolved_terminal_intervals_n": 0
+    }
+  ],
+  "complete_conditional_parents_n": 2,
+  "continuous_collision_free_proven": false,
+  "finite_terminal_intervals_n": 21,
+  "max_depth": 6,
+  "maximum_attempts_n": 508,
+  "model_buffers_loaded_from_saved_npz": true,
+  "model_instantiations_n": 0,
+  "new_observation_frames_n": 0,
+  "prior_finite_leaves_recomputed_n": 0,
+  "release_allowed": false,
+  "residual_parents_n": 4,
+  "scope": "four_v2_residual_time_intervals_bounded_conditional_refinement",
+  "terminal_intervals_n": 23,
+  "timing": {
+    "ended_utc_epoch_ns": 1794925121138336200,
+    "own_cpu_ns": 10343750000,
+    "scope": "residual preparation/evaluation/store and source rechecks; initial receipt verification excluded",
+    "started_utc_epoch_ns": 1794925110436893100,
+    "wall_ns": 10698519700
+  },
+  "unresolved_terminal_intervals_n": 2,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 11,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "17ae890a815732866e3d36f1ff88ac724af4b921",
+  "recorded_input_files_n": 928,
+  "recorded_dependency_pins_n": 17,
+  "partition_tree_and_log_checked": true,
+  "finite_arrays_shape_and_order_checked": true,
+  "limitations": [
+    "Finite interval candidates retain the original unvalidated backend error assumptions.",
+    "The 764 prior finite leaves were not recomputed; terminal counts are a new unequal-width partition.",
+    "Two complete residual parents are conditional enclosures, not CCD, biological or security admission."
+  ]
+}
