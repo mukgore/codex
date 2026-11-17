@@ -72,3 +72,7 @@ R7 process 전체 회귀 후속: 초기362개 전체 실행의 latest timing 가
 ## R8 실제 known-source/localhost 기록 후속
 
 [원문JS·known reference/정지/schema3사례](deliveries/2026-11-17_local_http_timing.md)를 생산b8481bc에서 새 기록 실행했다. 입력22/6pin/출력8·11요청 대응과 source1개/모델0/원본불변을 검산했다. reference 시험 동작1회/재사용false, 정지 score통과·offline gate거부, schema400을 구분했다. 다음은 R9 독립 세션의 기존 raw 재검산/재현 범위 명세다. 실제 모델/강한 같은 정보 공격/카메라·신뢰입력/독립평가와 전체62ID/3D44표행/R0–R9 인수는 계속 미완료다.
+
+## R9 읽기 전용 재구성 후속
+
+[별도4process의 기존 raw 재구성](deliveries/2026-11-17_runtime_reconstruction.md)을 생산3f65d17에서 실행했다. 입력807/6pin/24출력과 원출력812·공개JSON4/CSV59행 일치를 검산했다. 전체382검사(skip1) 통과. 모델/Node/HTTP 측정 반복0이며 독립 구현/제3자/새 실측 세션은 아니므로 R9 전체 인수는 열어 둔다. [runtime 보고서 색인](../reports/runtime_benchmark/README.md)으로 R0–R9 증거/미완료를 연결했다. 등록21촬영 source_path0을 다시 확인했다. 다음은 전체 큐와 지정 입력/자산 상태 재대조이며 실제 모델/카메라/운영·독립 평가와 전체62ID/3D44표행 요구를 축소하지 않는다.

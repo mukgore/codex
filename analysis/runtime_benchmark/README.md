@@ -42,3 +42,7 @@ operation 시간에서 trace write를 제외하고 Python/PTS/결과 변환+trac
 ## 실제 known-source localhost 계측 — 2026-11-17
 
 [사전등록/실제결과](../../docs/deliveries/2026-11-17_local_http_timing.md). `local_http_probe`의3사례는 기존8source를 준비한 뒤 고정1source의 reference/정지/schema를 원문JS와 새 localhost에 제출했다. 입력22/연구6pin/출력8·client/server11요청 대응을 확인했다. 공개 JSON과 요청11행 CSV는 source ID/원clock/hash를 제외하고 같은 client trace 시작→본문 수신과 server inclusive 구간을 구분한다. 실제 모델/영상추론/카메라/first pixel/hold/과거·운영인증 결과가 아니다. 이미 완료한 이 실행은 반복하지 않으며 R9 독립 재현은 별도 명세/새 기록으로 구분한다.
+
+## R9 별도 process 읽기 전용 재구성 — 2026-11-17
+
+[방법/기록](../../docs/deliveries/2026-11-17_runtime_reconstruction.md) · [보고서 색인](../../reports/runtime_benchmark/README.md). `reconstruction_audit`는 고정4작업을 별도 Python process에 배정해 기존 raw/receipt로 집계를 재생성하고 공개 JSON4/CSV59행과 비교했다. 원출력812와 새24출력 검산을 통과했다. 기존 모델·Node scoring·HTTP 측정은 반복하지 않았다. 독립 구현/제3자/새 실측 세션이 아니며 R9 전체 조건 인수는 미완료다. 새 실행은 별도 사전등록/plan/config/record/output과 전체 snapshot을 사용한다.

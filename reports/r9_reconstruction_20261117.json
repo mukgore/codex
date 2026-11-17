@@ -1,0 +1,85 @@
+{
+  "scope": "fresh_process_readonly_reconstruction_not_measurement_reexecution",
+  "jobs_n": 4,
+  "jobs": [
+    {
+      "kind": "mediapipe",
+      "status": "MATCH",
+      "source_recorded_outputs_n": 391,
+      "published_json_match": true,
+      "published_csv_rows_n": 48,
+      "details": {
+        "videos_n": 48,
+        "stored_prediction_frames_n": 1200,
+        "detected_frames_n": 769,
+        "raw_prediction_metrics_match": true,
+        "score_rows_reaggregated_n": 96,
+        "scoring_js_rerun": false,
+        "stored_journal_bundle_match": true
+      }
+    },
+    {
+      "kind": "stage_profile",
+      "status": "MATCH",
+      "source_recorded_outputs_n": 11,
+      "published_json_match": true,
+      "published_csv_rows_n": null,
+      "details": {
+        "synthetic_cases_n": 5,
+        "raw_summary_roundtrip": true
+      }
+    },
+    {
+      "kind": "process_replay",
+      "status": "MATCH",
+      "source_recorded_outputs_n": 41,
+      "published_json_match": true,
+      "published_csv_rows_n": null,
+      "details": {
+        "synthetic_cases_n": 7,
+        "raw_summary_roundtrip": true
+      }
+    },
+    {
+      "kind": "local_http",
+      "status": "MATCH",
+      "source_recorded_outputs_n": 8,
+      "published_json_match": true,
+      "published_csv_rows_n": 11,
+      "details": {
+        "known_source_cases_n": 3,
+        "matched_http_requests_n": 11,
+        "raw_summary_roundtrip": true
+      }
+    }
+  ],
+  "all_reconstructions_match": true,
+  "source_execution_records_n": 5,
+  "source_artifact_files_verified_n": 812,
+  "reference_display_recorded_outputs_n": 361,
+  "source_empty_logs_bound_by_plan_and_old_receipts_n": 60,
+  "actual_models_executed_n": 0,
+  "prior_model_or_service_runs_repeated_n": 0,
+  "new_videos_n": 0,
+  "new_human_trials_n": 0,
+  "independent_implementation": false,
+  "new_measurement_session": false,
+  "third_party_authentication_proven": false,
+  "runtime_R9_fully_complete": false,
+  "release_allowed": false,
+  "producer_code_commit": "3f65d171153b22d7cd716be4d7330c4a59c138ae",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 24,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "recorded_input_files_n": 807,
+  "recorded_dependency_pins_n": 6,
+  "limitations": [
+    "Fresh processes reuse existing implementation; not a third-party or independent algorithm validation",
+    "No original model/video/Node/HTTP measurement run was repeated",
+    "R9 actual independent measurement and R5-R8 missing real-input conditions remain incomplete"
+  ]
+}
