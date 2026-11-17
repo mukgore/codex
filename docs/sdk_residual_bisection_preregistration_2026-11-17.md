@@ -8,4 +8,6 @@
 
 측정은 새700초 상한·fresh immutable output/record/config·전체 worktree/입력/17pin snapshot·명령/시각/자체CPU/stdout/stderr/종료/전체 출력 hash를 남긴다. 실행 중에는 작업트리를 편집하거나 커밋하지 않는다. 준비 코드/합성 단위검사와 실제4구간 계산 결과를 구분한다.
 
+v1 기록 준비는 과거 성공 receipt에 포함된 정상0바이트 로그를 snapshot 입력에 직접 등록해 거부됐다. 계산 subprocess는 시작되지 않았고 부분 기록 폴더/설정을 보존한다. 새v2 설정에서는 이 빈 로그만 직접 snapshot 목록에서 제외하고 원래 성공 receipt의 전체 검산으로 존재/0바이트/hash를 연결한다. 깊이·예산·4parent·오차 가정·수학식은 변경하지 않는다.
+
 이분할로 유한 후보가 늘어도 backend 오차 가정의 검증은 되지 않는다. 부모 전체 후보가 생기는지·terminal별 미확정 이유·시도 분모·시간·폭/remainder만 보고한다. `backend_error_bounds_validated=false`, `continuous_collision_free_proven=false`, `CCD_clearance=false`, `release_allowed=false`를 유지한다. continuous narrow phase·생체/물리·사람/운영 승인은 별도 미완료이며 전체62ID·3D44표행·R0–R9를 유지한다. 대시보드는 사용자 지시로 더 수정하지 않는다.
