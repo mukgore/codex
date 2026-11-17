@@ -27,4 +27,6 @@ MediaPipe의 저장 예측을 기존 generated-model projection reference와 비
 
 성공 시 예상24출력: 재생성 JSON4/CSV2/worker result4, 작업별 stdout/stderr8/process result4, 전체 plan/summary2다. 새 계획·공개 기대파일6개·원본812파일·다섯 execution record의 파일·Python/사전등록을 입력 snapshot에 포함한다. 기존 연구6pin만 사용한다. 별도 config/record/output에 새 명령/UTC/wall/자체CPU·producer/worktree·코드/입력/환경 snapshot·postflight·파일 hash를 남긴다. 기록 실행 중 편집/commit 금지다.
 
+**실행 전 입력 표현 보완:** 지정 원본/기록 파일857개 중60개는 정상적인 빈 stdout/stderr log다(원출력55/기록5). 공통 snapshot의 빈 placeholder 입력 거부는 바꾸지 않는다. 비어 있지 않은797파일은 직접 snapshot하고, 빈60파일은 새 plan에 path/0bytes/empty SHA256을 명시해 parent 시작/종료 때 존재·0bytes를 검사하며 기존 receipt의 bytes/hash 검산에도 포함한다. 공개 기대6파일·새 plan/Python/사전등록과 config를 합친 snapshot 입력은807개가 예상된다. 이는 빈 log를 누락/삭제하거나0초 성능값으로 바꾸는 처리가 아니다. 아직 새 기록 명령은 실행하지 않았다.
+
 원log/좌표/모델 예측·개별 hash·절대 clock/경로/PID·receipt는 영구 비공개다. 공개에는 네 종류의 재구성 상태/사례·분모/JSON/CSV 일치와 실제 모델0/새 measurement0만 낸다. 새 모델/카메라·실제 운영/독립 평가·R9 전체 완료를 주장하지 않는다. 전체62ID·3D44표행·R0–R9/실제 입력 우선·root prod/원자료 불변·비공개/Cloud보류를 유지한다.

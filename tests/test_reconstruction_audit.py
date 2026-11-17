@@ -1,6 +1,7 @@
 import copy
 import csv
 import json
+import hashlib
 from pathlib import Path
 import tempfile
 import unittest
@@ -63,6 +64,16 @@ class ReconstructionAuditTests(unittest.TestCase):
             self.assertEqual([r['status'] for r in result['jobs']],['ERROR','TIMEOUT','ERROR','ERROR'])
             self.assertIsNone(result['jobs'][1]['returncode'])
             self.assertTrue((root/'output/summary.private.json').exists())
+
+    def test_empty_old_logs_require_presence_and_unchanged_zero_bytes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'old.log';path.write_bytes(b'')
+            plan=dict(expected_empty_files=[dict(path=str(path),bytes=0,sha256=hashlib.sha256(b'').hexdigest())])
+            with patch.object(audit,'_private',side_effect=fixture_path):
+                audit.check_empty_files(plan);path.write_bytes(b'new output')
+                with self.assertRaises(ValueError):audit.check_empty_files(plan)
+                path.unlink()
+                with self.assertRaises(ValueError):audit.check_empty_files(plan)
 
 
 if __name__=='__main__':unittest.main()

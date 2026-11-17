@@ -1,5 +1,6 @@
 """Four separately launched read-only reconstructions; no original-run restart."""
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,16 @@ import time
 
 from validation_v03.session_artifacts import _private
 from .reconstruction_worker import read
+
+
+def check_empty_files(plan):
+    # The general input snapshot intentionally rejects empty placeholder data.
+    # Legitimate empty old logs remain bound by their old receipt plus this plan.
+    for item in plan.get('expected_empty_files',[]):
+        path=_private(item['path'])
+        if (item.get('bytes')!=0 or item.get('sha256')!=hashlib.sha256(b'').hexdigest()
+                or path.is_symlink() or not path.is_file() or path.stat().st_size!=0):
+            raise ValueError('Registered empty source log changed/missing')
 
 
 def run(plan,output):
@@ -23,6 +34,7 @@ def run(plan,output):
             if key in job:
                 source=_private(job[key])
                 if output.is_relative_to(source) or source.is_relative_to(output):raise ValueError('Audit overlaps source evidence')
+    check_empty_files(data)
     output.mkdir(parents=True,exist_ok=False)
     with (output/'plan.private.json').open('x',encoding='utf-8') as stream:json.dump(data,stream,indent=2);stream.write('\n')
     results=[]
@@ -46,6 +58,7 @@ def run(plan,output):
                 raise ValueError('Worker identity/kind differs')
         with (directory/'process_result.private.json').open('x',encoding='utf-8') as stream:json.dump(result,stream,indent=2);stream.write('\n')
         results.append(result)
+    check_empty_files(data)
     summary=dict(scope='fresh_process_readonly_reconstruction_not_measurement_reexecution',
                  jobs_n=4,jobs=results,parent_pid=os.getpid(),all_reconstructions_match=all(r['status']=='EXITED_ZERO' for r in results),
                  actual_models_executed_n=0,prior_model_or_service_runs_repeated_n=0,new_videos_n=0,new_human_trials_n=0,
