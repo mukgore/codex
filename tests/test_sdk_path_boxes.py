@@ -1,5 +1,9 @@
 from fractions import Fraction
+import importlib.util
 import unittest
+
+if importlib.util.find_spec('mpmath') is None:
+    raise unittest.SkipTest('SDK interval tests require mpmath in the existing optional SDK CPU runtime; no installation is performed')
 
 import numpy as np
 from scipy.spatial.transform import Rotation
@@ -69,6 +73,8 @@ class SDKPathBoxTests(unittest.TestCase):
             r = quaternion_rotvec(matrix_quaternion(m))
             self.assertTrue(contained(r, Rotation.from_matrix(true_matrix).as_rotvec()))
 
+    @unittest.skipUnless(importlib.util.find_spec('torch') is not None and importlib.util.find_spec('smplx') is not None,
+                         'SDK Rodrigues parity requires the existing optional Torch/smplx runtime')
     def test_sdk_shifted_norm_and_small_input_singularity(self):
         import torch
         from smplx.lbs import batch_rodrigues

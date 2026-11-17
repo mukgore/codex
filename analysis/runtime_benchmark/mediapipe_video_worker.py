@@ -100,8 +100,11 @@ def execute(request_path,output,worker_root,stage_profile_output=None):
     with output.open('xb') as stream:stream.write(canonical(result))
 
 
-if __name__=='__main__':
+def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     for n in ('request','output','worker-root'):p.add_argument('--'+n,type=Path,required=True)
     p.add_argument('--stage-profile-output',type=Path)
-    a=p.parse_args();execute(a.request,a.output,a.worker_root)
+    a=p.parse_args(argv);execute(a.request,a.output,a.worker_root,a.stage_profile_output)
+
+
+if __name__=='__main__':main()

@@ -22,3 +22,9 @@ GPU clock adapter, 고정된 실제 입력/모델 manifest, HaMeR 단계별 계�
 `supervisor.run(command_array, new_private_output, cwd=existing_directory, timeout_seconds=...)`는 신뢰하는 로컬 명령을 shell 없이 실행한다. Windows Job Object에 bootstrap을 먼저 연결하고 gate를 연 뒤 명령과 자식들을 실행한다. timeout/중단/정상 leader 종료 모두 job을 닫아 남은 자식을 회수한다. POSIX는 새 process group을 사용하며 스스로 group을 벗어나는 비신뢰 코드를 격리하는 보안 sandbox는 아니다.
 
 worker는 환경 변수 `RUNTIME_JOURNAL_DIRECTORY`에 Journal을 작성할 수 있다. supervisor_result.json의 감독기 상태와 worker 복구 상태는 별개다. exit0만으로 완료가 되지 않으며 정상 journal의 COMPLETED도 요구한다. 강제 종료는 worker 기록에 가짜 종료 event를 덧붙이지 않는다. supervisor 경과시간은 시작/회수 오버헤드 포함이고 실제 모델 성능과 구분한다. 명령/cwd는 private manifest에 보관하고 stdout/stderr는 수집하지 않는다.
+
+## 선택적 native extraction stage profile — 2026-11-17
+
+[작업/검사 범위](../../docs/deliveries/2026-11-17_stage_profile_fixture.md). 다음 새 worker 실행에서 `--stage-profile-output NEW_PRIVATE_DIRECTORY`를 선택하면 원stage1 함수의 decode/RGB/Hands setup/process/close 호출을 계측한다. profile directory는 새 predictions와 같은 parent 안의 새 경로다. 정상·예외 참조 복원, call/gap 배타적 합, raw→summary 재생성을 검산했다. 실제 패키지 module을 수정하거나 추가 모델/read를 호출하지 않는다.
+
+operation 시간에서 trace write를 제외하고 Python/PTS/결과 변환+trace I/O gap을 별도로 보존한다. gap을 순수 좌표 변환 시간이나 Hands.process를 단일 CNN forward로 읽지 않는다. 현재 실제모델 반복0·합성5경로 검산이며 실제 MediaPipe/HaMeR 단계 성능, cold/warm/GPU/온라인/인증 완료는 아니다. 기존 완료 추론/시간은 보존하며 새 계측 때문에 반복하지 않는다.

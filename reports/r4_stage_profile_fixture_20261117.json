@@ -1,0 +1,104 @@
+{
+  "scope": "synthetic_instrumentation_fixture_only",
+  "cases_n": 5,
+  "cases": [
+    {
+      "case": "complete",
+      "legacy_exception_type": null,
+      "semantics_match": true,
+      "namespace_restored": true,
+      "state": {
+        "close_n": 1,
+        "decoded_n": 2,
+        "process_attempts_n": 2,
+        "release_n": 1
+      },
+      "profile_status": "COMPLETED",
+      "profile_recovery_status": "COMPLETED",
+      "actual_model_executed": false
+    },
+    {
+      "case": "process_error",
+      "legacy_exception_type": "RuntimeError",
+      "semantics_match": true,
+      "namespace_restored": true,
+      "state": {
+        "close_n": 1,
+        "decoded_n": 2,
+        "process_attempts_n": 2,
+        "release_n": 1
+      },
+      "profile_status": "ERROR",
+      "profile_recovery_status": "ERROR",
+      "actual_model_executed": false
+    },
+    {
+      "case": "decode_open_error",
+      "legacy_exception_type": "FileNotFoundError",
+      "semantics_match": true,
+      "namespace_restored": true,
+      "state": {
+        "close_n": 0,
+        "decoded_n": 0,
+        "process_attempts_n": 0,
+        "release_n": 0
+      },
+      "profile_status": "ERROR",
+      "profile_recovery_status": "ERROR",
+      "actual_model_executed": false
+    },
+    {
+      "case": "rgb_error",
+      "legacy_exception_type": "RuntimeError",
+      "semantics_match": true,
+      "namespace_restored": true,
+      "state": {
+        "close_n": 1,
+        "decoded_n": 1,
+        "process_attempts_n": 0,
+        "release_n": 1
+      },
+      "profile_status": "ERROR",
+      "profile_recovery_status": "ERROR",
+      "actual_model_executed": false
+    },
+    {
+      "case": "close_error",
+      "legacy_exception_type": "RuntimeError",
+      "semantics_match": true,
+      "namespace_restored": true,
+      "state": {
+        "close_n": 1,
+        "decoded_n": 2,
+        "process_attempts_n": 2,
+        "release_n": 1
+      },
+      "profile_status": "ERROR",
+      "profile_recovery_status": "ERROR",
+      "actual_model_executed": false
+    }
+  ],
+  "actual_models_executed_n": 0,
+  "actual_model_stage_times_measured": false,
+  "past_model_runs_repeated_n": 0,
+  "new_human_trials_n": 0,
+  "new_videos_n": 0,
+  "profile_raw_summary_roundtrip_all": true,
+  "release_allowed": false,
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 11,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "producer_code_commit": "1a9e7ba44784b332af174b27dd3f20614d98251e",
+  "recorded_input_files_n": 4,
+  "recorded_dependency_pins_n": 6,
+  "limitations": [
+    "Actual monotonic clocks timed synthetic interfaces, not MediaPipe/HaMeR performance.",
+    "Legacy source definition executed with synthetic dependencies, not its runtime import/resources.",
+    "No cold/warm, GPU, live-camera or authentication latency validation."
+  ],
+  "duration_export_policy": "fixture durations stay private; no MediaPipe/HaMeR performance inference"
+}

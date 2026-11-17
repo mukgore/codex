@@ -48,3 +48,9 @@ GitHub push는 여전히 보류다. 자동 승인 검토는 정확한 전송 내
 ## 조건부 SDK 경계 구현 갱신
 
 [실제 변환/float32/Rodrigues/LBS의 조건부 시간구간 계산과 refinement](deliveries/2026-11-17_conditional_sdk_envelopes.md)을 구현/실행했다. v1/v2의 오차 가정·모델buffer는 동일하고32raw출력을 보존했다. v2의764/768유한 후보·196저장관측 포함을 실제 backend 보증으로 확대하지 않는다. 남은4leaf·미검증 error assumptions·continuous narrow phase는 미완료다. 앞 단계 실제 촬영/선별·대응/독립평가/운영 입력과 R0–R9의 실제 stage별 시간 검증도 대기이며 전체 큐를 유지한다. 다음 독립 작업 선택은 원래 우선순위와 입력을 다시 대조한다.
+
+## 앞 단계4/R4 계측 준비 갱신
+
+G03 조건부 경계의 남은 사항은 보존하고 앞 단계의 시간 계측 공백으로 돌아왔다. [선택적 MediaPipe stage hook/합성5경로](deliveries/2026-11-17_stage_profile_fixture.md)를 구현/기록 검산했다.14검사·11출력 검산은 준비 코드의 의미/기록 근거이며 실제 모델 성능이 아니다. 완료 모델 추론 반복0·과거 시간 소급0이다. 실제 HaMeR 자산/새 촬영/독립평가·cold/warm/GPU·온라인/운영 인수 입력은 계속 필요하며 전체62ID/3D44표행/R0–R9는 유지한다.
+
+R4 이후 독립 구현 큐를 다시 검색했다. 현재 runtime 모듈에는 도착하지 않은 프레임을 모델에서 차단하는 R7 replay queue 구현이 없으므로 다음은 그 계약과 고정 도착/drop 기록의 준비다. 실제 모델/카메라/서버 종점 검증과 코드/합성 queue 검산은 계속 구분한다.
