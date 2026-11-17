@@ -1,5 +1,7 @@
 # HaMeR·공격 실행시간 다조건 검증 TODO — 2026-11-04
 
+**2026-11-17 R7 process 재생 검산:** [별도 worker/current-batch 전달과 고정7사례](deliveries/2026-11-17_process_replay_fixture.md)를 기록 실행했고41출력 검산을 통과했다. 모델/원영상/사람/게이트/서버 실행0이며 FIFO/latest·EOS·timeout/handler error/exit/setup 분모를 구분했다. 원log/clock/hash는 private, 공개 집계에는 합성 성능값을 제외했다. R7 실제 모델/관문·R8 전체 흐름·독립 세션 인수는 미완료이며 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0과 실제 입력 우선/원본 불변/비공개/Cloud보류를 유지한다.
+
 **2026-11-17 R4 계측 준비:** [선택적 stage 계측과 합성5경로 검산](deliveries/2026-11-17_stage_profile_fixture.md)을 추가했다. 실제 모델/완료 추론 재실행0, 합성 source 함수의 결과·예외·정리/복원과 raw event→summary 일치를 확인했고14검사/11출력 검산을 통과했다. 실제 모델의 새 단계 시간·cold/warm·GPU/온라인/인증은 미검증이며 과거 시간을 소급하지 않는다. G03의 미확정4leaf/미검증 오차와 전체62ID·3D44표행·R0–R9/실제입력 우선을 유지한다.
 
 ## 1. 목적과 현재 근거

@@ -1,5 +1,7 @@
 # 다음 로컬 세션을 위한 인계 — 2026-11-16 최종 정리
 
+**2026-11-17 R7 process 재생 검산:** [별도 worker/current-batch 전달과 고정7사례](deliveries/2026-11-17_process_replay_fixture.md)를 기록 실행했고41출력 검산을 통과했다. 모델/원영상/사람/게이트/서버 실행0이며 FIFO/latest·EOS·timeout/handler error/exit/setup 분모를 구분했다. 원log/clock/hash는 private, 공개 집계에는 합성 성능값을 제외했다. R7 실제 모델/관문·R8 전체 흐름·독립 세션 인수는 미완료이며 전체62ID/3D44표행/R0–R9·등록21촬영 source_path0과 실제 입력 우선/원본 불변/비공개/Cloud보류를 유지한다.
+
 **2026-11-17 R7 원로그 준비 후속:** [queue 원로그 복구·fresh private 보존](r7_arrival_queue_contract_2026-11-17.md#후속-원로그-복구와-비공개-보존)을 추가했다. queue17/stage·journal포함35검사 통과, 계획 미도착/drop/처리 중 미완료·prefix/손상·시간/정책 불일치를 구별한다. storage 종료를 queue 완료로 만들지 않으며 새 실제 모델/영상/재생 실험0이다. 다음은 고정 도착 일정과 별도 worker process scheduling 연결·새 실행 사전등록이다. 아래 원로그가 다음이라는 문장은 이 후속 전 상태다. 실제 모델/관문/서버·R7 전체 완료는 계속 미충족이다.
 
 **2026-11-17 R7 API 준비:** [도착 queue 계약/합성8검사](r7_arrival_queue_contract_2026-11-17.md)를 추가했고 stage/journal과26검사를 통과했다. FIFO/latest·batch 대기·기한·미완료 기록의 API 검산이며 실제 모델/영상 재실행0이다. 다음은 raw event의 독립 재구성/보존과 producer/worker process 재생 연결이다. 실제 모델·관문/서버·독립 세션은 미완료이며 R7 전체 완료로 닫지 않는다. R4 보존/CLI 수정은 로컬 dfd12c4에 있고, 승인된 원격은68417fc로 재확인했다. 전체 우선순위/백로그/비공개/기존 원본 불변은 유지한다.

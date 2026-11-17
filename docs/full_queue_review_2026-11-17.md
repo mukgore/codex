@@ -58,3 +58,9 @@ R4 이후 독립 구현 큐를 다시 검색했다. 현재 runtime 모듈에는 
 후속 갱신: [R7 도착 queue API 계약](r7_arrival_queue_contract_2026-11-17.md)과 합성8검사를 추가했고 stage/journal과 합해26검사를 통과했다. producer/worker 실제 재생·raw 복구/재집계·모델/관문·서버 연결은 다음 단계다. 위 ‘구현 없음’은 이번 API 추가 전 검색 이력이며 실제 R7 완료 조건은 여전히 미충족이다.
 
 원로그 후속: 같은 계약에 version/config/계획 frame header와 원bytes의 정책 재생·분모/시간 검산 및 fresh private 보존을 추가했다. queue17/stage·journal포함35검사가 통과했다. prefix/미완료/손상과 미도착을 완료로 바꾸지 않는다. 다음은 실제 producer/worker scheduling 준비이며 모델/관문/서버·전체62ID/3D44표행/R0–R9 인수 대기는 유지한다.
+
+## R7 별도 process 재생 기록 후속
+
+[고정7합성 사례](deliveries/2026-11-17_process_replay_fixture.md)를 생산3d00b92에서 실행했고 입력3/연구6pin/41출력·postflight 검산을 통과했다. 부모 timed release/별도 worker의 현재 batch bytes와 queue 분모를 확인했다. 실제 모델/원영상/사람/게이트/서버0이며 R7 전체 인수는 미완료다. 등록21촬영의 source_path0도 다시 확인했다. 다음 독립 작업은 기존 R8 localhost 코드의 타이밍/판정 계약 점검과 연결 준비다. 전체62ID/3D44표행/R0–R9/원래 앞 단계 실제 입력 우선·원본/비공개/Cloud보류는 유지한다.
+
+R7 process 전체 회귀 후속: 초기362개 전체 실행의 latest timing 가정1실패를 확인하고 실제 arrival에 따른 정책 검산과 지연 회귀를 추가했다. 최종 `Ran 363, OK(skipped=1)`이며 skip은 기본 환경의 optional SDK mpmath 모듈이다. 원래7사례41출력은 변경/재실행하지 않았다.

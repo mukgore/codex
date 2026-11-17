@@ -1,5 +1,7 @@
 # R7 도착 대기열 계약과 현재 검산 — 2026-11-17
 
+**후속 실제 process 연결:** [고정7합성 사례/41출력](deliveries/2026-11-17_process_replay_fixture.md)의 부모 timed release·별도 worker/current batch 전달을 기록 검산했다. 최종 전체363검사(skip1) 통과이며 실제 모델/관문/서버 인수는 미완료다. 아래 scheduling이 다음이라는 문장은 이 후속 전 단계다.
+
 R4의 실제 HaMeR/새 모델 계측과 R6의 같은 정보 공격 비교는 입력/자산 대기다. 그 선행 조건을 완료 처리하지 않고, 독립적으로 준비할 수 있는 R7 대기열 API를 추가했다. [구현](../analysis/runtime_benchmark/arrival_queue.py) · [합성 회귀 검사](../tests/test_arrival_queue.py). 실제 영상/모델/사람/서버를 실행한 결과가 아니다.
 
 ## 정보와 시계 경계

@@ -1,0 +1,144 @@
+{
+  "scope": "synthetic_preloaded_timed_release_transport_fixture",
+  "cases_n": 7,
+  "cases": [
+    {
+      "case": "fifo",
+      "status": "COMPLETED",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 4,
+      "arrived_frames_n": 4,
+      "finished_frames_n": 2,
+      "dropped_frames_n": 2,
+      "unfinished_frames_n": 0,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 0,
+      "outcomes": {
+        "response_ready": 2
+      },
+      "drop_reasons": {
+        "incoming_overflow": 2
+      },
+      "queue_state": "COMPLETED",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "latest",
+      "status": "COMPLETED",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 4,
+      "arrived_frames_n": 4,
+      "finished_frames_n": 2,
+      "dropped_frames_n": 2,
+      "unfinished_frames_n": 0,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 0,
+      "outcomes": {
+        "response_ready": 2
+      },
+      "drop_reasons": {
+        "replaced_by_latest": 2
+      },
+      "queue_state": "COMPLETED",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "partial_no_detection",
+      "status": "COMPLETED",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 1,
+      "arrived_frames_n": 1,
+      "finished_frames_n": 1,
+      "dropped_frames_n": 0,
+      "unfinished_frames_n": 0,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 0,
+      "outcomes": {
+        "no_detection": 1
+      },
+      "drop_reasons": {},
+      "queue_state": "COMPLETED",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "timeout",
+      "status": "TIMEOUT",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 2,
+      "arrived_frames_n": 1,
+      "finished_frames_n": 0,
+      "dropped_frames_n": 0,
+      "unfinished_frames_n": 1,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 1,
+      "outcomes": {},
+      "drop_reasons": {},
+      "queue_state": "TIMEOUT",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "handler_error",
+      "status": "ERROR",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 1,
+      "arrived_frames_n": 1,
+      "finished_frames_n": 1,
+      "dropped_frames_n": 0,
+      "unfinished_frames_n": 0,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 0,
+      "outcomes": {
+        "error": 1
+      },
+      "drop_reasons": {},
+      "queue_state": "ERROR",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "worker_crash",
+      "status": "ERROR",
+      "queue_created": true,
+      "exposure_correspondence_match": true,
+      "planned_frames_n": 1,
+      "arrived_frames_n": 1,
+      "finished_frames_n": 0,
+      "dropped_frames_n": 0,
+      "unfinished_frames_n": 1,
+      "unsettled_frames_n": 0,
+      "not_arrived_frames_n": 0,
+      "outcomes": {},
+      "drop_reasons": {},
+      "queue_state": "ERROR",
+      "raw_reconstruction_match": true
+    },
+    {
+      "case": "setup_error",
+      "status": "ERROR",
+      "queue_created": false,
+      "exposure_correspondence_match": true
+    }
+  ],
+  "actual_models_executed_n": 0,
+  "past_model_runs_repeated_n": 0,
+  "new_videos_n": 0,
+  "new_human_trials_n": 0,
+  "model_performance_proven": false,
+  "authentication_proven": false,
+  "release_allowed": false,
+  "duration_export_policy": "Synthetic sleep/IPC/clock values stay private; no model performance inference",
+  "producer_code_commit": "3d00b9267c77de65cd57cd0e866df8b0bda877c0",
+  "execution_record": {
+    "integrity": "RECORDED_FILES_MATCH",
+    "mode": "RECORDED_COMMAND_EXECUTION",
+    "state": "EXITED_ZERO",
+    "artifact_files_n": 41,
+    "scientific_result_or_source_authentication_proven": false
+  },
+  "recorded_input_files_n": 3,
+  "recorded_dependency_pins_n": 6
+}

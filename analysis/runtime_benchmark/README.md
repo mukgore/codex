@@ -30,3 +30,7 @@ worker는 환경 변수 `RUNTIME_JOURNAL_DIRECTORY`에 Journal을 작성할 수 
 [작업/검사 범위](../../docs/deliveries/2026-11-17_stage_profile_fixture.md). 다음 새 worker 실행에서 `--stage-profile-output NEW_PRIVATE_DIRECTORY`를 선택하면 원stage1 함수의 decode/RGB/Hands setup/process/close 호출을 계측한다. profile directory는 새 predictions와 같은 parent 안의 새 경로다. 정상·예외 참조 복원, call/gap 배타적 합, raw→summary 재생성을 검산했다. 실제 패키지 module을 수정하거나 추가 모델/read를 호출하지 않는다.
 
 operation 시간에서 trace write를 제외하고 Python/PTS/결과 변환+trace I/O gap을 별도로 보존한다. gap을 순수 좌표 변환 시간이나 Hands.process를 단일 CNN forward로 읽지 않는다. 현재 실제모델 반복0·합성5경로 검산이며 실제 MediaPipe/HaMeR 단계 성능, cold/warm/GPU/온라인/인증 완료는 아니다. 기존 완료 추론/시간은 보존하며 새 계측 때문에 반복하지 않는다.
+
+## 별도 worker timed-release 연결 — 2026-11-17
+
+[고정7합성 사례/41출력 기록](../../docs/deliveries/2026-11-17_process_replay_fixture.md)을 확인했다. `arrival_replay.run`은 preloaded pixels를 일정 offset 이후 부모 ingress에서 전달하고 `replay_worker`는 현재 batch만 받는다. 실제 도착/lateness·queue/drop·IPC 포함 service·setup/release/cleanup을 구분한다. 신뢰하는 로컬 handler의 process/API 경계이며 악성 코드 sandbox나 실제 카메라/모델/인증 성능은 아니다. 새 실제 실행은 별도 사전등록과 execution_record를 사용한다.
