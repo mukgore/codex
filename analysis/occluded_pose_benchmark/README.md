@@ -4,7 +4,7 @@ Offline 2D/3D/recorded-video joint-estimation experiments. No CAPTCHA scoring en
 
 ## Grouped-split result
 
-The synthetic split groups both clips from each generator PRNG seed together: seeds 1–16 train, 17–20 validation, and 21–24 test. This prevents the two correlated clips emitted by one random stream from crossing partitions. Hyperparameters and model choice use validation data. The table uses 15 evenly spaced frames per test clip; NME is palm-normalized image-plane distance (lower is better), and PCK@0.2 is the share of joints within 0.2 palm lengths.
+The synthetic split groups both clips from each generator PRNG seed together: seeds 1-16 train, 17-20 validation, and 21-24 test. This prevents the two correlated clips emitted by one random stream from crossing partitions. Hyperparameters and model choice use validation data. The table uses 15 evenly spaced frames per test clip; NME is palm-normalized image-plane distance (lower is better), and PCK@0.2 is the share of joints within 0.2 palm lengths.
 
 | Domain | Selected model | Test clips / frames | Model NME | HaMeR NME | Model PCK@0.2 | HaMeR PCK@0.2 | Model hidden NME | HaMeR hidden NME |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
