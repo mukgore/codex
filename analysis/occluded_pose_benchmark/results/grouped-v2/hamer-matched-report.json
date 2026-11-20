@@ -1,0 +1,134 @@
+{
+  "scope": "offline image-plane coordinates; same score frames; HaMeR given hand side",
+  "reference_source": {
+    "2d": "projected rig",
+    "3d": "projected rig",
+    "recorded": "legacy tracker estimates"
+  },
+  "hamer_crop": "fixed centered full-frame crop without joint annotations",
+  "selection_metric": "validation NME; lower is better",
+  "frames_per_clip_requested": 15,
+  "domains": {
+    "2d": {
+      "hamer": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.15191226825792345,
+        "pck_20": 0.784920634920635,
+        "hidden_nme": 0.13776568507249876
+      },
+      "selected": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.005477464803020804,
+        "pck_20": 1.0,
+        "hidden_nme": 0.0036980175138943186
+      },
+      "train_mean_control": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.45376539823650835,
+        "pck_20": 0.23809523809523808,
+        "hidden_nme": 0.4142495214142428
+      },
+      "frozen_first_frame_control": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.03542780716215146,
+        "pck_20": 1.0,
+        "hidden_nme": 0.024986303485507615
+      },
+      "selected_model": "temporal_edges_ridge",
+      "validation_nme": 0.004830387388988982
+    },
+    "3d": {
+      "hamer": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.13740554033433056,
+        "pck_20": 0.8757936507936508,
+        "hidden_nme": 0.12913581848341188
+      },
+      "selected": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.004913755703781102,
+        "pck_20": 1.0,
+        "hidden_nme": 0.003603854508883859
+      },
+      "train_mean_control": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.45376539823650835,
+        "pck_20": 0.23809523809523808,
+        "hidden_nme": 0.4142495214142428
+      },
+      "frozen_first_frame_control": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 120,
+        "reference_frames": 120,
+        "nme": 0.035078074172711624,
+        "pck_20": 1.0,
+        "hidden_nme": 0.024443189697156253
+      },
+      "selected_model": "temporal_edges_ridge",
+      "validation_nme": 0.0046933560356670675
+    },
+    "recorded": {
+      "hamer": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.2080502204699244,
+        "pck_20": 0.753968253968254,
+        "hidden_nme": null
+      },
+      "selected": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.19995061457054963,
+        "pck_20": 0.6142857142857143,
+        "hidden_nme": null
+      },
+      "train_mean_control": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.18583301884431883,
+        "pck_20": 0.6523809523809524,
+        "hidden_nme": null
+      },
+      "frozen_first_frame_control": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.20492319535979514,
+        "pck_20": 0.5555555555555556,
+        "hidden_nme": null
+      },
+      "selected_model": "three_frame_cnn",
+      "validation_nme": 0.19842474344759606
+    }
+  }
+}
+
