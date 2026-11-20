@@ -1,0 +1,391 @@
+{
+  "scope": "offline_xy_landmark_estimation_pilot",
+  "metrics": "clip-macro palm-normalized image-plane distance (NME) and PCK@0.2",
+  "recorded_reference": "existing tracker annotations, not independent anatomical ground truth",
+  "synthetic_split": {
+    "seed_groups": {
+      "train": "1-16",
+      "validation": "17-20",
+      "test": "21-24"
+    },
+    "group_key": "generator PRNG seed; both clips kept together"
+  },
+  "recorded_split": {
+    "custom01": "train",
+    "custom02": "train",
+    "custom06": "train",
+    "custom04": "train",
+    "custom05": "train",
+    "custom07": "validation",
+    "custom03": "test",
+    "custom08": "test"
+  },
+  "domains": {
+    "2d": {
+      "partition_clips": {
+        "train": 32,
+        "validation": 8,
+        "test": 8
+      },
+      "selected": {
+        "model": "temporal_edges_ridge",
+        "penalty": 0.01,
+        "validation": {
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.004830387388988982,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0035720145276800994
+        }
+      },
+      "validation_trials": [
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.01,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.005109265988066494,
+          "pck_20": 1.0,
+          "hidden_nme": 0.003749904371811454
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.1,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.005520507736442053,
+          "pck_20": 1.0,
+          "hidden_nme": 0.00408728779923781
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 1.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.008082091358322104,
+          "pck_20": 1.0,
+          "hidden_nme": 0.006179988335497542
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 10.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.016436691848266693,
+          "pck_20": 1.0,
+          "hidden_nme": 0.013008616294590394
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.01,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.004830387388988982,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0035720145276800994
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.1,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.005390788181008226,
+          "pck_20": 1.0,
+          "hidden_nme": 0.004028059252276558
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 1.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.007939515392155991,
+          "pck_20": 1.0,
+          "hidden_nme": 0.006207372919821856
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 10.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.016063256010146156,
+          "pck_20": 1.0,
+          "hidden_nme": 0.01297880581598643
+        }
+      ],
+      "held_out": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 296,
+        "reference_frames": 296,
+        "nme": 0.005478043239716615,
+        "pck_20": 1.0,
+        "hidden_nme": 0.0036986727037417576
+      },
+      "hamer": {
+        "state": "not_measured_on_this_pilot"
+      }
+    },
+    "3d": {
+      "partition_clips": {
+        "train": 32,
+        "validation": 8,
+        "test": 8
+      },
+      "selected": {
+        "model": "temporal_edges_ridge",
+        "penalty": 0.01,
+        "validation": {
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.0046933560356670675,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0036025308201818565
+        }
+      },
+      "validation_trials": [
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.01,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.004958220933662327,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0037726408182230534
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.1,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.005793484529006286,
+          "pck_20": 1.0,
+          "hidden_nme": 0.004446065114249467
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 1.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.008542686694534627,
+          "pck_20": 1.0,
+          "hidden_nme": 0.006576594234573073
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 10.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.017389620474125393,
+          "pck_20": 1.0,
+          "hidden_nme": 0.01363363300304102
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.01,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.0046933560356670675,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0036025308201818565
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.1,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.0057170947695793905,
+          "pck_20": 1.0,
+          "hidden_nme": 0.004431999619514887
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 1.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.008460554499888577,
+          "pck_20": 1.0,
+          "hidden_nme": 0.0066819315785110025
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 10.0,
+          "clips": 8,
+          "scored_clips": 8,
+          "frames": 300,
+          "reference_frames": 300,
+          "nme": 0.016803847997633223,
+          "pck_20": 1.0,
+          "hidden_nme": 0.013390724988863132
+        }
+      ],
+      "held_out": {
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 296,
+        "reference_frames": 296,
+        "nme": 0.00491040273841549,
+        "pck_20": 1.0,
+        "hidden_nme": 0.0035749303906780472
+      },
+      "hamer": {
+        "state": "not_measured_on_this_pilot"
+      }
+    },
+    "recorded": {
+      "partition_clips": {
+        "train": 5,
+        "validation": 1,
+        "test": 2
+      },
+      "selected": {
+        "model": "temporal_edges_ridge",
+        "penalty": 0.01,
+        "validation": {
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.2194798966018938,
+          "pck_20": 0.5961199294532628,
+          "hidden_nme": null
+        }
+      },
+      "validation_trials": [
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.01,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.23689068834245963,
+          "pck_20": 0.5679012345679012,
+          "hidden_nme": null
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 0.1,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.24514992408314176,
+          "pck_20": 0.5291005291005291,
+          "hidden_nme": null
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 1.0,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.24221507103114195,
+          "pck_20": 0.5696649029982364,
+          "hidden_nme": null
+        },
+        {
+          "model": "rgb_ridge",
+          "penalty": 10.0,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.24949212032554266,
+          "pck_20": 0.5573192239858906,
+          "hidden_nme": null
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.01,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.2194798966018938,
+          "pck_20": 0.5961199294532628,
+          "hidden_nme": null
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 0.1,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.22651409194831867,
+          "pck_20": 0.5731922398589065,
+          "hidden_nme": null
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 1.0,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.23510980174156834,
+          "pck_20": 0.5873015873015873,
+          "hidden_nme": null
+        },
+        {
+          "model": "temporal_edges_ridge",
+          "penalty": 10.0,
+          "clips": 1,
+          "scored_clips": 1,
+          "frames": 27,
+          "reference_frames": 27,
+          "nme": 0.25074270290985123,
+          "pck_20": 0.564373897707231,
+          "hidden_nme": null
+        }
+      ],
+      "held_out": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 55,
+        "reference_frames": 55,
+        "nme": 0.12681674388272873,
+        "pck_20": 0.7682665658856135,
+        "hidden_nme": null
+      },
+      "hamer": {
+        "state": "not_measured_on_this_pilot"
+      }
+    }
+  }
+}

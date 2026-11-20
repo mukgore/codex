@@ -1,0 +1,149 @@
+{
+  "2d": {
+    "selected": "frame_cnn",
+    "epoch": 12,
+    "validation": {
+      "clips": 8,
+      "scored_clips": 8,
+      "frames": 300,
+      "reference_frames": 300,
+      "nme": 0.009432120193993629,
+      "pck_20": 1.0,
+      "hidden_nme": 0.00794853038429329
+    },
+    "validation_trials": [
+      {
+        "temporal_context": false,
+        "epoch": 12,
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 300,
+        "reference_frames": 300,
+        "nme": 0.009432120193993629,
+        "pck_20": 1.0,
+        "hidden_nme": 0.00794853038429329
+      },
+      {
+        "temporal_context": true,
+        "epoch": 16,
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 300,
+        "reference_frames": 300,
+        "nme": 0.009756974847803222,
+        "pck_20": 1.0,
+        "hidden_nme": 0.008233108689919662
+      }
+    ],
+    "held_out": {
+      "clips": 8,
+      "scored_clips": 8,
+      "frames": 296,
+      "reference_frames": 296,
+      "nme": 0.011871223996635701,
+      "pck_20": 1.0,
+      "hidden_nme": 0.009795325371763634
+    },
+    "hamer": {
+      "state": "not_measured_on_this_pilot"
+    }
+  },
+  "3d": {
+    "selected": "frame_cnn",
+    "epoch": 11,
+    "validation": {
+      "clips": 8,
+      "scored_clips": 8,
+      "frames": 300,
+      "reference_frames": 300,
+      "nme": 0.009859972883375742,
+      "pck_20": 1.0,
+      "hidden_nme": 0.008421491522226637
+    },
+    "validation_trials": [
+      {
+        "temporal_context": false,
+        "epoch": 11,
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 300,
+        "reference_frames": 300,
+        "nme": 0.009859972883375742,
+        "pck_20": 1.0,
+        "hidden_nme": 0.008421491522226637
+      },
+      {
+        "temporal_context": true,
+        "epoch": 16,
+        "clips": 8,
+        "scored_clips": 8,
+        "frames": 300,
+        "reference_frames": 300,
+        "nme": 0.010103490218822644,
+        "pck_20": 1.0,
+        "hidden_nme": 0.008760056191392173
+      }
+    ],
+    "held_out": {
+      "clips": 8,
+      "scored_clips": 8,
+      "frames": 296,
+      "reference_frames": 296,
+      "nme": 0.01221782214195475,
+      "pck_20": 1.0,
+      "hidden_nme": 0.010350640814778277
+    },
+    "hamer": {
+      "state": "not_measured_on_this_pilot"
+    }
+  },
+  "recorded": {
+    "selected": "three_frame_cnn",
+    "epoch": 7,
+    "validation": {
+      "clips": 1,
+      "scored_clips": 1,
+      "frames": 27,
+      "reference_frames": 27,
+      "nme": 0.19842474344759606,
+      "pck_20": 0.6225749559082893,
+      "hidden_nme": null
+    },
+    "validation_trials": [
+      {
+        "temporal_context": false,
+        "epoch": 12,
+        "clips": 1,
+        "scored_clips": 1,
+        "frames": 27,
+        "reference_frames": 27,
+        "nme": 0.22262719932880806,
+        "pck_20": 0.5220458553791887,
+        "hidden_nme": null
+      },
+      {
+        "temporal_context": true,
+        "epoch": 7,
+        "clips": 1,
+        "scored_clips": 1,
+        "frames": 27,
+        "reference_frames": 27,
+        "nme": 0.19842474344759606,
+        "pck_20": 0.6225749559082893,
+        "hidden_nme": null
+      }
+    ],
+    "held_out": {
+      "clips": 2,
+      "scored_clips": 2,
+      "frames": 55,
+      "reference_frames": 55,
+      "nme": 0.1994516281899755,
+      "pck_20": 0.6179453262786596,
+      "hidden_nme": null
+    },
+    "hamer": {
+      "state": "not_measured_on_this_pilot"
+    }
+  }
+}

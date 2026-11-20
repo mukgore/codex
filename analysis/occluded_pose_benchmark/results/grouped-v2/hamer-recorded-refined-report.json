@@ -1,0 +1,53 @@
+{
+  "scope": "offline image-plane coordinates; same score frames; HaMeR given hand side",
+  "reference_source": {
+    "2d": "projected rig",
+    "3d": "projected rig",
+    "recorded": "legacy tracker estimates"
+  },
+  "hamer_crop": "fixed centered full-frame crop without joint annotations",
+  "selection_metric": "validation NME; lower is better",
+  "frames_per_clip_requested": 15,
+  "domains": {
+    "recorded": {
+      "hamer": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.2080502204699244,
+        "pck_20": 0.753968253968254,
+        "hidden_nme": null
+      },
+      "selected": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.11065568309519264,
+        "pck_20": 0.8523809523809525,
+        "hidden_nme": null
+      },
+      "train_mean_control": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.18583301884431883,
+        "pck_20": 0.6523809523809524,
+        "hidden_nme": null
+      },
+      "frozen_first_frame_control": {
+        "clips": 2,
+        "scored_clips": 2,
+        "frames": 30,
+        "reference_frames": 30,
+        "nme": 0.12301099704625168,
+        "pck_20": 0.8444444444444444,
+        "hidden_nme": null
+      },
+      "selected_model": "temporal_edges_ridge",
+      "validation_nme": 0.16458075598801397
+    }
+  }
+}
