@@ -12,7 +12,7 @@ import cv2
 import numpy as np
 import torch
 
-from occluded_pose_benchmark import evaluate, features, read_recorded, read_synthetic
+from occluded_pose_benchmark import evaluate, features, read_recorded, read_synthetic, smooth_temporal
 from train_occluded_pose_cnn import image_tensor, network
 
 
@@ -106,8 +106,10 @@ def local_estimator(mode, ridge_weights, cnn_dir, ridge, cnn):
     if cnn['validation']['nme'] < ridge['selected']['validation']['nme']:
         predict, _ = load_local_predictor(cnn_dir / (mode + '.pt'))
         return cnn['selected'], cnn['validation']['nme'], predict
-    predict, _ = load_local_predictor(ridge_weights / (mode + '.npz'))
-    return ridge['selected']['model'], ridge['selected']['validation']['nme'], predict
+    predict, artifact = load_local_predictor(ridge_weights / (mode + '.npz'))
+    sigma = float(artifact.get('temporal_sigma', 0.))
+    return ridge['selected']['model'], ridge['selected']['validation']['nme'], (
+        lambda rgb: smooth_temporal(predict(rgb).reshape(-1, 21, 2), sigma).reshape(-1, 42))
 
 
 def refined_estimator(directory):
@@ -116,10 +118,11 @@ def refined_estimator(directory):
     predict, artifact = load_local_predictor(directory / ('recorded' + suffix))
     average = np.asarray(artifact['training_mean'])
     image_weight = float(artifact['image_weight'])
+    sigma = float(artifact.get('smoothing_sigma', report.get('smoothing_sigma', 0.)))
     if not (0 < image_weight <= 1):
         raise ValueError('The refinement must use pixel input')
     return report['selected_model'], report['validation']['nme'], (
-        lambda rgb: average + image_weight * (predict(rgb) - average))
+        lambda rgb: smooth_temporal(average + image_weight * (predict(rgb) - average), sigma))
 
 
 def sample_clip(clip, n):

@@ -4,8 +4,12 @@ const path = require('node:path');
 const { chromium } = require(process.env.PLAYWRIGHT_CORE || '../../qa/node_modules/playwright-core');
 
 async function main() {
-  const [renderer, output] = process.argv.slice(2);
-  if (!renderer || !output) throw new Error('Usage: node render_pose_benchmark.cjs <motion.js> <new-output-dir>');
+  const [renderer, output, firstSeed = '1', lastSeed = '24'] = process.argv.slice(2);
+  const seedStart = Number(firstSeed), seedEnd = Number(lastSeed);
+  if (!renderer || !output || !Number.isInteger(seedStart) || !Number.isInteger(seedEnd)
+      || seedStart < 1 || seedEnd < seedStart) {
+    throw new Error('Usage: node render_pose_benchmark.cjs <motion.js> <new-output-dir> [first-seed] [last-seed]');
+  }
   const source = fs.readFileSync(renderer, 'utf8');
   fs.mkdirSync(output);
   const browser = await chromium.launch({ headless: true,
@@ -17,7 +21,7 @@ async function main() {
     await page.route(fixture, route => route.fulfill({ contentType: 'text/html', body: '<title>Offline pose fixture</title>' }));
     await page.goto(fixture);
     await page.addScriptTag({ content: source });
-    for (let seed = 1; seed <= 24; seed++) {
+    for (let seed = seedStart; seed <= seedEnd; seed++) {
       const batch = await page.evaluate(seed => {
         let state = Math.imul(seed, 2654435761) >>> 0;
         const random = () => (state = (Math.imul(state, 1664525) + 1013904223) >>> 0) / 2 ** 32;

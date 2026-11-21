@@ -8,12 +8,13 @@ import numpy as np
 import torch
 
 from measure_hamer_pose import score_predictions
-from occluded_pose_benchmark import MODELS, features, fit_ridge, read_recorded
+from occluded_pose_benchmark import MODELS, features, fit_ridge, read_recorded, smooth_temporal
 from train_occluded_pose_cnn import fit
 
 
-RIDGE_PENALTIES = (.01, .1, 1., 10.)
+RIDGE_PENALTIES = (.0001, .001, .01, .1, 1., 10.)
 IMAGE_WEIGHTS = (.5, .75, 1.)
+SMOOTH_SIGMAS = (0., .35, .5, .75, 1., 1.5, 2.)
 CNN_EPOCHS = 12
 
 
@@ -60,29 +61,34 @@ def main():
         for (kind, penalty), predict, _ in candidates(training, [validation]):
             prediction = predict(validation['rgb'])
             for image_weight in IMAGE_WEIGHTS:
-                key = (kind, penalty, image_weight)
-                results.setdefault(key, {})[name] = blend(prediction, average, image_weight)
+                blended = blend(prediction, average, image_weight)
+                for sigma in SMOOTH_SIGMAS:
+                    key = (kind, penalty, image_weight, sigma)
+                    results.setdefault(key, {})[name] = smooth_temporal(blended, sigma)
         print(json.dumps({'development_fold': name}), flush=True)
     scores = {key: score_predictions(development, values) for key, values in results.items()}
     selected = min(scores, key=lambda key: scores[key]['nme'])
-    name, penalty, image_weight = selected
+    name, penalty, image_weight, sigma = selected
     average = training_mean(development)
     # For fixed-epoch retraining this argument only supports the CNN fit API.
     # It cannot affect the chosen weights or use any test source.
     for key, predict, artifact in candidates(development, development[:1]):
         if key == (name, penalty):
             break
-    artifact.update({'training_mean': average, 'image_weight': image_weight})
+    artifact.update({'training_mean': average, 'image_weight': image_weight, 'smoothing_sigma': sigma})
     if penalty is None:
         artifact['training_mean'] = torch.from_numpy(average)
         torch.save(artifact, args.output / 'recorded.pt')
     else:
         np.savez(args.output / 'recorded.npz', **artifact)
-    predicted = {clip['name']: blend(predict(clip['rgb']), average, image_weight) for clip in test}
+    predicted = {clip['name']: smooth_temporal(blend(predict(clip['rgb']), average, image_weight), sigma)
+                 for clip in test}
     report = {'selection': 'lowest out-of-fold NME, one development source per fold',
               'reference': 'historical tracker image-plane coordinates',
               'selected_model': name, 'penalty': penalty, 'image_weight': image_weight,
-              'trials': [{'model': key[0], 'penalty': key[1], 'image_weight': key[2], 'validation': value}
+              'smoothing_sigma': sigma,
+              'trials': [{'model': key[0], 'penalty': key[1], 'image_weight': key[2],
+                          'smoothing_sigma': key[3], 'validation': value}
                          for key, value in scores.items()],
               'validation': scores[selected], 'validation_mean_control': score_predictions(development, controls),
               'test': score_predictions(test, predicted)}

@@ -2,6 +2,33 @@
 
 Offline 2D/3D/recorded-video joint-estimation experiments. No CAPTCHA scoring endpoint is used. Inference predicts from RGB frames and adjacent-frame pixels; held-out joint coordinates are used only for scoring.
 
+## Latest model: grouped-v15
+
+This is the final local pilot after testing image resolution (64/72/80), grayscale temporal edges versus per-channel color edges and RGB motion, temporal Gaussian smoothing (sigma 0–4), and training-set sizes from 48 to 108 generator seeds. Per-channel color edges with RGB frame differences selected best. Additional training seeds stopped producing meaningful aggregate gains; 108 seeds was retained as the largest tested training set.
+
+| Domain | Selected estimator | Validation NME | Held-out NME | Held-out PCK@0.2 |
+| --- | --- | ---: | ---: | ---: |
+| 2D | `temporal_color_edges_ridge_72`, penalty 0.01, sigma 0.75 | 0.001899 | 0.001978 | 1.000 |
+| 3D | `temporal_color_edges_ridge_80`, penalty 0.01, sigma 0.5 | 0.001048 | 0.001131 | 1.000 |
+
+The final report aggregates 240 held-out clips / 9,066 frames per domain. Splits are grouped by PRNG seed, keeping both challenge clips from a seed in one partition. Final training seeds are `1-24, 77-100, 185-196, 221-232, 245-256, 269-280, 293-304`; validation seeds are `101-112, 125-136, 161-172`; all other included seeds are held out. Candidate choice and smoothing are based on validation only.
+
+### Model construction
+
+`occluded_pose_benchmark.py` resizes frames while preserving the original input pipeline, constructs pixel features, and fits multi-output ridge regression. The selected color-temporal feature vector concatenates RGB pixels, horizontal and vertical Sobel gradients computed separately for each color channel, and previous/next-frame RGB differences. Predictions are reshaped to 21 `(x,y)` joints, then smoothed symmetrically along each clip. Regularization penalties and smoothing widths are selected by validation NME. The `.npz` files contain the fitted weights, offset, feature kind, and selected temporal sigma.
+
+To reproduce, first generate the same synthetic RGB/landmark export with `render_pose_benchmark.cjs`, merge disjoint seed exports with `merge_pose_benchmark.py`, then run:
+
+```powershell
+python analysis/occluded_pose_benchmark.py `
+  --synthetic PATH_TO_MERGED_SYNTHETIC_DATA `
+  --recorded PATH_TO_RECORDED_DATA `
+  --output PATH_TO_NEW_REPORT.json `
+  --weights-dir PATH_TO_NEW_WEIGHTS
+```
+
+The output and weights for this run are in `results/grouped-v15/`. Raw RGB data and annotations are not committed. Scores describe performance on this procedural renderer and do not establish transfer to real hands or other renderers; recorded annotations remain legacy tracker estimates, not independent ground truth.
+
 ## Grouped-split result
 
 The synthetic split groups both clips from each generator PRNG seed together: seeds 1-16 train, 17-20 validation, and 21-24 test. This prevents the two correlated clips emitted by one random stream from crossing partitions. Hyperparameters and model choice use validation data. The table uses 15 evenly spaced frames per test clip; NME is palm-normalized image-plane distance (lower is better), and PCK@0.2 is the share of joints within 0.2 palm lengths.
