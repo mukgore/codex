@@ -7,6 +7,16 @@ This addition follows the project specification's separation of executable analy
 - `reports/reproducibility/`: aggregate-only tables, plot, and replay validation summary.
 - `data/raw/` and `data/derived/`: remain local and Git-ignored. No participant JSON, landmark coordinates, per-session error rows, participant-level table, or input hash inventory is committed.
 
+## Independent occluded-hand model verification
+
+The A/B versus grouped-v15, HaMeR, and MediaPipe benchmark is documented in
+[`realtime_occluded_hand_models.md`](realtime_occluded_hand_models.md) and
+[`hand_pose_metric_audit.md`](hand_pose_metric_audit.md). The committed report,
+prediction JSON files, A/B checkpoints, provenance, and CC BY-NC attributed
+masked previews are under
+[`reports/independent_hand_verification/`](../../reports/independent_hand_verification/README.md).
+The original GigaHands archive, source videos, and labels remain external inputs.
+
 ## Local input layout
 
 Initial human-score reconciliation (2026-11-04) is documented in the [results report](initial_score_reconciliation_results_2026-11-04.md), with [aggregate JSON](../../reports/reproducibility/initial_score_reconciliation_summary.json) and [recalculation code](../../analysis/reproducibility/reconcile_initial_scores.py). It replays the distinct historical four-session cohort. Table 7's three composite metrics and the rounded Table 10 score are computationally compatible; the body scores' historical generation remains unresolved. Private inputs and trial outputs stay under ignored `data/`.

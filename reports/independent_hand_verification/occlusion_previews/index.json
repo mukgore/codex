@@ -1,0 +1,197 @@
+[
+  {
+    "video": "brics-odroid-016_cam0_1727030430697566_occluded.mp4",
+    "source": "C:\\Users\\\uc870\uc601\uc900!\\Documents\\CLI\\usability\\qa\\external-hand-verification\\extracted\\hand_pose\\p36-tea-0010\\rgb_vid\\brics-odroid-016_cam0\\brics-odroid-016_cam0_1727030430697566.mp4",
+    "session": "p36-tea-0010",
+    "side": "right",
+    "frames": 380,
+    "fps": 30.0,
+    "duration_seconds": 12.666666666666666,
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "canonical_resolution": [
+      512,
+      420
+    ],
+    "mask": {
+      "canvas_width": 512,
+      "canvas_height": 420,
+      "center_x": 256,
+      "center_y": 210,
+      "radius_px": 95,
+      "rgb": [
+        7,
+        11,
+        16
+      ]
+    },
+    "letterbox": {
+      "scale": 0.4,
+      "offset_x": 0,
+      "offset_y": 66,
+      "width": 512,
+      "height": 288
+    },
+    "video_sha256": "d2d1d2c045da8d964ad2c33dbb18edc6d707daad0b5996a1ded8ef69e97c3377",
+    "label_sha256": "72cb20711dcf73f7eef31f8fa6bd5c8244615ce781b71224c7c763fdeb45d613",
+    "hidden_rule": "annotated point center distance <= 95px from (256,210)"
+  },
+  {
+    "video": "brics-odroid-026_cam1_1726962101793664_occluded.mp4",
+    "source": "C:\\Users\\\uc870\uc601\uc900!\\Documents\\CLI\\usability\\qa\\external-hand-verification\\extracted\\hand_pose\\p41-boxing-0021\\rgb_vid\\brics-odroid-026_cam1\\brics-odroid-026_cam1_1726962101793664.mp4",
+    "session": "p41-boxing-0021",
+    "side": "left",
+    "frames": 366,
+    "fps": 30.0,
+    "duration_seconds": 12.2,
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "canonical_resolution": [
+      512,
+      420
+    ],
+    "mask": {
+      "canvas_width": 512,
+      "canvas_height": 420,
+      "center_x": 256,
+      "center_y": 210,
+      "radius_px": 95,
+      "rgb": [
+        7,
+        11,
+        16
+      ]
+    },
+    "letterbox": {
+      "scale": 0.4,
+      "offset_x": 0,
+      "offset_y": 66,
+      "width": 512,
+      "height": 288
+    },
+    "video_sha256": "12514dabc018ec1a8d505e8cd01752c1c5daaf9fea16c11ba120e3d8769ad6ff",
+    "label_sha256": "df30a74b6f71ab8df9fae95de128c23f38d7c1a00964e576436db937e6d46b9e",
+    "hidden_rule": "annotated point center distance <= 95px from (256,210)"
+  },
+  {
+    "video": "brics-odroid-023_cam0_1726963265350610_occluded.mp4",
+    "source": "C:\\Users\\\uc870\uc601\uc900!\\Documents\\CLI\\usability\\qa\\external-hand-verification\\extracted\\hand_pose\\p41-plant-0004\\rgb_vid\\brics-odroid-023_cam0\\brics-odroid-023_cam0_1726963265350610.mp4",
+    "session": "p41-plant-0004",
+    "side": "left",
+    "frames": 174,
+    "fps": 30.0,
+    "duration_seconds": 5.8,
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "canonical_resolution": [
+      512,
+      420
+    ],
+    "mask": {
+      "canvas_width": 512,
+      "canvas_height": 420,
+      "center_x": 256,
+      "center_y": 210,
+      "radius_px": 95,
+      "rgb": [
+        7,
+        11,
+        16
+      ]
+    },
+    "letterbox": {
+      "scale": 0.4,
+      "offset_x": 0,
+      "offset_y": 66,
+      "width": 512,
+      "height": 288
+    },
+    "video_sha256": "aeb5e14301f87f23779fe17b92f9dbfb8d10c3d9bc16671e87c5f04c20fc9e3e",
+    "label_sha256": "95713afa3c3144929e59cb86816465acd3892dc4fbc2c9663c7b4859fbcc0f96",
+    "hidden_rule": "annotated point center distance <= 95px from (256,210)"
+  },
+  {
+    "video": "brics-odroid-015_cam1_1725202053204578_occluded.mp4",
+    "source": "C:\\Users\\\uc870\uc601\uc900!\\Documents\\CLI\\usability\\qa\\external-hand-verification\\extracted\\hand_pose\\p44-dog-0004\\rgb_vid\\brics-odroid-015_cam1\\brics-odroid-015_cam1_1725202053204578.mp4",
+    "session": "p44-dog-0004",
+    "side": "right",
+    "frames": 338,
+    "fps": 30.0,
+    "duration_seconds": 11.266666666666667,
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "canonical_resolution": [
+      512,
+      420
+    ],
+    "mask": {
+      "canvas_width": 512,
+      "canvas_height": 420,
+      "center_x": 256,
+      "center_y": 210,
+      "radius_px": 95,
+      "rgb": [
+        7,
+        11,
+        16
+      ]
+    },
+    "letterbox": {
+      "scale": 0.4,
+      "offset_x": 0,
+      "offset_y": 66,
+      "width": 512,
+      "height": 288
+    },
+    "video_sha256": "22c3e032027b6a9079c4a318a4b1b5fdb367fe304576d5e94780fc47c57f1d27",
+    "label_sha256": "10ce29c22f0c0d9cfe12eac488ce52327c0a8ef5893b73f9f1a64bac6c940113",
+    "hidden_rule": "annotated point center distance <= 95px from (256,210)"
+  },
+  {
+    "video": "brics-odroid-024_cam0_1726248075919808_occluded.mp4",
+    "source": "C:\\Users\\\uc870\uc601\uc900!\\Documents\\CLI\\usability\\qa\\external-hand-verification\\extracted\\hand_pose\\p52-instrument-0034\\rgb_vid\\brics-odroid-024_cam0\\brics-odroid-024_cam0_1726248075919808.mp4",
+    "session": "p52-instrument-0034",
+    "side": "right",
+    "frames": 139,
+    "fps": 30.0,
+    "duration_seconds": 4.633333333333334,
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "canonical_resolution": [
+      512,
+      420
+    ],
+    "mask": {
+      "canvas_width": 512,
+      "canvas_height": 420,
+      "center_x": 256,
+      "center_y": 210,
+      "radius_px": 95,
+      "rgb": [
+        7,
+        11,
+        16
+      ]
+    },
+    "letterbox": {
+      "scale": 0.4,
+      "offset_x": 0,
+      "offset_y": 66,
+      "width": 512,
+      "height": 288
+    },
+    "video_sha256": "b45568a35913b570f0e8681a2dcd501e6e236cbfbcfedbb57ca25312985790e3",
+    "label_sha256": "57f91a4692b610c19bdd38f540e77ddfadef2635cd5d7e8388202b9efc98e94c",
+    "hidden_rule": "annotated point center distance <= 95px from (256,210)"
+  }
+]
